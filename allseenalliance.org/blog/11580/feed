@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xml:base="https://identity.allseenalliance.org"  xmlns:dc="http://purl.org/dc/elements/1.1/">
+<channel>
+ <title>Jun Zhang&#039;s blog</title>
+ <link>https://identity.allseenalliance.org/blog/11580</link>
+ <description></description>
+ <language>en</language>
+<item>
+ <title>The AllSeen Alliance Adds Certification and Compliance Program</title>
+ <link>https://identity.allseenalliance.org/news/blogs/2014/08/allseen-alliance-adds-certification-and-compliance-program-0</link>
+ <description>
+		&lt;span class=&quot;a2a_kit a2a_target addtoany_list&quot; id=&quot;da2a_1&quot;&gt;
+			&lt;a class=&quot;a2a_button_facebook&quot;&gt;&lt;/a&gt;
+&lt;a class=&quot;a2a_button_twitter&quot;&gt;&lt;/a&gt;
+&lt;a class=&quot;a2a_button_google_plus&quot;&gt;&lt;/a&gt;&lt;a class=&quot;a2a_dd addtoany_share_save&quot; href=&quot;http://www.addtoany.com/share_save#url=https%3A%2F%2Fidentity.allseenalliance.org%2Fnews%2Fblogs%2F2014%2F08%2Fallseen-alliance-adds-certification-and-compliance-program-0&amp;amp;title=Blogs%20-%20AllSeen%20Alliance&quot;&gt; Share&lt;/a&gt;
+		&lt;/span&gt;
+		&lt;script type=&quot;text/javascript&quot;&gt;
+&lt;!--//--&gt;&lt;![CDATA[//&gt;&lt;!--
+da2a.script_load();
+//--&gt;&lt;!]]&gt;
+&lt;/script&gt;
+		
+  &lt;div class=&quot;field-body view-mode-rss&quot;&gt;
+    &lt;p&gt;&lt;img alt=&quot;&quot; src=&quot;http://i61.tinypic.com/2r5f47c.png&quot; style=&quot;float:left; height:116px; margin:10px; width:242px&quot; /&gt;&lt;/p&gt;&lt;p&gt;The AllSeen Alliance has achieved &lt;a href=&quot;https://allseenalliance.org/news/blogs/2014/07/open-source-community-internet-everything-interoperability&quot; style=&quot;line-height: 1.538em;&quot;&gt;several milestones &lt;/a&gt;since its formation in December 2013. We’ve grown from 24 to 63&lt;a href=&quot;https://allseenalliance.org/about/members&quot; style=&quot;line-height: 1.538em;&quot;&gt; members&lt;/a&gt;, published two releases of the AllJoyn open source project and established eight&lt;a href=&quot;https://wiki.allseenalliance.org/&quot; style=&quot;line-height: 1.538em;&quot;&gt; working groups&lt;/a&gt; led by AllSeen member companies to expand AllJoyn capabilities beyond the connected home, into areas such as security, cloud and smart lighting.&lt;/p&gt;&lt;p&gt;Today, we’re excited to mark another milestone -- an AllSeen Certification and Compliance Program that includes self-certification so that products can begin participating in our open ecosystem right away.&lt;/p&gt;&lt;p&gt;The Certification and Compliance Program is important because it gives companies a mark that means they have integrated the AllJoyn framework into their products -- TVs, appliances, air monitors, hi-fi speakers, lighting, mobile apps, set-top boxes, smart building systems or development boards -- and ensures seamless, out-of-the-box interoperability.&lt;/p&gt;&lt;p&gt;The program defines a minimum level of standardization that allows a company to use a “Designed for AllSeen” badge in product packaging and marketing materials. This is great for both companies and consumers because it signifies that the product has smarter connected capabilities and is part of the AllSeen ecosystem, now and into the future.&lt;/p&gt;&lt;p&gt;In the future, the AllSeen Certification and Compliance Program will include an easy-to-use testing app to give device makers and IoT developers confidence that they’re successfully implementing a common set of technical requirements for the AllSeen Alliance. Third-party testing will also ensure products discover, expose their capabilities and securely work with each other.&lt;/p&gt;&lt;p&gt;Think of “Designed for AllSeen” as a guarantee that a product being sold or bought fulfills the AllSeen Alliance’s promise of the ability to connect devices and systems across brands, transports, platforms and operating systems.&lt;/p&gt;&lt;p&gt;Also a guarantee that the product benefits from the innovations that are being baked into the AllJoyn open source framework thanks to the energetic, collaborative work of the AllSeen Alliance’s 63 members – such as lighting service, sensor APIs and enhanced security algorithms using elliptic curve cryptography.&lt;/p&gt;&lt;p&gt;We’re seeing AllSeen Alliance members and the open source community integrating AllJoyn into their &lt;a href=&quot;https://allseenalliance.org/showcase&quot; style=&quot;line-height: 1.538em;&quot;&gt;products&lt;/a&gt;. We look forward to these and more to come participating in the certification and compliance program.&lt;/p&gt;&lt;p&gt;The AllSeen Alliance is a collaborative, open source community to advance the Internet of Everything. It was structured with an open source license, open design, open development and contribution model and an open governance model. Now we have a program that clearly shows when a product is “Designed for AllSeen.”&lt;/p&gt;&lt;p&gt;&lt;em&gt;Jun Zhang is a member of the AllSeen Alliance Technical Steering Committee and a chair of the Smart Home Working Group. Zhang is a standard operation manager at Haier Group currently responsible for standardization activities management and technical contact of open source project for Haier Smart Home Innovation Center, which provides home networking and control system for networked homes appliances.&lt;/em&gt;&lt;/p&gt;&lt;p&gt; &lt;/p&gt;  &lt;/div&gt;
+</description>
+ <pubDate>Thu, 28 Aug 2014 16:08:58 +0000</pubDate>
+ <dc:creator>Jun Zhang</dc:creator>
+ <guid isPermaLink="false">4034 at https://identity.allseenalliance.org</guid>
+ <comments>https://identity.allseenalliance.org/news/blogs/2014/08/allseen-alliance-adds-certification-and-compliance-program-0#comments</comments>
+</item>
+</channel>
+</rss>

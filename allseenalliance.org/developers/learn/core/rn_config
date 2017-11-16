@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<!--[if IEMobile 7]><html class="iem7" lang="en" dir="ltr"><![endif]-->
+<!--[if lte IE 6]><html class="lt-ie9 lt-ie8 lt-ie7" lang="en" dir="ltr"><![endif]-->
+<!--[if (IE 7)&(!IEMobile)]><html class="lt-ie9 lt-ie8" lang="en" dir="ltr"><![endif]-->
+<!--[if IE 8]><html class="lt-ie9" lang="en" dir="ltr"><![endif]-->
+<!--[if (gte IE 9)|(gt IEMobile 7)]><!--><html lang="en" dir="ltr"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/terms/"
+  xmlns:foaf="http://xmlns.com/foaf/0.1/"
+  xmlns:og="http://ogp.me/ns#"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:sioc="http://rdfs.org/sioc/ns#"
+  xmlns:sioct="http://rdfs.org/sioc/types#"
+  xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema#"><!--<![endif]-->
+<head>
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
+<meta charset="utf-8" />
+<link rel="shortlink" href="/node/4616" />
+<link rel="shortcut icon" href="https://identity.allseenalliance.org/sites/all/themes/at_alljoyn/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="/developers/learn/core/rn_config" />
+<meta name="viewport" content="width=device-width" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta property="og:image" content="https://identity.allseenalliance.org/sites/all/themes/at_alljoyn/images/allseen-logo.png"/>
+<meta name="google-translate-customization" content="48b015afeed82101-ecae534af0f48252-ga0b6470a6208b2f5-f"></meta>
+<meta name="MobileOptimized" content="width">
+<meta name="HandheldFriendly" content="true">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Routing Node Configuration File - AllSeen Alliance</title>
+<link type="text/css" rel="stylesheet" href="https://identity.allseenalliance.org/sites/default/files/css/css_xE-rWrJf-fncB6ztZfd2huxqgxu4WO-qwma6Xer30m4.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://identity.allseenalliance.org/sites/default/files/css/css_7Vcu6qIuRTO46aDOBZp7_mtksGdhCHSe0pjTO2YbGng.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://identity.allseenalliance.org/sites/default/files/css/css_J2n1xiaSuececTK0yC3DT_Msm4PrkPwHizxr0oXGGoo.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://identity.allseenalliance.org/sites/default/files/css/css_oxEtvjMfj8c8EEJJ-1WXLGGntCnC0UvrbYsq0Gw4m4Q.css" media="screen" />
+<link type="text/css" rel="stylesheet" href="https://identity.allseenalliance.org/sites/default/files/css/css_9EusV9fcbkpqBeTGdJPl7ru65jm-3ngbTi_D6YRR_5A.css" media="only screen" />
+<script src="https://identity.allseenalliance.org/sites/default/files/js/js_UWQINlriydSoeSiGQxToOUdv493zEa7dpsXC1OtYlZU.js"></script>
+<script src="https://identity.allseenalliance.org/sites/default/files/js/js_COMsmDyrY9mzVU28X2uGvF4Ba3vd5eTo5xEO7dvCUZM.js"></script>
+<script src="https://identity.allseenalliance.org/sites/default/files/js/js_i8oyg1R4On_HyzPiZ5zC3V-DxehjGAcpKwNao5s0s5I.js"></script>
+<script>hljs.configure({languages:[]}); hljs.initHighlightingOnLoad();</script>
+<script src="https://identity.allseenalliance.org/sites/default/files/js/js_aG0kZAhSHT6G3QC-d9Wwx9gQp5d0em8X6FmMYZ1e5h4.js"></script>
+<script>var _gaq = _gaq || [];_gaq.push(["_setAccount", "UA-"]);_gaq.push(["_trackPageview"]);(function() {var ga = document.createElement("script");ga.type = "text/javascript";ga.async = true;ga.src = ("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/ga.js";var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(ga, s);})();</script>
+<script src="https://identity.allseenalliance.org/sites/default/files/js/js_R35PAK16384fXh7f2OqvXVkbbrwr8ABLrDpR1zTluo0.js"></script>
+<script src="https://identity.allseenalliance.org/sites/default/files/js/js_DKtRHJS-jz_cHgf23K7wnIWphCanZ_Rz74Aw-DKQyFs.js"></script>
+<script>jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"at_alljoyn","theme_token":"OmfE8HDgWEeFcAQaQNJkv-Q0SiBSXoIgZgM9fKx_Vco","js":{"misc\/jquery.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/all\/modules\/contrib\/comment_notify\/comment_notify.js":1,"sites\/all\/modules\/alljoyn\/custom_modules\/allseen_docs\/allseen_docs_highlight\/highlightjs\/highlight.min.js":1,"0":1,"sites\/all\/libraries\/colorbox\/jquery.colorbox-min.js":1,"sites\/all\/modules\/contrib\/colorbox\/js\/colorbox.js":1,"sites\/all\/modules\/contrib\/colorbox\/styles\/default\/colorbox_style.js":1,"sites\/all\/modules\/contrib\/colorbox\/js\/colorbox_load.js":1,"sites\/all\/modules\/contrib\/colorbox\/js\/colorbox_inline.js":1,"sites\/all\/modules\/contrib\/panels\/js\/panels.js":1,"sites\/all\/modules\/contrib\/quote\/quote.js":1,"sites\/all\/modules\/contrib\/views_slideshow\/js\/views_slideshow.js":1,"sites\/all\/modules\/contrib\/google_analytics\/googleanalytics.js":1,"1":1,"sites\/all\/modules\/alljoyn\/custom_modules\/allseen_docs\/allseen_docs_nav\/allseen-docs-nav.js":1,"sites\/all\/themes\/at_alljoyn\/scripts\/alljoyn.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"sites\/all\/modules\/contrib\/comment_notify\/comment_notify.css":1,"sites\/all\/modules\/ldap\/ldap_user\/ldap_user.css":1,"modules\/book\/book.css":1,"modules\/comment\/comment.css":1,"sites\/all\/modules\/contrib\/date\/date_api\/date.css":1,"sites\/all\/modules\/contrib\/date\/date_popup\/themes\/datepicker.1.7.css":1,"modules\/field\/theme\/field.css":1,"sites\/all\/modules\/contrib\/mollom\/mollom.css":1,"modules\/node\/node.css":1,"modules\/user\/user.css":1,"modules\/forum\/forum.css":1,"sites\/all\/modules\/contrib\/views\/css\/views.css":1,"sites\/all\/modules\/alljoyn\/custom_modules\/allseen_docs\/allseen_docs_highlight\/highlightjs\/default.min.css":1,"sites\/all\/modules\/contrib\/colorbox\/styles\/default\/colorbox_style.css":1,"sites\/all\/modules\/contrib\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/ldap\/ldap_servers\/ldap_servers.admin.css":1,"sites\/all\/modules\/contrib\/panels\/css\/panels.css":1,"sites\/all\/modules\/contrib\/quote\/quote.css":1,"sites\/all\/modules\/contrib\/views_slideshow\/views_slideshow.css":1,"sites\/all\/modules\/alljoyn\/custom_modules\/allseen_docs\/allseen_docs_nav\/allseen-docs-nav.css":1,"sites\/all\/modules\/alljoyn\/features\/content_type_developer_document\/content-type-developer-document.css":1,"sites\/all\/themes\/adaptivetheme\/at_core\/css\/at.layout.css":1,"sites\/all\/themes\/at_alljoyn\/css\/fonts.css":1,"sites\/all\/themes\/at_alljoyn\/css\/globals.css":1,"sites\/all\/themes\/at_alljoyn\/css\/jcarousel-alljoyn.css":1,"public:\/\/adaptivetheme\/at_alljoyn_files_7dbe1ef5\/at_alljoyn.responsive.layout.css":1,"public:\/\/adaptivetheme\/at_alljoyn_files_7dbe1ef5\/at_alljoyn.responsive.styles.css":1}},"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":true,"mobiledevicewidth":"480px"},"jcarousel":{"ajaxPath":"\/jcarousel\/ajax\/views"},"quote_nest":2,"googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls|xml|z|zip"}});</script>
+<!--[if lt IE 9]>
+<script src="https://identity.allseenalliance.org/sites/all/themes/adaptivetheme/at_core/scripts/respond.js?nwgww1"></script>
+<script src="https://identity.allseenalliance.org/sites/all/themes/adaptivetheme/at_core/scripts/html5.js?nwgww1"></script>
+<script src="https://identity.allseenalliance.org/sites/all/themes/adaptivetheme/at_core/scripts/PIE.htc?nwgww1"></script>
+<script src="https://identity.allseenalliance.org/sites/all/themes/adaptivetheme/at_core/scripts/selectivizr.js?nwgww1"></script>
+<![endif]-->
+</head>
+<body class="html not-front not-logged-in one-sidebar sidebar-first page-node page-node- page-node-4616 node-type-developer-document site-name-hidden with-subnav page-developers-learn-core-rn_config section-developers">
+  <div id="body-top">
+      </div>
+  <div id="skip-link">
+    <a href="#main-content" class="element-invisible element-focusable">Skip to main content</a>
+  </div>
+  <div class="region region-page-top"><div class="region-inner clearfix"><div id="fb-root"></div><script type="text/javascript">
+     window.fbAsyncInit = function() {
+       FB.init({
+         appId: "492099574180957",
+         status: true,
+         cookie: true,
+         xfbml: true,
+         oauth : true,
+         channelUrl: "https:\/\/identity.allseenalliance.org\/service_links\/channel"
+         });
+
+         FB.Event.subscribe('edge.create', function(href, widget) {
+    _gaq.push(['_trackEvent', 'facebook', 'Facebook like', href]);
+   });FB.Event.subscribe('edge.remove', function(href, widget) {
+    _gaq.push(['_trackEvent', 'facebook', 'Facebook unlike', href]);
+   });
+       };
+       (function(d){
+     var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement('script'); js.id = id; js.async = true;
+     js.src = '//connect.facebook.net/en_US/all.js';
+     ref.parentNode.insertBefore(js, ref);
+   }(document));
+    </script></div></div>  
+<div id="wrap">
+
+  <div id="lfcollabprojects-header">
+    <div class="gray-diagonal">
+      <div class="header-inner">
+        <a id="lfcollabprojects-logo" href="http://collabprojects.linuxfoundation.org">Linux Foundation Collaborative Projects</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="page" class="container page">
+
+    
+    <header id="header" class="clearfix" role="banner">
+
+      <div class="region region-header"><div class="region-inner clearfix"><div id="block-block-19" class="block block-block" ><div class="block-inner clearfix">        <div class="block-content content"><br /><br /><br /><br /><br /><br /><br /></div></div></div></div></div>
+              <div id="branding" class="branding-elements clearfix">
+
+                      <div id="logo"><a href="/" title="Home page"><img class="site-logo" typeof="foaf:Image" src="https://identity.allseenalliance.org/sites/default/files/logo.png" alt="AllSeen Alliance" /></a></div>
+          
+                      <hgroup id="name-and-slogan" class="element-invisible">
+                              <h1 id="site-name" class="element-invisible"><a href="/" title="Home page">AllSeen Alliance</a></h1>
+                                        </hgroup>
+          
+          <!--main menu-->
+          <a id="main-menu-toggle" href="#">Site Sections</a>
+  		  		  		
+        </div>
+      
+    </header>
+
+
+    <div id="columns" class="clearfix">
+      <div id="sub-menu-bar">
+        <div class="region region-sub-menu-bar"><div class="region-inner clearfix"><div id="block-menu-block-allseen-docs-nav" class="block block-menu-block"  role="navigation"><div class="block-inner clearfix">        <div class="block-content content"><div class="menu-block-wrapper menu-block-allseen-docs-nav menu-name-main-menu parent-mlid-0 menu-level-2">
+  <ul class="menu clearfix"><li class="first has-children active-trail menu-mlid-2504 menu-item-2504"><a href="/developers/learn" class="active-trail">Learn</a></li><li class="has-children menu-mlid-2539 menu-item-2539"><a href="/developers/download">Download</a></li><li class="has-children menu-mlid-2541 menu-item-2541"><a href="/developers/develop">Develop</a></li><li class="last has-children menu-mlid-2636 menu-item-2636"><a href="/developers/contribute">Contribute</a></li></ul></div>
+</div></div></div><section id="block-menu-block-allseen-docs-responsive-nav" class="block block-menu-block"  role="navigation"><div class="block-inner clearfix">        <div class="block-title-wrapper">
+      <h2 class="block-title">Menu</h2>
+    </div>
+      <div class="block-content content"><div class="menu-block-wrapper menu-block-allseen-docs-responsive-nav menu-name-main-menu parent-mlid-0 menu-level-1">
+  <ul class="menu clearfix"><li class="first menu-parent menu-mlid-1994 menu-item-1994"><a href="/about">About</a><ul class="menu clearfix"><li class="first menu-mlid-2486 menu-item-2486"><a href="/about/why-allseen">Why AllSeen</a></li><li class="menu-mlid-2464 menu-item-2464"><a href="/about/get-involved">Get Involved</a></li><li class="collapsed menu-mlid-2446 menu-item-2446"><a href="/about/governance/ip-policy">IP Policy</a></li><li class="menu-mlid-2491 menu-item-2491"><a href="/about/working-groups">Working Groups</a></li><li class="menu-mlid-2286 menu-item-2286"><a href="/about/members">Member Companies</a></li><li class="menu-mlid-2285 menu-item-2285"><a href="/about/join-allseen-alliance">Join The AllSeen Alliance</a></li><li class="collapsed menu-mlid-2447 menu-item-2447"><a href="/about/governance">Governance</a></li><li class="menu-mlid-501 menu-item-501"><a href="/about/faqs">FAQs</a></li><li class="menu-mlid-2322 menu-item-2322"><a href="/about/contact">Contact Us</a></li><li class="menu-mlid-2282 menu-item-2282"><a href="/allseen/what-is-allseen-alliance">What is AllSeen Alliance?</a></li><li class="last menu-mlid-2490 menu-item-2490"><a href="https://wiki.allseenalliance.org/members_private/start?do=login&amp;sectok=34485854163fe6a0be457198139e2c84" title="Members Area" id="members_area" name="Members Area" rel="nofollow" target="_blank">Members Area</a></li></ul></li><li class="menu-parent active-trail menu-mlid-2503 menu-item-2503"><a href="/developers" class="active-trail">Developers</a><ul class="menu clearfix"><li class="first menu-parent has-children active-trail menu-mlid-2504 menu-item-2504"><a href="/developers/learn" class="active-trail active-trail">Learn</a><ul class="menu clearfix"><li class="first menu-mlid-2505 menu-item-2505"><a href="/developers/learn/use-cases">Use Cases</a></li><li class="menu-mlid-2506 menu-item-2506"><a href="/developers/learn/architecture">Architecture</a></li><li class="menu-parent active-trail menu-mlid-2507 menu-item-2507"><a href="/developers/learn/core" class="active-trail">Core Framework</a><ul class="menu clearfix"><li class="first menu-parent menu-mlid-2508 menu-item-2508"><a href="/developers/learn/core/about-announcement">About Announcement</a><ul class="menu clearfix"><li class="first menu-mlid-2509 menu-item-2509"><a href="/developers/learn/core/about-announcement/interface">Interface</a></li><li class="last menu-mlid-2510 menu-item-2510"><a href="/developers/learn/core/about-announcement/interface-14-02">Interface 14.02</a></li></ul></li><li class="menu-mlid-2511 menu-item-2511"><a href="/developers/learn/core/events-and-actions">Events and Actions</a></li><li class="active-trail active menu-mlid-2992 menu-item-2992"><a href="/developers/learn/core/rn_config" class="active-trail active">Routing Node Configuration</a></li><li class="menu-mlid-2512 menu-item-2512"><a href="/developers/learn/core/standard-core">Standard Core</a></li><li class="menu-mlid-2513 menu-item-2513"><a href="/developers/learn/core/thin-core">Thin Core</a></li><li class="menu-parent menu-mlid-2514 menu-item-2514"><a href="/developers/learn/core/system-description">System Description</a><ul class="menu clearfix"><li class="first menu-mlid-2515 menu-item-2515"><a href="/developers/learn/core/system-description/system-architecture">System Architecture</a></li><li class="menu-mlid-2516 menu-item-2516"><a href="/developers/learn/core/system-description/advertisement-discovery">Advertisement and Discovery</a></li><li class="menu-mlid-2645 menu-item-2645"><a href="/developers/learn/core/system-description/alljoyn-transport">AllJoyn Transport</a></li><li class="menu-mlid-2517 menu-item-2517"><a href="/developers/learn/core/system-description/data-exchange">Data Exchange</a></li><li class="menu-mlid-2518 menu-item-2518"><a href="/developers/learn/core/system-description/alljoyn-session">AllJoyn Session</a></li><li class="menu-mlid-2519 menu-item-2519"><a href="/developers/learn/core/system-description/sessionless-signal">Sessionless Signal</a></li><li class="menu-mlid-2520 menu-item-2520"><a href="/developers/learn/core/system-description/alljoyn-security">AllJoyn Security</a></li><li class="menu-mlid-2521 menu-item-2521"><a href="/developers/learn/core/system-description/thin-apps">Thin Apps</a></li><li class="last menu-mlid-2522 menu-item-2522"><a href="/developers/learn/core/system-description/events-actions">Events and Actions</a></li></ul></li><li class="last menu-parent menu-mlid-2937 menu-item-2937"><a href="/developers/learn/core/security2_0">Security 2.0</a><ul class="menu clearfix"><li class="first last menu-mlid-2938 menu-item-2938"><a href="/developers/learn/core/security2_0/hld">High-Level Design</a></li></ul></li></ul></li><li class="menu-parent menu-mlid-2523 menu-item-2523"><a href="/developers/learn/base-services">Base Services</a><ul class="menu clearfix"><li class="first menu-parent menu-mlid-2524 menu-item-2524"><a href="/developers/learn/base-services/onboarding">Onboarding</a><ul class="menu clearfix"><li class="first menu-mlid-2525 menu-item-2525"><a href="/developers/learn/base-services/onboarding/interface">Interface</a></li><li class="last menu-mlid-2526 menu-item-2526"><a href="/developers/learn/base-services/onboarding/interface-14-02">Interface 14.02</a></li></ul></li><li class="menu-parent menu-mlid-2527 menu-item-2527"><a href="/developers/learn/base-services/configuration">Configuration</a><ul class="menu clearfix"><li class="first menu-mlid-2528 menu-item-2528"><a href="/developers/learn/base-services/configuration/interface">Interface</a></li><li class="last menu-mlid-2529 menu-item-2529"><a href="/developers/learn/base-services/configuration/interface-14-02">Interface 14.02</a></li></ul></li><li class="menu-parent menu-mlid-2530 menu-item-2530"><a href="/developers/learn/base-services/notification">Notification</a><ul class="menu clearfix"><li class="first menu-mlid-2531 menu-item-2531"><a href="/developers/learn/base-services/notification/interface">Interface</a></li><li class="last menu-mlid-2532 menu-item-2532"><a href="/developers/learn/base-services/notification/interface-14-02">Interface 14.02</a></li></ul></li><li class="menu-parent menu-mlid-2533 menu-item-2533"><a href="/developers/learn/base-services/controlpanel">ControlPanel</a><ul class="menu clearfix"><li class="first menu-mlid-2534 menu-item-2534"><a href="/developers/learn/base-services/controlpanel/interface">Interface</a></li><li class="last menu-mlid-2535 menu-item-2535"><a href="/developers/learn/base-services/controlpanel/interface-14-02">Interface 14.02</a></li></ul></li><li class="last menu-parent menu-mlid-2536 menu-item-2536"><a href="/developers/learn/base-services/audiostreaming">Audio Streaming</a><ul class="menu clearfix"><li class="first last menu-mlid-2537 menu-item-2537"><a href="/developers/learn/base-services/audiostreaming/interface">Interface</a></li></ul></li></ul></li><li class="last menu-mlid-2538 menu-item-2538"><a href="/developers/learn/glossary">Glossary</a></li></ul></li><li class="menu-parent has-children menu-mlid-2539 menu-item-2539"><a href="/developers/download">Download</a><ul class="menu clearfix"><li class="first last menu-mlid-2540 menu-item-2540"><a href="/developers/download/supported-platforms">Supported Platforms</a></li></ul></li><li class="menu-parent has-children menu-mlid-2541 menu-item-2541"><a href="/developers/develop">Develop</a><ul class="menu clearfix"><li class="first menu-parent menu-mlid-2542 menu-item-2542"><a href="/developers/develop/building">Building</a><ul class="menu clearfix"><li class="first menu-parent menu-mlid-2543 menu-item-2543"><a href="/developers/develop/building/android">Android</a><ul class="menu clearfix"><li class="first last menu-mlid-2544 menu-item-2544"><a href="/developers/develop/building/android/build-source">Build Source</a></li></ul></li><li class="menu-parent menu-mlid-2545 menu-item-2545"><a href="/developers/develop/building/linux">Linux</a><ul class="menu clearfix"><li class="first menu-mlid-2546 menu-item-2546"><a href="/developers/develop/building/linux/openwrt">OpenWRT</a></li><li class="last menu-mlid-2547 menu-item-2547"><a href="/developers/develop/building/linux/build-source">Build Source</a></li></ul></li><li class="menu-parent menu-mlid-2548 menu-item-2548"><a href="/developers/develop/building/ios-osx">iOS/OS X</a><ul class="menu clearfix"><li class="first last menu-mlid-2549 menu-item-2549"><a href="/developers/develop/building/ios-osx/build-source">Build Source</a></li></ul></li><li class="menu-parent menu-mlid-2550 menu-item-2550"><a href="/developers/develop/building/windows">Windows</a><ul class="menu clearfix"><li class="first last menu-mlid-2551 menu-item-2551"><a href="/developers/develop/building/windows/build-source">Build Source</a></li></ul></li><li class="menu-mlid-2552 menu-item-2552"><a href="/developers/develop/building/thin-linux">Thin - Linux</a></li><li class="menu-mlid-2553 menu-item-2553"><a href="/developers/develop/building/thin-windows">Thin - Windows</a></li><li class="last menu-mlid-2993 menu-item-2993"><a href="/developers/develop/building/alljoyn-js">AllJoyn.js</a></li></ul></li><li class="menu-parent menu-mlid-2554 menu-item-2554"><a href="/developers/develop/run-sample-apps">Running Samples</a><ul class="menu clearfix"><li class="first menu-parent menu-mlid-2555 menu-item-2555"><a href="/developers/develop/run-sample-apps/basic">Basic</a><ul class="menu clearfix"><li class="first menu-mlid-2556 menu-item-2556"><a href="/developers/develop/run-sample-apps/basic/android">Android</a></li><li class="menu-mlid-2557 menu-item-2557"><a href="/developers/develop/run-sample-apps/basic/linux">Linux</a></li><li class="menu-mlid-2558 menu-item-2558"><a href="/developers/develop/run-sample-apps/basic/ios-osx">iOS/OS X</a></li><li class="menu-mlid-2559 menu-item-2559"><a href="/developers/develop/run-sample-apps/basic/windows">Windows</a></li><li class="menu-mlid-2560 menu-item-2560"><a href="/developers/develop/run-sample-apps/basic/thin-linux">Thin - Linux</a></li><li class="last menu-mlid-2561 menu-item-2561"><a href="/developers/develop/run-sample-apps/basic/thin-windows">Thin - Windows</a></li></ul></li><li class="menu-parent menu-mlid-2562 menu-item-2562"><a href="/developers/develop/run-sample-apps/chat">Chat</a><ul class="menu clearfix"><li class="first menu-mlid-2563 menu-item-2563"><a href="/developers/develop/run-sample-apps/chat/android">Android</a></li><li class="menu-mlid-2564 menu-item-2564"><a href="/developers/develop/run-sample-apps/chat/linux">Linux</a></li><li class="menu-mlid-2565 menu-item-2565"><a href="/developers/develop/run-sample-apps/chat/ios-osx">iOS/OS X</a></li><li class="menu-mlid-2566 menu-item-2566"><a href="/developers/develop/run-sample-apps/chat/windows">Windows</a></li><li class="last menu-mlid-2567 menu-item-2567"><a href="/developers/develop/run-sample-apps/chat/thin-linux">Thin - Linux</a></li></ul></li><li class="menu-parent menu-mlid-2568 menu-item-2568"><a href="/developers/develop/run-sample-apps/about">About</a><ul class="menu clearfix"><li class="first menu-mlid-2569 menu-item-2569"><a href="/developers/develop/run-sample-apps/about/linux">Linux</a></li><li class="menu-mlid-2570 menu-item-2570"><a href="/developers/develop/run-sample-apps/about/ios-osx">iOS/OS X</a></li><li class="last menu-mlid-2646 menu-item-2646"><a href="/developers/develop/run-sample-apps/about/windows">Windows</a></li></ul></li><li class="menu-mlid-2934 menu-item-2934"><a href="/developers/develop/run-sample-apps/observer">Observer</a></li><li class="menu-parent menu-mlid-2571 menu-item-2571"><a href="/developers/develop/run-sample-apps/config">Config</a><ul class="menu clearfix"><li class="first menu-mlid-2572 menu-item-2572"><a href="/developers/develop/run-sample-apps/config/android">Android</a></li><li class="menu-mlid-2573 menu-item-2573"><a href="/developers/develop/run-sample-apps/config/linux">Linux</a></li><li class="menu-mlid-2574 menu-item-2574"><a href="/developers/develop/run-sample-apps/config/ios-osx">iOS/OS X</a></li><li class="last menu-mlid-2575 menu-item-2575"><a href="/developers/develop/run-sample-apps/config/thin-linux">Thin - Linux</a></li></ul></li><li class="menu-parent menu-mlid-2576 menu-item-2576"><a href="/developers/develop/run-sample-apps/controlpanel">Control Panel</a><ul class="menu clearfix"><li class="first menu-mlid-2577 menu-item-2577"><a href="/developers/develop/run-sample-apps/controlpanel/android">Android</a></li><li class="menu-mlid-2578 menu-item-2578"><a href="/developers/develop/run-sample-apps/controlpanel/linux">Linux</a></li><li class="menu-mlid-2579 menu-item-2579"><a href="/developers/develop/run-sample-apps/controlpanel/ios-osx">iOS/OS X</a></li><li class="last menu-mlid-2580 menu-item-2580"><a href="/developers/develop/run-sample-apps/controlpanel/thin-linux">Thin - Linux</a></li></ul></li><li class="menu-parent menu-mlid-2581 menu-item-2581"><a href="/developers/develop/run-sample-apps/notification">Notification</a><ul class="menu clearfix"><li class="first menu-mlid-2582 menu-item-2582"><a href="/developers/develop/run-sample-apps/notification/android">Android</a></li><li class="menu-mlid-2583 menu-item-2583"><a href="/developers/develop/run-sample-apps/notification/linux">Linux</a></li><li class="menu-mlid-2584 menu-item-2584"><a href="/developers/develop/run-sample-apps/notification/ios-osx">iOS/OS X</a></li><li class="last menu-mlid-2585 menu-item-2585"><a href="/developers/develop/run-sample-apps/notification/thin-linux">Thin - Linux</a></li></ul></li><li class="menu-parent menu-mlid-2586 menu-item-2586"><a href="/developers/develop/run-sample-apps/onboarding">Onboarding</a><ul class="menu clearfix"><li class="first menu-mlid-2587 menu-item-2587"><a href="/developers/develop/run-sample-apps/onboarding/android">Android</a></li><li class="menu-mlid-2588 menu-item-2588"><a href="/developers/develop/run-sample-apps/onboarding/linux">Linux</a></li><li class="last menu-mlid-2589 menu-item-2589"><a href="/developers/develop/run-sample-apps/onboarding/ios-osx">iOS/OS X</a></li></ul></li><li class="menu-parent menu-mlid-2590 menu-item-2590"><a href="/developers/develop/run-sample-apps/acserver">AC Server</a><ul class="menu clearfix"><li class="first menu-mlid-2591 menu-item-2591"><a href="/developers/develop/run-sample-apps/acserver/linux">Linux</a></li><li class="last menu-mlid-2592 menu-item-2592"><a href="/developers/develop/run-sample-apps/acserver/thin-linux">Thin - Linux</a></li></ul></li><li class="menu-parent menu-mlid-2593 menu-item-2593"><a href="/developers/develop/run-sample-apps/test">Command Line Apps</a><ul class="menu clearfix"><li class="first last menu-mlid-2594 menu-item-2594"><a href="/developers/develop/run-sample-apps/test/sessions">Sessions</a></li></ul></li><li class="last menu-mlid-2994 menu-item-2994"><a href="/developers/develop/run-sample-apps/alljoyn-js">AllJoyn.js</a></li></ul></li><li class="menu-parent menu-mlid-2595 menu-item-2595"><a href="/developers/develop/api-guide">API Guide</a><ul class="menu clearfix"><li class="first menu-parent menu-mlid-2596 menu-item-2596"><a href="/developers/develop/api-guide/core">Core</a><ul class="menu clearfix"><li class="first menu-mlid-2939 menu-item-2939"><a href="/developers/develop/api-guide/core/java">java</a></li><li class="menu-mlid-2940 menu-item-2940"><a href="/developers/develop/api-guide/core/objc">Objective-C</a></li><li class="menu-mlid-2647 menu-item-2647"><a href="/developers/develop/api-guide/core/alljoyn-transports-best-practices">Alljoyn Transports Best Practices</a></li><li class="menu-mlid-2648 menu-item-2648"><a href="/developers/develop/api-guide/core/auto-ping">AutoPinger</a></li><li class="menu-mlid-2935 menu-item-2935"><a href="/developers/develop/api-guide/core/observer">Observer</a></li><li class="last menu-mlid-2936 menu-item-2936"><a href="/developers/develop/api-guide/core/propcache">Property Cache</a></li></ul></li><li class="menu-parent menu-mlid-2599 menu-item-2599"><a href="/developers/develop/api-guide/about">About</a><ul class="menu clearfix"><li class="first menu-mlid-2941 menu-item-2941"><a href="/developers/develop/api-guide/about/java">java</a></li><li class="menu-mlid-2942 menu-item-2942"><a href="/developers/develop/api-guide/about/cpp">C++</a></li><li class="menu-mlid-2943 menu-item-2943"><a href="/developers/develop/api-guide/about/objc">Objective-C</a></li><li class="menu-mlid-2944 menu-item-2944"><a href="/developers/develop/api-guide/about/c-thin">C (Thin Core)</a></li><li class="menu-mlid-2945 menu-item-2945"><a href="/developers/develop/api-guide/about/java-legacy">java Legacy</a></li><li class="menu-mlid-2946 menu-item-2946"><a href="/developers/develop/api-guide/about/cpp-legacy">C++ Legacy</a></li><li class="last menu-mlid-2947 menu-item-2947"><a href="/developers/develop/api-guide/about/objc-legacy">Objective-C Legacy</a></li></ul></li><li class="menu-parent menu-mlid-2604 menu-item-2604"><a href="/developers/develop/api-guide/onboarding">Onboarding</a><ul class="menu clearfix"><li class="first menu-mlid-2948 menu-item-2948"><a href="/developers/develop/api-guide/onboarding/java">java</a></li><li class="last menu-mlid-2949 menu-item-2949"><a href="/developers/develop/api-guide/onboarding/objc">Objective-C</a></li></ul></li><li class="menu-parent menu-mlid-2607 menu-item-2607"><a href="/developers/develop/api-guide/config">Configuration</a><ul class="menu clearfix"><li class="first menu-mlid-2950 menu-item-2950"><a href="/developers/develop/api-guide/config/java">java</a></li><li class="menu-mlid-2951 menu-item-2951"><a href="/developers/develop/api-guide/config/cpp">C++</a></li><li class="menu-mlid-2952 menu-item-2952"><a href="/developers/develop/api-guide/config/objc">Objective-C</a></li><li class="last menu-mlid-2953 menu-item-2953"><a href="/developers/develop/api-guide/config/c-thin">C (Thin Core)</a></li></ul></li><li class="menu-parent menu-mlid-2612 menu-item-2612"><a href="/developers/develop/api-guide/notification">Notification</a><ul class="menu clearfix"><li class="first menu-mlid-2954 menu-item-2954"><a href="/developers/develop/api-guide/notification/java">java</a></li><li class="menu-mlid-2955 menu-item-2955"><a href="/developers/develop/api-guide/notification/cpp">C++</a></li><li class="menu-mlid-2956 menu-item-2956"><a href="/developers/develop/api-guide/notification/objc">Objective-C</a></li><li class="last menu-mlid-2957 menu-item-2957"><a href="/developers/develop/api-guide/notification/c-thin">C (Thin Core)</a></li></ul></li><li class="menu-parent menu-mlid-2617 menu-item-2617"><a href="/developers/develop/api-guide/controlpanel">Control Panel</a><ul class="menu clearfix"><li class="first menu-mlid-2958 menu-item-2958"><a href="/developers/develop/api-guide/controlpanel/java">java</a></li><li class="menu-mlid-2959 menu-item-2959"><a href="/developers/develop/api-guide/controlpanel/cpp">C++</a></li><li class="menu-mlid-2960 menu-item-2960"><a href="/developers/develop/api-guide/controlpanel/objc">Objective-C</a></li><li class="last menu-mlid-2961 menu-item-2961"><a href="/developers/develop/api-guide/controlpanel/c-thin">C (Thin Core)</a></li></ul></li><li class="menu-parent menu-mlid-2622 menu-item-2622"><a href="/developers/develop/api-guide/audio-streaming">Audio Streaming</a><ul class="menu clearfix"><li class="first last menu-mlid-2962 menu-item-2962"><a href="/developers/develop/api-guide/audio-streaming/cpp">C++</a></li></ul></li><li class="last menu-mlid-2624 menu-item-2624"><a href="/developers/develop/api-guide/events-and-actions">Events and Actions</a></li></ul></li><li class="menu-mlid-2625 menu-item-2625"><a href="/developers/develop/api-reference">API Reference</a></li><li class="menu-parent menu-mlid-2626 menu-item-2626"><a href="/developers/develop/debug">Debug</a><ul class="menu clearfix"><li class="first last menu-mlid-2627 menu-item-2627"><a href="/developers/develop/debug/common-issues">Common Issues</a></li></ul></li><li class="menu-parent menu-mlid-2628 menu-item-2628"><a href="/developers/develop/tutorial">Tutorial</a><ul class="menu clearfix"><li class="first menu-mlid-2629 menu-item-2629"><a href="/developers/develop/tutorial/core">Core</a></li><li class="menu-mlid-2630 menu-item-2630"><a href="/developers/develop/tutorial/ios">iOS</a></li><li class="menu-mlid-2631 menu-item-2631"><a href="/developers/develop/tutorial/thin-app">Thin App</a></li><li class="menu-mlid-2632 menu-item-2632"><a href="/developers/develop/tutorial/arduino-and-gt202">Arduino + GT202</a></li><li class="last menu-mlid-2633 menu-item-2633"><a href="/developers/develop/tutorial/videos">Videos</a></li></ul></li><li class="last menu-mlid-2634 menu-item-2634"><a href="/developers/develop/ask">Ask Forum</a></li></ul></li><li class="last menu-parent has-children menu-mlid-2636 menu-item-2636"><a href="/developers/contribute">Contribute</a><ul class="menu clearfix"><li class="first last menu-mlid-2637 menu-item-2637"><a href="/developers/contribute/project-lifecycle">Project Lifecycle</a></li></ul></li></ul></li><li class="menu-mlid-2466 menu-item-2466"><a href="/showcase-products-using-alljoyn">Showcase</a></li><li class="menu-parent menu-mlid-2487 menu-item-2487"><a href="/allseen-alliance-certification">Certification</a><ul class="menu clearfix"><li class="first menu-mlid-2488 menu-item-2488"><a href="/certification/how-validate-your-designed-allseen-product">How To Validate Your Product</a></li><li class="last menu-mlid-2489 menu-item-2489"><a href="/certification/faq">FAQ</a></li></ul></li><li class="last menu-parent menu-mlid-2421 menu-item-2421"><a href="/news-and-events">News &amp; Events</a><ul class="menu clearfix"><li class="first menu-mlid-2422 menu-item-2422"><a href="/news-and-events/newsroom/announcements">Announcements</a></li><li class="menu-mlid-2449 menu-item-2449"><a href="/news/videos">Videos</a></li><li class="menu-mlid-2423 menu-item-2423"><a href="/news-and-events/newsroom/in-the-news">In The News</a></li><li class="menu-mlid-2424 menu-item-2424"><a href="/news-and-events/events">Events</a></li><li class="menu-mlid-2448 menu-item-2448"><a href="/news-and-events/blogs">Blogs</a></li><li class="menu-mlid-2461 menu-item-2461"><a href="/news-and-events/newsletters">Newsletters</a></li><li class="last menu-mlid-2933 menu-item-2933"><a href="/news-and-events/videos">Videos</a></li></ul></li></ul></div>
+</div></div></section></div></div>      </div>
+            
+      
+      <div class="region region-sidebar-first sidebar"><div class="region-inner clearfix"><div id="block-menu-block-1" class="block block-menu-block"  role="navigation"><div class="block-inner clearfix">        <div class="block-content content"><div class="menu-block-wrapper menu-block-1 menu-name-main-menu parent-mlid-0 menu-level-3">
+  <ul class="menu clearfix"><li class="first menu-mlid-2505 menu-item-2505"><a href="/developers/learn/use-cases">Use Cases</a></li><li class="menu-mlid-2506 menu-item-2506"><a href="/developers/learn/architecture">Architecture</a></li><li class="menu-parent active-trail menu-mlid-2507 menu-item-2507"><a href="/developers/learn/core" class="active-trail">Core Framework</a><ul class="menu clearfix"><li class="first menu-parent menu-mlid-2508 menu-item-2508"><a href="/developers/learn/core/about-announcement">About Announcement</a><ul class="menu clearfix"><li class="first menu-mlid-2509 menu-item-2509"><a href="/developers/learn/core/about-announcement/interface">Interface</a></li><li class="last menu-mlid-2510 menu-item-2510"><a href="/developers/learn/core/about-announcement/interface-14-02">Interface 14.02</a></li></ul></li><li class="menu-mlid-2511 menu-item-2511"><a href="/developers/learn/core/events-and-actions">Events and Actions</a></li><li class="active-trail active menu-mlid-2992 menu-item-2992"><a href="/developers/learn/core/rn_config" class="active-trail active">Routing Node Configuration</a></li><li class="menu-mlid-2512 menu-item-2512"><a href="/developers/learn/core/standard-core">Standard Core</a></li><li class="menu-mlid-2513 menu-item-2513"><a href="/developers/learn/core/thin-core">Thin Core</a></li><li class="menu-parent menu-mlid-2514 menu-item-2514"><a href="/developers/learn/core/system-description">System Description</a><ul class="menu clearfix"><li class="first menu-mlid-2515 menu-item-2515"><a href="/developers/learn/core/system-description/system-architecture">System Architecture</a></li><li class="menu-mlid-2516 menu-item-2516"><a href="/developers/learn/core/system-description/advertisement-discovery">Advertisement and Discovery</a></li><li class="menu-mlid-2645 menu-item-2645"><a href="/developers/learn/core/system-description/alljoyn-transport">AllJoyn Transport</a></li><li class="menu-mlid-2517 menu-item-2517"><a href="/developers/learn/core/system-description/data-exchange">Data Exchange</a></li><li class="menu-mlid-2518 menu-item-2518"><a href="/developers/learn/core/system-description/alljoyn-session">AllJoyn Session</a></li><li class="menu-mlid-2519 menu-item-2519"><a href="/developers/learn/core/system-description/sessionless-signal">Sessionless Signal</a></li><li class="menu-mlid-2520 menu-item-2520"><a href="/developers/learn/core/system-description/alljoyn-security">AllJoyn Security</a></li><li class="menu-mlid-2521 menu-item-2521"><a href="/developers/learn/core/system-description/thin-apps">Thin Apps</a></li><li class="last menu-mlid-2522 menu-item-2522"><a href="/developers/learn/core/system-description/events-actions">Events and Actions</a></li></ul></li><li class="last menu-parent menu-mlid-2937 menu-item-2937"><a href="/developers/learn/core/security2_0">Security 2.0</a><ul class="menu clearfix"><li class="first last menu-mlid-2938 menu-item-2938"><a href="/developers/learn/core/security2_0/hld">High-Level Design</a></li></ul></li></ul></li><li class="menu-parent menu-mlid-2523 menu-item-2523"><a href="/developers/learn/base-services">Base Services</a><ul class="menu clearfix"><li class="first menu-parent menu-mlid-2524 menu-item-2524"><a href="/developers/learn/base-services/onboarding">Onboarding</a><ul class="menu clearfix"><li class="first menu-mlid-2525 menu-item-2525"><a href="/developers/learn/base-services/onboarding/interface">Interface</a></li><li class="last menu-mlid-2526 menu-item-2526"><a href="/developers/learn/base-services/onboarding/interface-14-02">Interface 14.02</a></li></ul></li><li class="menu-parent menu-mlid-2527 menu-item-2527"><a href="/developers/learn/base-services/configuration">Configuration</a><ul class="menu clearfix"><li class="first menu-mlid-2528 menu-item-2528"><a href="/developers/learn/base-services/configuration/interface">Interface</a></li><li class="last menu-mlid-2529 menu-item-2529"><a href="/developers/learn/base-services/configuration/interface-14-02">Interface 14.02</a></li></ul></li><li class="menu-parent menu-mlid-2530 menu-item-2530"><a href="/developers/learn/base-services/notification">Notification</a><ul class="menu clearfix"><li class="first menu-mlid-2531 menu-item-2531"><a href="/developers/learn/base-services/notification/interface">Interface</a></li><li class="last menu-mlid-2532 menu-item-2532"><a href="/developers/learn/base-services/notification/interface-14-02">Interface 14.02</a></li></ul></li><li class="menu-parent menu-mlid-2533 menu-item-2533"><a href="/developers/learn/base-services/controlpanel">ControlPanel</a><ul class="menu clearfix"><li class="first menu-mlid-2534 menu-item-2534"><a href="/developers/learn/base-services/controlpanel/interface">Interface</a></li><li class="last menu-mlid-2535 menu-item-2535"><a href="/developers/learn/base-services/controlpanel/interface-14-02">Interface 14.02</a></li></ul></li><li class="last menu-parent menu-mlid-2536 menu-item-2536"><a href="/developers/learn/base-services/audiostreaming">Audio Streaming</a><ul class="menu clearfix"><li class="first last menu-mlid-2537 menu-item-2537"><a href="/developers/learn/base-services/audiostreaming/interface">Interface</a></li></ul></li></ul></li><li class="last menu-mlid-2538 menu-item-2538"><a href="/developers/learn/glossary">Glossary</a></li></ul></div>
+</div></div></div></div></div>            <div id="content-column" role="main">
+        <div class="content-inner">
+
+          
+          <section id="main-content">
+
+                                      <header id="main-content-header">
+
+                                                  <h1 id="sub-title">
+                    Routing Node Configuration File                  </h1>
+                
+                
+              </header>
+                        
+                          <div id="content">
+                        <article id="node-4616" class="node node-developer-document article clearfix" about="/developers/learn/core/rn_config" typeof="sioc:Item foaf:Document" role="article">
+
+  
+      <span property="dc:title" content="Routing Node Configuration File" class="rdf-meta element-hidden"></span><span property="sioc:num_replies" content="0" datatype="xsd:integer" class="rdf-meta element-hidden"></span>
+  
+  <div class="node-content">
+  
+  <div class="field-body view-mode-full">
+    
+<p>The routing node (RN) configuration file is an XML file that controls the
+behavior of the RN and sets certain variables, such as timers, connection
+limits, and use case characteristics.</p>
+<p>An example config file may be found in the AllJoyn source distribution in
+<code>../alljoyn_core/router/test/conf/sample.conf</code></p>
+<p>Note that this sample configuration file would not be useful in practice.  It is
+merely intended to provide an example of how various elements and attributes
+are formatted.</p>
+<h2 id="xml-schema">XML Schema</h2>
+<p>An XML schema, which may be used to validate config files, may be found on the
+AllSeen Alliance website:</p>
+<p><a href="https://allseenalliance.org/schemas/busconfig.xsd">https://allseenalliance.org/schemas/busconfig.xsd</a></p>
+<p>The schema is also available in the source code distribution at:
+<code>../alljoyn_core/docs/busconfig.xsd</code></p>
+<p>The schema may be referenced in config files by including the following
+attributes in the <code>busconfig</code> (i.e., root) element:</p>
+<pre><code class="lang-xml"><code class="xml">&lt;busconfig
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="https://allseenalliance.org/schemas/busconfig.xsd"&gt;</code>
+</code></pre>
+<h2 id="default-configuration">Default Configuration</h2>
+<h3 id="bundled-routing-node">Bundled Routing Node</h3>
+<p>The bundled routing node consists of a routing node and a Standard Client
+application that run in a single process.</p>
+<p>As of v15.09, a user may compile AllJoyn with the scons variable <code>TEST_CONFIG</code>
+set to an absolute or relative path to a config file.  However, as suggested by
+the scons variable name, this method is intended for debug and test purposes.</p>
+<p>If the user does not provide a config file, then the bundled RN relies on a
+hardcoded configuration contained in the file <code>BundledRouter.cc</code>.</p>
+<p>Note that all config settings that apply to the standalone RN also apply to the
+bundled RN.</p>
+<p> <strong>Bundled RN hardcoded configuration:</strong></p>
+<pre><code class="lang-xml"><code class="xml">&lt;busconfig&gt;
+    &lt;type&gt;alljoyn_bundled&lt;/type&gt;
+    &lt;listen&gt;tcp:iface=*,port=0&lt;/listen&gt;
+    &lt;listen&gt;udp:iface=*,port=0&lt;/listen&gt;
+    &lt;limit name="auth_timeout"&gt;20000&lt;/limit&gt;
+    &lt;limit name="max_incomplete_connections"&gt;4&lt;/limit&gt;
+    &lt;limit name="max_completed_connections"&gt;16&lt;/limit&gt;
+    &lt;limit name="max_remote_clients_tcp"&gt;8&lt;/limit&gt;
+    &lt;limit name="max_remote_clients_udp"&gt;8&lt;/limit&gt;
+    &lt;property name="router_power_source"&gt;Battery powered and chargeable&lt;/property&gt;
+    &lt;property name="router_mobility"&gt;Intermediate mobility&lt;/property&gt;
+    &lt;property name="router_availability"&gt;3-6 hr&lt;/property&gt;
+    &lt;property name="router_node_connection"&gt;Wireless&lt;/property&gt;
+&lt;/busconfig&gt;</code>
+</code></pre>
+<h3 id="standalone-routing-node">Standalone Routing Node</h3>
+<p>The standalone RN runs as a compiled application named <code>alljoyn-daemon</code> on Linux.
+If the user does not specify a separate configuration file when alljoyn-daemon
+is started, or the <code>--internal</code> switch is used, then the RN will use a
+configuration that is hardcoded in the source.</p>
+<p>Note that the standalone RN is also available as a service on Windows 10.  The
+Windows 10 service uses a hard-coded configuration and does not accept any
+parameters or switches.  The examples in this document that describe passing
+parameters or options to <code>alljoyn-daemon</code> are referring to the Linux
+implementation.</p>
+<p><strong>Example (Linux):</strong> start routing node using internal config</p>
+<pre><code><code>./alljoyn-daemon
+
+    --OR--
+
+./alljoyn-daemon --internal</code>
+</code></pre><p><strong>Standalone RN hardcoded configuration (Linux):</strong></p>
+<pre><code class="lang-xml"><code class="xml">&lt;busconfig&gt;
+    &lt;type&gt;alljoyn&lt;/type&gt;
+    &lt;listen&gt;unix:abstract=alljoyn&lt;/listen&gt;
+    &lt;listen&gt;tcp:iface=*,port=9955&lt;/listen&gt;
+    &lt;listen&gt;udp:iface=*,port=9955&lt;/listen&gt;
+    &lt;limit name="auth_timeout"&gt;20000&lt;/limit&gt;
+    &lt;limit name="max_incomplete_connections"&gt;16&lt;/limit&gt;
+    &lt;limit name="max_completed_connections"&gt;32&lt;/limit&gt;
+    &lt;limit name="max_remote_clients_tcp"&gt;0&lt;/limit&gt;
+    &lt;limit name="max_remote_clients_udp"&gt;0&lt;/limit&gt;
+&lt;/busconfig&gt;</code>
+</code></pre>
+<h2 id="using-an-external-config-file">Using an External Config File</h2>
+<p>As previously mentioned, a user-defined, external configuration file may be
+passed to a standalone RN.  In order to start the standalone RN with an
+external configuration file, enter the following command (Linux):</p>
+<pre><code><code>./alljoyn-daemon --config-file=./my_rn_config.xml</code>
+</code></pre><h2 id="minimal-config-file">Minimal Config File</h2>
+<p>A minimal config file requires the root element (<code>&lt;busconfig&gt;</code>) and a single
+<code>&lt;listen&gt;</code> element.</p>
+<p>For example:</p>
+<pre><code class="lang-xml"><code class="xml">&lt;busconfig&gt;
+    &lt;listen&gt;tcp:iface=*,port=9955&lt;/listen&gt;
+&lt;/busconfig&gt;</code>
+</code></pre>
+<p>This will result in a valid config file, but with very rudimentary
+functionality.  In fact, this configuration file would prevent the connection
+of any leaf nodes, since it does not override the default values of 0 for
+<code>max_remote_clients_tcp</code> and <code>max_remote_clients_udp</code> (i.e., <code>&lt;limit&gt;</code> attributes).
+Therefore, it would only be able to connect to other routing nodes.</p>
+<h2 id="review-of-config-file-elements-and-attributes">Review of Config File Elements and Attributes</h2>
+<p>The default configuration settings should be suitable for most use cases.
+However, some applications may benefit from using different settings.  Therefore,
+the information below is intended to provide some guidance in using
+these settings.</p>
+<p>The following is an alphabetical list of top-level XML
+elements (i.e., immediate child elements of the root element <code>&lt;busconfig&gt;</code>)
+available for use in the config file, along with a description of their meaning
+and application.  Any child elements will be described below their parent
+element.  Likewise for attributes.</p>
+<h3 id="-auth-"><code>&lt;auth&gt;</code></h3>
+<p>Not used by AllJoyn.  Included for backward compatibility.  Including this
+element in the config file will have no effect.</p>
+<h3 id="-flag-"><code>&lt;flag&gt;</code></h3>
+<p><strong>Note:</strong>
+The content of the flag element may be either 'true' or 'false'.  All flags
+default to 'false'</p>
+<h4 id="name-attribute-required-">name attribute (required)</h4>
+<table><thead><tr><th>name</th>
+<th>description</th>
+<th>default</th>
+<th>Notes</th>
+</tr></thead><tbody><tr><td>ns_enable_v1</td>
+<td>enable legacy name service if true</td>
+<td>true</td>
+<td>Used for debugging.  Do not use in deployed production applications.</td>
+</tr><tr><td>ns_disable_ipv4</td>
+<td>disable IPv4 multicast if true</td>
+<td>false</td>
+<td>Used for debugging.  Do not use in deployed production applications.</td>
+</tr><tr><td>ns_disable_ipv6</td>
+<td>disable IPv6 multicast if true</td>
+<td>false</td>
+<td>Used for debugging.  Do not use in deployed production applications.</td>
+</tr><tr><td>ns_disable_directed_broadcast</td>
+<td>disable subnet broadcast if true</td>
+<td>false</td>
+<td>Used for debugging.  Do not use in deployed production applications.</td>
+</tr></tbody></table><h4 id="examples">Examples</h4>
+<ol><li><code>&lt;flag name="ns_enable_v1"&gt;false&lt;/flag&gt;</code></li>
+<li><code>&lt;flag name="ns_disable_ipv6"&gt;true&lt;/flag&gt;</code></li>
+</ol><h3 id="-fork-"><code>&lt;fork&gt;</code></h3>
+<p>The fork element is empty.  It does not contain any content, child elements, or
+attributes.</p>
+<p>If present in the config file, the routing node (daemon) will run in the
+background.</p>
+<p>Note that <code>&lt;fork&gt;</code> must be enabled in order for <code>&lt;pidfile&gt;</code> to be effective.</p>
+<p>On Linux, the config file setting for <code>&lt;fork&gt;</code> may be overridden from the
+command line, by using the <code>--fork</code> or <code>--no-fork</code> options.</p>
+<h4 id="examples">Examples</h4>
+<ol><li><code>&lt;fork/&gt;</code></li>
+</ol><h3 id="-include-"><code>&lt;include&gt;</code></h3>
+<p>Specify the path to another configuration file, whose contents will be
+included at the point where the <code>&lt;include&gt;</code> element is inserted.</p>
+<p>The specified path may be absolute or relative.  If the path is relative, then
+it is relative to the configuration file using the
+<code>&lt;include&gt;</code>.</p>
+<p>In addition, the path must be to a file with the file
+extension <code>.conf</code>.</p>
+<h4 id="ignore_missing-attribute-optional-">ignore_missing attribute (optional)</h4>
+<p>May be set to "yes" or "no".  The default is "no".</p>
+<table><thead><tr><th>ignore_missing</th>
+<th>description</th>
+</tr></thead><tbody><tr><td>no (default)</td>
+<td>a fatal error will occur if the file doesn't exist</td>
+</tr><tr><td>yes</td>
+<td>silently ignore if the file doesn't exist</td>
+</tr></tbody></table><h4 id="examples">Examples</h4>
+<ol><li><code>&lt;include&gt;../configs/my_config.conf&lt;/include&gt;</code></li>
+<li><code>&lt;include ignore_missing="yes"&gt;my_config.conf&lt;/include&gt;</code></li>
+<li><code>&lt;include ignore_missing="no"&gt;/home/bob/configs/my_config.conf&lt;/include&gt;</code></li>
+</ol><h3 id="-includedir-"><code>&lt;includedir&gt;</code></h3>
+<p>Similar to <code>&lt;include&gt;</code>, except that, instead of specifying the path to a
+file, specify the path to a directory containing configuration files.
+All files with the <code>.conf</code> file extension will be included.</p>
+<p>Note that the order in which the files in the directory are included is
+undefined and, therefore, users should avoid any config file include-order
+dependency when using this element.</p>
+<p>The specified path may be absolute or relative.  If the path is relative, then
+it is relative to the configuration file using the
+<code>&lt;includedir&gt;</code></p>
+<h4 id="ignore_missing-attribute-optional-">ignore_missing attribute (optional)</h4>
+<p>May be set to "yes" or "no".  The default is "no".</p>
+<table><thead><tr><th>ignore_missing</th>
+<th>description</th>
+</tr></thead><tbody><tr><td>no (default)</td>
+<td>a fatal error will occur if the directory doesn't exist</td>
+</tr><tr><td>yes</td>
+<td>silently ignore if the directory doesn't exist</td>
+</tr></tbody></table><h4 id="examples">Examples</h4>
+<ol><li><code>&lt;includedir&gt;../configs&lt;/includedir&gt;</code></li>
+<li><code>&lt;includedir ignore_missing="yes"&gt;configs&lt;/includedir&gt;</code></li>
+<li><code>&lt;includedir ignore_missing="no"&gt;/home/bob/configs&lt;/includedir&gt;</code></li>
+</ol><h3 id="-limit-"><code>&lt;limit&gt;</code></h3>
+<p>Sets variables for various timeouts and connection limits to an unsigned,
+32-bit integer.</p>
+<h4 id="name-attribute-required-">name attribute (required)</h4>
+<table><thead><tr><th>name</th>
+<th>description</th>
+<th>default</th>
+</tr></thead><tbody><tr><td>auth_timeout</td>
+<td>The maximum amount of time that incoming connections are allowed to complete authentication.  Beyond this limit, incoming connections may be aborted.</td>
+<td>20000 (ms)</td>
+</tr><tr><td>session_setup_timeout</td>
+<td>The maximum amount of time that incoming connections are allowed to set up session routes. Beyond this limit, incoming connections may be disconnected.</td>
+<td>30000 (ms)</td>
+</tr><tr><td>max_incomplete_connections</td>
+<td>The maximum number of incoming connections that can be in the process of authenticating.  If starting to authenticate a new connection would mean exceeding this number, then the new connection will be dropped.</td>
+<td>10 (connections)</td>
+</tr><tr><td>max_completed_connections</td>
+<td>The maximum number of connections (inbound and outbound) allowed for each tranport.  This means that the total number of completed connections allowed for TCP and UDP is twice this value.<br /><br />If starting to process a new connection would mean exceeding this number, then the new connection will be dropped.</td>
+<td>50 (connections)</td>
+</tr><tr><td>max_remote_clients_tcp</td>
+<td>The maximum number of remote clients using TCP.<br /><br />Note:  this value <em>must</em> be overridden when using an external configuration file in order to enable TCP connections to leaf nodes.  The default internal configuration file already overrides this value.<br /><br />Note that this setting may be useful for applications that have a specific requirement to prevent leaf nodes from connecting; however, for generic RNs, this value should not be zero.</td>
+<td>0 (connections)</td>
+</tr><tr><td>max_remote_clients_udp</td>
+<td>The maximum number of remote clients using UDP.<br /><br />Note:  this value <em>must</em> be overridden when using an external configuration file in order to enable UDP connections to leaf nodes.  The default internal configuration file already overrides this value.<br /><br />Note that this setting may be useful for applications that have a specific requirement to prevent leaf nodes from connecting; however, for generic RNs, this value should not be zero.</td>
+<td>0 (connections)</td>
+</tr></tbody></table><h5 id="test-hooks-_only_">Test hooks <em>only</em></h5>
+<p>Many of the limits found in the source code are hooks for
+testing AllJoyn and are not useful for application development or end-products.
+For informational purposes, these are listed below, however, please do not
+use them for production code, as they may have undesirable or unpredictable
+behavior.</p>
+<table><thead><tr><th><strong>DO NOT USE</strong></th>
+<th></th>
+</tr></thead><tbody><tr><td>slap_min_idle_timeout</td>
+<td>udp_timewait</td>
+</tr><tr><td>slap_max_idle_timeout</td>
+<td>udp_segbmax</td>
+</tr><tr><td>slap_default_idle_timeout</td>
+<td>udp_segmax</td>
+</tr><tr><td>slap_max_probe_timeout</td>
+<td>udp_fast_retransmit_ack_counter</td>
+</tr><tr><td>slap_default_probe_timeout</td>
+<td>sls_backoff</td>
+</tr><tr><td>udp_connect_timeout</td>
+<td>sls_backoff_linear</td>
+</tr><tr><td>udp_connect_retries</td>
+<td>sls_backoff_exponential</td>
+</tr><tr><td>udp_initial_data_timeout</td>
+<td>sls_backoff_max</td>
+</tr><tr><td>udp_total_data_retry_timeout</td>
+<td>sls_preferred_transports</td>
+</tr><tr><td>udp_min_data_retries</td>
+<td>tcp_default_probe_timeout</td>
+</tr><tr><td>udp_persist_interval</td>
+<td>tcp_min_idle_timeout</td>
+</tr><tr><td>udp_total_app_timeout</td>
+<td>tcp_max_idle_timeout</td>
+</tr><tr><td>udp_link_timeout</td>
+<td>tcp_default_idle_timeout</td>
+</tr><tr><td>udp_keepalive_retries</td>
+<td>tcp_max_probe_timeout</td>
+</tr><tr><td>udp_delayed_ack_timeout</td>
+<td>dt_min_idle_timeout</td>
+</tr><tr><td>dt_max_idle_timeout</td>
+<td>dt_default_idle_timeout</td>
+</tr><tr><td>dt_max_probe_timeout</td>
+<td>dt_default_probe_timeout</td>
+</tr></tbody></table><h4 id="examples">Examples</h4>
+<ol><li><code>&lt;limit name="auth_timeout"&gt;20000&lt;/limit&gt;</code></li>
+<li><code>&lt;limit name="max_incomplete_connections"&gt;16&lt;/limit&gt;</code></li>
+</ol><h3 id="-listen-"><code>&lt;listen&gt;</code></h3>
+<p>Identifies an address on which the bus attachment should listen for incoming
+connections. This address must be a valid URI that begins with an AllJoyn
+transport name, followed by appropriate parameters and options.</p>
+<p>A configuration file must contain at least one
+<code>&lt;listen&gt;</code> element.  In addition, a configuration file may contain multiple
+<code>&lt;listen&gt;</code> elements, including for the same transport, as long as the specified
+transport and other parameters are valid and supported by the host platform.</p>
+<p>Duplicate <code>&lt;listen&gt;</code> elements will be ignored (with a
+warning message).  Invalid <code>&lt;listen&gt;</code> elements
+will result in a fatal error, unless there is a valid <code>&lt;listen&gt;</code> element
+available, in which case the invalid <code>&lt;listen&gt;</code> element will be ignored (with a
+warning message).</p>
+<h4 id="descripton-and-format">Descripton and Format</h4>
+<table><thead><tr><th>Protocol or Transport Name</th>
+<th>Description</th>
+<th>Format</th>
+<th>Example</th>
+</tr></thead><tbody><tr><td>tcp</td>
+<td>AllJoyn over TCP</td>
+<td><code>tcp:(iface=&lt;interface&gt;</code> | <code>addr=&lt;IPv4 address),port=&lt;port number&gt;</code></td>
+<td><code>tcp:iface=lo,port=9955</code></td>
+</tr><tr><td>udp</td>
+<td>AllJoyn over UDP</td>
+<td><code>udp:(iface=&lt;interface&gt;</code> | <code>addr=&lt;IPv4 address),port=&lt;port number&gt;</code></td>
+<td><code>udp:iface=*,port=9955</code></td>
+</tr><tr><td>unix</td>
+<td>Unix domain socket.  Applicable only for standalone routing nodes on POSIX platforms.</td>
+<td><code>unix:(abstract</code> &amp;#124 <code>path)=&lt;named socket&gt;</code></td>
+<td><code>unix:abstract=alljoyn</code></td>
+</tr><tr><td>slap</td>
+<td>Serial Line over AllJoyn Protocol. Used to provide an interface between an AllJoyn embedded platform and a POSIX-based routing node.</td>
+<td><code>slap:type=&lt;com interface type&gt;,dev=&lt;serial port&gt;,baud=&lt;baud rate&gt;</code></td>
+<td><code>slap:type=uart,dev=/dev/ttyUSB0,baud=115200</code></td>
+</tr><tr><td>npipe</td>
+<td>Windows 10 named pipe protocol</td>
+<td><code>npipe:</code><br />(Note: no options or other parameters available)</td>
+<td><code>npipe:</code></td>
+</tr></tbody></table><h4 id="format-options">Format options</h4>
+<table><thead><tr><th>Option Name</th>
+<th>Content</th>
+<th>Use Wildcard?</th>
+<th>Notes</th>
+</tr></thead><tbody><tr><td>iface</td>
+<td>Valid network interface name (see definition of <code>ifName</code> in RFC 2863) on the device that is hosting the RN.  For example, <code>eth0</code> on Linux, or <code>Ethernet_32803</code> on Windows.</td>
+<td>Yes</td>
+<td><code>iface</code> and <code>addr</code> are mutually exclusive<br /><code>iface</code> is preferred over <code>addr</code></td>
+</tr><tr><td>addr</td>
+<td>Valid IPv4 address</td>
+<td>Yes</td>
+<td><code>iface</code> and <code>addr</code> are mutually exclusive<br /><code>addr</code> primarily exists for backward compatibility.  Prefer <code>iface</code>, instead.</td>
+</tr><tr><td>port</td>
+<td>Valid TCP or UDP port number</td>
+<td>No</td>
+<td><code>port=0</code> indicates that the transport will use an ephemeral port.</td>
+</tr><tr><td>abstract</td>
+<td>Named socket</td>
+<td>No</td>
+<td>Linux only.<br /><code>unix:abstract=alljoyn</code> is the default because applications look for the "alljoyn" socket name by default</td>
+</tr><tr><td>path</td>
+<td>POSIX named socket</td>
+<td>No</td>
+<td>The specified path must refer to an existing named socket.</td>
+</tr><tr><td>type</td>
+<td>Communications interface type.</td>
+<td>No</td>
+<td>At this time, only <code>uart</code> is supported.</td>
+</tr><tr><td>dev</td>
+<td>Serial port</td>
+<td>No</td>
+<td>POSIX platform specific.<br />Only tested on Linux.</td>
+</tr><tr><td>baud</td>
+<td>Baud rate of the specified serial port.</td>
+<td>No</td>
+</tr></tbody></table><h3 id="-pidfile-"><code>&lt;pidfile&gt;</code></h3>
+<p>Records the routing node process ID (PID) to the specified file.  If the file
+does not exist, it will be created.  If the file does exist, it will be
+over-written.</p>
+<p><strong>IMPORTANT NOTE:</strong> <code>&lt;pidfile&gt;</code> is ONLY effective if <code>&lt;fork&gt;</code> is also
+specified.  Alternatively, the routing node may be started with the <code>--fork</code>
+option (Linux).</p>
+<h3 id="-policy-"><code>&lt;policy&gt;</code></h3>
+<p>Defines a security policy to be applied to a particular
+set of connections to the bus. A policy is made up of <code>&lt;allow&gt;</code> and <code>&lt;deny&gt;</code>
+elements. Policies are analogous to a firewall in that they allow expected
+traffic and prevent unexpected traffic.</p>
+<p>Policies applied later will override those applied earlier, when the policies
+overlap.</p>
+<h4 id="attributes">Attributes</h4>
+<p>The <code>&lt;policy&gt;</code> element must include one of the following attributes, which are
+mutually exclusive.  A fatal error will be generated if more than one attribute
+is present.</p>
+<table><thead><tr><th>Attribute</th>
+<th>Contents</th>
+<th>Priority</th>
+</tr></thead><tbody><tr><td>context</td>
+<td>"default" OR "mandatory"</td>
+<td><code>context="default"</code> is the lowest priority. Policy rules in this category apply if none of the rules match from the other categories.<br /><br /><code>context="mandatory"</code> is the highest priority. Policy rules in this category override rules on all other categories.</td>
+</tr><tr><td>user</td>
+<td>username or userid</td>
+<td><code>user="uid"</code> is higher priority than context="default" and group="gid", but lower priority than context="mandatory". Policy rules in this category override those in context="default" and group="gid".</td>
+</tr><tr><td>group</td>
+<td>group name or gid</td>
+<td><code>group="gid"</code> is higher priority than context="default" and lower priority than user="uid". Policy rules in this category override those in context="default".</td>
+</tr></tbody></table><h4 id="-allow-and-deny-"><code>&lt;allow&gt;</code> and <code>&lt;deny&gt;</code></h4>
+<p>A <code>&lt;policy&gt;</code> must contain at least one <code>&lt;allow&gt;</code> or <code>&lt;deny&gt;</code> element.  However,
+a single <code>&lt;policy&gt;</code> with only an <code>&lt;allow&gt;</code> element is not meaningful for AllJoyn,
+since all traffic is allowed by default.  Instead, an <code>&lt;allow&gt;</code> element
+primarily functions as an exception to previous <code>&lt;deny&gt;</code> elements.</p>
+<h5 id="attributes-for-allow-and-deny-elements">Attributes for <code>&lt;allow&gt;</code> and <code>&lt;deny&gt;</code> elements</h5>
+<table><thead><tr><th>Attribute</th>
+<th>Contents</th>
+<th>Example</th>
+<th>Notes</th>
+</tr></thead><tbody><tr><td>user</td>
+<td>username or userid</td>
+<td><code>user="joes"</code></td>
+<td>On POSIX devices, allow or disallow applications on the same device to connect to the bus.<br /><br />May use wildcard, e.g. <code>user="*"</code></td>
+</tr><tr><td>group</td>
+<td>group name or gid</td>
+<td><code>group="enemies"</code></td>
+<td>On POSIX devices, allow or disallow applications on the same device to connect to the bus.<br /><br />May use wildcard, e.g. <code>group="*"</code></td>
+</tr><tr><td>own</td>
+<td>bus name</td>
+<td><code>own="com.companyA.ProductA"</code></td>
+<td>Allows or disallows leaf nodes to request ownership of a bus name.<br /><br />Uses reverse domain name notation. May use wildcard, e.g. <code>own="*"</code></td>
+</tr><tr><td>own_prefix</td>
+<td>bus name prefix</td>
+<td><code>own_prefix="com.companyA"</code> would match <code>com.companyA.productA</code> and <code>com.companyA.productB</code></td>
+<td>Allows or disallows leaf nodes to request ownership of a bus name.<br /><br />Uses reverse domain name notation.</td>
+</tr><tr><td>send_error / receive_error</td>
+<td>Enable or disable specific error messages for sending or receiving</td>
+<td><code>receive_error="org.alljoyn.Error.Foo"</code></td>
+<td>Uses reverse domain name notation. May use standalone wildcard, e.g. <code>send_error="*"</code></td>
+</tr><tr><td>send_interface / receive_interface</td>
+<td>Enable or disable specific interfaces for sending or receiving</td>
+<td><code>receive_interface="com.companyA.InterfaceB"</code></td>
+<td>Uses reverse domain name notation. May use standalone wildcard, e.g. <code>send_interface="*"</code></td>
+</tr><tr><td>send_member / receive_member</td>
+<td>Enable or disable signals or methods for sending or receiving</td>
+<td><code>receive_member="some_signal_name"</code></td>
+<td></td>
+</tr><tr><td>send_path / receive_path</td>
+<td>Enable or disable specific object paths for sending or receiving</td>
+<td><code>send_path="/org/alljoyn/lighting"</code></td>
+<td></td>
+</tr><tr><td>send_path_prefix / receive_path_prefix</td>
+<td>Enable or disable all object paths that match a particular prefix</td>
+<td>For example <code>send_path_prefix="/org"</code> would match <code>/org/alljoyn</code>, <code>/org/CompanyA</code>, etc.</td>
+<td></td>
+</tr><tr><td>send_group / receive_group</td>
+<td>Group name or GID. Rule will match if the sending or receiving group matches the specified group.</td>
+<td><code>send_group="mycompany"</code></td>
+<td></td>
+</tr><tr><td>send_user</td>
+<td>Username or uderid. Rule will match if the receiving endpoint matches the specified user.</td>
+<td><code>send_user="joes"</code></td>
+<td></td>
+</tr><tr><td>receive_user</td>
+<td>Username or uderid. Rule will match if the sending endpoint matches the specified user.</td>
+<td><code>receive_user="beth"</code></td>
+<td></td>
+</tr><tr><td>send_same_user / receive_same_user</td>
+<td>Specify whether the same user credentials are associated with each connected application, or not.  Must be "true" or "false".</td>
+<td>For example <code>send_same_user="false"</code></td>
+<td></td>
+</tr><tr><td>receive_sender / send_destination</td>
+<td>Enable or disable sending to, or receiving from, specific bus names</td>
+<td><code>receive_sender="com.companyA.productB"</code></td>
+<td>Will match any associated alias, or the unique name</td>
+</tr><tr><td>send_type / receive_type</td>
+<td>Enable or disable message types.  Must be "method_call", "method_return", "signal", or "error"</td>
+<td><code>send_type="method_call"</code></td>
+<td></td>
+</tr></tbody></table><h4 id="example">Example</h4>
+<pre><code class="lang-xml"><code class="xml">&lt;policy context="default"&gt;
+  &lt;deny user="*"/&gt;
+  &lt;deny own="*"/&gt;
+
+  &lt;deny send_type="method_call"/&gt;
+  &lt;allow send_type="signal"/&gt;
+  &lt;allow send_type="method_return"/&gt;
+  &lt;allow send_type="error"/&gt;
+
+  &lt;allow send_destination="org.freedesktop.DBus"/&gt;
+  &lt;allow receive_sender="org.freedesktop.DBus"/&gt;
+
+  &lt;allow send_interface="org.alljoyn.Bus.Peer.Session"/&gt;
+
+  &lt;allow user="jethro"/&gt;
+
+&lt;/policy&gt;
+
+&lt;policy user="jethro"&gt;
+  &lt;allow send_type="method_call"/&gt;
+  &lt;allow send_type="signal"/&gt;
+  &lt;allow send_type="method_return"/&gt;
+  &lt;allow send_type="error"/&gt;
+
+  &lt;allow own_prefix="test"/&gt;
+&lt;/policy&gt;
+
+&lt;policy user="joe"&gt;
+   &lt;deny send_type="method_call" send_user="beth"/&gt;
+   &lt;deny receive_type="signal" receive_user="bob"/&gt;
+&lt;/policy&gt;</code>
+</code></pre>
+<h3 id="-property-"><code>&lt;property&gt;</code></h3>
+<p>Define characteristics related to router node selection and nameservice.</p>
+<h4 id="name-attribute-required-">name attribute (required)</h4>
+<table><thead><tr><th>Name</th>
+<th>Description</th>
+<th style="text-align:center">Default</th>
+<th>Notes</th>
+</tr></thead><tbody><tr><td>router_node_connection</td>
+<td>Used for routing node selection.<br /><br />One of the following:<br />"access point", "wired", "wireless"</td>
+<td style="text-align:center">"wireless"</td>
+<td>If one of the enumerated values is not used, then the value will be ignored, a warning message will be logged, and the default value will be used</td>
+</tr><tr><td>router_availability</td>
+<td>Used for routing node selection.<br /><br />One of the following:<br />"0-3 hr", "3-6 hr", "6-9 hr", "9-12 hr", "12-15 hr", "15-18 hr", "18-21 hr", "21-24 hr"</td>
+<td style="text-align:center">"3-6 hr"</td>
+<td>If one of the enumerated values is not used, then the value will be ignored, a warning message will be logged, and the default value will be used</td>
+</tr><tr><td>router_mobility</td>
+<td>Used for routing node selection.<br /><br />One of the following:<br />"always stationary", "low mobility", "intermediate mobility", "high mobility"</td>
+<td style="text-align:center">"intermediate mobility"</td>
+<td>If one of the enumerated values is not used, then the value will be ignored, a warning message will be logged, and the default value will be used</td>
+</tr><tr><td>router_power_source</td>
+<td>Used for routing node selection.<br /><br />One of the following:<br />"always ac powered", "battery powered and chargeable", "battery powered and not chargeable"</td>
+<td style="text-align:center">"Battery powered and chargeable"</td>
+<td>If one of the enumerated values is not used, then the value will be ignored, a warning message will be logged, and the default value will be used</td>
+</tr><tr><td>router_advertisement_prefix</td>
+<td>Used by thin core applications (TCA) to discover routing nodes.</td>
+<td style="text-align:center"><code>"org.alljoyn.BusNode."</code></td>
+<td>In order to maximize availability to TCA, generic routing nodes should not modify this value. However, it may be useful when deploying custom systems that need to limit the TCA connecting to the routing node due to specific performance constraints.</td>
+</tr></tbody></table><h4 id="example">Example</h4>
+<pre><code class="lang-xml"><code class="xml">&lt;property name="router_power_source"&gt;Battery powered and chargeable&lt;/property&gt;
+&lt;property name="router_mobility"&gt;Intermediate mobility&lt;/property&gt;
+&lt;property name="router_availability"&gt;3-6 hr&lt;/property&gt;
+&lt;property name="router_node_connection"&gt;Wireless&lt;/property&gt;</code>
+</code></pre>
+<h3 id="-syslog-"><code>&lt;syslog&gt;</code></h3>
+<p>Has no value or attributes.  If present, indicates that AllJoyn Daemon should
+send log messages to <code>syslog</code>.</p>
+<h4 id="example">Example</h4>
+<p><code>&lt;syslog/&gt;</code></p>
+<h3 id="-type-"><code>&lt;type&gt;</code></h3>
+<p>Not used by AllJoyn.  Included for backward compatibility.  Including this
+element in the config file will have no effect.</p>
+<h3 id="-user-"><code>&lt;user&gt;</code></h3>
+<p>Indicates that AllJoyn daemon should run as the indicated user instead of root.
+Note that the indicated user must be known to the system.</p>
+<h4 id="example">Example</h4>
+<p><code>&lt;user&gt;barts&lt;/user&gt;</code></p>
+  </div>
+  </div>
+
+  
+  
+</article>
+              </div>
+                                   
+          </section>
+
+          
+        </div>
+      </div>
+
+
+      
+    </div>
+  </div>
+</div>
+<div id="sticky-footer">
+  
+      <footer id="footer" class="clearfix" role="contentinfo">
+        <div class="region region-footer"><div class="region-inner clearfix"><nav id="block-system-user-menu" class="block block-system block-menu"  role="navigation"><div class="block-inner clearfix">        <div class="block-content content"><ul class="menu clearfix"><li class="first menu-item-537"><a href="/user/register" title="">Register</a></li><li class="last menu-item-536"><a href="/user/login" title="">Log In</a></li></ul></div></div></nav></div></div>    </footer>
+  
+  <div id="lfcollabprojects-footer">
+    <div class="gray-diagonal">
+      <div class="footer-inner">
+        <p>&copy; 2017 AllSeen Alliance, Inc. All Rights Reserved.</p>
+        <p>The Linux Foundation® is a registered trademark of The Linux Foundation. AllSeen, Designed for AllSeen and AllSeen Alliance are trademarks of the AllSeen Alliance, Inc. AllJoyn® is a registered trademark of AllSeen Alliance, Inc.</p>
+        <p>Linux is a registered <a href="http://www.linuxfoundation.org/programs/legal/trademark" title="Linux Mark Institute">trademark</a> of Linus Torvalds.</p>
+        <p>Please see our <a href="/brand-guidelines">brand guidelines</a>, <a href="/trademarks">trademark guidelines</a>, <a href="/about/governance/ip-policy">IP policy</a>, <a href="/terms">terms of use</a>, <a href="/license">license</a>, and <a href="/privacy">privacy policy</a>.</p>
+      </div>
+    </div>
+    <div id="body-bottom">
+      </div>
+</body>
+</html>

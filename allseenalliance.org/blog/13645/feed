@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xml:base="https://identity.allseenalliance.org"  xmlns:dc="http://purl.org/dc/elements/1.1/">
+<channel>
+ <title>GrahamMartin&#039;s blog</title>
+ <link>https://identity.allseenalliance.org/blog/13645</link>
+ <description></description>
+ <language>en</language>
+<item>
+ <title>The magic glue for an Internet of Things</title>
+ <link>https://identity.allseenalliance.org/news/blogs/2015/03/magic-glue-internet-things</link>
+ <description>
+		&lt;span class=&quot;a2a_kit a2a_target addtoany_list&quot; id=&quot;da2a_1&quot;&gt;
+			&lt;a class=&quot;a2a_button_facebook&quot;&gt;&lt;/a&gt;
+&lt;a class=&quot;a2a_button_twitter&quot;&gt;&lt;/a&gt;
+&lt;a class=&quot;a2a_button_google_plus&quot;&gt;&lt;/a&gt;&lt;a class=&quot;a2a_dd addtoany_share_save&quot; href=&quot;http://www.addtoany.com/share_save#url=https%3A%2F%2Fidentity.allseenalliance.org%2Fnews%2Fblogs%2F2015%2F03%2Fmagic-glue-internet-things&amp;amp;title=Blogs%20-%20AllSeen%20Alliance&quot;&gt; Share&lt;/a&gt;
+		&lt;/span&gt;
+		&lt;script type=&quot;text/javascript&quot;&gt;
+&lt;!--//--&gt;&lt;![CDATA[//&gt;&lt;!--
+da2a.script_load();
+//--&gt;&lt;!]]&gt;
+&lt;/script&gt;
+		
+  &lt;div class=&quot;field-body view-mode-rss&quot;&gt;
+    &lt;p&gt;&lt;em&gt;&lt;strong&gt;Graham Martin is the Chairman of EnOcean Alliance, an AllSeen Alliance Sponsored Member. &lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;&lt;p&gt;This year’s CES saw a great buzz around smart home, wearables, connected cars etc.; all under the umbrella of the Internet of Things, IoT. Our digital life seemed to be close at hand, we just needed to grab it. Well, the excitement cooled a bit down when listening to the feedback of journalists, customers and visitors: today, the market is much too fragmented with numerous standards claiming to be the winning one that makes the IoT happen.&lt;/p&gt;&lt;p&gt;That’s true. There are many, many standards playing on the IoT field such as Bluetooth Low Energy, WiFi, Thread, Z-Wave, EnOcean, ZigBee, Z-Wave or DECT ULE – just to name a few. Another truth is that each of them has its own sweet spot but none can cover all IoT applications, which range from a simple light switch to video streaming and data processing in the cloud.   &lt;/p&gt;&lt;p&gt;&lt;img alt=&quot;&quot; src=&quot;https://www.enocean-alliance.org/fileadmin/enocean-alliance/template/images/logo_enocean-alliance.gif&quot; style=&quot;float:left; height:74px; margin:10px; width:173px&quot; /&gt;At the EnOcean Alliance we have seen this for quite some time as a key challenge to the industry on the way to IoT becoming widely accepted. The user is neither interested in the term IoT nor in the standards or technology behind. The core requirement from a user’s perspective is a seamless plug&amp;amp;play operation. Meaning, the IoT needs to be as simple as pressing a button.&lt;/p&gt;&lt;p&gt;Last summer, when I became first aware of AllSeen Alliance, I was excited about their approach of one common open language. I immediately thought: yes, this could be the magic glue for the IoT. The AllSeen Alliance takes the advantages of different standards and integrates them into one user-friendly, plug&amp;amp;play system. Exactly what the user wants.&lt;/p&gt;&lt;p&gt;From this point of view, the smart home &lt;strong&gt;is&lt;/strong&gt; close at hand with integrating different standards covering different communication levels. Monitoring and control capabilities, such as temperature sensors, occupancy detection or light level and window status sensing, require low data rate transmission via sensors and switches that are highly flexible to install. This level will be dominated by the EnOcean energy harvesting wireless standard, which enables small devices to be powered by the surrounding environment. With potentially over a hundred of such devices in each smart home, it becomes immediately apparent that battery- or wire-powered devices are no option for this communication level.       &lt;/p&gt;&lt;p&gt;However, a smart home also needs high data rates. This can be video streaming, security cameras or data processing in the cloud via WiFi and TCP/IP, for example. In addition, another application area in an intelligently connected house can be health monitoring and body area devices, covered by Bluetooth Low Energy for example.&lt;/p&gt;&lt;p&gt;The open AllJoyn framework brings all of these communication levels seamlessly together. The user doesn’t realize the crossover of different standards. He just experiences the result: controlling his complete home plug&amp;amp;play via one app. The good market news is that multiple large consumer and smart home players are similar excited by this approach as I am. I’m convinced that the AllSeen Alliance, bringing together all these players, will be the winning solution for an IoT with high user acceptance.&lt;/p&gt;&lt;p&gt;&lt;em&gt;During the AllSeen Alliance Partner Program, Muzzley in cooperation with the EnOcean Alliance gave a demo installation connecting EnOcean-based batteryless building sensors to other systems in a home such as white goods and multimedia to an integrated, cross-standard control solution. Learn more via &lt;a href=&quot;https://www.youtube.com/playlist?list=PL4IDeLjCA5CNSRk8v8r7OzFi_JeeTtAmd&quot; target=&quot;_blank&quot;&gt;YouTube&lt;/a&gt; or on Twitter &lt;a href=&quot;https://twitter.com/enoceanalliance&quot; style=&quot;font-size: 13.0080003738403px; line-height: 1.538em;&quot; target=&quot;_blank&quot;&gt;@EnOceanAlliance&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;  &lt;/div&gt;
+</description>
+ <pubDate>Mon, 02 Mar 2015 20:00:44 +0000</pubDate>
+ <dc:creator>GrahamMartin</dc:creator>
+ <guid isPermaLink="false">4365 at https://identity.allseenalliance.org</guid>
+ <comments>https://identity.allseenalliance.org/news/blogs/2015/03/magic-glue-internet-things#comments</comments>
+</item>
+</channel>
+</rss>

@@ -1,0 +1,78 @@
+12-17 13:32:22.171: D/dalvikvm(11390): Trying to load lib /data/data/com.alljoyn.chatsample/lib/libmain.so 0x41d13020
+12-17 13:32:22.171: D/dalvikvm(11390): Added shared lib /data/data/com.alljoyn.chatsample/lib/libmain.so 0x41d13020
+12-17 13:32:24.328: D/Unity(11390): Mono path[0] = '/data/app/com.alljoyn.chatsample-1.apk/assets/bin/Data/Managed'
+12-17 13:32:24.328: D/Unity(11390): PlayerConnection initialized from /data/app/com.alljoyn.chatsample-1.apk/assets/bin/Data (debug = 0)
+12-17 13:32:24.328: D/Unity(11390): PlayerConnection initialized unix socket : Unity-com.alljoyn.chatsample
+12-17 13:32:24.843: D/Unity(11390): Platform assembly: /data/app/com.alljoyn.chatsample-1.apk/assets/bin/Data/Managed/UnityEngine.dll (this message is harmless)
+12-17 13:32:24.843: D/Unity(11390): Loading /data/app/com.alljoyn.chatsample-1.apk/assets/bin/Data/Managed/UnityEngine.dll into Unity Child Domain
+12-17 13:32:24.945: D/Unity(11390): Platform assembly: /data/app/com.alljoyn.chatsample-1.apk/assets/bin/Data/Managed/Assembly-CSharp.dll (this message is harmless)
+12-17 13:32:24.945: D/Unity(11390): Loading /data/app/com.alljoyn.chatsample-1.apk/assets/bin/Data/Managed/Assembly-CSharp.dll into Unity Child Domain
+12-17 13:32:24.945: D/Unity(11390): Platform assembly: /data/app/com.alljoyn.chatsample-1.apk/assets/bin/Data/Managed/alljoyn_unity.dll (this message is harmless)
+12-17 13:32:24.945: D/Unity(11390): Loading /data/app/com.alljoyn.chatsample-1.apk/assets/bin/Data/Managed/alljoyn_unity.dll into Unity Child Domain
+12-17 13:32:25.859: D/dalvikvm(11390): Trying to load lib /data/data/com.alljoyn.chatsample/lib/liballjoyn_c.so 0x41d13020
+12-17 13:32:25.882: D/dalvikvm(11390): Added shared lib /data/data/com.alljoyn.chatsample/lib/liballjoyn_c.so 0x41d13020
+12-17 13:32:25.882: D/dalvikvm(11390): No JNI_OnLoad found in /data/data/com.alljoyn.chatsample/lib/liballjoyn_c.so 0x41d13020, skipping init
+12-17 13:32:26.390: D/dalvikvm(11390): Trying to load lib /data/data/com.alljoyn.chatsample/lib/liballjoyn_c.so 0x41d13020
+12-17 13:32:26.390: D/dalvikvm(11390): Shared lib '/data/data/com.alljoyn.chatsample/lib/liballjoyn_c.so' already loaded in same CL 0x41d13020
+12-17 13:32:26.531: D/dalvikvm(11390): Trying to load lib /data/data/com.alljoyn.chatsample/lib/liballjoyn_c.so 0x41d13020
+12-17 13:32:26.531: D/dalvikvm(11390): Shared lib '/data/data/com.alljoyn.chatsample/lib/liballjoyn_c.so' already loaded in same CL 0x41d13020
+12-17 13:32:26.531: D/dalvikvm(11390): Trying to load lib /data/data/com.alljoyn.chatsample/lib/liballjoyn_c.so 0x41d13020
+12-17 13:32:26.531: D/dalvikvm(11390): Shared lib '/data/data/com.alljoyn.chatsample/lib/liballjoyn_c.so' already loaded in same CL 0x41d13020
+12-17 13:32:26.539: D/dalvikvm(11390): Trying to load lib /data/data/com.alljoyn.chatsample/lib/liballjoyn_c.so 0x41d13020
+12-17 13:32:26.539: D/dalvikvm(11390): Shared lib '/data/data/com.alljoyn.chatsample/lib/liballjoyn_c.so' already loaded in same CL 0x41d13020
+12-17 13:32:26.539: D/dalvikvm(11390): Trying to load lib /data/data/com.alljoyn.chatsample/lib/liballjoyn_c.so 0x41d13020
+12-17 13:32:26.539: D/dalvikvm(11390): Shared lib '/data/data/com.alljoyn.chatsample/lib/liballjoyn_c.so' already loaded in same CL 0x41d13020
+12-17 13:32:26.539: D/dalvikvm(11390): Trying to load lib /data/data/com.alljoyn.chatsample/lib/liballjoyn_c.so 0x41d13020
+12-17 13:32:26.539: D/dalvikvm(11390): Shared lib '/data/data/com.alljoyn.chatsample/lib/liballjoyn_c.so' already loaded in same CL 0x41d13020
+12-17 13:32:26.546: D/dalvikvm(11390): Trying to load lib /data/data/com.alljoyn.chatsample/lib/liballjoyn_c.so 0x41d13020
+12-17 13:32:26.546: D/dalvikvm(11390): Shared lib '/data/data/com.alljoyn.chatsample/lib/liballjoyn_c.so' already loaded in same CL 0x41d13020
+12-17 13:32:26.546: D/dalvikvm(11390): Trying to load lib /data/data/com.alljoyn.chatsample/lib/liballjoyn_c.so 0x41d13020
+12-17 13:32:26.546: D/dalvikvm(11390): Shared lib '/data/data/com.alljoyn.chatsample/lib/liballjoyn_c.so' already loaded in same CL 0x41d13020
+12-17 13:32:26.546: D/dalvikvm(11390): Trying to load lib /data/data/com.alljoyn.chatsample/lib/liballjoyn_c.so 0x41d13020
+12-17 13:32:26.546: D/dalvikvm(11390): Shared lib '/data/data/com.alljoyn.chatsample/lib/liballjoyn_c.so' already loaded in same CL 0x41d13020
+12-17 13:32:26.546: D/dalvikvm(11390): Trying to load lib /data/data/com.alljoyn.chatsample/lib/liballjoyn_c.so 0x41d13020
+12-17 13:32:26.546: D/dalvikvm(11390): Shared lib '/data/data/com.alljoyn.chatsample/lib/liballjoyn_c.so' already loaded in same CL 0x41d13020
+12-17 13:32:26.562: D/dalvikvm(11390): Trying to load lib /data/data/com.alljoyn.chatsample/lib/liballjoyn_c.so 0x41d13020
+12-17 13:32:26.562: D/dalvikvm(11390): Shared lib '/data/data/com.alljoyn.chatsample/lib/liballjoyn_c.so' already loaded in same CL 0x41d13020
+12-17 13:32:26.562: D/dalvikvm(11390): Trying to load lib /data/data/com.alljoyn.chatsample/lib/liballjoyn_c.so 0x41d13020
+12-17 13:32:26.562: D/dalvikvm(11390): Shared lib '/data/data/com.alljoyn.chatsample/lib/liballjoyn_c.so' already loaded in same CL 0x41d13020
+12-17 13:32:26.593: D/dalvikvm(11390): Trying to load lib /data/data/com.alljoyn.chatsample/lib/liballjoyn_c.so 0x41d13020
+12-17 13:32:26.593: D/dalvikvm(11390): Shared lib '/data/data/com.alljoyn.chatsample/lib/liballjoyn_c.so' already loaded in same CL 0x41d13020
+12-17 13:32:26.601: D/dalvikvm(11390): Trying to load lib /data/data/com.alljoyn.chatsample/lib/liballjoyn_c.so 0x41d13020
+12-17 13:32:26.601: D/dalvikvm(11390): Shared lib '/data/data/com.alljoyn.chatsample/lib/liballjoyn_c.so' already loaded in same CL 0x41d13020
+12-17 13:32:26.609: D/dalvikvm(11390): Trying to load lib /data/data/com.alljoyn.chatsample/lib/liballjoyn_c.so 0x41d13020
+12-17 13:32:26.609: D/dalvikvm(11390): Shared lib '/data/data/com.alljoyn.chatsample/lib/liballjoyn_c.so' already loaded in same CL 0x41d13020
+12-17 13:32:26.617: D/dalvikvm(11390): Trying to load lib /data/data/com.alljoyn.chatsample/lib/liballjoyn_c.so 0x41d13020
+12-17 13:32:26.617: D/dalvikvm(11390): Shared lib '/data/data/com.alljoyn.chatsample/lib/liballjoyn_c.so' already loaded in same CL 0x41d13020
+12-17 13:32:26.656: D/dalvikvm(11390): Trying to load lib /data/data/com.alljoyn.chatsample/lib/liballjoyn_c.so 0x41d13020
+12-17 13:32:26.656: D/dalvikvm(11390): Shared lib '/data/data/com.alljoyn.chatsample/lib/liballjoyn_c.so' already loaded in same CL 0x41d13020
+12-17 13:32:26.664: D/dalvikvm(11390): Trying to load lib /data/data/com.alljoyn.chatsample/lib/liballjoyn_c.so 0x41d13020
+12-17 13:32:26.664: D/dalvikvm(11390): Shared lib '/data/data/com.alljoyn.chatsample/lib/liballjoyn_c.so' already loaded in same CL 0x41d13020
+12-17 13:32:26.664: D/dalvikvm(11390): Trying to load lib /data/data/com.alljoyn.chatsample/lib/liballjoyn_c.so 0x41d13020
+12-17 13:32:26.664: D/dalvikvm(11390): Shared lib '/data/data/com.alljoyn.chatsample/lib/liballjoyn_c.so' already loaded in same CL 0x41d13020
+12-17 13:32:26.671: D/dalvikvm(11390): Trying to load lib /data/data/com.alljoyn.chatsample/lib/liballjoyn_c.so 0x41d13020
+12-17 13:32:26.671: D/dalvikvm(11390): Shared lib '/data/data/com.alljoyn.chatsample/lib/liballjoyn_c.so' already loaded in same CL 0x41d13020
+12-17 13:32:26.687: D/dalvikvm(11390): Trying to load lib /data/data/com.alljoyn.chatsample/lib/liballjoyn_c.so 0x41d13020
+12-17 13:32:26.687: D/dalvikvm(11390): Shared lib '/data/data/com.alljoyn.chatsample/lib/liballjoyn_c.so' already loaded in same CL 0x41d13020
+12-17 13:32:26.703: D/dalvikvm(11390): Trying to load lib /data/data/com.alljoyn.chatsample/lib/liballjoyn_c.so 0x41d13020
+12-17 13:32:26.703: D/dalvikvm(11390): Shared lib '/data/data/com.alljoyn.chatsample/lib/liballjoyn_c.so' already loaded in same CL 0x41d13020
+12-17 13:32:26.703: D/dalvikvm(11390): Trying to load lib /data/data/com.alljoyn.chatsample/lib/liballjoyn_c.so 0x41d13020
+12-17 13:32:26.703: D/dalvikvm(11390): Shared lib '/data/data/com.alljoyn.chatsample/lib/liballjoyn_c.so' already loaded in same CL 0x41d13020
+12-17 13:32:26.796: D/dalvikvm(11390): Trying to load lib /data/data/com.alljoyn.chatsample/lib/liballjoyn_c.so 0x41d13020
+12-17 13:32:26.796: D/dalvikvm(11390): Shared lib '/data/data/com.alljoyn.chatsample/lib/liballjoyn_c.so' already loaded in same CL 0x41d13020
+12-17 13:32:26.820: D/dalvikvm(11390): Trying to load lib /data/data/com.alljoyn.chatsample/lib/liballjoyn_c.so 0x41d13020
+12-17 13:32:26.820: D/dalvikvm(11390): Shared lib '/data/data/com.alljoyn.chatsample/lib/liballjoyn_c.so' already loaded in same CL 0x41d13020
+12-17 13:32:26.835: D/dalvikvm(11390): Trying to load lib /data/data/com.alljoyn.chatsample/lib/liballjoyn_c.so 0x41d13020
+12-17 13:32:26.835: D/dalvikvm(11390): Shared lib '/data/data/com.alljoyn.chatsample/lib/liballjoyn_c.so' already loaded in same CL 0x41d13020
+12-17 13:32:26.835: D/dalvikvm(11390): Trying to load lib /data/data/com.alljoyn.chatsample/lib/liballjoyn_c.so 0x41d13020
+12-17 13:32:26.835: D/dalvikvm(11390): Shared lib '/data/data/com.alljoyn.chatsample/lib/liballjoyn_c.so' already loaded in same CL 0x41d13020
+12-17 13:32:26.960: I/DEBUG(108): pid: 11390, tid: 11467, name: GC_start_routin  >>> com.alljoyn.chatsample <<<
+12-17 13:32:27.343: I/DEBUG(108):     #02  pc 002993ac  /data/data/com.alljoyn.chatsample/lib/libmono.so (thread_exit+36)
+12-17 13:32:27.343: I/DEBUG(108):     #03  pc 002996b4  /data/data/com.alljoyn.chatsample/lib/libmono.so (thread_start_routine+260)
+12-17 13:32:27.343: I/DEBUG(108):     #04  pc 002dff38  /data/data/com.alljoyn.chatsample/lib/libmono.so (GC_start_routine+136)
+12-17 13:32:27.351: I/DEBUG(108):     #00  62b64c08  5d571eb0  /data/data/com.alljoyn.chatsample/lib/libmono.so (GC_start_routine)
+12-17 13:32:27.367: I/DEBUG(108):          62b64e4c  5d540164  /data/data/com.alljoyn.chatsample/lib/libmono.so (mono_sem_wait+52)
+12-17 13:32:27.367: I/DEBUG(108):          62b64e54  5d64a604  /data/data/com.alljoyn.chatsample/lib/libmono.so
+12-17 13:32:27.367: I/DEBUG(108):          62b64e58  5d571eb0  /data/data/com.alljoyn.chatsample/lib/libmono.so (GC_start_routine)
+12-17 13:32:27.375: I/DEBUG(108):          62b64e84  5d52b6b8  /data/data/com.alljoyn.chatsample/lib/libmono.so (thread_start_routine+264)
+12-17 13:32:35.804: I/ActivityManager(358): Process com.alljoyn.chatsample (pid 11390) has died.

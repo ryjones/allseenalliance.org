@@ -1,0 +1,1640 @@
+<!DOCTYPE html>
+<!--[if IEMobile 7]><html class="iem7" lang="en" dir="ltr"><![endif]-->
+<!--[if lte IE 6]><html class="lt-ie9 lt-ie8 lt-ie7" lang="en" dir="ltr"><![endif]-->
+<!--[if (IE 7)&(!IEMobile)]><html class="lt-ie9 lt-ie8" lang="en" dir="ltr"><![endif]-->
+<!--[if IE 8]><html class="lt-ie9" lang="en" dir="ltr"><![endif]-->
+<!--[if (gte IE 9)|(gt IEMobile 7)]><!--><html lang="en" dir="ltr"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/terms/"
+  xmlns:foaf="http://xmlns.com/foaf/0.1/"
+  xmlns:og="http://ogp.me/ns#"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:sioc="http://rdfs.org/sioc/ns#"
+  xmlns:sioct="http://rdfs.org/sioc/types#"
+  xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema#"><!--<![endif]-->
+<head>
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
+<meta charset="utf-8" />
+<link rel="shortlink" href="/node/3629" />
+<link rel="shortcut icon" href="https://identity.allseenalliance.org/sites/all/themes/at_alljoyn/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="/developer-resources/forum/developers/so-wheres-source-code" />
+<meta name="viewport" content="width=device-width" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta property="og:image" content="https://identity.allseenalliance.org/sites/all/themes/at_alljoyn/images/allseen-logo.png"/>
+<meta name="google-translate-customization" content="48b015afeed82101-ecae534af0f48252-ga0b6470a6208b2f5-f"></meta>
+<meta name="MobileOptimized" content="width">
+<meta name="HandheldFriendly" content="true">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>So where&#039;s the source code - AllSeen Alliance</title>
+<link type="text/css" rel="stylesheet" href="https://identity.allseenalliance.org/sites/default/files/css/css_xE-rWrJf-fncB6ztZfd2huxqgxu4WO-qwma6Xer30m4.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://identity.allseenalliance.org/sites/default/files/css/css_7Vcu6qIuRTO46aDOBZp7_mtksGdhCHSe0pjTO2YbGng.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://identity.allseenalliance.org/sites/default/files/css/css_1ul5dkzFEvThXC74sAMmbRdpG3oNBMxBmGsnX-Xbo-4.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://identity.allseenalliance.org/sites/default/files/css/css_oxEtvjMfj8c8EEJJ-1WXLGGntCnC0UvrbYsq0Gw4m4Q.css" media="screen" />
+<link type="text/css" rel="stylesheet" href="https://identity.allseenalliance.org/sites/default/files/css/css_9EusV9fcbkpqBeTGdJPl7ru65jm-3ngbTi_D6YRR_5A.css" media="only screen" />
+<script src="https://identity.allseenalliance.org/sites/default/files/js/js_UWQINlriydSoeSiGQxToOUdv493zEa7dpsXC1OtYlZU.js"></script>
+<script src="https://identity.allseenalliance.org/sites/default/files/js/js_COMsmDyrY9mzVU28X2uGvF4Ba3vd5eTo5xEO7dvCUZM.js"></script>
+<script src="https://identity.allseenalliance.org/sites/default/files/js/js_i8oyg1R4On_HyzPiZ5zC3V-DxehjGAcpKwNao5s0s5I.js"></script>
+<script>hljs.configure({languages:[]}); hljs.initHighlightingOnLoad();</script>
+<script src="https://identity.allseenalliance.org/sites/default/files/js/js_exECONHId8-g0cGNpfLqOhsXX2U4Bbbt24xY9mN--H4.js"></script>
+<script>var _gaq = _gaq || [];_gaq.push(["_setAccount", "UA-"]);_gaq.push(["_trackPageview"]);(function() {var ga = document.createElement("script");ga.type = "text/javascript";ga.async = true;ga.src = ("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/ga.js";var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(ga, s);})();</script>
+<script src="https://identity.allseenalliance.org/sites/default/files/js/js_R35PAK16384fXh7f2OqvXVkbbrwr8ABLrDpR1zTluo0.js"></script>
+<script src="https://identity.allseenalliance.org/sites/default/files/js/js_DKtRHJS-jz_cHgf23K7wnIWphCanZ_Rz74Aw-DKQyFs.js"></script>
+<script>jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"at_alljoyn","theme_token":"89DtlZDrEPWfcrwATQzQpPzQX_Wb7mvz78bVUPJSAQI","js":{"misc\/jquery.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/all\/modules\/contrib\/comment_notify\/comment_notify.js":1,"sites\/all\/modules\/alljoyn\/custom_modules\/allseen_docs\/allseen_docs_highlight\/highlightjs\/highlight.min.js":1,"0":1,"sites\/all\/libraries\/colorbox\/jquery.colorbox-min.js":1,"sites\/all\/modules\/contrib\/colorbox\/js\/colorbox.js":1,"sites\/all\/modules\/contrib\/colorbox\/styles\/default\/colorbox_style.js":1,"sites\/all\/modules\/contrib\/colorbox\/js\/colorbox_load.js":1,"sites\/all\/modules\/contrib\/colorbox\/js\/colorbox_inline.js":1,"sites\/all\/modules\/contrib\/panels\/js\/panels.js":1,"sites\/all\/modules\/contrib\/quote\/quote.js":1,"sites\/all\/modules\/contrib\/views_slideshow\/js\/views_slideshow.js":1,"sites\/all\/modules\/contrib\/bestreply\/bestreply.js":1,"sites\/all\/modules\/contrib\/google_analytics\/googleanalytics.js":1,"1":1,"sites\/all\/modules\/alljoyn\/custom_modules\/allseen_docs\/allseen_docs_nav\/allseen-docs-nav.js":1,"sites\/all\/themes\/at_alljoyn\/scripts\/alljoyn.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"sites\/all\/modules\/contrib\/comment_notify\/comment_notify.css":1,"sites\/all\/modules\/ldap\/ldap_user\/ldap_user.css":1,"modules\/book\/book.css":1,"modules\/comment\/comment.css":1,"sites\/all\/modules\/contrib\/date\/date_api\/date.css":1,"sites\/all\/modules\/contrib\/date\/date_popup\/themes\/datepicker.1.7.css":1,"modules\/field\/theme\/field.css":1,"sites\/all\/modules\/contrib\/mollom\/mollom.css":1,"modules\/node\/node.css":1,"modules\/user\/user.css":1,"modules\/forum\/forum.css":1,"sites\/all\/modules\/contrib\/views\/css\/views.css":1,"sites\/all\/modules\/alljoyn\/custom_modules\/allseen_docs\/allseen_docs_highlight\/highlightjs\/default.min.css":1,"sites\/all\/modules\/contrib\/colorbox\/styles\/default\/colorbox_style.css":1,"sites\/all\/modules\/contrib\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/ldap\/ldap_servers\/ldap_servers.admin.css":1,"sites\/all\/modules\/contrib\/panels\/css\/panels.css":1,"sites\/all\/modules\/contrib\/quote\/quote.css":1,"sites\/all\/modules\/contrib\/views_slideshow\/views_slideshow.css":1,"sites\/all\/modules\/alljoyn\/custom_modules\/alljoyn_helper\/advanced_forum\/alljoyn\/advanced-forum.alljoyn.structure.css":1,"sites\/all\/modules\/alljoyn\/custom_modules\/alljoyn_helper\/advanced_forum\/alljoyn\/advanced-forum.alljoyn.images.css":1,"sites\/all\/modules\/alljoyn\/custom_modules\/allseen_docs\/allseen_docs_nav\/allseen-docs-nav.css":1,"sites\/all\/themes\/adaptivetheme\/at_core\/css\/at.layout.css":1,"sites\/all\/themes\/at_alljoyn\/css\/fonts.css":1,"sites\/all\/themes\/at_alljoyn\/css\/globals.css":1,"sites\/all\/themes\/at_alljoyn\/css\/jcarousel-alljoyn.css":1,"public:\/\/adaptivetheme\/at_alljoyn_files_7dbe1ef5\/at_alljoyn.responsive.layout.css":1,"public:\/\/adaptivetheme\/at_alljoyn_files_7dbe1ef5\/at_alljoyn.responsive.styles.css":1}},"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":true,"mobiledevicewidth":"480px"},"jcarousel":{"ajaxPath":"\/jcarousel\/ajax\/views"},"quote_nest":2,"bestreply_name":"answer","bestreply_movetotop":"no","bestreply_ismarked":false,"bestreply_collapse":"no","googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls|xml|z|zip"}});</script>
+<!--[if lt IE 9]>
+<script src="https://identity.allseenalliance.org/sites/all/themes/adaptivetheme/at_core/scripts/respond.js?nwgww1"></script>
+<script src="https://identity.allseenalliance.org/sites/all/themes/adaptivetheme/at_core/scripts/html5.js?nwgww1"></script>
+<script src="https://identity.allseenalliance.org/sites/all/themes/adaptivetheme/at_core/scripts/PIE.htc?nwgww1"></script>
+<script src="https://identity.allseenalliance.org/sites/all/themes/adaptivetheme/at_core/scripts/selectivizr.js?nwgww1"></script>
+<![endif]-->
+</head>
+<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-3629 node-type-forum section-forums site-name-hidden with-subnav page-developer-resources-forum-developers-so-wheres-source-code section-developer-resources">
+  <div id="body-top">
+      </div>
+  <div id="skip-link">
+    <a href="#main-content" class="element-invisible element-focusable">Skip to main content</a>
+  </div>
+  <div class="region region-page-top"><div class="region-inner clearfix"><div id="fb-root"></div><script type="text/javascript">
+     window.fbAsyncInit = function() {
+       FB.init({
+         appId: "492099574180957",
+         status: true,
+         cookie: true,
+         xfbml: true,
+         oauth : true,
+         channelUrl: "https:\/\/identity.allseenalliance.org\/service_links\/channel"
+         });
+
+         FB.Event.subscribe('edge.create', function(href, widget) {
+    _gaq.push(['_trackEvent', 'facebook', 'Facebook like', href]);
+   });FB.Event.subscribe('edge.remove', function(href, widget) {
+    _gaq.push(['_trackEvent', 'facebook', 'Facebook unlike', href]);
+   });
+       };
+       (function(d){
+     var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement('script'); js.id = id; js.async = true;
+     js.src = '//connect.facebook.net/en_US/all.js';
+     ref.parentNode.insertBefore(js, ref);
+   }(document));
+    </script></div></div>  
+<div id="wrap">
+
+  <div id="lfcollabprojects-header">
+    <div class="gray-diagonal">
+      <div class="header-inner">
+        <a id="lfcollabprojects-logo" href="http://collabprojects.linuxfoundation.org">Linux Foundation Collaborative Projects</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="page" class="container page">
+    
+    <header id="header" class="clearfix" role="banner">
+
+      <div class="region region-header"><div class="region-inner clearfix"><div id="block-block-19" class="block block-block" ><div class="block-inner clearfix">        <div class="block-content content"><br /><br /><br /><br /><br /><br /><br /></div></div></div></div></div>
+              <div id="branding" class="branding-elements clearfix">
+
+                      <div id="logo"><a href="/" title="Home page"><img class="site-logo" typeof="foaf:Image" src="https://identity.allseenalliance.org/sites/default/files/logo.png" alt="AllSeen Alliance" /></a></div>
+          
+                      <hgroup id="name-and-slogan" class="element-invisible">
+                              <h1 id="site-name" class="element-invisible"><a href="/" title="Home page">AllSeen Alliance</a></h1>
+                                        </hgroup>
+          
+          <!--main menu-->
+          <a id="main-menu-toggle" href="#">Site Sections</a>
+  		  		  		
+        </div>
+      
+    </header>
+
+    <div id="columns" class="clearfix">
+      <div id="sub-menu-bar">
+        <div class="region region-sub-menu-bar"><div class="region-inner clearfix"><section id="block-menu-block-allseen-docs-responsive-nav" class="block block-menu-block"  role="navigation"><div class="block-inner clearfix">        <div class="block-title-wrapper">
+      <h2 class="block-title">Menu</h2>
+    </div>
+      <div class="block-content content"><div class="menu-block-wrapper menu-block-allseen-docs-responsive-nav menu-name-main-menu parent-mlid-0 menu-level-1">
+  <ul class="menu clearfix"><li class="first menu-parent menu-mlid-1994 menu-item-1994"><a href="/about">About</a><ul class="menu clearfix"><li class="first menu-mlid-2486 menu-item-2486"><a href="/about/why-allseen">Why AllSeen</a></li><li class="menu-mlid-2464 menu-item-2464"><a href="/about/get-involved">Get Involved</a></li><li class="collapsed menu-mlid-2446 menu-item-2446"><a href="/about/governance/ip-policy">IP Policy</a></li><li class="menu-mlid-2491 menu-item-2491"><a href="/about/working-groups">Working Groups</a></li><li class="menu-mlid-2286 menu-item-2286"><a href="/about/members">Member Companies</a></li><li class="menu-mlid-2285 menu-item-2285"><a href="/about/join-allseen-alliance">Join The AllSeen Alliance</a></li><li class="collapsed menu-mlid-2447 menu-item-2447"><a href="/about/governance">Governance</a></li><li class="menu-mlid-501 menu-item-501"><a href="/about/faqs">FAQs</a></li><li class="menu-mlid-2322 menu-item-2322"><a href="/about/contact">Contact Us</a></li><li class="menu-mlid-2282 menu-item-2282"><a href="/allseen/what-is-allseen-alliance">What is AllSeen Alliance?</a></li><li class="last menu-mlid-2490 menu-item-2490"><a href="https://wiki.allseenalliance.org/members_private/start?do=login&amp;sectok=34485854163fe6a0be457198139e2c84" title="Members Area" id="members_area" name="Members Area" rel="nofollow" target="_blank">Members Area</a></li></ul></li><li class="menu-parent menu-mlid-2503 menu-item-2503"><a href="/developers">Developers</a><ul class="menu clearfix"><li class="first menu-parent menu-mlid-2504 menu-item-2504"><a href="/developers/learn">Learn</a><ul class="menu clearfix"><li class="first menu-mlid-2505 menu-item-2505"><a href="/developers/learn/use-cases">Use Cases</a></li><li class="menu-mlid-2506 menu-item-2506"><a href="/developers/learn/architecture">Architecture</a></li><li class="menu-parent menu-mlid-2507 menu-item-2507"><a href="/developers/learn/core">Core Framework</a><ul class="menu clearfix"><li class="first menu-parent menu-mlid-2508 menu-item-2508"><a href="/developers/learn/core/about-announcement">About Announcement</a><ul class="menu clearfix"><li class="first menu-mlid-2509 menu-item-2509"><a href="/developers/learn/core/about-announcement/interface">Interface</a></li><li class="last menu-mlid-2510 menu-item-2510"><a href="/developers/learn/core/about-announcement/interface-14-02">Interface 14.02</a></li></ul></li><li class="menu-mlid-2511 menu-item-2511"><a href="/developers/learn/core/events-and-actions">Events and Actions</a></li><li class="menu-mlid-2992 menu-item-2992"><a href="/developers/learn/core/rn_config">Routing Node Configuration</a></li><li class="menu-mlid-2512 menu-item-2512"><a href="/developers/learn/core/standard-core">Standard Core</a></li><li class="menu-mlid-2513 menu-item-2513"><a href="/developers/learn/core/thin-core">Thin Core</a></li><li class="menu-parent menu-mlid-2514 menu-item-2514"><a href="/developers/learn/core/system-description">System Description</a><ul class="menu clearfix"><li class="first menu-mlid-2515 menu-item-2515"><a href="/developers/learn/core/system-description/system-architecture">System Architecture</a></li><li class="menu-mlid-2516 menu-item-2516"><a href="/developers/learn/core/system-description/advertisement-discovery">Advertisement and Discovery</a></li><li class="menu-mlid-2645 menu-item-2645"><a href="/developers/learn/core/system-description/alljoyn-transport">AllJoyn Transport</a></li><li class="menu-mlid-2517 menu-item-2517"><a href="/developers/learn/core/system-description/data-exchange">Data Exchange</a></li><li class="menu-mlid-2518 menu-item-2518"><a href="/developers/learn/core/system-description/alljoyn-session">AllJoyn Session</a></li><li class="menu-mlid-2519 menu-item-2519"><a href="/developers/learn/core/system-description/sessionless-signal">Sessionless Signal</a></li><li class="menu-mlid-2520 menu-item-2520"><a href="/developers/learn/core/system-description/alljoyn-security">AllJoyn Security</a></li><li class="menu-mlid-2521 menu-item-2521"><a href="/developers/learn/core/system-description/thin-apps">Thin Apps</a></li><li class="last menu-mlid-2522 menu-item-2522"><a href="/developers/learn/core/system-description/events-actions">Events and Actions</a></li></ul></li><li class="last menu-parent menu-mlid-2937 menu-item-2937"><a href="/developers/learn/core/security2_0">Security 2.0</a><ul class="menu clearfix"><li class="first last menu-mlid-2938 menu-item-2938"><a href="/developers/learn/core/security2_0/hld">High-Level Design</a></li></ul></li></ul></li><li class="menu-parent menu-mlid-2523 menu-item-2523"><a href="/developers/learn/base-services">Base Services</a><ul class="menu clearfix"><li class="first menu-parent menu-mlid-2524 menu-item-2524"><a href="/developers/learn/base-services/onboarding">Onboarding</a><ul class="menu clearfix"><li class="first menu-mlid-2525 menu-item-2525"><a href="/developers/learn/base-services/onboarding/interface">Interface</a></li><li class="last menu-mlid-2526 menu-item-2526"><a href="/developers/learn/base-services/onboarding/interface-14-02">Interface 14.02</a></li></ul></li><li class="menu-parent menu-mlid-2527 menu-item-2527"><a href="/developers/learn/base-services/configuration">Configuration</a><ul class="menu clearfix"><li class="first menu-mlid-2528 menu-item-2528"><a href="/developers/learn/base-services/configuration/interface">Interface</a></li><li class="last menu-mlid-2529 menu-item-2529"><a href="/developers/learn/base-services/configuration/interface-14-02">Interface 14.02</a></li></ul></li><li class="menu-parent menu-mlid-2530 menu-item-2530"><a href="/developers/learn/base-services/notification">Notification</a><ul class="menu clearfix"><li class="first menu-mlid-2531 menu-item-2531"><a href="/developers/learn/base-services/notification/interface">Interface</a></li><li class="last menu-mlid-2532 menu-item-2532"><a href="/developers/learn/base-services/notification/interface-14-02">Interface 14.02</a></li></ul></li><li class="menu-parent menu-mlid-2533 menu-item-2533"><a href="/developers/learn/base-services/controlpanel">ControlPanel</a><ul class="menu clearfix"><li class="first menu-mlid-2534 menu-item-2534"><a href="/developers/learn/base-services/controlpanel/interface">Interface</a></li><li class="last menu-mlid-2535 menu-item-2535"><a href="/developers/learn/base-services/controlpanel/interface-14-02">Interface 14.02</a></li></ul></li><li class="last menu-parent menu-mlid-2536 menu-item-2536"><a href="/developers/learn/base-services/audiostreaming">Audio Streaming</a><ul class="menu clearfix"><li class="first last menu-mlid-2537 menu-item-2537"><a href="/developers/learn/base-services/audiostreaming/interface">Interface</a></li></ul></li></ul></li><li class="last menu-mlid-2538 menu-item-2538"><a href="/developers/learn/glossary">Glossary</a></li></ul></li><li class="menu-parent menu-mlid-2539 menu-item-2539"><a href="/developers/download">Download</a><ul class="menu clearfix"><li class="first last menu-mlid-2540 menu-item-2540"><a href="/developers/download/supported-platforms">Supported Platforms</a></li></ul></li><li class="menu-parent menu-mlid-2541 menu-item-2541"><a href="/developers/develop">Develop</a><ul class="menu clearfix"><li class="first menu-parent menu-mlid-2542 menu-item-2542"><a href="/developers/develop/building">Building</a><ul class="menu clearfix"><li class="first menu-parent menu-mlid-2543 menu-item-2543"><a href="/developers/develop/building/android">Android</a><ul class="menu clearfix"><li class="first last menu-mlid-2544 menu-item-2544"><a href="/developers/develop/building/android/build-source">Build Source</a></li></ul></li><li class="menu-parent menu-mlid-2545 menu-item-2545"><a href="/developers/develop/building/linux">Linux</a><ul class="menu clearfix"><li class="first menu-mlid-2546 menu-item-2546"><a href="/developers/develop/building/linux/openwrt">OpenWRT</a></li><li class="last menu-mlid-2547 menu-item-2547"><a href="/developers/develop/building/linux/build-source">Build Source</a></li></ul></li><li class="menu-parent menu-mlid-2548 menu-item-2548"><a href="/developers/develop/building/ios-osx">iOS/OS X</a><ul class="menu clearfix"><li class="first last menu-mlid-2549 menu-item-2549"><a href="/developers/develop/building/ios-osx/build-source">Build Source</a></li></ul></li><li class="menu-parent menu-mlid-2550 menu-item-2550"><a href="/developers/develop/building/windows">Windows</a><ul class="menu clearfix"><li class="first last menu-mlid-2551 menu-item-2551"><a href="/developers/develop/building/windows/build-source">Build Source</a></li></ul></li><li class="menu-mlid-2552 menu-item-2552"><a href="/developers/develop/building/thin-linux">Thin - Linux</a></li><li class="menu-mlid-2553 menu-item-2553"><a href="/developers/develop/building/thin-windows">Thin - Windows</a></li><li class="last menu-mlid-2993 menu-item-2993"><a href="/developers/develop/building/alljoyn-js">AllJoyn.js</a></li></ul></li><li class="menu-parent menu-mlid-2554 menu-item-2554"><a href="/developers/develop/run-sample-apps">Running Samples</a><ul class="menu clearfix"><li class="first menu-parent menu-mlid-2555 menu-item-2555"><a href="/developers/develop/run-sample-apps/basic">Basic</a><ul class="menu clearfix"><li class="first menu-mlid-2556 menu-item-2556"><a href="/developers/develop/run-sample-apps/basic/android">Android</a></li><li class="menu-mlid-2557 menu-item-2557"><a href="/developers/develop/run-sample-apps/basic/linux">Linux</a></li><li class="menu-mlid-2558 menu-item-2558"><a href="/developers/develop/run-sample-apps/basic/ios-osx">iOS/OS X</a></li><li class="menu-mlid-2559 menu-item-2559"><a href="/developers/develop/run-sample-apps/basic/windows">Windows</a></li><li class="menu-mlid-2560 menu-item-2560"><a href="/developers/develop/run-sample-apps/basic/thin-linux">Thin - Linux</a></li><li class="last menu-mlid-2561 menu-item-2561"><a href="/developers/develop/run-sample-apps/basic/thin-windows">Thin - Windows</a></li></ul></li><li class="menu-parent menu-mlid-2562 menu-item-2562"><a href="/developers/develop/run-sample-apps/chat">Chat</a><ul class="menu clearfix"><li class="first menu-mlid-2563 menu-item-2563"><a href="/developers/develop/run-sample-apps/chat/android">Android</a></li><li class="menu-mlid-2564 menu-item-2564"><a href="/developers/develop/run-sample-apps/chat/linux">Linux</a></li><li class="menu-mlid-2565 menu-item-2565"><a href="/developers/develop/run-sample-apps/chat/ios-osx">iOS/OS X</a></li><li class="menu-mlid-2566 menu-item-2566"><a href="/developers/develop/run-sample-apps/chat/windows">Windows</a></li><li class="last menu-mlid-2567 menu-item-2567"><a href="/developers/develop/run-sample-apps/chat/thin-linux">Thin - Linux</a></li></ul></li><li class="menu-parent menu-mlid-2568 menu-item-2568"><a href="/developers/develop/run-sample-apps/about">About</a><ul class="menu clearfix"><li class="first menu-mlid-2569 menu-item-2569"><a href="/developers/develop/run-sample-apps/about/linux">Linux</a></li><li class="menu-mlid-2570 menu-item-2570"><a href="/developers/develop/run-sample-apps/about/ios-osx">iOS/OS X</a></li><li class="last menu-mlid-2646 menu-item-2646"><a href="/developers/develop/run-sample-apps/about/windows">Windows</a></li></ul></li><li class="menu-mlid-2934 menu-item-2934"><a href="/developers/develop/run-sample-apps/observer">Observer</a></li><li class="menu-parent menu-mlid-2571 menu-item-2571"><a href="/developers/develop/run-sample-apps/config">Config</a><ul class="menu clearfix"><li class="first menu-mlid-2572 menu-item-2572"><a href="/developers/develop/run-sample-apps/config/android">Android</a></li><li class="menu-mlid-2573 menu-item-2573"><a href="/developers/develop/run-sample-apps/config/linux">Linux</a></li><li class="menu-mlid-2574 menu-item-2574"><a href="/developers/develop/run-sample-apps/config/ios-osx">iOS/OS X</a></li><li class="last menu-mlid-2575 menu-item-2575"><a href="/developers/develop/run-sample-apps/config/thin-linux">Thin - Linux</a></li></ul></li><li class="menu-parent menu-mlid-2576 menu-item-2576"><a href="/developers/develop/run-sample-apps/controlpanel">Control Panel</a><ul class="menu clearfix"><li class="first menu-mlid-2577 menu-item-2577"><a href="/developers/develop/run-sample-apps/controlpanel/android">Android</a></li><li class="menu-mlid-2578 menu-item-2578"><a href="/developers/develop/run-sample-apps/controlpanel/linux">Linux</a></li><li class="menu-mlid-2579 menu-item-2579"><a href="/developers/develop/run-sample-apps/controlpanel/ios-osx">iOS/OS X</a></li><li class="last menu-mlid-2580 menu-item-2580"><a href="/developers/develop/run-sample-apps/controlpanel/thin-linux">Thin - Linux</a></li></ul></li><li class="menu-parent menu-mlid-2581 menu-item-2581"><a href="/developers/develop/run-sample-apps/notification">Notification</a><ul class="menu clearfix"><li class="first menu-mlid-2582 menu-item-2582"><a href="/developers/develop/run-sample-apps/notification/android">Android</a></li><li class="menu-mlid-2583 menu-item-2583"><a href="/developers/develop/run-sample-apps/notification/linux">Linux</a></li><li class="menu-mlid-2584 menu-item-2584"><a href="/developers/develop/run-sample-apps/notification/ios-osx">iOS/OS X</a></li><li class="last menu-mlid-2585 menu-item-2585"><a href="/developers/develop/run-sample-apps/notification/thin-linux">Thin - Linux</a></li></ul></li><li class="menu-parent menu-mlid-2586 menu-item-2586"><a href="/developers/develop/run-sample-apps/onboarding">Onboarding</a><ul class="menu clearfix"><li class="first menu-mlid-2587 menu-item-2587"><a href="/developers/develop/run-sample-apps/onboarding/android">Android</a></li><li class="menu-mlid-2588 menu-item-2588"><a href="/developers/develop/run-sample-apps/onboarding/linux">Linux</a></li><li class="last menu-mlid-2589 menu-item-2589"><a href="/developers/develop/run-sample-apps/onboarding/ios-osx">iOS/OS X</a></li></ul></li><li class="menu-parent menu-mlid-2590 menu-item-2590"><a href="/developers/develop/run-sample-apps/acserver">AC Server</a><ul class="menu clearfix"><li class="first menu-mlid-2591 menu-item-2591"><a href="/developers/develop/run-sample-apps/acserver/linux">Linux</a></li><li class="last menu-mlid-2592 menu-item-2592"><a href="/developers/develop/run-sample-apps/acserver/thin-linux">Thin - Linux</a></li></ul></li><li class="menu-parent menu-mlid-2593 menu-item-2593"><a href="/developers/develop/run-sample-apps/test">Command Line Apps</a><ul class="menu clearfix"><li class="first last menu-mlid-2594 menu-item-2594"><a href="/developers/develop/run-sample-apps/test/sessions">Sessions</a></li></ul></li><li class="last menu-mlid-2994 menu-item-2994"><a href="/developers/develop/run-sample-apps/alljoyn-js">AllJoyn.js</a></li></ul></li><li class="menu-parent menu-mlid-2595 menu-item-2595"><a href="/developers/develop/api-guide">API Guide</a><ul class="menu clearfix"><li class="first menu-parent menu-mlid-2596 menu-item-2596"><a href="/developers/develop/api-guide/core">Core</a><ul class="menu clearfix"><li class="first menu-mlid-2939 menu-item-2939"><a href="/developers/develop/api-guide/core/java">java</a></li><li class="menu-mlid-2940 menu-item-2940"><a href="/developers/develop/api-guide/core/objc">Objective-C</a></li><li class="menu-mlid-2647 menu-item-2647"><a href="/developers/develop/api-guide/core/alljoyn-transports-best-practices">Alljoyn Transports Best Practices</a></li><li class="menu-mlid-2648 menu-item-2648"><a href="/developers/develop/api-guide/core/auto-ping">AutoPinger</a></li><li class="menu-mlid-2935 menu-item-2935"><a href="/developers/develop/api-guide/core/observer">Observer</a></li><li class="last menu-mlid-2936 menu-item-2936"><a href="/developers/develop/api-guide/core/propcache">Property Cache</a></li></ul></li><li class="menu-parent menu-mlid-2599 menu-item-2599"><a href="/developers/develop/api-guide/about">About</a><ul class="menu clearfix"><li class="first menu-mlid-2941 menu-item-2941"><a href="/developers/develop/api-guide/about/java">java</a></li><li class="menu-mlid-2942 menu-item-2942"><a href="/developers/develop/api-guide/about/cpp">C++</a></li><li class="menu-mlid-2943 menu-item-2943"><a href="/developers/develop/api-guide/about/objc">Objective-C</a></li><li class="menu-mlid-2944 menu-item-2944"><a href="/developers/develop/api-guide/about/c-thin">C (Thin Core)</a></li><li class="menu-mlid-2945 menu-item-2945"><a href="/developers/develop/api-guide/about/java-legacy">java Legacy</a></li><li class="menu-mlid-2946 menu-item-2946"><a href="/developers/develop/api-guide/about/cpp-legacy">C++ Legacy</a></li><li class="last menu-mlid-2947 menu-item-2947"><a href="/developers/develop/api-guide/about/objc-legacy">Objective-C Legacy</a></li></ul></li><li class="menu-parent menu-mlid-2604 menu-item-2604"><a href="/developers/develop/api-guide/onboarding">Onboarding</a><ul class="menu clearfix"><li class="first menu-mlid-2948 menu-item-2948"><a href="/developers/develop/api-guide/onboarding/java">java</a></li><li class="last menu-mlid-2949 menu-item-2949"><a href="/developers/develop/api-guide/onboarding/objc">Objective-C</a></li></ul></li><li class="menu-parent menu-mlid-2607 menu-item-2607"><a href="/developers/develop/api-guide/config">Configuration</a><ul class="menu clearfix"><li class="first menu-mlid-2950 menu-item-2950"><a href="/developers/develop/api-guide/config/java">java</a></li><li class="menu-mlid-2951 menu-item-2951"><a href="/developers/develop/api-guide/config/cpp">C++</a></li><li class="menu-mlid-2952 menu-item-2952"><a href="/developers/develop/api-guide/config/objc">Objective-C</a></li><li class="last menu-mlid-2953 menu-item-2953"><a href="/developers/develop/api-guide/config/c-thin">C (Thin Core)</a></li></ul></li><li class="menu-parent menu-mlid-2612 menu-item-2612"><a href="/developers/develop/api-guide/notification">Notification</a><ul class="menu clearfix"><li class="first menu-mlid-2954 menu-item-2954"><a href="/developers/develop/api-guide/notification/java">java</a></li><li class="menu-mlid-2955 menu-item-2955"><a href="/developers/develop/api-guide/notification/cpp">C++</a></li><li class="menu-mlid-2956 menu-item-2956"><a href="/developers/develop/api-guide/notification/objc">Objective-C</a></li><li class="last menu-mlid-2957 menu-item-2957"><a href="/developers/develop/api-guide/notification/c-thin">C (Thin Core)</a></li></ul></li><li class="menu-parent menu-mlid-2617 menu-item-2617"><a href="/developers/develop/api-guide/controlpanel">Control Panel</a><ul class="menu clearfix"><li class="first menu-mlid-2958 menu-item-2958"><a href="/developers/develop/api-guide/controlpanel/java">java</a></li><li class="menu-mlid-2959 menu-item-2959"><a href="/developers/develop/api-guide/controlpanel/cpp">C++</a></li><li class="menu-mlid-2960 menu-item-2960"><a href="/developers/develop/api-guide/controlpanel/objc">Objective-C</a></li><li class="last menu-mlid-2961 menu-item-2961"><a href="/developers/develop/api-guide/controlpanel/c-thin">C (Thin Core)</a></li></ul></li><li class="menu-parent menu-mlid-2622 menu-item-2622"><a href="/developers/develop/api-guide/audio-streaming">Audio Streaming</a><ul class="menu clearfix"><li class="first last menu-mlid-2962 menu-item-2962"><a href="/developers/develop/api-guide/audio-streaming/cpp">C++</a></li></ul></li><li class="last menu-mlid-2624 menu-item-2624"><a href="/developers/develop/api-guide/events-and-actions">Events and Actions</a></li></ul></li><li class="menu-mlid-2625 menu-item-2625"><a href="/developers/develop/api-reference">API Reference</a></li><li class="menu-parent menu-mlid-2626 menu-item-2626"><a href="/developers/develop/debug">Debug</a><ul class="menu clearfix"><li class="first last menu-mlid-2627 menu-item-2627"><a href="/developers/develop/debug/common-issues">Common Issues</a></li></ul></li><li class="menu-parent menu-mlid-2628 menu-item-2628"><a href="/developers/develop/tutorial">Tutorial</a><ul class="menu clearfix"><li class="first menu-mlid-2629 menu-item-2629"><a href="/developers/develop/tutorial/core">Core</a></li><li class="menu-mlid-2630 menu-item-2630"><a href="/developers/develop/tutorial/ios">iOS</a></li><li class="menu-mlid-2631 menu-item-2631"><a href="/developers/develop/tutorial/thin-app">Thin App</a></li><li class="menu-mlid-2632 menu-item-2632"><a href="/developers/develop/tutorial/arduino-and-gt202">Arduino + GT202</a></li><li class="last menu-mlid-2633 menu-item-2633"><a href="/developers/develop/tutorial/videos">Videos</a></li></ul></li><li class="last menu-mlid-2634 menu-item-2634"><a href="/developers/develop/ask">Ask Forum</a></li></ul></li><li class="last menu-parent menu-mlid-2636 menu-item-2636"><a href="/developers/contribute">Contribute</a><ul class="menu clearfix"><li class="first last menu-mlid-2637 menu-item-2637"><a href="/developers/contribute/project-lifecycle">Project Lifecycle</a></li></ul></li></ul></li><li class="menu-mlid-2466 menu-item-2466"><a href="/showcase-products-using-alljoyn">Showcase</a></li><li class="menu-parent menu-mlid-2487 menu-item-2487"><a href="/allseen-alliance-certification">Certification</a><ul class="menu clearfix"><li class="first menu-mlid-2488 menu-item-2488"><a href="/certification/how-validate-your-designed-allseen-product">How To Validate Your Product</a></li><li class="last menu-mlid-2489 menu-item-2489"><a href="/certification/faq">FAQ</a></li></ul></li><li class="last menu-parent menu-mlid-2421 menu-item-2421"><a href="/news-and-events">News &amp; Events</a><ul class="menu clearfix"><li class="first menu-mlid-2422 menu-item-2422"><a href="/news-and-events/newsroom/announcements">Announcements</a></li><li class="menu-mlid-2449 menu-item-2449"><a href="/news/videos">Videos</a></li><li class="menu-mlid-2423 menu-item-2423"><a href="/news-and-events/newsroom/in-the-news">In The News</a></li><li class="menu-mlid-2424 menu-item-2424"><a href="/news-and-events/events">Events</a></li><li class="menu-mlid-2448 menu-item-2448"><a href="/news-and-events/blogs">Blogs</a></li><li class="menu-mlid-2461 menu-item-2461"><a href="/news-and-events/newsletters">Newsletters</a></li><li class="last menu-mlid-2933 menu-item-2933"><a href="/news-and-events/videos">Videos</a></li></ul></li></ul></div>
+</div></div></section></div></div>      </div>
+            
+                  <div id="content-column" role="main">
+        <div class="content-inner">
+
+          
+          <section id="main-content">
+
+                                      <header id="main-content-header">
+
+                                                  <h1 id="sub-title">
+                    So where&#039;s the source code                  </h1>
+                
+                
+              </header>
+                        
+                          <div id="content">
+                        
+  
+<div id="forum-topic-header" class="forum-topic-header clearfix">
+	
+  <div class="topic-post-count">
+  18 posts / 0 new  </div>
+
+      <div class="topic-reply-link">
+    <div class="topic-reply-locked"><span class="af-button-large"><span>Topic locked</span></span></div>    </div>
+  
+  
+      <div class="last-post-link">
+     <a href="/developer-resources/forum/developers/so-wheres-source-code#comment-10430" class="af-button-large active"><span>Last post</span></a>    </div>
+  
+
+  <a id="forum-topic-top"></a>
+</div>
+
+<div id="post-3629" class="forum-post clearfix en posted-by-8749 article "  about="/developer-resources/forum/developers/so-wheres-source-code" typeof="sioc:Post sioct:BoardPost" role="article">
+			<div class="forum-post-title first">
+		  <div class="title-wrap">
+		  So where&#039;s the source code		  			  		  </div>
+		</div>
+		
+  <div class="forum-post-wrapper">
+    <div class="forum-post-panel-sub">
+          
+               
+
+<div class="author-pane">
+ <div class="author-pane-inner">
+       <div class="author-pane-section author-pane-general">
+            <div class="author-pane-line ">
+	      	      	      	      	      	 <div class="author-pane-line author-name">
+	      	  <a href="/users/20111375" title="View user profile." class="username" xml:lang="" about="/users/20111375" typeof="sioc:UserAccount" property="foaf:name" datatype="">20111375</a>	      	 </div>
+	            </div>
+
+                    
+  <div class="picture">
+    <img typeof="foaf:Image" src="/sites/default/files/icn-gen-avatar.png" alt="20111375&#039;s picture" title="20111375&#039;s picture" />  </div>
+      
+                    <div class="author-pane-line author-offline">
+           Offline        </div>
+      
+            
+            
+                    <div class="author-pane-line author-joined">
+          <h6>Joined</h6> 12/10/2013 - 04:10        </div>
+      
+            
+                </div>
+
+        <div class="author-pane-section author-pane-contact">
+            
+            
+            
+                </div>
+
+        <div class="author-pane-section author-pane-admin">
+            
+          
+               </div>
+  </div>
+</div>
+            
+      <div class="forum-posted-on">
+      	  <h6 class="date-posted">Posted</h6>
+	      <span property="dc:date dc:created" content="2013-12-10T04:29:35-08:00" datatype="xsd:dateTime">Tue, 12/10/2013 - 04:29</span>	
+	      	      	    </div>      </div>
+
+    <div class="forum-post-panel-main clearfix">
+    
+	  <div class="forum-post-info clearfix">	
+	    	    	    
+	  </div>     
+      <div class="forum-post-content">
+        
+  <div class="field-body view-mode-full">
+    <p>Hi,</p><p>I can't seem to download the source and all the links on Alljoyn no longer work, and the AllJoyn git repo is empty.</p><p>Thanks</p><p>Andrew</p>  </div>
+      </div>
+
+      
+          </div>
+  </div> 
+  <div class="forum-post-footer clearfix">
+    <div class="forum-jump-links">
+      <a href="#forum-topic-top" title="Jump to top of page" class="af-button-small"><span>Top</span></a>
+    </div>
+
+    <div class="forum-post-links">
+          </div>
+  </div> </div> 
+<div id="forum-comments" class="comment-wrapper">
+  <a id="comment-10001"></a>
+
+
+<div id="post-10001" class="forum-post clearfix en posted-by-8233 "  about="/comment/10001#comment-10001" typeof="sioc:Post sioct:Comment">
+			<div class="forum-post-title ">
+		  <div class="title-wrap">
+		  Re: So where&#039;s the source code		  			  	        <span class="forum-post-number"><a href="/comment/10001#comment-10001" class="permalink" rel="bookmark">#1</a></span>
+	      		  </div>
+		</div>
+		
+  <div class="forum-post-wrapper">
+    <div class="forum-post-panel-sub">
+      	    <span class="forum-post-number"><a href="/comment/10001#comment-10001" class="permalink" rel="bookmark">#1</a></span>
+	      
+               
+
+<div class="author-pane">
+ <div class="author-pane-inner">
+       <div class="author-pane-section author-pane-general">
+            <div class="author-pane-line ">
+	      	      	      	      	      	 <div class="author-pane-line author-name">
+	      	  <a href="/users/mricon" title="View user profile." class="username" xml:lang="" about="/users/mricon" typeof="sioc:UserAccount" property="foaf:name" datatype="">mricon</a>	      	 </div>
+	            </div>
+
+                    
+  <div class="picture">
+    <img typeof="foaf:Image" src="https://identity.allseenalliance.org/sites/default/files/pictures/picture-8233-1386689525.jpg" alt="mricon&#039;s picture" title="mricon&#039;s picture" />  </div>
+      
+                    <div class="author-pane-line author-offline">
+           Offline        </div>
+      
+            
+            
+                    <div class="author-pane-line author-joined">
+          <h6>Joined</h6> 11/19/2013 - 08:23        </div>
+      
+            
+                </div>
+
+        <div class="author-pane-section author-pane-contact">
+            
+            
+            
+                </div>
+
+        <div class="author-pane-section author-pane-admin">
+            
+          
+               </div>
+  </div>
+</div>
+            
+      <div class="forum-posted-on">
+      	  <h6 class="date-posted">Posted</h6>
+	      <span class="date-time permalink"><a href="/comment/10001#comment-10001" rel="bookmark">Tue, 12/10/2013 - 07:31</a></span>	
+	      	      	        	
+	        	
+	        	      	    </div>      </div>
+
+    <div class="forum-post-panel-main clearfix">
+    
+	  <div class="forum-post-info clearfix">	
+	    	    	    
+	  </div>     
+      <div class="forum-post-content">
+        <span rel="sioc:reply_of" resource="/developer-resources/forum/developers/so-wheres-source-code" class="rdf-meta element-hidden"></span>
+  <div class="field-comment-body view-mode-full">
+    <p>In gerrit, the default view shows oustanding reviews. The repositories are listed under "Projects-&gt;List":</p><p><a href="https://git.allseenalliance.org/gerrit/#/admin/projects/" rel="nofollow">https://git.allseenalliance.org/gerrit/#/admin/projects/</a></p><p>You should be able to see the clone URLs for each project after you click on the repository title.</p>  </div>
+      </div>
+
+      
+          </div>
+  </div> 
+  <div class="forum-post-footer clearfix">
+    <div class="forum-jump-links">
+      <a href="#forum-topic-top" title="Jump to top of page" class="af-button-small"><span>Top</span></a>
+    </div>
+
+    <div class="forum-post-links">
+          </div>
+  </div> </div> 
+<a id="comment-10002"></a>
+
+
+<div id="post-10002" class="forum-post clearfix en posted-by-8782 "  about="/comment/10002#comment-10002" typeof="sioc:Post sioct:Comment">
+			<div class="forum-post-title ">
+		  <div class="title-wrap">
+		  Re: So where&#039;s the source code		  			  	        <span class="forum-post-number"><a href="/comment/10002#comment-10002" class="permalink" rel="bookmark">#2</a></span>
+	      		  </div>
+		</div>
+		
+  <div class="forum-post-wrapper">
+    <div class="forum-post-panel-sub">
+      	    <span class="forum-post-number"><a href="/comment/10002#comment-10002" class="permalink" rel="bookmark">#2</a></span>
+	      
+               
+
+<div class="author-pane">
+ <div class="author-pane-inner">
+       <div class="author-pane-section author-pane-general">
+            <div class="author-pane-line ">
+	      	      	      	      	      	 <div class="author-pane-line author-name">
+	      	  <a href="/users/humanbn" title="View user profile." class="username" xml:lang="" about="/users/humanbn" typeof="sioc:UserAccount" property="foaf:name" datatype="">humanbn</a>	      	 </div>
+	            </div>
+
+                    
+  <div class="picture">
+    <img typeof="foaf:Image" src="/sites/default/files/icn-gen-avatar.png" alt="humanbn&#039;s picture" title="humanbn&#039;s picture" />  </div>
+      
+                    <div class="author-pane-line author-offline">
+           Offline        </div>
+      
+            
+            
+                    <div class="author-pane-line author-joined">
+          <h6>Joined</h6> 12/10/2013 - 06:58        </div>
+      
+            
+                </div>
+
+        <div class="author-pane-section author-pane-contact">
+            
+            
+            
+                </div>
+
+        <div class="author-pane-section author-pane-admin">
+            
+          
+               </div>
+  </div>
+</div>
+            
+      <div class="forum-posted-on">
+      	  <h6 class="date-posted">Posted</h6>
+	      <span class="date-time permalink"><a href="/comment/10002#comment-10002" rel="bookmark">Tue, 12/10/2013 - 07:52</a></span>	
+	      	      	        	
+	        	
+	        	      	    </div>      </div>
+
+    <div class="forum-post-panel-main clearfix">
+    
+	  <div class="forum-post-info clearfix">	
+	    	    	    
+	  </div>     
+      <div class="forum-post-content">
+        <span rel="sioc:reply_of" resource="/developer-resources/forum/developers/so-wheres-source-code" class="rdf-meta element-hidden"></span>
+  <div class="field-comment-body view-mode-full">
+    <p>I've not used GIT before, what do I do with the clone URLs?  I see those.  Which do I need to code an Android App using a Windows box?</p><p>Thanks for your help.</p><p> </p><p> </p>  </div>
+      </div>
+
+      
+          </div>
+  </div> 
+  <div class="forum-post-footer clearfix">
+    <div class="forum-jump-links">
+      <a href="#forum-topic-top" title="Jump to top of page" class="af-button-small"><span>Top</span></a>
+    </div>
+
+    <div class="forum-post-links">
+          </div>
+  </div> </div> 
+<a id="comment-10003"></a>
+
+
+<div id="post-10003" class="forum-post clearfix en posted-by-8233 "  about="/comment/10003#comment-10003" typeof="sioc:Post sioct:Comment">
+			<div class="forum-post-title ">
+		  <div class="title-wrap">
+		  Re: So where&#039;s the source code		  			  	        <span class="forum-post-number"><a href="/comment/10003#comment-10003" class="permalink" rel="bookmark">#3</a></span>
+	      		  </div>
+		</div>
+		
+  <div class="forum-post-wrapper">
+    <div class="forum-post-panel-sub">
+      	    <span class="forum-post-number"><a href="/comment/10003#comment-10003" class="permalink" rel="bookmark">#3</a></span>
+	      
+               
+
+<div class="author-pane">
+ <div class="author-pane-inner">
+       <div class="author-pane-section author-pane-general">
+            <div class="author-pane-line ">
+	      	      	      	      	      	 <div class="author-pane-line author-name">
+	      	  <a href="/users/mricon" title="View user profile." class="username" xml:lang="" about="/users/mricon" typeof="sioc:UserAccount" property="foaf:name" datatype="">mricon</a>	      	 </div>
+	            </div>
+
+                    
+  <div class="picture">
+    <img typeof="foaf:Image" src="https://identity.allseenalliance.org/sites/default/files/pictures/picture-8233-1386689525.jpg" alt="mricon&#039;s picture" title="mricon&#039;s picture" />  </div>
+      
+                    <div class="author-pane-line author-offline">
+           Offline        </div>
+      
+            
+            
+                    <div class="author-pane-line author-joined">
+          <h6>Joined</h6> 11/19/2013 - 08:23        </div>
+      
+            
+                </div>
+
+        <div class="author-pane-section author-pane-contact">
+            
+            
+            
+                </div>
+
+        <div class="author-pane-section author-pane-admin">
+            
+          
+               </div>
+  </div>
+</div>
+            
+      <div class="forum-posted-on">
+      	  <h6 class="date-posted">Posted</h6>
+	      <span class="date-time permalink"><a href="/comment/10003#comment-10003" rel="bookmark">Tue, 12/10/2013 - 09:23</a></span>	
+	      	      	        	
+	        	
+	        	      	    </div>      </div>
+
+    <div class="forum-post-panel-main clearfix">
+    
+	  <div class="forum-post-info clearfix">	
+	    	    	    
+	  </div>     
+      <div class="forum-post-content">
+        <span rel="sioc:reply_of" resource="/developer-resources/forum/developers/so-wheres-source-code" class="rdf-meta element-hidden"></span><span rel="sioc:reply_of" resource="/comment/10002#comment-10002" class="rdf-meta element-hidden"></span>
+  <div class="field-comment-body view-mode-full">
+    <p>I'm not an android developer, so someone else will have to help you out with that question. I would suggest using an IDE such as eclipse (which is what the Android SDK uses) -- it provides builtin git support.</p>  </div>
+      </div>
+
+      
+          </div>
+  </div> 
+  <div class="forum-post-footer clearfix">
+    <div class="forum-jump-links">
+      <a href="#forum-topic-top" title="Jump to top of page" class="af-button-small"><span>Top</span></a>
+    </div>
+
+    <div class="forum-post-links">
+          </div>
+  </div> </div> 
+<a id="comment-10004"></a>
+
+
+<div id="post-10004" class="forum-post clearfix en posted-by-8749 post-by-starter "  about="/comment/10004#comment-10004" typeof="sioc:Post sioct:Comment">
+			<div class="forum-post-title ">
+		  <div class="title-wrap">
+		  Re: So where&#039;s the source code		  			  	        <span class="forum-post-number"><a href="/comment/10004#comment-10004" class="permalink" rel="bookmark">#4</a></span>
+	      		  </div>
+		</div>
+		
+  <div class="forum-post-wrapper">
+    <div class="forum-post-panel-sub">
+      	    <span class="forum-post-number"><a href="/comment/10004#comment-10004" class="permalink" rel="bookmark">#4</a></span>
+	      
+               
+
+<div class="author-pane">
+ <div class="author-pane-inner">
+       <div class="author-pane-section author-pane-general">
+            <div class="author-pane-line ">
+	      	      	      	      	      	 <div class="author-pane-line author-name">
+	      	  <a href="/users/20111375" title="View user profile." class="username" xml:lang="" about="/users/20111375" typeof="sioc:UserAccount" property="foaf:name" datatype="">20111375</a>	      	 </div>
+	            </div>
+
+                    
+  <div class="picture">
+    <img typeof="foaf:Image" src="/sites/default/files/icn-gen-avatar.png" alt="20111375&#039;s picture" title="20111375&#039;s picture" />  </div>
+      
+                    <div class="author-pane-line author-offline">
+           Offline        </div>
+      
+            
+            
+                    <div class="author-pane-line author-joined">
+          <h6>Joined</h6> 12/10/2013 - 04:10        </div>
+      
+            
+                </div>
+
+        <div class="author-pane-section author-pane-contact">
+            
+            
+            
+                </div>
+
+        <div class="author-pane-section author-pane-admin">
+            
+          
+               </div>
+  </div>
+</div>
+            
+      <div class="forum-posted-on">
+      	  <h6 class="date-posted">Posted</h6>
+	      <span class="date-time permalink"><a href="/comment/10004#comment-10004" rel="bookmark">Tue, 12/10/2013 - 12:41</a></span>	
+	      	      	        	
+	        	
+	        	      	    </div>      </div>
+
+    <div class="forum-post-panel-main clearfix">
+    
+	  <div class="forum-post-info clearfix">	
+	    	    	    
+	  </div>     
+      <div class="forum-post-content">
+        <span rel="sioc:reply_of" resource="/developer-resources/forum/developers/so-wheres-source-code" class="rdf-meta element-hidden"></span>
+  <div class="field-comment-body view-mode-full">
+    <p>I use IntelliJ Ideas which allows you to check out a Git repo. However, where are all the pre-compiled resources such as the Windows 7 stuff (which contained Java resources and accompanying AllJoyn DLL)?</p>  </div>
+      </div>
+
+      
+          </div>
+  </div> 
+  <div class="forum-post-footer clearfix">
+    <div class="forum-jump-links">
+      <a href="#forum-topic-top" title="Jump to top of page" class="af-button-small"><span>Top</span></a>
+    </div>
+
+    <div class="forum-post-links">
+          </div>
+  </div> </div> 
+<a id="comment-10005"></a>
+
+
+<div id="post-10005" class="forum-post clearfix en posted-by-8749 post-by-starter "  about="/comment/10005#comment-10005" typeof="sioc:Post sioct:Comment">
+			<div class="forum-post-title ">
+		  <div class="title-wrap">
+		  Re: So where&#039;s the source code		  			  	        <span class="forum-post-number"><a href="/comment/10005#comment-10005" class="permalink" rel="bookmark">#5</a></span>
+	      		  </div>
+		</div>
+		
+  <div class="forum-post-wrapper">
+    <div class="forum-post-panel-sub">
+      	    <span class="forum-post-number"><a href="/comment/10005#comment-10005" class="permalink" rel="bookmark">#5</a></span>
+	      
+               
+
+<div class="author-pane">
+ <div class="author-pane-inner">
+       <div class="author-pane-section author-pane-general">
+            <div class="author-pane-line ">
+	      	      	      	      	      	 <div class="author-pane-line author-name">
+	      	  <a href="/users/20111375" title="View user profile." class="username" xml:lang="" about="/users/20111375" typeof="sioc:UserAccount" property="foaf:name" datatype="">20111375</a>	      	 </div>
+	            </div>
+
+                    
+  <div class="picture">
+    <img typeof="foaf:Image" src="/sites/default/files/icn-gen-avatar.png" alt="20111375&#039;s picture" title="20111375&#039;s picture" />  </div>
+      
+                    <div class="author-pane-line author-offline">
+           Offline        </div>
+      
+            
+            
+                    <div class="author-pane-line author-joined">
+          <h6>Joined</h6> 12/10/2013 - 04:10        </div>
+      
+            
+                </div>
+
+        <div class="author-pane-section author-pane-contact">
+            
+            
+            
+                </div>
+
+        <div class="author-pane-section author-pane-admin">
+            
+          
+               </div>
+  </div>
+</div>
+            
+      <div class="forum-posted-on">
+      	  <h6 class="date-posted">Posted</h6>
+	      <span class="date-time permalink"><a href="/comment/10005#comment-10005" rel="bookmark">Tue, 12/10/2013 - 22:46</a></span>	
+	      	      	        	
+	        	
+	        	      	    </div>      </div>
+
+    <div class="forum-post-panel-main clearfix">
+    
+	  <div class="forum-post-info clearfix">	
+	    	    	    
+	  </div>     
+      <div class="forum-post-content">
+        <span rel="sioc:reply_of" resource="/developer-resources/forum/developers/so-wheres-source-code" class="rdf-meta element-hidden"></span>
+  <div class="field-comment-body view-mode-full">
+    <p>Well I was going to use this in my final year project, and I have invested some time in the Java implimentation of the SDK, but this major shift to the alliance has stopped that. I've learnt a valuable lesson which will form part of my reflective report.</p>  </div>
+      </div>
+
+      
+          </div>
+  </div> 
+  <div class="forum-post-footer clearfix">
+    <div class="forum-jump-links">
+      <a href="#forum-topic-top" title="Jump to top of page" class="af-button-small"><span>Top</span></a>
+    </div>
+
+    <div class="forum-post-links">
+          </div>
+  </div> </div> 
+<a id="comment-10007"></a>
+
+
+<div id="post-10007" class="forum-post clearfix en posted-by-8749 post-by-starter "  about="/comment/10007#comment-10007" typeof="sioc:Post sioct:Comment">
+			<div class="forum-post-title ">
+		  <div class="title-wrap">
+		  Re: So where&#039;s the source code		  			  	        <span class="forum-post-number"><a href="/comment/10007#comment-10007" class="permalink" rel="bookmark">#6</a></span>
+	      		  </div>
+		</div>
+		
+  <div class="forum-post-wrapper">
+    <div class="forum-post-panel-sub">
+      	    <span class="forum-post-number"><a href="/comment/10007#comment-10007" class="permalink" rel="bookmark">#6</a></span>
+	      
+               
+
+<div class="author-pane">
+ <div class="author-pane-inner">
+       <div class="author-pane-section author-pane-general">
+            <div class="author-pane-line ">
+	      	      	      	      	      	 <div class="author-pane-line author-name">
+	      	  <a href="/users/20111375" title="View user profile." class="username" xml:lang="" about="/users/20111375" typeof="sioc:UserAccount" property="foaf:name" datatype="">20111375</a>	      	 </div>
+	            </div>
+
+                    
+  <div class="picture">
+    <img typeof="foaf:Image" src="/sites/default/files/icn-gen-avatar.png" alt="20111375&#039;s picture" title="20111375&#039;s picture" />  </div>
+      
+                    <div class="author-pane-line author-offline">
+           Offline        </div>
+      
+            
+            
+                    <div class="author-pane-line author-joined">
+          <h6>Joined</h6> 12/10/2013 - 04:10        </div>
+      
+            
+                </div>
+
+        <div class="author-pane-section author-pane-contact">
+            
+            
+            
+                </div>
+
+        <div class="author-pane-section author-pane-admin">
+            
+          
+               </div>
+  </div>
+</div>
+            
+      <div class="forum-posted-on">
+      	  <h6 class="date-posted">Posted</h6>
+	      <span class="date-time permalink"><a href="/comment/10007#comment-10007" rel="bookmark">Wed, 12/11/2013 - 01:56</a></span>	
+	      	      	        	
+	        	
+	        	      	    </div>      </div>
+
+    <div class="forum-post-panel-main clearfix">
+    
+	  <div class="forum-post-info clearfix">	
+	    	    	    
+	  </div>     
+      <div class="forum-post-content">
+        <span rel="sioc:reply_of" resource="/developer-resources/forum/developers/so-wheres-source-code" class="rdf-meta element-hidden"></span>
+  <div class="field-comment-body view-mode-full">
+    <p>Where are all the examples and platform specific project files that were on the alljoyn site?</p><p><a href="https://allseenalliance.org/developer-resources/alljoyn/docsdownloads/windows-7">https://allseenalliance.org/developer-resources/alljoyn/docsdownloads/wi...</a> where are all the VS projects and examples that were on the alljoyn site?</p>  </div>
+      </div>
+
+      
+          </div>
+  </div> 
+  <div class="forum-post-footer clearfix">
+    <div class="forum-jump-links">
+      <a href="#forum-topic-top" title="Jump to top of page" class="af-button-small"><span>Top</span></a>
+    </div>
+
+    <div class="forum-post-links">
+          </div>
+  </div> </div> 
+<a id="comment-10008"></a>
+
+
+<div id="post-10008" class="forum-post clearfix en posted-by-8954 "  about="/comment/10008#comment-10008" typeof="sioc:Post sioct:Comment">
+			<div class="forum-post-title ">
+		  <div class="title-wrap">
+		  Re: So where&#039;s the source code		  			  	        <span class="forum-post-number"><a href="/comment/10008#comment-10008" class="permalink" rel="bookmark">#7</a></span>
+	      		  </div>
+		</div>
+		
+  <div class="forum-post-wrapper">
+    <div class="forum-post-panel-sub">
+      	    <span class="forum-post-number"><a href="/comment/10008#comment-10008" class="permalink" rel="bookmark">#7</a></span>
+	      
+               
+
+<div class="author-pane">
+ <div class="author-pane-inner">
+       <div class="author-pane-section author-pane-general">
+            <div class="author-pane-line ">
+	      	      	      	      	      	 <div class="author-pane-line author-name">
+	      	  <a href="/users/gadiator" title="View user profile." class="username" xml:lang="" about="/users/gadiator" typeof="sioc:UserAccount" property="foaf:name" datatype="">gadiator</a>	      	 </div>
+	            </div>
+
+                    
+  <div class="picture">
+    <img typeof="foaf:Image" src="/sites/default/files/icn-gen-avatar.png" alt="gadiator&#039;s picture" title="gadiator&#039;s picture" />  </div>
+      
+                    <div class="author-pane-line author-offline">
+           Offline        </div>
+      
+            
+            
+                    <div class="author-pane-line author-joined">
+          <h6>Joined</h6> 12/11/2013 - 07:31        </div>
+      
+            
+                </div>
+
+        <div class="author-pane-section author-pane-contact">
+            
+            
+            
+                </div>
+
+        <div class="author-pane-section author-pane-admin">
+            
+          
+               </div>
+  </div>
+</div>
+            
+      <div class="forum-posted-on">
+      	  <h6 class="date-posted">Posted</h6>
+	      <span class="date-time permalink"><a href="/comment/10008#comment-10008" rel="bookmark">Wed, 12/11/2013 - 11:02</a></span>	
+	      	      	        	
+	        	
+	        	      	    </div>      </div>
+
+    <div class="forum-post-panel-main clearfix">
+    
+	  <div class="forum-post-info clearfix">	
+	    	    	    
+	  </div>     
+      <div class="forum-post-content">
+        <span rel="sioc:reply_of" resource="/developer-resources/forum/developers/so-wheres-source-code" class="rdf-meta element-hidden"></span>
+  <div class="field-comment-body view-mode-full">
+    <p>The transfer to allseen Alliance is a disaster. It is totally beta. Links doesn't work and the examples are also not up to date. No SDK.</p>  </div>
+      </div>
+
+      
+          </div>
+  </div> 
+  <div class="forum-post-footer clearfix">
+    <div class="forum-jump-links">
+      <a href="#forum-topic-top" title="Jump to top of page" class="af-button-small"><span>Top</span></a>
+    </div>
+
+    <div class="forum-post-links">
+          </div>
+  </div> </div> 
+<a id="comment-10009"></a>
+
+
+<div id="post-10009" class="forum-post clearfix en posted-by-8792 "  about="/comment/10009#comment-10009" typeof="sioc:Post sioct:Comment">
+			<div class="forum-post-title ">
+		  <div class="title-wrap">
+		  Re: So where&#039;s the source code		  			  	        <span class="forum-post-number"><a href="/comment/10009#comment-10009" class="permalink" rel="bookmark">#8</a></span>
+	      		  </div>
+		</div>
+		
+  <div class="forum-post-wrapper">
+    <div class="forum-post-panel-sub">
+      	    <span class="forum-post-number"><a href="/comment/10009#comment-10009" class="permalink" rel="bookmark">#8</a></span>
+	      
+               
+
+<div class="author-pane">
+ <div class="author-pane-inner">
+       <div class="author-pane-section author-pane-general">
+            <div class="author-pane-line ">
+	      	      	      	      	      	 <div class="author-pane-line author-name">
+	      	  <a href="/users/macstevens" title="View user profile." class="username" xml:lang="" about="/users/macstevens" typeof="sioc:UserAccount" property="foaf:name" datatype="">macstevens</a>	      	 </div>
+	            </div>
+
+                    
+  <div class="picture">
+    <img typeof="foaf:Image" src="/sites/default/files/icn-gen-avatar.png" alt="macstevens&#039;s picture" title="macstevens&#039;s picture" />  </div>
+      
+                    <div class="author-pane-line author-offline">
+           Offline        </div>
+      
+            
+            
+                    <div class="author-pane-line author-joined">
+          <h6>Joined</h6> 12/10/2013 - 08:22        </div>
+      
+            
+                </div>
+
+        <div class="author-pane-section author-pane-contact">
+            
+            
+            
+                </div>
+
+        <div class="author-pane-section author-pane-admin">
+            
+          
+               </div>
+  </div>
+</div>
+            
+      <div class="forum-posted-on">
+      	  <h6 class="date-posted">Posted</h6>
+	      <span class="date-time permalink"><a href="/comment/10009#comment-10009" rel="bookmark">Wed, 12/11/2013 - 11:47</a></span>	
+	      	      	        	
+	        	
+	        	      	    </div>      </div>
+
+    <div class="forum-post-panel-main clearfix">
+    
+	  <div class="forum-post-info clearfix">	
+	    	    	    
+	  </div>     
+      <div class="forum-post-content">
+        <span rel="sioc:reply_of" resource="/developer-resources/forum/developers/so-wheres-source-code" class="rdf-meta element-hidden"></span>
+  <div class="field-comment-body view-mode-full">
+    <p>I'm just wondering if this is a case of cleaning up all the dust from the move :)</p><p>Does anyone from from the AllJoyn/Allseen team know if there is a plan to provide prebuilt SDKs separately from the source?</p>  </div>
+      </div>
+
+      
+          </div>
+  </div> 
+  <div class="forum-post-footer clearfix">
+    <div class="forum-jump-links">
+      <a href="#forum-topic-top" title="Jump to top of page" class="af-button-small"><span>Top</span></a>
+    </div>
+
+    <div class="forum-post-links">
+          </div>
+  </div> </div> 
+<a id="comment-10013"></a>
+
+
+<div id="post-10013" class="forum-post clearfix en posted-by-8233 "  about="/comment/10013#comment-10013" typeof="sioc:Post sioct:Comment">
+			<div class="forum-post-title ">
+		  <div class="title-wrap">
+		  Re: So where&#039;s the source code		  			  	        <span class="forum-post-number"><a href="/comment/10013#comment-10013" class="permalink" rel="bookmark">#9</a></span>
+	      		  </div>
+		</div>
+		
+  <div class="forum-post-wrapper">
+    <div class="forum-post-panel-sub">
+      	    <span class="forum-post-number"><a href="/comment/10013#comment-10013" class="permalink" rel="bookmark">#9</a></span>
+	      
+               
+
+<div class="author-pane">
+ <div class="author-pane-inner">
+       <div class="author-pane-section author-pane-general">
+            <div class="author-pane-line ">
+	      	      	      	      	      	 <div class="author-pane-line author-name">
+	      	  <a href="/users/mricon" title="View user profile." class="username" xml:lang="" about="/users/mricon" typeof="sioc:UserAccount" property="foaf:name" datatype="">mricon</a>	      	 </div>
+	            </div>
+
+                    
+  <div class="picture">
+    <img typeof="foaf:Image" src="https://identity.allseenalliance.org/sites/default/files/pictures/picture-8233-1386689525.jpg" alt="mricon&#039;s picture" title="mricon&#039;s picture" />  </div>
+      
+                    <div class="author-pane-line author-offline">
+           Offline        </div>
+      
+            
+            
+                    <div class="author-pane-line author-joined">
+          <h6>Joined</h6> 11/19/2013 - 08:23        </div>
+      
+            
+                </div>
+
+        <div class="author-pane-section author-pane-contact">
+            
+            
+            
+                </div>
+
+        <div class="author-pane-section author-pane-admin">
+            
+          
+               </div>
+  </div>
+</div>
+            
+      <div class="forum-posted-on">
+      	  <h6 class="date-posted">Posted</h6>
+	      <span class="date-time permalink"><a href="/comment/10013#comment-10013" rel="bookmark">Thu, 12/12/2013 - 12:02</a></span>	
+	      	      	        	
+	        	
+	        	      	    </div>      </div>
+
+    <div class="forum-post-panel-main clearfix">
+    
+	  <div class="forum-post-info clearfix">	
+	    	    	    
+	  </div>     
+      <div class="forum-post-content">
+        <span rel="sioc:reply_of" resource="/developer-resources/forum/developers/so-wheres-source-code" class="rdf-meta element-hidden"></span><span rel="sioc:reply_of" resource="/comment/10008#comment-10008" class="rdf-meta element-hidden"></span>
+  <div class="field-comment-body view-mode-full">
+    <p>@gadiator: Allseen Alliance is a whole new project, and Alljoyn source code is being donated to the Alliance. It will take some time for the first Allseen release, but in the meantime you can continue using old AllJoyn SDKs -- they have not gone away and can be downloaded from <a href="https://www.alljoyn.org/docs-and-downloads" rel="nofollow">https://www.alljoyn.org/docs-and-downloads</a>. Once Allseen sees its first release, it should be pretty straightforward to switch to the new codebase.</p><p>@macstevens: yes, of couse, there will be brand new prebuilt SDKs once Alliance makes the first release. In the meantime, everyone is invited to participate -- if there was something that you thought needed improving in the old AllJoyn codebase, you are encoraged to submit a patch via <a href="https://git.allseenalliance.org/" rel="nofollow">gerrit</a>. :)</p><p>Some of these questions are covered <a href="https://allseenalliance.org/developer-resources/faqs#faq24" rel="nofollow">in the FAQ</a>, among many others.</p><p>I hope this helps!</p>  </div>
+      </div>
+
+      
+          </div>
+  </div> 
+  <div class="forum-post-footer clearfix">
+    <div class="forum-jump-links">
+      <a href="#forum-topic-top" title="Jump to top of page" class="af-button-small"><span>Top</span></a>
+    </div>
+
+    <div class="forum-post-links">
+          </div>
+  </div> </div> 
+<a id="comment-10015"></a>
+
+
+<div id="post-10015" class="forum-post clearfix en posted-by-9083 "  about="/comment/10015#comment-10015" typeof="sioc:Post sioct:Comment">
+			<div class="forum-post-title ">
+		  <div class="title-wrap">
+		  Re: So where&#039;s the source code		  			  	        <span class="forum-post-number"><a href="/comment/10015#comment-10015" class="permalink" rel="bookmark">#10</a></span>
+	      		  </div>
+		</div>
+		
+  <div class="forum-post-wrapper">
+    <div class="forum-post-panel-sub">
+      	    <span class="forum-post-number"><a href="/comment/10015#comment-10015" class="permalink" rel="bookmark">#10</a></span>
+	      
+               
+
+<div class="author-pane">
+ <div class="author-pane-inner">
+       <div class="author-pane-section author-pane-general">
+            <div class="author-pane-line ">
+	      	      	      	      	      	 <div class="author-pane-line author-name">
+	      	  <a href="/users/choi-dong-hun" title="View user profile." class="username" xml:lang="" about="/users/choi-dong-hun" typeof="sioc:UserAccount" property="foaf:name" datatype="">CHOI DONG HUN</a>	      	 </div>
+	            </div>
+
+                    
+  <div class="picture">
+    <img typeof="foaf:Image" src="/sites/default/files/icn-gen-avatar.png" alt="CHOI DONG HUN&#039;s picture" title="CHOI DONG HUN&#039;s picture" />  </div>
+      
+                    <div class="author-pane-line author-offline">
+           Offline        </div>
+      
+            
+            
+                    <div class="author-pane-line author-joined">
+          <h6>Joined</h6> 12/12/2013 - 18:19        </div>
+      
+            
+                </div>
+
+        <div class="author-pane-section author-pane-contact">
+            
+            
+            
+                </div>
+
+        <div class="author-pane-section author-pane-admin">
+            
+          
+               </div>
+  </div>
+</div>
+            
+      <div class="forum-posted-on">
+      	  <h6 class="date-posted">Posted</h6>
+	      <span class="date-time permalink"><a href="/comment/10015#comment-10015" rel="bookmark">Thu, 12/12/2013 - 18:44</a></span>	
+	      	      	        	
+	        	
+	        	      	    </div>      </div>
+
+    <div class="forum-post-panel-main clearfix">
+    
+	  <div class="forum-post-info clearfix">	
+	    	    	    
+	  </div>     
+      <div class="forum-post-content">
+        <span rel="sioc:reply_of" resource="/developer-resources/forum/developers/so-wheres-source-code" class="rdf-meta element-hidden"></span>
+  <div class="field-comment-body view-mode-full">
+    <p>I've been developed a smart tv app using alljoyn with java script,</p><p>now, I cannot continue project, It's all gone, the project, sdk, doc, etc.</p><p>How can I use js api with javascript? (It doesn't mean js in unity)</p>  </div>
+      </div>
+
+      
+          </div>
+  </div> 
+  <div class="forum-post-footer clearfix">
+    <div class="forum-jump-links">
+      <a href="#forum-topic-top" title="Jump to top of page" class="af-button-small"><span>Top</span></a>
+    </div>
+
+    <div class="forum-post-links">
+          </div>
+  </div> </div> 
+<a id="comment-10018"></a>
+
+
+<div id="post-10018" class="forum-post clearfix en posted-by-9069 "  about="/comment/10018#comment-10018" typeof="sioc:Post sioct:Comment">
+			<div class="forum-post-title ">
+		  <div class="title-wrap">
+		  Re: So where&#039;s the source code		  			  	        <span class="forum-post-number"><a href="/comment/10018#comment-10018" class="permalink" rel="bookmark">#11</a></span>
+	      		  </div>
+		</div>
+		
+  <div class="forum-post-wrapper">
+    <div class="forum-post-panel-sub">
+      	    <span class="forum-post-number"><a href="/comment/10018#comment-10018" class="permalink" rel="bookmark">#11</a></span>
+	      
+               
+
+<div class="author-pane">
+ <div class="author-pane-inner">
+       <div class="author-pane-section author-pane-general">
+            <div class="author-pane-line ">
+	      	      	      	      	      	 <div class="author-pane-line author-name">
+	      	  <a href="/users/ndabhade" title="View user profile." class="username" xml:lang="" about="/users/ndabhade" typeof="sioc:UserAccount" property="foaf:name" datatype="">ndabhade</a>	      	 </div>
+	            </div>
+
+                    
+  <div class="picture">
+    <img typeof="foaf:Image" src="https://identity.allseenalliance.org/sites/default/files/pictures/picture-9069-1426791710.jpg" alt="ndabhade&#039;s picture" title="ndabhade&#039;s picture" />  </div>
+      
+                    <div class="author-pane-line author-offline">
+           Offline        </div>
+      
+            
+            
+                    <div class="author-pane-line author-joined">
+          <h6>Joined</h6> 12/12/2013 - 12:48        </div>
+      
+            
+                </div>
+
+        <div class="author-pane-section author-pane-contact">
+            
+            
+            
+                </div>
+
+        <div class="author-pane-section author-pane-admin">
+            
+          
+               </div>
+  </div>
+</div>
+            
+      <div class="forum-posted-on">
+      	  <h6 class="date-posted">Posted</h6>
+	      <span class="date-time permalink"><a href="/comment/10018#comment-10018" rel="bookmark">Fri, 12/13/2013 - 14:37</a></span>	
+	      	      	        	
+	        	
+	        	      	    </div>      </div>
+
+    <div class="forum-post-panel-main clearfix">
+    
+	  <div class="forum-post-info clearfix">	
+	    	    	    
+	  </div>     
+      <div class="forum-post-content">
+        <span rel="sioc:reply_of" resource="/developer-resources/forum/developers/so-wheres-source-code" class="rdf-meta element-hidden"></span>
+  <div class="field-comment-body view-mode-full">
+    <p>Hi Choi Dong Hun,</p><p>If you are looking for the SDKs you can get them at this place <a href="https://www.alljoyn.org/docs-and-downloads">https://www.alljoyn.org/docs-and-downloads</a> </p><p>If you looking for the docs <a href="https://allseenalliance.org/developer-resources/alljoyn/docsdownloads/">https://allseenalliance.org/developer-resources/alljoyn/docsdownloads/</a></p><p>If you wanting access to the code the process is in progress and the best bet would be to check here for updates.</p><p>Do you have an existing backup of the Javasctipt related source code ? There should be samples in there that can give you an idea on how to proceed.</p><p>Regards,<br />Nikhil</p><p> </p><p> </p>  </div>
+      </div>
+
+      
+          </div>
+  </div> 
+  <div class="forum-post-footer clearfix">
+    <div class="forum-jump-links">
+      <a href="#forum-topic-top" title="Jump to top of page" class="af-button-small"><span>Top</span></a>
+    </div>
+
+    <div class="forum-post-links">
+          </div>
+  </div> </div> 
+<a id="comment-10023"></a>
+
+
+<div id="post-10023" class="forum-post clearfix en posted-by-8800 "  about="/comment/10023#comment-10023" typeof="sioc:Post sioct:Comment">
+			<div class="forum-post-title ">
+		  <div class="title-wrap">
+		  Re: So where&#039;s the source code		  			  	        <span class="forum-post-number"><a href="/comment/10023#comment-10023" class="permalink" rel="bookmark">#12</a></span>
+	      		  </div>
+		</div>
+		
+  <div class="forum-post-wrapper">
+    <div class="forum-post-panel-sub">
+      	    <span class="forum-post-number"><a href="/comment/10023#comment-10023" class="permalink" rel="bookmark">#12</a></span>
+	      
+               
+
+<div class="author-pane">
+ <div class="author-pane-inner">
+       <div class="author-pane-section author-pane-general">
+            <div class="author-pane-line ">
+	      	      	      	      	      	 <div class="author-pane-line author-name">
+	      	  <a href="/users/bitpusher" title="View user profile." class="username" xml:lang="" about="/users/bitpusher" typeof="sioc:UserAccount" property="foaf:name" datatype="">bit_pusher</a>	      	 </div>
+	            </div>
+
+                    
+  <div class="picture">
+    <img typeof="foaf:Image" src="/sites/default/files/icn-gen-avatar.png" alt="bit_pusher&#039;s picture" title="bit_pusher&#039;s picture" />  </div>
+      
+                    <div class="author-pane-line author-offline">
+           Offline        </div>
+      
+            
+            
+                    <div class="author-pane-line author-joined">
+          <h6>Joined</h6> 12/10/2013 - 08:56        </div>
+      
+            
+                </div>
+
+        <div class="author-pane-section author-pane-contact">
+            
+            
+            
+                </div>
+
+        <div class="author-pane-section author-pane-admin">
+            
+          
+               </div>
+  </div>
+</div>
+            
+      <div class="forum-posted-on">
+      	  <h6 class="date-posted">Posted</h6>
+	      <span class="date-time permalink"><a href="/comment/10023#comment-10023" rel="bookmark">Mon, 12/16/2013 - 11:42</a></span>	
+	      	      	        	
+	        	
+	        	      	    </div>      </div>
+
+    <div class="forum-post-panel-main clearfix">
+    
+	  <div class="forum-post-info clearfix">	
+	    	    	    
+	  </div>     
+      <div class="forum-post-content">
+        <span rel="sioc:reply_of" resource="/developer-resources/forum/developers/so-wheres-source-code" class="rdf-meta element-hidden"></span><span rel="sioc:reply_of" resource="/comment/10001#comment-10001" class="rdf-meta element-hidden"></span>
+  <div class="field-comment-body view-mode-full">
+    <p>1) Make a directory such as:</p><p>/home/Dropbox/AllJoyn and cd into the directory</p><p>2) install git if you haven't already using software manager or something like:</p><p>&gt;sudo apt-get install git</p><p>3) Run git for each subdirectory in list from above. Example:</p><p>&gt;git clone <a href="https://git.allseenalliance.org/errit/All-Projects">https://git.allseenalliance.org/errit/All-Projects</a></p><p>&gt;git clone <a href="https://git.allseenalliance.org/errit/core/alljoyn">https://git.allseenalliance.org/errit/core/alljoyn</a></p><p>&gt;git clone <a href="https://git.allseenalliance.org/errit/core/devmodules">https://git.allseenalliance.org/errit/core/devmodules</a></p><p>etc ...</p>  </div>
+      </div>
+
+      
+          </div>
+  </div> 
+  <div class="forum-post-footer clearfix">
+    <div class="forum-jump-links">
+      <a href="#forum-topic-top" title="Jump to top of page" class="af-button-small"><span>Top</span></a>
+    </div>
+
+    <div class="forum-post-links">
+          </div>
+  </div> </div> 
+<a id="comment-10033"></a>
+
+
+<div id="post-10033" class="forum-post clearfix en posted-by-9123 "  about="/comment/10033#comment-10033" typeof="sioc:Post sioct:Comment">
+			<div class="forum-post-title ">
+		  <div class="title-wrap">
+		  Re: So where&#039;s the source code		  			  	        <span class="forum-post-number"><a href="/comment/10033#comment-10033" class="permalink" rel="bookmark">#13</a></span>
+	      		  </div>
+		</div>
+		
+  <div class="forum-post-wrapper">
+    <div class="forum-post-panel-sub">
+      	    <span class="forum-post-number"><a href="/comment/10033#comment-10033" class="permalink" rel="bookmark">#13</a></span>
+	      
+               
+
+<div class="author-pane">
+ <div class="author-pane-inner">
+       <div class="author-pane-section author-pane-general">
+            <div class="author-pane-line ">
+	      	      	      	      	      	 <div class="author-pane-line author-name">
+	      	  <a href="/users/fredc888" title="View user profile." class="username" xml:lang="" about="/users/fredc888" typeof="sioc:UserAccount" property="foaf:name" datatype="">fredc888</a>	      	 </div>
+	            </div>
+
+                    
+  <div class="picture">
+    <img typeof="foaf:Image" src="/sites/default/files/icn-gen-avatar.png" alt="fredc888&#039;s picture" title="fredc888&#039;s picture" />  </div>
+      
+                    <div class="author-pane-line author-offline">
+           Offline        </div>
+      
+            
+            
+                    <div class="author-pane-line author-joined">
+          <h6>Joined</h6> 12/13/2013 - 12:17        </div>
+      
+            
+                </div>
+
+        <div class="author-pane-section author-pane-contact">
+            
+            
+            
+                </div>
+
+        <div class="author-pane-section author-pane-admin">
+            
+          
+               </div>
+  </div>
+</div>
+            
+      <div class="forum-posted-on">
+      	  <h6 class="date-posted">Posted</h6>
+	      <span class="date-time permalink"><a href="/comment/10033#comment-10033" rel="bookmark">Tue, 12/17/2013 - 15:14</a></span>	
+	      	      	        	
+	        	
+	        	      	    </div>      </div>
+
+    <div class="forum-post-panel-main clearfix">
+    
+	  <div class="forum-post-info clearfix">	
+	    	    	    
+	  </div>     
+      <div class="forum-post-content">
+        <span rel="sioc:reply_of" resource="/developer-resources/forum/developers/so-wheres-source-code" class="rdf-meta element-hidden"></span>
+  <div class="field-comment-body view-mode-full">
+    <p>Is it possible to build the SDK from the current git repositories yet?</p><p> </p><p>1. I tried building from the alljoyn repository with the following build command, but am running into issues</p><p>scons OS=android CPU=arm ANDROID_NDK=(path to NDK for JellyBean) ANDROID_SRC=(path to AOSP JellyBean)  but ran into the following error</p><p>"ANDROID_SDK must be set when building ICE=on"</p><p>2. If i set the ANDROID_SDK variable, as such,</p><p>scons OS=android CPU=arm ANDROID_NDK=(path to NDK for JellyBean) ANDROID_SRC=(path to AOSP JellyBean)  ANDROID_SDK=(path to JB SDK),</p><p> </p><p>i get the following error</p><p>ValueError: invalid literal for int() with base 10: '4.2':<br />  File "/media/truecrypt1/allseen/alljoyn/SConstruct", line 19:<br />    env = SConscript(['build_core/SConscript'])<br />  File "/usr/lib/scons/SCons/Script/SConscript.py", line 614:<br />    return method(*args, **kw)<br />  File "/usr/lib/scons/SCons/Script/SConscript.py", line 551:<br />    return _SConscript(self.fs, *files, **subst_kw)</p><p>3. If I set ICE=off, as such,</p><p>scons OS=android CPU=arm ANDROID_NDK=(path to NDK for JellyBean) ANDROID_SRC=(path to AOSP JellyBean)  ICE=off</p><p> </p><p>I get the following error.</p><p>scons: Reading SConscript files ...<br />Building bindings: cpp, c, java, unity, js<br />Building services: about<br />BULLSEYE_BIN not specified<br />GTEST_DIR not specified skipping common unit test build<br />BULLSEYE_BIN not specified<br />GTEST_DIR not specified skipping alljoyn_core unit test build<br />GTEST_DIR not specified skipping alljoyn_c unit test build<br />Must specify either GECKO_BASE or CORDOVA_BASE build variable</p><p> </p><p> </p><p>Any suggestions?</p><p> </p><p> </p>  </div>
+      </div>
+
+      
+          </div>
+  </div> 
+  <div class="forum-post-footer clearfix">
+    <div class="forum-jump-links">
+      <a href="#forum-topic-top" title="Jump to top of page" class="af-button-small"><span>Top</span></a>
+    </div>
+
+    <div class="forum-post-links">
+          </div>
+  </div> </div> 
+<a id="comment-10048"></a>
+
+
+<div id="post-10048" class="forum-post clearfix en posted-by-8794 "  about="/comment/10048#comment-10048" typeof="sioc:Post sioct:Comment">
+			<div class="forum-post-title ">
+		  <div class="title-wrap">
+		  Re: So where&#039;s the source code		  			  	        <span class="forum-post-number"><a href="/comment/10048#comment-10048" class="permalink" rel="bookmark">#14</a></span>
+	      		  </div>
+		</div>
+		
+  <div class="forum-post-wrapper">
+    <div class="forum-post-panel-sub">
+      	    <span class="forum-post-number"><a href="/comment/10048#comment-10048" class="permalink" rel="bookmark">#14</a></span>
+	      
+               
+
+<div class="author-pane">
+ <div class="author-pane-inner">
+       <div class="author-pane-section author-pane-general">
+            <div class="author-pane-line ">
+	      	      	      	      	      	 <div class="author-pane-line author-name">
+	      	  <a href="/users/ibebbs" title="View user profile." class="username" xml:lang="" about="/users/ibebbs" typeof="sioc:UserAccount" property="foaf:name" datatype="">ibebbs</a>	      	 </div>
+	            </div>
+
+                    
+  <div class="picture">
+    <img typeof="foaf:Image" src="/sites/default/files/icn-gen-avatar.png" alt="ibebbs&#039;s picture" title="ibebbs&#039;s picture" />  </div>
+      
+                    <div class="author-pane-line author-offline">
+           Offline        </div>
+      
+            
+            
+                    <div class="author-pane-line author-joined">
+          <h6>Joined</h6> 12/10/2013 - 08:24        </div>
+      
+            
+                </div>
+
+        <div class="author-pane-section author-pane-contact">
+            
+            
+            
+                </div>
+
+        <div class="author-pane-section author-pane-admin">
+            
+          
+               </div>
+  </div>
+</div>
+            
+      <div class="forum-posted-on">
+      	  <h6 class="date-posted">Posted</h6>
+	      <span class="date-time permalink"><a href="/comment/10048#comment-10048" rel="bookmark">Thu, 12/19/2013 - 13:49</a></span>	
+	      	      	        	
+	        	
+	        	      	    </div>      </div>
+
+    <div class="forum-post-panel-main clearfix">
+    
+	  <div class="forum-post-info clearfix">	
+	    	    	    
+	  </div>     
+      <div class="forum-post-content">
+        <span rel="sioc:reply_of" resource="/developer-resources/forum/developers/so-wheres-source-code" class="rdf-meta element-hidden"></span>
+  <div class="field-comment-body view-mode-full">
+    <p>Has anyone managed to build Alljoyn for Win7, Win8 or WinRT yet?</p><p>I've cloned the repositories but they're different from those described in the build instructions.</p><p>When I execute 'scons OS=win8 CPU=x86 MSVC_VERSION=11.0' I don't receive any (pertinent) errors and a build seems to take place but I cannot find any build assemblies. The output from scons is as follows:</p><p>Building bindings: cpp, c, java, unity, js<br />Building services: about<br />BULLSEYE_BIN not specified<br />Using WINRT crypto libraries<br />GTEST_DIR not specified skipping common unit test build<br />BULLSEYE_BIN not specified<br />GTEST_DIR not specified skipping alljoyn_core unit test build<br />GTEST_DIR not specified skipping alljoyn_c unit test build<br />JAVA_HOME not set</p><p> </p><p>Any thoughts?</p>  </div>
+      </div>
+
+      
+          </div>
+  </div> 
+  <div class="forum-post-footer clearfix">
+    <div class="forum-jump-links">
+      <a href="#forum-topic-top" title="Jump to top of page" class="af-button-small"><span>Top</span></a>
+    </div>
+
+    <div class="forum-post-links">
+          </div>
+  </div> </div> 
+<a id="comment-10118"></a>
+
+
+<div id="post-10118" class="forum-post clearfix en posted-by-9591 "  about="/comment/10118#comment-10118" typeof="sioc:Post sioct:Comment">
+			<div class="forum-post-title ">
+		  <div class="title-wrap">
+		  Re: So where&#039;s the source code		  			  	        <span class="forum-post-number"><a href="/comment/10118#comment-10118" class="permalink" rel="bookmark">#15</a></span>
+	      		  </div>
+		</div>
+		
+  <div class="forum-post-wrapper">
+    <div class="forum-post-panel-sub">
+      	    <span class="forum-post-number"><a href="/comment/10118#comment-10118" class="permalink" rel="bookmark">#15</a></span>
+	      
+               
+
+<div class="author-pane">
+ <div class="author-pane-inner">
+       <div class="author-pane-section author-pane-general">
+            <div class="author-pane-line ">
+	      	      	      	      	      	 <div class="author-pane-line author-name">
+	      	  <a href="/users/larry" title="View user profile." class="username" xml:lang="" about="/users/larry" typeof="sioc:UserAccount" property="foaf:name" datatype="">larry</a>	      	 </div>
+	            </div>
+
+                    
+  <div class="picture">
+    <img typeof="foaf:Image" src="/sites/default/files/icn-gen-avatar.png" alt="larry&#039;s picture" title="larry&#039;s picture" />  </div>
+      
+                    <div class="author-pane-line author-offline">
+           Offline        </div>
+      
+            
+            
+                    <div class="author-pane-line author-joined">
+          <h6>Joined</h6> 01/19/2014 - 05:31        </div>
+      
+            
+                </div>
+
+        <div class="author-pane-section author-pane-contact">
+            
+            
+            
+                </div>
+
+        <div class="author-pane-section author-pane-admin">
+            
+          
+               </div>
+  </div>
+</div>
+            
+      <div class="forum-posted-on">
+      	  <h6 class="date-posted">Posted</h6>
+	      <span class="date-time permalink"><a href="/comment/10118#comment-10118" rel="bookmark">Sun, 01/26/2014 - 16:40</a></span>	
+	      	      	        	
+	        	
+	        	      	    </div>      </div>
+
+    <div class="forum-post-panel-main clearfix">
+    
+	  <div class="forum-post-info clearfix">	
+	    	    	    
+	  </div>     
+      <div class="forum-post-content">
+        <span rel="sioc:reply_of" resource="/developer-resources/forum/developers/so-wheres-source-code" class="rdf-meta element-hidden"></span>
+  <div class="field-comment-body view-mode-full">
+    <p>It seems the docs for getting the source do not match the reality.</p><p>docs say</p><p>Obtain the AllJoyn source</p><p>$ mkdir $HOME/alljoyn # for example $ cd $HOME/alljoyn $ git clone <a href="https://git.allseenalliance.org/core/alljoyn.git">https://git.allseenalliance.org/core/alljoyn.git</a></p><p>the reality seem to be you must individually pull each named repo... or i created a file and jus sourced it under linux:</p><p>git clone <a href="https://git.allseenalliance.org/gerrit/All-Projects">https://git.allseenalliance.org/gerrit/All-Projects</a><br />git clone <a href="https://git.allseenalliance.org/gerrit/core/about_tcl">https://git.allseenalliance.org/gerrit/core/about_tcl</a><br />git clone <a href="https://git.allseenalliance.org/gerrit/core/ajtcl">https://git.allseenalliance.org/gerrit/core/ajtcl</a><br />git clone <a href="https://git.allseenalliance.org/gerrit/core/alljoyn">https://git.allseenalliance.org/gerrit/core/alljoyn</a><br />git clone <a href="https://git.allseenalliance.org/gerrit/core/devmodules">https://git.allseenalliance.org/gerrit/core/devmodules</a><br />git clone <a href="https://git.allseenalliance.org/gerrit/core/peergroupmanager">https://git.allseenalliance.org/gerrit/core/peergroupmanager</a><br />git clone <a href="https://git.allseenalliance.org/gerrit/devtools/codegen">https://git.allseenalliance.org/gerrit/devtools/codegen</a><br />git clone <a href="https://git.allseenalliance.org/gerrit/multimedia/audio">https://git.allseenalliance.org/gerrit/multimedia/audio</a><br />git clone <a href="https://git.allseenalliance.org/gerrit/services/config">https://git.allseenalliance.org/gerrit/services/config</a><br />git clone <a href="https://git.allseenalliance.org/gerrit/services/controlpanel">https://git.allseenalliance.org/gerrit/services/controlpanel</a><br />git clone <a href="https://git.allseenalliance.org/gerrit/services/filetransfer">https://git.allseenalliance.org/gerrit/services/filetransfer</a><br />git clone <a href="https://git.allseenalliance.org/gerrit/services/notification">https://git.allseenalliance.org/gerrit/services/notification</a><br />git clone <a href="https://git.allseenalliance.org/gerrit/services/notification_viewer">https://git.allseenalliance.org/gerrit/services/notification_viewer</a><br />git clone <a href="https://git.allseenalliance.org/gerrit/services/onboarding">https://git.allseenalliance.org/gerrit/services/onboarding</a><br />git clone <a href="https://git.allseenalliance.org/gerrit/services/sample_apps">https://git.allseenalliance.org/gerrit/services/sample_apps</a><br />git clone <a href="https://git.allseenalliance.org/gerrit/services/services_common">https://git.allseenalliance.org/gerrit/services/services_common</a><br />git clone <a href="https://git.allseenalliance.org/gerrit/services/simulators">https://git.allseenalliance.org/gerrit/services/simulators</a></p><p>the docs have you down load the Google 'repo' tool... but it apparently isn't used anylonger</p><p> </p><p> </p>  </div>
+      </div>
+
+      
+          </div>
+  </div> 
+  <div class="forum-post-footer clearfix">
+    <div class="forum-jump-links">
+      <a href="#forum-topic-top" title="Jump to top of page" class="af-button-small"><span>Top</span></a>
+    </div>
+
+    <div class="forum-post-links">
+          </div>
+  </div> </div> 
+<a id="comment-10252"></a>
+
+
+<div id="post-10252" class="forum-post clearfix en posted-by-9887 "  about="/comment/10252#comment-10252" typeof="sioc:Post sioct:Comment">
+			<div class="forum-post-title ">
+		  <div class="title-wrap">
+		  Re: So where&#039;s the source code		  			  	        <span class="forum-post-number"><a href="/comment/10252#comment-10252" class="permalink" rel="bookmark">#16</a></span>
+	      		  </div>
+		</div>
+		
+  <div class="forum-post-wrapper">
+    <div class="forum-post-panel-sub">
+      	    <span class="forum-post-number"><a href="/comment/10252#comment-10252" class="permalink" rel="bookmark">#16</a></span>
+	      
+               
+
+<div class="author-pane">
+ <div class="author-pane-inner">
+       <div class="author-pane-section author-pane-general">
+            <div class="author-pane-line ">
+	      	      	      	      	      	 <div class="author-pane-line author-name">
+	      	  <a href="/users/jagmohann" title="View user profile." class="username" xml:lang="" about="/users/jagmohann" typeof="sioc:UserAccount" property="foaf:name" datatype="">jagmohanN</a>	      	 </div>
+	            </div>
+
+                    
+  <div class="picture">
+    <img typeof="foaf:Image" src="/sites/default/files/icn-gen-avatar.png" alt="jagmohanN&#039;s picture" title="jagmohanN&#039;s picture" />  </div>
+      
+                    <div class="author-pane-line author-offline">
+           Offline        </div>
+      
+            
+            
+                    <div class="author-pane-line author-joined">
+          <h6>Joined</h6> 02/25/2014 - 07:27        </div>
+      
+            
+                </div>
+
+        <div class="author-pane-section author-pane-contact">
+            
+            
+            
+                </div>
+
+        <div class="author-pane-section author-pane-admin">
+            
+          
+               </div>
+  </div>
+</div>
+            
+      <div class="forum-posted-on">
+      	  <h6 class="date-posted">Posted</h6>
+	      <span class="date-time permalink"><a href="/comment/10252#comment-10252" rel="bookmark">Thu, 02/27/2014 - 05:13</a></span>	
+	      	      	        	
+	        	
+	        	      	    </div>      </div>
+
+    <div class="forum-post-panel-main clearfix">
+    
+	  <div class="forum-post-info clearfix">	
+	    	    	    
+	  </div>     
+      <div class="forum-post-content">
+        <span rel="sioc:reply_of" resource="/developer-resources/forum/developers/so-wheres-source-code" class="rdf-meta element-hidden"></span><span rel="sioc:reply_of" resource="/comment/10118#comment-10118" class="rdf-meta element-hidden"></span>
+  <div class="field-comment-body view-mode-full">
+    <p>Hello Larry,</p><p>I asked the same question in the main thread. Thanks to you for confirming my understanding.</p><p>Based on my experience, my suggestions (concise) are:</p><p>1. In &lt;workspace&gt; create 4 directories - core, services, multimedia and devtools</p><p>2. goto each directory and git-clone as per structure shown in <a href="https://git.allseenalliance.org/gerrit/#/admin/projects/">https://git.allseenalliance.org/gerrit/#/admin/projects/</a></p><p>3. goto the cloned directories of your interest and using scons and correct BINDINGS  build libraries</p><p>4. set LD_LIBRARY_PATH to the libraries built</p><p>5. then go for building and testing samples</p><p>Without the above directory structure, I could not build the service framework.  Service framework "about" gets cloned as "core/alljoyn/services/about" while the other services frameworks need to be git-cloned in &lt;workspace&gt;/services. [If you try to clone these under "core/alljoyn/services/" then build for these service framework fail. It fails because "env" variable is hardcoded for a different structure in the SConstruct file in these directories.]</p><p>Please also ensure that as a part of development setup, install libjason-dev</p><p>Information about building and testing samples need to be improved and so also the consistency between web and pdf information. I think this seriously needs attention.</p><p>regards,</p><p>JagmohanN</p>  </div>
+      </div>
+
+      
+          </div>
+  </div> 
+  <div class="forum-post-footer clearfix">
+    <div class="forum-jump-links">
+      <a href="#forum-topic-top" title="Jump to top of page" class="af-button-small"><span>Top</span></a>
+    </div>
+
+    <div class="forum-post-links">
+          </div>
+  </div> </div> 
+<a id="comment-10430"></a>
+
+
+<div id="post-10430" class="forum-post clearfix en posted-by-9636 "  about="/comment/10430#comment-10430" typeof="sioc:Post sioct:Comment">
+			<div class="forum-post-title ">
+		  <div class="title-wrap">
+		  Re: So where&#039;s the source code		  			  	        <span class="forum-post-number"><a href="/comment/10430#comment-10430" class="permalink" rel="bookmark">#17</a></span>
+	      		  </div>
+		</div>
+		
+  <div class="forum-post-wrapper">
+    <div class="forum-post-panel-sub">
+      	    <span class="forum-post-number"><a href="/comment/10430#comment-10430" class="permalink" rel="bookmark">#17</a></span>
+	      
+               
+
+<div class="author-pane">
+ <div class="author-pane-inner">
+       <div class="author-pane-section author-pane-general">
+            <div class="author-pane-line ">
+	      	      	      	      	      	 <div class="author-pane-line author-name">
+	      	  <a href="/users/pierrer" title="View user profile." class="username" xml:lang="" about="/users/pierrer" typeof="sioc:UserAccount" property="foaf:name" datatype="">PierreR</a>	      	 </div>
+	            </div>
+
+                    
+  <div class="picture">
+    <img typeof="foaf:Image" src="https://identity.allseenalliance.org/sites/default/files/pictures/picture-9636-1392370916.png" alt="PierreR&#039;s picture" title="PierreR&#039;s picture" />  </div>
+      
+                    <div class="author-pane-line author-offline">
+           Offline        </div>
+      
+            
+            
+                    <div class="author-pane-line author-joined">
+          <h6>Joined</h6> 01/24/2014 - 07:21        </div>
+      
+            
+                </div>
+
+        <div class="author-pane-section author-pane-contact">
+            
+            
+            
+                </div>
+
+        <div class="author-pane-section author-pane-admin">
+            
+          
+               </div>
+  </div>
+</div>
+            
+      <div class="forum-posted-on">
+      	  <h6 class="date-posted">Posted</h6>
+	      <span class="date-time permalink"><a href="/comment/10430#comment-10430" rel="bookmark">Mon, 03/24/2014 - 01:23</a></span>	
+	      	      	        	
+	        	
+	        	      	    </div>      </div>
+
+    <div class="forum-post-panel-main clearfix">
+    
+	  <div class="forum-post-info clearfix">	
+	    	    	    
+	  </div>     
+      <div class="forum-post-content">
+        <span rel="sioc:reply_of" resource="/developer-resources/forum/developers/so-wheres-source-code" class="rdf-meta element-hidden"></span>
+  <div class="field-comment-body view-mode-full">
+    <p>I quick update on this subject : the wiki seems to contain now up-to-date info : <a href="https://wiki.allseenalliance.org/develop/downloading_the_source">https://wiki.allseenalliance.org/develop/downloading_the_source</a></p><p>I successfully cloned the code and built it with</p><p>repo init -u <a href="https://git.allseenalliance.org/gerrit/devtools/manifest;">https://git.allseenalliance.org/gerrit/devtools/manifest;</a> repo sync</p><p>It's much easier that the manual git clone eplained in posts above !<br /> </p>  </div>
+      </div>
+
+      
+          </div>
+  </div> 
+  <div class="forum-post-footer clearfix">
+    <div class="forum-jump-links">
+      <a href="#forum-topic-top" title="Jump to top of page" class="af-button-small"><span>Top</span></a>
+    </div>
+
+    <div class="forum-post-links">
+          </div>
+  </div> </div> 
+      <div class="topic-reply-locked"><span class="af-button-large"><span>Topic locked</span></span></div>  </div>
+              </div>
+            
+           
+          </section>
+
+          
+        </div>
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+<div id="sticky-footer">
+  
+      <footer id="footer" class="clearfix" role="contentinfo">
+        <div class="region region-footer"><div class="region-inner clearfix"><nav id="block-system-user-menu" class="block block-system block-menu"  role="navigation"><div class="block-inner clearfix">        <div class="block-content content"><ul class="menu clearfix"><li class="first menu-item-537"><a href="/user/register" title="">Register</a></li><li class="last menu-item-536"><a href="/user/login" title="">Log In</a></li></ul></div></div></nav></div></div>    </footer>
+  
+  <div id="lfcollabprojects-footer">
+    <div class="gray-diagonal">
+      <div class="footer-inner">
+        <p>&copy; 2017 AllSeen Alliance, Inc. All Rights Reserved.</p>
+        <p>The Linux Foundation® is a registered trademark of The Linux Foundation. AllSeen, Designed for AllSeen and AllSeen Alliance are trademarks of the AllSeen Alliance, Inc. AllJoyn® is a registered trademark of AllSeen Alliance, Inc.</p>
+        <p>Linux is a registered <a href="http://www.linuxfoundation.org/programs/legal/trademark" title="Linux Mark Institute">trademark</a> of Linus Torvalds.</p>
+        <p>Please see our <a href="/brand-guidelines">brand guidelines</a>, <a href="/trademarks">trademark guidelines</a>, <a href="/about/governance/ip-policy">IP policy</a>, <a href="/terms">terms of use</a>, <a href="/license">license</a>, and <a href="/privacy">privacy policy</a>.</p>
+      </div>
+    </div>
+    <div id="body-bottom">
+      </div>
+</body>
+</html>

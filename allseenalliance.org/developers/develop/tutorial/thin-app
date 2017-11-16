@@ -1,0 +1,1324 @@
+<!DOCTYPE html>
+<!--[if IEMobile 7]><html class="iem7" lang="en" dir="ltr"><![endif]-->
+<!--[if lte IE 6]><html class="lt-ie9 lt-ie8 lt-ie7" lang="en" dir="ltr"><![endif]-->
+<!--[if (IE 7)&(!IEMobile)]><html class="lt-ie9 lt-ie8" lang="en" dir="ltr"><![endif]-->
+<!--[if IE 8]><html class="lt-ie9" lang="en" dir="ltr"><![endif]-->
+<!--[if (gte IE 9)|(gt IEMobile 7)]><!--><html lang="en" dir="ltr"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/terms/"
+  xmlns:foaf="http://xmlns.com/foaf/0.1/"
+  xmlns:og="http://ogp.me/ns#"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:sioc="http://rdfs.org/sioc/ns#"
+  xmlns:sioct="http://rdfs.org/sioc/types#"
+  xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema#"><!--<![endif]-->
+<head>
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
+<meta charset="utf-8" />
+<link rel="shortlink" href="/node/4222" />
+<link rel="shortcut icon" href="https://identity.allseenalliance.org/sites/all/themes/at_alljoyn/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="/developers/develop/tutorial/thin-app" />
+<meta name="viewport" content="width=device-width" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta property="og:image" content="https://identity.allseenalliance.org/sites/all/themes/at_alljoyn/images/allseen-logo.png"/>
+<meta name="google-translate-customization" content="48b015afeed82101-ecae534af0f48252-ga0b6470a6208b2f5-f"></meta>
+<meta name="MobileOptimized" content="width">
+<meta name="HandheldFriendly" content="true">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Build an Application Using the Thin Library - AllSeen Alliance</title>
+<link type="text/css" rel="stylesheet" href="https://identity.allseenalliance.org/sites/default/files/css/css_xE-rWrJf-fncB6ztZfd2huxqgxu4WO-qwma6Xer30m4.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://identity.allseenalliance.org/sites/default/files/css/css_7Vcu6qIuRTO46aDOBZp7_mtksGdhCHSe0pjTO2YbGng.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://identity.allseenalliance.org/sites/default/files/css/css_J2n1xiaSuececTK0yC3DT_Msm4PrkPwHizxr0oXGGoo.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://identity.allseenalliance.org/sites/default/files/css/css_oxEtvjMfj8c8EEJJ-1WXLGGntCnC0UvrbYsq0Gw4m4Q.css" media="screen" />
+<link type="text/css" rel="stylesheet" href="https://identity.allseenalliance.org/sites/default/files/css/css_9EusV9fcbkpqBeTGdJPl7ru65jm-3ngbTi_D6YRR_5A.css" media="only screen" />
+<script src="https://identity.allseenalliance.org/sites/default/files/js/js_UWQINlriydSoeSiGQxToOUdv493zEa7dpsXC1OtYlZU.js"></script>
+<script src="https://identity.allseenalliance.org/sites/default/files/js/js_COMsmDyrY9mzVU28X2uGvF4Ba3vd5eTo5xEO7dvCUZM.js"></script>
+<script src="https://identity.allseenalliance.org/sites/default/files/js/js_i8oyg1R4On_HyzPiZ5zC3V-DxehjGAcpKwNao5s0s5I.js"></script>
+<script>hljs.configure({languages:[]}); hljs.initHighlightingOnLoad();</script>
+<script src="https://identity.allseenalliance.org/sites/default/files/js/js_aG0kZAhSHT6G3QC-d9Wwx9gQp5d0em8X6FmMYZ1e5h4.js"></script>
+<script>var _gaq = _gaq || [];_gaq.push(["_setAccount", "UA-"]);_gaq.push(["_trackPageview"]);(function() {var ga = document.createElement("script");ga.type = "text/javascript";ga.async = true;ga.src = ("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/ga.js";var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(ga, s);})();</script>
+<script src="https://identity.allseenalliance.org/sites/default/files/js/js_R35PAK16384fXh7f2OqvXVkbbrwr8ABLrDpR1zTluo0.js"></script>
+<script src="https://identity.allseenalliance.org/sites/default/files/js/js_DKtRHJS-jz_cHgf23K7wnIWphCanZ_Rz74Aw-DKQyFs.js"></script>
+<script>jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"at_alljoyn","theme_token":"jrbQ6JC4SnfM5u2-Xj9hNrrQgA3nS9-ZX7BFne4Uo1I","js":{"misc\/jquery.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/all\/modules\/contrib\/comment_notify\/comment_notify.js":1,"sites\/all\/modules\/alljoyn\/custom_modules\/allseen_docs\/allseen_docs_highlight\/highlightjs\/highlight.min.js":1,"0":1,"sites\/all\/libraries\/colorbox\/jquery.colorbox-min.js":1,"sites\/all\/modules\/contrib\/colorbox\/js\/colorbox.js":1,"sites\/all\/modules\/contrib\/colorbox\/styles\/default\/colorbox_style.js":1,"sites\/all\/modules\/contrib\/colorbox\/js\/colorbox_load.js":1,"sites\/all\/modules\/contrib\/colorbox\/js\/colorbox_inline.js":1,"sites\/all\/modules\/contrib\/panels\/js\/panels.js":1,"sites\/all\/modules\/contrib\/quote\/quote.js":1,"sites\/all\/modules\/contrib\/views_slideshow\/js\/views_slideshow.js":1,"sites\/all\/modules\/contrib\/google_analytics\/googleanalytics.js":1,"1":1,"sites\/all\/modules\/alljoyn\/custom_modules\/allseen_docs\/allseen_docs_nav\/allseen-docs-nav.js":1,"sites\/all\/themes\/at_alljoyn\/scripts\/alljoyn.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"sites\/all\/modules\/contrib\/comment_notify\/comment_notify.css":1,"sites\/all\/modules\/ldap\/ldap_user\/ldap_user.css":1,"modules\/book\/book.css":1,"modules\/comment\/comment.css":1,"sites\/all\/modules\/contrib\/date\/date_api\/date.css":1,"sites\/all\/modules\/contrib\/date\/date_popup\/themes\/datepicker.1.7.css":1,"modules\/field\/theme\/field.css":1,"sites\/all\/modules\/contrib\/mollom\/mollom.css":1,"modules\/node\/node.css":1,"modules\/user\/user.css":1,"modules\/forum\/forum.css":1,"sites\/all\/modules\/contrib\/views\/css\/views.css":1,"sites\/all\/modules\/alljoyn\/custom_modules\/allseen_docs\/allseen_docs_highlight\/highlightjs\/default.min.css":1,"sites\/all\/modules\/contrib\/colorbox\/styles\/default\/colorbox_style.css":1,"sites\/all\/modules\/contrib\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/ldap\/ldap_servers\/ldap_servers.admin.css":1,"sites\/all\/modules\/contrib\/panels\/css\/panels.css":1,"sites\/all\/modules\/contrib\/quote\/quote.css":1,"sites\/all\/modules\/contrib\/views_slideshow\/views_slideshow.css":1,"sites\/all\/modules\/alljoyn\/custom_modules\/allseen_docs\/allseen_docs_nav\/allseen-docs-nav.css":1,"sites\/all\/modules\/alljoyn\/features\/content_type_developer_document\/content-type-developer-document.css":1,"sites\/all\/themes\/adaptivetheme\/at_core\/css\/at.layout.css":1,"sites\/all\/themes\/at_alljoyn\/css\/fonts.css":1,"sites\/all\/themes\/at_alljoyn\/css\/globals.css":1,"sites\/all\/themes\/at_alljoyn\/css\/jcarousel-alljoyn.css":1,"public:\/\/adaptivetheme\/at_alljoyn_files_7dbe1ef5\/at_alljoyn.responsive.layout.css":1,"public:\/\/adaptivetheme\/at_alljoyn_files_7dbe1ef5\/at_alljoyn.responsive.styles.css":1}},"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":true,"mobiledevicewidth":"480px"},"jcarousel":{"ajaxPath":"\/jcarousel\/ajax\/views"},"quote_nest":2,"googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls|xml|z|zip"}});</script>
+<!--[if lt IE 9]>
+<script src="https://identity.allseenalliance.org/sites/all/themes/adaptivetheme/at_core/scripts/respond.js?nwgww1"></script>
+<script src="https://identity.allseenalliance.org/sites/all/themes/adaptivetheme/at_core/scripts/html5.js?nwgww1"></script>
+<script src="https://identity.allseenalliance.org/sites/all/themes/adaptivetheme/at_core/scripts/PIE.htc?nwgww1"></script>
+<script src="https://identity.allseenalliance.org/sites/all/themes/adaptivetheme/at_core/scripts/selectivizr.js?nwgww1"></script>
+<![endif]-->
+</head>
+<body class="html not-front not-logged-in one-sidebar sidebar-first page-node page-node- page-node-4222 node-type-developer-document site-name-hidden with-subnav page-developers-develop-tutorial-thin-app section-developers">
+  <div id="body-top">
+      </div>
+  <div id="skip-link">
+    <a href="#main-content" class="element-invisible element-focusable">Skip to main content</a>
+  </div>
+  <div class="region region-page-top"><div class="region-inner clearfix"><div id="fb-root"></div><script type="text/javascript">
+     window.fbAsyncInit = function() {
+       FB.init({
+         appId: "492099574180957",
+         status: true,
+         cookie: true,
+         xfbml: true,
+         oauth : true,
+         channelUrl: "https:\/\/identity.allseenalliance.org\/service_links\/channel"
+         });
+
+         FB.Event.subscribe('edge.create', function(href, widget) {
+    _gaq.push(['_trackEvent', 'facebook', 'Facebook like', href]);
+   });FB.Event.subscribe('edge.remove', function(href, widget) {
+    _gaq.push(['_trackEvent', 'facebook', 'Facebook unlike', href]);
+   });
+       };
+       (function(d){
+     var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement('script'); js.id = id; js.async = true;
+     js.src = '//connect.facebook.net/en_US/all.js';
+     ref.parentNode.insertBefore(js, ref);
+   }(document));
+    </script></div></div>  
+<div id="wrap">
+
+  <div id="lfcollabprojects-header">
+    <div class="gray-diagonal">
+      <div class="header-inner">
+        <a id="lfcollabprojects-logo" href="http://collabprojects.linuxfoundation.org">Linux Foundation Collaborative Projects</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="page" class="container page">
+
+    
+    <header id="header" class="clearfix" role="banner">
+
+      <div class="region region-header"><div class="region-inner clearfix"><div id="block-block-19" class="block block-block" ><div class="block-inner clearfix">        <div class="block-content content"><br /><br /><br /><br /><br /><br /><br /></div></div></div></div></div>
+              <div id="branding" class="branding-elements clearfix">
+
+                      <div id="logo"><a href="/" title="Home page"><img class="site-logo" typeof="foaf:Image" src="https://identity.allseenalliance.org/sites/default/files/logo.png" alt="AllSeen Alliance" /></a></div>
+          
+                      <hgroup id="name-and-slogan" class="element-invisible">
+                              <h1 id="site-name" class="element-invisible"><a href="/" title="Home page">AllSeen Alliance</a></h1>
+                                        </hgroup>
+          
+          <!--main menu-->
+          <a id="main-menu-toggle" href="#">Site Sections</a>
+  		  		  		
+        </div>
+      
+    </header>
+
+
+    <div id="columns" class="clearfix">
+      <div id="sub-menu-bar">
+        <div class="region region-sub-menu-bar"><div class="region-inner clearfix"><div id="block-menu-block-allseen-docs-nav" class="block block-menu-block"  role="navigation"><div class="block-inner clearfix">        <div class="block-content content"><div class="menu-block-wrapper menu-block-allseen-docs-nav menu-name-main-menu parent-mlid-0 menu-level-2">
+  <ul class="menu clearfix"><li class="first has-children menu-mlid-2504 menu-item-2504"><a href="/developers/learn">Learn</a></li><li class="has-children menu-mlid-2539 menu-item-2539"><a href="/developers/download">Download</a></li><li class="has-children active-trail menu-mlid-2541 menu-item-2541"><a href="/developers/develop" class="active-trail">Develop</a></li><li class="last has-children menu-mlid-2636 menu-item-2636"><a href="/developers/contribute">Contribute</a></li></ul></div>
+</div></div></div><section id="block-menu-block-allseen-docs-responsive-nav" class="block block-menu-block"  role="navigation"><div class="block-inner clearfix">        <div class="block-title-wrapper">
+      <h2 class="block-title">Menu</h2>
+    </div>
+      <div class="block-content content"><div class="menu-block-wrapper menu-block-allseen-docs-responsive-nav menu-name-main-menu parent-mlid-0 menu-level-1">
+  <ul class="menu clearfix"><li class="first menu-parent menu-mlid-1994 menu-item-1994"><a href="/about">About</a><ul class="menu clearfix"><li class="first menu-mlid-2486 menu-item-2486"><a href="/about/why-allseen">Why AllSeen</a></li><li class="menu-mlid-2464 menu-item-2464"><a href="/about/get-involved">Get Involved</a></li><li class="collapsed menu-mlid-2446 menu-item-2446"><a href="/about/governance/ip-policy">IP Policy</a></li><li class="menu-mlid-2491 menu-item-2491"><a href="/about/working-groups">Working Groups</a></li><li class="menu-mlid-2286 menu-item-2286"><a href="/about/members">Member Companies</a></li><li class="menu-mlid-2285 menu-item-2285"><a href="/about/join-allseen-alliance">Join The AllSeen Alliance</a></li><li class="collapsed menu-mlid-2447 menu-item-2447"><a href="/about/governance">Governance</a></li><li class="menu-mlid-501 menu-item-501"><a href="/about/faqs">FAQs</a></li><li class="menu-mlid-2322 menu-item-2322"><a href="/about/contact">Contact Us</a></li><li class="menu-mlid-2282 menu-item-2282"><a href="/allseen/what-is-allseen-alliance">What is AllSeen Alliance?</a></li><li class="last menu-mlid-2490 menu-item-2490"><a href="https://wiki.allseenalliance.org/members_private/start?do=login&amp;sectok=34485854163fe6a0be457198139e2c84" title="Members Area" id="members_area" name="Members Area" rel="nofollow" target="_blank">Members Area</a></li></ul></li><li class="menu-parent active-trail menu-mlid-2503 menu-item-2503"><a href="/developers" class="active-trail">Developers</a><ul class="menu clearfix"><li class="first menu-parent has-children menu-mlid-2504 menu-item-2504"><a href="/developers/learn">Learn</a><ul class="menu clearfix"><li class="first menu-mlid-2505 menu-item-2505"><a href="/developers/learn/use-cases">Use Cases</a></li><li class="menu-mlid-2506 menu-item-2506"><a href="/developers/learn/architecture">Architecture</a></li><li class="menu-parent menu-mlid-2507 menu-item-2507"><a href="/developers/learn/core">Core Framework</a><ul class="menu clearfix"><li class="first menu-parent menu-mlid-2508 menu-item-2508"><a href="/developers/learn/core/about-announcement">About Announcement</a><ul class="menu clearfix"><li class="first menu-mlid-2509 menu-item-2509"><a href="/developers/learn/core/about-announcement/interface">Interface</a></li><li class="last menu-mlid-2510 menu-item-2510"><a href="/developers/learn/core/about-announcement/interface-14-02">Interface 14.02</a></li></ul></li><li class="menu-mlid-2511 menu-item-2511"><a href="/developers/learn/core/events-and-actions">Events and Actions</a></li><li class="menu-mlid-2992 menu-item-2992"><a href="/developers/learn/core/rn_config">Routing Node Configuration</a></li><li class="menu-mlid-2512 menu-item-2512"><a href="/developers/learn/core/standard-core">Standard Core</a></li><li class="menu-mlid-2513 menu-item-2513"><a href="/developers/learn/core/thin-core">Thin Core</a></li><li class="menu-parent menu-mlid-2514 menu-item-2514"><a href="/developers/learn/core/system-description">System Description</a><ul class="menu clearfix"><li class="first menu-mlid-2515 menu-item-2515"><a href="/developers/learn/core/system-description/system-architecture">System Architecture</a></li><li class="menu-mlid-2516 menu-item-2516"><a href="/developers/learn/core/system-description/advertisement-discovery">Advertisement and Discovery</a></li><li class="menu-mlid-2645 menu-item-2645"><a href="/developers/learn/core/system-description/alljoyn-transport">AllJoyn Transport</a></li><li class="menu-mlid-2517 menu-item-2517"><a href="/developers/learn/core/system-description/data-exchange">Data Exchange</a></li><li class="menu-mlid-2518 menu-item-2518"><a href="/developers/learn/core/system-description/alljoyn-session">AllJoyn Session</a></li><li class="menu-mlid-2519 menu-item-2519"><a href="/developers/learn/core/system-description/sessionless-signal">Sessionless Signal</a></li><li class="menu-mlid-2520 menu-item-2520"><a href="/developers/learn/core/system-description/alljoyn-security">AllJoyn Security</a></li><li class="menu-mlid-2521 menu-item-2521"><a href="/developers/learn/core/system-description/thin-apps">Thin Apps</a></li><li class="last menu-mlid-2522 menu-item-2522"><a href="/developers/learn/core/system-description/events-actions">Events and Actions</a></li></ul></li><li class="last menu-parent menu-mlid-2937 menu-item-2937"><a href="/developers/learn/core/security2_0">Security 2.0</a><ul class="menu clearfix"><li class="first last menu-mlid-2938 menu-item-2938"><a href="/developers/learn/core/security2_0/hld">High-Level Design</a></li></ul></li></ul></li><li class="menu-parent menu-mlid-2523 menu-item-2523"><a href="/developers/learn/base-services">Base Services</a><ul class="menu clearfix"><li class="first menu-parent menu-mlid-2524 menu-item-2524"><a href="/developers/learn/base-services/onboarding">Onboarding</a><ul class="menu clearfix"><li class="first menu-mlid-2525 menu-item-2525"><a href="/developers/learn/base-services/onboarding/interface">Interface</a></li><li class="last menu-mlid-2526 menu-item-2526"><a href="/developers/learn/base-services/onboarding/interface-14-02">Interface 14.02</a></li></ul></li><li class="menu-parent menu-mlid-2527 menu-item-2527"><a href="/developers/learn/base-services/configuration">Configuration</a><ul class="menu clearfix"><li class="first menu-mlid-2528 menu-item-2528"><a href="/developers/learn/base-services/configuration/interface">Interface</a></li><li class="last menu-mlid-2529 menu-item-2529"><a href="/developers/learn/base-services/configuration/interface-14-02">Interface 14.02</a></li></ul></li><li class="menu-parent menu-mlid-2530 menu-item-2530"><a href="/developers/learn/base-services/notification">Notification</a><ul class="menu clearfix"><li class="first menu-mlid-2531 menu-item-2531"><a href="/developers/learn/base-services/notification/interface">Interface</a></li><li class="last menu-mlid-2532 menu-item-2532"><a href="/developers/learn/base-services/notification/interface-14-02">Interface 14.02</a></li></ul></li><li class="menu-parent menu-mlid-2533 menu-item-2533"><a href="/developers/learn/base-services/controlpanel">ControlPanel</a><ul class="menu clearfix"><li class="first menu-mlid-2534 menu-item-2534"><a href="/developers/learn/base-services/controlpanel/interface">Interface</a></li><li class="last menu-mlid-2535 menu-item-2535"><a href="/developers/learn/base-services/controlpanel/interface-14-02">Interface 14.02</a></li></ul></li><li class="last menu-parent menu-mlid-2536 menu-item-2536"><a href="/developers/learn/base-services/audiostreaming">Audio Streaming</a><ul class="menu clearfix"><li class="first last menu-mlid-2537 menu-item-2537"><a href="/developers/learn/base-services/audiostreaming/interface">Interface</a></li></ul></li></ul></li><li class="last menu-mlid-2538 menu-item-2538"><a href="/developers/learn/glossary">Glossary</a></li></ul></li><li class="menu-parent has-children menu-mlid-2539 menu-item-2539"><a href="/developers/download">Download</a><ul class="menu clearfix"><li class="first last menu-mlid-2540 menu-item-2540"><a href="/developers/download/supported-platforms">Supported Platforms</a></li></ul></li><li class="menu-parent has-children active-trail menu-mlid-2541 menu-item-2541"><a href="/developers/develop" class="active-trail active-trail">Develop</a><ul class="menu clearfix"><li class="first menu-parent menu-mlid-2542 menu-item-2542"><a href="/developers/develop/building">Building</a><ul class="menu clearfix"><li class="first menu-parent menu-mlid-2543 menu-item-2543"><a href="/developers/develop/building/android">Android</a><ul class="menu clearfix"><li class="first last menu-mlid-2544 menu-item-2544"><a href="/developers/develop/building/android/build-source">Build Source</a></li></ul></li><li class="menu-parent menu-mlid-2545 menu-item-2545"><a href="/developers/develop/building/linux">Linux</a><ul class="menu clearfix"><li class="first menu-mlid-2546 menu-item-2546"><a href="/developers/develop/building/linux/openwrt">OpenWRT</a></li><li class="last menu-mlid-2547 menu-item-2547"><a href="/developers/develop/building/linux/build-source">Build Source</a></li></ul></li><li class="menu-parent menu-mlid-2548 menu-item-2548"><a href="/developers/develop/building/ios-osx">iOS/OS X</a><ul class="menu clearfix"><li class="first last menu-mlid-2549 menu-item-2549"><a href="/developers/develop/building/ios-osx/build-source">Build Source</a></li></ul></li><li class="menu-parent menu-mlid-2550 menu-item-2550"><a href="/developers/develop/building/windows">Windows</a><ul class="menu clearfix"><li class="first last menu-mlid-2551 menu-item-2551"><a href="/developers/develop/building/windows/build-source">Build Source</a></li></ul></li><li class="menu-mlid-2552 menu-item-2552"><a href="/developers/develop/building/thin-linux">Thin - Linux</a></li><li class="menu-mlid-2553 menu-item-2553"><a href="/developers/develop/building/thin-windows">Thin - Windows</a></li><li class="last menu-mlid-2993 menu-item-2993"><a href="/developers/develop/building/alljoyn-js">AllJoyn.js</a></li></ul></li><li class="menu-parent menu-mlid-2554 menu-item-2554"><a href="/developers/develop/run-sample-apps">Running Samples</a><ul class="menu clearfix"><li class="first menu-parent menu-mlid-2555 menu-item-2555"><a href="/developers/develop/run-sample-apps/basic">Basic</a><ul class="menu clearfix"><li class="first menu-mlid-2556 menu-item-2556"><a href="/developers/develop/run-sample-apps/basic/android">Android</a></li><li class="menu-mlid-2557 menu-item-2557"><a href="/developers/develop/run-sample-apps/basic/linux">Linux</a></li><li class="menu-mlid-2558 menu-item-2558"><a href="/developers/develop/run-sample-apps/basic/ios-osx">iOS/OS X</a></li><li class="menu-mlid-2559 menu-item-2559"><a href="/developers/develop/run-sample-apps/basic/windows">Windows</a></li><li class="menu-mlid-2560 menu-item-2560"><a href="/developers/develop/run-sample-apps/basic/thin-linux">Thin - Linux</a></li><li class="last menu-mlid-2561 menu-item-2561"><a href="/developers/develop/run-sample-apps/basic/thin-windows">Thin - Windows</a></li></ul></li><li class="menu-parent menu-mlid-2562 menu-item-2562"><a href="/developers/develop/run-sample-apps/chat">Chat</a><ul class="menu clearfix"><li class="first menu-mlid-2563 menu-item-2563"><a href="/developers/develop/run-sample-apps/chat/android">Android</a></li><li class="menu-mlid-2564 menu-item-2564"><a href="/developers/develop/run-sample-apps/chat/linux">Linux</a></li><li class="menu-mlid-2565 menu-item-2565"><a href="/developers/develop/run-sample-apps/chat/ios-osx">iOS/OS X</a></li><li class="menu-mlid-2566 menu-item-2566"><a href="/developers/develop/run-sample-apps/chat/windows">Windows</a></li><li class="last menu-mlid-2567 menu-item-2567"><a href="/developers/develop/run-sample-apps/chat/thin-linux">Thin - Linux</a></li></ul></li><li class="menu-parent menu-mlid-2568 menu-item-2568"><a href="/developers/develop/run-sample-apps/about">About</a><ul class="menu clearfix"><li class="first menu-mlid-2569 menu-item-2569"><a href="/developers/develop/run-sample-apps/about/linux">Linux</a></li><li class="menu-mlid-2570 menu-item-2570"><a href="/developers/develop/run-sample-apps/about/ios-osx">iOS/OS X</a></li><li class="last menu-mlid-2646 menu-item-2646"><a href="/developers/develop/run-sample-apps/about/windows">Windows</a></li></ul></li><li class="menu-mlid-2934 menu-item-2934"><a href="/developers/develop/run-sample-apps/observer">Observer</a></li><li class="menu-parent menu-mlid-2571 menu-item-2571"><a href="/developers/develop/run-sample-apps/config">Config</a><ul class="menu clearfix"><li class="first menu-mlid-2572 menu-item-2572"><a href="/developers/develop/run-sample-apps/config/android">Android</a></li><li class="menu-mlid-2573 menu-item-2573"><a href="/developers/develop/run-sample-apps/config/linux">Linux</a></li><li class="menu-mlid-2574 menu-item-2574"><a href="/developers/develop/run-sample-apps/config/ios-osx">iOS/OS X</a></li><li class="last menu-mlid-2575 menu-item-2575"><a href="/developers/develop/run-sample-apps/config/thin-linux">Thin - Linux</a></li></ul></li><li class="menu-parent menu-mlid-2576 menu-item-2576"><a href="/developers/develop/run-sample-apps/controlpanel">Control Panel</a><ul class="menu clearfix"><li class="first menu-mlid-2577 menu-item-2577"><a href="/developers/develop/run-sample-apps/controlpanel/android">Android</a></li><li class="menu-mlid-2578 menu-item-2578"><a href="/developers/develop/run-sample-apps/controlpanel/linux">Linux</a></li><li class="menu-mlid-2579 menu-item-2579"><a href="/developers/develop/run-sample-apps/controlpanel/ios-osx">iOS/OS X</a></li><li class="last menu-mlid-2580 menu-item-2580"><a href="/developers/develop/run-sample-apps/controlpanel/thin-linux">Thin - Linux</a></li></ul></li><li class="menu-parent menu-mlid-2581 menu-item-2581"><a href="/developers/develop/run-sample-apps/notification">Notification</a><ul class="menu clearfix"><li class="first menu-mlid-2582 menu-item-2582"><a href="/developers/develop/run-sample-apps/notification/android">Android</a></li><li class="menu-mlid-2583 menu-item-2583"><a href="/developers/develop/run-sample-apps/notification/linux">Linux</a></li><li class="menu-mlid-2584 menu-item-2584"><a href="/developers/develop/run-sample-apps/notification/ios-osx">iOS/OS X</a></li><li class="last menu-mlid-2585 menu-item-2585"><a href="/developers/develop/run-sample-apps/notification/thin-linux">Thin - Linux</a></li></ul></li><li class="menu-parent menu-mlid-2586 menu-item-2586"><a href="/developers/develop/run-sample-apps/onboarding">Onboarding</a><ul class="menu clearfix"><li class="first menu-mlid-2587 menu-item-2587"><a href="/developers/develop/run-sample-apps/onboarding/android">Android</a></li><li class="menu-mlid-2588 menu-item-2588"><a href="/developers/develop/run-sample-apps/onboarding/linux">Linux</a></li><li class="last menu-mlid-2589 menu-item-2589"><a href="/developers/develop/run-sample-apps/onboarding/ios-osx">iOS/OS X</a></li></ul></li><li class="menu-parent menu-mlid-2590 menu-item-2590"><a href="/developers/develop/run-sample-apps/acserver">AC Server</a><ul class="menu clearfix"><li class="first menu-mlid-2591 menu-item-2591"><a href="/developers/develop/run-sample-apps/acserver/linux">Linux</a></li><li class="last menu-mlid-2592 menu-item-2592"><a href="/developers/develop/run-sample-apps/acserver/thin-linux">Thin - Linux</a></li></ul></li><li class="menu-parent menu-mlid-2593 menu-item-2593"><a href="/developers/develop/run-sample-apps/test">Command Line Apps</a><ul class="menu clearfix"><li class="first last menu-mlid-2594 menu-item-2594"><a href="/developers/develop/run-sample-apps/test/sessions">Sessions</a></li></ul></li><li class="last menu-mlid-2994 menu-item-2994"><a href="/developers/develop/run-sample-apps/alljoyn-js">AllJoyn.js</a></li></ul></li><li class="menu-parent menu-mlid-2595 menu-item-2595"><a href="/developers/develop/api-guide">API Guide</a><ul class="menu clearfix"><li class="first menu-parent menu-mlid-2596 menu-item-2596"><a href="/developers/develop/api-guide/core">Core</a><ul class="menu clearfix"><li class="first menu-mlid-2939 menu-item-2939"><a href="/developers/develop/api-guide/core/java">java</a></li><li class="menu-mlid-2940 menu-item-2940"><a href="/developers/develop/api-guide/core/objc">Objective-C</a></li><li class="menu-mlid-2647 menu-item-2647"><a href="/developers/develop/api-guide/core/alljoyn-transports-best-practices">Alljoyn Transports Best Practices</a></li><li class="menu-mlid-2648 menu-item-2648"><a href="/developers/develop/api-guide/core/auto-ping">AutoPinger</a></li><li class="menu-mlid-2935 menu-item-2935"><a href="/developers/develop/api-guide/core/observer">Observer</a></li><li class="last menu-mlid-2936 menu-item-2936"><a href="/developers/develop/api-guide/core/propcache">Property Cache</a></li></ul></li><li class="menu-parent menu-mlid-2599 menu-item-2599"><a href="/developers/develop/api-guide/about">About</a><ul class="menu clearfix"><li class="first menu-mlid-2941 menu-item-2941"><a href="/developers/develop/api-guide/about/java">java</a></li><li class="menu-mlid-2942 menu-item-2942"><a href="/developers/develop/api-guide/about/cpp">C++</a></li><li class="menu-mlid-2943 menu-item-2943"><a href="/developers/develop/api-guide/about/objc">Objective-C</a></li><li class="menu-mlid-2944 menu-item-2944"><a href="/developers/develop/api-guide/about/c-thin">C (Thin Core)</a></li><li class="menu-mlid-2945 menu-item-2945"><a href="/developers/develop/api-guide/about/java-legacy">java Legacy</a></li><li class="menu-mlid-2946 menu-item-2946"><a href="/developers/develop/api-guide/about/cpp-legacy">C++ Legacy</a></li><li class="last menu-mlid-2947 menu-item-2947"><a href="/developers/develop/api-guide/about/objc-legacy">Objective-C Legacy</a></li></ul></li><li class="menu-parent menu-mlid-2604 menu-item-2604"><a href="/developers/develop/api-guide/onboarding">Onboarding</a><ul class="menu clearfix"><li class="first menu-mlid-2948 menu-item-2948"><a href="/developers/develop/api-guide/onboarding/java">java</a></li><li class="last menu-mlid-2949 menu-item-2949"><a href="/developers/develop/api-guide/onboarding/objc">Objective-C</a></li></ul></li><li class="menu-parent menu-mlid-2607 menu-item-2607"><a href="/developers/develop/api-guide/config">Configuration</a><ul class="menu clearfix"><li class="first menu-mlid-2950 menu-item-2950"><a href="/developers/develop/api-guide/config/java">java</a></li><li class="menu-mlid-2951 menu-item-2951"><a href="/developers/develop/api-guide/config/cpp">C++</a></li><li class="menu-mlid-2952 menu-item-2952"><a href="/developers/develop/api-guide/config/objc">Objective-C</a></li><li class="last menu-mlid-2953 menu-item-2953"><a href="/developers/develop/api-guide/config/c-thin">C (Thin Core)</a></li></ul></li><li class="menu-parent menu-mlid-2612 menu-item-2612"><a href="/developers/develop/api-guide/notification">Notification</a><ul class="menu clearfix"><li class="first menu-mlid-2954 menu-item-2954"><a href="/developers/develop/api-guide/notification/java">java</a></li><li class="menu-mlid-2955 menu-item-2955"><a href="/developers/develop/api-guide/notification/cpp">C++</a></li><li class="menu-mlid-2956 menu-item-2956"><a href="/developers/develop/api-guide/notification/objc">Objective-C</a></li><li class="last menu-mlid-2957 menu-item-2957"><a href="/developers/develop/api-guide/notification/c-thin">C (Thin Core)</a></li></ul></li><li class="menu-parent menu-mlid-2617 menu-item-2617"><a href="/developers/develop/api-guide/controlpanel">Control Panel</a><ul class="menu clearfix"><li class="first menu-mlid-2958 menu-item-2958"><a href="/developers/develop/api-guide/controlpanel/java">java</a></li><li class="menu-mlid-2959 menu-item-2959"><a href="/developers/develop/api-guide/controlpanel/cpp">C++</a></li><li class="menu-mlid-2960 menu-item-2960"><a href="/developers/develop/api-guide/controlpanel/objc">Objective-C</a></li><li class="last menu-mlid-2961 menu-item-2961"><a href="/developers/develop/api-guide/controlpanel/c-thin">C (Thin Core)</a></li></ul></li><li class="menu-parent menu-mlid-2622 menu-item-2622"><a href="/developers/develop/api-guide/audio-streaming">Audio Streaming</a><ul class="menu clearfix"><li class="first last menu-mlid-2962 menu-item-2962"><a href="/developers/develop/api-guide/audio-streaming/cpp">C++</a></li></ul></li><li class="last menu-mlid-2624 menu-item-2624"><a href="/developers/develop/api-guide/events-and-actions">Events and Actions</a></li></ul></li><li class="menu-mlid-2625 menu-item-2625"><a href="/developers/develop/api-reference">API Reference</a></li><li class="menu-parent menu-mlid-2626 menu-item-2626"><a href="/developers/develop/debug">Debug</a><ul class="menu clearfix"><li class="first last menu-mlid-2627 menu-item-2627"><a href="/developers/develop/debug/common-issues">Common Issues</a></li></ul></li><li class="menu-parent active-trail menu-mlid-2628 menu-item-2628"><a href="/developers/develop/tutorial" class="active-trail">Tutorial</a><ul class="menu clearfix"><li class="first menu-mlid-2629 menu-item-2629"><a href="/developers/develop/tutorial/core">Core</a></li><li class="menu-mlid-2630 menu-item-2630"><a href="/developers/develop/tutorial/ios">iOS</a></li><li class="active-trail active menu-mlid-2631 menu-item-2631"><a href="/developers/develop/tutorial/thin-app" class="active-trail active">Thin App</a></li><li class="menu-mlid-2632 menu-item-2632"><a href="/developers/develop/tutorial/arduino-and-gt202">Arduino + GT202</a></li><li class="last menu-mlid-2633 menu-item-2633"><a href="/developers/develop/tutorial/videos">Videos</a></li></ul></li><li class="last menu-mlid-2634 menu-item-2634"><a href="/developers/develop/ask">Ask Forum</a></li></ul></li><li class="last menu-parent has-children menu-mlid-2636 menu-item-2636"><a href="/developers/contribute">Contribute</a><ul class="menu clearfix"><li class="first last menu-mlid-2637 menu-item-2637"><a href="/developers/contribute/project-lifecycle">Project Lifecycle</a></li></ul></li></ul></li><li class="menu-mlid-2466 menu-item-2466"><a href="/showcase-products-using-alljoyn">Showcase</a></li><li class="menu-parent menu-mlid-2487 menu-item-2487"><a href="/allseen-alliance-certification">Certification</a><ul class="menu clearfix"><li class="first menu-mlid-2488 menu-item-2488"><a href="/certification/how-validate-your-designed-allseen-product">How To Validate Your Product</a></li><li class="last menu-mlid-2489 menu-item-2489"><a href="/certification/faq">FAQ</a></li></ul></li><li class="last menu-parent menu-mlid-2421 menu-item-2421"><a href="/news-and-events">News &amp; Events</a><ul class="menu clearfix"><li class="first menu-mlid-2422 menu-item-2422"><a href="/news-and-events/newsroom/announcements">Announcements</a></li><li class="menu-mlid-2449 menu-item-2449"><a href="/news/videos">Videos</a></li><li class="menu-mlid-2423 menu-item-2423"><a href="/news-and-events/newsroom/in-the-news">In The News</a></li><li class="menu-mlid-2424 menu-item-2424"><a href="/news-and-events/events">Events</a></li><li class="menu-mlid-2448 menu-item-2448"><a href="/news-and-events/blogs">Blogs</a></li><li class="menu-mlid-2461 menu-item-2461"><a href="/news-and-events/newsletters">Newsletters</a></li><li class="last menu-mlid-2933 menu-item-2933"><a href="/news-and-events/videos">Videos</a></li></ul></li></ul></div>
+</div></div></section></div></div>      </div>
+            
+      
+      <div class="region region-sidebar-first sidebar"><div class="region-inner clearfix"><div id="block-menu-block-1" class="block block-menu-block"  role="navigation"><div class="block-inner clearfix">        <div class="block-content content"><div class="menu-block-wrapper menu-block-1 menu-name-main-menu parent-mlid-0 menu-level-3">
+  <ul class="menu clearfix"><li class="first menu-parent menu-mlid-2542 menu-item-2542"><a href="/developers/develop/building">Building</a><ul class="menu clearfix"><li class="first menu-parent menu-mlid-2543 menu-item-2543"><a href="/developers/develop/building/android">Android</a><ul class="menu clearfix"><li class="first last menu-mlid-2544 menu-item-2544"><a href="/developers/develop/building/android/build-source">Build Source</a></li></ul></li><li class="menu-parent menu-mlid-2545 menu-item-2545"><a href="/developers/develop/building/linux">Linux</a><ul class="menu clearfix"><li class="first menu-mlid-2546 menu-item-2546"><a href="/developers/develop/building/linux/openwrt">OpenWRT</a></li><li class="last menu-mlid-2547 menu-item-2547"><a href="/developers/develop/building/linux/build-source">Build Source</a></li></ul></li><li class="menu-parent menu-mlid-2548 menu-item-2548"><a href="/developers/develop/building/ios-osx">iOS/OS X</a><ul class="menu clearfix"><li class="first last menu-mlid-2549 menu-item-2549"><a href="/developers/develop/building/ios-osx/build-source">Build Source</a></li></ul></li><li class="menu-parent menu-mlid-2550 menu-item-2550"><a href="/developers/develop/building/windows">Windows</a><ul class="menu clearfix"><li class="first last menu-mlid-2551 menu-item-2551"><a href="/developers/develop/building/windows/build-source">Build Source</a></li></ul></li><li class="menu-mlid-2552 menu-item-2552"><a href="/developers/develop/building/thin-linux">Thin - Linux</a></li><li class="menu-mlid-2553 menu-item-2553"><a href="/developers/develop/building/thin-windows">Thin - Windows</a></li><li class="last menu-mlid-2993 menu-item-2993"><a href="/developers/develop/building/alljoyn-js">AllJoyn.js</a></li></ul></li><li class="menu-parent menu-mlid-2554 menu-item-2554"><a href="/developers/develop/run-sample-apps">Running Samples</a><ul class="menu clearfix"><li class="first menu-parent menu-mlid-2555 menu-item-2555"><a href="/developers/develop/run-sample-apps/basic">Basic</a><ul class="menu clearfix"><li class="first menu-mlid-2556 menu-item-2556"><a href="/developers/develop/run-sample-apps/basic/android">Android</a></li><li class="menu-mlid-2557 menu-item-2557"><a href="/developers/develop/run-sample-apps/basic/linux">Linux</a></li><li class="menu-mlid-2558 menu-item-2558"><a href="/developers/develop/run-sample-apps/basic/ios-osx">iOS/OS X</a></li><li class="menu-mlid-2559 menu-item-2559"><a href="/developers/develop/run-sample-apps/basic/windows">Windows</a></li><li class="menu-mlid-2560 menu-item-2560"><a href="/developers/develop/run-sample-apps/basic/thin-linux">Thin - Linux</a></li><li class="last menu-mlid-2561 menu-item-2561"><a href="/developers/develop/run-sample-apps/basic/thin-windows">Thin - Windows</a></li></ul></li><li class="menu-parent menu-mlid-2562 menu-item-2562"><a href="/developers/develop/run-sample-apps/chat">Chat</a><ul class="menu clearfix"><li class="first menu-mlid-2563 menu-item-2563"><a href="/developers/develop/run-sample-apps/chat/android">Android</a></li><li class="menu-mlid-2564 menu-item-2564"><a href="/developers/develop/run-sample-apps/chat/linux">Linux</a></li><li class="menu-mlid-2565 menu-item-2565"><a href="/developers/develop/run-sample-apps/chat/ios-osx">iOS/OS X</a></li><li class="menu-mlid-2566 menu-item-2566"><a href="/developers/develop/run-sample-apps/chat/windows">Windows</a></li><li class="last menu-mlid-2567 menu-item-2567"><a href="/developers/develop/run-sample-apps/chat/thin-linux">Thin - Linux</a></li></ul></li><li class="menu-parent menu-mlid-2568 menu-item-2568"><a href="/developers/develop/run-sample-apps/about">About</a><ul class="menu clearfix"><li class="first menu-mlid-2569 menu-item-2569"><a href="/developers/develop/run-sample-apps/about/linux">Linux</a></li><li class="menu-mlid-2570 menu-item-2570"><a href="/developers/develop/run-sample-apps/about/ios-osx">iOS/OS X</a></li><li class="last menu-mlid-2646 menu-item-2646"><a href="/developers/develop/run-sample-apps/about/windows">Windows</a></li></ul></li><li class="menu-mlid-2934 menu-item-2934"><a href="/developers/develop/run-sample-apps/observer">Observer</a></li><li class="menu-parent menu-mlid-2571 menu-item-2571"><a href="/developers/develop/run-sample-apps/config">Config</a><ul class="menu clearfix"><li class="first menu-mlid-2572 menu-item-2572"><a href="/developers/develop/run-sample-apps/config/android">Android</a></li><li class="menu-mlid-2573 menu-item-2573"><a href="/developers/develop/run-sample-apps/config/linux">Linux</a></li><li class="menu-mlid-2574 menu-item-2574"><a href="/developers/develop/run-sample-apps/config/ios-osx">iOS/OS X</a></li><li class="last menu-mlid-2575 menu-item-2575"><a href="/developers/develop/run-sample-apps/config/thin-linux">Thin - Linux</a></li></ul></li><li class="menu-parent menu-mlid-2576 menu-item-2576"><a href="/developers/develop/run-sample-apps/controlpanel">Control Panel</a><ul class="menu clearfix"><li class="first menu-mlid-2577 menu-item-2577"><a href="/developers/develop/run-sample-apps/controlpanel/android">Android</a></li><li class="menu-mlid-2578 menu-item-2578"><a href="/developers/develop/run-sample-apps/controlpanel/linux">Linux</a></li><li class="menu-mlid-2579 menu-item-2579"><a href="/developers/develop/run-sample-apps/controlpanel/ios-osx">iOS/OS X</a></li><li class="last menu-mlid-2580 menu-item-2580"><a href="/developers/develop/run-sample-apps/controlpanel/thin-linux">Thin - Linux</a></li></ul></li><li class="menu-parent menu-mlid-2581 menu-item-2581"><a href="/developers/develop/run-sample-apps/notification">Notification</a><ul class="menu clearfix"><li class="first menu-mlid-2582 menu-item-2582"><a href="/developers/develop/run-sample-apps/notification/android">Android</a></li><li class="menu-mlid-2583 menu-item-2583"><a href="/developers/develop/run-sample-apps/notification/linux">Linux</a></li><li class="menu-mlid-2584 menu-item-2584"><a href="/developers/develop/run-sample-apps/notification/ios-osx">iOS/OS X</a></li><li class="last menu-mlid-2585 menu-item-2585"><a href="/developers/develop/run-sample-apps/notification/thin-linux">Thin - Linux</a></li></ul></li><li class="menu-parent menu-mlid-2586 menu-item-2586"><a href="/developers/develop/run-sample-apps/onboarding">Onboarding</a><ul class="menu clearfix"><li class="first menu-mlid-2587 menu-item-2587"><a href="/developers/develop/run-sample-apps/onboarding/android">Android</a></li><li class="menu-mlid-2588 menu-item-2588"><a href="/developers/develop/run-sample-apps/onboarding/linux">Linux</a></li><li class="last menu-mlid-2589 menu-item-2589"><a href="/developers/develop/run-sample-apps/onboarding/ios-osx">iOS/OS X</a></li></ul></li><li class="menu-parent menu-mlid-2590 menu-item-2590"><a href="/developers/develop/run-sample-apps/acserver">AC Server</a><ul class="menu clearfix"><li class="first menu-mlid-2591 menu-item-2591"><a href="/developers/develop/run-sample-apps/acserver/linux">Linux</a></li><li class="last menu-mlid-2592 menu-item-2592"><a href="/developers/develop/run-sample-apps/acserver/thin-linux">Thin - Linux</a></li></ul></li><li class="menu-parent menu-mlid-2593 menu-item-2593"><a href="/developers/develop/run-sample-apps/test">Command Line Apps</a><ul class="menu clearfix"><li class="first last menu-mlid-2594 menu-item-2594"><a href="/developers/develop/run-sample-apps/test/sessions">Sessions</a></li></ul></li><li class="last menu-mlid-2994 menu-item-2994"><a href="/developers/develop/run-sample-apps/alljoyn-js">AllJoyn.js</a></li></ul></li><li class="menu-parent menu-mlid-2595 menu-item-2595"><a href="/developers/develop/api-guide">API Guide</a><ul class="menu clearfix"><li class="first menu-parent menu-mlid-2596 menu-item-2596"><a href="/developers/develop/api-guide/core">Core</a><ul class="menu clearfix"><li class="first menu-mlid-2939 menu-item-2939"><a href="/developers/develop/api-guide/core/java">java</a></li><li class="menu-mlid-2940 menu-item-2940"><a href="/developers/develop/api-guide/core/objc">Objective-C</a></li><li class="menu-mlid-2647 menu-item-2647"><a href="/developers/develop/api-guide/core/alljoyn-transports-best-practices">Alljoyn Transports Best Practices</a></li><li class="menu-mlid-2648 menu-item-2648"><a href="/developers/develop/api-guide/core/auto-ping">AutoPinger</a></li><li class="menu-mlid-2935 menu-item-2935"><a href="/developers/develop/api-guide/core/observer">Observer</a></li><li class="last menu-mlid-2936 menu-item-2936"><a href="/developers/develop/api-guide/core/propcache">Property Cache</a></li></ul></li><li class="menu-parent menu-mlid-2599 menu-item-2599"><a href="/developers/develop/api-guide/about">About</a><ul class="menu clearfix"><li class="first menu-mlid-2941 menu-item-2941"><a href="/developers/develop/api-guide/about/java">java</a></li><li class="menu-mlid-2942 menu-item-2942"><a href="/developers/develop/api-guide/about/cpp">C++</a></li><li class="menu-mlid-2943 menu-item-2943"><a href="/developers/develop/api-guide/about/objc">Objective-C</a></li><li class="menu-mlid-2944 menu-item-2944"><a href="/developers/develop/api-guide/about/c-thin">C (Thin Core)</a></li><li class="menu-mlid-2945 menu-item-2945"><a href="/developers/develop/api-guide/about/java-legacy">java Legacy</a></li><li class="menu-mlid-2946 menu-item-2946"><a href="/developers/develop/api-guide/about/cpp-legacy">C++ Legacy</a></li><li class="last menu-mlid-2947 menu-item-2947"><a href="/developers/develop/api-guide/about/objc-legacy">Objective-C Legacy</a></li></ul></li><li class="menu-parent menu-mlid-2604 menu-item-2604"><a href="/developers/develop/api-guide/onboarding">Onboarding</a><ul class="menu clearfix"><li class="first menu-mlid-2948 menu-item-2948"><a href="/developers/develop/api-guide/onboarding/java">java</a></li><li class="last menu-mlid-2949 menu-item-2949"><a href="/developers/develop/api-guide/onboarding/objc">Objective-C</a></li></ul></li><li class="menu-parent menu-mlid-2607 menu-item-2607"><a href="/developers/develop/api-guide/config">Configuration</a><ul class="menu clearfix"><li class="first menu-mlid-2950 menu-item-2950"><a href="/developers/develop/api-guide/config/java">java</a></li><li class="menu-mlid-2951 menu-item-2951"><a href="/developers/develop/api-guide/config/cpp">C++</a></li><li class="menu-mlid-2952 menu-item-2952"><a href="/developers/develop/api-guide/config/objc">Objective-C</a></li><li class="last menu-mlid-2953 menu-item-2953"><a href="/developers/develop/api-guide/config/c-thin">C (Thin Core)</a></li></ul></li><li class="menu-parent menu-mlid-2612 menu-item-2612"><a href="/developers/develop/api-guide/notification">Notification</a><ul class="menu clearfix"><li class="first menu-mlid-2954 menu-item-2954"><a href="/developers/develop/api-guide/notification/java">java</a></li><li class="menu-mlid-2955 menu-item-2955"><a href="/developers/develop/api-guide/notification/cpp">C++</a></li><li class="menu-mlid-2956 menu-item-2956"><a href="/developers/develop/api-guide/notification/objc">Objective-C</a></li><li class="last menu-mlid-2957 menu-item-2957"><a href="/developers/develop/api-guide/notification/c-thin">C (Thin Core)</a></li></ul></li><li class="menu-parent menu-mlid-2617 menu-item-2617"><a href="/developers/develop/api-guide/controlpanel">Control Panel</a><ul class="menu clearfix"><li class="first menu-mlid-2958 menu-item-2958"><a href="/developers/develop/api-guide/controlpanel/java">java</a></li><li class="menu-mlid-2959 menu-item-2959"><a href="/developers/develop/api-guide/controlpanel/cpp">C++</a></li><li class="menu-mlid-2960 menu-item-2960"><a href="/developers/develop/api-guide/controlpanel/objc">Objective-C</a></li><li class="last menu-mlid-2961 menu-item-2961"><a href="/developers/develop/api-guide/controlpanel/c-thin">C (Thin Core)</a></li></ul></li><li class="menu-parent menu-mlid-2622 menu-item-2622"><a href="/developers/develop/api-guide/audio-streaming">Audio Streaming</a><ul class="menu clearfix"><li class="first last menu-mlid-2962 menu-item-2962"><a href="/developers/develop/api-guide/audio-streaming/cpp">C++</a></li></ul></li><li class="last menu-mlid-2624 menu-item-2624"><a href="/developers/develop/api-guide/events-and-actions">Events and Actions</a></li></ul></li><li class="menu-mlid-2625 menu-item-2625"><a href="/developers/develop/api-reference">API Reference</a></li><li class="menu-parent menu-mlid-2626 menu-item-2626"><a href="/developers/develop/debug">Debug</a><ul class="menu clearfix"><li class="first last menu-mlid-2627 menu-item-2627"><a href="/developers/develop/debug/common-issues">Common Issues</a></li></ul></li><li class="menu-parent active-trail menu-mlid-2628 menu-item-2628"><a href="/developers/develop/tutorial" class="active-trail">Tutorial</a><ul class="menu clearfix"><li class="first menu-mlid-2629 menu-item-2629"><a href="/developers/develop/tutorial/core">Core</a></li><li class="menu-mlid-2630 menu-item-2630"><a href="/developers/develop/tutorial/ios">iOS</a></li><li class="active-trail active menu-mlid-2631 menu-item-2631"><a href="/developers/develop/tutorial/thin-app" class="active-trail active">Thin App</a></li><li class="menu-mlid-2632 menu-item-2632"><a href="/developers/develop/tutorial/arduino-and-gt202">Arduino + GT202</a></li><li class="last menu-mlid-2633 menu-item-2633"><a href="/developers/develop/tutorial/videos">Videos</a></li></ul></li><li class="last menu-parent menu-mlid-2634 menu-item-2634"><a href="/developers/develop/ask">Ask Forum</a></li></ul></div>
+</div></div></div></div></div>            <div id="content-column" role="main">
+        <div class="content-inner">
+
+          
+          <section id="main-content">
+
+                                      <header id="main-content-header">
+
+                                                  <h1 id="sub-title">
+                    Build an Application Using the Thin Library                  </h1>
+                
+                
+              </header>
+                        
+                          <div id="content">
+                        <article id="node-4222" class="node node-developer-document article clearfix" about="/developers/develop/tutorial/thin-app" typeof="sioc:Item foaf:Document" role="article">
+
+  
+      <span property="dc:title" content="Build an Application Using the Thin Library" class="rdf-meta element-hidden"></span><span property="sioc:num_replies" content="0" datatype="xsd:integer" class="rdf-meta element-hidden"></span>
+  
+  <div class="node-content">
+  
+  <div class="field-body view-mode-full">
+    
+<h2 id="obtain-the-sample-app">Obtain the sample app</h2>
+<p>Refer to the target platform documentation for instructions
+to download the sample apps.</p>
+<h2 id="reference-code">Reference code</h2>
+<p>The reference code consists of a module that implements the
+main function and a module the implements the services handlers.</p>
+<h3 id="sample-app-modules">Sample app modules</h3>
+<table><thead><tr><th>Module</th>
+<th>Description</th>
+</tr></thead><tbody><tr><td>AboutSample</td>
+<td>About sample code. Includes provisioning and business logic related to the About feature.</td>
+</tr><tr><td>ConfigSample</td>
+<td>Configuration service framework sample code. Includes provisioning and business logic that exercises the service's developers' API.</td>
+</tr><tr><td>ControlPanelSample</td>
+<td>ControlPanel service framework sample code. Includes provisioning and business logic that exercises the service's developers' API.</td>
+</tr><tr><td>ControlPanelGenerated</td>
+<td>ControlPanel service framework sample generated controllee model.</td>
+</tr><tr><td>ControlPanelProvided</td>
+<td>ControlPanel Service Framework sample provisioned controlee business logic that interacts with the generated model.</td>
+</tr><tr><td>PropertyStore</td>
+<td>PropertyStore implementation code; this supports all core services.</td>
+</tr><tr><td>ServerSample</td>
+<td>Main function for service application and provisioning code for all service frameworks.</td>
+</tr><tr><td>ServicesHandlers</td>
+<td>Sample code for services handlers.</td>
+</tr><tr><td>SimpleNotificationProducerSample</td>
+<td>Notification service framework sample Producer sample code. Includes provisioning and business logic that exercises the producer's developers' API.</td>
+</tr><tr><td>SimpleNotificationConsumerSample</td>
+<td>Notification Service Framework simple Consumer sample code. Includes provisioning and business logic that exercises the consumer's developers' API.</td>
+</tr></tbody></table><h2 id="build-a-thin-library-server-app">Build a Thin Library server app</h2>
+<p>Perform the following steps at a high level to build a Thin Library server app.</p>
+<ol><li>Create the base for the AllJoyn® application.</li>
+<li>Call services handlers.</li>
+<li>Implement the PropertyStore. See the <a href="/developers/develop/api-guide/about/c-thin">About API Guide</a>
+for instructions.</li>
+<li>Implement remote callbacks.</li>
+<li>(Optional) Integrate the Configuration service framework
+with an AuthListener.</li>
+</ol><h2 id="server-sample-app-walkthrough">Server sample app walkthrough</h2>
+<p>The sample app sends an Announce signal with the About
+interfaces, other registered servicess interfaces, and
+the information stored in the PropertyStore. Depending on
+the service frameworks included in the compilation, the
+application can then send a notification, enable onboarding,
+store configuration in NVRAM, or act as a Control Panel device.
+The specific functionality of each service framework is covered
+in the appropriate service framework's API Guide.</p>
+<p>See the <a href="/developers/develop/api-guide/about">appropriate API Guide</a> for the
+service framework you are working with.</p>
+<h2 id="implementing-a-thin-library-server-app">Implementing a Thin Library Server App</h2>
+<h3 id="create-the-base-for-the-alljoyn-application">Create the base for the AllJoyn application</h3>
+<p>See the <a href="/developers/develop/api-guide/about/c-thin">About API Guide</a> for more information.</p>
+<h4 id="initialize-the-alljoyn-framework">Initialize the AllJoyn framework</h4>
+<pre><code class="lang-c"><code class="c">AJ_Initialize();</code>
+</code></pre>
+<h4 id="initialize-the-propertystore">Initialize the PropertyStore</h4>
+<pre><code class="lang-c"><code class="c">PropertyStore_Init();</code>
+</code></pre>
+<h4 id="initialize-the-about-feature">Initialize the About feature</h4>
+<pre><code class="lang-c"><code class="c">AJ_AboutSetIcon(aboutIconMimetype, aboutIconContent, aboutIconContentSize, aboutIconUrl);</code>
+</code></pre>
+<h4 id="initialize-each-included-service-framework">Initialize each included service framework</h4>
+<p>The initialization of the service typically calls the corresponding
+Start method of the service's API passing the relevant settings
+and callbacks that integrate the service within the overall application
+provisioning and business logic.</p>
+<pre><code class="lang-c"><code class="c">#ifdef CONFIG_SERVICE Config_Init();
+#endif
+#ifdef NOTIFICATION_SERVICE_PRODUCER NotificationProducer_Init();
+#endif
+#ifdef NOTIFICATION_SERVICE_PRODUCER NotificationConsumer_Init();
+#endif
+#ifdef CONTROLPANEL_SERVICE Controllee_Init();
+#endif</code>
+</code></pre>
+<h4 id="set-bus-authentication-password-callback">Set bus authentication password callback</h4>
+<pre><code class="lang-c"><code class="c">SetBusAuthPwdCallback(MyBusAuthPwdCB);</code>
+</code></pre>
+<p>Refer to the API Reference Manual for the SetBusAuthPwdCallback method.</p>
+<h4 id="create-main-loop">Create main loop</h4>
+<pre><code class="lang-c"><code class="c">static uint8_t isBusConnected = FALSE; static AJ_BusAttachment busAttachment;
+   AJ_Status status;
+while (TRUE) {
+   AJ_Message msg;
+   status = AJ_OK;</code>
+</code></pre>
+<h5 id="connect-to-the-alljoyn-bus">Connect to the AllJoyn bus</h5>
+<pre><code class="lang-c"><code class="c">if (!isBusConnected) {
+status = AJSVC_RoutingNodeConnect(&amp;busAttachment, "org.alljoyn.BusNode",
+   AJAPP_CONNECT_TIMEOUT,
+   AJAPP_CONNECT_PAUSE, AJAPP_BUS_LINK_TIMEOUT, &amp;isBusConnected);
+      if (!isBusConnected) { // Failed to connect to Routing Node?
+         continue; // Retry establishing connection to Routing Node.
+      }</code>
+</code></pre>
+<h5 id="set-up-the-relevant-bus-authentication-listener-callback-optional-">Set up the relevant bus authentication listener callback (optional)</h5>
+<p>In cases where your code uses secured methods, you will need to
+register the relevant authentication listener callback. Inclusion
+of the Configuration service framework and/or enabling security
+in the Control Panel service framework implies your code uses
+secured methods.</p>
+<p>The sample applications typically set up a shared secret-based
+mechanism that requires a password callback as follows:</p>
+<pre><code class="lang-c"><code class="c">/* Setup password based authentication listener for secured peer-to-peer connections */
+AJ_BusSetPasswordCallback(&amp;busAttachment, PasswordCallback);</code>
+</code></pre>
+<h5 id="set-up-remote-access-to-the-services-and-publish-their-capabilities">Set up remote access to the services and publish their capabilities</h5>
+<pre><code class="lang-c"><code class="c">status = AJApp_ConnectedHandler(&amp;busAttachment, AJAPP_MAX_INIT_ATTEPTS, AJAPP_SLEEP_TIME);</code>
+</code></pre>
+<p>After the connection has been made, perform the following
+steps to ensure the service frameworks function successfully
+(these are encapsulated in the call <code>AJApp_ConnectedHandler()</code> shown above).</p>
+<ol><li>Initialize the individual services. Upon successful connection
+to the routing node, each service must set up a dedicated
+session port or register signal matching rule(s).</li>
+<li><p>Bind the session port. This enables the creation of sessions.</p>
+<pre><code class="lang-c"><code class="c">#define APP_SERVICE_PORT 900
+AJ_BusBindSessionPort(&amp;busAttachment, APP_SERVICE_PORT, NULL, 0);</code>
+</code></pre>
+</li>
+<li><p>Advertise the unique name of the message bus. This allows
+other applications to locate and track this device.</p>
+<pre><code class="lang-c"><code class="c">AJ_BusAdvertiseName(&amp;busAttachment, AJ_GetUniqueName(&amp;busAttachment),
+   AJ_TRANSPORT_ANY, AJ_BUS_START_ADVERTISING);</code>
+</code></pre>
+</li>
+<li><p>Initialize the About feature with the session port.
+The About announcement will include the port, other metadata,
+and a description of the registered bus objects that are
+flagged as announced.</p>
+<pre><code class="lang-c"><code class="c">AJ_AboutInit(&amp;busAttachment, APP_SERVICE_PORT);</code>
+</code></pre>
+</li>
+</ol><h5 id="continue-main-loop">Continue main loop</h5>
+<p>After the connection is established and the AllJoyn services
+application layer is initialized, continue with main loop.
+Perform the following tasks:</p>
+<ul><li>Check whether request for announcement was flagged and
+announce accordingly.</li>
+<li>Check the Wi-Fi state and trigger a reconnection if network
+connection was lost.</li>
+<li>Continue with main loop cycling through the services to
+perform incoming message processing and idle tasks execution,
+including outgoing signal sending e.g. sending pending requests
+for notification signals.</li>
+</ul><pre><code class="lang-c"><code class="c">status = AJ_AboutAnnounce(&amp;busAttachment);
+if (status == AJ_OK) {
+   status = AJ_UnmarshalMsg(&amp;busAttachment, &amp;msg, 1000);
+   isUnmarshalingSuccessful = (status == AJ_OK);
+
+   if (status == AJ_ERR_TIMEOUT) {
+      if (AJ_ERR_LINK_TIMEOUT == AJ_BusLinkStateProc(&amp;busAttachment)) {
+          status = AJ_ERR_READ; // something's not right. force disconnect
+      } else { // nothing on bus, do our own thing
+         AJApp_DoWork();
+         continue;
+      }
+   }
+
+   if (isUnmarshalingSuccessful) {
+      service_Status = AJApp_MessageProcessor(&amp;msg, &amp;status);
+      if (service_Status == SERVICE_STATUS_NOT_HANDLED) {
+         //Pass to the built-in bus message handlers status = AJ_BusHandleBusMessage(&amp;msg);
+      }
+      AJ_NotifyLinkActive();
+   }
+
+   //Unmarshaled messages must be closed to free resources
+   AJ_CloseMsg(&amp;msg);
+}</code>
+</code></pre>
+<h5 id="graceful-disconnect-from-the-alljoyn-bus-and-end-of-loop">Graceful disconnect from the AllJoyn bus and end of loop</h5>
+<p>During the message processing the connection may be lost by
+external disconnection of the router or the Wi-Fi network.
+This is designated by the status value AJ_ERR_READ returned
+by any of the AllJoyn message handling calls in the following sections:</p>
+<ul><li><a href="#connect-alljoyn-bus">Connect to the AllJoyn bus</a></li>
+<li><a href="#set-up-remote-access">Set up remote access to the services and publish their capabilities</a></li>
+<li><a href="#continue-main-loop">Continue main loop</a></li>
+</ul><p>Depending on the severity of an error received by the app or
+the logic of the app, the application and services' business
+logic must perform a graceful soft disconnect from the Wi-Fi
+router. In other cases, a hard disconnect that reboots the
+hardware and resets the Wi-Fi network is required. These are
+indicated respectively by status values AJ_ERR_RESTART and
+AJ_ERR_RESTART_APP returned by any of the AllJoyn message
+handling calls in the sections listed above.</p>
+<pre><code class="lang-c"><code class="c">if (status == AJ_ERR_READ || status == AJ_ERR_RESTART ||
+    status == AJ_ERR_RESTART_APP) {
+   if (isBusConnected) {
+      forcedDisconnnect = (status != AJ_ERR_READ);
+         rebootRequired = (status == AJ_ERR_RESTART_APP);
+         AJApp_DisconnectHandler(&amp;busAttachment, forcedDisconnect);
+         AJSVC_RoutingNodeDisconnect(&amp;busAttachment, forcedDisconnnect,
+            AJAPP_SLEEP_TIME, AJAPP_SLEEP_TIME, &amp;isBusConnected);
+   if (status == AJ_ERR_RESTART_APP) { AJ_Reboot();
+      }
+   }
+}</code>
+</code></pre>
+<p>When the connection is about to be lost, perform the following
+steps to ensure the services clean up any state established
+with the Wi-Fi router (these are encapsulated in the call
+<code>AJApp_DisconnectHandler()</code> above):</p>
+<ol><li><p>Stop advertising the current unique name of the message bus.</p>
+<pre><code class="lang-c"><code class="c">AJ_BusAdvertiseName(busAttachment, AJ_GetUniqueName(busAttachment),
+   AJ_TRANSPORT_ANY, AJ_BUS_STOP_ADVERTISING, 0);</code>
+</code></pre>
+</li>
+<li><p>Unbind the session port.</p>
+<pre><code class="lang-c"><code class="c">AJ_BusUnbindSession(busAttachment, AJ_ABOUT_SERVICE_PORT);</code>
+</code></pre>
+</li>
+<li><p>Set the flag so that an Announcement will be sent upon
+reconnect to a Wi-Fi router.</p>
+<pre><code class="lang-c"><code class="c">AJ_AboutSetShouldAnnounce();</code>
+</code></pre>
+</li>
+</ol><h3 id="create-service-framework-handlers">Create service framework handlers</h3>
+<p>The service framework handlers are service functionality that
+must be called at a specific time in the main loop.</p>
+<h4 id="connected-handler">Connected handler</h4>
+<p>After the router is connected, and before performing the
+application connected handlers, the individual registered
+services connected handlers are called. Complete the steps
+outlined in <a href="#initialize-alljoyn-framework">Initialize the AllJoyn framework</a> through
+<a href="#connect-alljoyn-bus">Connect to the AllJoyn bus</a>.</p>
+<p><strong>NOTE:</strong> This must occur before a peer has connected or a service
+framework API is executed to publish information or send information.</p>
+<pre><code class="lang-c"><code class="c">AJ_Status AJSVC_ConnectedHandler(AJ_BusAttachment* busAttachment)
+{
+AJ_BusSetPasswordCallback(&amp;busAttachment, PasswordCallback);
+/* Configure timeout for the link to the daemon bus */
+   AJ_SetBusLinkTimeout(&amp;busAttachment, 60); // 60 seconds AJ_Status status = AJ_OK;
+do {
+#ifdef CONFIG_SERVICE
+   if (status == AJ_OK) {
+      status = AJCFG_ConnectedHandler(busAttachment);
+   }
+#endif
+#ifdef NOTIFICATION_SERVICE_PRODUCER
+   if (status == AJ_OK) {
+      status = AJNS_Producer_ConnectedHandler(busAttachment);
+   }
+#endif
+#ifdef CONTROLPANEL_SERVICE
+   if (status == AJ_OK) {
+      status = AJCPS_ConnectedHandler(busAttachment);
+   }
+#endif
+#ifdef NOTIFICATION_SERVICE_CONSUMER
+   if (status == AJ_OK) {
+      status = AJNS_Consumer_ConnectedHandler(busAttachment);
+   }
+#endif
+   return status;
+   } while (0);
+   AJ_Printf("Service ConnectedHandler returned an error %s\n",
+      (AJ_StatusText(status)));
+}</code>
+</code></pre>
+<h4 id="message-processor">Message processor</h4>
+<p>When the AllJoyn framework receives a message from the
+connected message bus, it must be processed and handled.
+The processing of an incoming message is performed in a
+chain of common services, as well as with the application
+and individual services' message processors. Each message
+processor evaluates the message, delegates its handling if
+relevant, and returns whether it handled the message or not.
+The incoming message is returned by a call to <code>AJ_UnmarshalMsg()</code>.</p>
+<pre><code class="lang-c"><code class="c">AJ_Message msg;
+AJ_Status status = AJ_UnmarshalMsg(&amp;busAttachment, &amp;msg, 1000);
+...
+if (serviceStatus == AJSVC_SERVICE_STATUS_NOT_HANDLED) {
+   serviceStatus = AJApp_MessageProcessor(&amp;busAttachment, &amp;msg, &amp;status);
+}</code>
+</code></pre>
+<p>At the conclusion of the processing chain after calling
+<code>AJApp_MessageProcessor()</code>, any unprocessed messages are
+processed by the default AllJoyn message processor.</p>
+<pre><code class="lang-c"><code class="c">if (serviceStatus == AJSVC_SERVICE_STATUS_NOT_HANDLED) {
+   //Pass to the built-in bus message handlers status = AJ_BusHandleBusMessage(&amp;msg);
+}</code>
+</code></pre>
+<h5 id="common-services-manager-processor">Common services manager processor</h5>
+<p>The common services message processor handles common services'
+messages that deal with session establishment and teardown.
+It delegates the processed message to the relevant registered services.</p>
+<pre><code class="lang-c"><code class="c">AJSVC_ServiceStatus AJSVC_MessageProcessorAndDispatcher(AJ_BusAttachment*
+busAttachment,
+   AJ_Message* msg, AJ_Status* status)
+{
+   AJSVC_ServiceStatus serviceStatus = AJSVC_SERVICE_STATUS_NOT_HANDLED;
+
+   if (msg-&gt;msgId == AJ_REPLY_ID(AJ_METHOD_JOIN_SESSION))
+      { // Process all incoming replies to join a session and
+         pass session state change to all services uint32_t replyCode = 0;
+      uint32_t sessionId = 0;
+      uint8_t sessionJoined = FALSE;
+      uint32_t joinSessionReplySerialNum = msg-&gt;replySerial;
+      if (msg-&gt;hdr-&gt;msgType == AJ_MSG_ERROR) { AJ_AlwaysPrintf(("JoinSessionReply: AJ_METHOD_JOIN_SESSION:
+AJ_ERR_FAILURE\n"));
+      *status = AJ_ERR_FAILURE;
+   } else {
+      *status = AJ_UnmarshalArgs(msg, "uu", &amp;replyCode, &amp;sessionId);
+      if (*status != AJ_OK) {
+         AJ_AlwaysPrintf(("JoinSessionReply: failed to unmarshal\n"));
+      } else {
+         if (replyCode == AJ_JOINSESSION_REPLY_SUCCESS) { AJ_AlwaysPrintf(("JoinSessionReply:
+AJ_JOINSESSION_REPLY_SUCCESS with sessionId=%u and replySerial=%u\n", sessionId, joinSessionReplySerialNum));
+      sessionJoined = TRUE;
+      } else {
+         AJ_AlwaysPrintf(("JoinSessionReply: AJ_ERR_FAILURE\n"));
+         *status = AJ_ERR_FAILURE;
+      }
+   }
+}
+if (sessionJoined) {
+   serviceStatus = SessionJoinedHandler(busAttachment, sessionId, joinSessionReplySerialNum);
+   } else {
+      serviceStatus = SessionRejectedHandler(busAttachment, sessionId, joinSessionReplySerialNum, replyCode);
+   }
+      if (serviceStatus == AJSVC_SERVICE_STATUS_NOT_HANDLED) { AJ_ResetArgs(msg);
+   }
+   } else if (msg-&gt;msgId == AJ_SIGNAL_SESSION_LOST || msg-&gt;msgId == AJ_SIGNAL_SESSION_LOST_WITH_REASON) {
+      // Process all incoming LeaveSession replies and lost session signals and pass session state change to all services
+      uint32_t sessionId = 0;
+      uint32_t reason = 0;
+      if (msg-&gt;msgId == AJ_SIGNAL_SESSION_LOST_WITH_REASON) {
+         *status = AJ_UnmarshalArgs(msg, "uu", &amp;sessionId, &amp;reason);
+      } else {
+         *status = AJ_UnmarshalArgs(msg, "u", &amp;sessionId);
+      }
+      if (*status != AJ_OK) {
+         AJ_AlwaysPrintf(("JoinSessionReply: failed to marshal\n"));
+      } else {
+         AJ_AlwaysPrintf(("Session lost: sessionId = %u, reason = %u\n", sessionId, reason));
+         serviceStatus = SessionLostHandler(busAttachment, sessionId, reason);
+
+         if (serviceStatus == AJSVC_SERVICE_STATUS_NOT_HANDLED) { AJ_ResetArgs(msg);
+         }
+      }
+   } else {
+#ifdef CONFIG_SERVICE
+      if (serviceStatus == AJSVC_SERVICE_STATUS_NOT_HANDLED) {
+         serviceStatus = AJCFG_MessageProcessor(busAttachment, msg, status);
+      }
+#endif
+#ifdef ONBOARDING_SERVICE
+      if (serviceStatus == AJSVC_SERVICE_STATUS_NOT_HANDLED) {
+         serviceStatus = AJOBS_MessageProcessor(busAttachment, msg, status);
+      }
+#endif
+#ifdef NOTIFICATION_SERVICE_PRODUCER
+      if (serviceStatus == AJSVC_SERVICE_STATUS_NOT_HANDLED) {
+status);
+      }
+      serviceStatus = AJNS_Producer_MessageProcessor(busAttachment, msg,
+      }
+#endif
+#ifdef NOTIFICATION_SERVICE_CONSUMER
+      if (serviceStatus == AJSVC_SERVICE_STATUS_NOT_HANDLED) {
+         serviceStatus = AJNS_Consumer_MessageProcessor(busAttachment, msg,
+status);
+      }
+#endif
+#ifdef CONTROLPANEL_SERVICE
+      if (serviceStatus == AJSVC_SERVICE_STATUS_NOT_HANDLED) {
+         serviceStatus = AJCPS_MessageProcessor(busAttachment, msg, status);
+      }
+#endif
+   }
+   return serviceStatus;
+}</code>
+</code></pre>
+<h5 id="common-service-side-message-processor">Common (service-side) message processor</h5>
+<p>Service-side services such as the Notification service framework's
+Producer, are delegated to check whether incoming requests for
+joining a session is targeted at it.</p>
+<pre><code class="lang-c"><code class="c">uint8_t AJSVC_CheckSessionAccepted(uint16_t port,
+   uint32_t sessionId, char* joiner)
+{
+   uint8_t session_accepted = FALSE;
+#ifdef NOTIFICATION_SERVICE_PRODUCER
+   session_accepted |= AJNS_Producer_CheckSessionAccepted(port, sessionId, joiner);
+#endif
+
+#ifdef CONTROLPANEL_SERVICE
+   session_accepted |= AJCPS_CheckSessionAccepted(port, sessionId, joiner);
+#endif
+   return session_accepted;
+}</code>
+</code></pre>
+<h5 id="common-client-side-message-processor">Common (client-side) message processor</h5>
+<p>Client-side services such as the Notification service framework's
+Consumer, are delegated the replies to join session requests and
+session lost signals.</p>
+<pre><code class="lang-c"><code class="c">AJSVC_ServiceStatus
+   SessionJoinedHandler(AJ_BusAttachment*
+   busAttachment, uint32_t sessionId, uint32_t replySerialNum)
+{
+   AJSVC_ServiceStatus serviceStatus = AJSVC_SERVICE_STATUS_NOT_HANDLED;
+
+#ifdef NOTIFICATION_SERVICE_CONSUMER
+   if (serviceStatus == AJSVC_SERVICE_STATUS_NOT_HANDLED) {
+      serviceStatus = AJNS_Consumer_SessionJoinedHandler(busAttachment, sessionId, replySerialNum);
+   }
+#endif
+
+   return serviceStatus;
+}
+
+static AJSVC_ServiceStatus
+   SessionRejectedHandler(AJ_BusAttachment*
+   busAttachment, uint32_t sessionId, uint32_t replySerialNum, uint32_t replyCode)
+{
+   AJSVC_ServiceStatus serviceStatus = AJSVC_SERVICE_STATUS_NOT_HANDLED;
+
+#ifdef NOTIFICATION_SERVICE_CONSUMER
+   if (serviceStatus == AJSVC_SERVICE_STATUS_NOT_HANDLED) {
+      serviceStatus = AJNS_Consumer_SessionRejectedHandler(busAttachment, replySerialNum, replyCode);
+   }
+#endif
+
+   return serviceStatus;
+}
+
+static AJSVC_ServiceStatus
+   SessionLostHandler(AJ_BusAttachment*
+   busAttachment, uint32_t sessionId, uint32_t reason)
+{
+   AJSVC_ServiceStatus serviceStatus = AJSVC_SERVICE_STATUS_NOT_HANDLED;
+
+#ifdef NOTIFICATION_SERVICE_CONSUMER
+   if (serviceStatus == AJSVC_SERVICE_STATUS_NOT_HANDLED) {
+      serviceStatus = AJNS_Consumer_SessionLostHandler(busAttachment, sessionId, reason);
+   }
+#endif
+
+   return serviceStatus;
+}</code>
+</code></pre>
+<h5 id="common-application-message-processors">Common application message processors</h5>
+<p>The application message processor is responsible for delegating
+any incoming message to all the relevant message processors.
+<code>AJApp_MessageProcessor</code> (provided below) performs the following tasks:</p>
+<ol><li>Identifies incoming session requests and delegates the
+requests to the message processors in the relevant services
+via a call to <code>AJSVC_CheckSessionAccepted</code> method. See <a href="#common-services-manager-processor">Common services
+manager processor</a>.</li>
+<li>Identify and handle any replies to the service initialization
+requests sent in <code>AJSVC_ConnectedHandler</code> method. See <a href="#conneced-handler">Connected handler</a>.</li>
+<li>Pass any other messages to the common services' message
+processor <code>AJSVC_MessageProcessorAndDispatcher</code> method which
+identifies service-related messages and handles them.
+See <a href="#common-service-side-processor">Common (service-side) message processor</a>.</li>
+</ol><pre><code class="lang-c"><code class="c">AJSVC_ServiceStatus AJApp_MessageProcessor(AJ_BusAttachment* busAttachment,
+   AJ_Message* msg, AJ_Status* status)
+{
+   AJSVC_ServiceStatus serviceStatus = AJSVC_SERVICE_STATUS_HANDLED;
+   uint16_t port;
+   char* joiner;
+   uint32_t sessionId = 0;
+   uint8_t session_accepted = FALSE;
+
+   if (msg-&gt;msgId == AJ_METHOD_ACCEPT_SESSION) { // Process all
+      incoming request to join a session and pass request for acceptance by all services
+      *status = AJ_UnmarshalArgs(msg, "qus", &amp;port, &amp;sessionId, &amp;joiner);
+      if (*status != AJ_OK) {
+         return serviceStatus;
+      }
+      session_accepted |= (port == servicePort);
+      session_accepted |= AJSVC_CheckSessionAccepted(port, sessionId, joiner);
+      *status = AJ_BusReplyAcceptSession(msg, session_accepted);
+      AJ_AlwaysPrintf(("%s session session_id=%u joiner=%s for port %u\n", (session_accepted ?
+         "Accepted" : "Rejected"), sessionId, joiner, port));
+   } else {
+      switch (currentServicesInitializationState) {
+      case INIT_SERVICES_PORT:
+         if (msg-&gt;msgId == AJ_REPLY_ID(AJ_METHOD_BIND_SESSION_PORT)) {
+            currentServicesInitializationState = nextServicesInitializationState;
+         }
+         break;
+
+      case INIT_ADVERTISE_NAME:
+         if (msg-&gt;msgId == AJ_REPLY_ID(AJ_METHOD_ADVERTISE_NAME)) {
+            currentServicesInitializationState = nextServicesInitializationState;
+         }
+         break;
+
+      default:
+         serviceStatus = AJSVC_MessageProcessorAndDispatcher(busAttachment, msg, status);
+         break;
+      }
+   }
+
+   return serviceStatus;
+}</code>
+</code></pre>
+<h4 id="dowork-handler">DoWork handler</h4>
+<p>When there is a connection and the message loop is idling,
+the individual registered services' sample DoWork callbacks
+are called to allow the service's business logic to perform
+the service's sample business logic. These callbacks are implemented
+in the corresponding service's sample application code.</p>
+<p><strong>NOTE:</strong> The message loop is considered idling when no messages
+are ready to marshal, and the MCU will sleep to conserve
+resources for a small period of time.</p>
+<pre><code class="lang-c"><code class="c">void AJApp_DoWork(AJ_BusAttachment* busAttachment)
+{
+   #ifdef CONFIG_SERVICE
+   Config_DoWork(busAttachment);
+   #endif
+
+   #ifdef NOTIFICATION_SERVICE_PRODUCER
+   NotificationProducer_DoWork(busAttachment);
+   #endif
+
+   #ifdef NOTIFICATION_SERVICE_CONSUMER
+   NotificationConsumer_DoWork(busAttachment);
+   #endif
+
+   #ifdef CONTROLPANEL_SERVICE
+   Controllee_DoWork(busAttachment);
+   #endif
+}</code>
+</code></pre>
+<h4 id="disconnect-handler">Disconnect handler</h4>
+<p>When the application needs to perform a graceful disconnect
+from the Wi-Fi router, the application and individual registered
+services get an opportunity to relinquish their resources and
+undo any registered state with the Wi-Fi router that was
+established during connection or operation. The disconnect
+handlers are called to allow for this cleanup work to be performed.
+Complete the steps outlined in <a href="#initialize-alljoyn-framework">Initialize the AllJoyn framework</a>
+through <a href="#connect-alljoyn-bus">Connect to the AllJoyn bus</a>.</p>
+<pre><code class="lang-c"><code class="c">AJ_Status AJSVC_DisconnectHandler(AJ_BusAttachment* busAttachment)
+{
+   #ifdef CONFIG_SERVICE
+   AJCFG_DisconnectHandler(busAttachment);
+   #endif
+
+   #ifdef ONBOARDING_SERVICE
+   AJOBS_DisconnectHandler(busAttachment);
+   #endif
+
+   #ifdef NOTIFICATION_SERVICE_CONSUMER
+   AJNS_Consumer_DisconnectHandler(busAttachment);
+   #endif
+
+   #ifdef NOTIFICATION_SERVICE_PRODUCER
+   AJNS_Producer_DisconnectHandler(busAttachment);
+   #endif
+
+   #ifdef CONTROLPANEL_SERVICE
+   AJCPS_DisconnectHandler(busAttachment);
+   #endif
+}</code>
+</code></pre>
+<h3 id="implement-the-propertystore">Implement the PropertyStore</h3>
+<p>The PropertyStore module is required by principally by the
+About feature (to store the AboutData), the Configuration
+service framework (to store the ConfigData), and may be used
+also by other service frameworks (such as the Notification
+service framework's Producer to retrieve required application
+and device identifying properties). The module's API is specified
+in propertyStore.h.</p>
+<p>The About feature uses the PropertyStore to retrieve the
+provisioned (default and runtime) values for the AboutData
+fields listed in <a href="#about-data-fields">AboutData fields</a>.
+See the <a href="/developers/learn/core/about-announcement/interface">About Interface Definition</a>
+for more information.</p>
+<h4 id="aboutdata-fields">AboutData fields</h4>
+<table><thead><tr><th>Field name</th>
+<th>Required</th>
+<th>Announced</th>
+<th>Type</th>
+</tr></thead><tbody><tr><td><code>AppId</code></td>
+<td>yes</td>
+<td>yes</td>
+<td><code>ay</code></td>
+</tr><tr><td><code>DefaultLanguage</code></td>
+<td>yes</td>
+<td>yes</td>
+<td><code>s</code></td>
+</tr><tr><td><code>DeviceName</code></td>
+<td>yes</td>
+<td>yes</td>
+<td><code>s</code></td>
+</tr><tr><td><code>DeviceId</code></td>
+<td>yes</td>
+<td>yes</td>
+<td><code>s</code></td>
+</tr><tr><td><code>AppName</code></td>
+<td>yes</td>
+<td>yes</td>
+<td><code>s</code></td>
+</tr><tr><td><code>Manufacturer</code></td>
+<td>yes</td>
+<td>yes</td>
+<td><code>s</code></td>
+</tr><tr><td><code>ModelNumber</code></td>
+<td>yes</td>
+<td>yes</td>
+<td><code>s</code></td>
+</tr><tr><td><code>SupportedLanguages</code></td>
+<td>yes</td>
+<td>no</td>
+<td><code>as</code></td>
+</tr><tr><td><code>Description</code></td>
+<td>yes</td>
+<td>no</td>
+<td><code>s</code></td>
+</tr><tr><td><code>DateofManufacture</code></td>
+<td>no</td>
+<td>no</td>
+<td><code>s</code></td>
+</tr><tr><td><code>SoftwareVersion</code></td>
+<td>yes</td>
+<td>no</td>
+<td><code>s</code></td>
+</tr><tr><td><code>AJSoftwareVersion</code></td>
+<td>yes</td>
+<td>no</td>
+<td><code>s</code></td>
+</tr><tr><td><code>HardwareVersion</code></td>
+<td>no</td>
+<td>no</td>
+<td><code>s</code></td>
+</tr><tr><td><code>SupportUrl</code></td>
+<td>no</td>
+<td>no</td>
+<td><code>s</code></td>
+</tr></tbody></table><p>The Configuration service framework uses the PropertyStore
+to retrieve the provisioned (default and runtime) values
+for the ConfigData and persist the values manipulated by
+the Config interface listed in <a href="#config-data-fields">Config data fields</a>.</p>
+<p>See the <a href="/developers/learn/base-services/configuration/interface">Configuration Interface Definition</a> for more information.</p>
+<h4 id="config-data-fields">Config data fields</h4>
+<table><thead><tr><th>Field name</th>
+<th>Required</th>
+<th>Announced</th>
+<th>Type</th>
+</tr></thead><tbody><tr><td><code>DefaultLanguage</code></td>
+<td>yes</td>
+<td>yes</td>
+<td><code>s</code></td>
+</tr><tr><td><code>DeviceName</code></td>
+<td>yes</td>
+<td>yes</td>
+<td><code>s</code></td>
+</tr><tr><td><code>MaxLength</code></td>
+<td>no</td>
+<td>yes</td>
+<td><code>q</code></td>
+</tr></tbody></table><h5 id="propertystore-example-implementation">PropertyStore example implementation</h5>
+<p>The PropertyStore.c file in AppsCommon is an example PropertyStore
+implementation that supports the requirements of the About feature
+and Configuration service framework, and is included in the ServerSample code.</p>
+<p>The PropertyStore uses the field definitions that are defined
+in the PropertyStore.c file. A provisioning example is provided
+in the ServerSample code and is reviewed in the following subsections.</p>
+<h5 id="field-indexes">Field indexes</h5>
+<p>The following enumeration is used to define the fields' indexes.
+The enumeration is used as an index into the various fields' tables.</p>
+<p>The enumerationinteger values are scoped into the following
+subsets delimited by the respectively named alias counter values:</p>
+<ul><li>Runtime keys (AJSVC_PROPERTY_STORE_NUMBER_OF_RUNTIME_KEYS) -
+This subset contains the fields that are initialized and persisted
+on first run (or after factory reset).</li>
+<li>Mandatory keys (AJSVC_PROPERTY_STORE_NUMBER_OF_MANDATORY_KEYS)</li>
+<li>This subset contains the fields that are mandatory as per the
+definition of the About feature and Configuration Service Framework
+in <a href="#about-data-fields">AboutData fields</a>.</li>
+<li>ALL keys (AJSVC_PROPERTY_STORE_NUMBER_OF_KEYS) - This subset
+contains ALL the fields.</li>
+</ul><p><strong>NOTE:</strong> Do NOT remove the counters (AJSVC<em>PROPERTY_STORE_NUMBER_OF</em>*)
+as the PropertyStore code refers to them!</p>
+<pre><code class="lang-c"><code class="c">typedef enum _AJSVC_PropertyStoreFieldIndices {
+   AJSVC_PROPERTY_STORE_ERROR_FIELD_INDEX = -1,
+   //Start of keys
+   AJSVC_PROPERTY_STORE_DEVICE_ID,
+   AJSVC_PROPERTY_STORE_APP_ID,
+   AJSVC_PROPERTY_STORE_DEVICE_NAME,
+#ifndef CONFIG_SERVICE
+   AJSVC_PROPERTY_STORE_NUMBER_OF_RUNTIME_KEYS,
+   //End of runtime keys
+   AJSVC_PROPERTY_STORE_DEFAULT_LANGUAGE = AJSVC_PROPERTY_STORE_NUMBER_OF_RUNTIME_KEYS,
+   AJSVC_PROPERTY_STORE_APP_NAME,
+#else AJSVC_PROPERTY_STORE_DEFAULT_LANGUAGE,
+   AJSVC_PROPERTY_STORE_PASSCODE,
+   AJSVC_PROPERTY_STORE_REALM_NAME,
+   AJSVC_PROPERTY_STORE_NUMBER_OF_RUNTIME_KEYS,
+   //End of runtime keys
+   AJSVC_PROPERTY_STORE_APP_NAME = AJSVC_PROPERTY_STORE_NUMBER_OF_RUNTIME_KEYS,
+#endif AJSVC_PROPERTY_STORE_DESCRIPTION,
+   AJSVC_PROPERTY_STORE_MANUFACTURER,
+   AJSVC_PROPERTY_STORE_MODEL_NUMBER,
+   AJSVC_PROPERTY_STORE_DATE_OF_MANUFACTURE,
+   AJSVC_PROPERTY_STORE_SOFTWARE_VERSION,
+   AJSVC_PROPERTY_STORE_AJ_SOFTWARE_VERSION,
+#ifdef CONFIG_SERVICE
+   AJSVC_PROPERTY_STORE_MAX_LENGTH,
+#endif
+   AJSVC_PROPERTY_STORE_NUMBER_OF_MANDATORY_KEYS,
+   //End of mandatory keys
+   AJSVC_PROPERTY_STORE_HARDWARE_VERSION = AJSVC_PROPERTY_STORE_NUMBER_OF_MANDATORY_KEYS,
+   AJSVC_PROPERTY_STORE_SUPPORT_URL,
+   AJSVC_PROPERTY_STORE_NUMBER_OF_KEYS,
+  //End of About keys
+} AJSVC_PropertyStoreFieldIndices;</code>
+</code></pre>
+<h5 id="supportedlanguages-and-language-indexes">SupportedLanguages and language indexes</h5>
+<p>The following constants are used to define special language indexes.
+The index is used within the supported languages' tables and the
+various fields' tables.</p>
+<pre><code class="lang-c"><code class="c">#define AJSVC_PROPERTY_STORE_ERROR_LANGUAGE_INDEX    -1
+#define AJSVC_PROPERTY_STORE_NO_LANGUAGE_INDEX    0</code>
+</code></pre>
+<p>The following definitions and structures in PropertyStoreOEMProvisioning.h
+are needed by the sample application in order to provision for
+the sample PropertyStore implementation.</p>
+<pre><code class="lang-c"><code class="c">extern const uint8_t AJSVC_PROPERTY_STORE_NUMBER_OF_LANGUAGES;
+extern const char** propertyStoreDefaultLanguages;
+#define LANG_VALUE_LENGTH 7</code>
+</code></pre>
+<p>The language names are provisioned in the ServerSample's ServerSample.c
+as English and Austrian dialect of German.</p>
+<pre><code class="lang-c"><code class="c">static const char DEFAULT_LANGUAGE[] = "en";
+static const char* DEFAULT_LANGUAGES[] = { DEFAULT_LANGUAGE };
+static const char SUPPORTED_LANG2[] = "de-AT";
+static const char* SUPPORTED_LANGUAGES[] = { DEFAULT_LANGUAGE, SUPPORTED_LANG2
+};
+const char** propertyStoreDefaultLanguages = SUPPORTED_LANGUAGES;
+const uint8_t AJSVC_PROPERTY_STORE_NUMBER_OF_LANGUAGES = sizeof(SUPPORTED_LANGUAGES) / sizeof(char*);</code>
+</code></pre>
+<p><strong>NOTE:</strong> The language names are according to the IETF language
+tags specified by RFC 5646. The example implementation supports
+only simple languages and extended languages or variant sub-tags
+(regional) languages. Hence, <code>LANG_NAME_LEN</code> is defined as 7.</p>
+<h5 id="field-definition-structure">Field definition structure</h5>
+<p>The following bit field structure is used to define the
+behavior of each field with respect to its exposure to
+remote clients various calls.</p>
+<pre><code class="lang-c"><code class="c">typedef struct _PropertyStoreEntry {    const char* keyName;
+   // The property key name as shown in About and Config documentation
+   // msb=public/private; bit number 3 - initialise once;
+   bit number 2 - multi-language value; bit number 1 - announce;
+   bit number 0 - read/write uint8_t mode0Write : 1; uint8_t mode1Announce : 1; uint8_t mode2MultiLng : 1;
+   uint8_t mode3Init : 1;
+   uint8_t mode4 : 1;
+   uint8_t mode5 : 1;
+   uint8_t mode6 : 1;
+   uint8_t mode7Public : 1;
+} PropertyStoreEntry;</code>
+</code></pre>
+<h5 id="field-definitions">Field definitions</h5>
+<p>The following bit field structure is used to define the
+behavior of each field with respect to its exposure to
+remote clients various calls.</p>
+<pre><code class="lang-c"><code class="c">extern const PropertyStoreEntry propertyStoreProperties[AJSVC_PROPERTY_STORE_NUMBER_OF_KEYS];
+const PropertyStoreEntry propertyStoreProperties[AJSVC_PROPERTY_STORE_NUMBER_OF_KEYS] =
+{
+// { "Key Name    ", W, A, M, I .. . . ., P },
+   { "DeviceId",    0, 1, 0, 1, 0, 0, 0, 1 },
+   { "AppId",    0, 1, 0, 1, 0, 0, 0, 1 },
+#ifndef CONFIG_SERVICE
+   { "DeviceName",    0, 1, 0, 1, 0, 0, 0, 1 },
+#else
+   { "DeviceName",
+#endif
+// Add other persisted keys above this line
+#ifndef CONFIG_SERVICE
+   { "DefaultLanguage",    0, 1, 0, 0, 0, 0, 0, 1 },
+#else
+   { "DefaultLanguage",
+#endif
+#ifdef CONFIG_SERVICE
+   { "Passcode",    1, 0, 0, 0, 0, 0, 0, 0 },
+   { "RealmName",    1, 0, 0, 0, 0, 0, 0, 0 },
+#endif
+// Add other configurable keys above this line
+   { "AppName",    0, 1, 0, 0, 0, 0, 0, 1 },
+   { "Description",    0, 0, 1, 0, 0, 0, 0, 1 },
+   { "Manufacturer",    0, 1, 1, 0, 0, 0, 0, 1 },
+   { "ModelNumber",    0, 1, 0, 0, 0, 0, 0, 1 },
+   { "DateOfManufacture",    0, 0, 0, 0, 0, 0, 0, 1 },
+   { "SoftwareVersion",    0, 0, 0, 0, 0, 0, 0, 1 },
+   { "AJSoftwareVersion",    0, 0, 0, 0, 0, 0, 0, 1 },
+#ifdef CONFIG_SERVICE
+   { "MaxLength",    0, 0, 1, 0, 0, 0, 0, 1 },
+#endif
+// Add other mandatory about keys above this line
+   { "HardwareVersion",    0, 0, 0, 0, 0,    0, 0,    1    },
+   { "SupportUrl",    0, 0, 1, 0, 0,    0, 0,    1    },
+// Add other optional about keys above this line
+};</code>
+</code></pre>
+<h5 id="field-default-values">Field default values</h5>
+<p>The following array is used to provision the fields' default values:</p>
+<pre><code class="lang-c"><code class="c">extern const char** propertyStoreDefaultValues[AJSVC_PROPERTY_STORE_NUMBER_OF_KEYS];
+// Array of Array of size 1 or AJSVC_PROPERTY_STORE_NUMBER_OF_LANGUAGES
+   constant buffers depending on whether the property is multilingual</code>
+</code></pre>
+<p>The following array is a snippet of code for provisioning for the
+Configuration service framework based on the ServerSample's ServerSample.c file:</p>
+<pre><code class="lang-c"><code class="c">#ifdef CONFIG_SERVICE
+static const char* DEFAULT_PASSCODES[] = { "303030303030" };
+// HEX encoded { '0', '0', '0', '0', '0', '0' }
+#endif
+static const char* DEFAULT_APP_NAMES[] = { "Configuree" };
+static const char DEFAULT_DESCRIPTION_LANG1[] = "AC IOE device";
+static const char DEFAULT_DESCRIPTION_LANG2[] = "Mein erstes IOE Geraet";
+static const char* DEFAULT_DESCRIPTIONS[] = { DEFAULT_DESCRIPTION_LANG1, DEFAULT_DESCRIPTION_LANG2 };
+static const char DEFAULT_MANUFACTURER_LANG1[] = "Company A(EN)";
+static const char DEFAULT_MANUFACTURER_LANG2[] = "Firma A(DE-AT)";
+static const char* DEFAULT_MANUFACTURERS[] = { DEFAULT_MANUFACTURER_LANG1, DEFAULT_MANUFACTURER_LANG2 };
+static const char* DEFAULT_DEVICE_MODELS[] = { "0.0.1" };
+static const char* DEFAULT_DATE_OF_MANUFACTURES[] = { "2014-02-01" };
+static const char* DEFAULT_SOFTWARE_VERSIONS[] = { "0.0.1" };
+static const char* DEFAULT_HARDWARE_VERSIONS[] = { "0.0.1" };
+static const char DEFAULT_SUPPORT_URL_LANG1[] = "www.company_a.com";
+static const char DEFAULT_SUPPORT_URL_LANG2[] = "www.company_a.com/de-AT";
+static const char* DEFAULT_SUPPORT_URLS[] = { DEFAULT_SUPPORT_URL_LANG1, DEFAULT_SUPPORT_URL_LANG2 };
+
+const char** propertyStoreDefaultValues[AJSVC_PROPERTY_STORE_NUMBER_OF_KEYS] =
+{
+// "Default Values per language",     "Key Name"
+   NULL,    /*DeviceId*/
+   NULL,    /*AppId*/
+   NULL,    /*DeviceName*/
+// Add other persisted keys above this line
+   DEFAULT_LANGUAGES,    /*DefaultLanguage*/
+#ifdef CONFIG_SERVICE
+   DEFAULT_PASSCODES,    /*Passcode*/ NULL,    /*RealmName*/
+#endif
+// Add other configurable keys above this line
+   DEFAULT_APP_NAMES,             /*AppName*/
+   DEFAULT_DESCRIPTIONS,     /*Description*/
+   DEFAULT_MANUFACTURERS,     /*Manufacturer*/
+   DEFAULT_DEVICE_MODELS,     /*ModelNumber*/
+   DEFAULT_DATE_OF_MANUFACTURES, /*DateOfManufacture*/
+   DEFAULT_SOFTWARE_VERSIONS,     /*SoftwareVersion*/
+   NULL,                     /*AJSoftwareVersion*/
+#ifdef CONFIG_SERVICE
+   NULL,                     /*MaxLength*/
+#endif
+// Add other mandatory about keys above this line
+   DEFAULT_HARDWARE_VERSIONS,     /*HardwareVersion*/
+   DEFAULT_SUPPORT_URLS,     /*SupportUrl*/
+// Add other optional about keys above this line
+};</code>
+</code></pre>
+<h5 id="field-runtime-values-and-persistence">Field runtime values and persistence</h5>
+<p>The following structure is used to store runtime-provisioned
+value or remotely modified value.</p>
+<pre><code class="lang-c"><code class="c">typedef struct _PropertyStoreRuntimeEntry {
+   char** value;    // An array of size 1 or
+AJSVC_PROPERTY_STORE_NUMBER_OF_LANGUAGES mutable buffers
+depending on whether the property is multilingual
+   uint8_t size; // The size of the value buffer(s)
+} PropertyStoreConfigEntry;</code>
+</code></pre>
+<p>The various length constants are appropriately set for each
+field in order to optimize memory usage.</p>
+<pre><code class="lang-c"><code class="c">#define LANG_VALUE_LENGTH 7
+#define KEY_VALUE_LENGTH 10
+#define MACHINE_ID_LENGTH (UUID_LENGTH * 2)
+#define DEVICE_NAME_VALUE_LENGTH 32
+#ifdef CONFIG_SERVICE
+#define PASSWORD_VALUE_LENGTH (AJ_ADHOC_LEN * 2)
+#endif</code>
+</code></pre>
+<p>The following array is used to maintain the runtime Config
+fields' modified values and is implemented as part of PropertyStore.c file.</p>
+<pre><code class="lang-c"><code class="c">extern PropertyStoreConfigEntry propertyStoreRuntimeValues[AJSVC_PROPERTY_STORE_NUMBER_OF_RUNTIME_KEYS]</code>
+</code></pre>
+<p>The following array is a snippet of code for provisioning
+for the Configuration service framework based on the ServerSample's
+ServerSample.c file:</p>
+<pre><code class="lang-c"><code class="c">static char machineIdVar[MACHINE_ID_LENGTH + 1] = { 0 };
+static char* machineIdVars[] = { machineIdVar };
+static char deviceNameVar[DEVICE_NAME_VALUE_LENGTH + 1] = { 0 };
+static char* deviceNameVars[] = { deviceNameVar };
+static char defaultLanguageVar[LANG_VALUE_LENGTH + 1] = { 0 };
+static char* defaultLanguageVars[] = { defaultLanguageVar };
+#ifdef CONFIG_SERVICE
+static char passcodeVar[PASSWORD_VALUE_LENGTH + 1] = { 0 };
+static char* passcodeVars[] = { passcodeVar };
+static char realmNameVar[KEY_VALUE_LENGTH + 1] = { 0 };
+static char* realmNameVars[] = { realmNameVar };
+#endif
+
+PropertyStoreConfigEntry PropertyStoreRuntimeValues[AJSVC_PROPERTY_STORE_NUMBER_OF_RUNTIME_KEYS] =
+{
+// {"Buffers for Values per language", "Buffer Size"},    "Key Name"
+   { machineIdVars,    MACHINE_ID_LENGTH + 1 },     /*DeviceId*/
+   { machineIdVars,    MACHINE_ID_LENGTH + 1 },     /*AppId*/
+   { deviceNameVars,    DEVICE_NAME_VALUE_LENGTH + 1 },  /*DeviceName*/
+// Add other persisted keys above this line
+   { defaultLanguageVars,    LANG_VALUE_LENGTH + 1 }, /*DefaultLanguage*/
+#ifdef CONFIG_SERVICE
+   { passcodeVars,    PASSWORD_VALUE_LENGTH + 1 },    /*Passcode*/
+   { realmNameVars,    KEY_VALUE_LENGTH + 1 },            /*RealmName*/
+#endif</code>
+</code></pre>
+<p><strong>NOTE:</strong> The size entry needs to match the actual allocation
+buffer length that is provisioned for each field. Refer to
+PropertyStore.c <code>PropertyStore_Init()</code> and <code>InitMandatoryPropertiesInRAM()</code>
+for an example runtime initialization of the persisted fields.</p>
+<p>If the value of a Config field (such as DeviceName) was modified,
+it is stored in the array under the relevant language.</p>
+<p>If <code>ResetConfigurations()</code> for this field (for some given language)
+or a <code>globalFactoryReset()</code> has been remotely called, the value
+(for the given language) will be reset to an empty string.</p>
+<p>In order to conserve memory a single shared buffer machineIdVars
+is used for both the AppId and DeviceId fields.</p>
+<h5 id="implementation-and-provisioning-information">Implementation and provisioning information</h5>
+<p>The bit field values in the example are an implementation of
+the About feature and Configuration service framework per the
+<a href="/developers/learn/core/about-announcement/interface">About Interface Definition</a> and
+<a href="/developers/learn/base-services/configuration/interface">Configuration Interface Definition</a>.
+You should not require any change in these and only alter
+the String values of the fields. You may of course remove
+optional fields such as DateOfManufacture.</p>
+<p>Depending on the <code>AJSVC_PROPERTY_STORE_NUMBER_OF_LANGUAGES</code>
+you've provisioned, this structure must be populated with as
+many default values. Use NULL for non-provisioned values such
+as when the field is non-language dependent (e.g., DeviceName).</p>
+<p>When provisioning a non-language dependent field, the first
+value (at index <code>AJSVC_PROPERTY_STORE_NO_LANGUAGE_INDEX</code>) is
+used and all other values are ignored, yet must be initialized.</p>
+<h5 id="adding-custom-field-definition-and-values">Adding custom field definition and values</h5>
+<p>Complete the following steps to add your own custom fields.</p>
+<ol><li>Decide to which subset the field belongs and add it to the enumeration
+<code>AJSVC_PropertyStoreFieldIndices</code> accordingly.</li>
+<li>Add a new field entry at the respective index to the propertyStoreProperties.</li>
+<li>Decide whether the field is publicly accessible from
+remote clients. If the field is public, set the <code>mode7Public</code> bit to 1.</li>
+<li>Decide whether the field is to be allowed to be configured
+remotely through the Configuration service framework. If the
+field is updateable, then set the <code>mode0Write</code> bit to 1.
+<strong>NOTE:</strong> If you set this bit, the field's index must be included
+in the Persisted or Config keys subsets.</li>
+<li>Decide whether the field is to be includedin the Announcement.
+If the field is announced, then set the <code>mode1Announce</code> bit to 1.
+<strong>NOTE:</strong> It is recommended to limit the inclusion of a field in
+the Announcement according to its immediate relevance to the
+relevant service framework's discovery. Only the value associated
+with the currentDefaultLanguage will be sent in the Announcement.</li>
+<li>Decide whether the field is multi-language and add the relevant
+values for the provisioned languages. If the field is multi-language,
+then set the <code>mode2MultiLng</code> bit to
+1.</li>
+<li><p>Decide whether the field is to be provisioned dynamically
+in code and persisted during first-time (or post-factory reset)
+device startup. If the field is to be initialized once, then
+set the <code>mode3Init</code> bit to 1 and add the relevant code to initialize it.</p>
+<p>Refer to PropertyStore.c <code>PropertyStore_Init()</code> and
+<code>InitMandatoryPropertiesInRAM()</code> for an example setup
+for the DeviceId and AppId fields.</p>
+<p><strong>NOTE:</strong> If you set this bit, the field's index must be
+included in the Persisted keys subsets.</p>
+</li>
+<li>Add relevant validation of updated value for your custom
+key by modifying the default implementation of <code>IsValueValid()</code>
+in ConfigSample.c file.<pre><code class="lang-c"><code class="c">uint8_t IsValueValid(const char* key, const char* value) {return TRUE;}</code>
+</code></pre>
+</li>
+<li>Add entry in corresponding index of <code>propertyStoreDefaultValues</code>
+to provision default value(s).</li>
+<li>Add entry in corresponding index of <code>propertyStoreRuntimeValues</code>
+to provision for runtime value(s) buffer(s).</li>
+</ol><p><strong>NOTE:</strong> The example implementation of PropertyStore supports
+properties with value of type String ('s') only. If your
+property must be of a different type, you must provision the
+default value as a String and perform the relevant de/serialization
+on the client side.</p>
+<p>The following shows an example of how to add a configurable
+proprietary property named "MyProperty" that has a language-dependent value.</p>
+<ul><li><p>Add index MyProperty to <code>AJSVC_PropertyStoreFieldIndices</code>:</p>
+<pre><code class="lang-c"><code class="c">MyProperty, AJSVC_PROPERTY_STORE_NUMBER_OF_RUNTIME_KEYS,</code>
+</code></pre>
+</li>
+<li><p>Add a new entry to the <code>propertyStoreProperties</code> array in
+the index which corresponds to the enumeration value defined above:</p>
+<pre><code class="lang-c"><code class="c">//{ "Key Name    ", W, A, M, I .. . . ., P },
+{ "MyProperty",    1, 0, 1, 0, 0, 0, 0, 1 },
+// Add other configurable keys above this line</code>
+</code></pre>
+</li>
+<li><p>Add a new entry to the <code>propertyStoreDefaultValues</code> array
+in the index which corresponds to the enumeration value defined above:</p>
+<pre><code class="lang-c"><code class="c">static const char DEFAULT_MYPROPERTY_LANG1[] = "My";
+static const char DEFAULT_MYPROPERTY_LANG2[] = "Mein";
+static const char* DEFAULT_MYPROPERTIES[] =
+{ DEFAULT_ MYPROPERTY_LANG1, DEFAULT_ MYPROPERTY_LANG2 };
+...
+DEFAULT_MYPROPERTIES,    /*MyProperty*/
+// Add other configurable keys above this line</code>
+</code></pre>
+</li>
+</ul><h3 id="implement-remote-callbacks">Implement remote callbacks</h3>
+<p>Callbacks are provided by the service frameworks to allow for
+the application writer to react to various remotely initiated
+calls and events. In particular, the Configuration service
+framework has callbacks that allow for the application writer
+to react to remote initiated events and the Controlee part
+of the Control Panel service framework has callbacks that allow
+for the application writer to write the business logic for the ControlPanel model.</p>
+<p>See the <a href="/developers/develop/api-guide/config/c-thin">Configuration API Guide</a> and the
+<a href="/developers/develop/api-guide/controlpanel/c-thin">Control Panel API Guide</a>, respectively, for more information.</p>
+<h3 id="integrate-the-configuration-service-framework-with-an">Integrate the Configuration service framework with an</h3>
+<p>application's AuthListener (optional)</p>
+<p>The Configuration service framework and other AllJoyn service
+framework interface methods and signals require a secure
+AllJoyn connection. The application writer may choose to use
+an ALLJOYN_ECDHE_PSK authentication mechanism in its AuthListener implementation.</p>
+<p>The Configuration service framework enables remote setting
+of a password that can be used as the secret for a key exchange
+authentication mechanism. An example implementation that uses
+this facility is included in the sample server application in
+the ServicesHandlers.c file as shown below.</p>
+<pre><code class="lang-c"><code class="c">uint32_t PasswordCallback(uint8_t* buffer, uint32_t bufLen)
+{
+   AJ_Status status = AJ_OK;
+   const char* hexPassword;
+   size_t hexPasswordLen;
+   uint32_t len = 0;
+
+   hexPassword = AJSVC_PropertyStore_GetValue(AJSVC_PROPERTY_STORE_PASSCODE);
+   if (hexPassword == NULL) {
+      AJ_ErrPrintf(("Password is NULL!\n"));
+      return len;
+   }
+   AJ_InfoPrintf(("Retrieved password=%s\n", hexPassword));
+   hexPasswordLen = strlen(hexPassword);
+   len = hexPasswordLen / 2;
+   status = AJ_HexToRaw(hexPassword, hexPasswordLen, buffer, bufLen);
+   if (status == AJ_ERR_RESOURCES) {
+      len = 0;
+   }
+
+   return len;
+}</code>
+</code></pre>
+<p>The above implementation calls AJSVC_PropertyStore_GetValue (<code>AJSVC_PROPERTY_STORE_PASSCODE</code>)
+to retrieve the current password. This implementation relies on an
+extension in the sample implementation of the PropertyStore which
+was extended with the Passcode field defined in the
+<code>AJSVC_PropertyStoreFieldIndices</code> enumeration. The field is remotely
+updateable via a Configuration service framework session using the
+dedicated <code>SetPasscode()</code> method. The stored Passcode is limited
+to the size of 65, allowing for 64 characters long secret:</p>
+<pre><code class="lang-c"><code class="c">#define PASSWORD_VALUE_LENGTH 65</code>
+</code></pre>
+<p>This is achieved using the field definition that masks the
+field as writable yet private, as shown in the <code>propertyStoreProperties</code>
+initialization in PropertyStore.c:</p>
+<pre><code class="lang-c"><code class="c">{"Passcode", 1, 0, 0, 0, 0, 0, 0, 0 }</code>
+</code></pre>
+<p>The default value is provisioned in ServerSample.c as follows:</p>
+<pre><code><code>// HEX encoded { '0', '0', '0', '0', '0', '0' }
+static const char* DEFAULT_PASSCODES[] = { "303030303030" };</code>
+</code></pre><p>and added to <code>propertyStoreDefaultValues</code>.</p>
+<pre><code class="lang-c"><code class="c">DEFAULT_PASSCODES,
+/*Passcode*/</code>
+</code></pre>
+<p>Since the Passcode enumeration value is less than <code>AJSVC_PROPERTY_STORE_NUMBER_OF_RUNTIME_KEYS</code>,
+it is also considered part of the <code>propertyStoreRuntimeValues</code>;
+its modified value is persisted.</p>
+<p>Also, when <code>SetPasscode()</code> is called remotely, the <code>SetPasscode()</code>
+callback is invoked with the following example implementation in
+ConfigSample.c file as shown below:</p>
+<pre><code class="lang-c"><code class="c">static AJ_Status SetPasscode(const char* daemonRealm, const uint8_t* newPasscode, uint8_t newPasscodeLen)
+{
+   AJ_Status status = AJ_OK;
+
+   char newStringPasscode[PASSWORD_VALUE_LENGTH + 1];
+   status = AJ_RawToHex(newPasscode, newPasscodeLen, newStringPasscode, sizeof(newStringPasscode), FALSE);
+   if (status != AJ_OK) {
+      return status;
+   }
+   if (AJSVC_PropertyStore_SetValue(AJSVC_PROPERTY_STORE_REALM_NAME, daemonRealm)
+&amp;&amp; AJSVC_PropertyStore_SetValue(AJSVC_PROPERTY_STORE_PASSCODE, newStringPasscode))
+{
+
+      status = AJSVC_PropertyStore_SaveAll();
+      if (status != AJ_OK) {
+         return status;
+      }
+      AJ_ClearCredentials();
+      status = AJ_ERR_READ;    //Force disconnect of AJ and services to refresh current sessions
+   } else {
+
+      status = AJSVC_PropertyStore_LoadAll();
+      if (status != AJ_OK) {
+         return status;
+      }
+   }
+
+   return status;
+}</code>
+</code></pre>
+<p>The above implementation stores the passcode as part of the
+PropertyStore persistence:</p>
+<ol><li>It calls <code>AJSVC_PropertyStore_SetValue(Passcode, newStringPasscode)</code>
+to set the value in RAM.</li>
+<li>If successful, it also calls <code>AJSVC_PropertyStore_SaveAll()</code>
+to persist to NVRAM.</li>
+<li>Finally, <code>AJ_ClearCredentials()</code> is called to revoke all
+current keys based on the old passcode.</li>
+</ol><p><strong>NOTES</strong></p>
+<ul><li><p>The stored passcode is HEX and is limited to the size of 32,
+allowing for 16 bytes long secret:</p>
+<pre><code class="lang-c"><code class="c">#define PASSWORD_VALUE_LENGTH (AJ_ADHOC_LEN * 2)</code>
+</code></pre>
+</li>
+<li>The default value for the Passcode field is provisioned as
+'303030303030' (the HEX encoded string value for the byte array
+{ '0', '0', '0', '0', '0', '0' }) as per the requirement outlined
+in the <a href="/developers/learn/base-services/configuration/interface">Configuration Interface Definition</a>.</li>
+<li>The realm name is similarly persisted alongside the passcode
+by adding the RealmName field index to the <code>AJSVC_PropertyStoreFieldIndices</code>
+enumeration and provisioning for it in <code>propertyStoreDefaultValues</code>
+and <code>propertyStoreRuntimeValues</code> initialization.</li>
+</ul><h2 id="compile-the-thin-library-application">Compile the Thin Library Application</h2>
+<p>This process, including the directory and file layout,
+toolchains, and procedures varies depending on the host and
+target platforms involved, and which AllJoyn service frameworks are being used.</p>
+<p>Refer to the target platform documentation that contains
+instructions on how to organize and set up the build process
+to incorporate the necessary files to compile your Thin Library application.</p>
+  </div>
+  </div>
+
+  
+  
+</article>
+              </div>
+                                   
+          </section>
+
+          
+        </div>
+      </div>
+
+
+      
+    </div>
+  </div>
+</div>
+<div id="sticky-footer">
+  
+      <footer id="footer" class="clearfix" role="contentinfo">
+        <div class="region region-footer"><div class="region-inner clearfix"><nav id="block-system-user-menu" class="block block-system block-menu"  role="navigation"><div class="block-inner clearfix">        <div class="block-content content"><ul class="menu clearfix"><li class="first menu-item-537"><a href="/user/register" title="">Register</a></li><li class="last menu-item-536"><a href="/user/login" title="">Log In</a></li></ul></div></div></nav></div></div>    </footer>
+  
+  <div id="lfcollabprojects-footer">
+    <div class="gray-diagonal">
+      <div class="footer-inner">
+        <p>&copy; 2017 AllSeen Alliance, Inc. All Rights Reserved.</p>
+        <p>The Linux Foundation® is a registered trademark of The Linux Foundation. AllSeen, Designed for AllSeen and AllSeen Alliance are trademarks of the AllSeen Alliance, Inc. AllJoyn® is a registered trademark of AllSeen Alliance, Inc.</p>
+        <p>Linux is a registered <a href="http://www.linuxfoundation.org/programs/legal/trademark" title="Linux Mark Institute">trademark</a> of Linus Torvalds.</p>
+        <p>Please see our <a href="/brand-guidelines">brand guidelines</a>, <a href="/trademarks">trademark guidelines</a>, <a href="/about/governance/ip-policy">IP policy</a>, <a href="/terms">terms of use</a>, <a href="/license">license</a>, and <a href="/privacy">privacy policy</a>.</p>
+      </div>
+    </div>
+    <div id="body-bottom">
+      </div>
+</body>
+</html>

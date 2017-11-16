@@ -1,0 +1,189 @@
+01-17 14:01:04.236: E/SELinux(17495): selinux_android_seapp_context_reload: seapp_contexts file is loaded from /seapp_contexts
+01-17 14:01:04.241: D/dalvikvm(17495): Late-enabling CheckJNI
+01-17 14:01:04.256: I/dalvikvm(17495): Turning on JNI app bug workarounds for target SDK version 11...
+01-17 14:01:04.381: D/dalvikvm(17495): Trying to load lib /data/app-lib/org.alljoyn.bus.unity-2/libmain.so 0x42f4f690
+01-17 14:01:04.381: D/dalvikvm(17495): Added shared lib /data/app-lib/org.alljoyn.bus.unity-2/libmain.so 0x42f4f690
+01-17 14:01:04.381: I/Unity(17495): gles_mode = 0 (integer)
+01-17 14:01:04.381: I/Unity(17495): splash_mode = 0 (integer)
+01-17 14:01:04.381: I/Unity(17495): hide_status_bar = True (bool)
+01-17 14:01:04.381: I/Unity(17495): useObb = False (bool)
+01-17 14:01:04.381: I/Unity(17495): development_player = True (bool)
+01-17 14:01:04.421: D/Unity(17495): surfaces: attach glview
+01-17 14:01:04.891: I/Unity(17495): onResume
+01-17 14:01:05.226: D/Unity(17495): [EGL] Attaching window 0x70ad7ae0
+01-17 14:01:05.301: I/Unity(17495): windowFocusChanged: true
+01-17 14:01:05.311: D/Unity(17495): SystemInfo CPU = ARMv7 VFPv3 NEON, Cores = 4, Memory = 1860mb
+01-17 14:01:05.786: D/Unity(17495): [SHA1] 57f49b5de4f9c9700d953a085de45194cc9f4ff8   16652424 bytes ~ lib/armeabi-v7a/libunity.so
+01-17 14:01:05.786: D/Unity(17495): Mono path[0] = '/data/app/org.alljoyn.bus.unity-2.apk/assets/bin/Data/Managed'
+01-17 14:01:05.786: D/Unity(17495): Mono config path = 'assets/bin/Data/Managed'
+01-17 14:01:05.786: D/Unity(17495): PlayerConnection initialized from /data/app/org.alljoyn.bus.unity-2.apk/assets/bin/Data (debug = 0)
+01-17 14:01:05.786: D/Unity(17495): PlayerConnection initialized network socket : 0.0.0.0 55140
+01-17 14:01:05.786: D/Unity(17495): PlayerConnection initialized unix socket : Unity-org.alljoyn.bus.unity
+01-17 14:01:05.791: D/Unity(17495): Multi-casting "[IP] 192.168.24.101 [Port] 55140 [Flags] 2 [Guid] 3658063805 [EditorId] 1537542074 [Version] 1048832 [Id] AndroidPlayer(samsung_GT-I9500:192.168.24.101) [Debug] 0" to [225.0.0.222:54997]...
+01-17 14:01:05.901: D/Unity(17495): InitializeMonoFromMain OK (71b9fee0)
+01-17 14:01:05.901: D/Unity(17495): PlayerConnection already initialized - listening to [192.168.24.101:55140]
+01-17 14:01:05.926: D/Unity(17495): PlayerInitEngineNoGraphics OK
+01-17 14:01:05.931: D/Unity(17495): GfxDevice: creating device client; threaded=0
+01-17 14:01:05.931: D/libEGL(17495): loaded /vendor/lib/egl/libEGL_POWERVR_SGX544_115.so
+01-17 14:01:05.936: D/libEGL(17495): loaded /vendor/lib/egl/libGLESv1_CM_POWERVR_SGX544_115.so
+01-17 14:01:05.941: D/libEGL(17495): loaded /vendor/lib/egl/libGLESv2_POWERVR_SGX544_115.so
+01-17 14:01:05.941: I/(17495): !@IMGSRV: DATE: 2013.04.23(11:19:33) | BUILDER: LSI3D | REVISION: e9cd1377d8225457ae40
+01-17 14:01:05.956: D/Unity(17495): [EGL] Request: ES2 RGB24 888 24/8
+01-17 14:01:05.961: D/Unity(17495): [EGL] Selected: ES2 RGB24 888 24/8
+01-17 14:01:06.016: D/Unity(17495): Renderer: PowerVR SGX 544MP
+01-17 14:01:06.016: D/Unity(17495): Vendor:   Imagination Technologies
+01-17 14:01:06.016: D/Unity(17495): Version:  OpenGL ES 2.0 build 1.10@2209507
+01-17 14:01:06.016: D/Unity(17495): GL_EXT_debug_marker GL_OES_rgb8_rgba8 GL_OES_depth24 GL_OES_vertex_half_float GL_OES_texture_float GL_OES_texture_half_float GL_OES_element_index_uint GL_OES_mapbuffer GL_OES_fragment_precision_high GL_OES_compressed_ETC1_RGB8_texture GL_OES_EGL_image GL_OES_EGL_image_external GL_OES_required_internalformat GL_OES_depth_texture GL_OES_get_program_binary GL_OES_packed_depth_stencil GL_OES_standard_derivatives GL_OES_vertex_array_object GL_OES_egl_sync GL_OES_texture_npot GL_EXT_discard_framebuffer GL_EXT_blend_minmax GL_EXT_multi_draw_arrays GL_EXT_multisampled_render_to_texture GL_EXT_shader_texture_lod GL_EXT_texture_format_BGRA8888 GL_EXT_texture_rg GL_IMG_shader_binary GL_IMG_texture_compression_pvrtc GL_IMG_texture_compression_pvrtc2 GL_IMG_texture_npot GL_IMG_texture_format_BGRA8888 GL_IMG_read_format GL_IMG_program_binary GL_IMG_uniform_buffer_object GL_IMG_multisampled_render_to_texture
+01-17 14:01:06.056: D/Unity(17495): Creating OpenGLES2.0 graphics device
+01-17 14:01:06.061: D/Unity(17495): InitializeGfxDevice OK
+01-17 14:01:06.061: D/Unity(17495): Initialize engine version: 4.3.2f1 (0517a5ae8669)
+01-17 14:01:06.081: W/libc(17495): pthread_create sched_setscheduler call failed: Operation not permitted
+01-17 14:01:06.086: D/Unity(17495): Begin MonoManager ReloadAssembly
+01-17 14:01:06.096: I/Reverb(17495):  getpid() 17495, IPCThreadState::self()->getCallingPid() 17495
+01-17 14:01:06.101: D/Unity(17495): Platform assembly: /data/app/org.alljoyn.bus.unity-2.apk/assets/bin/Data/Managed/UnityEngine.dll (this message is harmless)
+01-17 14:01:06.101: D/Unity(17495): Loading /data/app/org.alljoyn.bus.unity-2.apk/assets/bin/Data/Managed/UnityEngine.dll into Unity Child Domain
+01-17 14:01:06.191: D/Unity(17495): Platform assembly: /data/app/org.alljoyn.bus.unity-2.apk/assets/bin/Data/Managed/Assembly-CSharp.dll (this message is harmless)
+01-17 14:01:06.196: D/Unity(17495): Loading /data/app/org.alljoyn.bus.unity-2.apk/assets/bin/Data/Managed/Assembly-CSharp.dll into Unity Child Domain
+01-17 14:01:06.196: D/Unity(17495): Platform assembly: /data/app/org.alljoyn.bus.unity-2.apk/assets/bin/Data/Managed/alljoyn_unity.dll (this message is harmless)
+01-17 14:01:06.196: D/Unity(17495): Loading /data/app/org.alljoyn.bus.unity-2.apk/assets/bin/Data/Managed/alljoyn_unity.dll into Unity Child Domain
+01-17 14:01:06.221: D/Unity(17495): - Completed reload, in  0.135 seconds
+01-17 14:01:06.236: D/Unity(17495): PlayerInitEngineGraphics OK
+01-17 14:01:06.236: D/Unity(17495): Found 13 native sensors
+01-17 14:01:06.236: D/Unity(17495): Sensor :        Accelerometer ( 1) ; 0.000599 / 0.01s ; K330 Acceleration Sensor / STMicroelectronics 
+01-17 14:01:06.241: D/Unity(17495): Sensor :        Accelerometer ( 1) ; 0.000599 / 0.01s ; K330 Acceleration Sensor / STMicroelectronics 
+01-17 14:01:06.831: D/dalvikvm(17495): Trying to load lib /data/app-lib/org.alljoyn.bus.unity-2/liballjoyn_c.so 0x42f4f690
+01-17 14:01:06.841: D/dalvikvm(17495): Added shared lib /data/app-lib/org.alljoyn.bus.unity-2/liballjoyn_c.so 0x42f4f690
+01-17 14:01:06.841: D/dalvikvm(17495): No JNI_OnLoad found in /data/app-lib/org.alljoyn.bus.unity-2/liballjoyn_c.so 0x42f4f690, skipping init
+01-17 14:01:07.136: I/Unity(17495): AllJoyn Library version: v3.4.5
+01-17 14:01:07.136: I/Unity(17495): UnityEngine.Debug:Internal_Log(Int32, String, Object)
+01-17 14:01:07.136: I/Unity(17495): UnityEngine.Debug:Log(Object)
+01-17 14:01:07.136: I/Unity(17495): AllJoynAgent:Awake() (at C:\Users\user\Documents\Unity Projects\alljoyn-android\core\alljoyn-3.4.5-rel\unity\samples\BasicClient\Assets\Scripts\AllJoynAgent.cs:42)
+01-17 14:01:07.136: I/Unity(17495):  
+01-17 14:01:07.136: I/Unity(17495): (Filename: C Line: 0)
+01-17 14:01:07.136: D/dalvikvm(17495): Trying to load lib /data/app-lib/org.alljoyn.bus.unity-2/liballjoyn_c.so 0x42f4f690
+01-17 14:01:07.136: D/dalvikvm(17495): Shared lib '/data/app-lib/org.alljoyn.bus.unity-2/liballjoyn_c.so' already loaded in same CL 0x42f4f690
+01-17 14:01:07.141: I/Unity(17495): AllJoyn Library buildInfo: AllJoyn Library v3.4.5 (Built Sat Dec 07 03:00:13 UTC 2013 by seabuild)
+01-17 14:01:07.141: I/Unity(17495): UnityEngine.Debug:Internal_Log(Int32, String, Object)
+01-17 14:01:07.141: I/Unity(17495): UnityEngine.Debug:Log(Object)
+01-17 14:01:07.141: I/Unity(17495): AllJoynAgent:Awake() (at C:\Users\user\Documents\Unity Projects\alljoyn-android\core\alljoyn-3.4.5-rel\unity\samples\BasicClient\Assets\Scripts\AllJoynAgent.cs:43)
+01-17 14:01:07.141: I/Unity(17495):  
+01-17 14:01:07.141: I/Unity(17495): (Filename: C Line: 0)
+01-17 14:01:07.181: D/Unity(17495): Sensor :        Accelerometer ( 1) ; 0.000599 / 0.01s ; K330 Acceleration Sensor / STMicroelectronics 
+01-17 14:01:07.186: I/Unity(17495): Starting up AllJoyn client
+01-17 14:01:07.186: I/Unity(17495): UnityEngine.Debug:Internal_Log(Int32, String, Object)
+01-17 14:01:07.186: I/Unity(17495): UnityEngine.Debug:Log(Object)
+01-17 14:01:07.186: I/Unity(17495): AllJoynClient:Start() (at C:\Users\user\Documents\Unity Projects\alljoyn-android\core\alljoyn-3.4.5-rel\unity\samples\BasicClient\Assets\Scripts\AllJoynClient.cs:35)
+01-17 14:01:07.186: I/Unity(17495):  
+01-17 14:01:07.186: I/Unity(17495): (Filename: C Line: 0)
+01-17 14:01:07.191: D/dalvikvm(17495): Trying to load lib /data/app-lib/org.alljoyn.bus.unity-2/liballjoyn_c.so 0x42f4f690
+01-17 14:01:07.191: D/dalvikvm(17495): Shared lib '/data/app-lib/org.alljoyn.bus.unity-2/liballjoyn_c.so' already loaded in same CL 0x42f4f690
+01-17 14:01:07.191: D/dalvikvm(17495): Trying to load lib /data/app-lib/org.alljoyn.bus.unity-2/liballjoyn_c.so 0x42f4f690
+01-17 14:01:07.191: D/dalvikvm(17495): Shared lib '/data/app-lib/org.alljoyn.bus.unity-2/liballjoyn_c.so' already loaded in same CL 0x42f4f690
+01-17 14:01:07.196: D/dalvikvm(17495): Trying to load lib /data/app-lib/org.alljoyn.bus.unity-2/liballjoyn_c.so 0x42f4f690
+01-17 14:01:07.196: D/dalvikvm(17495): Shared lib '/data/app-lib/org.alljoyn.bus.unity-2/liballjoyn_c.so' already loaded in same CL 0x42f4f690
+01-17 14:01:07.196: D/dalvikvm(17495): Trying to load lib /data/app-lib/org.alljoyn.bus.unity-2/liballjoyn_c.so 0x42f4f690
+01-17 14:01:07.196: D/dalvikvm(17495): Shared lib '/data/app-lib/org.alljoyn.bus.unity-2/liballjoyn_c.so' already loaded in same CL 0x42f4f690
+01-17 14:01:07.201: D/dalvikvm(17495): Trying to load lib /data/app-lib/org.alljoyn.bus.unity-2/liballjoyn_c.so 0x42f4f690
+01-17 14:01:07.201: D/dalvikvm(17495): Shared lib '/data/app-lib/org.alljoyn.bus.unity-2/liballjoyn_c.so' already loaded in same CL 0x42f4f690
+01-17 14:01:07.201: D/dalvikvm(17495): Trying to load lib /data/app-lib/org.alljoyn.bus.unity-2/liballjoyn_c.so 0x42f4f690
+01-17 14:01:07.201: D/dalvikvm(17495): Shared lib '/data/app-lib/org.alljoyn.bus.unity-2/liballjoyn_c.so' already loaded in same CL 0x42f4f690
+01-17 14:01:07.231: D/dalvikvm(17495): Trying to load lib /data/app-lib/org.alljoyn.bus.unity-2/liballjoyn_c.so 0x42f4f690
+01-17 14:01:07.231: D/dalvikvm(17495): Shared lib '/data/app-lib/org.alljoyn.bus.unity-2/liballjoyn_c.so' already loaded in same CL 0x42f4f690
+01-17 14:01:07.231: D/dalvikvm(17495): Trying to load lib /data/app-lib/org.alljoyn.bus.unity-2/liballjoyn_c.so 0x42f4f690
+01-17 14:01:07.231: D/dalvikvm(17495): Shared lib '/data/app-lib/org.alljoyn.bus.unity-2/liballjoyn_c.so' already loaded in same CL 0x42f4f690
+01-17 14:01:07.271: I/Unity(17495): Client Interface Created.
+01-17 14:01:07.271: I/Unity(17495): UnityEngine.Debug:Internal_Log(Int32, String, Object)
+01-17 14:01:07.271: I/Unity(17495): UnityEngine.Debug:Log(Object)
+01-17 14:01:07.271: I/Unity(17495): basic_client.BasicClient:.ctor() (at C:\Users\user\Documents\Unity Projects\alljoyn-android\core\alljoyn-3.4.5-rel\unity\samples\BasicClient\Assets\Scripts\BasicClient.cs:83)
+01-17 14:01:07.271: I/Unity(17495): AllJoynClient:Start() (at C:\Users\user\Documents\Unity Projects\alljoyn-android\core\alljoyn-3.4.5-rel\unity\samples\BasicClient\Assets\Scripts\AllJoynClient.cs:36)
+01-17 14:01:07.271: I/Unity(17495):  
+01-17 14:01:07.271: I/Unity(17495): (Filename: C Line: 0)
+01-17 14:01:07.271: D/dalvikvm(17495): Trying to load lib /data/app-lib/org.alljoyn.bus.unity-2/liballjoyn_c.so 0x42f4f690
+01-17 14:01:07.271: D/dalvikvm(17495): Shared lib '/data/app-lib/org.alljoyn.bus.unity-2/liballjoyn_c.so' already loaded in same CL 0x42f4f690
+01-17 14:01:07.286: I/Unity(17495): Client BusAttachment started.
+01-17 14:01:07.286: I/Unity(17495): UnityEngine.Debug:Internal_Log(Int32, String, Object)
+01-17 14:01:07.286: I/Unity(17495): UnityEngine.Debug:Log(Object)
+01-17 14:01:07.286: I/Unity(17495): basic_client.BasicClient:.ctor() (at C:\Users\user\Documents\Unity Projects\alljoyn-android\core\alljoyn-3.4.5-rel\unity\samples\BasicClient\Assets\Scripts\BasicClient.cs:101)
+01-17 14:01:07.286: I/Unity(17495): AllJoynClient:Start() (at C:\Users\user\Documents\Unity Projects\alljoyn-android\core\alljoyn-3.4.5-rel\unity\samples\BasicClient\Assets\Scripts\AllJoynClient.cs:36)
+01-17 14:01:07.286: I/Unity(17495):  
+01-17 14:01:07.286: I/Unity(17495): (Filename: C Line: 0)
+01-17 14:01:07.286: D/dalvikvm(17495): Trying to load lib /data/app-lib/org.alljoyn.bus.unity-2/liballjoyn_c.so 0x42f4f690
+01-17 14:01:07.286: D/dalvikvm(17495): Shared lib '/data/app-lib/org.alljoyn.bus.unity-2/liballjoyn_c.so' already loaded in same CL 0x42f4f690
+01-17 14:01:07.291: D/dalvikvm(17495): Trying to load lib /data/app-lib/org.alljoyn.bus.unity-2/liballjoyn_c.so 0x42f4f690
+01-17 14:01:07.291: D/dalvikvm(17495): Shared lib '/data/app-lib/org.alljoyn.bus.unity-2/liballjoyn_c.so' already loaded in same CL 0x42f4f690
+01-17 14:01:07.336: I/Unity(17495): BusAttchement.Connect(null:) SUCCEDED.
+01-17 14:01:07.336: I/Unity(17495): UnityEngine.Debug:Internal_Log(Int32, String, Object)
+01-17 14:01:07.336: I/Unity(17495): UnityEngine.Debug:Log(Object)
+01-17 14:01:07.336: I/Unity(17495): basic_client.BasicClient:.ctor() (at C:\Users\user\Documents\Unity Projects\alljoyn-android\core\alljoyn-3.4.5-rel\unity\samples\BasicClient\Assets\Scripts\BasicClient.cs:120)
+01-17 14:01:07.336: I/Unity(17495): AllJoynClient:Start() (at C:\Users\user\Documents\Unity Projects\alljoyn-android\core\alljoyn-3.4.5-rel\unity\samples\BasicClient\Assets\Scripts\AllJoynClient.cs:36)
+01-17 14:01:07.336: I/Unity(17495):  
+01-17 14:01:07.336: I/Unity(17495): (Filename: C Line: 0)
+01-17 14:01:07.341: D/dalvikvm(17495): Trying to load lib /data/app-lib/org.alljoyn.bus.unity-2/liballjoyn_c.so 0x42f4f690
+01-17 14:01:07.341: D/dalvikvm(17495): Shared lib '/data/app-lib/org.alljoyn.bus.unity-2/liballjoyn_c.so' already loaded in same CL 0x42f4f690
+01-17 14:01:07.361: I/Unity(17495): Client BusListener Registered.
+01-17 14:01:07.361: I/Unity(17495): UnityEngine.Debug:Internal_Log(Int32, String, Object)
+01-17 14:01:07.361: I/Unity(17495): UnityEngine.Debug:Log(Object)
+01-17 14:01:07.361: I/Unity(17495): basic_client.BasicClient:.ctor() (at C:\Users\user\Documents\Unity Projects\alljoyn-android\core\alljoyn-3.4.5-rel\unity\samples\BasicClient\Assets\Scripts\BasicClient.cs:144)
+01-17 14:01:07.361: I/Unity(17495): AllJoynClient:Start() (at C:\Users\user\Documents\Unity Projects\alljoyn-android\core\alljoyn-3.4.5-rel\unity\samples\BasicClient\Assets\Scripts\AllJoynClient.cs:36)
+01-17 14:01:07.361: I/Unity(17495):  
+01-17 14:01:07.361: I/Unity(17495): (Filename: C Line: 0)
+01-17 14:02:03.241: D/dalvikvm(17495): GC_CONCURRENT freed 1825K, 15% free 16847K/19812K, paused 6ms+4ms, total 48ms
+01-17 14:02:16.711: D/dalvikvm(17495): GC_CONCURRENT freed 387K, 15% free 16844K/19812K, paused 5ms+4ms, total 35ms
+01-17 14:02:30.311: D/dalvikvm(17495): GC_CONCURRENT freed 385K, 9% free 16844K/18372K, paused 4ms+6ms, total 42ms
+01-17 14:02:43.971: D/dalvikvm(17495): GC_CONCURRENT freed 387K, 9% free 16844K/18372K, paused 4ms+5ms, total 39ms
+01-17 14:02:57.561: D/dalvikvm(17495): GC_CONCURRENT freed 388K, 9% free 16844K/18372K, paused 4ms+5ms, total 36ms
+01-17 14:03:11.191: D/dalvikvm(17495): GC_CONCURRENT freed 387K, 9% free 16844K/18372K, paused 5ms+4ms, total 36ms
+01-17 14:03:24.771: D/dalvikvm(17495): GC_CONCURRENT freed 387K, 9% free 16844K/18372K, paused 5ms+3ms, total 39ms
+01-17 14:03:38.381: D/dalvikvm(17495): GC_CONCURRENT freed 387K, 9% free 16844K/18372K, paused 5ms+3ms, total 34ms
+01-17 14:03:51.996: D/dalvikvm(17495): GC_CONCURRENT freed 387K, 9% free 16844K/18372K, paused 5ms+4ms, total 39ms
+01-17 14:04:05.576: D/dalvikvm(17495): GC_CONCURRENT freed 387K, 9% free 16844K/18372K, paused 5ms+4ms, total 38ms
+01-17 14:04:12.891: D/dalvikvm(17495): GC_CONCURRENT freed 243K, 8% free 17021K/18492K, paused 3ms+3ms, total 17ms
+01-17 14:04:13.041: E/SpannableStringBuilder(17495): SPAN_EXCLUSIVE_EXCLUSIVE spans cannot have a zero length
+01-17 14:04:13.041: E/SpannableStringBuilder(17495): SPAN_EXCLUSIVE_EXCLUSIVE spans cannot have a zero length
+01-17 14:04:13.041: I/Unity(17495): windowFocusChanged: false
+01-17 14:04:13.236: D/GestureDetector(17495): [Surface Touch Event] mSweepDown False, mLRSDCnt : -1 mTouchCnt : 7 mFalseSizeCnt:0
+01-17 14:04:13.691: W/InputEventReceiver(17495): Attempted to finish an input event but the input event receiver has already been disposed.
+01-17 14:04:13.691: E/ViewRootImpl(17495): sendUserActionEvent() mView == null
+01-17 14:04:13.691: I/Unity(17495): windowFocusChanged: true
+01-17 14:04:13.701: E/ViewRootImpl(17495): sendUserActionEvent() mView == null
+01-17 14:04:13.701: W/IInputConnectionWrapper(17495): setComposingText on inactive InputConnection
+01-17 14:04:14.436: I/Unity(17495): onPause
+01-17 14:04:18.736: D/Unity(17495): ASensorManager_destroyEventQueue returned 0
+01-17 14:04:18.741: I/Unity(17495): windowFocusChanged: false
+01-17 14:04:19.441: I/Unity(17495): onDestroy
+01-17 14:04:19.471: D/dalvikvm(17495): Unregistering JNI method Lcom/unity3d/player/UnityPlayer;.nativeVideoFrameCallback:VILII
+01-17 14:04:19.471: D/dalvikvm(17495): Unregistering JNI method Lcom/unity3d/player/UnityPlayer;.nativeSoftInputClosed:V
+01-17 14:04:19.471: D/dalvikvm(17495): Unregistering JNI method Lcom/unity3d/player/UnityPlayer;.nativeSetTouchDeltaY:VF
+01-17 14:04:19.471: D/dalvikvm(17495): Unregistering JNI method Lcom/unity3d/player/UnityPlayer;.nativeSetInputString:VL
+01-17 14:04:19.471: D/dalvikvm(17495): Unregistering JNI method Lcom/unity3d/player/UnityPlayer;.nativeSetInputCanceled:VZ
+01-17 14:04:19.471: D/dalvikvm(17495): Unregistering JNI method Lcom/unity3d/player/UnityPlayer;.nativeSetExtras:VL
+01-17 14:04:19.471: D/dalvikvm(17495): Unregistering JNI method Lcom/unity3d/player/UnityPlayer;.nativeSetDefaultDisplay:VI
+01-17 14:04:19.471: D/dalvikvm(17495): Unregistering JNI method Lcom/unity3d/player/UnityPlayer;.nativeResume:V
+01-17 14:04:19.471: D/dalvikvm(17495): Unregistering JNI method Lcom/unity3d/player/UnityPlayer;.nativeResize:VIIII
+01-17 14:04:19.471: D/dalvikvm(17495): Unregistering JNI method Lcom/unity3d/player/UnityPlayer;.nativeRequestedAA:I
+01-17 14:04:19.471: D/dalvikvm(17495): Unregistering JNI method Lcom/unity3d/player/UnityPlayer;.nativeRequested32bitDisplayBuffer:Z
+01-17 14:04:19.471: D/dalvikvm(17495): Unregistering JNI method Lcom/unity3d/player/UnityPlayer;.nativeRender:Z
+01-17 14:04:19.471: D/dalvikvm(17495): Unregistering JNI method Lcom/unity3d/player/UnityPlayer;.nativeRecreateGfxState:VL
+01-17 14:04:19.471: D/dalvikvm(17495): Unregistering JNI method Lcom/unity3d/player/UnityPlayer;.nativePause:Z
+01-17 14:04:19.471: D/dalvikvm(17495): Unregistering JNI method Lcom/unity3d/player/UnityPlayer;.nativeKeysPressed:VL
+01-17 14:04:19.471: D/dalvikvm(17495): Unregistering JNI method Lcom/unity3d/player/UnityPlayer;.nativeInjectEvent:ZL
+01-17 14:04:19.471: D/dalvikvm(17495): Unregistering JNI method Lcom/unity3d/player/UnityPlayer;.nativeInitWWW:VL
+01-17 14:04:19.471: D/dalvikvm(17495): Unregistering JNI method Lcom/unity3d/player/UnityPlayer;.nativeFocusChanged:VZ
+01-17 14:04:19.471: D/dalvikvm(17495): Unregistering JNI method Lcom/unity3d/player/UnityPlayer;.nativeFile:VL
+01-17 14:04:19.471: D/dalvikvm(17495): Unregistering JNI method Lcom/unity3d/player/UnityPlayer;.nativeDone:V
+01-17 14:04:19.471: D/dalvikvm(17495): Unregistering JNI method Lcom/unity3d/player/UnityPlayer;.nativeActivityIndicatorStyle:I
+01-17 14:04:19.471: D/dalvikvm(17495): Unregistering JNI method Lcom/unity3d/player/UnityPlayer;.initJni:VL
+01-17 14:04:19.471: D/dalvikvm(17495): Unregistering JNI method Lcom/unity3d/player/UnityPlayer;.UnitySendMessage:VLLL
+01-17 14:04:19.471: D/dalvikvm(17495): Unregistering JNI method Lcom/unity3d/player/UnityPlayer;.nativeSetLocationStatus:VI
+01-17 14:04:19.471: D/dalvikvm(17495): Unregistering JNI method Lcom/unity3d/player/UnityPlayer;.nativeSetLocation:VFFFFDF
+01-17 14:04:19.471: D/dalvikvm(17495): Unregistering JNI method Lcom/unity3d/player/UnityPlayer;.nativeForwardEventsToDalvik:VZ
+01-17 14:04:19.471: D/dalvikvm(17495): Unregistering JNI method Lcom/unity3d/player/UnityPlayer;.nativeDeviceOrientation:VI
+01-17 14:04:19.471: D/dalvikvm(17495): Unregistering JNI method Lorg/fmod/FMODAudioDevice;.fmodUnblockStreaming:I
+01-17 14:04:19.471: D/dalvikvm(17495): Unregistering JNI method Lorg/fmod/FMODAudioDevice;.fmodProcess:IL
+01-17 14:04:19.471: D/dalvikvm(17495): Unregistering JNI method Lorg/fmod/FMODAudioDevice;.fmodInitJni:I
+01-17 14:04:19.471: D/dalvikvm(17495): Unregistering JNI method Lorg/fmod/FMODAudioDevice;.fmodGetInfo:II
+01-17 14:04:19.471: D/dalvikvm(17495): Unregistering JNI method Lorg/fmod/FMODAudioDevice;.fmodBlockStreaming:I
+01-17 14:04:19.471: D/dalvikvm(17495): Unregistering JNI method Lorg/fmod/FMODAudioDevice;.fmodProcessMicData:ILI
+01-17 14:04:19.471: D/dalvikvm(17495): Unregistering JNI method Lcom/unity3d/player/ReflectionHelper;.nativeProxyInvoke:LILL
+01-17 14:04:19.471: D/dalvikvm(17495): Unregistering JNI method Lcom/unity3d/player/ReflectionHelper;.nativeProxyFinalize:VI
+01-17 14:04:19.501: I/Process(17495): Sending signal. PID: 17495 SIG: 9

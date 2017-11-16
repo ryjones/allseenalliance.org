@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xml:base="https://identity.allseenalliance.org"  xmlns:dc="http://purl.org/dc/elements/1.1/">
+<channel>
+ <title>marcalexander&#039;s blog</title>
+ <link>https://identity.allseenalliance.org/blog/10228</link>
+ <description></description>
+ <language>en</language>
+<item>
+ <title>Shining a Light on the Internet of Everything</title>
+ <link>https://identity.allseenalliance.org/news/blogs/2014/10/shining-light-internet-everything</link>
+ <description>
+		&lt;span class=&quot;a2a_kit a2a_target addtoany_list&quot; id=&quot;da2a_1&quot;&gt;
+			&lt;a class=&quot;a2a_button_facebook&quot;&gt;&lt;/a&gt;
+&lt;a class=&quot;a2a_button_twitter&quot;&gt;&lt;/a&gt;
+&lt;a class=&quot;a2a_button_google_plus&quot;&gt;&lt;/a&gt;&lt;a class=&quot;a2a_dd addtoany_share_save&quot; href=&quot;http://www.addtoany.com/share_save#url=https%3A%2F%2Fidentity.allseenalliance.org%2Fnews%2Fblogs%2F2014%2F10%2Fshining-light-internet-everything&amp;amp;title=Blogs%20-%20AllSeen%20Alliance&quot;&gt; Share&lt;/a&gt;
+		&lt;/span&gt;
+		&lt;script type=&quot;text/javascript&quot;&gt;
+&lt;!--//--&gt;&lt;![CDATA[//&gt;&lt;!--
+da2a.script_load();
+//--&gt;&lt;!]]&gt;
+&lt;/script&gt;
+		
+  &lt;div class=&quot;field-body view-mode-rss&quot;&gt;
+    &lt;p&gt;&lt;em&gt;Marc Alexander is VP of Engineering at LIFX, where he leads the hardware and firmware development teams for connected lighting and IoT. He is the AllSeen Alliance Connected Lighting Working Group Chair and representative on the TSC. Prior to LIFX, Marc has developed and delivered projects across high volume consumer and automotive electronics fields, embedded real time firmware, display, control, communications and wireless systems.&lt;/em&gt;&lt;/p&gt;&lt;p&gt;One of the most surprising &#039;light-bulb&#039; moments in technology in recent years involves, well, the light bulb.  While the modern light bulb is the product of major advances in materials and energy efficiency, the basic concept hasn’t changed much since Thomas Edison’s day: hit a switch, get light.  Traditionally, the light bulb has been among the “dumbest” pieces of electronics in the home.&lt;/p&gt;&lt;p&gt;But imagine if you could transform the ordinary light bulb into a small “computer” with chips, memory, radio, networking components and intelligent software. And what if that lighting could interact with your TV, audio system, garage door opener, home security system, smoke alarm or other newly smart objects like door locks?&lt;/p&gt;&lt;p&gt;This “Jetsons”-sounding scenario actually exists today. WiFi-enabled, multi-color, energy-efficient smart LED light bulbs are on the market. And the underlying technology exists to allow lighting and other nearby devices to discover, dynamically connect and interact with each other.  All that&#039;s needed for widespread adoption in the home is for the companies that make all these different products to come together and work on common ways to implement the technology.&lt;/p&gt;&lt;p&gt;That’s why the AllSeen Alliance&#039;s &lt;strong&gt;&lt;a href=&quot;https://allseenalliance.org/announcement/allseen-alliance-launches-initiative-advance-smart-lighting-0&quot; target=&quot;_blank&quot;&gt;initative to advance smart lighting&lt;/a&gt;&lt;/strong&gt; is so exciting. The Connected Lighting Working Group has a boring name but a big mission: To collaborate on an open software framework that, say, allows lighting to automatically adjust its brightness and color as soon as the HDTV is turned on.  Or intelligently set mood lighting based on the beats coming from your audio system. Or turn on the lights when you come home, thanks to lighting’s interaction with your smart garage door opener or door locks, and turn them off when you leave.&lt;/p&gt;&lt;p&gt;With the average U.S. household having more than 40 sockets for light bulbs, ranging from table lamps to ceiling fixtures, lighting has the potential to be one of the IoT’s first and most noticeable impacts in everyday life.&lt;/p&gt;&lt;p&gt;Members of the&lt;strong&gt;&lt;a href=&quot;https://wiki.allseenalliance.org/tsc/connected_lighting&quot; target=&quot;_blank&quot;&gt; Connected Lighting Working Group&lt;/a&gt;&lt;/strong&gt; are really passionate about this stuff and are sifting through the technical challenges of making this element of the connected home a reality.&lt;/p&gt;&lt;p&gt;Using the AllJoyn open source framework for interoperability in the Internet of Everything, we’re building seamless connectivity for lighting and sharing of resources across a complete product ecosystem, independent of product class or manufacturer -- for example, AllJoyn-enabled televisions, security systems, door bells, smoke detectors, kitchen appliances, audio systems and home routers, hubs, and gateways.&lt;/p&gt;&lt;p&gt;The first applications from the Connected Lighting Working Group are expected in the fourth quarter of this year. And we think the future will only get brighter. We hope you&#039;ll join us!&lt;/p&gt;&lt;p&gt; &lt;/p&gt;  &lt;/div&gt;
+</description>
+ <pubDate>Wed, 08 Oct 2014 15:37:55 +0000</pubDate>
+ <dc:creator>marcalexander</dc:creator>
+ <guid isPermaLink="false">4072 at https://identity.allseenalliance.org</guid>
+ <comments>https://identity.allseenalliance.org/news/blogs/2014/10/shining-light-internet-everything#comments</comments>
+</item>
+</channel>
+</rss>

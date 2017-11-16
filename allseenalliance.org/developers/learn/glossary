@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<!--[if IEMobile 7]><html class="iem7" lang="en" dir="ltr"><![endif]-->
+<!--[if lte IE 6]><html class="lt-ie9 lt-ie8 lt-ie7" lang="en" dir="ltr"><![endif]-->
+<!--[if (IE 7)&(!IEMobile)]><html class="lt-ie9 lt-ie8" lang="en" dir="ltr"><![endif]-->
+<!--[if IE 8]><html class="lt-ie9" lang="en" dir="ltr"><![endif]-->
+<!--[if (gte IE 9)|(gt IEMobile 7)]><!--><html lang="en" dir="ltr"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/terms/"
+  xmlns:foaf="http://xmlns.com/foaf/0.1/"
+  xmlns:og="http://ogp.me/ns#"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:sioc="http://rdfs.org/sioc/ns#"
+  xmlns:sioct="http://rdfs.org/sioc/types#"
+  xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema#"><!--<![endif]-->
+<head>
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
+<meta charset="utf-8" />
+<link rel="shortlink" href="/node/4126" />
+<link rel="shortcut icon" href="https://identity.allseenalliance.org/sites/all/themes/at_alljoyn/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="/developers/learn/glossary" />
+<meta name="viewport" content="width=device-width" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta property="og:image" content="https://identity.allseenalliance.org/sites/all/themes/at_alljoyn/images/allseen-logo.png"/>
+<meta name="google-translate-customization" content="48b015afeed82101-ecae534af0f48252-ga0b6470a6208b2f5-f"></meta>
+<meta name="MobileOptimized" content="width">
+<meta name="HandheldFriendly" content="true">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Glossary - AllSeen Alliance</title>
+<link type="text/css" rel="stylesheet" href="https://identity.allseenalliance.org/sites/default/files/css/css_xE-rWrJf-fncB6ztZfd2huxqgxu4WO-qwma6Xer30m4.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://identity.allseenalliance.org/sites/default/files/css/css_7Vcu6qIuRTO46aDOBZp7_mtksGdhCHSe0pjTO2YbGng.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://identity.allseenalliance.org/sites/default/files/css/css_J2n1xiaSuececTK0yC3DT_Msm4PrkPwHizxr0oXGGoo.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://identity.allseenalliance.org/sites/default/files/css/css_oxEtvjMfj8c8EEJJ-1WXLGGntCnC0UvrbYsq0Gw4m4Q.css" media="screen" />
+<link type="text/css" rel="stylesheet" href="https://identity.allseenalliance.org/sites/default/files/css/css_9EusV9fcbkpqBeTGdJPl7ru65jm-3ngbTi_D6YRR_5A.css" media="only screen" />
+<script src="https://identity.allseenalliance.org/sites/default/files/js/js_UWQINlriydSoeSiGQxToOUdv493zEa7dpsXC1OtYlZU.js"></script>
+<script src="https://identity.allseenalliance.org/sites/default/files/js/js_COMsmDyrY9mzVU28X2uGvF4Ba3vd5eTo5xEO7dvCUZM.js"></script>
+<script src="https://identity.allseenalliance.org/sites/default/files/js/js_i8oyg1R4On_HyzPiZ5zC3V-DxehjGAcpKwNao5s0s5I.js"></script>
+<script>hljs.configure({languages:[]}); hljs.initHighlightingOnLoad();</script>
+<script src="https://identity.allseenalliance.org/sites/default/files/js/js_aG0kZAhSHT6G3QC-d9Wwx9gQp5d0em8X6FmMYZ1e5h4.js"></script>
+<script>var _gaq = _gaq || [];_gaq.push(["_setAccount", "UA-"]);_gaq.push(["_trackPageview"]);(function() {var ga = document.createElement("script");ga.type = "text/javascript";ga.async = true;ga.src = ("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/ga.js";var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(ga, s);})();</script>
+<script src="https://identity.allseenalliance.org/sites/default/files/js/js_R35PAK16384fXh7f2OqvXVkbbrwr8ABLrDpR1zTluo0.js"></script>
+<script src="https://identity.allseenalliance.org/sites/default/files/js/js_DKtRHJS-jz_cHgf23K7wnIWphCanZ_Rz74Aw-DKQyFs.js"></script>
+<script>jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"at_alljoyn","theme_token":"3ApA9Tq1rm520fXsmJEJXL-2haQsAEqdPKL1CZJDKWw","js":{"misc\/jquery.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/all\/modules\/contrib\/comment_notify\/comment_notify.js":1,"sites\/all\/modules\/alljoyn\/custom_modules\/allseen_docs\/allseen_docs_highlight\/highlightjs\/highlight.min.js":1,"0":1,"sites\/all\/libraries\/colorbox\/jquery.colorbox-min.js":1,"sites\/all\/modules\/contrib\/colorbox\/js\/colorbox.js":1,"sites\/all\/modules\/contrib\/colorbox\/styles\/default\/colorbox_style.js":1,"sites\/all\/modules\/contrib\/colorbox\/js\/colorbox_load.js":1,"sites\/all\/modules\/contrib\/colorbox\/js\/colorbox_inline.js":1,"sites\/all\/modules\/contrib\/panels\/js\/panels.js":1,"sites\/all\/modules\/contrib\/quote\/quote.js":1,"sites\/all\/modules\/contrib\/views_slideshow\/js\/views_slideshow.js":1,"sites\/all\/modules\/contrib\/google_analytics\/googleanalytics.js":1,"1":1,"sites\/all\/modules\/alljoyn\/custom_modules\/allseen_docs\/allseen_docs_nav\/allseen-docs-nav.js":1,"sites\/all\/themes\/at_alljoyn\/scripts\/alljoyn.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"sites\/all\/modules\/contrib\/comment_notify\/comment_notify.css":1,"sites\/all\/modules\/ldap\/ldap_user\/ldap_user.css":1,"modules\/book\/book.css":1,"modules\/comment\/comment.css":1,"sites\/all\/modules\/contrib\/date\/date_api\/date.css":1,"sites\/all\/modules\/contrib\/date\/date_popup\/themes\/datepicker.1.7.css":1,"modules\/field\/theme\/field.css":1,"sites\/all\/modules\/contrib\/mollom\/mollom.css":1,"modules\/node\/node.css":1,"modules\/user\/user.css":1,"modules\/forum\/forum.css":1,"sites\/all\/modules\/contrib\/views\/css\/views.css":1,"sites\/all\/modules\/alljoyn\/custom_modules\/allseen_docs\/allseen_docs_highlight\/highlightjs\/default.min.css":1,"sites\/all\/modules\/contrib\/colorbox\/styles\/default\/colorbox_style.css":1,"sites\/all\/modules\/contrib\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/ldap\/ldap_servers\/ldap_servers.admin.css":1,"sites\/all\/modules\/contrib\/panels\/css\/panels.css":1,"sites\/all\/modules\/contrib\/quote\/quote.css":1,"sites\/all\/modules\/contrib\/views_slideshow\/views_slideshow.css":1,"sites\/all\/modules\/alljoyn\/custom_modules\/allseen_docs\/allseen_docs_nav\/allseen-docs-nav.css":1,"sites\/all\/modules\/alljoyn\/features\/content_type_developer_document\/content-type-developer-document.css":1,"sites\/all\/themes\/adaptivetheme\/at_core\/css\/at.layout.css":1,"sites\/all\/themes\/at_alljoyn\/css\/fonts.css":1,"sites\/all\/themes\/at_alljoyn\/css\/globals.css":1,"sites\/all\/themes\/at_alljoyn\/css\/jcarousel-alljoyn.css":1,"public:\/\/adaptivetheme\/at_alljoyn_files_7dbe1ef5\/at_alljoyn.responsive.layout.css":1,"public:\/\/adaptivetheme\/at_alljoyn_files_7dbe1ef5\/at_alljoyn.responsive.styles.css":1}},"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":true,"mobiledevicewidth":"480px"},"jcarousel":{"ajaxPath":"\/jcarousel\/ajax\/views"},"quote_nest":2,"googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls|xml|z|zip"}});</script>
+<!--[if lt IE 9]>
+<script src="https://identity.allseenalliance.org/sites/all/themes/adaptivetheme/at_core/scripts/respond.js?nwgww1"></script>
+<script src="https://identity.allseenalliance.org/sites/all/themes/adaptivetheme/at_core/scripts/html5.js?nwgww1"></script>
+<script src="https://identity.allseenalliance.org/sites/all/themes/adaptivetheme/at_core/scripts/PIE.htc?nwgww1"></script>
+<script src="https://identity.allseenalliance.org/sites/all/themes/adaptivetheme/at_core/scripts/selectivizr.js?nwgww1"></script>
+<![endif]-->
+</head>
+<body class="html not-front not-logged-in one-sidebar sidebar-first page-node page-node- page-node-4126 node-type-developer-document site-name-hidden with-subnav page-developers-learn-glossary section-developers">
+  <div id="body-top">
+      </div>
+  <div id="skip-link">
+    <a href="#main-content" class="element-invisible element-focusable">Skip to main content</a>
+  </div>
+  <div class="region region-page-top"><div class="region-inner clearfix"><div id="fb-root"></div><script type="text/javascript">
+     window.fbAsyncInit = function() {
+       FB.init({
+         appId: "492099574180957",
+         status: true,
+         cookie: true,
+         xfbml: true,
+         oauth : true,
+         channelUrl: "https:\/\/identity.allseenalliance.org\/service_links\/channel"
+         });
+
+         FB.Event.subscribe('edge.create', function(href, widget) {
+    _gaq.push(['_trackEvent', 'facebook', 'Facebook like', href]);
+   });FB.Event.subscribe('edge.remove', function(href, widget) {
+    _gaq.push(['_trackEvent', 'facebook', 'Facebook unlike', href]);
+   });
+       };
+       (function(d){
+     var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement('script'); js.id = id; js.async = true;
+     js.src = '//connect.facebook.net/en_US/all.js';
+     ref.parentNode.insertBefore(js, ref);
+   }(document));
+    </script></div></div>  
+<div id="wrap">
+
+  <div id="lfcollabprojects-header">
+    <div class="gray-diagonal">
+      <div class="header-inner">
+        <a id="lfcollabprojects-logo" href="http://collabprojects.linuxfoundation.org">Linux Foundation Collaborative Projects</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="page" class="container page">
+
+    
+    <header id="header" class="clearfix" role="banner">
+
+      <div class="region region-header"><div class="region-inner clearfix"><div id="block-block-19" class="block block-block" ><div class="block-inner clearfix">        <div class="block-content content"><br /><br /><br /><br /><br /><br /><br /></div></div></div></div></div>
+              <div id="branding" class="branding-elements clearfix">
+
+                      <div id="logo"><a href="/" title="Home page"><img class="site-logo" typeof="foaf:Image" src="https://identity.allseenalliance.org/sites/default/files/logo.png" alt="AllSeen Alliance" /></a></div>
+          
+                      <hgroup id="name-and-slogan" class="element-invisible">
+                              <h1 id="site-name" class="element-invisible"><a href="/" title="Home page">AllSeen Alliance</a></h1>
+                                        </hgroup>
+          
+          <!--main menu-->
+          <a id="main-menu-toggle" href="#">Site Sections</a>
+  		  		  		
+        </div>
+      
+    </header>
+
+
+    <div id="columns" class="clearfix">
+      <div id="sub-menu-bar">
+        <div class="region region-sub-menu-bar"><div class="region-inner clearfix"><div id="block-menu-block-allseen-docs-nav" class="block block-menu-block"  role="navigation"><div class="block-inner clearfix">        <div class="block-content content"><div class="menu-block-wrapper menu-block-allseen-docs-nav menu-name-main-menu parent-mlid-0 menu-level-2">
+  <ul class="menu clearfix"><li class="first has-children active-trail menu-mlid-2504 menu-item-2504"><a href="/developers/learn" class="active-trail">Learn</a></li><li class="has-children menu-mlid-2539 menu-item-2539"><a href="/developers/download">Download</a></li><li class="has-children menu-mlid-2541 menu-item-2541"><a href="/developers/develop">Develop</a></li><li class="last has-children menu-mlid-2636 menu-item-2636"><a href="/developers/contribute">Contribute</a></li></ul></div>
+</div></div></div><section id="block-menu-block-allseen-docs-responsive-nav" class="block block-menu-block"  role="navigation"><div class="block-inner clearfix">        <div class="block-title-wrapper">
+      <h2 class="block-title">Menu</h2>
+    </div>
+      <div class="block-content content"><div class="menu-block-wrapper menu-block-allseen-docs-responsive-nav menu-name-main-menu parent-mlid-0 menu-level-1">
+  <ul class="menu clearfix"><li class="first menu-parent menu-mlid-1994 menu-item-1994"><a href="/about">About</a><ul class="menu clearfix"><li class="first menu-mlid-2486 menu-item-2486"><a href="/about/why-allseen">Why AllSeen</a></li><li class="menu-mlid-2464 menu-item-2464"><a href="/about/get-involved">Get Involved</a></li><li class="collapsed menu-mlid-2446 menu-item-2446"><a href="/about/governance/ip-policy">IP Policy</a></li><li class="menu-mlid-2491 menu-item-2491"><a href="/about/working-groups">Working Groups</a></li><li class="menu-mlid-2286 menu-item-2286"><a href="/about/members">Member Companies</a></li><li class="menu-mlid-2285 menu-item-2285"><a href="/about/join-allseen-alliance">Join The AllSeen Alliance</a></li><li class="collapsed menu-mlid-2447 menu-item-2447"><a href="/about/governance">Governance</a></li><li class="menu-mlid-501 menu-item-501"><a href="/about/faqs">FAQs</a></li><li class="menu-mlid-2322 menu-item-2322"><a href="/about/contact">Contact Us</a></li><li class="menu-mlid-2282 menu-item-2282"><a href="/allseen/what-is-allseen-alliance">What is AllSeen Alliance?</a></li><li class="last menu-mlid-2490 menu-item-2490"><a href="https://wiki.allseenalliance.org/members_private/start?do=login&amp;sectok=34485854163fe6a0be457198139e2c84" title="Members Area" id="members_area" name="Members Area" rel="nofollow" target="_blank">Members Area</a></li></ul></li><li class="menu-parent active-trail menu-mlid-2503 menu-item-2503"><a href="/developers" class="active-trail">Developers</a><ul class="menu clearfix"><li class="first menu-parent has-children active-trail menu-mlid-2504 menu-item-2504"><a href="/developers/learn" class="active-trail active-trail">Learn</a><ul class="menu clearfix"><li class="first menu-mlid-2505 menu-item-2505"><a href="/developers/learn/use-cases">Use Cases</a></li><li class="menu-mlid-2506 menu-item-2506"><a href="/developers/learn/architecture">Architecture</a></li><li class="menu-parent menu-mlid-2507 menu-item-2507"><a href="/developers/learn/core">Core Framework</a><ul class="menu clearfix"><li class="first menu-parent menu-mlid-2508 menu-item-2508"><a href="/developers/learn/core/about-announcement">About Announcement</a><ul class="menu clearfix"><li class="first menu-mlid-2509 menu-item-2509"><a href="/developers/learn/core/about-announcement/interface">Interface</a></li><li class="last menu-mlid-2510 menu-item-2510"><a href="/developers/learn/core/about-announcement/interface-14-02">Interface 14.02</a></li></ul></li><li class="menu-mlid-2511 menu-item-2511"><a href="/developers/learn/core/events-and-actions">Events and Actions</a></li><li class="menu-mlid-2992 menu-item-2992"><a href="/developers/learn/core/rn_config">Routing Node Configuration</a></li><li class="menu-mlid-2512 menu-item-2512"><a href="/developers/learn/core/standard-core">Standard Core</a></li><li class="menu-mlid-2513 menu-item-2513"><a href="/developers/learn/core/thin-core">Thin Core</a></li><li class="menu-parent menu-mlid-2514 menu-item-2514"><a href="/developers/learn/core/system-description">System Description</a><ul class="menu clearfix"><li class="first menu-mlid-2515 menu-item-2515"><a href="/developers/learn/core/system-description/system-architecture">System Architecture</a></li><li class="menu-mlid-2516 menu-item-2516"><a href="/developers/learn/core/system-description/advertisement-discovery">Advertisement and Discovery</a></li><li class="menu-mlid-2645 menu-item-2645"><a href="/developers/learn/core/system-description/alljoyn-transport">AllJoyn Transport</a></li><li class="menu-mlid-2517 menu-item-2517"><a href="/developers/learn/core/system-description/data-exchange">Data Exchange</a></li><li class="menu-mlid-2518 menu-item-2518"><a href="/developers/learn/core/system-description/alljoyn-session">AllJoyn Session</a></li><li class="menu-mlid-2519 menu-item-2519"><a href="/developers/learn/core/system-description/sessionless-signal">Sessionless Signal</a></li><li class="menu-mlid-2520 menu-item-2520"><a href="/developers/learn/core/system-description/alljoyn-security">AllJoyn Security</a></li><li class="menu-mlid-2521 menu-item-2521"><a href="/developers/learn/core/system-description/thin-apps">Thin Apps</a></li><li class="last menu-mlid-2522 menu-item-2522"><a href="/developers/learn/core/system-description/events-actions">Events and Actions</a></li></ul></li><li class="last menu-parent menu-mlid-2937 menu-item-2937"><a href="/developers/learn/core/security2_0">Security 2.0</a><ul class="menu clearfix"><li class="first last menu-mlid-2938 menu-item-2938"><a href="/developers/learn/core/security2_0/hld">High-Level Design</a></li></ul></li></ul></li><li class="menu-parent menu-mlid-2523 menu-item-2523"><a href="/developers/learn/base-services">Base Services</a><ul class="menu clearfix"><li class="first menu-parent menu-mlid-2524 menu-item-2524"><a href="/developers/learn/base-services/onboarding">Onboarding</a><ul class="menu clearfix"><li class="first menu-mlid-2525 menu-item-2525"><a href="/developers/learn/base-services/onboarding/interface">Interface</a></li><li class="last menu-mlid-2526 menu-item-2526"><a href="/developers/learn/base-services/onboarding/interface-14-02">Interface 14.02</a></li></ul></li><li class="menu-parent menu-mlid-2527 menu-item-2527"><a href="/developers/learn/base-services/configuration">Configuration</a><ul class="menu clearfix"><li class="first menu-mlid-2528 menu-item-2528"><a href="/developers/learn/base-services/configuration/interface">Interface</a></li><li class="last menu-mlid-2529 menu-item-2529"><a href="/developers/learn/base-services/configuration/interface-14-02">Interface 14.02</a></li></ul></li><li class="menu-parent menu-mlid-2530 menu-item-2530"><a href="/developers/learn/base-services/notification">Notification</a><ul class="menu clearfix"><li class="first menu-mlid-2531 menu-item-2531"><a href="/developers/learn/base-services/notification/interface">Interface</a></li><li class="last menu-mlid-2532 menu-item-2532"><a href="/developers/learn/base-services/notification/interface-14-02">Interface 14.02</a></li></ul></li><li class="menu-parent menu-mlid-2533 menu-item-2533"><a href="/developers/learn/base-services/controlpanel">ControlPanel</a><ul class="menu clearfix"><li class="first menu-mlid-2534 menu-item-2534"><a href="/developers/learn/base-services/controlpanel/interface">Interface</a></li><li class="last menu-mlid-2535 menu-item-2535"><a href="/developers/learn/base-services/controlpanel/interface-14-02">Interface 14.02</a></li></ul></li><li class="last menu-parent menu-mlid-2536 menu-item-2536"><a href="/developers/learn/base-services/audiostreaming">Audio Streaming</a><ul class="menu clearfix"><li class="first last menu-mlid-2537 menu-item-2537"><a href="/developers/learn/base-services/audiostreaming/interface">Interface</a></li></ul></li></ul></li><li class="last active-trail active menu-mlid-2538 menu-item-2538"><a href="/developers/learn/glossary" class="active-trail active">Glossary</a></li></ul></li><li class="menu-parent has-children menu-mlid-2539 menu-item-2539"><a href="/developers/download">Download</a><ul class="menu clearfix"><li class="first last menu-mlid-2540 menu-item-2540"><a href="/developers/download/supported-platforms">Supported Platforms</a></li></ul></li><li class="menu-parent has-children menu-mlid-2541 menu-item-2541"><a href="/developers/develop">Develop</a><ul class="menu clearfix"><li class="first menu-parent menu-mlid-2542 menu-item-2542"><a href="/developers/develop/building">Building</a><ul class="menu clearfix"><li class="first menu-parent menu-mlid-2543 menu-item-2543"><a href="/developers/develop/building/android">Android</a><ul class="menu clearfix"><li class="first last menu-mlid-2544 menu-item-2544"><a href="/developers/develop/building/android/build-source">Build Source</a></li></ul></li><li class="menu-parent menu-mlid-2545 menu-item-2545"><a href="/developers/develop/building/linux">Linux</a><ul class="menu clearfix"><li class="first menu-mlid-2546 menu-item-2546"><a href="/developers/develop/building/linux/openwrt">OpenWRT</a></li><li class="last menu-mlid-2547 menu-item-2547"><a href="/developers/develop/building/linux/build-source">Build Source</a></li></ul></li><li class="menu-parent menu-mlid-2548 menu-item-2548"><a href="/developers/develop/building/ios-osx">iOS/OS X</a><ul class="menu clearfix"><li class="first last menu-mlid-2549 menu-item-2549"><a href="/developers/develop/building/ios-osx/build-source">Build Source</a></li></ul></li><li class="menu-parent menu-mlid-2550 menu-item-2550"><a href="/developers/develop/building/windows">Windows</a><ul class="menu clearfix"><li class="first last menu-mlid-2551 menu-item-2551"><a href="/developers/develop/building/windows/build-source">Build Source</a></li></ul></li><li class="menu-mlid-2552 menu-item-2552"><a href="/developers/develop/building/thin-linux">Thin - Linux</a></li><li class="menu-mlid-2553 menu-item-2553"><a href="/developers/develop/building/thin-windows">Thin - Windows</a></li><li class="last menu-mlid-2993 menu-item-2993"><a href="/developers/develop/building/alljoyn-js">AllJoyn.js</a></li></ul></li><li class="menu-parent menu-mlid-2554 menu-item-2554"><a href="/developers/develop/run-sample-apps">Running Samples</a><ul class="menu clearfix"><li class="first menu-parent menu-mlid-2555 menu-item-2555"><a href="/developers/develop/run-sample-apps/basic">Basic</a><ul class="menu clearfix"><li class="first menu-mlid-2556 menu-item-2556"><a href="/developers/develop/run-sample-apps/basic/android">Android</a></li><li class="menu-mlid-2557 menu-item-2557"><a href="/developers/develop/run-sample-apps/basic/linux">Linux</a></li><li class="menu-mlid-2558 menu-item-2558"><a href="/developers/develop/run-sample-apps/basic/ios-osx">iOS/OS X</a></li><li class="menu-mlid-2559 menu-item-2559"><a href="/developers/develop/run-sample-apps/basic/windows">Windows</a></li><li class="menu-mlid-2560 menu-item-2560"><a href="/developers/develop/run-sample-apps/basic/thin-linux">Thin - Linux</a></li><li class="last menu-mlid-2561 menu-item-2561"><a href="/developers/develop/run-sample-apps/basic/thin-windows">Thin - Windows</a></li></ul></li><li class="menu-parent menu-mlid-2562 menu-item-2562"><a href="/developers/develop/run-sample-apps/chat">Chat</a><ul class="menu clearfix"><li class="first menu-mlid-2563 menu-item-2563"><a href="/developers/develop/run-sample-apps/chat/android">Android</a></li><li class="menu-mlid-2564 menu-item-2564"><a href="/developers/develop/run-sample-apps/chat/linux">Linux</a></li><li class="menu-mlid-2565 menu-item-2565"><a href="/developers/develop/run-sample-apps/chat/ios-osx">iOS/OS X</a></li><li class="menu-mlid-2566 menu-item-2566"><a href="/developers/develop/run-sample-apps/chat/windows">Windows</a></li><li class="last menu-mlid-2567 menu-item-2567"><a href="/developers/develop/run-sample-apps/chat/thin-linux">Thin - Linux</a></li></ul></li><li class="menu-parent menu-mlid-2568 menu-item-2568"><a href="/developers/develop/run-sample-apps/about">About</a><ul class="menu clearfix"><li class="first menu-mlid-2569 menu-item-2569"><a href="/developers/develop/run-sample-apps/about/linux">Linux</a></li><li class="menu-mlid-2570 menu-item-2570"><a href="/developers/develop/run-sample-apps/about/ios-osx">iOS/OS X</a></li><li class="last menu-mlid-2646 menu-item-2646"><a href="/developers/develop/run-sample-apps/about/windows">Windows</a></li></ul></li><li class="menu-mlid-2934 menu-item-2934"><a href="/developers/develop/run-sample-apps/observer">Observer</a></li><li class="menu-parent menu-mlid-2571 menu-item-2571"><a href="/developers/develop/run-sample-apps/config">Config</a><ul class="menu clearfix"><li class="first menu-mlid-2572 menu-item-2572"><a href="/developers/develop/run-sample-apps/config/android">Android</a></li><li class="menu-mlid-2573 menu-item-2573"><a href="/developers/develop/run-sample-apps/config/linux">Linux</a></li><li class="menu-mlid-2574 menu-item-2574"><a href="/developers/develop/run-sample-apps/config/ios-osx">iOS/OS X</a></li><li class="last menu-mlid-2575 menu-item-2575"><a href="/developers/develop/run-sample-apps/config/thin-linux">Thin - Linux</a></li></ul></li><li class="menu-parent menu-mlid-2576 menu-item-2576"><a href="/developers/develop/run-sample-apps/controlpanel">Control Panel</a><ul class="menu clearfix"><li class="first menu-mlid-2577 menu-item-2577"><a href="/developers/develop/run-sample-apps/controlpanel/android">Android</a></li><li class="menu-mlid-2578 menu-item-2578"><a href="/developers/develop/run-sample-apps/controlpanel/linux">Linux</a></li><li class="menu-mlid-2579 menu-item-2579"><a href="/developers/develop/run-sample-apps/controlpanel/ios-osx">iOS/OS X</a></li><li class="last menu-mlid-2580 menu-item-2580"><a href="/developers/develop/run-sample-apps/controlpanel/thin-linux">Thin - Linux</a></li></ul></li><li class="menu-parent menu-mlid-2581 menu-item-2581"><a href="/developers/develop/run-sample-apps/notification">Notification</a><ul class="menu clearfix"><li class="first menu-mlid-2582 menu-item-2582"><a href="/developers/develop/run-sample-apps/notification/android">Android</a></li><li class="menu-mlid-2583 menu-item-2583"><a href="/developers/develop/run-sample-apps/notification/linux">Linux</a></li><li class="menu-mlid-2584 menu-item-2584"><a href="/developers/develop/run-sample-apps/notification/ios-osx">iOS/OS X</a></li><li class="last menu-mlid-2585 menu-item-2585"><a href="/developers/develop/run-sample-apps/notification/thin-linux">Thin - Linux</a></li></ul></li><li class="menu-parent menu-mlid-2586 menu-item-2586"><a href="/developers/develop/run-sample-apps/onboarding">Onboarding</a><ul class="menu clearfix"><li class="first menu-mlid-2587 menu-item-2587"><a href="/developers/develop/run-sample-apps/onboarding/android">Android</a></li><li class="menu-mlid-2588 menu-item-2588"><a href="/developers/develop/run-sample-apps/onboarding/linux">Linux</a></li><li class="last menu-mlid-2589 menu-item-2589"><a href="/developers/develop/run-sample-apps/onboarding/ios-osx">iOS/OS X</a></li></ul></li><li class="menu-parent menu-mlid-2590 menu-item-2590"><a href="/developers/develop/run-sample-apps/acserver">AC Server</a><ul class="menu clearfix"><li class="first menu-mlid-2591 menu-item-2591"><a href="/developers/develop/run-sample-apps/acserver/linux">Linux</a></li><li class="last menu-mlid-2592 menu-item-2592"><a href="/developers/develop/run-sample-apps/acserver/thin-linux">Thin - Linux</a></li></ul></li><li class="menu-parent menu-mlid-2593 menu-item-2593"><a href="/developers/develop/run-sample-apps/test">Command Line Apps</a><ul class="menu clearfix"><li class="first last menu-mlid-2594 menu-item-2594"><a href="/developers/develop/run-sample-apps/test/sessions">Sessions</a></li></ul></li><li class="last menu-mlid-2994 menu-item-2994"><a href="/developers/develop/run-sample-apps/alljoyn-js">AllJoyn.js</a></li></ul></li><li class="menu-parent menu-mlid-2595 menu-item-2595"><a href="/developers/develop/api-guide">API Guide</a><ul class="menu clearfix"><li class="first menu-parent menu-mlid-2596 menu-item-2596"><a href="/developers/develop/api-guide/core">Core</a><ul class="menu clearfix"><li class="first menu-mlid-2939 menu-item-2939"><a href="/developers/develop/api-guide/core/java">java</a></li><li class="menu-mlid-2940 menu-item-2940"><a href="/developers/develop/api-guide/core/objc">Objective-C</a></li><li class="menu-mlid-2647 menu-item-2647"><a href="/developers/develop/api-guide/core/alljoyn-transports-best-practices">Alljoyn Transports Best Practices</a></li><li class="menu-mlid-2648 menu-item-2648"><a href="/developers/develop/api-guide/core/auto-ping">AutoPinger</a></li><li class="menu-mlid-2935 menu-item-2935"><a href="/developers/develop/api-guide/core/observer">Observer</a></li><li class="last menu-mlid-2936 menu-item-2936"><a href="/developers/develop/api-guide/core/propcache">Property Cache</a></li></ul></li><li class="menu-parent menu-mlid-2599 menu-item-2599"><a href="/developers/develop/api-guide/about">About</a><ul class="menu clearfix"><li class="first menu-mlid-2941 menu-item-2941"><a href="/developers/develop/api-guide/about/java">java</a></li><li class="menu-mlid-2942 menu-item-2942"><a href="/developers/develop/api-guide/about/cpp">C++</a></li><li class="menu-mlid-2943 menu-item-2943"><a href="/developers/develop/api-guide/about/objc">Objective-C</a></li><li class="menu-mlid-2944 menu-item-2944"><a href="/developers/develop/api-guide/about/c-thin">C (Thin Core)</a></li><li class="menu-mlid-2945 menu-item-2945"><a href="/developers/develop/api-guide/about/java-legacy">java Legacy</a></li><li class="menu-mlid-2946 menu-item-2946"><a href="/developers/develop/api-guide/about/cpp-legacy">C++ Legacy</a></li><li class="last menu-mlid-2947 menu-item-2947"><a href="/developers/develop/api-guide/about/objc-legacy">Objective-C Legacy</a></li></ul></li><li class="menu-parent menu-mlid-2604 menu-item-2604"><a href="/developers/develop/api-guide/onboarding">Onboarding</a><ul class="menu clearfix"><li class="first menu-mlid-2948 menu-item-2948"><a href="/developers/develop/api-guide/onboarding/java">java</a></li><li class="last menu-mlid-2949 menu-item-2949"><a href="/developers/develop/api-guide/onboarding/objc">Objective-C</a></li></ul></li><li class="menu-parent menu-mlid-2607 menu-item-2607"><a href="/developers/develop/api-guide/config">Configuration</a><ul class="menu clearfix"><li class="first menu-mlid-2950 menu-item-2950"><a href="/developers/develop/api-guide/config/java">java</a></li><li class="menu-mlid-2951 menu-item-2951"><a href="/developers/develop/api-guide/config/cpp">C++</a></li><li class="menu-mlid-2952 menu-item-2952"><a href="/developers/develop/api-guide/config/objc">Objective-C</a></li><li class="last menu-mlid-2953 menu-item-2953"><a href="/developers/develop/api-guide/config/c-thin">C (Thin Core)</a></li></ul></li><li class="menu-parent menu-mlid-2612 menu-item-2612"><a href="/developers/develop/api-guide/notification">Notification</a><ul class="menu clearfix"><li class="first menu-mlid-2954 menu-item-2954"><a href="/developers/develop/api-guide/notification/java">java</a></li><li class="menu-mlid-2955 menu-item-2955"><a href="/developers/develop/api-guide/notification/cpp">C++</a></li><li class="menu-mlid-2956 menu-item-2956"><a href="/developers/develop/api-guide/notification/objc">Objective-C</a></li><li class="last menu-mlid-2957 menu-item-2957"><a href="/developers/develop/api-guide/notification/c-thin">C (Thin Core)</a></li></ul></li><li class="menu-parent menu-mlid-2617 menu-item-2617"><a href="/developers/develop/api-guide/controlpanel">Control Panel</a><ul class="menu clearfix"><li class="first menu-mlid-2958 menu-item-2958"><a href="/developers/develop/api-guide/controlpanel/java">java</a></li><li class="menu-mlid-2959 menu-item-2959"><a href="/developers/develop/api-guide/controlpanel/cpp">C++</a></li><li class="menu-mlid-2960 menu-item-2960"><a href="/developers/develop/api-guide/controlpanel/objc">Objective-C</a></li><li class="last menu-mlid-2961 menu-item-2961"><a href="/developers/develop/api-guide/controlpanel/c-thin">C (Thin Core)</a></li></ul></li><li class="menu-parent menu-mlid-2622 menu-item-2622"><a href="/developers/develop/api-guide/audio-streaming">Audio Streaming</a><ul class="menu clearfix"><li class="first last menu-mlid-2962 menu-item-2962"><a href="/developers/develop/api-guide/audio-streaming/cpp">C++</a></li></ul></li><li class="last menu-mlid-2624 menu-item-2624"><a href="/developers/develop/api-guide/events-and-actions">Events and Actions</a></li></ul></li><li class="menu-mlid-2625 menu-item-2625"><a href="/developers/develop/api-reference">API Reference</a></li><li class="menu-parent menu-mlid-2626 menu-item-2626"><a href="/developers/develop/debug">Debug</a><ul class="menu clearfix"><li class="first last menu-mlid-2627 menu-item-2627"><a href="/developers/develop/debug/common-issues">Common Issues</a></li></ul></li><li class="menu-parent menu-mlid-2628 menu-item-2628"><a href="/developers/develop/tutorial">Tutorial</a><ul class="menu clearfix"><li class="first menu-mlid-2629 menu-item-2629"><a href="/developers/develop/tutorial/core">Core</a></li><li class="menu-mlid-2630 menu-item-2630"><a href="/developers/develop/tutorial/ios">iOS</a></li><li class="menu-mlid-2631 menu-item-2631"><a href="/developers/develop/tutorial/thin-app">Thin App</a></li><li class="menu-mlid-2632 menu-item-2632"><a href="/developers/develop/tutorial/arduino-and-gt202">Arduino + GT202</a></li><li class="last menu-mlid-2633 menu-item-2633"><a href="/developers/develop/tutorial/videos">Videos</a></li></ul></li><li class="last menu-mlid-2634 menu-item-2634"><a href="/developers/develop/ask">Ask Forum</a></li></ul></li><li class="last menu-parent has-children menu-mlid-2636 menu-item-2636"><a href="/developers/contribute">Contribute</a><ul class="menu clearfix"><li class="first last menu-mlid-2637 menu-item-2637"><a href="/developers/contribute/project-lifecycle">Project Lifecycle</a></li></ul></li></ul></li><li class="menu-mlid-2466 menu-item-2466"><a href="/showcase-products-using-alljoyn">Showcase</a></li><li class="menu-parent menu-mlid-2487 menu-item-2487"><a href="/allseen-alliance-certification">Certification</a><ul class="menu clearfix"><li class="first menu-mlid-2488 menu-item-2488"><a href="/certification/how-validate-your-designed-allseen-product">How To Validate Your Product</a></li><li class="last menu-mlid-2489 menu-item-2489"><a href="/certification/faq">FAQ</a></li></ul></li><li class="last menu-parent menu-mlid-2421 menu-item-2421"><a href="/news-and-events">News &amp; Events</a><ul class="menu clearfix"><li class="first menu-mlid-2422 menu-item-2422"><a href="/news-and-events/newsroom/announcements">Announcements</a></li><li class="menu-mlid-2449 menu-item-2449"><a href="/news/videos">Videos</a></li><li class="menu-mlid-2423 menu-item-2423"><a href="/news-and-events/newsroom/in-the-news">In The News</a></li><li class="menu-mlid-2424 menu-item-2424"><a href="/news-and-events/events">Events</a></li><li class="menu-mlid-2448 menu-item-2448"><a href="/news-and-events/blogs">Blogs</a></li><li class="menu-mlid-2461 menu-item-2461"><a href="/news-and-events/newsletters">Newsletters</a></li><li class="last menu-mlid-2933 menu-item-2933"><a href="/news-and-events/videos">Videos</a></li></ul></li></ul></div>
+</div></div></section></div></div>      </div>
+            
+      
+      <div class="region region-sidebar-first sidebar"><div class="region-inner clearfix"><div id="block-menu-block-1" class="block block-menu-block"  role="navigation"><div class="block-inner clearfix">        <div class="block-content content"><div class="menu-block-wrapper menu-block-1 menu-name-main-menu parent-mlid-0 menu-level-3">
+  <ul class="menu clearfix"><li class="first menu-mlid-2505 menu-item-2505"><a href="/developers/learn/use-cases">Use Cases</a></li><li class="menu-mlid-2506 menu-item-2506"><a href="/developers/learn/architecture">Architecture</a></li><li class="menu-parent menu-mlid-2507 menu-item-2507"><a href="/developers/learn/core">Core Framework</a><ul class="menu clearfix"><li class="first menu-parent menu-mlid-2508 menu-item-2508"><a href="/developers/learn/core/about-announcement">About Announcement</a><ul class="menu clearfix"><li class="first menu-mlid-2509 menu-item-2509"><a href="/developers/learn/core/about-announcement/interface">Interface</a></li><li class="last menu-mlid-2510 menu-item-2510"><a href="/developers/learn/core/about-announcement/interface-14-02">Interface 14.02</a></li></ul></li><li class="menu-mlid-2511 menu-item-2511"><a href="/developers/learn/core/events-and-actions">Events and Actions</a></li><li class="menu-mlid-2992 menu-item-2992"><a href="/developers/learn/core/rn_config">Routing Node Configuration</a></li><li class="menu-mlid-2512 menu-item-2512"><a href="/developers/learn/core/standard-core">Standard Core</a></li><li class="menu-mlid-2513 menu-item-2513"><a href="/developers/learn/core/thin-core">Thin Core</a></li><li class="menu-parent menu-mlid-2514 menu-item-2514"><a href="/developers/learn/core/system-description">System Description</a><ul class="menu clearfix"><li class="first menu-mlid-2515 menu-item-2515"><a href="/developers/learn/core/system-description/system-architecture">System Architecture</a></li><li class="menu-mlid-2516 menu-item-2516"><a href="/developers/learn/core/system-description/advertisement-discovery">Advertisement and Discovery</a></li><li class="menu-mlid-2645 menu-item-2645"><a href="/developers/learn/core/system-description/alljoyn-transport">AllJoyn Transport</a></li><li class="menu-mlid-2517 menu-item-2517"><a href="/developers/learn/core/system-description/data-exchange">Data Exchange</a></li><li class="menu-mlid-2518 menu-item-2518"><a href="/developers/learn/core/system-description/alljoyn-session">AllJoyn Session</a></li><li class="menu-mlid-2519 menu-item-2519"><a href="/developers/learn/core/system-description/sessionless-signal">Sessionless Signal</a></li><li class="menu-mlid-2520 menu-item-2520"><a href="/developers/learn/core/system-description/alljoyn-security">AllJoyn Security</a></li><li class="menu-mlid-2521 menu-item-2521"><a href="/developers/learn/core/system-description/thin-apps">Thin Apps</a></li><li class="last menu-mlid-2522 menu-item-2522"><a href="/developers/learn/core/system-description/events-actions">Events and Actions</a></li></ul></li><li class="last menu-parent menu-mlid-2937 menu-item-2937"><a href="/developers/learn/core/security2_0">Security 2.0</a><ul class="menu clearfix"><li class="first last menu-mlid-2938 menu-item-2938"><a href="/developers/learn/core/security2_0/hld">High-Level Design</a></li></ul></li></ul></li><li class="menu-parent menu-mlid-2523 menu-item-2523"><a href="/developers/learn/base-services">Base Services</a><ul class="menu clearfix"><li class="first menu-parent menu-mlid-2524 menu-item-2524"><a href="/developers/learn/base-services/onboarding">Onboarding</a><ul class="menu clearfix"><li class="first menu-mlid-2525 menu-item-2525"><a href="/developers/learn/base-services/onboarding/interface">Interface</a></li><li class="last menu-mlid-2526 menu-item-2526"><a href="/developers/learn/base-services/onboarding/interface-14-02">Interface 14.02</a></li></ul></li><li class="menu-parent menu-mlid-2527 menu-item-2527"><a href="/developers/learn/base-services/configuration">Configuration</a><ul class="menu clearfix"><li class="first menu-mlid-2528 menu-item-2528"><a href="/developers/learn/base-services/configuration/interface">Interface</a></li><li class="last menu-mlid-2529 menu-item-2529"><a href="/developers/learn/base-services/configuration/interface-14-02">Interface 14.02</a></li></ul></li><li class="menu-parent menu-mlid-2530 menu-item-2530"><a href="/developers/learn/base-services/notification">Notification</a><ul class="menu clearfix"><li class="first menu-mlid-2531 menu-item-2531"><a href="/developers/learn/base-services/notification/interface">Interface</a></li><li class="last menu-mlid-2532 menu-item-2532"><a href="/developers/learn/base-services/notification/interface-14-02">Interface 14.02</a></li></ul></li><li class="menu-parent menu-mlid-2533 menu-item-2533"><a href="/developers/learn/base-services/controlpanel">ControlPanel</a><ul class="menu clearfix"><li class="first menu-mlid-2534 menu-item-2534"><a href="/developers/learn/base-services/controlpanel/interface">Interface</a></li><li class="last menu-mlid-2535 menu-item-2535"><a href="/developers/learn/base-services/controlpanel/interface-14-02">Interface 14.02</a></li></ul></li><li class="last menu-parent menu-mlid-2536 menu-item-2536"><a href="/developers/learn/base-services/audiostreaming">Audio Streaming</a><ul class="menu clearfix"><li class="first last menu-mlid-2537 menu-item-2537"><a href="/developers/learn/base-services/audiostreaming/interface">Interface</a></li></ul></li></ul></li><li class="last active-trail active menu-mlid-2538 menu-item-2538"><a href="/developers/learn/glossary" class="active-trail active">Glossary</a></li></ul></div>
+</div></div></div></div></div>            <div id="content-column" role="main">
+        <div class="content-inner">
+
+          
+          <section id="main-content">
+
+                                      <header id="main-content-header">
+
+                                                  <h1 id="sub-title">
+                    Glossary                  </h1>
+                
+                
+              </header>
+                        
+                          <div id="content">
+                        <article id="node-4126" class="node node-developer-document article clearfix" about="/developers/learn/glossary" typeof="sioc:Item foaf:Document" role="article">
+
+  
+      <span property="dc:title" content="Glossary" class="rdf-meta element-hidden"></span><span property="sioc:num_replies" content="0" datatype="xsd:integer" class="rdf-meta element-hidden"></span>
+  
+  <div class="node-content">
+  
+  <div class="field-body view-mode-full">
+    
+<h3 id="about-client">About Client</h3>
+<p>The implementation of the About feature that receives information 
+from an About Server.</p>
+<h3 id="about-feature">About feature</h3>
+<p>Open implementation built using the AllJoyn® framework that 
+allows for a broadcast of AboutData.</p>
+<p>Software layer that enables devices to publish AllJoyn service 
+frameworks' interfaces and metadata (AboutData) in an Announcement 
+and in a session.</p>
+<p><a href="/developers/learn/core/about-announcement">Learn more</a></p>
+<h3 id="aboutdata">AboutData</h3>
+<p>A Hash structure (key-value pair) of a String key to an AllJoyn 
+Variant value that represents various device details.</p>
+<h3 id="abouticon">AboutIcon</h3>
+<p>An image representing the device that can be obtained remotely 
+via the About interface.</p>
+<h3 id="aboutservice">AboutService</h3>
+<p>A class in the About feature that is used by a developer/OEM 
+in either client mode or server mode. Server mode is used to 
+build an application that advertises AboutData that is read 
+from a PropertyStore. Client mode is used to build an application 
+that discovers advertised AboutData.</p>
+<h3 id="about-service">About Service</h3>
+<p>The implementation of the About feature that broadcasts About 
+details. Traditionally, this is an embedded device, but can 
+be a TV, mobile, or any device that supports AllJoyn service frameworks.</p>
+<h3 id="action">Action</h3>
+<p>A function performed by an AllJoyn-enabled device. </p>
+<p><a href="/developers/learn/core/events-and-actions">Learn more</a>.</p>
+<h3 id="action-descriptor">Action descriptor</h3>
+<p>An introspectable human readable description contained in the action. </p>
+<h3 id="action-receiving-device">Action-receiving device</h3>
+<p>The device that performs an action. Related to the 
+<a href="/developers/learn/core/events-and-actions">Events and Actions feature</a>.</p>
+<h3 id="adapter">Adapter</h3>
+<p>The Control Panel service framework layer that translates 
+the UI elements received to iOS UI elements.</p>
+<h3 id="ajscl">AJSCL</h3>
+<p>AllJoyn Standard Core Library. An application or AllJoyn 
+daemon process that contains the full implementation 
+of the AllJoyn message bus.</p>
+<h3 id="ajtcl">AJTCL</h3>
+<p>AllJoyn Thin Core Library. The version of the AllJoyn library 
+that runs on devices that are memory and processing power-constrained. 
+This is intended for devices that are powered by a Micro Controller Unit (MCU).</p>
+<h3 id="alljoyn-app">AllJoyn App</h3>
+<p>An application that uses the AllJoyn framework. Apps use either the 
+AllJoyn Core APIs or the AllJoyn Service Frameworks API. Apps 
+can either use the Standard Core or Thin Core implementations.</p>
+<p><a href="/developers/learn/architecture#apps-and-routers">Learn more</a>.</p>
+<h3 id="alljoyn-client-app">AllJoyn client app</h3>
+<p>As part of a peer session, this application will take the role 
+of requesting information through a peer session on a service 
+application. This does not correlate to a web client as the 
+client app may also expose service components.</p>
+<h3 id="alljoyn-core-package">AllJoyn core package</h3>
+<p>AllJoyn software package</p>
+<h3 id="alljoyn-enabled-device">AllJoyn-enabled device</h3>
+<p>An entity which has an AllJoyn application installed to send 
+or receive notifications using the Notification service framework interface.</p>
+<h3 id="alljoyn-framework">AllJoyn framework</h3>
+<p>Open-source, peer-to-peer framework that allows for abstraction 
+of low-level network concepts and APIs.</p>
+<p><a href="/developers/learn/core">Learn more</a></p>
+<h3 id="alljoyn-interface">AllJoyn interface</h3>
+<p>A collection of methods, signals and properties that make up 
+the contract of how applications communicate.</p>
+<h3 id="alljoyn-router">AllJoyn Router</h3>
+<p>AllJoyn network components that talk to each other to enable 
+apps on different routers to communicate in the AllJoyn network.</p>
+<p><a href="/developers/learn/architecture#apps-and-routers">Learn more</a>.</p>
+<h3 id="alljoyn-service-frameworks-">AllJoyn service (frameworks)</h3>
+<p>A collection of full-feature implementations using the AllJoyn 
+framework that provides specific functionality. These are building 
+blocks can be combined together to build interoperable devices 
+and applications.</p>
+<h3 id="alljoyn-standard-core-library">AllJoyn Standard Core Library</h3>
+<p>See <a href="#ajscl">AJSCL</a></p>
+<h3 id="alljoyn-thin-core-library">AllJoyn Thin Core Library</h3>
+<p>See <a href="#ajtcl">AJTCL</a></p>
+<h3 id="announcement">Announcement</h3>
+<p>A sessionless signal whose payload includes published services' 
+interfaces and metadata that are used for discovery.</p>
+<p><a href="/developers/learn/core/about-announcement">Learn more</a></p>
+<h3 id="ardp">ARDP</h3>
+<p>AllJoyn Reliable Datagram Protocol. ARDP is designed to provide,
+among other things, reliable delivery and ordering for UDP-based
+layer 4 transport mechanisms. In particular, ARDP is used in the
+UDP Transport to provide guarantees appropriate to AllJoyn Messaging.
+ARDP is modeled after RDP and extended for AllJoyn-specific requirements.</p>
+<h3 id="audio-service-framework">Audio service framework</h3>
+<p>Open implementation built using the AllJoyn framework that 
+allows for synchronized audio to play back on one or many Sinks.</p>
+<h3 id="authoring-app">Authoring app</h3>
+<p>Application that carries out the IFTTT rules. Related to the 
+<a href="/developers/learn/core/events-and-actions">Events and Actions feature</a>.</p>
+<h3 id="bandwidth-delay-product">Bandwidth-Delay Product</h3>
+<p>Refers to the product of a data link�s capacity in bits per second
+and its round-trip delay time. This characterizes the amount of data
+that can be in transit (sometimes called in-flight) in the network.</p>
+<h3 id="base-services">Base services</h3>
+<p>A set of service frameworks that are common across a range
+of applications and product categories.</p>
+<h3 id="bundled-router">Bundled router</h3>
+<p>AllJoyn router that includes an app on the same device. 
+The AllJoyn Standard Library supports bundled routers.</p>
+<h3 id="cng">CNG</h3>
+<p>Cryptography Next Generation. Windows feature.</p>
+<h3 id="configclient">ConfigClient</h3>
+<p>A class in the AllJoyn Configuration service framework that is 
+used by an application developer to remotely configure a peer 
+device running an AllJoyn ConfigService.</p>
+<h3 id="configdata">ConfigData</h3>
+<p>A Hash structure (key-value pair) of a String key to an AllJoyn 
+Variant value that represents various device details that are 
+remotely updateable and are persisted to some permanent 
+storage layer, such as NVRAM.</p>
+<h3 id="configservice">ConfigService</h3>
+<p>A module in the AllJoyn Configuration service framework that 
+is used by a developer/OEM to build an application that 
+exposes the ability to remotely modify ConfigData that is 
+read from a PropertyStore and is persisted by it.</p>
+<h3 id="config-client">Config Client</h3>
+<p>The implementation of the Configuration service framework 
+that remotely configures a peer device.</p>
+<h3 id="config-server">Config Server</h3>
+<p>The implementation of the Configuration service framework 
+that exposes ConfigData and allows a peer device to modify it remotely.</p>
+<h3 id="configuration-service-framework">Configuration service framework</h3>
+<p>Software layer that enables devices to provide remote 
+configuration of AllJoyn service frameworks' metadata 
+(ConfigData) in a session.</p>
+<h3 id="consumer">Consumer</h3>
+<p>AllJoyn application consuming services on the AllJoyn network</p>
+<p>Device that receives the notification and has a way to notify 
+user such as a mobile phone or TV.</p>
+<p><a href="/developers/learn/base-services/notification">Learn more</a></p>
+<h3 id="control-panel">Control Panel</h3>
+<p>Collection of Widgets that allow a user to interact with a 
+device. A control panel is defined and announced by a 
+Controllee; and discovered and displayed by a Controller. 
+A device can have more than one, and can be defined on a 
+per-language basis.</p>
+<p><a href="/developers/learn/base-services/controlpanel">Learn more</a></p>
+<h3 id="controllee">Controllee</h3>
+<p>An AllJoyn application that advertises its Control Panel 
+interfaces, so that other AllJoyn devices may control it.</p>
+<h3 id="controller">Controller</h3>
+<p>An AllJoyn application that controls another AllJoyn device 
+that advertises its Control Panel interfaces.</p>
+<h3 id="controlpaneleventslistener">ControlPanelEventsListener</h3>
+<p>An interface to listen for control panel-related events.</p>
+<h3 id="devicecontrolpanel">DeviceControlPanel</h3>
+<p>A specific control panel of a controllable device. </p>
+<h3 id="deviceeventslistener">DeviceEventsListener</h3>
+<p>An interface for listening to session events.</p>
+<h3 id="device-specific-callbacks">Device-specific callbacks</h3>
+<p>Code provided by the OEM specific to the Controllee that 
+will handle requests from Controllers to set property values, 
+to get property values and/or execute actions. Additionally, 
+it can initiate a refresh on the Controller by calling the 
+Control Panel service framework's appropriate functions.</p>
+<h3 id="device-passcode">Device passcode</h3>
+<p>A secure passcode that is stored in the device's configuration 
+interface. This passcode ensures that the information being 
+passed to the device, like the home Wi-Fi password is encrypted. 
+The passcode may be prepopulated by the OEM or by the end user. 
+If no value is provided, the field will default to six zeroes.</p>
+<p><a href="/developers/learn/base-services/onboarding">Learn more</a></p>
+<h3 id="distributed-alljoyn-bus">Distributed AllJoyn bus</h3>
+<p>A description of the AllJoyn network topology where AllJoyn 
+Applications attach to AllJoyn Routers, and AllJoyn Routers
+connect to each other. The entire network can be described
+as the Distributed AllJoyn bus.</p>
+<h3 id="event">Event</h3>
+<p>(from system description) A message denoting that something has happened.</p>
+<p>A signal on an AllJoyn interface that contains a human readable 
+description. The arguments may also include description fields.</p>
+<h3 id="event-consumer">Event Consumer</h3>
+<p>Application that is set up to listen for events.</p>
+<h3 id="event-descriptor">Event descriptor</h3>
+<p>Human-readable string attached to the event.</p>
+<h3 id="event-emitting-device">Event-emitting device</h3>
+<p>The device that sends the event.</p>
+<h3 id="event-picker-app">Event Picker app</h3>
+<p>Application that lets end users program actions to take when an event is sent.</p>
+<h3 id="guid">GUID</h3>
+<p>Globally Unique Identifier. A 128 bit identifier generated 
+randomly in a way that the probability of collision is negligible.</p>
+<h3 id="ifttt">IFTTT</h3>
+<p>If This Then That. A logical construct that tests for a 
+certain condition and then performs an action if it is "true".</p>
+<h3 id="ioe-application">IoE application</h3>
+<p>See <a href="#alljoyn-app">AllJoyn App</a></p>
+<h3 id="ioe-device">IoE device</h3>
+<p>A device that that is connected to Internet directly or via 
+Gateway. For the purpose of this document it implies the device 
+that has an AllJoyn application running on it.</p>
+<h3 id="logical-distributed-software-bus">Logical distributed software bus</h3>
+<p>See <a href="#distributed-alljoyn-bus">Distributed AllJoyn bus</a></p>
+<h3 id="notification-message">Notification message</h3>
+<p>A message sent by a producer specifying details of the 
+notification including any notification text to be displayed to the user.</p>
+<h3 id="notification-service-framework">Notification service framework</h3>
+<p>Software layer that enables devices to send or receive 
+human-consumable notifications.</p>
+<p><a href="/developers/learn/base-services/notification">Learn more</a></p>
+<h3 id="offboarding">Offboarding</h3>
+<p>The process of removing an AllJoyn device from a personal network. 
+It also removes the personal Access Point's (AP) SSID and password 
+values from the AllJoyn device memory.</p>
+<h3 id="onboardee">Onboardee</h3>
+<p>An application using this side of the service framework is 
+known as the Onboardee.</p>
+<p>An AllJoyn device that advertises that it implements the 
+Onboarding interface.</p>
+<h3 id="onboarder">Onboarder</h3>
+<p>An application using this side of the service framework is 
+known as the Onboarder.</p>
+<p>A device, usually a handset, that is used to interact with 
+the onboardee to pass it the Wi-Fi credentials needed for 
+onboarding.</p>
+<h3 id="onboarding-client">Onboarding Client</h3>
+<p>The implementation of the Onboarding service framework that 
+remotely onboards a peer device.</p>
+<h3 id="onboardingdata">OnboardingData</h3>
+<p>A structure containing the relevant network configuration 
+information and state that controls the device's onboarding 
+process. The details that are remotely updateable are persisted 
+to some permanent storage layer such as NVRAM.</p>
+<h3 id="onboardingservice">OnboardingService</h3>
+<p>A module in the Onboarding service framework that is used by 
+the developer/OEM to build an application that exposes the 
+ability to remotely modify OnboardingData that is persisted by it.</p>
+<h3 id="onboarding-server">Onboarding Server</h3>
+<p>The implementation of the Onboarding service framework that 
+exposes OnboardingData and allows a peer device to modify it 
+remotely and control the onboarding process.</p>
+<h3 id="onboarding-service-framework">Onboarding service framework</h3>
+<p>Software layer that enables devices to provide remote 
+configuration (OnboardingData) and control (driver mode) 
+over a device's onboarding process to a Wi-Fi AP over an 
+AllJoyn session.</p>
+<p>A set of capabilities that enables an AllJoyn device to 
+be brought on or removed from a user's personal network 
+(onboarding/offboarding).</p>
+<h3 id="personal-ap">Personal AP</h3>
+<p>The target network that the end user wants the AllJoyn 
+device to join. This is typically an end user's personal 
+network (personal, work, office, etc.).</p>
+<h3 id="producer">Producer</h3>
+<p>AllJoyn application providing services on the AllJoyn network.</p>
+<p>Device that generates and sends the notification to a device 
+such as a household appliance.</p>
+<p><a href="/developers/learn/base-services/notification">Learn more</a></p>
+<h3 id="propertystore">PropertyStore</h3>
+<p>(from a thin app document) A module that maintains the default 
+and runtime property values for the service frameworks.</p>
+<p>A module that maintains the values returned as AboutData that 
+has been merged with the values from ConfigData.</p>
+<h3 id="proximal-network">Proximal network</h3>
+<p>Refers to a network that does not include a cloud-based service</p>
+<h3 id="proximal-ioe-network">Proximal IoE network</h3>
+<p>Refers to a network that includes a cloud-based service</p>
+<h3 id="rdp">RDP</h3>
+<p>Reliable Data Protocol. An efficient reliable data transport
+service for packet-based applications.</p>
+<h3 id="reliable-event">Reliable event</h3>
+<p>An event this is sent with guaranteed delivery to all interested consumers. </p>
+<h3 id="remote-application">Remote application</h3>
+<p>Typically, AllJoyn applications communicate with one another.
+A remote application is the peer that a particular application
+is communicating with.</p>
+<h3 id="rule">Rule</h3>
+<p>The pairing of an event with an action the user wants to have 
+occur when a device supporting the Events interface performs 
+an action defined by the OEM that warrants monitoring.</p>
+<h3 id="security">Security</h3>
+<p>Framework for AllJoyn applications to authenticate each other 
+and send encrypted data between them.</p>
+<h3 id="service_common">Service_Common</h3>
+<p>A module that contains code shared by multiple services, 
+including the PropertyStore API definition.</p>
+<h3 id="sessionless-signal">Sessionless signal</h3>
+<p>A broadcast AllJoyn signal which is received by all devices 
+listening on the end user's home network (such as the Wi-Fi network). 
+The sessionless signals are broadcast on the network until an 
+associated time-to-live (TTL) value expires. The About feature 
+sends Announcements as sessionless signals over the Wi-Fi network.</p>
+<p><a href="/developers/learn/core#sessionless-signal">Learn more</a></p>
+<h3 id="softap">SoftAP</h3>
+<p>When the AllJoyn device is not connected to a Wi-Fi Access Point 
+(not onboarded) it broadcasts in access point mode.</p>
+<p>Software-enabled Access Point that allows the device to work 
+as both the AP and the client.</p>
+<h3 id="standalone-router">Standalone router</h3>
+<p>Contains the main progrem, liballjoyn.so, and librouter.so files.
+It is not bundled with an AllJoyn app.</p>
+<h3 id="standard-app">Standard app</h3>
+<p>AllJoyn app that uses the AllJoyn Standard Library.</p>
+<h3 id="standard-core">Standard core</h3>
+<p>Contains the Standard library and router library</p>
+<h3 id="syn-syn-ack-ack">SYN, SYN+ACK, ACK</h3>
+<p>The kinds of segments that are involved in a three-way handshake
+connection establishment protocol. Used in TCP and ARDP.</p>
+<h3 id="thin-app">Thin app</h3>
+<p>An AllJoyn application that incorporates the AllJoyn thin core library.</p>
+<h3 id="thin-core">Thin core</h3>
+<p>Contains the Thin library</p>
+<h3 id="thin-library-service-app">Thin Library service app</h3>
+<p>AllJoyn app that exposes one set of features as part of a 
+peer session. It does not correlate to a web service as the 
+service may play the role of a client at various times 
+(depending on the implementation). The function of the AllJoyn 
+service is defined by the set of AllJoyn service frameworks used.</p>
+<h3 id="translator">Translator</h3>
+<p>Callback method a developer implements in order to provide 
+language translations or string manipulations.</p>
+<p><a href="/developers/learn/core/events-and-actions">Learn more</a></p>
+<h3 id="user">User</h3>
+<p>Has many contexts.</p>
+<p>In Events and Actions, the individual using the device that 
+has the Event Picker application installed.</p>
+<h3 id="well-known-name-wkn-">Well-Known Name (WKN)</h3>
+<p>Well Known names are used as the basis for AllJoyn discovery 
+for announcements. Typically applications will use About
+announcements and not the lower level Well-Known Names.</p>
+<h3 id="widget">Widget</h3>
+<p>A UI element in the control panel used to represent an interface. 
+It graphically enables a user to perform a function and/or 
+access properties.</p>
+<h3 id="wkn">WKN</h3>
+  </div>
+  </div>
+
+  
+  
+</article>
+              </div>
+                                   
+          </section>
+
+          
+        </div>
+      </div>
+
+
+      
+    </div>
+  </div>
+</div>
+<div id="sticky-footer">
+  
+      <footer id="footer" class="clearfix" role="contentinfo">
+        <div class="region region-footer"><div class="region-inner clearfix"><nav id="block-system-user-menu" class="block block-system block-menu"  role="navigation"><div class="block-inner clearfix">        <div class="block-content content"><ul class="menu clearfix"><li class="first menu-item-537"><a href="/user/register" title="">Register</a></li><li class="last menu-item-536"><a href="/user/login" title="">Log In</a></li></ul></div></div></nav></div></div>    </footer>
+  
+  <div id="lfcollabprojects-footer">
+    <div class="gray-diagonal">
+      <div class="footer-inner">
+        <p>&copy; 2017 AllSeen Alliance, Inc. All Rights Reserved.</p>
+        <p>The Linux Foundation® is a registered trademark of The Linux Foundation. AllSeen, Designed for AllSeen and AllSeen Alliance are trademarks of the AllSeen Alliance, Inc. AllJoyn® is a registered trademark of AllSeen Alliance, Inc.</p>
+        <p>Linux is a registered <a href="http://www.linuxfoundation.org/programs/legal/trademark" title="Linux Mark Institute">trademark</a> of Linus Torvalds.</p>
+        <p>Please see our <a href="/brand-guidelines">brand guidelines</a>, <a href="/trademarks">trademark guidelines</a>, <a href="/about/governance/ip-policy">IP policy</a>, <a href="/terms">terms of use</a>, <a href="/license">license</a>, and <a href="/privacy">privacy policy</a>.</p>
+      </div>
+    </div>
+    <div id="body-bottom">
+      </div>
+</body>
+</html>

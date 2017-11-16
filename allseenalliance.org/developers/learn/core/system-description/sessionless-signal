@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<!--[if IEMobile 7]><html class="iem7" lang="en" dir="ltr"><![endif]-->
+<!--[if lte IE 6]><html class="lt-ie9 lt-ie8 lt-ie7" lang="en" dir="ltr"><![endif]-->
+<!--[if (IE 7)&(!IEMobile)]><html class="lt-ie9 lt-ie8" lang="en" dir="ltr"><![endif]-->
+<!--[if IE 8]><html class="lt-ie9" lang="en" dir="ltr"><![endif]-->
+<!--[if (gte IE 9)|(gt IEMobile 7)]><!--><html lang="en" dir="ltr"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/terms/"
+  xmlns:foaf="http://xmlns.com/foaf/0.1/"
+  xmlns:og="http://ogp.me/ns#"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:sioc="http://rdfs.org/sioc/ns#"
+  xmlns:sioct="http://rdfs.org/sioc/types#"
+  xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema#"><!--<![endif]-->
+<head>
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
+<meta charset="utf-8" />
+<link rel="shortlink" href="/node/4098" />
+<link rel="shortcut icon" href="https://identity.allseenalliance.org/sites/all/themes/at_alljoyn/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="/developers/learn/core/system-description/sessionless-signal" />
+<meta name="viewport" content="width=device-width" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta property="og:image" content="https://identity.allseenalliance.org/sites/all/themes/at_alljoyn/images/allseen-logo.png"/>
+<meta name="google-translate-customization" content="48b015afeed82101-ecae534af0f48252-ga0b6470a6208b2f5-f"></meta>
+<meta name="MobileOptimized" content="width">
+<meta name="HandheldFriendly" content="true">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sessionless Signal - AllSeen Alliance</title>
+<link type="text/css" rel="stylesheet" href="https://identity.allseenalliance.org/sites/default/files/css/css_xE-rWrJf-fncB6ztZfd2huxqgxu4WO-qwma6Xer30m4.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://identity.allseenalliance.org/sites/default/files/css/css_7Vcu6qIuRTO46aDOBZp7_mtksGdhCHSe0pjTO2YbGng.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://identity.allseenalliance.org/sites/default/files/css/css_J2n1xiaSuececTK0yC3DT_Msm4PrkPwHizxr0oXGGoo.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://identity.allseenalliance.org/sites/default/files/css/css_oxEtvjMfj8c8EEJJ-1WXLGGntCnC0UvrbYsq0Gw4m4Q.css" media="screen" />
+<link type="text/css" rel="stylesheet" href="https://identity.allseenalliance.org/sites/default/files/css/css_9EusV9fcbkpqBeTGdJPl7ru65jm-3ngbTi_D6YRR_5A.css" media="only screen" />
+<script src="https://identity.allseenalliance.org/sites/default/files/js/js_UWQINlriydSoeSiGQxToOUdv493zEa7dpsXC1OtYlZU.js"></script>
+<script src="https://identity.allseenalliance.org/sites/default/files/js/js_COMsmDyrY9mzVU28X2uGvF4Ba3vd5eTo5xEO7dvCUZM.js"></script>
+<script src="https://identity.allseenalliance.org/sites/default/files/js/js_i8oyg1R4On_HyzPiZ5zC3V-DxehjGAcpKwNao5s0s5I.js"></script>
+<script>hljs.configure({languages:[]}); hljs.initHighlightingOnLoad();</script>
+<script src="https://identity.allseenalliance.org/sites/default/files/js/js_aG0kZAhSHT6G3QC-d9Wwx9gQp5d0em8X6FmMYZ1e5h4.js"></script>
+<script>var _gaq = _gaq || [];_gaq.push(["_setAccount", "UA-"]);_gaq.push(["_trackPageview"]);(function() {var ga = document.createElement("script");ga.type = "text/javascript";ga.async = true;ga.src = ("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/ga.js";var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(ga, s);})();</script>
+<script src="https://identity.allseenalliance.org/sites/default/files/js/js_R35PAK16384fXh7f2OqvXVkbbrwr8ABLrDpR1zTluo0.js"></script>
+<script src="https://identity.allseenalliance.org/sites/default/files/js/js_DKtRHJS-jz_cHgf23K7wnIWphCanZ_Rz74Aw-DKQyFs.js"></script>
+<script>jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"at_alljoyn","theme_token":"Ufpsb2g_hA0bw9BB98dJm4rcKtytfKLqhlpBQoFDhxs","js":{"misc\/jquery.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/all\/modules\/contrib\/comment_notify\/comment_notify.js":1,"sites\/all\/modules\/alljoyn\/custom_modules\/allseen_docs\/allseen_docs_highlight\/highlightjs\/highlight.min.js":1,"0":1,"sites\/all\/libraries\/colorbox\/jquery.colorbox-min.js":1,"sites\/all\/modules\/contrib\/colorbox\/js\/colorbox.js":1,"sites\/all\/modules\/contrib\/colorbox\/styles\/default\/colorbox_style.js":1,"sites\/all\/modules\/contrib\/colorbox\/js\/colorbox_load.js":1,"sites\/all\/modules\/contrib\/colorbox\/js\/colorbox_inline.js":1,"sites\/all\/modules\/contrib\/panels\/js\/panels.js":1,"sites\/all\/modules\/contrib\/quote\/quote.js":1,"sites\/all\/modules\/contrib\/views_slideshow\/js\/views_slideshow.js":1,"sites\/all\/modules\/contrib\/google_analytics\/googleanalytics.js":1,"1":1,"sites\/all\/modules\/alljoyn\/custom_modules\/allseen_docs\/allseen_docs_nav\/allseen-docs-nav.js":1,"sites\/all\/themes\/at_alljoyn\/scripts\/alljoyn.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"sites\/all\/modules\/contrib\/comment_notify\/comment_notify.css":1,"sites\/all\/modules\/ldap\/ldap_user\/ldap_user.css":1,"modules\/book\/book.css":1,"modules\/comment\/comment.css":1,"sites\/all\/modules\/contrib\/date\/date_api\/date.css":1,"sites\/all\/modules\/contrib\/date\/date_popup\/themes\/datepicker.1.7.css":1,"modules\/field\/theme\/field.css":1,"sites\/all\/modules\/contrib\/mollom\/mollom.css":1,"modules\/node\/node.css":1,"modules\/user\/user.css":1,"modules\/forum\/forum.css":1,"sites\/all\/modules\/contrib\/views\/css\/views.css":1,"sites\/all\/modules\/alljoyn\/custom_modules\/allseen_docs\/allseen_docs_highlight\/highlightjs\/default.min.css":1,"sites\/all\/modules\/contrib\/colorbox\/styles\/default\/colorbox_style.css":1,"sites\/all\/modules\/contrib\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/ldap\/ldap_servers\/ldap_servers.admin.css":1,"sites\/all\/modules\/contrib\/panels\/css\/panels.css":1,"sites\/all\/modules\/contrib\/quote\/quote.css":1,"sites\/all\/modules\/contrib\/views_slideshow\/views_slideshow.css":1,"sites\/all\/modules\/alljoyn\/custom_modules\/allseen_docs\/allseen_docs_nav\/allseen-docs-nav.css":1,"sites\/all\/modules\/alljoyn\/features\/content_type_developer_document\/content-type-developer-document.css":1,"sites\/all\/themes\/adaptivetheme\/at_core\/css\/at.layout.css":1,"sites\/all\/themes\/at_alljoyn\/css\/fonts.css":1,"sites\/all\/themes\/at_alljoyn\/css\/globals.css":1,"sites\/all\/themes\/at_alljoyn\/css\/jcarousel-alljoyn.css":1,"public:\/\/adaptivetheme\/at_alljoyn_files_7dbe1ef5\/at_alljoyn.responsive.layout.css":1,"public:\/\/adaptivetheme\/at_alljoyn_files_7dbe1ef5\/at_alljoyn.responsive.styles.css":1}},"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":true,"mobiledevicewidth":"480px"},"jcarousel":{"ajaxPath":"\/jcarousel\/ajax\/views"},"quote_nest":2,"googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls|xml|z|zip"}});</script>
+<!--[if lt IE 9]>
+<script src="https://identity.allseenalliance.org/sites/all/themes/adaptivetheme/at_core/scripts/respond.js?nwgww1"></script>
+<script src="https://identity.allseenalliance.org/sites/all/themes/adaptivetheme/at_core/scripts/html5.js?nwgww1"></script>
+<script src="https://identity.allseenalliance.org/sites/all/themes/adaptivetheme/at_core/scripts/PIE.htc?nwgww1"></script>
+<script src="https://identity.allseenalliance.org/sites/all/themes/adaptivetheme/at_core/scripts/selectivizr.js?nwgww1"></script>
+<![endif]-->
+</head>
+<body class="html not-front not-logged-in one-sidebar sidebar-first page-node page-node- page-node-4098 node-type-developer-document site-name-hidden with-subnav page-developers-learn-core-system-description-sessionless-signal section-developers">
+  <div id="body-top">
+      </div>
+  <div id="skip-link">
+    <a href="#main-content" class="element-invisible element-focusable">Skip to main content</a>
+  </div>
+  <div class="region region-page-top"><div class="region-inner clearfix"><div id="fb-root"></div><script type="text/javascript">
+     window.fbAsyncInit = function() {
+       FB.init({
+         appId: "492099574180957",
+         status: true,
+         cookie: true,
+         xfbml: true,
+         oauth : true,
+         channelUrl: "https:\/\/identity.allseenalliance.org\/service_links\/channel"
+         });
+
+         FB.Event.subscribe('edge.create', function(href, widget) {
+    _gaq.push(['_trackEvent', 'facebook', 'Facebook like', href]);
+   });FB.Event.subscribe('edge.remove', function(href, widget) {
+    _gaq.push(['_trackEvent', 'facebook', 'Facebook unlike', href]);
+   });
+       };
+       (function(d){
+     var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement('script'); js.id = id; js.async = true;
+     js.src = '//connect.facebook.net/en_US/all.js';
+     ref.parentNode.insertBefore(js, ref);
+   }(document));
+    </script></div></div>  
+<div id="wrap">
+
+  <div id="lfcollabprojects-header">
+    <div class="gray-diagonal">
+      <div class="header-inner">
+        <a id="lfcollabprojects-logo" href="http://collabprojects.linuxfoundation.org">Linux Foundation Collaborative Projects</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="page" class="container page">
+
+    
+    <header id="header" class="clearfix" role="banner">
+
+      <div class="region region-header"><div class="region-inner clearfix"><div id="block-block-19" class="block block-block" ><div class="block-inner clearfix">        <div class="block-content content"><br /><br /><br /><br /><br /><br /><br /></div></div></div></div></div>
+              <div id="branding" class="branding-elements clearfix">
+
+                      <div id="logo"><a href="/" title="Home page"><img class="site-logo" typeof="foaf:Image" src="https://identity.allseenalliance.org/sites/default/files/logo.png" alt="AllSeen Alliance" /></a></div>
+          
+                      <hgroup id="name-and-slogan" class="element-invisible">
+                              <h1 id="site-name" class="element-invisible"><a href="/" title="Home page">AllSeen Alliance</a></h1>
+                                        </hgroup>
+          
+          <!--main menu-->
+          <a id="main-menu-toggle" href="#">Site Sections</a>
+  		  		  		
+        </div>
+      
+    </header>
+
+
+    <div id="columns" class="clearfix">
+      <div id="sub-menu-bar">
+        <div class="region region-sub-menu-bar"><div class="region-inner clearfix"><div id="block-menu-block-allseen-docs-nav" class="block block-menu-block"  role="navigation"><div class="block-inner clearfix">        <div class="block-content content"><div class="menu-block-wrapper menu-block-allseen-docs-nav menu-name-main-menu parent-mlid-0 menu-level-2">
+  <ul class="menu clearfix"><li class="first has-children active-trail menu-mlid-2504 menu-item-2504"><a href="/developers/learn" class="active-trail">Learn</a></li><li class="has-children menu-mlid-2539 menu-item-2539"><a href="/developers/download">Download</a></li><li class="has-children menu-mlid-2541 menu-item-2541"><a href="/developers/develop">Develop</a></li><li class="last has-children menu-mlid-2636 menu-item-2636"><a href="/developers/contribute">Contribute</a></li></ul></div>
+</div></div></div><section id="block-menu-block-allseen-docs-responsive-nav" class="block block-menu-block"  role="navigation"><div class="block-inner clearfix">        <div class="block-title-wrapper">
+      <h2 class="block-title">Menu</h2>
+    </div>
+      <div class="block-content content"><div class="menu-block-wrapper menu-block-allseen-docs-responsive-nav menu-name-main-menu parent-mlid-0 menu-level-1">
+  <ul class="menu clearfix"><li class="first menu-parent menu-mlid-1994 menu-item-1994"><a href="/about">About</a><ul class="menu clearfix"><li class="first menu-mlid-2486 menu-item-2486"><a href="/about/why-allseen">Why AllSeen</a></li><li class="menu-mlid-2464 menu-item-2464"><a href="/about/get-involved">Get Involved</a></li><li class="collapsed menu-mlid-2446 menu-item-2446"><a href="/about/governance/ip-policy">IP Policy</a></li><li class="menu-mlid-2491 menu-item-2491"><a href="/about/working-groups">Working Groups</a></li><li class="menu-mlid-2286 menu-item-2286"><a href="/about/members">Member Companies</a></li><li class="menu-mlid-2285 menu-item-2285"><a href="/about/join-allseen-alliance">Join The AllSeen Alliance</a></li><li class="collapsed menu-mlid-2447 menu-item-2447"><a href="/about/governance">Governance</a></li><li class="menu-mlid-501 menu-item-501"><a href="/about/faqs">FAQs</a></li><li class="menu-mlid-2322 menu-item-2322"><a href="/about/contact">Contact Us</a></li><li class="menu-mlid-2282 menu-item-2282"><a href="/allseen/what-is-allseen-alliance">What is AllSeen Alliance?</a></li><li class="last menu-mlid-2490 menu-item-2490"><a href="https://wiki.allseenalliance.org/members_private/start?do=login&amp;sectok=34485854163fe6a0be457198139e2c84" title="Members Area" id="members_area" name="Members Area" rel="nofollow" target="_blank">Members Area</a></li></ul></li><li class="menu-parent active-trail menu-mlid-2503 menu-item-2503"><a href="/developers" class="active-trail">Developers</a><ul class="menu clearfix"><li class="first menu-parent has-children active-trail menu-mlid-2504 menu-item-2504"><a href="/developers/learn" class="active-trail active-trail">Learn</a><ul class="menu clearfix"><li class="first menu-mlid-2505 menu-item-2505"><a href="/developers/learn/use-cases">Use Cases</a></li><li class="menu-mlid-2506 menu-item-2506"><a href="/developers/learn/architecture">Architecture</a></li><li class="menu-parent active-trail menu-mlid-2507 menu-item-2507"><a href="/developers/learn/core" class="active-trail">Core Framework</a><ul class="menu clearfix"><li class="first menu-parent menu-mlid-2508 menu-item-2508"><a href="/developers/learn/core/about-announcement">About Announcement</a><ul class="menu clearfix"><li class="first menu-mlid-2509 menu-item-2509"><a href="/developers/learn/core/about-announcement/interface">Interface</a></li><li class="last menu-mlid-2510 menu-item-2510"><a href="/developers/learn/core/about-announcement/interface-14-02">Interface 14.02</a></li></ul></li><li class="menu-mlid-2511 menu-item-2511"><a href="/developers/learn/core/events-and-actions">Events and Actions</a></li><li class="menu-mlid-2992 menu-item-2992"><a href="/developers/learn/core/rn_config">Routing Node Configuration</a></li><li class="menu-mlid-2512 menu-item-2512"><a href="/developers/learn/core/standard-core">Standard Core</a></li><li class="menu-mlid-2513 menu-item-2513"><a href="/developers/learn/core/thin-core">Thin Core</a></li><li class="menu-parent active-trail menu-mlid-2514 menu-item-2514"><a href="/developers/learn/core/system-description" class="active-trail">System Description</a><ul class="menu clearfix"><li class="first menu-mlid-2515 menu-item-2515"><a href="/developers/learn/core/system-description/system-architecture">System Architecture</a></li><li class="menu-mlid-2516 menu-item-2516"><a href="/developers/learn/core/system-description/advertisement-discovery">Advertisement and Discovery</a></li><li class="menu-mlid-2645 menu-item-2645"><a href="/developers/learn/core/system-description/alljoyn-transport">AllJoyn Transport</a></li><li class="menu-mlid-2517 menu-item-2517"><a href="/developers/learn/core/system-description/data-exchange">Data Exchange</a></li><li class="menu-mlid-2518 menu-item-2518"><a href="/developers/learn/core/system-description/alljoyn-session">AllJoyn Session</a></li><li class="active-trail active menu-mlid-2519 menu-item-2519"><a href="/developers/learn/core/system-description/sessionless-signal" class="active-trail active">Sessionless Signal</a></li><li class="menu-mlid-2520 menu-item-2520"><a href="/developers/learn/core/system-description/alljoyn-security">AllJoyn Security</a></li><li class="menu-mlid-2521 menu-item-2521"><a href="/developers/learn/core/system-description/thin-apps">Thin Apps</a></li><li class="last menu-mlid-2522 menu-item-2522"><a href="/developers/learn/core/system-description/events-actions">Events and Actions</a></li></ul></li><li class="last menu-parent menu-mlid-2937 menu-item-2937"><a href="/developers/learn/core/security2_0">Security 2.0</a><ul class="menu clearfix"><li class="first last menu-mlid-2938 menu-item-2938"><a href="/developers/learn/core/security2_0/hld">High-Level Design</a></li></ul></li></ul></li><li class="menu-parent menu-mlid-2523 menu-item-2523"><a href="/developers/learn/base-services">Base Services</a><ul class="menu clearfix"><li class="first menu-parent menu-mlid-2524 menu-item-2524"><a href="/developers/learn/base-services/onboarding">Onboarding</a><ul class="menu clearfix"><li class="first menu-mlid-2525 menu-item-2525"><a href="/developers/learn/base-services/onboarding/interface">Interface</a></li><li class="last menu-mlid-2526 menu-item-2526"><a href="/developers/learn/base-services/onboarding/interface-14-02">Interface 14.02</a></li></ul></li><li class="menu-parent menu-mlid-2527 menu-item-2527"><a href="/developers/learn/base-services/configuration">Configuration</a><ul class="menu clearfix"><li class="first menu-mlid-2528 menu-item-2528"><a href="/developers/learn/base-services/configuration/interface">Interface</a></li><li class="last menu-mlid-2529 menu-item-2529"><a href="/developers/learn/base-services/configuration/interface-14-02">Interface 14.02</a></li></ul></li><li class="menu-parent menu-mlid-2530 menu-item-2530"><a href="/developers/learn/base-services/notification">Notification</a><ul class="menu clearfix"><li class="first menu-mlid-2531 menu-item-2531"><a href="/developers/learn/base-services/notification/interface">Interface</a></li><li class="last menu-mlid-2532 menu-item-2532"><a href="/developers/learn/base-services/notification/interface-14-02">Interface 14.02</a></li></ul></li><li class="menu-parent menu-mlid-2533 menu-item-2533"><a href="/developers/learn/base-services/controlpanel">ControlPanel</a><ul class="menu clearfix"><li class="first menu-mlid-2534 menu-item-2534"><a href="/developers/learn/base-services/controlpanel/interface">Interface</a></li><li class="last menu-mlid-2535 menu-item-2535"><a href="/developers/learn/base-services/controlpanel/interface-14-02">Interface 14.02</a></li></ul></li><li class="last menu-parent menu-mlid-2536 menu-item-2536"><a href="/developers/learn/base-services/audiostreaming">Audio Streaming</a><ul class="menu clearfix"><li class="first last menu-mlid-2537 menu-item-2537"><a href="/developers/learn/base-services/audiostreaming/interface">Interface</a></li></ul></li></ul></li><li class="last menu-mlid-2538 menu-item-2538"><a href="/developers/learn/glossary">Glossary</a></li></ul></li><li class="menu-parent has-children menu-mlid-2539 menu-item-2539"><a href="/developers/download">Download</a><ul class="menu clearfix"><li class="first last menu-mlid-2540 menu-item-2540"><a href="/developers/download/supported-platforms">Supported Platforms</a></li></ul></li><li class="menu-parent has-children menu-mlid-2541 menu-item-2541"><a href="/developers/develop">Develop</a><ul class="menu clearfix"><li class="first menu-parent menu-mlid-2542 menu-item-2542"><a href="/developers/develop/building">Building</a><ul class="menu clearfix"><li class="first menu-parent menu-mlid-2543 menu-item-2543"><a href="/developers/develop/building/android">Android</a><ul class="menu clearfix"><li class="first last menu-mlid-2544 menu-item-2544"><a href="/developers/develop/building/android/build-source">Build Source</a></li></ul></li><li class="menu-parent menu-mlid-2545 menu-item-2545"><a href="/developers/develop/building/linux">Linux</a><ul class="menu clearfix"><li class="first menu-mlid-2546 menu-item-2546"><a href="/developers/develop/building/linux/openwrt">OpenWRT</a></li><li class="last menu-mlid-2547 menu-item-2547"><a href="/developers/develop/building/linux/build-source">Build Source</a></li></ul></li><li class="menu-parent menu-mlid-2548 menu-item-2548"><a href="/developers/develop/building/ios-osx">iOS/OS X</a><ul class="menu clearfix"><li class="first last menu-mlid-2549 menu-item-2549"><a href="/developers/develop/building/ios-osx/build-source">Build Source</a></li></ul></li><li class="menu-parent menu-mlid-2550 menu-item-2550"><a href="/developers/develop/building/windows">Windows</a><ul class="menu clearfix"><li class="first last menu-mlid-2551 menu-item-2551"><a href="/developers/develop/building/windows/build-source">Build Source</a></li></ul></li><li class="menu-mlid-2552 menu-item-2552"><a href="/developers/develop/building/thin-linux">Thin - Linux</a></li><li class="menu-mlid-2553 menu-item-2553"><a href="/developers/develop/building/thin-windows">Thin - Windows</a></li><li class="last menu-mlid-2993 menu-item-2993"><a href="/developers/develop/building/alljoyn-js">AllJoyn.js</a></li></ul></li><li class="menu-parent menu-mlid-2554 menu-item-2554"><a href="/developers/develop/run-sample-apps">Running Samples</a><ul class="menu clearfix"><li class="first menu-parent menu-mlid-2555 menu-item-2555"><a href="/developers/develop/run-sample-apps/basic">Basic</a><ul class="menu clearfix"><li class="first menu-mlid-2556 menu-item-2556"><a href="/developers/develop/run-sample-apps/basic/android">Android</a></li><li class="menu-mlid-2557 menu-item-2557"><a href="/developers/develop/run-sample-apps/basic/linux">Linux</a></li><li class="menu-mlid-2558 menu-item-2558"><a href="/developers/develop/run-sample-apps/basic/ios-osx">iOS/OS X</a></li><li class="menu-mlid-2559 menu-item-2559"><a href="/developers/develop/run-sample-apps/basic/windows">Windows</a></li><li class="menu-mlid-2560 menu-item-2560"><a href="/developers/develop/run-sample-apps/basic/thin-linux">Thin - Linux</a></li><li class="last menu-mlid-2561 menu-item-2561"><a href="/developers/develop/run-sample-apps/basic/thin-windows">Thin - Windows</a></li></ul></li><li class="menu-parent menu-mlid-2562 menu-item-2562"><a href="/developers/develop/run-sample-apps/chat">Chat</a><ul class="menu clearfix"><li class="first menu-mlid-2563 menu-item-2563"><a href="/developers/develop/run-sample-apps/chat/android">Android</a></li><li class="menu-mlid-2564 menu-item-2564"><a href="/developers/develop/run-sample-apps/chat/linux">Linux</a></li><li class="menu-mlid-2565 menu-item-2565"><a href="/developers/develop/run-sample-apps/chat/ios-osx">iOS/OS X</a></li><li class="menu-mlid-2566 menu-item-2566"><a href="/developers/develop/run-sample-apps/chat/windows">Windows</a></li><li class="last menu-mlid-2567 menu-item-2567"><a href="/developers/develop/run-sample-apps/chat/thin-linux">Thin - Linux</a></li></ul></li><li class="menu-parent menu-mlid-2568 menu-item-2568"><a href="/developers/develop/run-sample-apps/about">About</a><ul class="menu clearfix"><li class="first menu-mlid-2569 menu-item-2569"><a href="/developers/develop/run-sample-apps/about/linux">Linux</a></li><li class="menu-mlid-2570 menu-item-2570"><a href="/developers/develop/run-sample-apps/about/ios-osx">iOS/OS X</a></li><li class="last menu-mlid-2646 menu-item-2646"><a href="/developers/develop/run-sample-apps/about/windows">Windows</a></li></ul></li><li class="menu-mlid-2934 menu-item-2934"><a href="/developers/develop/run-sample-apps/observer">Observer</a></li><li class="menu-parent menu-mlid-2571 menu-item-2571"><a href="/developers/develop/run-sample-apps/config">Config</a><ul class="menu clearfix"><li class="first menu-mlid-2572 menu-item-2572"><a href="/developers/develop/run-sample-apps/config/android">Android</a></li><li class="menu-mlid-2573 menu-item-2573"><a href="/developers/develop/run-sample-apps/config/linux">Linux</a></li><li class="menu-mlid-2574 menu-item-2574"><a href="/developers/develop/run-sample-apps/config/ios-osx">iOS/OS X</a></li><li class="last menu-mlid-2575 menu-item-2575"><a href="/developers/develop/run-sample-apps/config/thin-linux">Thin - Linux</a></li></ul></li><li class="menu-parent menu-mlid-2576 menu-item-2576"><a href="/developers/develop/run-sample-apps/controlpanel">Control Panel</a><ul class="menu clearfix"><li class="first menu-mlid-2577 menu-item-2577"><a href="/developers/develop/run-sample-apps/controlpanel/android">Android</a></li><li class="menu-mlid-2578 menu-item-2578"><a href="/developers/develop/run-sample-apps/controlpanel/linux">Linux</a></li><li class="menu-mlid-2579 menu-item-2579"><a href="/developers/develop/run-sample-apps/controlpanel/ios-osx">iOS/OS X</a></li><li class="last menu-mlid-2580 menu-item-2580"><a href="/developers/develop/run-sample-apps/controlpanel/thin-linux">Thin - Linux</a></li></ul></li><li class="menu-parent menu-mlid-2581 menu-item-2581"><a href="/developers/develop/run-sample-apps/notification">Notification</a><ul class="menu clearfix"><li class="first menu-mlid-2582 menu-item-2582"><a href="/developers/develop/run-sample-apps/notification/android">Android</a></li><li class="menu-mlid-2583 menu-item-2583"><a href="/developers/develop/run-sample-apps/notification/linux">Linux</a></li><li class="menu-mlid-2584 menu-item-2584"><a href="/developers/develop/run-sample-apps/notification/ios-osx">iOS/OS X</a></li><li class="last menu-mlid-2585 menu-item-2585"><a href="/developers/develop/run-sample-apps/notification/thin-linux">Thin - Linux</a></li></ul></li><li class="menu-parent menu-mlid-2586 menu-item-2586"><a href="/developers/develop/run-sample-apps/onboarding">Onboarding</a><ul class="menu clearfix"><li class="first menu-mlid-2587 menu-item-2587"><a href="/developers/develop/run-sample-apps/onboarding/android">Android</a></li><li class="menu-mlid-2588 menu-item-2588"><a href="/developers/develop/run-sample-apps/onboarding/linux">Linux</a></li><li class="last menu-mlid-2589 menu-item-2589"><a href="/developers/develop/run-sample-apps/onboarding/ios-osx">iOS/OS X</a></li></ul></li><li class="menu-parent menu-mlid-2590 menu-item-2590"><a href="/developers/develop/run-sample-apps/acserver">AC Server</a><ul class="menu clearfix"><li class="first menu-mlid-2591 menu-item-2591"><a href="/developers/develop/run-sample-apps/acserver/linux">Linux</a></li><li class="last menu-mlid-2592 menu-item-2592"><a href="/developers/develop/run-sample-apps/acserver/thin-linux">Thin - Linux</a></li></ul></li><li class="menu-parent menu-mlid-2593 menu-item-2593"><a href="/developers/develop/run-sample-apps/test">Command Line Apps</a><ul class="menu clearfix"><li class="first last menu-mlid-2594 menu-item-2594"><a href="/developers/develop/run-sample-apps/test/sessions">Sessions</a></li></ul></li><li class="last menu-mlid-2994 menu-item-2994"><a href="/developers/develop/run-sample-apps/alljoyn-js">AllJoyn.js</a></li></ul></li><li class="menu-parent menu-mlid-2595 menu-item-2595"><a href="/developers/develop/api-guide">API Guide</a><ul class="menu clearfix"><li class="first menu-parent menu-mlid-2596 menu-item-2596"><a href="/developers/develop/api-guide/core">Core</a><ul class="menu clearfix"><li class="first menu-mlid-2939 menu-item-2939"><a href="/developers/develop/api-guide/core/java">java</a></li><li class="menu-mlid-2940 menu-item-2940"><a href="/developers/develop/api-guide/core/objc">Objective-C</a></li><li class="menu-mlid-2647 menu-item-2647"><a href="/developers/develop/api-guide/core/alljoyn-transports-best-practices">Alljoyn Transports Best Practices</a></li><li class="menu-mlid-2648 menu-item-2648"><a href="/developers/develop/api-guide/core/auto-ping">AutoPinger</a></li><li class="menu-mlid-2935 menu-item-2935"><a href="/developers/develop/api-guide/core/observer">Observer</a></li><li class="last menu-mlid-2936 menu-item-2936"><a href="/developers/develop/api-guide/core/propcache">Property Cache</a></li></ul></li><li class="menu-parent menu-mlid-2599 menu-item-2599"><a href="/developers/develop/api-guide/about">About</a><ul class="menu clearfix"><li class="first menu-mlid-2941 menu-item-2941"><a href="/developers/develop/api-guide/about/java">java</a></li><li class="menu-mlid-2942 menu-item-2942"><a href="/developers/develop/api-guide/about/cpp">C++</a></li><li class="menu-mlid-2943 menu-item-2943"><a href="/developers/develop/api-guide/about/objc">Objective-C</a></li><li class="menu-mlid-2944 menu-item-2944"><a href="/developers/develop/api-guide/about/c-thin">C (Thin Core)</a></li><li class="menu-mlid-2945 menu-item-2945"><a href="/developers/develop/api-guide/about/java-legacy">java Legacy</a></li><li class="menu-mlid-2946 menu-item-2946"><a href="/developers/develop/api-guide/about/cpp-legacy">C++ Legacy</a></li><li class="last menu-mlid-2947 menu-item-2947"><a href="/developers/develop/api-guide/about/objc-legacy">Objective-C Legacy</a></li></ul></li><li class="menu-parent menu-mlid-2604 menu-item-2604"><a href="/developers/develop/api-guide/onboarding">Onboarding</a><ul class="menu clearfix"><li class="first menu-mlid-2948 menu-item-2948"><a href="/developers/develop/api-guide/onboarding/java">java</a></li><li class="last menu-mlid-2949 menu-item-2949"><a href="/developers/develop/api-guide/onboarding/objc">Objective-C</a></li></ul></li><li class="menu-parent menu-mlid-2607 menu-item-2607"><a href="/developers/develop/api-guide/config">Configuration</a><ul class="menu clearfix"><li class="first menu-mlid-2950 menu-item-2950"><a href="/developers/develop/api-guide/config/java">java</a></li><li class="menu-mlid-2951 menu-item-2951"><a href="/developers/develop/api-guide/config/cpp">C++</a></li><li class="menu-mlid-2952 menu-item-2952"><a href="/developers/develop/api-guide/config/objc">Objective-C</a></li><li class="last menu-mlid-2953 menu-item-2953"><a href="/developers/develop/api-guide/config/c-thin">C (Thin Core)</a></li></ul></li><li class="menu-parent menu-mlid-2612 menu-item-2612"><a href="/developers/develop/api-guide/notification">Notification</a><ul class="menu clearfix"><li class="first menu-mlid-2954 menu-item-2954"><a href="/developers/develop/api-guide/notification/java">java</a></li><li class="menu-mlid-2955 menu-item-2955"><a href="/developers/develop/api-guide/notification/cpp">C++</a></li><li class="menu-mlid-2956 menu-item-2956"><a href="/developers/develop/api-guide/notification/objc">Objective-C</a></li><li class="last menu-mlid-2957 menu-item-2957"><a href="/developers/develop/api-guide/notification/c-thin">C (Thin Core)</a></li></ul></li><li class="menu-parent menu-mlid-2617 menu-item-2617"><a href="/developers/develop/api-guide/controlpanel">Control Panel</a><ul class="menu clearfix"><li class="first menu-mlid-2958 menu-item-2958"><a href="/developers/develop/api-guide/controlpanel/java">java</a></li><li class="menu-mlid-2959 menu-item-2959"><a href="/developers/develop/api-guide/controlpanel/cpp">C++</a></li><li class="menu-mlid-2960 menu-item-2960"><a href="/developers/develop/api-guide/controlpanel/objc">Objective-C</a></li><li class="last menu-mlid-2961 menu-item-2961"><a href="/developers/develop/api-guide/controlpanel/c-thin">C (Thin Core)</a></li></ul></li><li class="menu-parent menu-mlid-2622 menu-item-2622"><a href="/developers/develop/api-guide/audio-streaming">Audio Streaming</a><ul class="menu clearfix"><li class="first last menu-mlid-2962 menu-item-2962"><a href="/developers/develop/api-guide/audio-streaming/cpp">C++</a></li></ul></li><li class="last menu-mlid-2624 menu-item-2624"><a href="/developers/develop/api-guide/events-and-actions">Events and Actions</a></li></ul></li><li class="menu-mlid-2625 menu-item-2625"><a href="/developers/develop/api-reference">API Reference</a></li><li class="menu-parent menu-mlid-2626 menu-item-2626"><a href="/developers/develop/debug">Debug</a><ul class="menu clearfix"><li class="first last menu-mlid-2627 menu-item-2627"><a href="/developers/develop/debug/common-issues">Common Issues</a></li></ul></li><li class="menu-parent menu-mlid-2628 menu-item-2628"><a href="/developers/develop/tutorial">Tutorial</a><ul class="menu clearfix"><li class="first menu-mlid-2629 menu-item-2629"><a href="/developers/develop/tutorial/core">Core</a></li><li class="menu-mlid-2630 menu-item-2630"><a href="/developers/develop/tutorial/ios">iOS</a></li><li class="menu-mlid-2631 menu-item-2631"><a href="/developers/develop/tutorial/thin-app">Thin App</a></li><li class="menu-mlid-2632 menu-item-2632"><a href="/developers/develop/tutorial/arduino-and-gt202">Arduino + GT202</a></li><li class="last menu-mlid-2633 menu-item-2633"><a href="/developers/develop/tutorial/videos">Videos</a></li></ul></li><li class="last menu-mlid-2634 menu-item-2634"><a href="/developers/develop/ask">Ask Forum</a></li></ul></li><li class="last menu-parent has-children menu-mlid-2636 menu-item-2636"><a href="/developers/contribute">Contribute</a><ul class="menu clearfix"><li class="first last menu-mlid-2637 menu-item-2637"><a href="/developers/contribute/project-lifecycle">Project Lifecycle</a></li></ul></li></ul></li><li class="menu-mlid-2466 menu-item-2466"><a href="/showcase-products-using-alljoyn">Showcase</a></li><li class="menu-parent menu-mlid-2487 menu-item-2487"><a href="/allseen-alliance-certification">Certification</a><ul class="menu clearfix"><li class="first menu-mlid-2488 menu-item-2488"><a href="/certification/how-validate-your-designed-allseen-product">How To Validate Your Product</a></li><li class="last menu-mlid-2489 menu-item-2489"><a href="/certification/faq">FAQ</a></li></ul></li><li class="last menu-parent menu-mlid-2421 menu-item-2421"><a href="/news-and-events">News &amp; Events</a><ul class="menu clearfix"><li class="first menu-mlid-2422 menu-item-2422"><a href="/news-and-events/newsroom/announcements">Announcements</a></li><li class="menu-mlid-2449 menu-item-2449"><a href="/news/videos">Videos</a></li><li class="menu-mlid-2423 menu-item-2423"><a href="/news-and-events/newsroom/in-the-news">In The News</a></li><li class="menu-mlid-2424 menu-item-2424"><a href="/news-and-events/events">Events</a></li><li class="menu-mlid-2448 menu-item-2448"><a href="/news-and-events/blogs">Blogs</a></li><li class="menu-mlid-2461 menu-item-2461"><a href="/news-and-events/newsletters">Newsletters</a></li><li class="last menu-mlid-2933 menu-item-2933"><a href="/news-and-events/videos">Videos</a></li></ul></li></ul></div>
+</div></div></section></div></div>      </div>
+            
+      
+      <div class="region region-sidebar-first sidebar"><div class="region-inner clearfix"><div id="block-menu-block-1" class="block block-menu-block"  role="navigation"><div class="block-inner clearfix">        <div class="block-content content"><div class="menu-block-wrapper menu-block-1 menu-name-main-menu parent-mlid-0 menu-level-3">
+  <ul class="menu clearfix"><li class="first menu-mlid-2505 menu-item-2505"><a href="/developers/learn/use-cases">Use Cases</a></li><li class="menu-mlid-2506 menu-item-2506"><a href="/developers/learn/architecture">Architecture</a></li><li class="menu-parent active-trail menu-mlid-2507 menu-item-2507"><a href="/developers/learn/core" class="active-trail">Core Framework</a><ul class="menu clearfix"><li class="first menu-parent menu-mlid-2508 menu-item-2508"><a href="/developers/learn/core/about-announcement">About Announcement</a><ul class="menu clearfix"><li class="first menu-mlid-2509 menu-item-2509"><a href="/developers/learn/core/about-announcement/interface">Interface</a></li><li class="last menu-mlid-2510 menu-item-2510"><a href="/developers/learn/core/about-announcement/interface-14-02">Interface 14.02</a></li></ul></li><li class="menu-mlid-2511 menu-item-2511"><a href="/developers/learn/core/events-and-actions">Events and Actions</a></li><li class="menu-mlid-2992 menu-item-2992"><a href="/developers/learn/core/rn_config">Routing Node Configuration</a></li><li class="menu-mlid-2512 menu-item-2512"><a href="/developers/learn/core/standard-core">Standard Core</a></li><li class="menu-mlid-2513 menu-item-2513"><a href="/developers/learn/core/thin-core">Thin Core</a></li><li class="menu-parent active-trail menu-mlid-2514 menu-item-2514"><a href="/developers/learn/core/system-description" class="active-trail">System Description</a><ul class="menu clearfix"><li class="first menu-mlid-2515 menu-item-2515"><a href="/developers/learn/core/system-description/system-architecture">System Architecture</a></li><li class="menu-mlid-2516 menu-item-2516"><a href="/developers/learn/core/system-description/advertisement-discovery">Advertisement and Discovery</a></li><li class="menu-mlid-2645 menu-item-2645"><a href="/developers/learn/core/system-description/alljoyn-transport">AllJoyn Transport</a></li><li class="menu-mlid-2517 menu-item-2517"><a href="/developers/learn/core/system-description/data-exchange">Data Exchange</a></li><li class="menu-mlid-2518 menu-item-2518"><a href="/developers/learn/core/system-description/alljoyn-session">AllJoyn Session</a></li><li class="active-trail active menu-mlid-2519 menu-item-2519"><a href="/developers/learn/core/system-description/sessionless-signal" class="active-trail active">Sessionless Signal</a></li><li class="menu-mlid-2520 menu-item-2520"><a href="/developers/learn/core/system-description/alljoyn-security">AllJoyn Security</a></li><li class="menu-mlid-2521 menu-item-2521"><a href="/developers/learn/core/system-description/thin-apps">Thin Apps</a></li><li class="last menu-mlid-2522 menu-item-2522"><a href="/developers/learn/core/system-description/events-actions">Events and Actions</a></li></ul></li><li class="last menu-parent menu-mlid-2937 menu-item-2937"><a href="/developers/learn/core/security2_0">Security 2.0</a><ul class="menu clearfix"><li class="first last menu-mlid-2938 menu-item-2938"><a href="/developers/learn/core/security2_0/hld">High-Level Design</a></li></ul></li></ul></li><li class="menu-parent menu-mlid-2523 menu-item-2523"><a href="/developers/learn/base-services">Base Services</a><ul class="menu clearfix"><li class="first menu-parent menu-mlid-2524 menu-item-2524"><a href="/developers/learn/base-services/onboarding">Onboarding</a><ul class="menu clearfix"><li class="first menu-mlid-2525 menu-item-2525"><a href="/developers/learn/base-services/onboarding/interface">Interface</a></li><li class="last menu-mlid-2526 menu-item-2526"><a href="/developers/learn/base-services/onboarding/interface-14-02">Interface 14.02</a></li></ul></li><li class="menu-parent menu-mlid-2527 menu-item-2527"><a href="/developers/learn/base-services/configuration">Configuration</a><ul class="menu clearfix"><li class="first menu-mlid-2528 menu-item-2528"><a href="/developers/learn/base-services/configuration/interface">Interface</a></li><li class="last menu-mlid-2529 menu-item-2529"><a href="/developers/learn/base-services/configuration/interface-14-02">Interface 14.02</a></li></ul></li><li class="menu-parent menu-mlid-2530 menu-item-2530"><a href="/developers/learn/base-services/notification">Notification</a><ul class="menu clearfix"><li class="first menu-mlid-2531 menu-item-2531"><a href="/developers/learn/base-services/notification/interface">Interface</a></li><li class="last menu-mlid-2532 menu-item-2532"><a href="/developers/learn/base-services/notification/interface-14-02">Interface 14.02</a></li></ul></li><li class="menu-parent menu-mlid-2533 menu-item-2533"><a href="/developers/learn/base-services/controlpanel">ControlPanel</a><ul class="menu clearfix"><li class="first menu-mlid-2534 menu-item-2534"><a href="/developers/learn/base-services/controlpanel/interface">Interface</a></li><li class="last menu-mlid-2535 menu-item-2535"><a href="/developers/learn/base-services/controlpanel/interface-14-02">Interface 14.02</a></li></ul></li><li class="last menu-parent menu-mlid-2536 menu-item-2536"><a href="/developers/learn/base-services/audiostreaming">Audio Streaming</a><ul class="menu clearfix"><li class="first last menu-mlid-2537 menu-item-2537"><a href="/developers/learn/base-services/audiostreaming/interface">Interface</a></li></ul></li></ul></li><li class="last menu-mlid-2538 menu-item-2538"><a href="/developers/learn/glossary">Glossary</a></li></ul></div>
+</div></div></div></div></div>            <div id="content-column" role="main">
+        <div class="content-inner">
+
+          
+          <section id="main-content">
+
+                                      <header id="main-content-header">
+
+                                                  <h1 id="sub-title">
+                    Sessionless Signal                  </h1>
+                
+                
+              </header>
+                        
+                          <div id="content">
+                        <article id="node-4098" class="node node-developer-document article clearfix" about="/developers/learn/core/system-description/sessionless-signal" typeof="sioc:Item foaf:Document" role="article">
+
+  
+      <span property="dc:title" content="Sessionless Signal" class="rdf-meta element-hidden"></span><span property="sioc:num_replies" content="0" datatype="xsd:integer" class="rdf-meta element-hidden"></span>
+  
+  <div class="node-content">
+  
+  <div class="field-body view-mode-full">
+    
+<h2 id="overview">Overview</h2>
+<p>The sessionless signal is an AllJoyn® feature that enables 
+broadcasting of signals to all reachable nodes in the AllJoyn 
+proximal network. This is different than the session-based signals 
+described in <a href="/developers/learn/core/system-description/data-exchange">Data Exchange</a>, where signals are sent 
+only to participants connected over a given session or 
+multiple sessions (for session broadcast signals) based on 
+sessionId/destination based routing. </p>
+<p>Sessionless signals are logically broadcast signals and any 
+app on the AllJoyn proximal network interested in receiving 
+sessionless signals will receive all sessionless signals sent 
+by any other app on that network. The AllJoyn system design 
+refers to sessionless signals as logically broadcast because 
+signals themselves are not broadcast/multicast, only an indication 
+for signals is sent over multicast to all the nodes on the network. 
+Applications do not have to be connected over sessions to receive 
+sessionless signals, however, the AllJoyn router underneath 
+must establish a session to fetch these signals based on the 
+indication received. Applications can specify match rules 
+(via AddMatch) to receive a specific set of sessionless 
+signals and the AllJoyn router filters out signals based 
+on those match rules. </p>
+<p>The following figure captures the high-level architecture 
+for the sessionless signal on the provider and consumer sides. 
+The AllJoyn router supports a logical SLS module that implements 
+sessionless signal logic. The SLS module makes use of the 
+Name Service to advertise and discover sessionless signals 
+using a sessionless signal-specific well-known name.</p>
+<p><img src="/sites/default/files/developers/learn/system-desc/sls-arch.png" alt="sls-arch" /></p>
+<p><strong>Figure:</strong> Sessionless signal architecture</p>
+<p>After AllJoyn router startup, the SLS module executes the 
+following steps to prepare itself for sending and/or receiving 
+sessionless signals. </p>
+<ol><li>Create an object implementing "org.alljoyn.sl" interface 
+which is the interface used between two AllJoyn routers to 
+exchange sessionless signals.</li>
+<li>Register signal handlers to receive signals from "org.alljoyn.sl" interface.</li>
+<li>Bind a well-known sessionless signal session port 100 
+to support incoming requests to fetch sessionless signals. </li>
+</ol><p>The consumer app interested in receiving sessionless signals 
+registers a match rule with the AllJoyn router to receive 
+sessionless signals. As a result, the SLS module initiates 
+discovery for sessionless providers via the Name Service 
+(either the legacy Name Service or NGNS based on the router version). </p>
+<p>On the provider side, the app sends a sessionless signal to 
+the AllJoyn router. The SLS module stores the signal in a 
+local message cache. The provider side sessionless signal 
+generates a sessionless signal-specific well-known name 
+and advertises that over AllJoyn network. </p>
+<p>Upon discovering the sessionless signal provider, the consumer 
+AllJoyn router establishes a session with the provider side 
+AllJoyn router over the well-known session port for sessionless 
+signals. Once the session is established, the consumer SLS module 
+fetches sessionless signals via the org.alljoyn.sl interface. </p>
+<p>The following sections detail the provider and consumer 
+sessionless signal-related behavior.</p>
+<h3 id="sessionless-signal-enhancement-in-the-14-06-release">Sessionless signal enhancement in the 14.06 release</h3>
+<p>Prior to the 14.06 release, the consumer side SLS module 
+provides the functionality of requesting sessionless signals 
+by matching certain filtering criteria specified by the AddMatch 
+rule. The consumer fetches sessionless signals from all the 
+providers and applies the AddMatch rules to filter received 
+sessionless signals before passing these to interested applications.</p>
+<p>The sessionless signal design in the 14.06 release was 
+enhanced to enable a consumer application to request sessionless 
+signals from provider applications supporting certain AllJoyn 
+interfaces. For example, a Lighting Controller app can request 
+Announcement sessionless signals only from those provider apps 
+that implement the org.alljoyn.LightBulb interface. </p>
+<p>The following key sessionless signal enhancements made to 
+achieve this functionality:</p>
+<ul><li>The sessionless signal advertised name was enhanced to add 
+<interface> information from the header of the sessionless signal. 
+Consumers use this to fetch sessionless signals only from those 
+providers that are emitting signals from <interface> specified 
+in the consumer side match rules. Multiple sessionless signal 
+names are advertised, one for each unique interface in the 
+sessionless signal cache.</interface></interface></li>
+<li>The match rule definition for AddMatch has been extended to 
+add a new 'implements' key that can be used to indicate the 
+desire to receive the Announcement sessionless signal only 
+from applications implementing certain AllJoyn interfaces as 
+specified in the application's Announcement signal.</li>
+</ul><p>Sessionless signals are only fetched from those providers 
+that support interface details specified in the match rules. 
+The AddMatch match rules are passed to the providers to 
+filter signals based on those match rules. </p>
+<h2 id="sessionless-signal-end-to-end-logic">Sessionless signal end-to-end logic</h2>
+<p>The sessionless signal end-to-end logic consists of the 
+following aspects, which are detailed in the sections below.</p>
+<ul><li>The provider caches signals and advertises the availability of signals.</li>
+<li>The consumer discovers sessionless signal providers.</li>
+<li>The consumer fetches sessionless signals from a provider.</li>
+</ul><h3 id="provider-caches-signals-and-advertises-availability">Provider caches signals and advertises availability</h3>
+<p>On the provider side, the app sends a signal to the AllJoyn 
+router with the SESSIONLESS flag set. The SLS module in the 
+provider inserts the signal into its sessionless signal cache. 
+The cache entry uses the combination of (SENDER, INTERFACE, MEMBER, 
+and PATH) header fields of the signal as the key.  </p>
+<p>Subsequent sessionless signals sent to the AllJoyn router 
+with the same (SENDER, INTERFACE, MEMBER, and PATH) header 
+fields overwrite the already cached sessionless signal.</p>
+<p>The provider AllJoyn router assigns a change_id for sessionless 
+signals. The change_id is used to indicate updates to sessionless 
+signals to consumers on the AllJoyn network. Each sessionless 
+signal cache entry includes (SLS signal, change_id) tuple. 
+The change_id is incremented by the provider only after a new 
+signal is inserted into its cache and a consumer has requested 
+signals from the provider since the last time the change_id was incremented.</p>
+<p>The app may remove an entry from the provider's cache by calling 
+the CancelSessionlessMessage method of the org.alljoyn.Bus 
+interface of the /org/alljoyn/Bus object. The entry being 
+removed is specified by the serial number of the signal. 
+The change_id is not incremented when the provider removes 
+a signal from its cache. The contents of the cache, including 
+the associated change_ids, determine what the provider will advertise.  </p>
+<p>Prior to the AllJoyn 14.06 release, the SLS module requests 
+and advertises the following sessionless signal well-known name: </p>
+<ul><li><p>"org.alljoyn.sl.x<guid>.x<change_id>"</change_id></guid></p>
+<p>where:</p>
+<ul><li>GUID is the GUID of the AllJoyn router</li>
+<li>change_id is the maximum change_id in the sessionless signal cache.</li>
+</ul></li>
+</ul><p>Starting with the AllJoyn 14.06 release, the SLS module 
+requests and advertises the following sessionless signal well-known names:</p>
+<ul><li><p>"org.alljoyn.sl.y<guid>.x<change_id>"</change_id></guid></p>
+<p>where:</p>
+<ul><li>GUID is the GUID of the AllJoyn router</li>
+<li>change_id is the maximum change_id in the SLS cache.</li>
+</ul></li>
+<li><p>"<interface>.sl.y<guid>.x<change_id>"</change_id></guid></interface></p>
+<p>where:</p>
+<ul><li>INTERFACE is the value of the INTERFACE header field of the signal</li>
+<li>GUID is the GUID of the AllJoyn router</li>
+<li>change_id is the maximum change_id for signals in the 
+sessionless signal cache having the same value of the 
+INTERFACE header field.  </li>
+</ul><p>At most, one well-known name is requested and advertised 
+for each unique INTERFACE header field value in the sessionless signal cache.</p>
+</li>
+</ul><p>The following figure shows the provider side SLS module logic 
+prior to the AllJoyn 14.06 release.</p>
+<p><img src="/sites/default/files/developers/learn/system-desc/provider-sls-module-logic-pre-1406.png" alt="provider-sls-module-logic-pre-1406" /></p>
+<p><strong>Figure:</strong> Provider SLS module logic (prior to the AllJoyn 14.06 release)</p>
+<p>The following figure shows the provider side SLS module logic 
+introduced in the AllJoyn 14.06 release.</p>
+<p><img src="/sites/default/files/developers/learn/system-desc/provider-sls-module-logic-1406.png" alt="provider-sls-module-logic-1406" /></p>
+<p><strong>Figure:</strong> Provider SLS module logic (introduced in the AllJoyn 14.06 release)</p>
+<h3 id="consumer-discovers-sessionless-signal-providers">Consumer discovers sessionless signal providers</h3>
+<p>On the consumer side, the app registers an interest in a 
+sessionless signal by calling the D-Bus AddMatch method.</p>
+<p><strong>NOTE:</strong> The D-Bus AddMatch method is part of the org.freedesktop. 
+The D-Bus interface and is implemented by the /org/freedesktop/DBus object.</p>
+<p>The match rule includes "sessionless='t'" to indicate registration 
+for a sessionless signal, along with any other key/value pairs for 
+filtering signals.  </p>
+<p>Prior to the AllJoyn 14.06 release, the SLS module starts the 
+name-based discovery process to discover the SLS WKN prefix 
+"org.alljoyn.sl." after receiving the first sessionless 
+match rule. When the last match rule is removed by an app 
+connected to the AllJoyn router, the SLS module cancels 
+discovering the SLS WKN prefix.</p>
+<p>Starting with the AllJoyn 14.06 release, the sessionless 
+signal logic on the consumer side was enhanced to enable 
+an application requesting sessionless signals from providers 
+implementing certain AllJoyn interfaces. A new 'implements' 
+key was added to the AddMatch method to achieve this. 
+The 'implements' key specifies an AllJoyn interface that 
+should be implemented by the sessionless signal provider. 
+Multiple 'implements' key/value pairs may be specified in 
+a single match rule. These are treated as a logical AND 
+when discovering sessionless signal providers. In the current 
+implementation, the 'implements' key is only applicable for 
+receiving the Announcement sessionless signal. An AddMatch 
+that includes the 'implements' key should always include 
+"interface= org.alljoyn.About".</p>
+<p>The following figure shows the consumer logic for discovering 
+sessionless signal providers implemented in the 14.06 release.</p>
+<p><img src="/sites/default/files/developers/learn/system-desc/consumer-logic-sessionless-providers-1406.png" alt="consumer-logic-sessionless-providers-1406" /></p>
+<p><strong>Figure:</strong> Consumer logic for discovering sessionless providers (introduced in the AllJoyn 14.06 release)</p>
+<p>If the AddMatch includes the 'interface' key but no 'implements' 
+key, the SLS module performs name-based discovery to discover 
+the name prefix "<interface>.sl." for the specified interface 
+in the match rule.</interface></p>
+<p>If the AddMatch includes one or more 'implements' keys, the 
+SLS module performs interface name discovery via the NGNS 
+to discover providers implementing interfaces specified by 
+the 'implements' key. The SLS module also performs a name-based 
+discovery for name prefix "org.alljoyn.sl." both via mDNS 
+and using the WHO-HAS message. The latter is intended to 
+discover any sessionless signal providers prior to the 14.06 
+release. Name-based discovery over mDNS is performed to catch 
+unsolicited mDNS responses from providers for new/updated 
+sessionless signals.</p>
+<p>The app unregisters interest in a sessionless signal by 
+calling the RemoveMatch method with a previously added 
+match rule. When the last sessionless signal match rule is 
+removed, the SLS module stops sessionless signal-related 
+discovery, including both name-based and interface name discovery. </p>
+<h3 id="consumer-fetches-sessionless-signals-from-a-provider">Consumer fetches sessionless signals from a provider</h3>
+<p>After discovering a provider, the consumer SLS module 
+determines if it needs to fetch sessionless signals from 
+the provider based on the consumer's match rules and the 
+change_id of the provider in the advertisement. The consumer 
+SLS module keeps track of last acquired change_id for every 
+provider GUID it has discovered via the sessionless signal 
+advertised name. The sessionless signal fetch logic and the 
+state maintained by the consumer for each provider was modified 
+in the 14.06 release. The fetch logic functionality differences 
+are described below.</p>
+<ul><li>Prior to the 14.06 release, the consumer SLS module maintains 
+the List<provider guid="" last="" acquired="" change_id=""> information 
+for discovered providers. The consumer SLS module fetch sessionless 
+signals if an updated change_id is received from the provider 
+as part of the sessionless signal advertised name.</provider></li>
+<li>Starting with the 14.06 release, multiple sessionless signal 
+advertised names can be received from a given provider. 
+In addition, the associated change_id can be different for 
+each of those sessionless signal advertised names. The consumer 
+SLS module maintains the List<provider guid="" sls="" name="" change_id=""> 
+for discovered providers. It also keeps track of the match rules 
+that have been applied for a given provider. </provider></li>
+</ul><p>The following figure captures the consumer sessionless signal 
+fetch logic implemented in the 14.06 release.</p>
+<p><img src="/sites/default/files/developers/learn/system-desc/consumer-logic-sls-fetch-1406.png" alt="consumer-logic-sls-fetch-1406" /></p>
+<p><strong>Figure:</strong> Consumer logic to determine sessionless signal fetch (introduced in the 14.06 release)</p>
+<p>The consumer SLS module receives the sessionless signal 
+advertised name from a provider. The sessionless signal 
+name can be received via multiple means:</p>
+<ul><li>Solicited mDNS response over unicast as a result of an mDNS query</li>
+<li>Unsolicited mDNS response over multicast</li>
+<li>IS-AT multicast message (solicited or unsolicited). </li>
+</ul><p>The consumer checks if any new match rules have been added 
+after the last fetch from the provider or the received change_id 
+in the sessionless signal name is greater than what was fetched 
+previously from that provider.  </p>
+<p>If either condition is true, the consumer initiates a sessionless 
+signal fetch from a legacy provider (prior to the 14.06 release) 
+without further checks. This is determined by examining the GUID 
+segment of the sessionless signal advertised name received from the provider: </p>
+<ul><li>Prior to the 14.06 release, the GUID is prefixed with an "x".</li>
+<li>Starting with the 14.06 release, GUID is prefixed with a "y". </li>
+</ul><p>If the sessionless signal name is from a 14.06 release or 
+later provider, the consumer performs further checks to determine 
+if the sessionless signal fetch should be done with the provider. </p>
+<p>Starting with the 14.06 release, the sessionless signal name 
+also includes the interface value from the sessionless signal 
+header. In this case, the consumer SLS module checks whether 
+the interface specified (if any) in the match rule is the same 
+as the interface received in the sessionless signal name. </p>
+<ul><li>If yes, the consumer initiates a sessionless signal fetch 
+with the provider. </li>
+<li>If no interface was specified in the match rule, the consumer 
+initiates a sessionless signal fetch anyway because this 
+constitutes a wildcard match. </li>
+</ul><p>In the 14.06 release, a new RequestRangeMatch() signal is 
+defined as part of the org.alljoyn.sl interface. This signal 
+is used to fetch a set of sessionless signals that matches 
+any of the match rules specified in the RequestRangeMatch()
+signal. The consumer SLS module uses this signal to fetch 
+sessionless signals from the 14.06 providers. </p>
+<p><strong>NOTE:</strong> The current implementation does a catchup fetch for 
+new match rules before fetching new signals for updated 
+change_id. This results in two fetches upon receiving the 
+sessionless signal advertised name, however, this would be 
+a rare occurrence because adding a new match rule and 
+receiving a sessionless signal advertised name typically 
+does not occur at the same time.</p>
+<p>Whenever a new AddMatch rule is added for sessionless signals, 
+the consumer SLS module triggers a catchup fetch with already 
+known providers for the new match rule per the logic captured 
+in <a href="#consumer-fetches-sessionless-signals-from-a-provider">Consumer fetches sessionless signals from a provider</a>. For a catchup fetch, the 
+RequestRangeMatch signal only includes the new match rule. 
+If the new AddMatch includes an 'implements' key, the consumer 
+SLS module performs discovery for providers implementing those interfaces.</p>
+<p>The consumer schedules a sessionless signal fetch immediately 
+for sessionless signal advertised names received in the 
+solicited mDNS or IS-AT response messages. For sessionless signal 
+advertised names received as part of the unsolicited mDNS or IS-AT 
+response messages, the sessionless signal fetch is scheduled 
+following a backoff algorithm as described in 
+<a href="#sessionless-signal-fetch-backoff-algorithm">Sessionless signal fetch backoff algorithm</a>. </p>
+<p>The steps to fetch sessionless signals follow.</p>
+<ol><li>The consumer SLS module joins a session with the sessionless 
+signal advertised name and known SLS port (port=100). </li>
+<li>The consumer sends one of the signals defined in the 
+org.alljoyn.sl (<code>RequestSignals()</code>, <code>RequestRange()</code>, or <code>RequestRangeMatch()</code>)<br />to the provider over established session to fetch sessionless signals. </li>
+<li>The provider receives the request signal, sends the requested 
+sessionless signals and leaves the session.  </li>
+</ol><p>For details of which signals the provider sends from its cache 
+to the consumer, see the definition of these signals in 
+<a href="#org-alljoyn-sl-interface">org.alljoyn.sl interface</a>. </p>
+<p>The consumer receives the sessionless signals, and filters and 
+routes them according to its match rules. The consumer SLS module 
+maintains the information about the match rules applied and change_id 
+fetched from the provider for future sessionless signal fetches.</p>
+<h4 id="sessionless-signal-fetch-backoff-algorithm">Sessionless signal fetch backoff algorithm</h4>
+<p>After determining that it needs to fetch sessionless signals 
+from a given provider as per the logic described above, the 
+consumer SLS module attempts a join session with the producer 
+to fetch sessionless signals. If the consumer's first join session 
+attempt fails, it follows a backoff based retry logic to do 
+the join session for the sessionless signal fetch from the 
+provider. The SLS fetch logic adds random delays at different 
+consumers to ensure that consumer requests for sessionless 
+signals fetch are distributed over time for a given provider. </p>
+<p>The Consumer SLS module follows a mix of linear plus exponential 
+backoff retries for sessionless signals fetch. It supports a 
+hybrid of first few linear backoff retries followed by some 
+exponential backoff retries. The transition point between the
+linear and exponential backoff is configurable. The backoff 
+interval is capped off to a maximum configurable value. 
+Retries are performed for a total retry period R. Once the 
+max backoff interval is reached, retries continue with the 
+constant retry period (set to max backoff interval) until the
+total retry period R is elapsed.</p>
+<p>The following configuration parameters have been added in 
+the router config file:</p>
+<ul><li>Linear to Exponential Transition Point (k) - Specifies the 
+retry attempt after which backoff should become exponential.</li>
+<li>Max Backoff Interval Factor (c) - Specifies the multiplication 
+factor for T (initial backoff time) to generate the max backoff interval.</li>
+<li>Total Retry Period (R) - Specifies the total time period (in seconds) 
+for which SLS fetch retry must be attempted.</li>
+</ul><p>The following figure shows an example SLS retry schedule with 
+SLS retries happening at T, 2T, 3T, 4T, 8T, 16T, 32T, 32T, 32T,....</p>
+<p><img src="/sites/default/files/developers/learn/system-desc/sls-fetch-backoff-schedule-example.png" alt="sls-fetch-backoff-schedule-example" /></p>
+<p><strong>Figure:</strong> SLS fetch backoff schedule example</p>
+<p>For every SLS retry attempt, the join session with the producer 
+is delayed randomly between [0, retry interval] to make sure 
+Consumer requests are distributed over time. For example in 
+the figure above:</p>
+<ul><li>The Consumer join session for 4th SLS fetch retry 
+will be randomly delayed between [0, 4T] interval. </li>
+<li>The Consumer join session for nth SLS fetch retry will 
+be randomly delayed between [0,16T] interval.</li>
+</ul><p>For the SLS fetch triggered as a result of solicited mDNS 
+discovery responses, the join session request is not delayed 
+randomly. In this case, the join session for SLS fetch is 
+done immediately. The AllJoyn router will serialize such an SLS 
+fetch if the max connections limit on the Consumer is reached.</p>
+<h2 id="sessionless-signal-message-sequences-prior-to-the-14-06-release-">Sessionless signal message sequences (prior to the 14.06 release)</h2>
+<p>Since the sessionless logic has changed quite a bit in the 
+14.06 release, separate SLS message sequences are captured 
+prior to the 14.06 release and starting from the 14.06 release.  </p>
+<p>The following use cases detail sessionless signal logic 
+scenarios prior to the 14.06 release:</p>
+<ul><li>First sessionless signal delivery</li>
+<li>Another AddMatch done by the same app</li>
+<li>Another app requests sessionless signals</li>
+</ul><h3 id="first-sessionless-signal-delivery">First sessionless signal delivery</h3>
+<p>The following figure shows the message flow for the use 
+case for sending and receiving the first sessionless signal 
+on the provider and consumer, respectively.</p>
+<p><strong>NOTE:</strong> The sessionless signal change_id is not carried in any 
+of the sessionless signal messages. However, the provider 
+AllJoyn router logic ensures that it only sends sessionless 
+signal messages up to the change_id that was discovered by 
+the consumer. When the JoinSession is done by the consumer, 
+it uses the sessionless signal well-known name discovered 
+from the IS-AT message. The change_id included in that well-known 
+name provides the upper limit for the change_id for sending 
+sessionless signals to the consumer. </p>
+<p>A similar message flow is applicable for the use case when a 
+subsequent sessionless signal is delivered. The main difference 
+is that the provider updates the change_id, if applicable, as
+per the change_id update logic described above.</p>
+<p><img src="/sites/default/files/developers/learn/system-desc/first-sls-delivery.png" alt="first-sls-delivery" /></p>
+<p><strong>Figure:</strong> First sessionless signal delivery</p>
+<p>The message flow steps are described below.</p>
+<ol><li>Both provider and consumer apps connect to the AllJoyn 
+router, and a unique name is assigned to the app endpoint 
+by the AllJoyn router.</li>
+<li>The provider app registers its service object implementing 
+an interface containing signal member with the AllJoyn core library. </li>
+<li>The consumer app registers a signal handler for the 
+sessionless signal by invoking the AllJoyn core library's 
+<code>RegisterSignalHandler</code> API.</li>
+<li>The consumer app invokes AllJoyn core library's <code>AddMatch</code> 
+API to add a rule for receiving sessionless signals. The API 
+specifies a signal match rule with type='signal', sessionless='t' 
+and other applicable parameters. </li>
+<li>The AllJoyn core library invokes the AllJoyn router's AddMatch 
+method to add the sessionless signal filtering rule at the AllJoyn router.</li>
+<li>The consumer AllJoyn router invokes <code>FindAdvertisedName()</code> 
+with the sessionless SLS WKN prefix "org.alljoyn.sl" to discover 
+providers offering sessionless signals.</li>
+<li>The consumer AllJoyn router sends a WHO-HAS message for 
+"org.alljoyn.sl" prefix.</li>
+<li>The provider app has a sessionless signal to send. 
+It invokes the BusObject Signal(...) call which generates an 
+AllJoyn SIGNAL message with the sessionless flag set to true.</li>
+<li>The SIGNAL message is sent from the app to the AllJoyn router. </li>
+<li>The provider AllJoyn router stores the signal in the sessionless 
+signal cache and assigns a new sessionless signal change_id number.</li>
+<li>The provider AllJoyn router generates a well-known name 
+for the sessionless signal with the latest change_id using 
+the format org.alljoyn.sl.x<guid>.x<change_id>.</change_id></guid></li>
+<li>The provider AllJoyn router does a RequestName for this 
+well-known name to reserve this name. It then calls the 
+<code>AdvertiseName</code> method to advertise this name on the AllJoyn network. </li>
+<li>The provider AllJoyn router sends out an IS-AT message 
+with the generated sessionless signal well-known name.</li>
+<li>The consumer AllJoyn router receives the IS-AT message 
+that passes the prefix matching for "org.alljoyn.sl". 
+A FoundAdvertisedName signal gets generated for the the 
+sessionless signal prefix.</li>
+<li>The consumer AllJoyn router compares its current change_id 
+for the AllJoyn router GUID in the IS-AT message with the 
+change_id received in the IS-AT message. It determines that 
+the received change_id is different than the current change_id 
+and it needs to get the new set of sessionless signals from 
+the provider AllJoyn router.</li>
+<li>The consumer AllJoyn router invokes the <code>JoinSessionAsync</code> 
+method to start a session with the provider AllJoyn router. 
+It specifies the sessionless signal wel-known name and the 
+sessionless session port among other parameters.
+This initiates a session attachment flow at the AllJoyn router 
+level between the consumer and provider. </li>
+<li>Once the session is established, the consumer AllJoyn router 
+sends a RequestSignals signal to request the latest set of 
+sessionless signals from the provider app. This signal includes 
+the last acquired change_id for the GUID of provider AllJoyn router.</li>
+<li>The provider AllJoyn router sends SIGNAL messages for all 
+sessionless signals added after the change_id provided in the 
+RequestSignals message. The SIGNAL messages have destination 
+as local endpoint of the consumer AllJoyn router. </li>
+<li>Once all SIGNAL messages have been sent, the provider 
+AllJoyn router initiates a LeaveSession method for the connected 
+session. This triggers sending a DetachSession SIGNAL message 
+to the consumer AllJoyn router. </li>
+<li>After receiving the DetachSession signal, the consumer 
+AllJoyn router knows that it has received all new sessionless 
+signals from the provider AllJoyn router. It then updates 
+its change_id for that GUID to the latest received change_id 
+from the IS_AT message. </li>
+<li>The consumer AllJoyn router filters the received sessionless 
+signal messages based on the registered AddMatch rules for 
+the sessionless signals.</li>
+<li>The consumer AllJoyn router sends SIGNAL messages to the 
+AllJoyn core library via callback. The AllJoyn core library 
+in turn calls the registered signal handler for the sessionless signal. </li>
+</ol><h3 id="another-addmatch-done-by-the-app">Another AddMatch done by the app</h3>
+<p>A consumer app might invoke a subsequent AddMatch call for 
+sessionless signals. Prior to the 14.06 release, this is 
+interpreted as adding another rule for filtering future received 
+sessionless signals. </p>
+<ul><li>At the AllJoyn router, any future received SLS messages 
+will be filtered based on the combined set of match rules. </li>
+<li>If there is a more restrictive rule which matches a small 
+set of sessionless signals and there is another less restrictive 
+rule which matches a larger superset of signals, AllJoyn router 
+will always send larger superset of signals to the app. </li>
+</ul><p><strong>NOTE:</strong> The AllJoyn router does not re-fetch sessionless signal 
+messages associated with the existing change_id when a new match 
+rule is added. The new match rule is applied to any future 
+received messages. Starting with the 14.06 release, this behavior 
+was modified and the SLS module initiates the sessionless signal 
+fetch whenever any new match rule is added.</p>
+<p>The following figure shows the message flow for the scenario 
+where another AddMatch is done by the same app. Most of the steps 
+are same as the first sessionless signal delivery. The main difference 
+is that no FindAdvertisedName needs to be done for "org.alljoyn.sl" 
+because discovery for the SLS WKN prefix was already initiated 
+at the time of receiving first AddMatch for the sessionless 
+signal and is already in progress.</p>
+<p><img src="/sites/default/files/developers/learn/system-desc/another-add-match-done-by-app.png" alt="another-add-match-done-by-app" /></p>
+<p><strong>Figure:</strong> Another add match done by the app</p>
+<h3 id="another-app-requesting-for-sessionless-signal">Another app requesting for sessionless signal</h3>
+<p>For the use case where multiple apps are connected to a 
+given AllJoyn router, each application can invoke the <code>AddMatch</code> 
+call to add match rules for sessionless signals with the AllJoyn 
+router. These AddMatch calls can be received at different times. 
+When the first AddMatch call is received from an app, the AllJoyn 
+router re-fetches the currently valid sessionless signals 
+from the already discovered providers for sending to that app. 
+The AllJoyn router uses the RequestRange signal to fetch the 
+current set of sessionless signals.</p>
+<p>The following figure shows the message flow for the scenario 
+when a subsequent app performs the first AddMatch for sessionless signals.</p>
+<p><img src="/sites/default/files/developers/learn/system-desc/another-app-requesting-sls.png" alt="another-app-requesting-sls" /></p>
+<p><strong>Figure:</strong> Another app requesting for sessionless signals</p>
+<h2 id="sessionless-signal-message-sequences-14-06-release-">Sessionless signal message sequences (14.06 release)</h2>
+<p>In the 14.06 release, the sessionless signal logic was enhanced 
+as described earlier. This section captures the sessionless 
+signal message sequences with the enhanced logic. The following 
+use cases are detailed:</p>
+<ul><li>First sessionless signal delivery</li>
+<li>Sessionless signal delivery between a new consumer and a legacy provider </li>
+<li>Sessionless signal delivery between a legacy consumer and a new provider </li>
+<li>Subsequent AddMatch done by an app</li>
+</ul><h3 id="first-sessionless-signal-delivery">First sessionless signal delivery</h3>
+<p>This use case defines when the first AddMatch is done by a 
+consumer app to receive sessionless signals. The match rules 
+specified in the AddMatch may or may not include the new 'implements' 
+key. Both use cases are captured accordingly:</p>
+<ul><li>AddMatch does not include 'implements' key</li>
+<li>AddMatch includes 'implements' key</li>
+</ul><h4 id="addmatch-does-not-include-implements-key">AddMatch does not include 'implements' key</h4>
+<p>The following figure shows the message flow for sending and 
+receiving the first sessionless signal for the use case when 
+AddMatch does not include an 'implements' key/value pair.</p>
+<p><img src="/sites/default/files/developers/learn/system-desc/first-sls-delivery-no-implements-addmatch.png" alt="first-sls-delivery-no-implements-addmatch" /></p>
+<p><strong>Figure:</strong> First sessionless signal delivery (no 'implements' key in AddMatch)</p>
+<p>The message flow steps are described below.</p>
+<ol><li>Both the provider and consumer apps connect to the AllJoyn router.</li>
+<li>The provider app registers its service object implementing 
+an interface containing signal member with the AllJoyn core library. </li>
+<li>The consumer app registers a signal handler for the sessionless 
+signal by invoking the AllJoyn core library's RegisterSignalHandler API.</li>
+<li>The consumer app invokes the AllJoyn core library's 
+AddMatch API to add a rule for receiving sessionless signals. 
+The API specifies a signal match rule with type='signal', 
+interface='<interface>', sessionless='t' and other applicable parameters. </interface></li>
+<li>The AllJoyn core library invokes the AllJoyn router's 
+AddMatch method to add the sessionless signal filtering 
+rule at the AllJoyn router.</li>
+<li>The consumer AllJoyn router invokes the <code>FindAdvertisedName</code> 
+method with the SLS WKN prefix "org.alljoyn.sl." to discover 
+providers prior to the 14.06 release and SLS WKN "<interface>sl." 
+to discover new providers starting in the 14.06 release. </interface></li>
+<li>The consumer AllJoyn router sends out name-based 
+query messages using the NGNS.</li>
+<li>The provider app has a sessionless signal to send. 
+It invokes the <code>BusObject Signal(...)</code> call which generates 
+an AllJoyn SIGNAL message with SESSIONLESS flag set to true.</li>
+<li>The SIGNAL message is sent from app to the AllJoyn router. </li>
+<li>The provider AllJoyn router stores the signal in the sessionless signal cache.</li>
+<li>The provider AllJoyn router generates the following:<ul><li>A well-known name for the sessionless signal of the format 
+"org.alljoyn.sl.y<guid>.x<change_id>" with the latest change_id. </change_id></guid></li>
+<li>A second well-known name for the sessionless signal of 
+the format "<interface>.y<guid>.x<change_id>" with the 
+latest change_id associated with signals generated 
+by the given <interface>.</interface></change_id></guid></interface></li>
+</ul></li>
+<li>The provider AllJoyn router invokes the RequestName 
+and AdvertiseName method calls to request and advertise these names. </li>
+<li>The provider AllJoyn router sends out a Name Service 
+response messages to advertise these sessionless signal 
+well-known names using NGNS.</li>
+<li>The consumer AllJoyn router receives the Name Service 
+response messages which pass the prefix matching for "org.alljoyn.sl." 
+or "<interface>.y<guid>.x<change_id>". A FoundAdvertisedName 
+signal gets generated for the advertisements.</change_id></guid></interface></li>
+<li>The consumer determines that it needs to fetch sessionless 
+signals from the provider, based on the received sessionless 
+signal advertised name, change_id comparison, and current 
+set of match rules as per logic described in <a href="#consumer-fetches-sessionless-signals-from-a-provider">Consumer fetches 
+sessionless signals from a provider</a>. </li>
+<li>The consumer AllJoyn router invokes JoinSessionAsync 
+method call to start a session with the provider AllJoyn router. 
+It specifies the sessionless signal well-known name and 
+sessionless session port among other parameters.
+This initiates a session attachment flow at the AllJoyn 
+router level between the consumer and provider. </li>
+<li>Once the session is established, the consumer AllJoyn 
+router sends the RequestRangeMatch signal to request the 
+latest set of sessionless signals from the provider device. 
+This signal includes last acquired change_id for the GUID 
+of provider AllJoyn router, and the match rules that have 
+not yet been applied to the provider GUID.</li>
+<li>The provider AllJoyn router sends the AllJoyn SIGNAL 
+messages for all sessionless signals added that pass the 
+match rules in the range provided in the RequestRangeMatch signal.</li>
+<li>Once all SIGNAL messages have been sent, the provider 
+AllJoyn router initiates LeaveSession for the connected session. 
+This triggers sending a DetachSession SIGNAL message to the 
+consumer AllJoyn router. </li>
+<li>After receiving the DetachSession signal, the consumer 
+AllJoyn router knows that it has received all new sessionless 
+signals from the provider AllJoyn router. It then updates its 
+change_id for that GUID to the latest received change_id 
+from the advertisement and also updates status for match 
+rules which have been applied to that provider. </li>
+<li>The consumer AllJoyn router sends SIGNAL messages to the 
+AllJoyn core library via callback. The AllJoyn core library 
+in turn calls the registered signal handler for the sessionless signal. </li>
+</ol><h4 id="addmatch-includes-the-implements-key">AddMatch includes the 'implements' key</h4>
+<p>The following figure shows the message flow for sending and 
+receiving of the first sessionless signal for the use case 
+when AddMatch includes one or more 'implements' key/value pair. </p>
+<p><strong>NOTE:</strong> Currently, the 'implements' key only applies to the 
+Announcement sessionless signal. As a result, the AddMatch 
+in this case must include "interface=org.alljoyn.About", 
+which is the interface that emits the Announcement signal.</p>
+<p>The AllJoyn router initiates interface name discovery via 
+NGNS to find providers which implements the specified interfaces. 
+Once those providers are discovered, the consumer AllJoyn router 
+fetches the Announcement signals from those providers.</p>
+<p><img src="/sites/default/files/developers/learn/system-desc/first-sls-delivery-implements-addmatch.png" alt="first-sls-delivery-implements-addmatch" /></p>
+<p><strong>Figure:</strong> First sessionless signal delivery (with implements' key in AddMatch)</p>
+<h3 id="sessionless-signal-delivery-between-a-new-consumer-and-a-legacy-provider">Sessionless signal delivery between a new consumer and a legacy provider</h3>
+<p>The following figure shows the message flow when a new consumer 
+(14.06 release or later) received sessionless signals from a 
+legacy provider (prior to the 14.06 release).</p>
+<p><img src="/sites/default/files/developers/learn/system-desc/sls-logic-new-consumer-legacy-provider.png" alt="sls-logic-new-consumer-legacy-provider" /></p>
+<p><strong>Figure:</strong> Sessionless signal logic between new consumer and legacy provider</p>
+<h3 id="sessionless-signal-delivery-between-a-legacy-consumer-and-a-new-provider">Sessionless signal delivery between a legacy consumer and a new provider</h3>
+<p>The following figure shows the message flow when a legacy consumer 
+(prior to the 14.06 release) is receiving sessionless signals 
+from a new provider (14.06 release or later).</p>
+<p><img src="/sites/default/files/developers/learn/system-desc/sls-logic-legacy-consumer-new-provider.png" alt="sls-logic-legacy-consumer-new-provider" /></p>
+<p><strong>Figure:</strong> Sessionless signal logic between legacy consumer and new provider</p>
+<h3 id="subsequent-addmatch-done-by-an-app">Subsequent AddMatch done by an app</h3>
+<p>After the first AddMatch call to the AllJoyn router, applications 
+can subsequently invoke other AddMatch calls to add more 
+match rules for sessionless signals. </p>
+<p>Starting from the 14.06 release, whenever an AddMatch call 
+is invoked by any app, the SLS module takes steps to trigger 
+fetch for sessionless signal messages. The logic is quite 
+similar to the first sessionless signal delivery use case 
+in <a href="#first-sessionless-signal-delivery">First sessionless signal delivery</a>. 
+The additional step is to fetch sessionless signal messages 
+from existing providers that match the specified filtering 
+criteria for sessionless signals.</p>
+<p>The consumer SLS module remembers the sessionless signal 
+advertised name it has received from each provider. For the 
+new AddMatch rule that doesn't include implements key, the 
+consumer uses the match rule to find matching providers among 
+existing providers and fetches sessionless signals from those providers.</p>
+<p>The consumer SLS module performs the following steps.</p>
+<ol><li>Perform interface name discovery for providers for 
+any new 'implements' key/value pair specified in AddMatch. 
+Fetch the sessionless signals from the discovered providers.</li>
+<li>Perform name-based discovery for "<interface>.sl" for any 
+new interface value specified in AddMatch, for which discovery 
+was not already done. Fetch the sessionless signals from 
+the discovered providers.</interface></li>
+<li>Fetch the sessionless signals from the already known providers 
+if the sessionless signal name received from these providers 
+match the filtering criteria specified in match rule.</li>
+</ol><h2 id="org-alljoyn-sl-interface">org.alljoyn.sl interface</h2>
+<p>The org.alljoyn.sl interface is the AllJoyn interface between 
+two AllJoyn routers used to enable the exchange of sessionless 
+signals. <a href="#org-alljoyn-sl-interface-signals">org.alljoyn.sl interface signals</a> 
+lists the org.alljoyn.sl interface signals.</p>
+<h3 id="org-alljoyn-sl-interface-signals">org.alljoyn.sl interface signals</h3>
+<table><thead><tr><th>Signal name</th>
+<th>Description</th>
+</tr></thead><tbody><tr><td>RequestSignals</td>
+<td>Requests sessionless signals associated with change_ids in the range [fromId, currentChangeId], where currentChangeId is the most recently advertised change_id of the provider.</td>
+</tr><tr><td>RequestRange</td>
+<td><p>A signal for requesting sessionless signals associated with change_ids in the range [fromId, toId).</p><p><strong>NOTE:</strong> The "toId" is exclusive so a consumer should set toId=<change_id_value>+1 if it wants to get SLS up to the change_id_value.</change_id_value></p><p>This signal appeared in version 6 of the AllJoyn protocol.</p></td>
+</tr><tr><td>RequestRangeMatch</td>
+<td><p>A signal for requesting sessionless signals associated with change_ids in the range [fromId, toId) that match any of the provided match rules.</p><p>The "toId" is exclusive in this signal too.</p><p>This signal appeared in version 10 of the AllJoyn protocol (associated with the 14.06 release).</p></td>
+</tr></tbody></table><h3 id="org-alljoyn-sl-requestsignals-parameters">org.alljoyn.sl.RequestSignals parameters</h3>
+<table><thead><tr><th>Parameter name</th>
+<th>Description</th>
+</tr></thead><tbody><tr><td>UINT32 fromId</td>
+<td>Start of change_id range.</td>
+</tr></tbody></table><h3 id="org-alljoyn-sl-requestrange-parameters">org.alljoyn.sl.RequestRange parameters</h3>
+<table><thead><tr><th>Parameter name</th>
+<th>Description</th>
+</tr></thead><tbody><tr><td>UINT32 fromId</td>
+<td>Start of change_id range.</td>
+</tr><tr><td>UINT32 toId</td>
+<td>End of change_id range.</td>
+</tr></tbody></table><h3 id="org-alljoyn-sl-requestrangematch-parameters">org.alljoyn.sl.RequestRangeMatch parameters</h3>
+<table><thead><tr><th>Parameter name</th>
+<th>Description</th>
+</tr></thead><tbody><tr><td>UINT32 fromId</td>
+<td>Start of change_id range</td>
+</tr><tr><td>UINT32 toId</td>
+<td>End of change_id range</td>
+</tr><tr><td>ARRAY of STRING matchRules</td>
+<td>Match rules to apply to the range.</td>
+</tr></tbody></table>  </div>
+  </div>
+
+  
+  
+</article>
+              </div>
+                                   
+          </section>
+
+          
+        </div>
+      </div>
+
+
+      
+    </div>
+  </div>
+</div>
+<div id="sticky-footer">
+  
+      <footer id="footer" class="clearfix" role="contentinfo">
+        <div class="region region-footer"><div class="region-inner clearfix"><nav id="block-system-user-menu" class="block block-system block-menu"  role="navigation"><div class="block-inner clearfix">        <div class="block-content content"><ul class="menu clearfix"><li class="first menu-item-537"><a href="/user/register" title="">Register</a></li><li class="last menu-item-536"><a href="/user/login" title="">Log In</a></li></ul></div></div></nav></div></div>    </footer>
+  
+  <div id="lfcollabprojects-footer">
+    <div class="gray-diagonal">
+      <div class="footer-inner">
+        <p>&copy; 2017 AllSeen Alliance, Inc. All Rights Reserved.</p>
+        <p>The Linux Foundation® is a registered trademark of The Linux Foundation. AllSeen, Designed for AllSeen and AllSeen Alliance are trademarks of the AllSeen Alliance, Inc. AllJoyn® is a registered trademark of AllSeen Alliance, Inc.</p>
+        <p>Linux is a registered <a href="http://www.linuxfoundation.org/programs/legal/trademark" title="Linux Mark Institute">trademark</a> of Linus Torvalds.</p>
+        <p>Please see our <a href="/brand-guidelines">brand guidelines</a>, <a href="/trademarks">trademark guidelines</a>, <a href="/about/governance/ip-policy">IP policy</a>, <a href="/terms">terms of use</a>, <a href="/license">license</a>, and <a href="/privacy">privacy policy</a>.</p>
+      </div>
+    </div>
+    <div id="body-bottom">
+      </div>
+</body>
+</html>

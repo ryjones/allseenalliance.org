@@ -1,0 +1,155 @@
+12-13 18:18:33.547      600-624/? W/ActivityManager? No content provider found for permission 
+revoke: file:///data/local/tmp/org.alljoyn.bus.sample.chat
+12-13 18:18:33.557    5419-5419/? D/Finsky? [1] WorkerTask.onPreExecute: Verification Requested 
+for id = 7, data=file:///data/local/tmp/org.alljoyn.bus.sample.chat flags=114 
+fromVerificationActivity=false
+12-13 18:18:33.587    5419-5449/? I/PackageParser? org.alljoyn.bus.sample.chat: compat added 
+android.permission.WRITE_EXTERNAL_STORAGE android.permission.READ_PHONE_STATE
+12-13 18:18:34.398      600-624/? W/ActivityManager? No content provider found for permission 
+revoke: file:///data/local/tmp/org.alljoyn.bus.sample.chat
+12-13 18:18:34.398      600-624/? I/PackageParser? org.alljoyn.bus.sample.chat: compat added 
+android.permission.WRITE_EXTERNAL_STORAGE android.permission.READ_PHONE_STATE
+12-13 18:18:34.478      600-616/? I/ActivityManager? Force stopping org.alljoyn.bus.sample.chat 
+appid=10183 user=-1: uninstall pkg
+12-13 18:18:34.688      600-624/? I/PackageManager? Running dexopt on: 
+org.alljoyn.bus.sample.chat
+12-13 18:18:34.688      600-624/? I/PackageManager? Package org.alljoyn.bus.sample.chat 
+codePath changed from /data/app/org.alljoyn.bus.sample.chat-2.apk to 
+/data/app/org.alljoyn.bus.sample.chat-1.apk; Retaining data and using new
+12-13 18:18:34.868      600-624/? W/PackageManager? Code path for pkg : 
+org.alljoyn.bus.sample.chat changing from /data/app/org.alljoyn.bus.sample.chat-2.apk to 
+/data/app/org.alljoyn.bus.sample.chat-1.apk
+12-13 18:18:34.868      600-624/? W/PackageManager? Resource path for pkg : 
+org.alljoyn.bus.sample.chat changing from /data/app/org.alljoyn.bus.sample.chat-2.apk to 
+/data/app/org.alljoyn.bus.sample.chat-1.apk
+12-13 18:18:34.868      600-616/? I/ActivityManager? Force stopping org.alljoyn.bus.sample.chat 
+appid=10183 user=-1: update pkg
+12-13 18:18:35.289      600-624/? I/ActivityManager? Force stopping org.alljoyn.bus.sample.chat 
+appid=10183 user=0: pkg removed
+12-13 18:18:35.759      600-600/? D/BackupManagerService? Received broadcast Intent { 
+act=android.intent.action.PACKAGE_REMOVED dat=package:org.alljoyn.bus.sample.chat 
+flg=0x4000010 (has extras) }
+12-13 18:18:35.929      600-600/? D/BackupManagerService? Received broadcast Intent { 
+act=android.intent.action.PACKAGE_ADDED dat=package:org.alljoyn.bus.sample.chat flg=0x4000010 
+(has extras) }
+12-13 18:18:36.640     600-3528/? I/ActivityManager? START u0 {act=android.intent.action.MAIN 
+cat=[android.intent.category.LAUNCHER] flg=0x10000000 
+cmp=org.alljoyn.bus.sample.chat/.TabWidget} from pid 23808
+12-13 18:18:36.880      600-610/? I/ActivityManager? Start proc org.alljoyn.bus.sample.chat for 
+activity org.alljoyn.bus.sample.chat/.TabWidget: pid=23843 uid=10183 gids={50183, 3003, 3002, 
+3001, 1028, 1015}
+12-13 18:18:36.890  23843-23843/org.alljoyn.bus.sample.chat D/dalvikvm? Late-enabling CheckJNI
+12-13 18:18:37.010  23843-23843/org.alljoyn.bus.sample.chat I/chat.ChatApplication? onCreate()
+12-13 18:18:37.111  23843-23843/org.alljoyn.bus.sample.chat I/chat.TabWidget? onCreate()
+12-13 18:18:37.371  23843-23843/org.alljoyn.bus.sample.chat I/chat.UseActivity? onCreate()
+12-13 18:18:37.491  23843-23843/org.alljoyn.bus.sample.chat I/chat.ChatApplication? checkin()
+12-13 18:18:37.491  23843-23843/org.alljoyn.bus.sample.chat I/chat.UseActivity? updateHistory()
+12-13 18:18:37.501  23843-23843/org.alljoyn.bus.sample.chat I/chat.UseActivity? updateHistory()
+12-13 18:18:37.501  23843-23843/org.alljoyn.bus.sample.chat I/chat.ChatApplication? 
+addObserver(org.alljoyn.bus.sample.chat.UseActivity@41e6bbf0)
+12-13 18:18:37.521  23843-23843/org.alljoyn.bus.sample.chat D/dalvikvm? GC_FOR_ALLOC freed 
+85K, 2% free 9473K/9588K, paused 19ms, total 19ms
+12-13 18:18:37.621  23843-23843/org.alljoyn.bus.sample.chat I/chat.AllJoynService? 
+System.loadLibrary("alljoyn_java")
+12-13 18:18:37.621  23843-23843/org.alljoyn.bus.sample.chat W/dalvikvm? Exception 
+Ljava/lang/UnsatisfiedLinkError; thrown while initializing 
+Lorg/alljoyn/bus/sample/chat/AllJoynService;
+12-13 18:18:37.621  23843-23843/org.alljoyn.bus.sample.chat W/dalvikvm? Class init failed in 
+newInstance call (Lorg/alljoyn/bus/sample/chat/AllJoynService;)
+12-13 18:18:37.621  23843-23843/org.alljoyn.bus.sample.chat D/AndroidRuntime? Shutting down 
+VM
+12-13 18:18:37.621  23843-23843/org.alljoyn.bus.sample.chat W/dalvikvm? threadid=1: thread 
+exiting with uncaught exception (group=0x41567ba8)
+12-13 18:18:37.631  23843-23843/org.alljoyn.bus.sample.chat E/AndroidRuntime? FATAL 
+EXCEPTION: main
+    Process: org.alljoyn.bus.sample.chat, PID: 23843
+    java.lang.UnsatisfiedLinkError: Couldn't load alljoyn_java from loader 
+dalvik.system.PathClassLoader[DexPathList[[zip file "/data/app/org.alljoyn.bus.sample.chat-
+1.apk"],nativeLibraryDirectories=[/data/app-lib/org.alljoyn.bus.sample.chat-1, /vendor/lib, 
+/system/lib]]]: findLibrary returned null
+            at java.lang.Runtime.loadLibrary(Runtime.java:358)
+            at java.lang.System.loadLibrary(System.java:526)
+            at org.alljoyn.bus.sample.chat.AllJoynService.<clinit>(AllJoynService.java:1269)
+            at java.lang.Class.newInstanceImpl(Native Method)
+            at java.lang.Class.newInstance(Class.java:1208)
+            at android.app.ActivityThread.handleCreateService(ActivityThread.java:2553)
+            at android.app.ActivityThread.access$1800(ActivityThread.java:135)
+            at android.app.ActivityThread$H.handleMessage(ActivityThread.java:1278)
+            at android.os.Handler.dispatchMessage(Handler.java:102)
+            at android.os.Looper.loop(Looper.java:136)
+            at android.app.ActivityThread.main(ActivityThread.java:5017)
+            at java.lang.reflect.Method.invokeNative(Native Method)
+            at java.lang.reflect.Method.invoke(Method.java:515)
+            at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:779)
+            at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:595)
+            at dalvik.system.NativeStart.main(Native Method)
+12-13 18:18:37.671      600-610/? W/ActivityManager? Force finishing activity 
+org.alljoyn.bus.sample.chat/.TabWidget
+12-13 18:18:37.981      600-610/? I/WindowManager? Screenshot max retries 4 of Token{429d2978 
+ActivityRecord{426d6e58 u0 org.alljoyn.bus.sample.chat/.TabWidget t14 f}} 
+appWin=Window{42947ff8 u0 Starting org.alljoyn.bus.sample.chat} drawState=4
+12-13 18:18:38.482      600-616/? W/ActivityManager? Activity pause timeout for 
+ActivityRecord{426d6e58 u0 org.alljoyn.bus.sample.chat/.TabWidget t14 f}
+12-13 18:18:39.453  23947-23947/? D/HumbleBundle.PackageReceiver? Intent received for UID 
+10183: Intent { act=android.intent.action.PACKAGE_REMOVED 
+dat=package:org.alljoyn.bus.sample.chat flg=0x4000010 
+cmp=com.humblebundle.library/.PackageReceiver (has extras) }
+12-13 18:18:42.416   5844-24039/? I/Icing.InternalIcingCorporaProvider? Updating corpora: A: 
+org.alljoyn.bus.sample.chat, C: MAYBE
+12-13 18:18:42.526  23947-23947/? D/HumbleBundle.PackageReceiver? Intent received for UID 
+10183: Intent { act=android.intent.action.PACKAGE_ADDED dat=package:org.alljoyn.bus.sample.chat 
+flg=0x4000010 cmp=com.humblebundle.library/.PackageReceiver (has extras) }
+12-13 18:18:42.887  23947-23947/? D/HumbleBundle.PackageReceiver? Intent received for UID 
+10183: Intent { act=android.intent.action.PACKAGE_REPLACED 
+dat=package:org.alljoyn.bus.sample.chat flg=0x4000010 
+cmp=com.humblebundle.library/.PackageReceiver (has extras) }
+12-13 18:18:46.651      600-615/? E/WindowManager? Starting window 
+AppWindowToken{42840f90 token=Token{429d2978 ActivityRecord{426d6e58 u0 
+org.alljoyn.bus.sample.chat/.TabWidget t14}}} timed out
+12-13 18:18:48.533      600-616/? W/ActivityManager? Activity destroy timeout for 
+ActivityRecord{426d6e58 u0 org.alljoyn.bus.sample.chat/.TabWidget t14 f}
+12-13 18:18:49.093      600-615/? W/WindowManager? This window was lost: Window{429535f0 u0 
+org.alljoyn.bus.sample.chat/org.alljoyn.bus.sample.chat.TabWidget}
+12-13 18:18:49.093      600-615/? W/WindowManager? mDisplayId=0 mSession=Session{42876588 
+23843:u0a10183} mClient=android.os.BinderProxy@428863d0
+    mOwnerUid=10183 mShowToOwnerOnly=true package=org.alljoyn.bus.sample.chat appop=NONE
+    mAttrs=WM.LayoutParams{(0,0)(fillxfill) sim=#100 ty=1 fl=#40010100 compatible=true pfl=0x88 
+wanim=0x1030001}
+    Requested w=0 h=0 mLayoutSeq=4214
+    mBaseLayer=21000 mSubLayer=0 mAnimLayer=21080+0=21080 mLastLayer=0
+    mToken=AppWindowToken{42840f90 token=Token{429d2978 ActivityRecord{426d6e58 u0 
+org.alljoyn.bus.sample.chat/.TabWidget t14}}}
+    mRootToken=AppWindowToken{42840f90 token=Token{429d2978 ActivityRecord{426d6e58 u0 
+org.alljoyn.bus.sample.chat/.TabWidget t14}}}
+    mAppToken=AppWindowToken{42840f90 token=Token{429d2978 ActivityRecord{426d6e58 u0 
+org.alljoyn.bus.sample.chat/.TabWidget t14}}}
+    mViewVisibility=0x4 mHaveFrame=true mObscured=false
+    mSeq=0 mSystemUiVisibility=0x0
+    mRelayoutCalled=false mLayoutNeeded=false
+    mGivenContentInsets=[0,0][0,0] mGivenVisibleInsets=[0,0][0,0]
+    mConfiguration=null
+    mHasSurface=false mShownFrame=[0.0,0.0][0.0,0.0] isReadyForDisplay()=false
+    mFrame=[0,0][768,1184] last=[0,0][0,0]
+    mSystemDecorRect=[0,0][0,0] last=[0,0][0,0]
+    mCompatFrame=[0,0][640,987]
+    Frames: containing=[0,0][768,1184] parent=[0,0][768,1184]
+    display=[0,0][768,1184] overscan=[0,0][768,1280]
+    content=[0,50][768,1184] visible=[0,50][768,1184]
+    decor=[0,50][768,1184]
+    Cur insets: overscan=[0,0][0,0] content=[0,42][0,0] visible=[0,42][0,0]
+    Lst insets: overscan=[0,0][0,0] content=[0,0][0,0] visible=[0,0][0,0]
+    WindowStateAnimator{429a0f88 
+org.alljoyn.bus.sample.chat/org.alljoyn.bus.sample.chat.TabWidget}:
+    mShownAlpha=0.0 mAlpha=1.0 mLastAlpha=0.0
+    mGlobalScale=1.1995947 mDsDx=1.0 mDtDx=0.0 mDsDy=0.0 mDtDy=1.0
+12-13 18:18:49.093      600-615/? V/WindowManager? #8: Window{4299ca78 u0 Application Error: 
+org.alljoyn.bus.sample.chat}
+12-13 18:18:57.112      600-616/? W/ActivityManager? Timeout executing service: 
+ServiceRecord{426b9698 u0 org.alljoyn.bus.sample.chat/.AllJoynService}
+12-13 18:18:57.112      600-616/? I/ActivityManager? Crashing app skipping ANR: 
+ProcessRecord{426c3078 23843:org.alljoyn.bus.sample.chat/u0a183} Executing service 
+org.alljoyn.bus.sample.chat/.AllJoynService
+12-13 18:22:56.788     600-1125/? I/ActivityManager? Process org.alljoyn.bus.sample.chat (pid 
+23843) has died.
+12-13 18:22:56.788     600-3639/? I/WindowState? WIN DEATH: Window{429535f0 u0 
+org.alljoyn.bus.sample.chat/org.alljoyn.bus.sample.chat.TabWidget}

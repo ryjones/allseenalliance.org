@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<!--[if IEMobile 7]><html class="iem7" lang="en" dir="ltr"><![endif]-->
+<!--[if lte IE 6]><html class="lt-ie9 lt-ie8 lt-ie7" lang="en" dir="ltr"><![endif]-->
+<!--[if (IE 7)&(!IEMobile)]><html class="lt-ie9 lt-ie8" lang="en" dir="ltr"><![endif]-->
+<!--[if IE 8]><html class="lt-ie9" lang="en" dir="ltr"><![endif]-->
+<!--[if (gte IE 9)|(gt IEMobile 7)]><!--><html lang="en" dir="ltr"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/terms/"
+  xmlns:foaf="http://xmlns.com/foaf/0.1/"
+  xmlns:og="http://ogp.me/ns#"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:sioc="http://rdfs.org/sioc/ns#"
+  xmlns:sioct="http://rdfs.org/sioc/types#"
+  xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema#"><!--<![endif]-->
+<head>
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
+<meta charset="utf-8" />
+<link rel="shortlink" href="/node/4105" />
+<link rel="shortcut icon" href="https://identity.allseenalliance.org/sites/all/themes/at_alljoyn/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="/developers/learn/core/system-description" />
+<meta name="viewport" content="width=device-width" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta property="og:image" content="https://identity.allseenalliance.org/sites/all/themes/at_alljoyn/images/allseen-logo.png"/>
+<meta name="google-translate-customization" content="48b015afeed82101-ecae534af0f48252-ga0b6470a6208b2f5-f"></meta>
+<meta name="MobileOptimized" content="width">
+<meta name="HandheldFriendly" content="true">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AllJoyn® System Description - AllSeen Alliance</title>
+<link type="text/css" rel="stylesheet" href="https://identity.allseenalliance.org/sites/default/files/css/css_xE-rWrJf-fncB6ztZfd2huxqgxu4WO-qwma6Xer30m4.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://identity.allseenalliance.org/sites/default/files/css/css_7Vcu6qIuRTO46aDOBZp7_mtksGdhCHSe0pjTO2YbGng.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://identity.allseenalliance.org/sites/default/files/css/css_J2n1xiaSuececTK0yC3DT_Msm4PrkPwHizxr0oXGGoo.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://identity.allseenalliance.org/sites/default/files/css/css_oxEtvjMfj8c8EEJJ-1WXLGGntCnC0UvrbYsq0Gw4m4Q.css" media="screen" />
+<link type="text/css" rel="stylesheet" href="https://identity.allseenalliance.org/sites/default/files/css/css_9EusV9fcbkpqBeTGdJPl7ru65jm-3ngbTi_D6YRR_5A.css" media="only screen" />
+<script src="https://identity.allseenalliance.org/sites/default/files/js/js_UWQINlriydSoeSiGQxToOUdv493zEa7dpsXC1OtYlZU.js"></script>
+<script src="https://identity.allseenalliance.org/sites/default/files/js/js_COMsmDyrY9mzVU28X2uGvF4Ba3vd5eTo5xEO7dvCUZM.js"></script>
+<script src="https://identity.allseenalliance.org/sites/default/files/js/js_i8oyg1R4On_HyzPiZ5zC3V-DxehjGAcpKwNao5s0s5I.js"></script>
+<script>hljs.configure({languages:[]}); hljs.initHighlightingOnLoad();</script>
+<script src="https://identity.allseenalliance.org/sites/default/files/js/js_aG0kZAhSHT6G3QC-d9Wwx9gQp5d0em8X6FmMYZ1e5h4.js"></script>
+<script>var _gaq = _gaq || [];_gaq.push(["_setAccount", "UA-"]);_gaq.push(["_trackPageview"]);(function() {var ga = document.createElement("script");ga.type = "text/javascript";ga.async = true;ga.src = ("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/ga.js";var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(ga, s);})();</script>
+<script src="https://identity.allseenalliance.org/sites/default/files/js/js_R35PAK16384fXh7f2OqvXVkbbrwr8ABLrDpR1zTluo0.js"></script>
+<script src="https://identity.allseenalliance.org/sites/default/files/js/js_DKtRHJS-jz_cHgf23K7wnIWphCanZ_Rz74Aw-DKQyFs.js"></script>
+<script>jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"at_alljoyn","theme_token":"KSJosLEME4OQ_I6GjDql_FNLCy3SY_RqJpPQE6ytFE4","js":{"misc\/jquery.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/all\/modules\/contrib\/comment_notify\/comment_notify.js":1,"sites\/all\/modules\/alljoyn\/custom_modules\/allseen_docs\/allseen_docs_highlight\/highlightjs\/highlight.min.js":1,"0":1,"sites\/all\/libraries\/colorbox\/jquery.colorbox-min.js":1,"sites\/all\/modules\/contrib\/colorbox\/js\/colorbox.js":1,"sites\/all\/modules\/contrib\/colorbox\/styles\/default\/colorbox_style.js":1,"sites\/all\/modules\/contrib\/colorbox\/js\/colorbox_load.js":1,"sites\/all\/modules\/contrib\/colorbox\/js\/colorbox_inline.js":1,"sites\/all\/modules\/contrib\/panels\/js\/panels.js":1,"sites\/all\/modules\/contrib\/quote\/quote.js":1,"sites\/all\/modules\/contrib\/views_slideshow\/js\/views_slideshow.js":1,"sites\/all\/modules\/contrib\/google_analytics\/googleanalytics.js":1,"1":1,"sites\/all\/modules\/alljoyn\/custom_modules\/allseen_docs\/allseen_docs_nav\/allseen-docs-nav.js":1,"sites\/all\/themes\/at_alljoyn\/scripts\/alljoyn.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"sites\/all\/modules\/contrib\/comment_notify\/comment_notify.css":1,"sites\/all\/modules\/ldap\/ldap_user\/ldap_user.css":1,"modules\/book\/book.css":1,"modules\/comment\/comment.css":1,"sites\/all\/modules\/contrib\/date\/date_api\/date.css":1,"sites\/all\/modules\/contrib\/date\/date_popup\/themes\/datepicker.1.7.css":1,"modules\/field\/theme\/field.css":1,"sites\/all\/modules\/contrib\/mollom\/mollom.css":1,"modules\/node\/node.css":1,"modules\/user\/user.css":1,"modules\/forum\/forum.css":1,"sites\/all\/modules\/contrib\/views\/css\/views.css":1,"sites\/all\/modules\/alljoyn\/custom_modules\/allseen_docs\/allseen_docs_highlight\/highlightjs\/default.min.css":1,"sites\/all\/modules\/contrib\/colorbox\/styles\/default\/colorbox_style.css":1,"sites\/all\/modules\/contrib\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/ldap\/ldap_servers\/ldap_servers.admin.css":1,"sites\/all\/modules\/contrib\/panels\/css\/panels.css":1,"sites\/all\/modules\/contrib\/quote\/quote.css":1,"sites\/all\/modules\/contrib\/views_slideshow\/views_slideshow.css":1,"sites\/all\/modules\/alljoyn\/custom_modules\/allseen_docs\/allseen_docs_nav\/allseen-docs-nav.css":1,"sites\/all\/modules\/alljoyn\/features\/content_type_developer_document\/content-type-developer-document.css":1,"sites\/all\/themes\/adaptivetheme\/at_core\/css\/at.layout.css":1,"sites\/all\/themes\/at_alljoyn\/css\/fonts.css":1,"sites\/all\/themes\/at_alljoyn\/css\/globals.css":1,"sites\/all\/themes\/at_alljoyn\/css\/jcarousel-alljoyn.css":1,"public:\/\/adaptivetheme\/at_alljoyn_files_7dbe1ef5\/at_alljoyn.responsive.layout.css":1,"public:\/\/adaptivetheme\/at_alljoyn_files_7dbe1ef5\/at_alljoyn.responsive.styles.css":1}},"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":true,"mobiledevicewidth":"480px"},"jcarousel":{"ajaxPath":"\/jcarousel\/ajax\/views"},"quote_nest":2,"googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls|xml|z|zip"}});</script>
+<!--[if lt IE 9]>
+<script src="https://identity.allseenalliance.org/sites/all/themes/adaptivetheme/at_core/scripts/respond.js?nwgww1"></script>
+<script src="https://identity.allseenalliance.org/sites/all/themes/adaptivetheme/at_core/scripts/html5.js?nwgww1"></script>
+<script src="https://identity.allseenalliance.org/sites/all/themes/adaptivetheme/at_core/scripts/PIE.htc?nwgww1"></script>
+<script src="https://identity.allseenalliance.org/sites/all/themes/adaptivetheme/at_core/scripts/selectivizr.js?nwgww1"></script>
+<![endif]-->
+</head>
+<body class="html not-front not-logged-in one-sidebar sidebar-first page-node page-node- page-node-4105 node-type-developer-document site-name-hidden with-subnav page-developers-learn-core-system-description section-developers">
+  <div id="body-top">
+      </div>
+  <div id="skip-link">
+    <a href="#main-content" class="element-invisible element-focusable">Skip to main content</a>
+  </div>
+  <div class="region region-page-top"><div class="region-inner clearfix"><div id="fb-root"></div><script type="text/javascript">
+     window.fbAsyncInit = function() {
+       FB.init({
+         appId: "492099574180957",
+         status: true,
+         cookie: true,
+         xfbml: true,
+         oauth : true,
+         channelUrl: "https:\/\/identity.allseenalliance.org\/service_links\/channel"
+         });
+
+         FB.Event.subscribe('edge.create', function(href, widget) {
+    _gaq.push(['_trackEvent', 'facebook', 'Facebook like', href]);
+   });FB.Event.subscribe('edge.remove', function(href, widget) {
+    _gaq.push(['_trackEvent', 'facebook', 'Facebook unlike', href]);
+   });
+       };
+       (function(d){
+     var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement('script'); js.id = id; js.async = true;
+     js.src = '//connect.facebook.net/en_US/all.js';
+     ref.parentNode.insertBefore(js, ref);
+   }(document));
+    </script></div></div>  
+<div id="wrap">
+
+  <div id="lfcollabprojects-header">
+    <div class="gray-diagonal">
+      <div class="header-inner">
+        <a id="lfcollabprojects-logo" href="http://collabprojects.linuxfoundation.org">Linux Foundation Collaborative Projects</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="page" class="container page">
+
+    
+    <header id="header" class="clearfix" role="banner">
+
+      <div class="region region-header"><div class="region-inner clearfix"><div id="block-block-19" class="block block-block" ><div class="block-inner clearfix">        <div class="block-content content"><br /><br /><br /><br /><br /><br /><br /></div></div></div></div></div>
+              <div id="branding" class="branding-elements clearfix">
+
+                      <div id="logo"><a href="/" title="Home page"><img class="site-logo" typeof="foaf:Image" src="https://identity.allseenalliance.org/sites/default/files/logo.png" alt="AllSeen Alliance" /></a></div>
+          
+                      <hgroup id="name-and-slogan" class="element-invisible">
+                              <h1 id="site-name" class="element-invisible"><a href="/" title="Home page">AllSeen Alliance</a></h1>
+                                        </hgroup>
+          
+          <!--main menu-->
+          <a id="main-menu-toggle" href="#">Site Sections</a>
+  		  		  		
+        </div>
+      
+    </header>
+
+
+    <div id="columns" class="clearfix">
+      <div id="sub-menu-bar">
+        <div class="region region-sub-menu-bar"><div class="region-inner clearfix"><div id="block-menu-block-allseen-docs-nav" class="block block-menu-block"  role="navigation"><div class="block-inner clearfix">        <div class="block-content content"><div class="menu-block-wrapper menu-block-allseen-docs-nav menu-name-main-menu parent-mlid-0 menu-level-2">
+  <ul class="menu clearfix"><li class="first has-children active-trail menu-mlid-2504 menu-item-2504"><a href="/developers/learn" class="active-trail">Learn</a></li><li class="has-children menu-mlid-2539 menu-item-2539"><a href="/developers/download">Download</a></li><li class="has-children menu-mlid-2541 menu-item-2541"><a href="/developers/develop">Develop</a></li><li class="last has-children menu-mlid-2636 menu-item-2636"><a href="/developers/contribute">Contribute</a></li></ul></div>
+</div></div></div><section id="block-menu-block-allseen-docs-responsive-nav" class="block block-menu-block"  role="navigation"><div class="block-inner clearfix">        <div class="block-title-wrapper">
+      <h2 class="block-title">Menu</h2>
+    </div>
+      <div class="block-content content"><div class="menu-block-wrapper menu-block-allseen-docs-responsive-nav menu-name-main-menu parent-mlid-0 menu-level-1">
+  <ul class="menu clearfix"><li class="first menu-parent menu-mlid-1994 menu-item-1994"><a href="/about">About</a><ul class="menu clearfix"><li class="first menu-mlid-2486 menu-item-2486"><a href="/about/why-allseen">Why AllSeen</a></li><li class="menu-mlid-2464 menu-item-2464"><a href="/about/get-involved">Get Involved</a></li><li class="collapsed menu-mlid-2446 menu-item-2446"><a href="/about/governance/ip-policy">IP Policy</a></li><li class="menu-mlid-2491 menu-item-2491"><a href="/about/working-groups">Working Groups</a></li><li class="menu-mlid-2286 menu-item-2286"><a href="/about/members">Member Companies</a></li><li class="menu-mlid-2285 menu-item-2285"><a href="/about/join-allseen-alliance">Join The AllSeen Alliance</a></li><li class="collapsed menu-mlid-2447 menu-item-2447"><a href="/about/governance">Governance</a></li><li class="menu-mlid-501 menu-item-501"><a href="/about/faqs">FAQs</a></li><li class="menu-mlid-2322 menu-item-2322"><a href="/about/contact">Contact Us</a></li><li class="menu-mlid-2282 menu-item-2282"><a href="/allseen/what-is-allseen-alliance">What is AllSeen Alliance?</a></li><li class="last menu-mlid-2490 menu-item-2490"><a href="https://wiki.allseenalliance.org/members_private/start?do=login&amp;sectok=34485854163fe6a0be457198139e2c84" title="Members Area" id="members_area" name="Members Area" rel="nofollow" target="_blank">Members Area</a></li></ul></li><li class="menu-parent active-trail menu-mlid-2503 menu-item-2503"><a href="/developers" class="active-trail">Developers</a><ul class="menu clearfix"><li class="first menu-parent has-children active-trail menu-mlid-2504 menu-item-2504"><a href="/developers/learn" class="active-trail active-trail">Learn</a><ul class="menu clearfix"><li class="first menu-mlid-2505 menu-item-2505"><a href="/developers/learn/use-cases">Use Cases</a></li><li class="menu-mlid-2506 menu-item-2506"><a href="/developers/learn/architecture">Architecture</a></li><li class="menu-parent active-trail menu-mlid-2507 menu-item-2507"><a href="/developers/learn/core" class="active-trail">Core Framework</a><ul class="menu clearfix"><li class="first menu-parent menu-mlid-2508 menu-item-2508"><a href="/developers/learn/core/about-announcement">About Announcement</a><ul class="menu clearfix"><li class="first menu-mlid-2509 menu-item-2509"><a href="/developers/learn/core/about-announcement/interface">Interface</a></li><li class="last menu-mlid-2510 menu-item-2510"><a href="/developers/learn/core/about-announcement/interface-14-02">Interface 14.02</a></li></ul></li><li class="menu-mlid-2511 menu-item-2511"><a href="/developers/learn/core/events-and-actions">Events and Actions</a></li><li class="menu-mlid-2992 menu-item-2992"><a href="/developers/learn/core/rn_config">Routing Node Configuration</a></li><li class="menu-mlid-2512 menu-item-2512"><a href="/developers/learn/core/standard-core">Standard Core</a></li><li class="menu-mlid-2513 menu-item-2513"><a href="/developers/learn/core/thin-core">Thin Core</a></li><li class="menu-parent active-trail active menu-mlid-2514 menu-item-2514"><a href="/developers/learn/core/system-description" class="active-trail active">System Description</a><ul class="menu clearfix"><li class="first menu-mlid-2515 menu-item-2515"><a href="/developers/learn/core/system-description/system-architecture">System Architecture</a></li><li class="menu-mlid-2516 menu-item-2516"><a href="/developers/learn/core/system-description/advertisement-discovery">Advertisement and Discovery</a></li><li class="menu-mlid-2645 menu-item-2645"><a href="/developers/learn/core/system-description/alljoyn-transport">AllJoyn Transport</a></li><li class="menu-mlid-2517 menu-item-2517"><a href="/developers/learn/core/system-description/data-exchange">Data Exchange</a></li><li class="menu-mlid-2518 menu-item-2518"><a href="/developers/learn/core/system-description/alljoyn-session">AllJoyn Session</a></li><li class="menu-mlid-2519 menu-item-2519"><a href="/developers/learn/core/system-description/sessionless-signal">Sessionless Signal</a></li><li class="menu-mlid-2520 menu-item-2520"><a href="/developers/learn/core/system-description/alljoyn-security">AllJoyn Security</a></li><li class="menu-mlid-2521 menu-item-2521"><a href="/developers/learn/core/system-description/thin-apps">Thin Apps</a></li><li class="last menu-mlid-2522 menu-item-2522"><a href="/developers/learn/core/system-description/events-actions">Events and Actions</a></li></ul></li><li class="last menu-parent menu-mlid-2937 menu-item-2937"><a href="/developers/learn/core/security2_0">Security 2.0</a><ul class="menu clearfix"><li class="first last menu-mlid-2938 menu-item-2938"><a href="/developers/learn/core/security2_0/hld">High-Level Design</a></li></ul></li></ul></li><li class="menu-parent menu-mlid-2523 menu-item-2523"><a href="/developers/learn/base-services">Base Services</a><ul class="menu clearfix"><li class="first menu-parent menu-mlid-2524 menu-item-2524"><a href="/developers/learn/base-services/onboarding">Onboarding</a><ul class="menu clearfix"><li class="first menu-mlid-2525 menu-item-2525"><a href="/developers/learn/base-services/onboarding/interface">Interface</a></li><li class="last menu-mlid-2526 menu-item-2526"><a href="/developers/learn/base-services/onboarding/interface-14-02">Interface 14.02</a></li></ul></li><li class="menu-parent menu-mlid-2527 menu-item-2527"><a href="/developers/learn/base-services/configuration">Configuration</a><ul class="menu clearfix"><li class="first menu-mlid-2528 menu-item-2528"><a href="/developers/learn/base-services/configuration/interface">Interface</a></li><li class="last menu-mlid-2529 menu-item-2529"><a href="/developers/learn/base-services/configuration/interface-14-02">Interface 14.02</a></li></ul></li><li class="menu-parent menu-mlid-2530 menu-item-2530"><a href="/developers/learn/base-services/notification">Notification</a><ul class="menu clearfix"><li class="first menu-mlid-2531 menu-item-2531"><a href="/developers/learn/base-services/notification/interface">Interface</a></li><li class="last menu-mlid-2532 menu-item-2532"><a href="/developers/learn/base-services/notification/interface-14-02">Interface 14.02</a></li></ul></li><li class="menu-parent menu-mlid-2533 menu-item-2533"><a href="/developers/learn/base-services/controlpanel">ControlPanel</a><ul class="menu clearfix"><li class="first menu-mlid-2534 menu-item-2534"><a href="/developers/learn/base-services/controlpanel/interface">Interface</a></li><li class="last menu-mlid-2535 menu-item-2535"><a href="/developers/learn/base-services/controlpanel/interface-14-02">Interface 14.02</a></li></ul></li><li class="last menu-parent menu-mlid-2536 menu-item-2536"><a href="/developers/learn/base-services/audiostreaming">Audio Streaming</a><ul class="menu clearfix"><li class="first last menu-mlid-2537 menu-item-2537"><a href="/developers/learn/base-services/audiostreaming/interface">Interface</a></li></ul></li></ul></li><li class="last menu-mlid-2538 menu-item-2538"><a href="/developers/learn/glossary">Glossary</a></li></ul></li><li class="menu-parent has-children menu-mlid-2539 menu-item-2539"><a href="/developers/download">Download</a><ul class="menu clearfix"><li class="first last menu-mlid-2540 menu-item-2540"><a href="/developers/download/supported-platforms">Supported Platforms</a></li></ul></li><li class="menu-parent has-children menu-mlid-2541 menu-item-2541"><a href="/developers/develop">Develop</a><ul class="menu clearfix"><li class="first menu-parent menu-mlid-2542 menu-item-2542"><a href="/developers/develop/building">Building</a><ul class="menu clearfix"><li class="first menu-parent menu-mlid-2543 menu-item-2543"><a href="/developers/develop/building/android">Android</a><ul class="menu clearfix"><li class="first last menu-mlid-2544 menu-item-2544"><a href="/developers/develop/building/android/build-source">Build Source</a></li></ul></li><li class="menu-parent menu-mlid-2545 menu-item-2545"><a href="/developers/develop/building/linux">Linux</a><ul class="menu clearfix"><li class="first menu-mlid-2546 menu-item-2546"><a href="/developers/develop/building/linux/openwrt">OpenWRT</a></li><li class="last menu-mlid-2547 menu-item-2547"><a href="/developers/develop/building/linux/build-source">Build Source</a></li></ul></li><li class="menu-parent menu-mlid-2548 menu-item-2548"><a href="/developers/develop/building/ios-osx">iOS/OS X</a><ul class="menu clearfix"><li class="first last menu-mlid-2549 menu-item-2549"><a href="/developers/develop/building/ios-osx/build-source">Build Source</a></li></ul></li><li class="menu-parent menu-mlid-2550 menu-item-2550"><a href="/developers/develop/building/windows">Windows</a><ul class="menu clearfix"><li class="first last menu-mlid-2551 menu-item-2551"><a href="/developers/develop/building/windows/build-source">Build Source</a></li></ul></li><li class="menu-mlid-2552 menu-item-2552"><a href="/developers/develop/building/thin-linux">Thin - Linux</a></li><li class="menu-mlid-2553 menu-item-2553"><a href="/developers/develop/building/thin-windows">Thin - Windows</a></li><li class="last menu-mlid-2993 menu-item-2993"><a href="/developers/develop/building/alljoyn-js">AllJoyn.js</a></li></ul></li><li class="menu-parent menu-mlid-2554 menu-item-2554"><a href="/developers/develop/run-sample-apps">Running Samples</a><ul class="menu clearfix"><li class="first menu-parent menu-mlid-2555 menu-item-2555"><a href="/developers/develop/run-sample-apps/basic">Basic</a><ul class="menu clearfix"><li class="first menu-mlid-2556 menu-item-2556"><a href="/developers/develop/run-sample-apps/basic/android">Android</a></li><li class="menu-mlid-2557 menu-item-2557"><a href="/developers/develop/run-sample-apps/basic/linux">Linux</a></li><li class="menu-mlid-2558 menu-item-2558"><a href="/developers/develop/run-sample-apps/basic/ios-osx">iOS/OS X</a></li><li class="menu-mlid-2559 menu-item-2559"><a href="/developers/develop/run-sample-apps/basic/windows">Windows</a></li><li class="menu-mlid-2560 menu-item-2560"><a href="/developers/develop/run-sample-apps/basic/thin-linux">Thin - Linux</a></li><li class="last menu-mlid-2561 menu-item-2561"><a href="/developers/develop/run-sample-apps/basic/thin-windows">Thin - Windows</a></li></ul></li><li class="menu-parent menu-mlid-2562 menu-item-2562"><a href="/developers/develop/run-sample-apps/chat">Chat</a><ul class="menu clearfix"><li class="first menu-mlid-2563 menu-item-2563"><a href="/developers/develop/run-sample-apps/chat/android">Android</a></li><li class="menu-mlid-2564 menu-item-2564"><a href="/developers/develop/run-sample-apps/chat/linux">Linux</a></li><li class="menu-mlid-2565 menu-item-2565"><a href="/developers/develop/run-sample-apps/chat/ios-osx">iOS/OS X</a></li><li class="menu-mlid-2566 menu-item-2566"><a href="/developers/develop/run-sample-apps/chat/windows">Windows</a></li><li class="last menu-mlid-2567 menu-item-2567"><a href="/developers/develop/run-sample-apps/chat/thin-linux">Thin - Linux</a></li></ul></li><li class="menu-parent menu-mlid-2568 menu-item-2568"><a href="/developers/develop/run-sample-apps/about">About</a><ul class="menu clearfix"><li class="first menu-mlid-2569 menu-item-2569"><a href="/developers/develop/run-sample-apps/about/linux">Linux</a></li><li class="menu-mlid-2570 menu-item-2570"><a href="/developers/develop/run-sample-apps/about/ios-osx">iOS/OS X</a></li><li class="last menu-mlid-2646 menu-item-2646"><a href="/developers/develop/run-sample-apps/about/windows">Windows</a></li></ul></li><li class="menu-mlid-2934 menu-item-2934"><a href="/developers/develop/run-sample-apps/observer">Observer</a></li><li class="menu-parent menu-mlid-2571 menu-item-2571"><a href="/developers/develop/run-sample-apps/config">Config</a><ul class="menu clearfix"><li class="first menu-mlid-2572 menu-item-2572"><a href="/developers/develop/run-sample-apps/config/android">Android</a></li><li class="menu-mlid-2573 menu-item-2573"><a href="/developers/develop/run-sample-apps/config/linux">Linux</a></li><li class="menu-mlid-2574 menu-item-2574"><a href="/developers/develop/run-sample-apps/config/ios-osx">iOS/OS X</a></li><li class="last menu-mlid-2575 menu-item-2575"><a href="/developers/develop/run-sample-apps/config/thin-linux">Thin - Linux</a></li></ul></li><li class="menu-parent menu-mlid-2576 menu-item-2576"><a href="/developers/develop/run-sample-apps/controlpanel">Control Panel</a><ul class="menu clearfix"><li class="first menu-mlid-2577 menu-item-2577"><a href="/developers/develop/run-sample-apps/controlpanel/android">Android</a></li><li class="menu-mlid-2578 menu-item-2578"><a href="/developers/develop/run-sample-apps/controlpanel/linux">Linux</a></li><li class="menu-mlid-2579 menu-item-2579"><a href="/developers/develop/run-sample-apps/controlpanel/ios-osx">iOS/OS X</a></li><li class="last menu-mlid-2580 menu-item-2580"><a href="/developers/develop/run-sample-apps/controlpanel/thin-linux">Thin - Linux</a></li></ul></li><li class="menu-parent menu-mlid-2581 menu-item-2581"><a href="/developers/develop/run-sample-apps/notification">Notification</a><ul class="menu clearfix"><li class="first menu-mlid-2582 menu-item-2582"><a href="/developers/develop/run-sample-apps/notification/android">Android</a></li><li class="menu-mlid-2583 menu-item-2583"><a href="/developers/develop/run-sample-apps/notification/linux">Linux</a></li><li class="menu-mlid-2584 menu-item-2584"><a href="/developers/develop/run-sample-apps/notification/ios-osx">iOS/OS X</a></li><li class="last menu-mlid-2585 menu-item-2585"><a href="/developers/develop/run-sample-apps/notification/thin-linux">Thin - Linux</a></li></ul></li><li class="menu-parent menu-mlid-2586 menu-item-2586"><a href="/developers/develop/run-sample-apps/onboarding">Onboarding</a><ul class="menu clearfix"><li class="first menu-mlid-2587 menu-item-2587"><a href="/developers/develop/run-sample-apps/onboarding/android">Android</a></li><li class="menu-mlid-2588 menu-item-2588"><a href="/developers/develop/run-sample-apps/onboarding/linux">Linux</a></li><li class="last menu-mlid-2589 menu-item-2589"><a href="/developers/develop/run-sample-apps/onboarding/ios-osx">iOS/OS X</a></li></ul></li><li class="menu-parent menu-mlid-2590 menu-item-2590"><a href="/developers/develop/run-sample-apps/acserver">AC Server</a><ul class="menu clearfix"><li class="first menu-mlid-2591 menu-item-2591"><a href="/developers/develop/run-sample-apps/acserver/linux">Linux</a></li><li class="last menu-mlid-2592 menu-item-2592"><a href="/developers/develop/run-sample-apps/acserver/thin-linux">Thin - Linux</a></li></ul></li><li class="menu-parent menu-mlid-2593 menu-item-2593"><a href="/developers/develop/run-sample-apps/test">Command Line Apps</a><ul class="menu clearfix"><li class="first last menu-mlid-2594 menu-item-2594"><a href="/developers/develop/run-sample-apps/test/sessions">Sessions</a></li></ul></li><li class="last menu-mlid-2994 menu-item-2994"><a href="/developers/develop/run-sample-apps/alljoyn-js">AllJoyn.js</a></li></ul></li><li class="menu-parent menu-mlid-2595 menu-item-2595"><a href="/developers/develop/api-guide">API Guide</a><ul class="menu clearfix"><li class="first menu-parent menu-mlid-2596 menu-item-2596"><a href="/developers/develop/api-guide/core">Core</a><ul class="menu clearfix"><li class="first menu-mlid-2939 menu-item-2939"><a href="/developers/develop/api-guide/core/java">java</a></li><li class="menu-mlid-2940 menu-item-2940"><a href="/developers/develop/api-guide/core/objc">Objective-C</a></li><li class="menu-mlid-2647 menu-item-2647"><a href="/developers/develop/api-guide/core/alljoyn-transports-best-practices">Alljoyn Transports Best Practices</a></li><li class="menu-mlid-2648 menu-item-2648"><a href="/developers/develop/api-guide/core/auto-ping">AutoPinger</a></li><li class="menu-mlid-2935 menu-item-2935"><a href="/developers/develop/api-guide/core/observer">Observer</a></li><li class="last menu-mlid-2936 menu-item-2936"><a href="/developers/develop/api-guide/core/propcache">Property Cache</a></li></ul></li><li class="menu-parent menu-mlid-2599 menu-item-2599"><a href="/developers/develop/api-guide/about">About</a><ul class="menu clearfix"><li class="first menu-mlid-2941 menu-item-2941"><a href="/developers/develop/api-guide/about/java">java</a></li><li class="menu-mlid-2942 menu-item-2942"><a href="/developers/develop/api-guide/about/cpp">C++</a></li><li class="menu-mlid-2943 menu-item-2943"><a href="/developers/develop/api-guide/about/objc">Objective-C</a></li><li class="menu-mlid-2944 menu-item-2944"><a href="/developers/develop/api-guide/about/c-thin">C (Thin Core)</a></li><li class="menu-mlid-2945 menu-item-2945"><a href="/developers/develop/api-guide/about/java-legacy">java Legacy</a></li><li class="menu-mlid-2946 menu-item-2946"><a href="/developers/develop/api-guide/about/cpp-legacy">C++ Legacy</a></li><li class="last menu-mlid-2947 menu-item-2947"><a href="/developers/develop/api-guide/about/objc-legacy">Objective-C Legacy</a></li></ul></li><li class="menu-parent menu-mlid-2604 menu-item-2604"><a href="/developers/develop/api-guide/onboarding">Onboarding</a><ul class="menu clearfix"><li class="first menu-mlid-2948 menu-item-2948"><a href="/developers/develop/api-guide/onboarding/java">java</a></li><li class="last menu-mlid-2949 menu-item-2949"><a href="/developers/develop/api-guide/onboarding/objc">Objective-C</a></li></ul></li><li class="menu-parent menu-mlid-2607 menu-item-2607"><a href="/developers/develop/api-guide/config">Configuration</a><ul class="menu clearfix"><li class="first menu-mlid-2950 menu-item-2950"><a href="/developers/develop/api-guide/config/java">java</a></li><li class="menu-mlid-2951 menu-item-2951"><a href="/developers/develop/api-guide/config/cpp">C++</a></li><li class="menu-mlid-2952 menu-item-2952"><a href="/developers/develop/api-guide/config/objc">Objective-C</a></li><li class="last menu-mlid-2953 menu-item-2953"><a href="/developers/develop/api-guide/config/c-thin">C (Thin Core)</a></li></ul></li><li class="menu-parent menu-mlid-2612 menu-item-2612"><a href="/developers/develop/api-guide/notification">Notification</a><ul class="menu clearfix"><li class="first menu-mlid-2954 menu-item-2954"><a href="/developers/develop/api-guide/notification/java">java</a></li><li class="menu-mlid-2955 menu-item-2955"><a href="/developers/develop/api-guide/notification/cpp">C++</a></li><li class="menu-mlid-2956 menu-item-2956"><a href="/developers/develop/api-guide/notification/objc">Objective-C</a></li><li class="last menu-mlid-2957 menu-item-2957"><a href="/developers/develop/api-guide/notification/c-thin">C (Thin Core)</a></li></ul></li><li class="menu-parent menu-mlid-2617 menu-item-2617"><a href="/developers/develop/api-guide/controlpanel">Control Panel</a><ul class="menu clearfix"><li class="first menu-mlid-2958 menu-item-2958"><a href="/developers/develop/api-guide/controlpanel/java">java</a></li><li class="menu-mlid-2959 menu-item-2959"><a href="/developers/develop/api-guide/controlpanel/cpp">C++</a></li><li class="menu-mlid-2960 menu-item-2960"><a href="/developers/develop/api-guide/controlpanel/objc">Objective-C</a></li><li class="last menu-mlid-2961 menu-item-2961"><a href="/developers/develop/api-guide/controlpanel/c-thin">C (Thin Core)</a></li></ul></li><li class="menu-parent menu-mlid-2622 menu-item-2622"><a href="/developers/develop/api-guide/audio-streaming">Audio Streaming</a><ul class="menu clearfix"><li class="first last menu-mlid-2962 menu-item-2962"><a href="/developers/develop/api-guide/audio-streaming/cpp">C++</a></li></ul></li><li class="last menu-mlid-2624 menu-item-2624"><a href="/developers/develop/api-guide/events-and-actions">Events and Actions</a></li></ul></li><li class="menu-mlid-2625 menu-item-2625"><a href="/developers/develop/api-reference">API Reference</a></li><li class="menu-parent menu-mlid-2626 menu-item-2626"><a href="/developers/develop/debug">Debug</a><ul class="menu clearfix"><li class="first last menu-mlid-2627 menu-item-2627"><a href="/developers/develop/debug/common-issues">Common Issues</a></li></ul></li><li class="menu-parent menu-mlid-2628 menu-item-2628"><a href="/developers/develop/tutorial">Tutorial</a><ul class="menu clearfix"><li class="first menu-mlid-2629 menu-item-2629"><a href="/developers/develop/tutorial/core">Core</a></li><li class="menu-mlid-2630 menu-item-2630"><a href="/developers/develop/tutorial/ios">iOS</a></li><li class="menu-mlid-2631 menu-item-2631"><a href="/developers/develop/tutorial/thin-app">Thin App</a></li><li class="menu-mlid-2632 menu-item-2632"><a href="/developers/develop/tutorial/arduino-and-gt202">Arduino + GT202</a></li><li class="last menu-mlid-2633 menu-item-2633"><a href="/developers/develop/tutorial/videos">Videos</a></li></ul></li><li class="last menu-mlid-2634 menu-item-2634"><a href="/developers/develop/ask">Ask Forum</a></li></ul></li><li class="last menu-parent has-children menu-mlid-2636 menu-item-2636"><a href="/developers/contribute">Contribute</a><ul class="menu clearfix"><li class="first last menu-mlid-2637 menu-item-2637"><a href="/developers/contribute/project-lifecycle">Project Lifecycle</a></li></ul></li></ul></li><li class="menu-mlid-2466 menu-item-2466"><a href="/showcase-products-using-alljoyn">Showcase</a></li><li class="menu-parent menu-mlid-2487 menu-item-2487"><a href="/allseen-alliance-certification">Certification</a><ul class="menu clearfix"><li class="first menu-mlid-2488 menu-item-2488"><a href="/certification/how-validate-your-designed-allseen-product">How To Validate Your Product</a></li><li class="last menu-mlid-2489 menu-item-2489"><a href="/certification/faq">FAQ</a></li></ul></li><li class="last menu-parent menu-mlid-2421 menu-item-2421"><a href="/news-and-events">News &amp; Events</a><ul class="menu clearfix"><li class="first menu-mlid-2422 menu-item-2422"><a href="/news-and-events/newsroom/announcements">Announcements</a></li><li class="menu-mlid-2449 menu-item-2449"><a href="/news/videos">Videos</a></li><li class="menu-mlid-2423 menu-item-2423"><a href="/news-and-events/newsroom/in-the-news">In The News</a></li><li class="menu-mlid-2424 menu-item-2424"><a href="/news-and-events/events">Events</a></li><li class="menu-mlid-2448 menu-item-2448"><a href="/news-and-events/blogs">Blogs</a></li><li class="menu-mlid-2461 menu-item-2461"><a href="/news-and-events/newsletters">Newsletters</a></li><li class="last menu-mlid-2933 menu-item-2933"><a href="/news-and-events/videos">Videos</a></li></ul></li></ul></div>
+</div></div></section></div></div>      </div>
+            
+      
+      <div class="region region-sidebar-first sidebar"><div class="region-inner clearfix"><div id="block-menu-block-1" class="block block-menu-block"  role="navigation"><div class="block-inner clearfix">        <div class="block-content content"><div class="menu-block-wrapper menu-block-1 menu-name-main-menu parent-mlid-0 menu-level-3">
+  <ul class="menu clearfix"><li class="first menu-mlid-2505 menu-item-2505"><a href="/developers/learn/use-cases">Use Cases</a></li><li class="menu-mlid-2506 menu-item-2506"><a href="/developers/learn/architecture">Architecture</a></li><li class="menu-parent active-trail menu-mlid-2507 menu-item-2507"><a href="/developers/learn/core" class="active-trail">Core Framework</a><ul class="menu clearfix"><li class="first menu-parent menu-mlid-2508 menu-item-2508"><a href="/developers/learn/core/about-announcement">About Announcement</a><ul class="menu clearfix"><li class="first menu-mlid-2509 menu-item-2509"><a href="/developers/learn/core/about-announcement/interface">Interface</a></li><li class="last menu-mlid-2510 menu-item-2510"><a href="/developers/learn/core/about-announcement/interface-14-02">Interface 14.02</a></li></ul></li><li class="menu-mlid-2511 menu-item-2511"><a href="/developers/learn/core/events-and-actions">Events and Actions</a></li><li class="menu-mlid-2992 menu-item-2992"><a href="/developers/learn/core/rn_config">Routing Node Configuration</a></li><li class="menu-mlid-2512 menu-item-2512"><a href="/developers/learn/core/standard-core">Standard Core</a></li><li class="menu-mlid-2513 menu-item-2513"><a href="/developers/learn/core/thin-core">Thin Core</a></li><li class="menu-parent active-trail active menu-mlid-2514 menu-item-2514"><a href="/developers/learn/core/system-description" class="active-trail active">System Description</a><ul class="menu clearfix"><li class="first menu-mlid-2515 menu-item-2515"><a href="/developers/learn/core/system-description/system-architecture">System Architecture</a></li><li class="menu-mlid-2516 menu-item-2516"><a href="/developers/learn/core/system-description/advertisement-discovery">Advertisement and Discovery</a></li><li class="menu-mlid-2645 menu-item-2645"><a href="/developers/learn/core/system-description/alljoyn-transport">AllJoyn Transport</a></li><li class="menu-mlid-2517 menu-item-2517"><a href="/developers/learn/core/system-description/data-exchange">Data Exchange</a></li><li class="menu-mlid-2518 menu-item-2518"><a href="/developers/learn/core/system-description/alljoyn-session">AllJoyn Session</a></li><li class="menu-mlid-2519 menu-item-2519"><a href="/developers/learn/core/system-description/sessionless-signal">Sessionless Signal</a></li><li class="menu-mlid-2520 menu-item-2520"><a href="/developers/learn/core/system-description/alljoyn-security">AllJoyn Security</a></li><li class="menu-mlid-2521 menu-item-2521"><a href="/developers/learn/core/system-description/thin-apps">Thin Apps</a></li><li class="last menu-mlid-2522 menu-item-2522"><a href="/developers/learn/core/system-description/events-actions">Events and Actions</a></li></ul></li><li class="last menu-parent menu-mlid-2937 menu-item-2937"><a href="/developers/learn/core/security2_0">Security 2.0</a><ul class="menu clearfix"><li class="first last menu-mlid-2938 menu-item-2938"><a href="/developers/learn/core/security2_0/hld">High-Level Design</a></li></ul></li></ul></li><li class="menu-parent menu-mlid-2523 menu-item-2523"><a href="/developers/learn/base-services">Base Services</a><ul class="menu clearfix"><li class="first menu-parent menu-mlid-2524 menu-item-2524"><a href="/developers/learn/base-services/onboarding">Onboarding</a><ul class="menu clearfix"><li class="first menu-mlid-2525 menu-item-2525"><a href="/developers/learn/base-services/onboarding/interface">Interface</a></li><li class="last menu-mlid-2526 menu-item-2526"><a href="/developers/learn/base-services/onboarding/interface-14-02">Interface 14.02</a></li></ul></li><li class="menu-parent menu-mlid-2527 menu-item-2527"><a href="/developers/learn/base-services/configuration">Configuration</a><ul class="menu clearfix"><li class="first menu-mlid-2528 menu-item-2528"><a href="/developers/learn/base-services/configuration/interface">Interface</a></li><li class="last menu-mlid-2529 menu-item-2529"><a href="/developers/learn/base-services/configuration/interface-14-02">Interface 14.02</a></li></ul></li><li class="menu-parent menu-mlid-2530 menu-item-2530"><a href="/developers/learn/base-services/notification">Notification</a><ul class="menu clearfix"><li class="first menu-mlid-2531 menu-item-2531"><a href="/developers/learn/base-services/notification/interface">Interface</a></li><li class="last menu-mlid-2532 menu-item-2532"><a href="/developers/learn/base-services/notification/interface-14-02">Interface 14.02</a></li></ul></li><li class="menu-parent menu-mlid-2533 menu-item-2533"><a href="/developers/learn/base-services/controlpanel">ControlPanel</a><ul class="menu clearfix"><li class="first menu-mlid-2534 menu-item-2534"><a href="/developers/learn/base-services/controlpanel/interface">Interface</a></li><li class="last menu-mlid-2535 menu-item-2535"><a href="/developers/learn/base-services/controlpanel/interface-14-02">Interface 14.02</a></li></ul></li><li class="last menu-parent menu-mlid-2536 menu-item-2536"><a href="/developers/learn/base-services/audiostreaming">Audio Streaming</a><ul class="menu clearfix"><li class="first last menu-mlid-2537 menu-item-2537"><a href="/developers/learn/base-services/audiostreaming/interface">Interface</a></li></ul></li></ul></li><li class="last menu-mlid-2538 menu-item-2538"><a href="/developers/learn/glossary">Glossary</a></li></ul></div>
+</div></div></div></div></div>            <div id="content-column" role="main">
+        <div class="content-inner">
+
+          
+          <section id="main-content">
+
+                                      <header id="main-content-header">
+
+                                                  <h1 id="sub-title">
+                    AllJoyn® System Description                  </h1>
+                
+                
+              </header>
+                        
+                          <div id="content">
+                        <article id="node-4105" class="node node-developer-document article clearfix" about="/developers/learn/core/system-description" typeof="sioc:Item foaf:Document" role="article">
+
+  
+      <span property="dc:title" content="AllJoyn® System Description" class="rdf-meta element-hidden"></span><span property="sioc:num_replies" content="0" datatype="xsd:integer" class="rdf-meta element-hidden"></span>
+  
+  <div class="node-content">
+  
+  <div class="field-body view-mode-full">
+    
+<h2 id="release-history">Release history</h2>
+<table><thead><tr><th>Release version</th>
+<th>Date</th>
+<th>What changed</th>
+</tr></thead><tbody><tr><td>14.06</td>
+<td>9/26/2014</td>
+<td>Initial release</td>
+</tr><tr><td>14.12</td>
+<td>12/17/2014</td>
+<td><p>Updates for new functionality added in 14.12 release:</p><ul><li>UDP Transport design</li><li>TCP vs UDP Transport selection logic at the router</li><li>mDNS-based discovery for the router at the TCL</li><li>Updates to SLS fetch backoff design to support linear+exponential backoff</li><li>Router Probing mechanism to detect missing applications</li><li>Router logic to detect and disconnect slow reader nodes</li></ul><p>Other updates:</p><ul><li>Endpoints usage by AllJoyn Transport</li><li>TCP Transport data plane architecture and state machine</li><li>AllJoyn Protocol Version mapping for different releases</li><li>Link timeout mechanism between routers to detect missing routers</li></ul></td>
+</tr><tr><td>15.04</td>
+<td>4/29/2015</td>
+<td><p>Updates In Thin Apps section related to:</p><ul><li>Security and adding description of Router Selection</li><li>Some general clean up including fixing typos and readability and consistency changes</li></ul><p>Other changes:</p><ul><li>General cleanup</li><li>Removed references to RSA and PIN authe mechanisms as they are not longer supported</li></ul></td>
+</tr></tbody></table><p>This section describes in detail how AllJoyn works at the system level.</p>
+<h2 id="system-overview">System Overview</h2>
+<h3 id="ioe-overview">IoE overview</h3>
+<p>The Internet of Everything (IoE) is an exciting vision which 
+promises to connect people with things and things with each 
+other in ways; this will create new capabilities and richer 
+experiences and overall make our life simpler. IoE promises 
+to bring people, process, data, and things together to make 
+networked connections more relevant and valuable than ever 
+before, turning information into actions and enabling capabilities 
+never possible before. </p>
+<p>IoE will result in smart things or devices at homes, offices, 
+cars, streets, airports, malls etc. and these devices will work 
+together to provide contextual and real time experiences to users. 
+The IoE devices nearby each other will form proximal IoE networks, 
+e.g., at home, in the car, or in one's office. The IoE vision will 
+enable internetworking among multiple proximal IoE networks.</p>
+<p>It is worthwhile to draw a comparison between Internet today and 
+Internet of Everything. The Internet today consists of millions of 
+registered top-level domains names centrally managed by the Internet 
+Assigned Numbers Authority (IANA). Discovery of these domains happen 
+through a hierarchical lookup via the Domain Name System (DNS). 
+In an IoE network, there will be potentially tens of billions of 
+IoE devices. It would be impossible to manage registration for 
+all of these devices via a central entity from a scalability 
+perspective. Also, in an IoE network, proximity-based interactions 
+among devices reduces latency as well as the need for each device 
+to connect directly to the Internet. So, the discovery should happen 
+automatically based on proximity criteria.  Security and privacy 
+issues become even more important in an IoE network where more 
+and more personal and home devices expose interfaces for connection 
+and control.</p>
+<p>The following figure shows an example IoE network with multiple 
+proximal IoE networks interconnected with each other via the Internet. </p>
+<p><img src="/sites/default/files/developers/learn/system-desc/ioe-network-example.png" alt="ioe-network-example" /></p>
+<p><strong>Figure:</strong> IoE network example</p>
+<p>Smart devices within each IoE proximal network can dynamically 
+discover and communicate with each other over direct peer-to-peer 
+connection. For cases where some of these devices are behind NAT, 
+they can discover each other via some cloud-based discovery 
+services. The cloud-based discovery can also be used for 
+discovery and connection among IoE devices in different IoE proximal 
+networks. The overall IoE network can have additional cloud-based 
+services to provide specific functionality, e.g., remote home 
+automation, remote diagnostics/maintenance, data collection/reporting, etc. 
+The IoE network can also integrate with some of the existing cloud-based 
+services, e.g., integration with Facebook or Twitter for device status updates.</p>
+<p>In any IoE network, interoperability among devices within and across 
+IoE proximal networks is of utmost importance to enable a rich, 
+scalable IoE ecosystem of applications and services for these devices. 
+Any IoE system must consider specific key design aspects including 
+device advertisement and discovery, mobility and dynamic IoE network 
+management, security and privacy, interoperability across multiple 
+bearers/OS, lightweight solution to support thin/dumb device, 
+extensibility and overall scalability. For an IoE system to be 
+truly adapted and successful, it must be open and provide a 
+horizontal solution that can be used across different vertical 
+use cases. </p>
+<p>The AllJoyn system aims to address these key design aspects. 
+It provides an open-source software framework to enable proximity-based, 
+peer-to-peer, bearer-agnostic networking among IoE devices. 
+The AllJoyn system provides a way for devices and applications 
+to advertise and discover each other using peer-to-peer protocol 
+within a proximal network.</p>
+<p>The AllJoyn open-source software system provides a framework for 
+enabling communication among IoE devices across heterogeneous 
+distributed systems. The AllJoyn system is a proximity-based, 
+peer-to-peer communication platform for devices in a distributed 
+system. It does not require a centralized server for communication 
+across such devices. AllJoyn-enabled devices run one or more AllJoyn 
+applications and form a peer-to-peer AllJoyn network. The AllJoyn 
+system is a distributed software platform which enables applications 
+running on IoE devices to advertise, discover and connect to each 
+other for making use of services offered on these devices. 
+The AllJoyn framework enables these applications to expose 
+their functionality over the network via discoverable APIs 
+which are the contracts that define the functionality provided 
+by the application.  </p>
+<p>In the proximal AllJoyn network, AllJoyn applications installed 
+on IoE devices are peers to each other. An AllJoyn-enabled 
+application can play the role of a provider, a consumer or 
+both depending upon the service model. Provider applications 
+implement services and advertise them over the AllJoyn network. 
+Consumer applications interested in these services discover 
+them via the AllJoyn network. Consumer applications then 
+connect to provider applications to make use of these services 
+as desired. An AllJoyn application can act as both provider and 
+consumer at the same time. This means that the app can advertise 
+a certain set of services it supports, and can also discover 
+and make use of services provided by other apps in the 
+proximal AllJoyn network.</p>
+<p>The following figure shows an AllJoyn network with 4 devices. </p>
+<p><img src="/sites/default/files/developers/learn/system-desc/alljoyn-network.png" alt="alljoyn-network" /></p>
+<p><strong>Figure:</strong> AllJoyn network</p>
+<p>Device 1 and Device 2 have only Provider applications providing 
+AllJoyn services. Device 3 has only consumer applications consuming 
+services from other provider devices. Device 4 has an application 
+that acts as both provider and consumer. The application on 
+Device 4 consumes services from the application on Device 2. 
+It also provides services which get consumed by applications 
+on Device 3. Arrow directions are from provider to consumer 
+indicating consumption of services.</p>
+<p>The AllJoyn framework establishes an underlying bus architecture 
+for communication among IoE devices. AllJoyn applications on 
+IoE devices connect and communicate to each other via the 
+AllJoyn Bus. The AllJoyn bus provides a framework for applications 
+to expose their services to other AllJoyn applications. The AllJoyn 
+bus provides a platform- and radio-link agnostic transport mechanism 
+for applications on IoE devices to send notifications or exchange 
+data. The AllJoyn bus takes care of adapting to an underlying 
+physical network-specific transport. </p>
+<p>Each AllJoyn app connects to a local AllJoyn bus. One or more 
+applications can connect to a given local AllJoyn bus. AllJoyn 
+bus enables attached AllJoyn applications to advertise, discover, 
+and communicate with other. AllJoyn buses on multiple devices 
+communicate with each other using underlying network technology 
+such as Wi-Fi.</p>
+<p>The AllJoyn framework's open-source implementation provides an 
+ecosystem where various parties can contribute by adding new 
+features and enhancements to the AllJoyn system. It supports 
+OS independence via an OS abstraction layer allowing the AllJoyn 
+framework and its applications to run on multiple OS platforms. 
+The AllJoyn framework supports most standard Linux distributions, 
+Android 2.3 and later, common versions of Microsoft Windows OS, 
+Apple iOS, Mac OS X and embedded OSs such as OpenWRT and 
+RTOSs like ThreadX.</p>
+<p>The AllJoyn framework also supports multiple programming 
+languages for writing applications and services for IoE 
+devices, which enable a wide ecosystem for developing AllJoyn 
+applications and services. The AllJoyn framework currently, 
+supports C, C++, Java, C#, JavaScript, and Objective-C.</p>
+<h3 id="the-alljoyn-system-and-d-bus-specification">The AllJoyn system and D-bus specification</h3>
+<p>The AllJoyn system implements a largely compatible version 
+of the D-Bus over-the-wire protocol and conforms to many of 
+the naming conventions and guidelines in the D-Bus specification. 
+The AllJoyn system has extended and significantly enhanced D-Bus 
+message bus to support a distributed bus scenario. The AllJoyn 
+system makes use of the D-Bus specification as follows: </p>
+<ul><li>It uses the D-Bus data type system and D-Bus marshaling format. </li>
+<li>It implements an enhanced version of the D-Bus over-the-wire 
+protocol by adding new flags and headers (detailed in <a href="/developers/learn/core/system-description/data-exchange#message-format">Message 
+format</a>). </li>
+<li>It uses D-Bus naming guidelines for naming well-known names 
+(Service names), interface names, interface member names 
+(methods, signals and properties) and object path names.</li>
+<li>It uses a D-Bus defined Simple Authentication and Security 
+Layer (SASL) framework for application layer authentication 
+between AllJoyn-enabled applications. It supports authentication 
+mechanisms beyond what are defines by the D-Bus specification.</li>
+</ul><p>The D-Bus specification can be found at (<a href="http://dbus.freedesktop.org/doc/dbus-specification.html">http://dbus.freedesktop.org/doc/dbus-specification.html</a>).</p>
+<h3 id="alljoyn-system-key-concepts">AllJoyn system key concepts</h3>
+<p>As previously stated, the AllJoyn framework provides an underlying 
+bus architecture for applications to advertise, discover, and 
+make use of each other's functionality. To achieve this, the 
+AllJoyn framework provides an object-oriented software framework 
+for applications to interact with each other. </p>
+<h4 id="alljoyn-router">AllJoyn router</h4>
+<p>The AllJoyn Router component provides core functionality of 
+the AllJoyn system, including peer-to-peer advertisement/discovery, 
+connection establishment, broadcast signaling and control/data 
+messages routing. The AllJoyn router implements software bus 
+functionality and an application connects to this bus to avail 
+core functions of the AllJoyn framework. Each instance of the 
+AllJoyn router has an associated globally unique identifier (GUID) 
+which is self-assigned. Currently, this GUID is not persisted, 
+so a new GUID is assigned whenever the AllJoyn router starts up.
+An AllJoyn router can be either bundled with each application 
+(bundled model), or can be shared across multiple applications 
+(standalone model) on the device as shown below.</p>
+<p><img src="/sites/default/files/developers/learn/system-desc/alljoyn-bundled-standalone-router-examples.png" alt="alljoyn-bundled-standalone-router-examples" /></p>
+<p><strong>Figure:</strong> AllJoyn bundled and standalone router examples</p>
+<p>An AllJoyn router has an associated AllJoyn protocol version 
+that defines the set of functionality it supports. This protocol 
+version is exchanged between AllJoyn routers on an AllJoyn 
+network when they establish connection with each other as 
+part of AllJoyn session establishment. </p>
+<h4 id="alljoyn-bus">AllJoyn bus</h4>
+<p>An AllJoyn router provides software bus functionality where 
+one or more applications can connect to it to exchange messages. 
+AllJoyn router instances on a device form a logical AllJoyn 
+bus local to the device as shown below. </p>
+<p><img src="/sites/default/files/developers/learn/system-desc/logical-router-bus-mapping.png" alt="logical-router-bus-mapping" /></p>
+<p><strong>Figure:</strong> Logical mapping of AllJoyn router to AllJoyn bus</p>
+<p>The logical AllJoyn bus maps to a single AllJoyn router in two cases:  </p>
+<ul><li>Bundled deployment model with only one app on the device, 
+shown as UC2. </li>
+<li>Standalone deployment model with one or more apps on the device, 
+shown as UC3. </li>
+</ul><p>The logical AllJoyn bus maps to multiple AllJoyn router instances 
+in the bundled deployment model with multiple apps on the device, 
+shown as UC1.</p>
+<p><em>*NOTE:</em>8 The AllJoyn router and AllJoyn bus terminology are used 
+interchangeably in this document as these refer to same set of 
+bus functionality provided by the AllJoyn system.</p>
+<p>The following figure shows a simplistic view of the local 
+AllJoyn bus on two different devices with multiple applications 
+connecting to the bus. </p>
+<p><img src="/sites/default/files/developers/learn/system-desc/alljoyn-bus.png" alt="alljoyn-bus" /></p>
+<p><strong>Figure:</strong> AllJoyn bus</p>
+<p>The AllJoyn bus provides a medium for communication between 
+apps connected to the bus. AllJoyn buses on multiple devices 
+communicate with each other using the underlying network 
+technology such as Wi-Fi.</p>
+<p>Multiple instances of AllJoyn buses across multiple devices 
+form a logical distributed AllJoyn software bus as shown below.</p>
+<p><img src="/sites/default/files/developers/learn/system-desc/distributed-alljoyn-bus.png" alt="distributed-alljoyn-bus" /></p>
+<p><strong>Figure:</strong> Distributed AllJoyn bus</p>
+<p>The distributed AllJoyn bus hides all the communication 
+link details from the applications running on multiple devices. 
+To an application connected to the AllJoyn bus, a remote application 
+running on another device looks like an app that is local to 
+the device. AllJoyn distributed bus provides a fast lightweight 
+way to move messages across the distributed system.</p>
+<h4 id="alljoyn-service">AllJoyn service</h4>
+<p>As described earlier, provider AllJoyn applications provide 
+services that can be consumed by other applications in the 
+AllJoyn network. For example, a TV may provide a picture rendering 
+service to display pictures from another AllJoyn device 
+(e.g., smartphone). An AllJoyn Service is a notional/logical 
+concept and is defined by one or more AllJoyn interfaces (described 
+in <a href="#alljoyn-interfaces">AllJoyn interfaces</a>) which expose 
+service functionality to consumers. </p>
+<p>An AllJoyn application can act as both provider and consumer 
+by providing and consuming AllJoyn services at the same time.</p>
+<h4 id="unique-name">Unique name</h4>
+<p>Each AllJoyn application connects to a single AllJoyn router. 
+To enable addressing for individual applications, an AllJoyn 
+router assigns a unique name to each connecting application. 
+The unique name uses AllJoyn router GUID as the prefix. It 
+follows the format below:</p>
+<pre><code><code>Unique Name = ":"&lt;AJ router GUID&gt;"."&lt;Seq #&gt;</code>
+</code></pre><p><strong>NOTE:</strong> The ":<aj router="" guid="">.1" unique name is always given 
+to the AllJoyn router local endpoint.</aj></p>
+<p>The following figure shows the unique name assignment for three connected 
+apps to an AllJoyn bus by a single AllJoyn router with GUID=100. </p>
+<p><img src="/sites/default/files/developers/learn/system-desc/uniquename-assignment-1.png" alt="uniquename-assignment-1" /></p>
+<p><strong>Figure:</strong> AllJoyn unique name assignment 1 (multiple apps connected to single AllJoyn router)</p>
+<p>This scenario illustrates a device with multiple AllJoyn 
+applications connected to a single AllJoyn router. It is 
+expected that a large number of AllJoyn-enabled devices 
+will be single-purpose devices (e.g., refrigerator, oven, 
+light bulb, etc.), and will have only one application residing 
+on the device and connecting to the AllJoyn bus. However, there 
+can be devices where a single instance of an AllJoyn router will 
+support multiple applications, such as a TV.</p>
+<p>The following fiture shows the unique name assignment for AllJoyn 
+apps with multiple instances of an AllJoyn router forming an 
+AllJoyn bus. </p>
+<p><img src="/sites/default/files/developers/learn/system-desc/uniquename-assignment-2.png" alt="uniquename-assignment-2" /></p>
+<p><strong>Figure:</strong> AllJoyn unique name assignment 2 (each app has instance of AllJoyn router)</p>
+<p><strong>NOTE:</strong> The GUID part in each unique name is different and 
+corresponds to the GUID for the associated AllJoyn router. </p>
+<p>The following figure shows the unique name assignment for 
+AllJoyn apps on two different devices connected over a 
+distributed AllJoyn bus.</p>
+<p><img src="/sites/default/files/developers/learn/system-desc/uniquename-assignment-3.png" alt="uniquename-assignment-3" /></p>
+<p><strong>Figure:</strong> AllJoyn unique name assignment 3 (AllJoyn apps on two devices connected over distributed AllJoyn bus)</p>
+<h4 id="well-known-name">Well-known name</h4>
+<p>An AllJoyn application can decide to use well-known names for 
+its services. A well-known name is a consistent way to refer 
+to a service (or collection of services) offered over the 
+AllJoyn bus. An app can use a single well-known name for all 
+the services it offers, or it can use multiple well-known names 
+across these services. </p>
+<p>An application can request use of one or more well-known names 
+from the AllJoyn bus for services it provides. If the requested 
+well-known name is not already in use, exclusive use of that 
+well-known name is granted to the application. This ensures 
+that well-known names represent unique addresses on the AllJoyn 
+bus at any point. The well-known name uniqueness is guaranteed 
+only within the local AllJoyn bus. Global uniqueness for a 
+well-known name should be achieved by adapting certain naming 
+guidelines and format.</p>
+<p>The AllJoyn well-known name follows the reverse domain name 
+format. There can be multiple instances of a given application 
+on a distributed AllJoyn bus, for example, the same refrigerator 
+application running on two different refrigerators from the same 
+vendor in the proximal network (one in the kitchen and one in 
+the basement). To distinguish multiple instances of a given 
+app on the AllJoyn bus, the well-known name should have a 
+unique app specific identifier as a suffix, e.g., a GUID 
+identifying the app instance. </p>
+<p>The AllJoyn well-known name (WKN) follows the D-Bus specification 
+guidelines for naming and has following format:</p>
+<pre><code><code>WKN = &lt;reverse domain style name for service/app&gt;"."&lt;app instance GUID&gt;</code>
+</code></pre><p>For example, a refrigerator service can use the following 
+well-known name:</p>
+<pre><code><code>com.alljoyn.Refrigerator.12345678</code>
+</code></pre><h4 id="alljoyn-object">AllJoyn object</h4>
+<p>AllJoyn applications implement one or more AllJoyn objects 
+to support AllJoyn services functionality. These AllJoyn objects 
+are called service objects and are advertised over the AllJoyn 
+bus. Other AllJoyn applications can discover these objects from 
+the AllJoyn bus and access them remotely to consume services provided 
+by them. </p>
+<p>A consumer application accesses an AllJoyn service object 
+through a proxy object. A proxy object is a local representation 
+of a remote service object that is accessed through the AllJoyn bus. </p>
+<p>The following figure shows the distinction between the AllJoyn 
+service object and proxy object.</p>
+<p><img src="/sites/default/files/developers/learn/system-desc/alljoyn-service-object-proxy-object.png" alt="alljoyn-service-object-proxy-object" /></p>
+<p><strong>Figure:</strong> AllJoyn service object and AllJoyn proxy object</p>
+<p>Each AllJoyn service object instance has an associated object 
+path that uniquely identifies that object instance. This object 
+path gets assigned when a service object gets created on the 
+provider. The proxy object requires an object path to establish 
+communication with the remote service object. The object path 
+scope is within a given application, so object paths must be 
+unique only with the associated application implementing the 
+objects. Hence, object path naming does not need to follow 
+reverse domain naming convention, and it can be of any form 
+chosen by the application. </p>
+<p>The object path naming also adheres to the D-Bus specification 
+naming guidelines. An example object path for the service 
+object implemented by a refrigerator can be:</p>
+<pre><code><code>/MyApp/Refrigerator</code>
+</code></pre><h4 id="alljoyn-interfaces">AllJoyn interfaces</h4>
+<p>Each AllJoyn object exposes its functionality over the AllJoyn 
+bus through one or more AllJoyn interfaces. An AllJoyn interface 
+defines a contract for communication between an entity implementing 
+the interface specification and other entities interested in 
+making use of the services provided by the interface. The AllJoyn 
+interfaces are candidates for standardization to enable interoperability 
+among AllJoyn enabled IoE devices.</p>
+<p>An AllJoyn interface can include one or more of following 
+types of members:</p>
+<ul><li>Methods: A method is a function call that typically takes 
+a set of inputs, performs some processing using the inputs, 
+and typically returns one or more outputs reflecting the results 
+of the processing operation. Note that it is not mandatory for 
+methods to have input and/or output parameters. It is also not 
+mandatory for methods to have a reply.</li>
+<li>Signals: A signal is an asynchronous notification that is 
+generated by a service to notify one or more remote peers of 
+an event or state change. Signals can be delivered over an
+already-established peer-to-peer AllJoyn connection (AllJoyn session), 
+or they can be broadcast globally to all AllJoyn peers over 
+the distributed AllJoyn bus. Signals can be of three types: <ul><li>Session-specific signals: These signals get delivered to 
+one or more peers connected over a given AllJoyn session 
+in the proximal network. If a destination is specified, 
+the signal is delivered to only that destination node connected 
+over the AllJoyn session. If no destination is specified, 
+the signal gets delivered to all nodes connected over the 
+given session except the node that generated the signal. 
+If the session is a multi-point session, such a signal 
+is sent over multicast to all the other participants. </li>
+<li>Session broadcast signals: These signals get delivered 
+to all the nodes connected via any AllJoyn session in 
+the proximal network. </li>
+<li>Sessionless signals: These signals get delivered to all 
+the nodes in a proximal network that have expressed interest 
+in receiving sessionless signals. Nodes do not need to be 
+connected over an AllJoyn session to receive such signals. 
+Sessionless signals are essentially broadcast signals independent 
+of a session connection.</li>
+</ul></li>
+<li>Properties: A property is a variable that holds values and 
+it may be read-only, read-write or write-only.</li>
+</ul><p>Every AllJoyn interface has a globally unique interface name 
+that identifies the grouping of methods, signals, and properties 
+provided by that interface. The AllJoyn interface name gets 
+defined as part of standardizing the interface. Similar to 
+the well-known name, the AllJoyn interface name also follows 
+reverse domain name format and D-Bus specification naming guidelines.</p>
+<p>For example, a refrigerator could support the following standard 
+AllJoyn refrigerator interface. </p>
+<pre><code><code>org.alljoyn.Refrigerator</code>
+</code></pre><h4 id="alljoyn-core-library">AllJoyn core library</h4>
+<p>The AllJoyn Core Library exposes AllJoyn bus functionality to 
+AllJoyn applications. Each application links with a single 
+instance of AllJoyn core library to connect with the AllJoyn 
+bus. The AllJoyn core library acts as an application's gateway 
+for peer-to-peer communications with other remote AllJoyn apps. 
+It can be used to connect to the bus, to advertise services, 
+to discover services, to establish connection with remote peer, 
+to consume services, and many other AllJoyn functions. An 
+application registers its objects with the AllJoyn core library 
+to advertise these over the AllJoyn bus.</p>
+<p>The following figure shows three apps connecting to a given 
+AllJoyn bus via the AllJoyn core Library. </p>
+<p><img src="/sites/default/files/developers/learn/system-desc/alljoyn-core-library.png" alt="alljoyn-core-library" /></p>
+<p><strong>Figure:</strong> AllJoyn core library</p>
+<p>An AllJoyn core library can be a Standard Core Library (SCL), 
+developed for use by AllJoyn standard applications or a 
+Thin Core Library (TCL) developed for use by AllJoyn thin 
+applications. Most of the system design in the document 
+is described using standard core library deployment. 
+For thin core library design details, see <a href="/developers/learn/core/system-description/thin-apps">Thin Apps</a>.</p>
+<h4 id="about-feature">About feature</h4>
+<p>The AllJoyn framework supports the About feature as part 
+of the AJ Core Library. The About feature enables an application 
+to expose key information about itself including app name, app 
+identifier, device name, device identifier and a list of AllJoyn 
+interfaces supported by the app among other details. This 
+feature is supported by org.alljoyn.About interface implemented 
+by the org.alljoyn.About object.</p>
+<p>An application advertises key information about itself via an 
+Announce signal defined by the About interface. This signal is 
+sent as a sessionless signal on the proximal AllJoyn network. 
+Any AllJoyn applications interested in discovering services 
+via the AllJoyn interfaces make use of the Announce signal 
+for discovery. The About feature also provides a mechanism 
+to fetch application data via a direct method call. See the 
+[About HLD] for design details on the About feature.</p>
+<h4 id="alljoyn-endpoints">AllJoyn endpoints</h4>
+<p>AllJoyn applications exchange data in the form of D-Bus 
+formatted messages. These messages specify source and destination 
+as Endpoints. An AllJoyn Endpoint represents one side of an 
+AllJoyn communication link.Endpoints are used to route 
+messages to appropriate destinations. </p>
+<p>Both the Core Library and AllJoyn Router maintain endpoints 
+to enable message routing. The Core Library maintains the 
+following endpoints:</p>
+<ul><li><strong>Local Endpoint</strong>: The local endpoint within the 
+Core Library represents a connection to the attached application. </li>
+<li><strong>Remote Endpoint</strong>: The remote endpoint within the 
+Core Library represents the connection to the AllJoyn 
+router.This is applicable only for the case when AllJoyn 
+router is not bundled.</li>
+</ul><p>An endpoint maintained by the AllJoyn router is uniquely 
+identified by a unique name assigned to it.The AllJoyn 
+router supports the following endpoints:</p>
+<ul><li><strong>Local Endpoint</strong>: A local endpoint is an endpoint within the 
+AllJoyn router itself. It identifies a connection to self 
+and is used to exchange AllJoyn control messages between 
+AllJoyn routers. This is the first endpoint which gets assigned 
+and always has the unique name ":<aj router="" guid="">.1"</aj></li>
+<li><strong>Remote Endpoint</strong>: A remote endpoint identifies the connection 
+between the application and the AllJoyn router. Messages destined 
+to applications get routed to app endpoints.</li>
+<li><strong>Bus-to-Bus Endpoint</strong>: A Bus-to-Bus (B2B) endpoint is a 
+specialized kind of remote endpoint that identifies 
+the connection between two AllJoyn routers. This endpoint 
+is used as next hop to route messages between AllJoyn routers.</li>
+</ul><p>A routing table is maintained at the AllJoyn router that is 
+responsible for routing messages to different types of endpoints. 
+Control messages between two AllJoyn routers (e.g., AttachSession 
+message) get routed to the local endpoint. AllJoyn messages 
+between two applications get routed to app endpoints. These 
+messages will have app endpoints as source and destination 
+within the message. B2B endpoints are used as the next hop 
+when routing messages (app-directed or control messages) 
+between two AllJoyn routers. </p>
+<p>The following figure shows different endpoints in the AllJoyn system.</p>
+<p><img src="/sites/default/files/developers/learn/system-desc/alljoyn-endpoints.png" alt="alljoyn-endpoints" /></p>
+<p><strong>Figure:</strong> AllJoyn endpoints</p>
+<h4 id="introspection">Introspection</h4>
+<p>The AllJoyn system supports D-Bus defined introspection 
+feature that enables AllJoyn objects to be introspected at 
+runtime, returning introspection XML describing that object. 
+The object should implement org.freedesktop.DBus.Introspectable 
+interface. This interface has an Introspect method that can be 
+called to retrieve introspection XML for the object.</p>
+<h4 id="alljoyn-entity-relationship">AllJoyn entity relationship</h4>
+<p>It is useful and important to understand how different high-level 
+AllJoyn entities relate to each other. </p>
+<p>The following figure captures the relationship between various 
+high-level AllJoyn entities including device, application, 
+objects, interfaces, and interface members. </p>
+<p><img src="/sites/default/files/developers/learn/system-desc/alljoyn-entity-relationship.png" alt="alljoyn-entity-relationship" /></p>
+<p><strong>Figure:</strong> AllJoyn entity relationship</p>
+<p>An AllJoyn-enabled device can support one or more AllJoyn 
+applications. Each AllJoyn application supports one or more 
+AllJoyn objects that implement desired application functionality. 
+Application functionality can include providing AllJoyn 
+services or consuming AllJoyn services, or both. Accordingly, 
+objects supported by the AllJoyn application can be service 
+objects, proxy objects, or combination of both. A service 
+object exposes its functionality via one or more AllJoyn 
+interfaces. Each AllJoyn interface can support one or more 
+of methods, signals, and properties.</p>
+<p>An AllJoyn service is implemented by one or more AllJoyn 
+service objects. An AllJoyn service object can implement 
+functionality for one or more AllJoyn services. Hence, AllJoyn 
+service and AllJoyn service object have an n:n relationship as 
+captured in the following figure.</p>
+<p><img src="/sites/default/files/developers/learn/system-desc/alljoyn-service-service-object-relationship.png" alt="alljoyn-service-service-object-relationship" /></p>
+<p><strong>Figure:</strong> AllJoyn service and AllJoyn service object relationship</p>
+<h3 id="alljoyn-services">AllJoyn services</h3>
+<p>An AllJoyn application can support one or more service frameworks 
+and some application layer services.</p>
+<h4 id="alljoyn-service-framework">AllJoyn service framework</h4>
+<p>AllJoyn service frameworks provide some of the core and 
+fundamental functionality developed as enablers for higher-layer 
+application services. Service frameworks sit on top of the AllJoyn 
+router and provide APIs to application developers to invoke their 
+functionality. Initial AllJoyn service frameworks include 
+Configuration service framework, Onboarding service framework, 
+Notification service framework, and Control Panel service framework. </p>
+<p><strong>NOTE:</strong> Service frameworks are also referred to as base services.</p>
+<p>Example: a refrigerator application can make use of the Onboarding 
+service framework to onboard a refrigerator to a home network 
+and send out notifications to user devices using the Notification 
+service framework.</p>
+<h4 id="application-layer-service">Application layer service</h4>
+<p>An application layer service is an app-specific service provided 
+by the AllJoyn application to achieve desired application 
+layer functionality. These application layer services can 
+make use of service frameworks to achieve their functionality.</p>
+<p>Example: a refrigerator application can offer an application 
+layer service to change refrigerator and freezer temperature. 
+This service can make use of the Notification service framework 
+to send out a notification when the temperature setting goes 
+out of a specified range to notify the user.</p>
+<h3 id="alljoyn-transport">AllJoyn transport</h3>
+<p>The AllJoyn Transport is an abstract concept that enables 
+connection setup and message routing across AllJoyn applications 
+via AllJoyn routers. The AllJoyn transport logic in turn 
+supports transmitting messages over multiple underlying 
+physical transports including TCP transport, UDP transport 
+and Local Transport (e.g., UNIX domain sockets).</p>
+<p>The AllJoyn transport logic delivers the advertisement and 
+discovery messages based on specified list of transports by 
+the app.  Similarly, the AllJoyn transport enables session 
+establishment and message routing over multiple underlying 
+transports based on transport selection made by the application. 
+The set of underlying transports supported by the AllJoyn 
+transport is specified by a TransportMask as captured in 
+<a href="/developers/learn/core/system-description/alljoyn-transport#alljoyn-transport-in-networking-model">AllJoyn Transport in Networking Model</a>.
+If an app does not specify any transport(s), the AllJoyn 
+transport value defaults to TRANSPORT_ANY.</p>
+<p>See <a href="/developers/learn/core/system-description/alljoyn-transport">AllJoyn Transport</a> for more information.</p>
+<h3 id="advertisement-and-discovery">Advertisement and discovery</h3>
+<p>The AllJoyn framework provides a means for applications to 
+advertise and discover AllJoyn services. The AllJoyn discovery 
+protocol manages the dynamic nature of services coming in 
+and going out of the proximal AllJoyn network and notifies 
+AllJoyn applications of the same. The AllJoyn framework 
+leverages an underlying transport-specific mechanism to 
+optimize the discovery process. The AllJoyn framework makes 
+use of IP multicast over Wi-Fi for service advertisement and 
+discovery. The details of underlying mechanism are hidden 
+from the AllJoyn applications.</p>
+<p>The following sections details the ways that applications 
+can use to advertise and discover services over the AllJoyn framework.</p>
+<h4 id="name-based-discovery">Name-based discovery</h4>
+<p>In the name-based discovery, advertisement and discovery 
+typically happens using a well-known name. In this approach, 
+the unique name can also be used for discovery per an application's 
+discretion (e.g., if a well-known name was not assigned). 
+A provider application advertises supported well-known names 
+over the proximal AllJoyn network leveraging the underlying 
+transport specific mechanism (IP multicast over Wi-Fi). 
+These well-known names get advertised as part of an advertisement 
+message generated by the AllJoyn router. </p>
+<p>A consumer application interested in a given well-known name 
+can ask the AllJoyn router to begin discovering that name. 
+When the provider app advertising that name comes in the 
+proximity, the AllJoyn router receives the corresponding 
+advertisement. The AllJoyn router then sends a service discovery 
+notification to the application for the well-known name.</p>
+<p>The advertisement message carries connectivity information 
+back to the provider app. After discovery, the consumer app 
+can request AllJoyn router to establish a connection with 
+the discovered provider app for consuming the service. 
+The AllJoyn router uses the connectivity information to 
+connect back to the provider app.</p>
+<h4 id="announcement-based-discovery">Announcement-based discovery</h4>
+<p>Since AllJoyn services are ultimately implemented by one or 
+more interfaces, service discovery can be achieved by discovering 
+associated AllJoyn interfaces. In the announcement-based discovery, 
+advertisement and discovery happens using AllJoyn interface names. 
+This mechanism is intended to be used by devices to advertise 
+their capabilities.</p>
+<p>The provider application creates a service announcement message 
+specifying a list of AllJoyn interfaces supported by that 
+application. The service announcement message is delivered 
+as a broadcast signal message using sessionless signaling 
+mechanism (described in detail in <a href="/developers/learn/core/system-description/sessionless-signal">Sessionless Signal</a>).</p>
+<p>Consumer applications interested in making use of AllJoyn 
+services look for these broadcast service announcement messages 
+by specifically registering its interest in receiving these 
+announcements with AllJoyn router. When the consumer device 
+is in the proximity of a provider, it receives the service 
+announcement that contains the AllJoyn interfaces supported 
+by the provider.</p>
+<p>The AllJoyn router maintains connectivity information to 
+connect back to the provider from which the service announcement 
+message was received. After discovery, the consumer app can 
+request the AllJoyn router to establish a connection with 
+the provider app that supports the desired interfaces for 
+consuming the service. The AllJoyn router uses connectivity 
+information to connect back to the provider app.</p>
+<h4 id="discovery-enhancements-in-the-14-06-release">Discovery enhancements in the 14.06 release</h4>
+<p>The AllJoyn discovery feature was enhanced in the 14.06 
+release to enable the discovery of devices/apps that support 
+a certain set of interfaces in a more efficient way. The 
+enhanced discovery is referred to as Next-Generation Name 
+Service (NGNS). NGNS supports a multicast DNS (mDNS)-based 
+discovery protocol that enables specifying AllJoyn interfaces 
+in an over-the-wire discovery message. In addition, the mDNS-based 
+protocol is designed to provide discovery responses over unicast 
+to improve performance of the discovery protocol and minimize 
+overall multicast traffic generated during the AllJoyn discovery process. </p>
+<p>The presence detection mechanism for AllJoyn devices/apps 
+has been enhanced by adding an explicit mDNS-based ping() 
+message that is sent over unicast to determine if the remote 
+endpoint is still alive. The ping() mechanism is driven by 
+the application based on application logic.</p>
+<h3 id="alljoyn-session">AllJoyn session</h3>
+<p>Once a client discovers an AllJoyn service of interest, 
+it must connect with the service in order to consume that 
+service (except for the Notification service framework, 
+which relies completely on sessionless signals). Connecting 
+with a service involves establishing an AllJoyn session with 
+that service. A session is a flow-controlled data connection 
+between a consumer and provider, and as such allows the client 
+to communicate with the service. </p>
+<p>A provider app advertising a service binds a session port with 
+the AllJoyn bus and listens for clients to join the session. 
+The action of binding and listening makes the provider the 
+session host. The session port is typically known ahead of 
+time to both the consumer and the provider app. In the case 
+of announcement-based discovery, the session port is discovered 
+via the Announcement message. After discovering a particular 
+service, the consumer app requests the AllJoyn router to 
+join the session with the remote service (making it a session 
+joiner) by specifying the session port and service's unique 
+name/well-known name. After this, the AllJoyn router takes 
+care of establishing the session between the consumer and 
+the provider apps. </p>
+<p>Each session has a unique session identifier assigned by the 
+provider app (session host). An AllJoyn session can be one 
+of the following:</p>
+<ul><li>Point-to-point session: A session with only two participants-the 
+session host and the session joiner. </li>
+<li>Multi-point session: A session with multiple participants-a 
+single session host and multiple session joiners.</li>
+</ul><p>After session establishment, the consumer application must 
+create a proxy object to interact with the provider app. The 
+proxy object should be initialized with a session ID and the 
+remote service object path. Once complete, the consumer app 
+can now interact with the remote service object via this proxy object.</p>
+<h3 id="sessionless-signals">Sessionless signals</h3>
+<p>The AllJoyn framework provides a mechanism to broadcast signals 
+over the proximal AllJoyn network. A broadcast signal does 
+not require any application layer session to be established 
+for delivering the signal. Such signals are referred to as 
+sessionless signals and are broadcast using a sessionless 
+signaling mechanism supported by the AllJoyn router. </p>
+<p>The delivery of sessionless signals is done as a two-step process. </p>
+<ol><li>The provider device (sessionless signal emitter) advertises 
+that there are sessionless signals to receive. </li>
+<li>Any consumer devices wishing to receive a sessionless 
+signal will connect with the provider device to retrieve new signals. </li>
+</ol><p>Using the sessionless signal mechanism, a provider application 
+can send broadcast signals to the AllJoyn router. The AllJoyn 
+router maintains a cache for these signals. The content of the 
+sessionless signal cache is versioned. The AllJoyn router sends 
+out a sessionless signal advertisement message notifying other 
+devices of new signals at the provider device. The sessionless 
+signal advertisement message includes a sessionless signal-specific 
+well-known name specifying the version of the sessionless signal cache. </p>
+<p>The consumer app interested in receiving the sessionless signal 
+performs discovery for the sessionless signal-specific well-known 
+name. The AllJoyn bus on the consumer maintains the latest sessionless 
+signal version it has received from each of the provider AllJoyn router. 
+If it detects a sessionless signal advertisement with an updated 
+sessionless signal version, it will fetch new set of sessionless 
+signals and deliver them to the interested consumer applications.</p>
+<h4 id="sessionless-signal-enhancement-in-the-14-06-release">Sessionless signal enhancement in the 14.06 release</h4>
+<p>The sessionless signal feature was enhanced in the 14.06 release 
+to enable a consumer application to request sessionless signals 
+from provider applications that support certain desired AllJoyn 
+interfaces. The following sessionless signal enhancements were made:</p>
+<ul><li>The sessionless signal advertised name was enhanced to add 
+<interface> information from the header of the sessionless signal. 
+Consumers use this to fetch sessionless signals only from those 
+providers that are emitting signals from the <interface> it 
+is interested in. A separate sessionless signal name is advertised 
+one for each unique interface in the sessionless signal cache.</interface></interface></li>
+<li>A mechanism was added for the consumer app to indicate receiving 
+Announce sessionless signal only from applications implementing 
+certain AllJoyn interfaces.</li>
+</ul><p>Sessionless signals are only fetched from those providers that 
+support desired interfaces. This improves the overall performance 
+of the sessionless signal feature.</p>
+<h3 id="thin-apps">Thin apps</h3>
+<p>An AllJoyn Thin App is designed for use in embedded devices 
+such as sensors. These types of embedded devices are optimized 
+for a specific set of functions and are constrained in energy, 
+memory and computing power. An AllJoyn thin app is designed to 
+bring the benefits of the AllJoyn framework to embedded systems. 
+The thin app is designed to have a very small memory footprint. </p>
+<p>A thin AllJoyn device makes use of lightweight thin application 
+code along with the AllJoyn Thin Core Library (AJTCL) running 
+on the device. It does not have an AllJoyn router running on 
+that device. As a result, the thin app must use an AllJoyn 
+router running on another AllJoyn-enabled device, essentially 
+borrowing the AllJoyn router functionality running on that device. </p>
+<p>At startup, the thin application discovers and connects with 
+an AllJoyn router running on another AllJoyn-enabled device. 
+From that point onwards, the thin app uses that AllJoyn router 
+for accomplishing core AllJoyn functionality including service 
+advertisement/discovery, session establishment, signal 
+delivery, etc. If a thin app is not able to connect to previously 
+discovered AllJoyn router, it attempts to discover another 
+AllJoyn router to connect to.</p>
+<p>An AllJoyn thin app is fully interoperable with an AllJoyn 
+standard application. It uses same set of over-the-wire protocols 
+as a standard AllJoyn app. This ensures compatibility between 
+the thin app and standard apps. An AllJoyn standard app communicating 
+with a thin app will not know that it is talking to a thin app 
+and vice versa. However, there are some message size constraints 
+that apply to the thin app based on available RAM size.</p>
+<h3 id="alljoyn-protocol-version">AllJoyn protocol version</h3>
+<p>Functionality implemented by the AllJoyn Router is versioned through an AllJoyn
+Protocol Version (AJPV) field. The following table shows the AJPV for various
+AllJoyn releases; unless otherwise noted the AJPV for the major release version
+applies to all the patch release versions as well. The AJPV is exchanged
+between routers as part of the BusHello messaging during the AllJoyn session
+establishment and between the leaf and routing node when the leaf node connects
+to the router. This field is used by the core libraries to identify
+compatibility with the router, and specifically by thin apps to determine
+whether or not to connect to a particular router or keep searching for another
+one.  It is also used by the router to determine if functionality is available
+at the leaf (e.g. self-join, SessionLostWithReason, etc.)</p>
+<p><strong> Table: </strong> AllJoyn Release to Protocol Version mapping</p>
+<table><thead><tr><th style="text-align:center">  Release version  </th>
+<th style="text-align:center">  AJPV  </th>
+</tr></thead><tbody><tr><td style="text-align:center">legacy 03.04.06</td>
+<td style="text-align:center">9</td>
+</tr><tr><td style="text-align:center">v14.02</td>
+<td style="text-align:center">9</td>
+</tr><tr><td style="text-align:center">v14.06</td>
+<td style="text-align:center">10</td>
+</tr><tr><td style="text-align:center">v14.12</td>
+<td style="text-align:center">11</td>
+</tr><tr><td style="text-align:center">v15.04</td>
+<td style="text-align:center">12</td>
+</tr></tbody></table>  </div>
+  </div>
+
+  
+  
+</article>
+              </div>
+                                   
+          </section>
+
+          
+        </div>
+      </div>
+
+
+      
+    </div>
+  </div>
+</div>
+<div id="sticky-footer">
+  
+      <footer id="footer" class="clearfix" role="contentinfo">
+        <div class="region region-footer"><div class="region-inner clearfix"><nav id="block-system-user-menu" class="block block-system block-menu"  role="navigation"><div class="block-inner clearfix">        <div class="block-content content"><ul class="menu clearfix"><li class="first menu-item-537"><a href="/user/register" title="">Register</a></li><li class="last menu-item-536"><a href="/user/login" title="">Log In</a></li></ul></div></div></nav></div></div>    </footer>
+  
+  <div id="lfcollabprojects-footer">
+    <div class="gray-diagonal">
+      <div class="footer-inner">
+        <p>&copy; 2017 AllSeen Alliance, Inc. All Rights Reserved.</p>
+        <p>The Linux Foundation® is a registered trademark of The Linux Foundation. AllSeen, Designed for AllSeen and AllSeen Alliance are trademarks of the AllSeen Alliance, Inc. AllJoyn® is a registered trademark of AllSeen Alliance, Inc.</p>
+        <p>Linux is a registered <a href="http://www.linuxfoundation.org/programs/legal/trademark" title="Linux Mark Institute">trademark</a> of Linus Torvalds.</p>
+        <p>Please see our <a href="/brand-guidelines">brand guidelines</a>, <a href="/trademarks">trademark guidelines</a>, <a href="/about/governance/ip-policy">IP policy</a>, <a href="/terms">terms of use</a>, <a href="/license">license</a>, and <a href="/privacy">privacy policy</a>.</p>
+      </div>
+    </div>
+    <div id="body-bottom">
+      </div>
+</body>
+</html>

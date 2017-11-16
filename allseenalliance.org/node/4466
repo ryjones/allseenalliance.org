@@ -1,0 +1,1280 @@
+<!DOCTYPE html>
+<!--[if IEMobile 7]><html class="iem7" lang="en" dir="ltr"><![endif]-->
+<!--[if lte IE 6]><html class="lt-ie9 lt-ie8 lt-ie7" lang="en" dir="ltr"><![endif]-->
+<!--[if (IE 7)&(!IEMobile)]><html class="lt-ie9 lt-ie8" lang="en" dir="ltr"><![endif]-->
+<!--[if IE 8]><html class="lt-ie9" lang="en" dir="ltr"><![endif]-->
+<!--[if (gte IE 9)|(gt IEMobile 7)]><!--><html lang="en" dir="ltr"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/terms/"
+  xmlns:foaf="http://xmlns.com/foaf/0.1/"
+  xmlns:og="http://ogp.me/ns#"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:sioc="http://rdfs.org/sioc/ns#"
+  xmlns:sioct="http://rdfs.org/sioc/types#"
+  xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema#"><!--<![endif]-->
+<head>
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
+<meta charset="utf-8" />
+<link rel="shortlink" href="/node/4466" />
+<link rel="shortcut icon" href="https://identity.allseenalliance.org/sites/all/themes/at_alljoyn/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="/developers/learn/core/security2_0/hld" />
+<meta name="viewport" content="width=device-width" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta property="og:image" content="https://identity.allseenalliance.org/sites/all/themes/at_alljoyn/images/allseen-logo.png"/>
+<meta name="google-translate-customization" content="48b015afeed82101-ecae534af0f48252-ga0b6470a6208b2f5-f"></meta>
+<meta name="MobileOptimized" content="width">
+<meta name="HandheldFriendly" content="true">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AllJoyn™ Security 2.0 Feature High-Level Design - AllSeen Alliance</title>
+<link type="text/css" rel="stylesheet" href="https://identity.allseenalliance.org/sites/default/files/css/css_xE-rWrJf-fncB6ztZfd2huxqgxu4WO-qwma6Xer30m4.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://identity.allseenalliance.org/sites/default/files/css/css_7Vcu6qIuRTO46aDOBZp7_mtksGdhCHSe0pjTO2YbGng.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://identity.allseenalliance.org/sites/default/files/css/css_J2n1xiaSuececTK0yC3DT_Msm4PrkPwHizxr0oXGGoo.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://identity.allseenalliance.org/sites/default/files/css/css_oxEtvjMfj8c8EEJJ-1WXLGGntCnC0UvrbYsq0Gw4m4Q.css" media="screen" />
+<link type="text/css" rel="stylesheet" href="https://identity.allseenalliance.org/sites/default/files/css/css_9EusV9fcbkpqBeTGdJPl7ru65jm-3ngbTi_D6YRR_5A.css" media="only screen" />
+<script src="https://identity.allseenalliance.org/sites/default/files/js/js_UWQINlriydSoeSiGQxToOUdv493zEa7dpsXC1OtYlZU.js"></script>
+<script src="https://identity.allseenalliance.org/sites/default/files/js/js_COMsmDyrY9mzVU28X2uGvF4Ba3vd5eTo5xEO7dvCUZM.js"></script>
+<script src="https://identity.allseenalliance.org/sites/default/files/js/js_i8oyg1R4On_HyzPiZ5zC3V-DxehjGAcpKwNao5s0s5I.js"></script>
+<script>hljs.configure({languages:[]}); hljs.initHighlightingOnLoad();</script>
+<script src="https://identity.allseenalliance.org/sites/default/files/js/js_aG0kZAhSHT6G3QC-d9Wwx9gQp5d0em8X6FmMYZ1e5h4.js"></script>
+<script>var _gaq = _gaq || [];_gaq.push(["_setAccount", "UA-"]);_gaq.push(["_trackPageview"]);(function() {var ga = document.createElement("script");ga.type = "text/javascript";ga.async = true;ga.src = ("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/ga.js";var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(ga, s);})();</script>
+<script src="https://identity.allseenalliance.org/sites/default/files/js/js_R35PAK16384fXh7f2OqvXVkbbrwr8ABLrDpR1zTluo0.js"></script>
+<script src="https://identity.allseenalliance.org/sites/default/files/js/js_DKtRHJS-jz_cHgf23K7wnIWphCanZ_Rz74Aw-DKQyFs.js"></script>
+<script>jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"at_alljoyn","theme_token":"XYvTPo93-pPyVh305HLXvBJEOZsMX7iq8F3Pi_o1Kr4","js":{"misc\/jquery.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/all\/modules\/contrib\/comment_notify\/comment_notify.js":1,"sites\/all\/modules\/alljoyn\/custom_modules\/allseen_docs\/allseen_docs_highlight\/highlightjs\/highlight.min.js":1,"0":1,"sites\/all\/libraries\/colorbox\/jquery.colorbox-min.js":1,"sites\/all\/modules\/contrib\/colorbox\/js\/colorbox.js":1,"sites\/all\/modules\/contrib\/colorbox\/styles\/default\/colorbox_style.js":1,"sites\/all\/modules\/contrib\/colorbox\/js\/colorbox_load.js":1,"sites\/all\/modules\/contrib\/colorbox\/js\/colorbox_inline.js":1,"sites\/all\/modules\/contrib\/panels\/js\/panels.js":1,"sites\/all\/modules\/contrib\/quote\/quote.js":1,"sites\/all\/modules\/contrib\/views_slideshow\/js\/views_slideshow.js":1,"sites\/all\/modules\/contrib\/google_analytics\/googleanalytics.js":1,"1":1,"sites\/all\/modules\/alljoyn\/custom_modules\/allseen_docs\/allseen_docs_nav\/allseen-docs-nav.js":1,"sites\/all\/themes\/at_alljoyn\/scripts\/alljoyn.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"sites\/all\/modules\/contrib\/comment_notify\/comment_notify.css":1,"sites\/all\/modules\/ldap\/ldap_user\/ldap_user.css":1,"modules\/book\/book.css":1,"modules\/comment\/comment.css":1,"sites\/all\/modules\/contrib\/date\/date_api\/date.css":1,"sites\/all\/modules\/contrib\/date\/date_popup\/themes\/datepicker.1.7.css":1,"modules\/field\/theme\/field.css":1,"sites\/all\/modules\/contrib\/mollom\/mollom.css":1,"modules\/node\/node.css":1,"modules\/user\/user.css":1,"modules\/forum\/forum.css":1,"sites\/all\/modules\/contrib\/views\/css\/views.css":1,"sites\/all\/modules\/alljoyn\/custom_modules\/allseen_docs\/allseen_docs_highlight\/highlightjs\/default.min.css":1,"sites\/all\/modules\/contrib\/colorbox\/styles\/default\/colorbox_style.css":1,"sites\/all\/modules\/contrib\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/ldap\/ldap_servers\/ldap_servers.admin.css":1,"sites\/all\/modules\/contrib\/panels\/css\/panels.css":1,"sites\/all\/modules\/contrib\/quote\/quote.css":1,"sites\/all\/modules\/contrib\/views_slideshow\/views_slideshow.css":1,"sites\/all\/modules\/alljoyn\/custom_modules\/allseen_docs\/allseen_docs_nav\/allseen-docs-nav.css":1,"sites\/all\/modules\/alljoyn\/features\/content_type_developer_document\/content-type-developer-document.css":1,"sites\/all\/themes\/adaptivetheme\/at_core\/css\/at.layout.css":1,"sites\/all\/themes\/at_alljoyn\/css\/fonts.css":1,"sites\/all\/themes\/at_alljoyn\/css\/globals.css":1,"sites\/all\/themes\/at_alljoyn\/css\/jcarousel-alljoyn.css":1,"public:\/\/adaptivetheme\/at_alljoyn_files_7dbe1ef5\/at_alljoyn.responsive.layout.css":1,"public:\/\/adaptivetheme\/at_alljoyn_files_7dbe1ef5\/at_alljoyn.responsive.styles.css":1}},"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":true,"mobiledevicewidth":"480px"},"jcarousel":{"ajaxPath":"\/jcarousel\/ajax\/views"},"quote_nest":2,"googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls|xml|z|zip"}});</script>
+<!--[if lt IE 9]>
+<script src="https://identity.allseenalliance.org/sites/all/themes/adaptivetheme/at_core/scripts/respond.js?nwgww1"></script>
+<script src="https://identity.allseenalliance.org/sites/all/themes/adaptivetheme/at_core/scripts/html5.js?nwgww1"></script>
+<script src="https://identity.allseenalliance.org/sites/all/themes/adaptivetheme/at_core/scripts/PIE.htc?nwgww1"></script>
+<script src="https://identity.allseenalliance.org/sites/all/themes/adaptivetheme/at_core/scripts/selectivizr.js?nwgww1"></script>
+<![endif]-->
+</head>
+<body class="html not-front not-logged-in one-sidebar sidebar-first page-node page-node- page-node-4466 node-type-developer-document site-name-hidden with-subnav page-developers-learn-core-security2_0-hld section-developers">
+  <div id="body-top">
+      </div>
+  <div id="skip-link">
+    <a href="#main-content" class="element-invisible element-focusable">Skip to main content</a>
+  </div>
+  <div class="region region-page-top"><div class="region-inner clearfix"><div id="fb-root"></div><script type="text/javascript">
+     window.fbAsyncInit = function() {
+       FB.init({
+         appId: "492099574180957",
+         status: true,
+         cookie: true,
+         xfbml: true,
+         oauth : true,
+         channelUrl: "https:\/\/identity.allseenalliance.org\/service_links\/channel"
+         });
+
+         FB.Event.subscribe('edge.create', function(href, widget) {
+    _gaq.push(['_trackEvent', 'facebook', 'Facebook like', href]);
+   });FB.Event.subscribe('edge.remove', function(href, widget) {
+    _gaq.push(['_trackEvent', 'facebook', 'Facebook unlike', href]);
+   });
+       };
+       (function(d){
+     var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement('script'); js.id = id; js.async = true;
+     js.src = '//connect.facebook.net/en_US/all.js';
+     ref.parentNode.insertBefore(js, ref);
+   }(document));
+    </script></div></div>  
+<div id="wrap">
+
+  <div id="lfcollabprojects-header">
+    <div class="gray-diagonal">
+      <div class="header-inner">
+        <a id="lfcollabprojects-logo" href="http://collabprojects.linuxfoundation.org">Linux Foundation Collaborative Projects</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="page" class="container page">
+
+    
+    <header id="header" class="clearfix" role="banner">
+
+      <div class="region region-header"><div class="region-inner clearfix"><div id="block-block-19" class="block block-block" ><div class="block-inner clearfix">        <div class="block-content content"><br /><br /><br /><br /><br /><br /><br /></div></div></div></div></div>
+              <div id="branding" class="branding-elements clearfix">
+
+                      <div id="logo"><a href="/" title="Home page"><img class="site-logo" typeof="foaf:Image" src="https://identity.allseenalliance.org/sites/default/files/logo.png" alt="AllSeen Alliance" /></a></div>
+          
+                      <hgroup id="name-and-slogan" class="element-invisible">
+                              <h1 id="site-name" class="element-invisible"><a href="/" title="Home page">AllSeen Alliance</a></h1>
+                                        </hgroup>
+          
+          <!--main menu-->
+          <a id="main-menu-toggle" href="#">Site Sections</a>
+  		  		  		
+        </div>
+      
+    </header>
+
+
+    <div id="columns" class="clearfix">
+      <div id="sub-menu-bar">
+        <div class="region region-sub-menu-bar"><div class="region-inner clearfix"><div id="block-menu-block-allseen-docs-nav" class="block block-menu-block"  role="navigation"><div class="block-inner clearfix">        <div class="block-content content"><div class="menu-block-wrapper menu-block-allseen-docs-nav menu-name-main-menu parent-mlid-0 menu-level-2">
+  <ul class="menu clearfix"><li class="first has-children active-trail menu-mlid-2504 menu-item-2504"><a href="/developers/learn" class="active-trail">Learn</a></li><li class="has-children menu-mlid-2539 menu-item-2539"><a href="/developers/download">Download</a></li><li class="has-children menu-mlid-2541 menu-item-2541"><a href="/developers/develop">Develop</a></li><li class="last has-children menu-mlid-2636 menu-item-2636"><a href="/developers/contribute">Contribute</a></li></ul></div>
+</div></div></div><section id="block-menu-block-allseen-docs-responsive-nav" class="block block-menu-block"  role="navigation"><div class="block-inner clearfix">        <div class="block-title-wrapper">
+      <h2 class="block-title">Menu</h2>
+    </div>
+      <div class="block-content content"><div class="menu-block-wrapper menu-block-allseen-docs-responsive-nav menu-name-main-menu parent-mlid-0 menu-level-1">
+  <ul class="menu clearfix"><li class="first menu-parent menu-mlid-1994 menu-item-1994"><a href="/about">About</a><ul class="menu clearfix"><li class="first menu-mlid-2486 menu-item-2486"><a href="/about/why-allseen">Why AllSeen</a></li><li class="menu-mlid-2464 menu-item-2464"><a href="/about/get-involved">Get Involved</a></li><li class="collapsed menu-mlid-2446 menu-item-2446"><a href="/about/governance/ip-policy">IP Policy</a></li><li class="menu-mlid-2491 menu-item-2491"><a href="/about/working-groups">Working Groups</a></li><li class="menu-mlid-2286 menu-item-2286"><a href="/about/members">Member Companies</a></li><li class="menu-mlid-2285 menu-item-2285"><a href="/about/join-allseen-alliance">Join The AllSeen Alliance</a></li><li class="collapsed menu-mlid-2447 menu-item-2447"><a href="/about/governance">Governance</a></li><li class="menu-mlid-501 menu-item-501"><a href="/about/faqs">FAQs</a></li><li class="menu-mlid-2322 menu-item-2322"><a href="/about/contact">Contact Us</a></li><li class="menu-mlid-2282 menu-item-2282"><a href="/allseen/what-is-allseen-alliance">What is AllSeen Alliance?</a></li><li class="last menu-mlid-2490 menu-item-2490"><a href="https://wiki.allseenalliance.org/members_private/start?do=login&amp;sectok=34485854163fe6a0be457198139e2c84" title="Members Area" id="members_area" name="Members Area" rel="nofollow" target="_blank">Members Area</a></li></ul></li><li class="menu-parent active-trail menu-mlid-2503 menu-item-2503"><a href="/developers" class="active-trail">Developers</a><ul class="menu clearfix"><li class="first menu-parent has-children active-trail menu-mlid-2504 menu-item-2504"><a href="/developers/learn" class="active-trail active-trail">Learn</a><ul class="menu clearfix"><li class="first menu-mlid-2505 menu-item-2505"><a href="/developers/learn/use-cases">Use Cases</a></li><li class="menu-mlid-2506 menu-item-2506"><a href="/developers/learn/architecture">Architecture</a></li><li class="menu-parent active-trail menu-mlid-2507 menu-item-2507"><a href="/developers/learn/core" class="active-trail">Core Framework</a><ul class="menu clearfix"><li class="first menu-parent menu-mlid-2508 menu-item-2508"><a href="/developers/learn/core/about-announcement">About Announcement</a><ul class="menu clearfix"><li class="first menu-mlid-2509 menu-item-2509"><a href="/developers/learn/core/about-announcement/interface">Interface</a></li><li class="last menu-mlid-2510 menu-item-2510"><a href="/developers/learn/core/about-announcement/interface-14-02">Interface 14.02</a></li></ul></li><li class="menu-mlid-2511 menu-item-2511"><a href="/developers/learn/core/events-and-actions">Events and Actions</a></li><li class="menu-mlid-2992 menu-item-2992"><a href="/developers/learn/core/rn_config">Routing Node Configuration</a></li><li class="menu-mlid-2512 menu-item-2512"><a href="/developers/learn/core/standard-core">Standard Core</a></li><li class="menu-mlid-2513 menu-item-2513"><a href="/developers/learn/core/thin-core">Thin Core</a></li><li class="menu-parent menu-mlid-2514 menu-item-2514"><a href="/developers/learn/core/system-description">System Description</a><ul class="menu clearfix"><li class="first menu-mlid-2515 menu-item-2515"><a href="/developers/learn/core/system-description/system-architecture">System Architecture</a></li><li class="menu-mlid-2516 menu-item-2516"><a href="/developers/learn/core/system-description/advertisement-discovery">Advertisement and Discovery</a></li><li class="menu-mlid-2645 menu-item-2645"><a href="/developers/learn/core/system-description/alljoyn-transport">AllJoyn Transport</a></li><li class="menu-mlid-2517 menu-item-2517"><a href="/developers/learn/core/system-description/data-exchange">Data Exchange</a></li><li class="menu-mlid-2518 menu-item-2518"><a href="/developers/learn/core/system-description/alljoyn-session">AllJoyn Session</a></li><li class="menu-mlid-2519 menu-item-2519"><a href="/developers/learn/core/system-description/sessionless-signal">Sessionless Signal</a></li><li class="menu-mlid-2520 menu-item-2520"><a href="/developers/learn/core/system-description/alljoyn-security">AllJoyn Security</a></li><li class="menu-mlid-2521 menu-item-2521"><a href="/developers/learn/core/system-description/thin-apps">Thin Apps</a></li><li class="last menu-mlid-2522 menu-item-2522"><a href="/developers/learn/core/system-description/events-actions">Events and Actions</a></li></ul></li><li class="last menu-parent active-trail menu-mlid-2937 menu-item-2937"><a href="/developers/learn/core/security2_0" class="active-trail">Security 2.0</a><ul class="menu clearfix"><li class="first last active-trail active menu-mlid-2938 menu-item-2938"><a href="/developers/learn/core/security2_0/hld" class="active-trail active">High-Level Design</a></li></ul></li></ul></li><li class="menu-parent menu-mlid-2523 menu-item-2523"><a href="/developers/learn/base-services">Base Services</a><ul class="menu clearfix"><li class="first menu-parent menu-mlid-2524 menu-item-2524"><a href="/developers/learn/base-services/onboarding">Onboarding</a><ul class="menu clearfix"><li class="first menu-mlid-2525 menu-item-2525"><a href="/developers/learn/base-services/onboarding/interface">Interface</a></li><li class="last menu-mlid-2526 menu-item-2526"><a href="/developers/learn/base-services/onboarding/interface-14-02">Interface 14.02</a></li></ul></li><li class="menu-parent menu-mlid-2527 menu-item-2527"><a href="/developers/learn/base-services/configuration">Configuration</a><ul class="menu clearfix"><li class="first menu-mlid-2528 menu-item-2528"><a href="/developers/learn/base-services/configuration/interface">Interface</a></li><li class="last menu-mlid-2529 menu-item-2529"><a href="/developers/learn/base-services/configuration/interface-14-02">Interface 14.02</a></li></ul></li><li class="menu-parent menu-mlid-2530 menu-item-2530"><a href="/developers/learn/base-services/notification">Notification</a><ul class="menu clearfix"><li class="first menu-mlid-2531 menu-item-2531"><a href="/developers/learn/base-services/notification/interface">Interface</a></li><li class="last menu-mlid-2532 menu-item-2532"><a href="/developers/learn/base-services/notification/interface-14-02">Interface 14.02</a></li></ul></li><li class="menu-parent menu-mlid-2533 menu-item-2533"><a href="/developers/learn/base-services/controlpanel">ControlPanel</a><ul class="menu clearfix"><li class="first menu-mlid-2534 menu-item-2534"><a href="/developers/learn/base-services/controlpanel/interface">Interface</a></li><li class="last menu-mlid-2535 menu-item-2535"><a href="/developers/learn/base-services/controlpanel/interface-14-02">Interface 14.02</a></li></ul></li><li class="last menu-parent menu-mlid-2536 menu-item-2536"><a href="/developers/learn/base-services/audiostreaming">Audio Streaming</a><ul class="menu clearfix"><li class="first last menu-mlid-2537 menu-item-2537"><a href="/developers/learn/base-services/audiostreaming/interface">Interface</a></li></ul></li></ul></li><li class="last menu-mlid-2538 menu-item-2538"><a href="/developers/learn/glossary">Glossary</a></li></ul></li><li class="menu-parent has-children menu-mlid-2539 menu-item-2539"><a href="/developers/download">Download</a><ul class="menu clearfix"><li class="first last menu-mlid-2540 menu-item-2540"><a href="/developers/download/supported-platforms">Supported Platforms</a></li></ul></li><li class="menu-parent has-children menu-mlid-2541 menu-item-2541"><a href="/developers/develop">Develop</a><ul class="menu clearfix"><li class="first menu-parent menu-mlid-2542 menu-item-2542"><a href="/developers/develop/building">Building</a><ul class="menu clearfix"><li class="first menu-parent menu-mlid-2543 menu-item-2543"><a href="/developers/develop/building/android">Android</a><ul class="menu clearfix"><li class="first last menu-mlid-2544 menu-item-2544"><a href="/developers/develop/building/android/build-source">Build Source</a></li></ul></li><li class="menu-parent menu-mlid-2545 menu-item-2545"><a href="/developers/develop/building/linux">Linux</a><ul class="menu clearfix"><li class="first menu-mlid-2546 menu-item-2546"><a href="/developers/develop/building/linux/openwrt">OpenWRT</a></li><li class="last menu-mlid-2547 menu-item-2547"><a href="/developers/develop/building/linux/build-source">Build Source</a></li></ul></li><li class="menu-parent menu-mlid-2548 menu-item-2548"><a href="/developers/develop/building/ios-osx">iOS/OS X</a><ul class="menu clearfix"><li class="first last menu-mlid-2549 menu-item-2549"><a href="/developers/develop/building/ios-osx/build-source">Build Source</a></li></ul></li><li class="menu-parent menu-mlid-2550 menu-item-2550"><a href="/developers/develop/building/windows">Windows</a><ul class="menu clearfix"><li class="first last menu-mlid-2551 menu-item-2551"><a href="/developers/develop/building/windows/build-source">Build Source</a></li></ul></li><li class="menu-mlid-2552 menu-item-2552"><a href="/developers/develop/building/thin-linux">Thin - Linux</a></li><li class="menu-mlid-2553 menu-item-2553"><a href="/developers/develop/building/thin-windows">Thin - Windows</a></li><li class="last menu-mlid-2993 menu-item-2993"><a href="/developers/develop/building/alljoyn-js">AllJoyn.js</a></li></ul></li><li class="menu-parent menu-mlid-2554 menu-item-2554"><a href="/developers/develop/run-sample-apps">Running Samples</a><ul class="menu clearfix"><li class="first menu-parent menu-mlid-2555 menu-item-2555"><a href="/developers/develop/run-sample-apps/basic">Basic</a><ul class="menu clearfix"><li class="first menu-mlid-2556 menu-item-2556"><a href="/developers/develop/run-sample-apps/basic/android">Android</a></li><li class="menu-mlid-2557 menu-item-2557"><a href="/developers/develop/run-sample-apps/basic/linux">Linux</a></li><li class="menu-mlid-2558 menu-item-2558"><a href="/developers/develop/run-sample-apps/basic/ios-osx">iOS/OS X</a></li><li class="menu-mlid-2559 menu-item-2559"><a href="/developers/develop/run-sample-apps/basic/windows">Windows</a></li><li class="menu-mlid-2560 menu-item-2560"><a href="/developers/develop/run-sample-apps/basic/thin-linux">Thin - Linux</a></li><li class="last menu-mlid-2561 menu-item-2561"><a href="/developers/develop/run-sample-apps/basic/thin-windows">Thin - Windows</a></li></ul></li><li class="menu-parent menu-mlid-2562 menu-item-2562"><a href="/developers/develop/run-sample-apps/chat">Chat</a><ul class="menu clearfix"><li class="first menu-mlid-2563 menu-item-2563"><a href="/developers/develop/run-sample-apps/chat/android">Android</a></li><li class="menu-mlid-2564 menu-item-2564"><a href="/developers/develop/run-sample-apps/chat/linux">Linux</a></li><li class="menu-mlid-2565 menu-item-2565"><a href="/developers/develop/run-sample-apps/chat/ios-osx">iOS/OS X</a></li><li class="menu-mlid-2566 menu-item-2566"><a href="/developers/develop/run-sample-apps/chat/windows">Windows</a></li><li class="last menu-mlid-2567 menu-item-2567"><a href="/developers/develop/run-sample-apps/chat/thin-linux">Thin - Linux</a></li></ul></li><li class="menu-parent menu-mlid-2568 menu-item-2568"><a href="/developers/develop/run-sample-apps/about">About</a><ul class="menu clearfix"><li class="first menu-mlid-2569 menu-item-2569"><a href="/developers/develop/run-sample-apps/about/linux">Linux</a></li><li class="menu-mlid-2570 menu-item-2570"><a href="/developers/develop/run-sample-apps/about/ios-osx">iOS/OS X</a></li><li class="last menu-mlid-2646 menu-item-2646"><a href="/developers/develop/run-sample-apps/about/windows">Windows</a></li></ul></li><li class="menu-mlid-2934 menu-item-2934"><a href="/developers/develop/run-sample-apps/observer">Observer</a></li><li class="menu-parent menu-mlid-2571 menu-item-2571"><a href="/developers/develop/run-sample-apps/config">Config</a><ul class="menu clearfix"><li class="first menu-mlid-2572 menu-item-2572"><a href="/developers/develop/run-sample-apps/config/android">Android</a></li><li class="menu-mlid-2573 menu-item-2573"><a href="/developers/develop/run-sample-apps/config/linux">Linux</a></li><li class="menu-mlid-2574 menu-item-2574"><a href="/developers/develop/run-sample-apps/config/ios-osx">iOS/OS X</a></li><li class="last menu-mlid-2575 menu-item-2575"><a href="/developers/develop/run-sample-apps/config/thin-linux">Thin - Linux</a></li></ul></li><li class="menu-parent menu-mlid-2576 menu-item-2576"><a href="/developers/develop/run-sample-apps/controlpanel">Control Panel</a><ul class="menu clearfix"><li class="first menu-mlid-2577 menu-item-2577"><a href="/developers/develop/run-sample-apps/controlpanel/android">Android</a></li><li class="menu-mlid-2578 menu-item-2578"><a href="/developers/develop/run-sample-apps/controlpanel/linux">Linux</a></li><li class="menu-mlid-2579 menu-item-2579"><a href="/developers/develop/run-sample-apps/controlpanel/ios-osx">iOS/OS X</a></li><li class="last menu-mlid-2580 menu-item-2580"><a href="/developers/develop/run-sample-apps/controlpanel/thin-linux">Thin - Linux</a></li></ul></li><li class="menu-parent menu-mlid-2581 menu-item-2581"><a href="/developers/develop/run-sample-apps/notification">Notification</a><ul class="menu clearfix"><li class="first menu-mlid-2582 menu-item-2582"><a href="/developers/develop/run-sample-apps/notification/android">Android</a></li><li class="menu-mlid-2583 menu-item-2583"><a href="/developers/develop/run-sample-apps/notification/linux">Linux</a></li><li class="menu-mlid-2584 menu-item-2584"><a href="/developers/develop/run-sample-apps/notification/ios-osx">iOS/OS X</a></li><li class="last menu-mlid-2585 menu-item-2585"><a href="/developers/develop/run-sample-apps/notification/thin-linux">Thin - Linux</a></li></ul></li><li class="menu-parent menu-mlid-2586 menu-item-2586"><a href="/developers/develop/run-sample-apps/onboarding">Onboarding</a><ul class="menu clearfix"><li class="first menu-mlid-2587 menu-item-2587"><a href="/developers/develop/run-sample-apps/onboarding/android">Android</a></li><li class="menu-mlid-2588 menu-item-2588"><a href="/developers/develop/run-sample-apps/onboarding/linux">Linux</a></li><li class="last menu-mlid-2589 menu-item-2589"><a href="/developers/develop/run-sample-apps/onboarding/ios-osx">iOS/OS X</a></li></ul></li><li class="menu-parent menu-mlid-2590 menu-item-2590"><a href="/developers/develop/run-sample-apps/acserver">AC Server</a><ul class="menu clearfix"><li class="first menu-mlid-2591 menu-item-2591"><a href="/developers/develop/run-sample-apps/acserver/linux">Linux</a></li><li class="last menu-mlid-2592 menu-item-2592"><a href="/developers/develop/run-sample-apps/acserver/thin-linux">Thin - Linux</a></li></ul></li><li class="menu-parent menu-mlid-2593 menu-item-2593"><a href="/developers/develop/run-sample-apps/test">Command Line Apps</a><ul class="menu clearfix"><li class="first last menu-mlid-2594 menu-item-2594"><a href="/developers/develop/run-sample-apps/test/sessions">Sessions</a></li></ul></li><li class="last menu-mlid-2994 menu-item-2994"><a href="/developers/develop/run-sample-apps/alljoyn-js">AllJoyn.js</a></li></ul></li><li class="menu-parent menu-mlid-2595 menu-item-2595"><a href="/developers/develop/api-guide">API Guide</a><ul class="menu clearfix"><li class="first menu-parent menu-mlid-2596 menu-item-2596"><a href="/developers/develop/api-guide/core">Core</a><ul class="menu clearfix"><li class="first menu-mlid-2939 menu-item-2939"><a href="/developers/develop/api-guide/core/java">java</a></li><li class="menu-mlid-2940 menu-item-2940"><a href="/developers/develop/api-guide/core/objc">Objective-C</a></li><li class="menu-mlid-2647 menu-item-2647"><a href="/developers/develop/api-guide/core/alljoyn-transports-best-practices">Alljoyn Transports Best Practices</a></li><li class="menu-mlid-2648 menu-item-2648"><a href="/developers/develop/api-guide/core/auto-ping">AutoPinger</a></li><li class="menu-mlid-2935 menu-item-2935"><a href="/developers/develop/api-guide/core/observer">Observer</a></li><li class="last menu-mlid-2936 menu-item-2936"><a href="/developers/develop/api-guide/core/propcache">Property Cache</a></li></ul></li><li class="menu-parent menu-mlid-2599 menu-item-2599"><a href="/developers/develop/api-guide/about">About</a><ul class="menu clearfix"><li class="first menu-mlid-2941 menu-item-2941"><a href="/developers/develop/api-guide/about/java">java</a></li><li class="menu-mlid-2942 menu-item-2942"><a href="/developers/develop/api-guide/about/cpp">C++</a></li><li class="menu-mlid-2943 menu-item-2943"><a href="/developers/develop/api-guide/about/objc">Objective-C</a></li><li class="menu-mlid-2944 menu-item-2944"><a href="/developers/develop/api-guide/about/c-thin">C (Thin Core)</a></li><li class="menu-mlid-2945 menu-item-2945"><a href="/developers/develop/api-guide/about/java-legacy">java Legacy</a></li><li class="menu-mlid-2946 menu-item-2946"><a href="/developers/develop/api-guide/about/cpp-legacy">C++ Legacy</a></li><li class="last menu-mlid-2947 menu-item-2947"><a href="/developers/develop/api-guide/about/objc-legacy">Objective-C Legacy</a></li></ul></li><li class="menu-parent menu-mlid-2604 menu-item-2604"><a href="/developers/develop/api-guide/onboarding">Onboarding</a><ul class="menu clearfix"><li class="first menu-mlid-2948 menu-item-2948"><a href="/developers/develop/api-guide/onboarding/java">java</a></li><li class="last menu-mlid-2949 menu-item-2949"><a href="/developers/develop/api-guide/onboarding/objc">Objective-C</a></li></ul></li><li class="menu-parent menu-mlid-2607 menu-item-2607"><a href="/developers/develop/api-guide/config">Configuration</a><ul class="menu clearfix"><li class="first menu-mlid-2950 menu-item-2950"><a href="/developers/develop/api-guide/config/java">java</a></li><li class="menu-mlid-2951 menu-item-2951"><a href="/developers/develop/api-guide/config/cpp">C++</a></li><li class="menu-mlid-2952 menu-item-2952"><a href="/developers/develop/api-guide/config/objc">Objective-C</a></li><li class="last menu-mlid-2953 menu-item-2953"><a href="/developers/develop/api-guide/config/c-thin">C (Thin Core)</a></li></ul></li><li class="menu-parent menu-mlid-2612 menu-item-2612"><a href="/developers/develop/api-guide/notification">Notification</a><ul class="menu clearfix"><li class="first menu-mlid-2954 menu-item-2954"><a href="/developers/develop/api-guide/notification/java">java</a></li><li class="menu-mlid-2955 menu-item-2955"><a href="/developers/develop/api-guide/notification/cpp">C++</a></li><li class="menu-mlid-2956 menu-item-2956"><a href="/developers/develop/api-guide/notification/objc">Objective-C</a></li><li class="last menu-mlid-2957 menu-item-2957"><a href="/developers/develop/api-guide/notification/c-thin">C (Thin Core)</a></li></ul></li><li class="menu-parent menu-mlid-2617 menu-item-2617"><a href="/developers/develop/api-guide/controlpanel">Control Panel</a><ul class="menu clearfix"><li class="first menu-mlid-2958 menu-item-2958"><a href="/developers/develop/api-guide/controlpanel/java">java</a></li><li class="menu-mlid-2959 menu-item-2959"><a href="/developers/develop/api-guide/controlpanel/cpp">C++</a></li><li class="menu-mlid-2960 menu-item-2960"><a href="/developers/develop/api-guide/controlpanel/objc">Objective-C</a></li><li class="last menu-mlid-2961 menu-item-2961"><a href="/developers/develop/api-guide/controlpanel/c-thin">C (Thin Core)</a></li></ul></li><li class="menu-parent menu-mlid-2622 menu-item-2622"><a href="/developers/develop/api-guide/audio-streaming">Audio Streaming</a><ul class="menu clearfix"><li class="first last menu-mlid-2962 menu-item-2962"><a href="/developers/develop/api-guide/audio-streaming/cpp">C++</a></li></ul></li><li class="last menu-mlid-2624 menu-item-2624"><a href="/developers/develop/api-guide/events-and-actions">Events and Actions</a></li></ul></li><li class="menu-mlid-2625 menu-item-2625"><a href="/developers/develop/api-reference">API Reference</a></li><li class="menu-parent menu-mlid-2626 menu-item-2626"><a href="/developers/develop/debug">Debug</a><ul class="menu clearfix"><li class="first last menu-mlid-2627 menu-item-2627"><a href="/developers/develop/debug/common-issues">Common Issues</a></li></ul></li><li class="menu-parent menu-mlid-2628 menu-item-2628"><a href="/developers/develop/tutorial">Tutorial</a><ul class="menu clearfix"><li class="first menu-mlid-2629 menu-item-2629"><a href="/developers/develop/tutorial/core">Core</a></li><li class="menu-mlid-2630 menu-item-2630"><a href="/developers/develop/tutorial/ios">iOS</a></li><li class="menu-mlid-2631 menu-item-2631"><a href="/developers/develop/tutorial/thin-app">Thin App</a></li><li class="menu-mlid-2632 menu-item-2632"><a href="/developers/develop/tutorial/arduino-and-gt202">Arduino + GT202</a></li><li class="last menu-mlid-2633 menu-item-2633"><a href="/developers/develop/tutorial/videos">Videos</a></li></ul></li><li class="last menu-mlid-2634 menu-item-2634"><a href="/developers/develop/ask">Ask Forum</a></li></ul></li><li class="last menu-parent has-children menu-mlid-2636 menu-item-2636"><a href="/developers/contribute">Contribute</a><ul class="menu clearfix"><li class="first last menu-mlid-2637 menu-item-2637"><a href="/developers/contribute/project-lifecycle">Project Lifecycle</a></li></ul></li></ul></li><li class="menu-mlid-2466 menu-item-2466"><a href="/showcase-products-using-alljoyn">Showcase</a></li><li class="menu-parent menu-mlid-2487 menu-item-2487"><a href="/allseen-alliance-certification">Certification</a><ul class="menu clearfix"><li class="first menu-mlid-2488 menu-item-2488"><a href="/certification/how-validate-your-designed-allseen-product">How To Validate Your Product</a></li><li class="last menu-mlid-2489 menu-item-2489"><a href="/certification/faq">FAQ</a></li></ul></li><li class="last menu-parent menu-mlid-2421 menu-item-2421"><a href="/news-and-events">News &amp; Events</a><ul class="menu clearfix"><li class="first menu-mlid-2422 menu-item-2422"><a href="/news-and-events/newsroom/announcements">Announcements</a></li><li class="menu-mlid-2449 menu-item-2449"><a href="/news/videos">Videos</a></li><li class="menu-mlid-2423 menu-item-2423"><a href="/news-and-events/newsroom/in-the-news">In The News</a></li><li class="menu-mlid-2424 menu-item-2424"><a href="/news-and-events/events">Events</a></li><li class="menu-mlid-2448 menu-item-2448"><a href="/news-and-events/blogs">Blogs</a></li><li class="menu-mlid-2461 menu-item-2461"><a href="/news-and-events/newsletters">Newsletters</a></li><li class="last menu-mlid-2933 menu-item-2933"><a href="/news-and-events/videos">Videos</a></li></ul></li></ul></div>
+</div></div></section></div></div>      </div>
+            
+      
+      <div class="region region-sidebar-first sidebar"><div class="region-inner clearfix"><div id="block-menu-block-1" class="block block-menu-block"  role="navigation"><div class="block-inner clearfix">        <div class="block-content content"><div class="menu-block-wrapper menu-block-1 menu-name-main-menu parent-mlid-0 menu-level-3">
+  <ul class="menu clearfix"><li class="first menu-mlid-2505 menu-item-2505"><a href="/developers/learn/use-cases">Use Cases</a></li><li class="menu-mlid-2506 menu-item-2506"><a href="/developers/learn/architecture">Architecture</a></li><li class="menu-parent active-trail menu-mlid-2507 menu-item-2507"><a href="/developers/learn/core" class="active-trail">Core Framework</a><ul class="menu clearfix"><li class="first menu-parent menu-mlid-2508 menu-item-2508"><a href="/developers/learn/core/about-announcement">About Announcement</a><ul class="menu clearfix"><li class="first menu-mlid-2509 menu-item-2509"><a href="/developers/learn/core/about-announcement/interface">Interface</a></li><li class="last menu-mlid-2510 menu-item-2510"><a href="/developers/learn/core/about-announcement/interface-14-02">Interface 14.02</a></li></ul></li><li class="menu-mlid-2511 menu-item-2511"><a href="/developers/learn/core/events-and-actions">Events and Actions</a></li><li class="menu-mlid-2992 menu-item-2992"><a href="/developers/learn/core/rn_config">Routing Node Configuration</a></li><li class="menu-mlid-2512 menu-item-2512"><a href="/developers/learn/core/standard-core">Standard Core</a></li><li class="menu-mlid-2513 menu-item-2513"><a href="/developers/learn/core/thin-core">Thin Core</a></li><li class="menu-parent menu-mlid-2514 menu-item-2514"><a href="/developers/learn/core/system-description">System Description</a><ul class="menu clearfix"><li class="first menu-mlid-2515 menu-item-2515"><a href="/developers/learn/core/system-description/system-architecture">System Architecture</a></li><li class="menu-mlid-2516 menu-item-2516"><a href="/developers/learn/core/system-description/advertisement-discovery">Advertisement and Discovery</a></li><li class="menu-mlid-2645 menu-item-2645"><a href="/developers/learn/core/system-description/alljoyn-transport">AllJoyn Transport</a></li><li class="menu-mlid-2517 menu-item-2517"><a href="/developers/learn/core/system-description/data-exchange">Data Exchange</a></li><li class="menu-mlid-2518 menu-item-2518"><a href="/developers/learn/core/system-description/alljoyn-session">AllJoyn Session</a></li><li class="menu-mlid-2519 menu-item-2519"><a href="/developers/learn/core/system-description/sessionless-signal">Sessionless Signal</a></li><li class="menu-mlid-2520 menu-item-2520"><a href="/developers/learn/core/system-description/alljoyn-security">AllJoyn Security</a></li><li class="menu-mlid-2521 menu-item-2521"><a href="/developers/learn/core/system-description/thin-apps">Thin Apps</a></li><li class="last menu-mlid-2522 menu-item-2522"><a href="/developers/learn/core/system-description/events-actions">Events and Actions</a></li></ul></li><li class="last menu-parent active-trail menu-mlid-2937 menu-item-2937"><a href="/developers/learn/core/security2_0" class="active-trail">Security 2.0</a><ul class="menu clearfix"><li class="first last active-trail active menu-mlid-2938 menu-item-2938"><a href="/developers/learn/core/security2_0/hld" class="active-trail active">High-Level Design</a></li></ul></li></ul></li><li class="menu-parent menu-mlid-2523 menu-item-2523"><a href="/developers/learn/base-services">Base Services</a><ul class="menu clearfix"><li class="first menu-parent menu-mlid-2524 menu-item-2524"><a href="/developers/learn/base-services/onboarding">Onboarding</a><ul class="menu clearfix"><li class="first menu-mlid-2525 menu-item-2525"><a href="/developers/learn/base-services/onboarding/interface">Interface</a></li><li class="last menu-mlid-2526 menu-item-2526"><a href="/developers/learn/base-services/onboarding/interface-14-02">Interface 14.02</a></li></ul></li><li class="menu-parent menu-mlid-2527 menu-item-2527"><a href="/developers/learn/base-services/configuration">Configuration</a><ul class="menu clearfix"><li class="first menu-mlid-2528 menu-item-2528"><a href="/developers/learn/base-services/configuration/interface">Interface</a></li><li class="last menu-mlid-2529 menu-item-2529"><a href="/developers/learn/base-services/configuration/interface-14-02">Interface 14.02</a></li></ul></li><li class="menu-parent menu-mlid-2530 menu-item-2530"><a href="/developers/learn/base-services/notification">Notification</a><ul class="menu clearfix"><li class="first menu-mlid-2531 menu-item-2531"><a href="/developers/learn/base-services/notification/interface">Interface</a></li><li class="last menu-mlid-2532 menu-item-2532"><a href="/developers/learn/base-services/notification/interface-14-02">Interface 14.02</a></li></ul></li><li class="menu-parent menu-mlid-2533 menu-item-2533"><a href="/developers/learn/base-services/controlpanel">ControlPanel</a><ul class="menu clearfix"><li class="first menu-mlid-2534 menu-item-2534"><a href="/developers/learn/base-services/controlpanel/interface">Interface</a></li><li class="last menu-mlid-2535 menu-item-2535"><a href="/developers/learn/base-services/controlpanel/interface-14-02">Interface 14.02</a></li></ul></li><li class="last menu-parent menu-mlid-2536 menu-item-2536"><a href="/developers/learn/base-services/audiostreaming">Audio Streaming</a><ul class="menu clearfix"><li class="first last menu-mlid-2537 menu-item-2537"><a href="/developers/learn/base-services/audiostreaming/interface">Interface</a></li></ul></li></ul></li><li class="last menu-mlid-2538 menu-item-2538"><a href="/developers/learn/glossary">Glossary</a></li></ul></div>
+</div></div></div></div></div>            <div id="content-column" role="main">
+        <div class="content-inner">
+
+          
+          <section id="main-content">
+
+                                      <header id="main-content-header">
+
+                                                  <h1 id="sub-title">
+                    AllJoyn™ Security 2.0 Feature High-Level Design                  </h1>
+                
+                
+              </header>
+                        
+                          <div id="content">
+                        <article id="node-4466" class="node node-developer-document article clearfix" about="/developers/learn/core/security2_0/hld" typeof="sioc:Item foaf:Document" role="article">
+
+  
+      <span property="dc:title" content="AllJoyn™ Security 2.0 Feature High-Level Design" class="rdf-meta element-hidden"></span><span property="sioc:num_replies" content="0" datatype="xsd:integer" class="rdf-meta element-hidden"></span>
+  
+  <div class="node-content">
+  
+  <div class="field-body view-mode-full">
+    
+<h1 id="introduction">Introduction</h1>
+<h2 id="purpose-and-scope">Purpose and scope</h2>
+<p>This document captures the system level design for the enhancements to the
+AllJoyn™ framework to support the Security 2.0 feature requirements. Related
+interfaces and API design is captured at a functional level. Actual definition
+for interfaces and APIs is outside the scope of this document. Features and
+functions are subject to change without notice.</p>
+<h2 id="revision-history">Revision history</h2>
+<table><thead><tr><th>Revision</th>
+<th>Date</th>
+<th>Change Log</th>
+</tr></thead><tbody><tr><td>Rev 1 Update 0</td>
+<td>August 8, 2014</td>
+<td>Update with new format and comments</td>
+</tr><tr><td>Rev 1 Update 1</td>
+<td>August 27, 2014</td>
+<td>Update with comments from the collaboration meeting</td>
+</tr><tr><td>Rev 1 Update 2</td>
+<td>September 8, 2014</td>
+<td>Update with comments and agreement from the technical conference call on September 3, 2014.</td>
+</tr><tr><td>Rev 1 Update 3</td>
+<td>October 30, 2014</td>
+<td>Update the authorization data section based on agreement from the technical conference call on October 14, 2014.</td>
+</tr><tr><td>Rev 1 Update 4</td>
+<td>December 23, 2014</td>
+<td>Update the Certificate section and changes listed in JIRA tickets ASACORE-1170, 1256, 1259, 1260.</td>
+</tr><tr><td>Rev 1 Update 5</td>
+<td>January 15, 2015</td>
+<td>Update the rule enforcing table after the conference call on Janurary 13, 2015 by the Security2.0 working group.</td>
+</tr><tr><td>Rev 1 Update 6</td>
+<td>March 31, 2015</td>
+<td><p>Update the authorization data after the conference call on Janurary 20, 2015 by the Security2.0 working group. Updated the permission matrix to reflect the concept of Provide permission.</p><p>Updated based on review comments by the Security 2.0 working group on March 6, 2015.</p><p>Add the updated information on Security Manager and manifest from the Wiki</p><p>Updated based on review comments by the Security 2.0 working group on March 13, 2015 and on March 19, 2015.</p><p>Updated based on open issue discussion on March 23, 2015. Updated based on comments on March 31, 2015 short review.</p><p>Updated the authorization data search algorithm section based on reviews comment.</p><p>Updated based on discussion on April 28, 2015.</p><p>Updated based on discussion on May 5, 2015.</p></td>
+</tr><tr><td>Rev 1 Update 7</td>
+<td>May 28, 2015</td>
+<td><p> Simplified access rule selection by removing priority and enforcement explicit deny rules regardless of degree of match. Simplifying to aid in comprehension</p><p>Corrected text describing policy generated after being claimed to match the specified policy; outgoing messages are allowed for ANY_TRUSTED.</p><p>Corrected generated policy to indicate there are two entries for members under the ANY_TRUSTED ACL</p><p>Changed the description of the generated policy to indicate it is not an example, it is the policy to be generated, and recommend certification test be created to verify this.</p><p>Corrected a couple of places, in definition and description of session establishment, to indicate that membership certificate trust requies a signature chain including the security group authority rather than any certificate authority.</p></td>
+</tr><tr><td>Future revisions</td>
+<td>June 12, 2015</td>
+<td><p> See git submissions for change notes.</p></td>
+</tr></tbody></table><h2 id="acronyms-and-terms">Acronyms and terms</h2>
+<table><thead><tr><th>Acronym/term</th>
+<th>Description</th>
+</tr></thead><tbody><tr><td>About data</td>
+<td>Data from the About feature.  For more information, refer to the  <a href="/developers/learn/core/about-announcement/interface">About Feature Interface Spec.</a></td>
+</tr><tr><td>ACL</td>
+<td>Access Control List</td>
+</tr><tr><td>AES CCM</td>
+<td>The Advanced Encryption Standard 128-bit block cypher using Counter with CBC-MAC mode. Refer to <a href="http://tools.ietf.org/html/rfc3610">RFC 3610</a> for more information.</td>
+</tr><tr><td>AllJoyn framework</td>
+<td>Open source peer-to-peer framework that allows for abstraction of low-level network concepts and APIs.</td>
+</tr><tr><td>Authentication GUID</td>
+<td><p>The Authentication GUID is a GUID assigned to a keystore for authentication purposes.  This GUID is persisted in the keystore and provides a long-term identity for the keystore. Typically, this GUID is associated with a single application. In the scenario where a group of related applications share a given keystore, they also share the same authentication GUID.</p>This GUID is used as a mapping key for storing and accessing authentication and encryption keys.   All key materials associated with another peer is stored in the keystore with the peer’s authentication GUID as the mapping key.</td>
+</tr><tr><td>Certificate Authority (CA)</td>
+<td>Entity that issues a digital certificate</td>
+</tr><tr><td>Consumer</td>
+<td>An AllJoyn application consuming services on the AllJoyn network.</td>
+</tr><tr><td>Device</td>
+<td>A physical device that may contain one or more AllJoyn applications.  In this document, whenever the term “device” is used, it indicates the system application of the given physical device.</td>
+</tr><tr><td>DSA</td>
+<td>Digital Signature Algorithm</td>
+</tr><tr><td>ECC</td>
+<td>Elliptic Curve Cryptography</td>
+</tr><tr><td>ECDHE</td>
+<td>Elliptic Curve Diffie-Hellman Ephemeral key exchange</td>
+</tr><tr><td>ECDHE_ECDSA</td>
+<td>ECDHE key agreement with asymmetric DSA based authentication.</td>
+</tr><tr><td>ECDHE_NULL</td>
+<td>ECDHE key agreement only. No authentication.</td>
+</tr><tr><td>ECDHE_PSK</td>
+<td>ECDHE key agreement with pre-shared symmetric key based authentication.</td>
+</tr><tr><td>Factory-reset application</td>
+<td>An application restored to the original configuration.</td>
+</tr><tr><td>Grantee</td>
+<td>The application or user who is the subject of a certificate.</td>
+</tr><tr><td>GUID</td>
+<td>Globally Unique Identifier. A 128 bit identifier generated randomly in a way that the probability of collision is negligible.</td>
+</tr><tr><td>Subject</td>
+<td>The application or user possessing a private key associated with the certificate.</td>
+</tr><tr><td>Keystore</td>
+<td><p>A repository of security keys and certificates.  An application instance can have at least one keystore.  A keystore is associated with a bus attachment.  If an application uses multiple bus attachments, it can have more than one keystore.</p><p>Multiple applications running as the same user can choose to share the same keystore, but if they do, they are treated as the same security principal.</p></td>
+</tr><tr><td>OOB</td>
+<td>Out Of Band</td>
+</tr><tr><td>Peer</td>
+<td>A remote application participating in the AllJoyn messaging.</td>
+</tr><tr><td>Permission module</td>
+<td>The AllJoyn Core module that handles all the permission authorization.</td>
+</tr><tr><td>Producer</td>
+<td>An AllJoyn application providing services on the AllJoyn network.</td>
+</tr><tr><td>Security Group</td>
+<td>A logical grouping of devices, applications, and users. It is identified by a group ID which is a GUID and the security group authority public key. An application can be installed with a policy to expose services to members of the security group. An application or user holding a membership certificate is in fact a member of the security group. Any member of the security group can access the services exposed to the group by the applications with ACLs defined for that group.</td>
+</tr><tr><td>Security Group Authority</td>
+<td>A security group authority is the user or application that defines the security group and grant membership certificates to other. The security group authority is the certificate authority for that group.</td>
+</tr><tr><td>Security Manager</td>
+<td>A service used to manage cryptographic keys, and generate and distribute certificates.</td>
+</tr><tr><td>SHA-256</td>
+<td>Secure Hash Algorithm SHA-2 with digest size of 256 bits or 32 bytes.</td>
+</tr><tr><td>User</td>
+<td>The person or business entity interacting with AllJoyn applications.</td>
+</tr></tbody></table><h1 id="system-design">System Design</h1>
+<h2 id="overview">Overview</h2>
+<p>The goal of the Security 2.0 feature is to allow an application to validate
+access to interfaces or objects based on policies installed by the owner.  This
+feature is part of the AllJoyn Core library.  It is not an option for the
+application to enforce permission.  It is up to the user to dictate how the
+application performs based on the access control lists (ACLs) defined for the
+application.  The AllJoyn Core Permission component does all the enforcement
+including the concept of mutual or one-way authorization before any message
+action can be taken.</p>
+<p>The Security Manager is a service that helps the user with key management and
+permission rules building.  Using the application manifest template defined by
+the application developer, the Security Manager builds the manifest consisting
+of access control lists to let the end-user authorize which interactions the
+application can do.  An application developer does not have to build a security
+manager.  The permission can be installed by another application or another
+security manager.</p>
+<p>In addition to the encrypted messaging (using AES CCM) between the peers, the
+Security 2.0 Permission module manages a database of access credentials and the
+Access Control Lists (ACLs).</p>
+<p>Figure shows the system architecture of the Security 2.0 feature.
+<img src="/sites/default/files/developers/learn/security2_0/security-system-diagram.png" alt="security-system-diagram" /></p>
+<p><strong>Figure:</strong> Security system diagram</p>
+<h2 id="premises">Premises</h2>
+<p>The following Table lists the premises for the Security 2.0 features.
+<strong>Table:</strong> Security 2.0 premises</p>
+<table><thead><tr><th>Topic</th>
+<th>Definition</th>
+<th>Premises</th>
+</tr></thead><tbody><tr><td>Identity</td>
+<td>The application security principal</td>
+<td>Each peer is identified by an authentication GUID  and a cryptographic public key</td>
+</tr><tr><td>Admin</td>
+<td>An admin (or administrator) is a security principal with administrator privilege for the application</td>
+<td><ul><li>An admin is a member of the admin security group which has full access to any object and interface in the application</li></ul></td>
+</tr><tr><td>Claim</td>
+<td>Incorporate a factory-reset application with the Permission Module</td>
+<td><ul><li>A factory-reset application has no list of certificate authorities for AllJoyn security.</li><li>A factory-reset application has no admin for AllJoyn security.</li><li>Anyone can claim a factory-reset application.</li><li>The Claimer installs a FROM_CERTIFICATE_AUTHORITY ACL for an identity certificate authority</li><li>The Claimer installs an admin security group</li></ul></td>
+</tr><tr><td>Policy</td>
+<td><p>A policy is a list of ACLs governing  the behavior of an application</p><p>A policy template is a list of rules defined by the application developer to guide the admin for policy building.</p></td>
+<td><ul><li>An admin can install, update, or remove a policy.</li><li>A newer policy can be installed by any authorized peer. Developers can define policy templates to help the admin with policy building.</li><li>Security group specific policy specifies the permissions granted to members of the group. The security group authority becomes a certificate authority for that particular group.</li><li>A policy may exist at the producer or consumer side. Policy enforcement applies wherever it resides.</li><li>A policy is considered private.  It is not exchanged with any peer.</li><li>A keystore has at most one policy.  A complex application with multiple bus attachments can use a shared keystore in one bus attachment and an app-specific keystore for another bus attachment.  In such case, the complex application has in fact more than one policy.</li><li>An admin can query the existing policy installed in the keystore.</li></ul></td>
+</tr><tr><td>Membership certificate</td>
+<td>A membership certificate is the proof of a security group membership</td>
+<td><ul><li>Membership certificates are exchanged between peers.</li><li>An application trusts a membership certificate if the issuer or any subject in the issuer’s certificate chain is the security group authority.</li><li>A membership certificate subject can generate additional membership certificates for the given security group if the cA flag is true.</li><li>A membership certificate must have a security group ID.</li><li>An application can accept the installation of any number of membership certificates into its keystore.</li></ul></td>
+</tr><tr><td>Identity certificate</td>
+<td>Certificate that signs the identity information.</td>
+<td><ul><li>The Certificate has an identity alias stored in the X.509 SubjectAltName extension field.</li><li>An application trusts identity certificates issued by the application’s certificate authority or any of the security group authorities listed in the application’s policy.</li><li>An identity certificate subject can generate additional identity if the cA flag is true.</li></ul></td>
+</tr><tr><td>Manifest data</td>
+<td>The permission rules accompanying the identity certificate</td>
+<td><ul><li>Manifest data are not present in the identity certificate. They are accompanied with the identity certificate.</li><li>The manifest data digest is present in the identity certificate.</li><li>The manifest data syntax is the same as the policy syntax.  While the policy stays local the manifest data is presented to the peer along with the identity certificate.</li></ul></td>
+</tr><tr><td>Security Manager</td>
+<td>A service used to manage cryptographic keys, and generate certificates.</td>
+<td><ul><li>Security Manager can push policy and certificates to application</li></ul></td>
+</tr></tbody></table><h2 id="typical-operations">Typical operations</h2>
+<p>The following subsections describe the typical operations performed by a user.</p>
+<h3 id="assumptions">Assumptions</h3>
+<p>In all the flows listed in this section, the Security Manager is assumed to be
+claimed by another Security Manager or to be self-claimed.  The certificates may
+have been issued from sources in the cloud.  As the result, the Security Manager
+is shown with one certificate authority and an identity certificate.</p>
+<h3 id="sample-certificates-and-policy-entries">Sample Certificates and Policy Entries</h3>
+<p>The following is a high level presentation of certificates and policy entries
+used in the flows in this section.</p>
+<p><img src="/sites/default/files/developers/learn/security2_0/sample-certificates-and-acl-entries.png" alt="sample-certificates-and-acl-entries" /></p>
+<p><strong>Figure:</strong> Sample Certificates and ACL entries</p>
+<h4 id="the-peer-types">The peer types</h4>
+<p>The following peer types are supported in the permission policy.  A peer may match many of the peer types.</p>
+<table><thead><tr><th>Peer Type</th>
+<th>Description</th>
+</tr></thead><tbody><tr><td>ALL</td>
+<td>This matches all peers including an anonymous peer using ECDHE_NULL key exchange.</td>
+</tr><tr><td>ANY_TRUSTED</td>
+<td>This matches any authenticated peer for all authentication methods except ECDHE_NULL key exchange.</td>
+</tr><tr><td>FROM_CERTIFICATE_AUTHORITY</td>
+<td>This matches any peer authenticated via ECDHE_ECDSA key exchange and its identity certificate’s trust is verified against the specific certificate authority listed in the policy for this type of peer.</td>
+</tr><tr><td>WITH_PUBLIC_KEY</td>
+<td>This matches a peer with the specific public key.  The peer is authenticated via ECDHE_ECDSA key exchange.  Its identity certificate’s trust is verified against any of the application’s certificate authorities (including the security group authorities).</td>
+</tr><tr><td>WITH_MEMBERSHIP</td>
+<td><p>This matches any peer with possession of a membership certificate with the specific security group ID.</p><p>The peer is authenticated via ECDHE_ECDSA key exchange.  Its identity certificate’s trust is verified against any of the application’s certificate authority (including the security group authorities).</p><p>The subject of the membership certificate must be the peer’s public key.</p></td>
+</tr></tbody></table><h3 id="define-a-security-group">Define a security group</h3>
+<p>Any user can define a security group (logical grouping of applications and
+users) using a Security Manager. When the user specifies a security group name
+(for display purpose), the Security Manager creates the security group ID
+(a GUID value).</p>
+<h3 id="required-key-exchanges">Required Key Exchanges</h3>
+<p>The framework requires either ECHDE_NULL or ECDHE_PSK key exchange for the claim
+process.  Once the application is claimed, only the ECDHE_ECDSA key exchange is
+allowed unless the policy allows for anonymous user; in such case, ECDHE_NULL is
+acceptable.</p>
+<h3 id="certificate-exchange-during-session-establishment">Certificate exchange during session establishment</h3>
+<p>During the AllJoyn ECHDE_ECDSA key exchange and session establishment, the peers
+exchange identity certificates, manifests, and all membership certificates.
+Since all the membership certificates are exchanged, there is a potential
+information disclosure vulnerability.  It is desired to have a more intelligent
+selection algorithm to provide membership certificates on demand and need-to-know
+basis.  This algorithm needs to take into account the latency of the certificate
+exchange during the method call invocation.</p>
+<p>The bus attachment trusts the peer if the issuer of the peer’s identity
+certificate is any of its certificate authorities and any of the security group
+authorities listed in the application’s policy.</p>
+<p>After the session key is generated, the peers exchange all the membership
+certificates.  Each membership certificate’s trust is checked against the
+public key of the authority of the security group.</p>
+<p><img src="/sites/default/files/developers/learn/security2_0/exchange-manifest-and-membership-certificates.png" alt="exchange-manifest-and-membership-certificates" /></p>
+<p><strong>Figure:</strong> Exchange manifest and membership certificates</p>
+<p>The identity certificate chain is exchanged during the ECDHE_ECDSA key exchange
+process.  The org.alljoyn.Bus.Peer.Authentication interface is not enforced with
+permission.</p>
+<h3 id="claim-a-factory-reset-application">Claim a factory-reset application</h3>
+<p>Using a Security Manager any user can claim any factory-reset application. The
+factory-reset application is assumed to be already onboarded to the network.  It
+is recommended the claiming process occurs during the onboarding process while
+the peers are connected via the SoftAP.</p>
+<p><img src="/sites/default/files/developers/learn/security2_0/recommend-to-claim-during-onboarding.png" alt="recommend-to-claim-during-onboarding" /></p>
+<p><strong>Figure:</strong> Recommend to claim during onboarding</p>
+<p>Claiming is a first-come, first-claim action. The user installs an admin
+security group.  The procedure to make the application to become claimable again
+is manufacturer-specific.   See the FactoryReset() in the Configuration
+interface.  There will be an API call that allows the application to make itself
+claimable again.</p>
+<h4 id="claim-factory-reset-application-without-out-of-band-registration-data">Claim factory-reset application without out-of-band registration data</h4>
+<p><img src="/sites/default/files/developers/learn/security2_0/claim-a-factory-reset-device-without-out-of-band-registration-data.png" alt="claim-a-factory-reset-device-without-out-of-band-registration-data" /></p>
+<p><strong>Figure:</strong> Claim a factory-reset application without using out-of-band
+registration data</p>
+<p>The identity certificate will be used for authentication in the ECDHE_ECDSA key
+exchange.</p>
+<h4 id="claim-factory-reset-application-using-out-of-band-registration-data">Claim factory-reset application using out-of-band registration data</h4>
+<p>An application manufacturer can provision a key or the application can
+dynamically generate a key to support the claiming process. The ECDHE_PSK key
+exchange is used in this scenario. The key is provided to the user out of band.
+An example is a QR code or a token delivered via email or text messaging. The
+user is prompted for the key when establishing a connection with the
+factory-reset application.</p>
+<p><img src="/sites/default/files/developers/learn/security2_0/claiming-a-factory-reset-device-using-out-of-band-registratin-data.png" alt="claiming-a-factory-reset-device-using-out-of-band-registratin-data" /></p>
+<p><strong>Figure:</strong> Claiming a factory-reset application using out-of-band registration
+data</p>
+<h3 id="example-of-building-a-policy">Example of building a policy</h3>
+<p>A user uses a Security Manager application to build a policy. The Security
+Manager application queries the About data and manifest templates from the
+application. The Security Manager application can do further introspection of
+the application for the detailed information of securable interfaces and secured
+objects, and prompt the user to select the permissions to include in the policy.</p>
+<p>A policy may contain a number of ACLs.  Please refer to section
+<a href="#policy-acl-format">(Policy ACL format)</a> for more information.</p>
+<h3 id="install-a-policy">Install a policy</h3>
+<p>An admin can install a policy for the application.</p>
+<p>When a policy is installed, the core framework may expire master secrets
+including existing session keys if it is not able to apply the new policy without
+re-authenticating the peer.  Resource constrained devices are most likely to
+expire master secrets.  Expiring keys will cause existing sessions to terminate.</p>
+<p><img src="/sites/default/files/developers/learn/security2_0/install-a-policy.png" alt="install-a-policy" /></p>
+<p><strong>Figure:</strong> Install a policy</p>
+<h3 id="update-a-manifest">Update a manifest</h3>
+<p>An admin can update a manifest for the application.  This involves resigning the
+identity certificate because the new digest of the manifest must be included in
+the identity certificate.</p>
+<p><img src="/sites/default/files/developers/learn/security2_0/update-manifest.png" alt="update-manifest" /></p>
+<p><strong>Figure:</strong> Update manifest</p>
+<h3 id="add-an-application-to-a-security-group">Add an application to a security group</h3>
+<p>An admin issues a membership certificate with the given security group ID and
+provides it to the application to install in its keystore. This act adds the
+application to the security group.</p>
+<p><img src="/sites/default/files/developers/learn/security2_0/add-an-application-to-a-security-group.png" alt="add-an-application-to-a-security-group" /></p>
+<p><strong>Figure:</strong> Add an application to a security group</p>
+<h3 id="add-a-user-to-a-security-group">Add a user to a security group</h3>
+<p>The security group authority uses the Security Manager to generate the membership
+certificate for another user for the given security group ID.</p>
+<p>In the following flow, the security group authority named “user” provides a
+membership certificate for security group LivingRoomGUID to the other user named
+“user2.”</p>
+<p><img src="/sites/default/files/developers/learn/security2_0/add-a-user-to-a-security-group.png" alt="add-a-user-to-a-security-group" /></p>
+<p><strong>Figure:</strong> Add a user to a security group</p>
+<h3 id="security-manager">Security Manager</h3>
+<h4 id="introduction">Introduction</h4>
+<p>The AllJoyn security 2.0 ecosystem consists of many applications and devices.
+Those applications and devices are deployed in various setups and for them it is
+impossible to know up front what other peers they will see around them let alone
+know how they should interact with them. Which peers can be trusted, which
+rights do those peers have… So after being deployed, applications and devices
+have to be configured. The people in charge of configuring the system, the
+administrators need a service for this. Such a service is called a security
+manager.</p>
+<p>Depending on your setup, you need a different service. A large enterprise has
+different requirements than a home does. Not all administrators have a strong
+technical background. A tool for home users should have a straightforward,
+understandable user interface (hiding the more complex features). These
+simplifications should be done inside the security manager, so it is transparent
+for applications and devices in which setup they are deployed. Application
+developers should make no distinction between enterprise and small home.</p>
+<p>A security configuration consists of two parts:</p>
+<ol><li>Certificates: certificates provide proof that an application is managed by a
+security manager. They can be used to gain access to resources of other peers
+or to provide resources themselves to others. The certificates describe the
+rights the subject has.</li>
+<li>Policy: A policy is a list of Access Control Lists (ACLs). These ACLs
+describe how other peers can access the holder of the policy.</li>
+</ol><p>Security managers use AllJoyn to transfer this configuration to applications and
+devices they manage.</p>
+<h4 id="security-manager-architecture">Security Manager Architecture</h4>
+<p>A security manager is a service that can take multiple forms. For a home setup
+it can be a single application accessed by one person. For an enterprise setup,
+multiple administrators need to use it, so its core can run on a server, with
+some local application talking to it. When discussing the functional blocks of
+the security manager, it is important to understand that those blocks can reside
+on different machines and that for some of these we even have multiple instances.</p>
+<ul><li>The manager provides certificates. In order to generate and sign certificates,
+it needs to have a certificate authority (CA).</li>
+<li>Configuration storage: The security manager should keep track of what the
+configuration looks like. To do so, it should persist the configuration data.</li>
+<li>UI: The administrator needs to interact with the security manager in order to
+make configuration changes. The user interface doesn't need to be part of the
+manager itself. It could be running in a web browser or it could offer a REST
+API, so that custom UI can be built on top.</li>
+<li>AllJoyn Agent (security manager agent): Configuration updates are sent using
+AllJoyn as the communication protocol. The agent is the component which does
+the interaction with the managed peers.</li>
+</ul><p>The following assumptions are made:</p>
+<ul><li>The four functional blocks of the security manager can be combined into a
+single application, but it should be possible to run them in different
+applications or even on different hosts.</li>
+<li>A security manager can have multiple security manager agents acting on its
+behalf.</li>
+<li>The security manager topology is transparent for AllJoyn applications.</li>
+<li>A security manager is identified by the public key of its CA. We call this the
+key of the security manager.</li>
+</ul><p>The Alliance envisions multiple implementations of security managers and does
+not provide implementation specifications. The Alliance does specify a set of
+interfaces that allow the security managers to interact with AllJoyn security 2.0
+based applications and devices.</p>
+<h4 id="what-the-security-manager-manages">What the Security Manager manages</h4>
+<p>We already mentioned a number of times that a security manager manages
+applications and devices. But what does it mean and do we really manage
+applications and devices? The security manager agent will use AllJoyn security
+features to set up a secure connection to a peer. The only way it has to
+securely identify this peer is by looking at that peer's public key. Since we
+hand out certificates granting rights to this key, in fact it means we are
+managing keys. So when asking what are we managing, we should ask ourselves who
+has access to a key? There is no easy answer to this questions. It all depends
+on the OS and platform the software is running on.</p>
+<ul><li>On a plain Linux or Windows machine, applications can choose to protect data
+on a per-user basis, making it hard to protect the key from other applications
+running as the same user. On the other hand, the key is also not
+application-specific. When the same application runs as a different user, it
+can't access the key anymore.</li>
+<li>Operating systems on smartphone do a better job at sandboxing applications.
+The link between key and application is stronger there.</li>
+</ul><p>How many keys you need per device depends on the device:</p>
+<ul><li>A single-function device (e.g., a temperature sensor) is considered as one big
+application. One key to do all operations.</li>
+<li>Every app on a smartphone is considered as an app on its own, so one key per
+application.</li>
+<li>The built-in firmware of a smart TV is also considered as a single app.
+Applications installed on top of the firmware of the TV are separate apps and
+should have their own key.</li>
+</ul><h5 id="what-we-can-trust">What we can trust</h5>
+<p>The AllSeen Alliance offers a software stack that runs on top of some hardware
+within an OS. The stack can be embedded in an application which is installed on
+a device or could be integrated in a firmware of a device. The security manager
+cannot distinguish this. He only sees a remote peer. Furthermore the security
+manager cannot assume applications are running on trustworthy systems. If an
+application runs on a compromised or malicious system, there is little we can do
+inside the app to protect.  A genuine application running on malicious system,
+should be treated as malicious. We should protect the ecosystem by:</p>
+<ol><li>Being able to revoke the rights granted to an application.</li>
+<li>Make sure compromised or even malicious applications are limited to rights
+they were given. Since we can't trust the OS or hardware the application is
+running on, these checks must be done at the remote peer side.</li>
+</ol><p>The protective measure should be defined so that a well-behaving app on a well
+behaving system can protect itself from any unwarranted access. If both peers
+are malicious, then there is little we can do. But then they don't need AllSeen
+to perform malicious acts. There is a risk though that 2 malicious applications
+team up. Each individual app gets a small acceptable set of rights, but then
+combining their rights to launch an attack.</p>
+<p>When claiming an application two considerations must be made:</p>
+<ol><li>Can I trust the application?</li>
+<li>Can I trust the device where the application is running on? But not only the
+device and its OS, but for desktops systems as well which other applications
+are there? These apps might to try get access to the keystore of the genuine
+app. This is not something we can fix within the AllSeen Alliance. This
+remains an integration aspect</li>
+</ol><h5 id="sharing-keystores">Sharing Keystores</h5>
+<p>When an application is claimed, it will store its certificates inside a keystore.
+This keystore can be shared. The security manager nor the system can prevent
+applications from doing this. Is it recommended to share keystores? It has the
+advantage that you only have to claim one application, while multiple
+applications can use it. However the certificates in the store will only grant a
+limited set of permission to its users. Sharing the store only makes sense if it
+was granted all permissions required by its applications. Sharing keystore can
+be allowed if the applications granted access to it are known upfront and the
+union of rights is known.</p>
+<p>Sharing keystores does have some side effects.  Every app using the keystore
+will appear as the same manageable application. The security will be able to
+manage one keystore via multiple apps. This feature requires additional layer of
+complexity in order to provide the concurrent access to the shared keystore.</p>
+<p>We also partially lose the ability to sandbox applications, as applications
+using a shared keystore get a full set of rights linked to the store and not
+necessarily the ones they strictly need.</p>
+<h5 id="applications-integrated-in-firmware">Applications integrated in firmware</h5>
+<p>The firmware of a device could consist of multiple smaller AllSeen applications.
+From end-user perspective you only want to claim this device once. Those
+applications are allowed to share their keystore, but only one of them should
+provide the Security interfaces. So only one application is seen from security
+manager perspective. When expressing the permission required for this
+application, it should request all permissions required by the apps on that
+device.</p>
+<h5 id="standalone-applications">Standalone applications</h5>
+<p>Standalone applications are apps downloaded and installed on a desktop computer,
+tablet or smart phone or something similar. Standalone applications should not
+share their  keystore with other applications. If such an application is built
+out of separate sub-applications (each of them uses a separate bus attachment),
+then they should follow the same rules as applications integrated in firmware.</p>
+<h4 id="security-manager-operations">Security Manager Operations</h4>
+<p>The security manager allows the following operations:</p>
+<ul><li>security group management: create, update and delete security groups<ul><li>allow grouping of applications. A group is uniquely defined by GUID and
+the public key of a security manager. Applications can become members of a
+group when they are issued a membership certificate for that group</li>
+</ul></li>
+<li>identity management: create, update and delete identities<ul><li>Identities are used to define the users of application. Users can map to
+physical persons.  Applications can act on behalf of a user when they
+receive an identity certificate for that user’s security manager.  An
+application keystore should only have one identity certificate.</li>
+</ul></li>
+<li>application/key management:<ul><li>claim applications: make it managed by this security manager</li>
+<li>manage application manifest</li>
+<li>manage AllJoyn certificates for these applications</li>
+<li>manage policy (ACL's) of applications</li>
+<li>force application to become un-managed again</li>
+</ul></li>
+</ul><h4 id="inter-security-manager-interaction">Inter Security Manager Interaction</h4>
+<p>When applications interact with each other, they check if the interaction is
+allowed by their policies as previously set by their security manager. In
+practice, a peer must present a certificate (chain) signed by its security
+manager public key. Meaning that with the basic features we created silos, you
+can only talk to applications managed by your own security manager. In practice
+applications managed by different security managers need to interact with each
+other as well. We provide 2 ways to do this: Delegation and Restricted User.</p>
+<h5 id="delegation">Delegation</h5>
+<h6 id="use-case">Use case</h6>
+<p>I’m the administrator of my home ecosystem. I claim appliances in the home and
+provide them with configuration. I as administrator am the only person having
+access to the security manager. When my kids want to get access to an appliance,
+then they have to ask me to get approval for each application they want to use.
+This may not be sufficient for all use cases. With delegation, my security
+manager gives a membership certificate with delegation rights to the security
+manager of each of my kids. With this certificate, they can delegate these
+rights to their applications. They only need to ask one time and then they can
+make any of their applications part of my group. Even though my kids did not
+interact directly with each other, with these delegated certificates they
+interact with each other in the scope of this group.</p>
+<h6 id="limitations">Limitations</h6>
+<p>The followings are the limitations of using delegation.</p>
+<ul><li>You can only authenticate members of the group. Mutual authenticated requests
+can only be done between members of the group.</li>
+<li>My kids get Remote-control rights for the TV by giving them a membership
+certificate with delegation rights for my TV Group. Their remote control
+applications become members of the TV group. If I give my TV a policy for the
+TV group, then the TV will allow the request from the remote control apps of
+my kids. This requires my kids to define an ANY-TRUSTED policy for TV
+operations for their apps. This is ok for TVs remote control operations. If
+mutual authentication is required, the TV must become member of the TV group
+as well.</li>
+<li>For a chat use case you need to know who is sending a message and to whom
+you’re sending messages. So mutual authentication is required, and all
+participants have to be in that group.</li>
+<li>As policy is defined on group level, it would require separate groups in order
+to differentiate between kids and parents.</li>
+</ul><h6 id="delegating-certificate-flow">Delegating certificate Flow</h6>
+<p>In the X.509 membership and identity certificates, the delegate concept is
+represented by the basicConstraints extension cA flag.  If a grantee receives a
+certificate with the X.509 basicConstraints extension cA flag equal to true, the
+grantee can issue a certificate to others.  If the cA flag is false then a peer validating a
+certificate chain verifies that no further delegation has been done, or the
+chain is considered invalid.</p>
+<p> <img src="/sites/default/files/developers/learn/security2_0/reissue-membership-certificate.png" alt="reissue-membership-certificate" /></p>
+<p><strong>Figure:</strong> Reissue membership certificate</p>
+<h5 id="restricted-access-for-other-security-manager">Restricted access for other security manager</h5>
+<p>Restricted access tries to address the same problem as delegation but takes a
+different approach to solve it. With delegation, you give a certificate to an
+application. With that certificate the application can prove it is allowed
+access to a group. With restricted access we define a policy on our managed
+applications that allows applications from a different security manager to get
+access. This would be as if we would pre-install the delegated membership
+certificate on all our managed applications. So when the peer comes around, he
+doesn't need to send the proof, the application already has it. Since policy
+comes from a trusted source, we don't need to distribute certificates, we can
+define a more compact ACL.</p>
+<p>In practice, the security manager defines a restricted peer type for all
+applications that need to interact with the applications of the peer security
+manager. This ACL restricts applications of that security manager to a specific
+set of rules. Those applications just need to prove that they are owned with an
+identity certificate verifiable with the peer security manager certificate
+authority. That authority is installed with the restricted peer entry into the
+local application policy.</p>
+<p>As example use case: Suppose we have a real-estate agent. When showing a house
+to clients, he'd like to show-off the AllSeen-enabled home automation system.
+This can be achieved with either delegation or restricted user. The advantage of
+restricted user is that if he potentially needs to show 100 homes, he can do it
+based on 1 certificate instead of 100 for the delegation scenario. There is less
+risk for information disclosure. If someone could get hold of the 100
+certificates, then he can learn who the home sellers are. In the restricted user
+case, the seller's public keys are in the policy of the agent's app and policy
+is never shared.</p>
+<h6 id="install-a-restricted-peer-acl-flow">Install a restricted peer ACL Flow</h6>
+<p>The admin installs a FROM_CERTIFICATE_AUTHORITY ACL into his local application’s
+policy to allow his friend to have access to the local application.</p>
+<p><img src="/sites/default/files/developers/learn/security2_0/add-restricted-user-rules-to-an-application.png" alt="add-restricted-user-rules-to-an-application" /></p>
+<p><strong>Figure:</strong> Add restricted user rules to an application</p>
+<h3 id="application-manifest">Application Manifest</h3>
+<p>When considering where AllSeen enabled applications will run, smartphones are an
+obvious target. A lot of applications are available in various app stores.
+Unfortunately not all of these applications are trustworthy. For example, the
+flashlight app asks for access to phonebook, network, etc. Same as the
+application is sandboxed on the smartphone, we would like to sandbox
+applications within the AllSeen security 2.0 context. If I install an AllSeen TV
+remote control app, then I would like it only to have rights to do TV
+operations. Nothing more. Since we can't trust the application, we can't assume
+it will behave properly. So these restrictions must be enforced by the peers.
+For the remote control example, the TV must check whether the app has
+permissions. When remote control app tries to open the door, then the door must
+reject the call.</p>
+<p>The main goal of an application manifest is to inform an admin which interfaces
+an application will produce and consume. Once the admin accepts the manifest,
+the manifest is signed and installed on the application. The signed manifest
+will be used to enforce that the application cannot produce or consume any
+unwarranted interfaces.</p>
+<p>A signed application manifest limits the potential interfaces a malicious
+application can access within a set of well-behaving applications.</p>
+<p>The application manifest has a similar goal as an application manifest on an app
+store application, in which an end-user has to accept a list of permissions when
+installing a new application on his phone which are enforced by the app store
+application framework. The implementation is however different, as described
+below.</p>
+<h5 id="requirements">Requirements</h5>
+<h6 id="manifest-format">Manifest Format</h6>
+<p>The manifest must be expressed at the interface level. It may be expressed at
+the member level, but this is not recommended as this increases the complexity
+that needs to be handled by the admin.</p>
+<h5 id="manifest-acceptance">Manifest Acceptance</h5>
+<p>The manifest template must be presented to the admin in a user-friendly way. As
+the interface names might not be very informative, they must be mapped to a
+user-friendly description.</p>
+<p>As a malicious application can by definition not be trusted, the descriptions
+must be provided by a trustworthy source.</p>
+<p>The descriptions of the interfaces should be localized to the admin.</p>
+<p>The AllSeen Alliance must provide descriptions for any standard AllSeen
+interface, as reviewed and recommended by the Interface Review Board (IRB).</p>
+<p>The application developer must provide the descriptions of any application
+specific interfaces.</p>
+<p>If a manifest template is defined at the member level, a description for each
+listed member must be available.</p>
+<h5 id="manifest-enforcement">Manifest Enforcement</h5>
+<p>The accepted manifest must be enforced by the peer application, as a malicious
+application may not be trusted to enforce it locally.</p>
+<h5 id="manifest-update">Manifest Update</h5>
+<p>Whenever an application is updated and does not require additional rights, it
+may still use the previously signed manifest. Only when the update requires
+additional rights, the application changes its state and signal the change to
+let the admin know about the existence of a new manifest template.  The admin
+can generate a new manifest for that application.</p>
+<h5 id="implementation-scenario">Implementation Scenario</h5>
+<p>This section describes the steps to generate the application manifest.  Once the
+manifest is accepted,  its contents digest will be encoded in a new identity
+certificate.</p>
+<ol><li>The security manager discovers the remote application through the
+NotifyConfig signal.</li>
+<li>The security manager retrieves the manifest template of the application.</li>
+<li>Using the manifest template, the security manager starts the manifest
+building process.</li>
+<li>The security manager contacts a server via HTTPS to retrieve the human
+readable description of the interfaces and presents them to the admin.  Note
+that the HTTPS server location is not yet defined.</li>
+<li>The admin accepts (or rejects) the description of the manifest. When the
+admin rejects the manifest, the application will not receive a manifest.</li>
+<li>The security manager reissues a new identity certificate with the digest of
+the requested (&amp; accepted) permissions.</li>
+<li>The security manager installs the new identity certificate and manifest on
+the application.</li>
+</ol><p><img src="/sites/default/files/developers/learn/security2_0/building-policy-using-manifest.png" alt="building-policy-using-manifest" /></p>
+<p><strong>Figure:</strong> Building Policy using manifest</p>
+<h5 id="application">Application</h5>
+<p>The application developer needs to embed the manifest template in his
+application. There should be a platform specific callback function to retrieve
+the manifest template that belongs to an application. For app store
+applications, it could be based on convention, providing the manifest template
+as a file inside the application package. For small embedded devices, the
+manifest template could be part of the application.</p>
+<p>To ease the generation of membership certificates by the security manager, the
+manifest format is the same format that is used to express access rules in the
+membership certificates.</p>
+<h5 id="interface-description-server">Interface Description Server</h5>
+<p>The server serving the descriptions of the interfaces can either be:</p>
+<ol><li>Hosted by the application developer for application specific interfaces. To
+prevent spoofing attacks, this server must be contacted via HTTPS and its URL
+must be based on the reverse domain name of the interface name.</li>
+<li>Hosted by the AllSeen Alliance for common AllSeen interfaces. This server
+MUST be contacted over HTTPS.  Howeer, the URL for this server is not yet
+defined.</li>
+</ol><h5 id="manifest-enforcement">Manifest Enforcement</h5>
+<p>When applying the specific policy rules, the remote peer will enforce the rules
+specified in the manifest since the manifest is associated with the identity
+certificate.</p>
+<h2 id="access-validation">Access validation</h2>
+<h3 id="validating-policy-on-a-producer">Validating policy on a producer</h3>
+<p>This is a typical producer validation of a consumer’s permissions when the
+consumer makes a method call on a secure interface.</p>
+<p><img src="/sites/default/files/developers/learn/security2_0/validating-policy-on-a-producer.png" alt="validating-policy-on-a-producer" /></p>
+<p><strong>Figure:</strong> Validating policy on a producer</p>
+<h3 id="validating-policy-on-a-consumer">Validating policy on a consumer</h3>
+<p>This is a typical consumer policy validation when the consumer application calls
+a secure method call.</p>
+<p><img src="/sites/default/files/developers/learn/security2_0/validating-policy-for-a-consumer.png" alt="validating-policy-for-a-consumer" /></p>
+<p><strong>Figure:</strong> Validating policy for a consumer</p>
+<h3 id="validating-policy-on-a-consumer-that-requires-a-producer-belong-to-a-security-group">Validating policy on a consumer that requires a producer belong to a security group</h3>
+<p>The following flow shows a policy enforcement on the consumer that requires the
+producer belong to a security group.</p>
+<p><img src="/sites/default/files/developers/learn/security2_0/consumer-policy-requires-producer-belong-to-a-security-group.png" alt="consumer-policy-requires-producer-belong-to-a-security-group" /></p>
+<p><strong>Figure:</strong> Consumer policy requires producer belong to a security group</p>
+<h3 id="anonymous-session">Anonymous session</h3>
+<p>In scenarios when there is no trust established between two peers such as when a
+guest comes into the user's home, the guest’s consumer application can still
+control certain applications if and only if there are ACLs specified for ALL
+installed on these devices.</p>
+<p>Note that ANY_TRUSTED includes only authenticated peers while ALL includes
+unauthenticated (anonymous) peers.</p>
+<p>Accessing secured interfaces, the consumer always use ECDHE_ECDSA to contact a
+peer.  If the key exchange fails, it can fallback to ECDHE_NULL and contact the
+peer as an anonymous user.  This process is automated so the application
+developer does not need to drive the key exchange process.</p>
+<p><img src="/sites/default/files/developers/learn/security2_0/anonymous-access.png" alt="anonymous-access" /></p>
+<p><strong>Figure:</strong> Anonymous access</p>
+<h3 id="validating-an-admin-user">Validating an admin user</h3>
+<p><img src="/sites/default/files/developers/learn/security2_0/validating-an-admin.png" alt="validating-an-admin" /></p>
+<p><strong>Figure:</strong> Validating an admin</p>
+<h3 id="emitting-a-session-based-signal">Emitting a session-based signal</h3>
+<p>Before emitting a session-based signal to existing connections, the producer
+verifies whether it is allowed to emit the given signal to any authorized party.
+Upon receipt of the signal, the consumer checks whether it has the authorization
+to accept the given signal.  The consumer verifies the producer’s manifest for
+proper authorization.</p>
+<p><img src="/sites/default/files/developers/learn/security2_0/validating-a-session-based-signal.png" alt="validating-a-session-based-signal" /></p>
+<p><strong>Figure:</strong> Validating a session-based signal</p>
+<h2 id="policy-acl-format">Policy ACL format</h2>
+<h3 id="the-format-is-binary-and-exchanged-between-peers-using-alljoyn-marshalling">The format is binary and exchanged between peers using AllJoyn marshalling</h3>
+<p>The policy data will be in binary format.  The following guidelines are used for
+exchanging and persisting the policy data:</p>
+<ol><li>The AllJoyn marshalling will be use to encode the policy data when send from
+security manager to application</li>
+<li>The AllJoyn marshalling will be used to generate buffers to be signed.</li>
+<li>The AllJoyn marshalling will be used to serialize the data for persistence.</li>
+<li>The parser will ignore any field that it does not support.</li>
+</ol><h3 id="format-structure">Format Structure</h3>
+<p>The following diagram describes the format structure of the ACL data.</p>
+<p><img src="/sites/default/files/developers/learn/security2_0/authorization-data-format-structure.png" alt="authorization-data-format-structure" /></p>
+<p><strong>Figure:</strong> Authorization Data Format Structure</p>
+<h4 id="authorization-data-field-definition">Authorization data field definition</h4>
+<p><strong>Root level</strong></p>
+<table><thead><tr><th>Name</th>
+<th>Data type</th>
+<th>Required</th>
+<th>Description</th>
+</tr></thead><tbody><tr><td>version</td>
+<td>number</td>
+<td>yes</td>
+<td>The specification version number.  The current spec version number is 1.</td>
+</tr><tr><td>serialNumber</td>
+<td>number</td>
+<td>yes</td>
+<td>The serial number of the policy. The serial number is used to detect of an update to an older policy.</td>
+</tr><tr><td>ACLs</td>
+<td>Array of  ACLs</td>
+<td>yes</td>
+<td>List of access control lists.</td>
+</tr></tbody></table><p><strong>Access Control List</strong></p>
+<table><thead><tr><th>Name</th>
+<th>Data type</th>
+<th>Required</th>
+<th>Description</th>
+</tr></thead><tbody><tr><td>peers</td>
+<td>array of objects</td>
+<td>no</td>
+<td>List of peers.  There are multiple types of peers.  A peer object has the following fields:<br /><table><tr><th>Name</th><th>Data Type</th><th>Required</th><th>Description</th></tr><tr><td>type</td><td>number</td><td>yes</td><td>The peer type. The following are the valid type of peers:<ul><li>ALL – All secured sessions will match this peer type including peers that match any of the following peer types</li><li>ANY_TRUSTED – Any authenticated peer using any authentication method except ECDHE_NULL.</li><li>FROM_CERTIFICATE_AUTHORITY -- matches all peers with certificates issued by the specified certificate authority</li><li>WITH_PUBLIC_KEY – a single peer identified by the public key</li><li>WITH_MEMBERSHIP  -- all members of the security group</li></ul></td></tr><tr><td>publicKey</td><td>Public Key</td><td>no</td><td>The peer key info data. Depending on peer type, the publicKey is:<br /><ul><li>ALL – not applicable</li><li>ANY_TRUSTED – not applicable</li><li>FROM_CERTIFICATE_AUTHORITY – the public key of the certificate authority</li><li>WITH_PUBLIC_KEY – the public key of the peer</li><li>WITH_MEMBERSHIP – the public key of the security group authority</li></ul></td></tr><tr><td>sgID</td><td>GUID</td><td>No</td><td>Security group ID.  This is applicable only the type WITH_MEMBERSHIP.</td></tr></table></td>
+</tr><tr><td>rules</td>
+<td>array of rules</td>
+<td>no</td>
+<td><p>List of allowed rules. The peer application is allowed to perform the actions specified in the given rules.</p><p>The default rule is to allow nothing.</p></td>
+</tr></tbody></table><p><strong>Rule Record</strong></p>
+<table><thead><tr><th>Name</th>
+<th>Data type</th>
+<th>Required</th>
+<th>List of values</th>
+<th>Description</th>
+</tr></thead><tbody><tr><td>obj</td>
+<td>string</td>
+<td>no</td>
+<td></td>
+<td>Object path of the secured object. A * at the end indicates a prefix match.  When there is no *, it is an exact match.</td>
+</tr><tr><td>ifn</td>
+<td>string</td>
+<td>no</td>
+<td></td>
+<td>Interface name. A * at the end indicates a prefix match.  When there is no *, it is an exact match.</td>
+</tr></tbody></table><p><strong>Interface Member Record</strong></p>
+<table><thead><tr><th>Name</th>
+<th>Data type</th>
+<th>Required</th>
+<th>List of values</th>
+<th>Description</th>
+</tr></thead><tbody><tr><td>mbr</td>
+<td>string</td>
+<td>no</td>
+<td></td>
+<td>Member name.  A * at the end indicates a prefix match.  When there is no *, it is an exact match.</td>
+</tr><tr><td>type</td>
+<td>number</td>
+<td>no</td>
+<td><ul><li>0: any</li><li>1: method call</li><li>2: signal</li><li>3: property</li></ul></td>
+<td>Message type.<br />Default is any</td>
+</tr><tr><td>action</td>
+<td>byte</td>
+<td>no</td>
+<td></td>
+<td>The action mask flag. The list of valid masks:<br /><ul><li>0x00: Deny - Explict deny.  Only enforced when matched in WITH_PUBLIC_KEY ACL, ignored in all other cases</li><li>0x01: Provide – allows sending signal, exposing method calls and producing properties</li><li>0x02: Observe – allows receiving signals and getting properties</li><li>0x04: Modify – set properties and make method calls</li></ul></td>
+</tr></tbody></table><h4 id="enforcing-the-rules-at-message-creation-or-receipt">Enforcing the rules at message creation or receipt</h4>
+<p>The following table lists the required action mask base on the message.</p>
+<p><strong>Table:</strong> Action Mask Matrix</p>
+<table><thead><tr><th>Message Action</th>
+<th><p>Local Policy</p><p>Remote peer’s manifest</p></th>
+</tr></thead><tbody><tr><td>send GetProperty</td>
+<td>Remote peer has PROVIDE permission for this property</td>
+</tr><tr><td>receive GetProperty</td>
+<td>Remote peer has OBSERVE permission for this property</td>
+</tr><tr><td>send GetAllProperties</td>
+<td>Remote peer has PROVIDE permission for * properties</td>
+</tr><tr><td>receive GetAllProperties</td>
+<td>Only properties for which the remote peer has OBSERVE permission are returned</td>
+</tr><tr><td>send SetProperty</td>
+<td>Remote peer has PROVIDE permission for this property</td>
+</tr><tr><td>receive SetProperty</td>
+<td>Remote peer has MODIFY permission for this property</td>
+</tr><tr><td>send method call</td>
+<td>Remote peer has PROVIDE permission for this method call</td>
+</tr><tr><td>receive method call</td>
+<td>Remote peer has MODIFY permission for this method call</td>
+</tr><tr><td>send signal</td>
+<td>Remote peer has OBSERVE permission for this signal</td>
+</tr><tr><td>receive signal</td>
+<td>Remote peer has PROVIDE permission for this signal</td>
+</tr></tbody></table><p>Permission for property changed signals are included with the property
+permission. If a peer has permission for the property then it has permission for
+the property changed signal for that property.</p>
+<p>Sending GetAllProperties requires that the remote peer has a PROVIDE ACL rule
+for * interface members of type PROPERTY or ALL.</p>
+<p>Receiving GetAllProperties is allowed but only properties for which the
+remote peer has OBSERVE permission are returned. Other properties are treated
+as unreadable.</p>
+<p>Permission for session-cast signals has the same requirements as
+signals but the remote peer must be known in order match the ACLs to be
+applied.  The recipients for a session-cast signal in a multi-point session
+are not known resulting in permission to send the signal being denied. The
+recipient for session-cast signals in a point-to-point session are known,
+allowing ACLs to be matched.</p>
+<h5 id="policy-after-claim">Policy after claim</h5>
+<p>Right after the application is claimed, a policy is created
+automatically with the following feature:</p>
+<ol><li>Admin group has full access</li>
+<li>Trusted peers are allowed to provide properties and methods and to receive
+signals.</li>
+<li>Allow for self-installation of membership certificates</li>
+<li>All other interactions are implicitly denied</li>
+</ol><p>The created policy is below.  It is recommended that a certification test is
+created to verify this is the policy that is generated.<br /></p>
+<pre><code><code>peer: FROM_CERTIFICATE_AUTHORITY
+    pubKey: Identity_Auth_Key
+peer: WITH_MEMBERSHIP
+    pubKey: admin authority key
+    sgID: admin group ID
+    ifn: *
+        mbr: *
+        action: 0x07 (PROVIDE | OBSERVE | MODIFY)
+peer: WITH_PUBLIC_KEY
+    pubKey: the application’s public key
+    ifn: org.alljoyn.Bus.Security.ManagedApplication
+        mbr: InstallMembership
+        action: 0x04   (MODIFY)
+peer: ANY_TRUSTED
+    ifn: *
+        mbr: *
+          action: 0x01 (PROVIDE)
+          type: 1 (METHOD)
+        mbr: *
+          action: 0x02 (OBSERVE)
+          type: 2 (SIGNAL)
+        mbr: *
+          action: 0x01 (PROVIDE)
+          type: 3 (PROPERTY)</code>
+</code></pre><h4 id="rule-search-and-selection">Rule Search and Selection</h4>
+<p>Whenever an encrypted message is created or received, the access control rules
+are searched for matching rules.  In order for a rule to be considered a match,
+it must meet the following criteria:</p>
+<ul><li>Be in an access control list matching peer type, public key,
+and/or Security Group ID as specified for the ACL</li>
+<li>Match message header data based object path, interface name and member
+name as specified for the rule.</li>
+<li>Match the action mask and not be an explicit deny.</li>
+</ul><p>Or the rule must match the following criteria:</p>
+<ul><li>Be in the ACL of a peer type WITH_PUBLIC_KEY</li>
+<li>The ACL's key must match the public key of the peer</li>
+<li>The action mask must be an explicit deny.</li>
+<li>All other criteris (object path, interface and member names) must be *</li>
+</ul><p>The resulting set of matched rules is applied to the message as follows:</p>
+<ul><li>If any explicit deny rule matches per above then the message is denied.</li>
+<li>If no deny rules match, then the message is allowed if at least one allow
+rule matches.</li>
+<li>Otherwise, the message is denied.</li>
+</ul><h2 id="certificates">Certificates</h2>
+<p>The following subsections detail the supported certificates.  The certificate
+format is X.509 v3.  The certificate lifetime will be considered in order to
+avoid having to revoke the certificate.  However, certain devices do not have
+access to a trusted real time clock.  In such cases, applications on those
+devices will not be able to validate the certificate lifetime.</p>
+<h3 id="certificate-chain-validation">Certificate Chain validation</h3>
+<p>Identity and membership certificate chains will be validated per section 6.1 of
+RFC 5280 with the following additions, limitations and notes:</p>
+<ul><li>The leaf certificate must have exactly one EKU and it must be the correct EKU
+per the use case.  Certificates used for ECDHE_ECDSA authentication must
+have the identity certificate EKU and certificates exchanged to indicate
+security group memberships must have the membership certificate EKU.</li>
+<li>Intermediate certificates must have zero, one or both identity and membership
+EKUs.</li>
+<li>No EKU will be treated as any EKU, per RFC 5280. EKU validation is transitive,
+meaning any certificate with no EKU will inherit those of its parent.</li>
+<li>Time of validity will only be evaluated if the peer has a time source.</li>
+<li>The implementation will assume system time is trusted if available.</li>
+<li>For identity certificates, the associated digest of the leaf certificate
+is validated against the digest of the manifest.</li>
+<li>The AKI is validated to not be null.</li>
+<li>CRL check is not implemented as there is no CRL.</li>
+<li>basicConstraints::pathLenConstraint will NOT be checked.</li>
+</ul><p>Certificate chains will be validated...</p>
+<ul><li>When a certificate is received during claiming.</li>
+<li>When a certificate is installed.</li>
+<li>When a certificate is received during ECDHE_ECDSA authentication.</li>
+<li>When a certificate is received to assert security group membership.</li>
+</ul><h3 id="2-6-1-main-certificate-structure">2.6.1 Main Certificate Structure</h3>
+<p>All AllSeen X.509 certificates have the following ASN.1 structure.  Currently
+only the ECDSA (prime256v1) certificates are supported.</p>
+<pre><code><code>Certificate ::= SEQUENCE {
+    tbsCertificate TBSCertificate,
+    signatureAlgorithm SEQUENCE { 1.2.840.10045.4.3.2 (ecdsa-with-sha256) },
+    signatureValue BIT STRING
+}
+
+TBSCertificate ::= SEQUENCE {
+    version v3(2),
+    serialNumber INTEGER,
+    signature SEQUENCE { 1.2.840.10045.4.3.2 (ecdsa-with-sha256) },
+    issuer SEQUENCE { 2.5.4.3 (commonName), UTF8 STRING },
+    validity Validity,
+    subject Name,
+    subjectPublicKeyInfo SEQUENCE { 1.2.840.10045.2.1 (id-ecPublicKey), 1.2.840.10045.3.1.7 (prime256v1), BIT STRING },
+    issuerUniqueID IMPLICIT UniqueIdentifier OPTIONAL,
+    subjectUniqueID IMPLICIT UniqueIdentifier OPTIONAL,
+    extensions EXPLICIT
+}
+
+Extensions ::= SEQUENCE {
+    BasicConstraints SEQUENCE { 2.5.29.19 (basicConstraints), BOOLEAN (FALSE) },
+    SubjectAltName SEQUENCE { 2.5.29.17 (id-ce-subjectAltName),
+                    SEQUENCE { CHOICE[0] (otherName)
+                      SEQUENCE { 1.3.6.1.4.1.44924.1.3 (AllSeen Security Group ID),
+                          OCTET STRING}}},
+    ExtendedKeyUsage SEQUENCE { 2.5.29.37 (id-ce-extKeyUsage),
+                                SEQUENCE { (KeyPurposeId) OBJECT IDENTIFIER}},
+    AuthorityKeyIdentifier SEQUENCE { 2.5.29.35  (id-ce-authorityKeyIdentifier),
+                                      SEQUENCE { [0] (keyIdentifier) OCTET STRING}}
+}</code>
+</code></pre><h4 id="authoritykeyidentifier">AuthorityKeyIdentifier</h4>
+<p>The AuthorityKeyIdentifier standard extension field will hold 64 bits of data
+comprising of a four-bit type field with the value 0100 followed by the least
+significant 60 bits of a hash of the value of the BIT STRING
+subjectPublicKey (excluding the tag, length, and number of unused bits).</p>
+<h4 id="security-2-0-custom-oids">Security 2.0 Custom OIDs</h4>
+<p>All Security 2.0 custom OIDs will start with <code>1.3.6.1.4.1.44924.1</code> where
+<code>1.3.6.1.4.1.44924</code> is the registered AllSeen Alliance Private Enterprise
+Number.</p>
+<h3 id="identity-certificate">Identity certificate</h3>
+<p>The identity certificate is used to associate application, user or device with
+an identity alias.  This allows an identity alias to have a number of identity
+certificates installed in different keystores.</p>
+<p>The identity alias is encoded in the SubjectAltName field in the extensions.</p>
+<p>The extensions include the following fields:</p>
+<ul><li>ExtendedKeyUsage: the type of certificate within the AllSeen ecosystem.<br />1.3.6.1.4.1.44924.1.1 is used for Identity certificates.</li>
+<li>SubjectAltName: the alias for the identity.</li>
+<li>AssociatedDigest: the digest of the associated manifest data.
+Both the ExtendedKeyUsage and AssociatedDigest have custom OIDs under the
+Security 2.0 root.</li>
+</ul><pre><code><code>Extensions ::= SEQUENCE {
+BasicConstraints SEQUENCE { 2.5.29.19 (basicConstraints), BOOLEAN (FALSE) },
+SubjectAltName SEQUENCE { 2.5.29.17 (id-ce-subjectAltName),
+     SEQUENCE { CHOICE[0] (otherName)
+                SEQUENCE { 1.3.6.1.4.1.44924.1.3
+                           (AllSeen Security Group ID), OCTET STRING}}},
+AuthorityKeyIdentifier SEQUENCE { 2.5.29.35
+                                  (id-ce-authorityKeyIdentifier),
+                                   SEQUENCE { [0] (keyIdentifier) OCTET STRING}},
+ExtendedKeyUsage SEQUENCE { 2.5.29.37 (id-ce-extKeyUsage),
+                            SEQUENCE { (KeyPurposeId) 1.3.6.1.4.1.44924.1.1}},
+AssociatedDigest SEQUENCE { 1.3.6.1.4.1.44924.1.2 (AllSeen Certificate Digest),
+                            2.16.840.1.101.3.4.2.1 (hash), OCTET STRING }
+}</code>
+</code></pre><h3 id="membership-certificate">Membership certificate</h3>
+<p>The membership certificate is used to assert an application, user or device is
+part of a security group.</p>
+<p>The security group identifier is encoded with a 16 network byte order octets
+encoded in the SubjectAltName field in the extensions.</p>
+<p>The extensions include the following fields:</p>
+<ul><li>ExtendedKeyUsage: the type of certificate within the AllSeen ecosystem.<br />1.3.6.1.4.1.44924.1.5 is used for membership certificates.</li>
+<li>SubjectAltName: the security group ID.</li>
+</ul><pre><code><code>Extensions ::= SEQUENCE {
+BasicConstraints SEQUENCE { 2.5.29.19 (basicConstraints), BOOLEAN (FALSE) },
+SubjectAltName SEQUENCE { 2.5.29.17 (id-ce-subjectAltName),
+     SEQUENCE { CHOICE[0] (otherName)
+                SEQUENCE { 1.3.6.1.4.1.44924.1.3
+                           (AllSeen Security Group ID), OCTET STRING}}},
+AuthorityKeyIdentifier SEQUENCE { 2.5.29.35
+                                  (id-ce-authorityKeyIdentifier),
+                                   SEQUENCE { [0] (keyIdentifier) OCTET STRING}},
+ExtendedKeyUsage SEQUENCE { 2.5.29.37 (id-ce-extKeyUsage),
+                            SEQUENCE { (KeyPurposeId) 1.3.6.1.4.1.44924.1.5}}
+}</code>
+</code></pre><h3 id="recommended-best-practices-for-certificates">Recommended Best Practices for Certificates</h3>
+<ul><li>Root certificates should include only the ExtendedKeyUsage OIDs for purposes
+for which it will issue certificates.  Currently, these are the AllJoyn
+identity and membership OIDs listed in this document.  Issuing root certificates
+with no ExtendedKeyUsage extension or with the anyExtendedKeyUsage OID is
+not recommended.  Adopting this practice will limit the potential abuse of
+AllJoyn root certificates for unrelated purposes.</li>
+</ul><h2 id="sample-use-cases">Sample use cases</h2>
+<p>The solution listed here for the use cases is just a typical solution.  It is
+not intended to be the only solution.</p>
+<h3 id="users-and-devices">Users and devices</h3>
+<p>Users:  Dad, Mom, and son</p>
+<table><thead><tr><th>Security Group</th>
+<th>Members</th>
+</tr></thead><tbody><tr><td>homeAdmin</td>
+<td>Dad, Mom</td>
+</tr><tr><td>sonAdmin</td>
+<td>Son</td>
+</tr><tr><td>dadOnlyAdmin</td>
+<td>Dad</td>
+</tr><tr><td>livingRoom</td>
+<td>TV, living room tablet, son’s room TV, master bedroom TV, master bedroom tablet</td>
+</tr><tr><td>masterBedrom</td>
+<td>Master bedroom tablet</td>
+</tr></tbody></table><table><thead><tr><th>Room</th>
+<th>Devices</th>
+<th>Notes</th>
+</tr></thead><tbody><tr><td>Living room</td>
+<td>TV, Set-top box, tablet, Network-attached Storage (NAS)</td>
+<td><ul><li>All devices claimed by Dad and managed by Mon and Dad using the security group homeAdmin</li><li>All devices are accessible for the whole family</li></ul></td>
+</tr><tr><td>Son’s bedroom</td>
+<td>TV</td>
+<td><ul><li>Claimed and managed by son</li><li>TV is allowed to interact with living room devices for streaming data</li></ul></td>
+</tr><tr><td>Master bedroom</td>
+<td>TV, tablet</td>
+<td><ul><li>TV used by Mom and Dad only</li><li>Tablet used by Dad only</li><li>TV is allowed to interact with living room devices for streaming data</li><li>Tablet has full control of living room devices including the parent control feature</li></ul></td>
+</tr></tbody></table><h3 id="users-set-up-by-dad">Users set up by Dad</h3>
+<p><img src="/sites/default/files/developers/learn/security2_0/use-case-users-set-up-by-dad.png" alt="use-case-users-set-up-by-dad" /></p>
+<p><strong>Figure:</strong> Use case - users set up by Dad</p>
+<h3 id="living-room-set-up-by-dad">Living room set up by Dad</h3>
+<p><img src="/sites/default/files/developers/learn/security2_0/use-case-living-room-set-up-by-dad.png" alt="use-case-living-room-set-up-by-dad" /></p>
+<p><strong>Figure:</strong> Use case - living room set up by Dad</p>
+<h3 id="son-s-bedroom-set-up-by-son">Son's bedroom set up by son</h3>
+<p><img src="/sites/default/files/developers/learn/security2_0/use-case-sons-bedroom-set-up-by-son.png" alt="use-case-sons-bedroom-set-up-by-son" /></p>
+<p><strong>Figure:</strong> Use case - son's bedroom set up by son</p>
+<h3 id="master-bedroom-set-up-by-dad">Master bedroom set up by Dad</h3>
+<p><img src="/sites/default/files/developers/learn/security2_0/use-case-master-bedroom-set-up-by-dad.png" alt="use-case-master-bedroom-set-up-by-dad" /></p>
+<p><strong>Figure:</strong> Use case - master bedroom set up by Dad</p>
+<h3 id="son-can-control-different-tvs-in-the-house">Son can control different TVs in the house</h3>
+<p><img src="/sites/default/files/developers/learn/security2_0/use-case-son-can-control-different-tvs-in-the-house.png" alt="use-case-son-can-control-different-tvs-in-the-house" /></p>
+<p><strong>Figure:</strong> Use case – Son can control different TVs in the house</p>
+<h3 id="living-room-tablet-controls-tvs-in-the-house">Living room tablet controls TVs in the house</h3>
+<p><img src="/sites/default/files/developers/learn/security2_0/use-case-living-room-tablet-controls-tvs.png" alt="use-case-living-room-tablet-controls-tvs" /></p>
+<p><strong>Figure:</strong> Use case - Living room tablet controls TVs</p>
+<h1 id="enhancements-to-existing-framework">Enhancements to Existing Framework</h1>
+<h2 id="crypto-agility-exchange">Crypto Agility Exchange</h2>
+<p>In order to provide the AllJoyn peers to express the desire to pick some
+particular cryptographic cipher suite to use in the key exchange and the
+encryption of the messages, new key exchange suite identifiers will be added to
+the framework to express the choice of cipher and MAC algorithms.  The new
+identifiers may come from the list of TSL cipher suites specified in
+<a href="http://tools.ietf.org/html/rfc5246#page-75">Appendix A.5 of TLS RFC5246</a> , <a href="http://tools.ietf.org/html/rfc6655">RFC6655</a>, and
+<a href="http://tools.ietf.org/html/rfc7251">RFC7251</a>.</p>
+<p>The following table shows the list of existing key exchange suites:</p>
+<table><thead><tr><th>AllJoyn Key Exchange Suite</th>
+<th>Crypto Parameters</th>
+<th>Availability</th>
+</tr></thead><tbody><tr><td>ALLJOYN_ECDHE_NULL</td>
+<td><ul><li>Curve NIST P-256 (secp256r1)</li><li>AES_128_CCM_8</li><li>SHA256</li></ul></td>
+<td><ul><li>Standard Client</li><li>Thin Client</li></ul></td>
+</tr><tr><td>ALLJOYN_ECDHE_PSK</td>
+<td><ul><li>Curve NIST P-256 (secp256r1)</li><li>AES_128_CCM_8</li><li>SHA256</li></ul></td>
+<td><ul><li>Standard Client</li><li>Thin Client</li></ul></td>
+</tr><tr><td>ALLJOYN_ECDHE_ECDSA</td>
+<td><ul><li>Curve NIST P-256 (secp256r1)</li><li>AES_128_CCM_8</li><li>SHA256</li><li>X.509 certificate</li></ul></td>
+<td><ul><li>Standard Client</li><li>Thin Client</li></ul></td>
+</tr><tr><td>ALLJOYN_RSA_KEYX</td>
+<td><ul><li>AES_128_CCM_8</li><li>SHA256</li><li>X.509 certificate</li></ul></td>
+<td><ul><li>Standard Client version 14.02 or older</li></ul></td>
+</tr><tr><td>ALLJOYN_PIN_KEYX</td>
+<td><ul><li>AES_128_CCM_8</li></ul></td>
+<td><ul><li>Standard Client version 14.12 or older</li><li>Thin Client version 14.02 or older</li></ul></td>
+</tr><tr><td>ALLJOYN_SRP_KEYX</td>
+<td><ul><li>AES_128_CCM_8</li></ul></td>
+<td><ul><li>Standard Client</li></ul></td>
+</tr><tr><td>ALLJOYN_SRP_LOGON</td>
+<td><ul><li>AES_128_CCM_8</li></ul></td>
+<td><ul><li>Standard Client</li></ul></td>
+</tr></tbody></table><p>The following table shows the potential list of TLS cipher suites to be
+supported.  Other suites will be added as codes are available.</p>
+<table><thead><tr><th>TLS cipher suite</th>
+<th>Additional Crypto Parameters</th>
+<th>Availability</th>
+<th>RFC</th>
+</tr></thead><tbody><tr><td>TLS_ECDHE_ECDSA_WITH_AES_128_CCM_8</td>
+<td><ul><li>Curve NIST P-256 (secp256r1)</li><li>SHA256</li><li>X.509 certificate</li></ul></td>
+<td><ul><li>Standard Client</li><li>Thin Client</li></ul></td>
+<td><a href="http://tools.ietf.org/html/rfc7251">7251</a></td>
+</tr><tr><td>TLS_RSA_WITH_AES_128_CCM_8</td>
+<td><ul><li>SHA256</li><li>X.509 certificate</li></ul></td>
+<td><ul><li>Standard Client</li></ul></td>
+<td><a href="http://tools.ietf.org/html/rfc6655">6655</a></td>
+</tr></tbody></table><h2 id="application-state-announcement">Application State Announcement</h2>
+<p>The Permission module provides a session-less signal to allow the Security
+Manager discovering the applications to claim or to distribute updated policy or
+certificates.  The current features provided by the About session-less signal
+does not fulfill the Security Manager discovery requirement.  The signal
+provides the following information:</p>
+<ol><li>A number field named state to show the state of the application.  The possible values of this field are:<ul><li>0 -- Not claimable.  The application is not claimed and not accepting
+claim requests.</li>
+<li>1 – Claimable.  The application is not claimed, but is accepting claim
+requests.</li>
+<li>2 – Claimed.  The application is claimed and can be configured.</li>
+<li>3 – Needs update.  The application is claimed, but requires a
+configuration update (after a software update).</li>
+</ul></li>
+<li>The public key</li>
+</ol><p>This signal is emitted when</p>
+<ol><li>The bus attachment is enabled with peer security using ECDHE key exchanges</li>
+<li>The application is claimed or do a factory reset</li>
+<li>The application has a new manifest template</li>
+</ol><h1 id="features-in-future-releases">Features In Future Releases</h1>
+<h3 id="certificate-revocation-not-fully-designed-">Certificate revocation (not fully designed)</h3>
+<p>The application will validate the certificate using a revocation service
+provided by the Security Manager.  The revocation service is a distributed
+service.</p>
+<p>The Certificate Revocation Service is expected to provide a method call that
+takes in the certificate and return whether the given certificate is revoked.</p>
+<p>The application looks in its installed policy for the peer that provides the
+Certificate Revocation Service.  If the application can’t locate any of the
+Certificate Revocation Service, the certificate revocation check will be
+skipped.</p>
+<p>If a membership certificate is revoked, all signed authorization data related to
+the membership certificate is no longer valid.</p>
+<h4 id="current-work-around">Current work-around</h4>
+<p>The admin can blacklist a peer by installing a deny rule in the application
+policy to deny access for the given peer.</p>
+<h3 id="distribution-of-policy-updates-and-membership-certificates-not-fully-designed-">Distribution of policy updates and membership certificates (not fully designed)</h3>
+<p>The Distribution Service is a service provided by a Security Manager.  This
+service provides persistent storage and high availability to distribute updates
+to applications.</p>
+<p>An admin uses the Security Manager to generate updated policy and membership
+certificates, encrypt the payload with a session key derived from a nonce value
+and the master secret for the <sender recipient=""> pair.  The package including
+the sender public key, recipient public key, nonce, and encrypted payload is
+sent to the Distribution Service to delivery to the recipient.  The recipient
+uses the information in the package to locate the master secret to generate the
+corresponding session key to decrypt the payload.  Once the decryption is
+successful, the recipient signs the hash of the package and provide the
+signature in the reply.</sender></p>
+<p><img src="/sites/default/files/developers/learn/security2_0/distribution-of-policy-update-and-certificates.png" alt="distribution-of-policy-update-and-certificates" /></p>
+<p><strong>Figure:</strong> Distribution of policy update and certificates</p>
+<h3 id="policy-templates">Policy Templates</h3>
+<p>An application developer can define policy templates to help the Security
+Manager to build consumer and producer policies.  A policy template provides the
+following data in:</p>
+<ul><li>Specification version number</li>
+<li>List of permission rules</li>
+</ul><h1 id="future-considerations">Future Considerations</h1>
+<h2 id="broadcast-signals-and-multipoint-sessions">Broadcast signals and multipoint sessions</h2>
+<p>All security enhancements for broadcast signals and multipoint sessions will be
+considered in future releases of Security 2.0.</p>
+  </div>
+  </div>
+
+  
+  
+</article>
+              </div>
+                                   
+          </section>
+
+          
+        </div>
+      </div>
+
+
+      
+    </div>
+  </div>
+</div>
+<div id="sticky-footer">
+  
+      <footer id="footer" class="clearfix" role="contentinfo">
+        <div class="region region-footer"><div class="region-inner clearfix"><nav id="block-system-user-menu" class="block block-system block-menu"  role="navigation"><div class="block-inner clearfix">        <div class="block-content content"><ul class="menu clearfix"><li class="first menu-item-537"><a href="/user/register" title="">Register</a></li><li class="last menu-item-536"><a href="/user/login" title="">Log In</a></li></ul></div></div></nav></div></div>    </footer>
+  
+  <div id="lfcollabprojects-footer">
+    <div class="gray-diagonal">
+      <div class="footer-inner">
+        <p>&copy; 2017 AllSeen Alliance, Inc. All Rights Reserved.</p>
+        <p>The Linux Foundation® is a registered trademark of The Linux Foundation. AllSeen, Designed for AllSeen and AllSeen Alliance are trademarks of the AllSeen Alliance, Inc. AllJoyn® is a registered trademark of AllSeen Alliance, Inc.</p>
+        <p>Linux is a registered <a href="http://www.linuxfoundation.org/programs/legal/trademark" title="Linux Mark Institute">trademark</a> of Linus Torvalds.</p>
+        <p>Please see our <a href="/brand-guidelines">brand guidelines</a>, <a href="/trademarks">trademark guidelines</a>, <a href="/about/governance/ip-policy">IP policy</a>, <a href="/terms">terms of use</a>, <a href="/license">license</a>, and <a href="/privacy">privacy policy</a>.</p>
+      </div>
+    </div>
+    <div id="body-bottom">
+      </div>
+</body>
+</html>

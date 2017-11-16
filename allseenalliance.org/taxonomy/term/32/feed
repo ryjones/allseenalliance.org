@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xml:base="https://identity.allseenalliance.org"  xmlns:dc="http://purl.org/dc/elements/1.1/">
+<channel>
+ <title>AllSeen Alliance - Developers</title>
+ <link>https://identity.allseenalliance.org/taxonomy/term/32</link>
+ <description>Discuss the development of AllJoyn code and applications.
+</description>
+ <language>en</language>
+<item>
+ <title>Forum is now locked: Post new questions to ask.allseenalliance.org</title>
+ <link>https://identity.allseenalliance.org/developer-resources/forum/developers/forum-now-locked-post-new-questions-askallseenallianceorg</link>
+ <description>&lt;section class=&quot;field-taxonomy-forums view-mode-rss&quot;&gt;&lt;h2 class=&quot;field-label&quot;&gt;Forums:&amp;nbsp;&lt;/h2&gt;&lt;ul class=&quot;field-items&quot;&gt;&lt;li class=&quot;field-item even&quot; rel=&quot;sioc:has_container&quot;&gt;&lt;a href=&quot;/developer-resources/forum/developers&quot; typeof=&quot;sioc:Container sioc:Forum&quot; property=&quot;rdfs:label skos:prefLabel&quot; datatype=&quot;&quot;&gt;Developers&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/section&gt;
+  &lt;div class=&quot;field-body view-mode-rss&quot;&gt;
+    &lt;p&gt;&lt;strong&gt;This forum is now locked.  Please re-ask your unanswered questions on &lt;a href=&quot;https://ask.allseenalliance.org/&quot; target=&quot;_blank&quot; rel=&quot;nofollow&quot;&gt;https://ask.allseenalliance.org/&lt;/a&gt;.&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;Today, Wednesday, 27-March-2014, we will complete our move to a new AllSeen Ask site powered by Askbot. The AllSeen Ask format will be familiar from sites like Stack Overflow. This style of site makes it easier to search, post, and edit questions and answers. Askbot supports Markdown for rich formatting when composing your posts.&lt;/p&gt;&lt;p&gt;The current forum will be made read-only and the archived posts will continue to be available.&lt;/p&gt;&lt;p&gt;Please ask your questions on &lt;a href=&quot;https://ask.allseenalliance.org/&quot; target=&quot;_blank&quot; rel=&quot;nofollow&quot;&gt;https://ask.allseenalliance.org/&lt;/a&gt;.&lt;/p&gt;  &lt;/div&gt;
+</description>
+ <pubDate>Fri, 21 Mar 2014 18:53:47 +0000</pubDate>
+ <dc:creator>bspencer</dc:creator>
+ <guid isPermaLink="false">3891 at https://identity.allseenalliance.org</guid>
+ <comments>https://identity.allseenalliance.org/developer-resources/forum/developers/forum-now-locked-post-new-questions-askallseenallianceorg#comments</comments>
+</item>
+<item>
+ <title>So where&#039;s the source code</title>
+ <link>https://identity.allseenalliance.org/developer-resources/forum/developers/so-wheres-source-code</link>
+ <description>&lt;section class=&quot;field-taxonomy-forums view-mode-rss&quot;&gt;&lt;h2 class=&quot;field-label&quot;&gt;Forums:&amp;nbsp;&lt;/h2&gt;&lt;ul class=&quot;field-items&quot;&gt;&lt;li class=&quot;field-item even&quot; rel=&quot;sioc:has_container&quot;&gt;&lt;a href=&quot;/developer-resources/forum/developers&quot; typeof=&quot;sioc:Container sioc:Forum&quot; property=&quot;rdfs:label skos:prefLabel&quot; datatype=&quot;&quot;&gt;Developers&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/section&gt;
+  &lt;div class=&quot;field-body view-mode-rss&quot;&gt;
+    &lt;p&gt;Hi,&lt;/p&gt;&lt;p&gt;I can&#039;t seem to download the source and all the links on Alljoyn no longer work, and the AllJoyn git repo is empty.&lt;/p&gt;&lt;p&gt;Thanks&lt;/p&gt;&lt;p&gt;Andrew&lt;/p&gt;  &lt;/div&gt;
+</description>
+ <pubDate>Tue, 10 Dec 2013 12:29:35 +0000</pubDate>
+ <dc:creator>20111375</dc:creator>
+ <guid isPermaLink="false">3629 at https://identity.allseenalliance.org</guid>
+ <comments>https://identity.allseenalliance.org/developer-resources/forum/developers/so-wheres-source-code#comments</comments>
+</item>
+<item>
+ <title>How should i porting alljoyn to other thin client device? </title>
+ <link>https://identity.allseenalliance.org/developer-resources/forum/developers/how-should-i-porting-alljoyn-other-thin-client-device</link>
+ <description>&lt;section class=&quot;field-taxonomy-forums view-mode-rss&quot;&gt;&lt;h2 class=&quot;field-label&quot;&gt;Forums:&amp;nbsp;&lt;/h2&gt;&lt;ul class=&quot;field-items&quot;&gt;&lt;li class=&quot;field-item even&quot; rel=&quot;sioc:has_container&quot;&gt;&lt;a href=&quot;/developer-resources/forum/developers&quot; typeof=&quot;sioc:Container sioc:Forum&quot; property=&quot;rdfs:label skos:prefLabel&quot; datatype=&quot;&quot;&gt;Developers&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/section&gt;
+  &lt;div class=&quot;field-body view-mode-rss&quot;&gt;
+    &lt;p&gt;Hi,&lt;/p&gt;&lt;p&gt;i have successfuly run Arduino led example and communication with my win7 pc.&lt;/p&gt;&lt;p&gt;however, there are other MCU (thin client) which i have more experience oon than Arduino,&lt;/p&gt;&lt;p&gt;and also more powerful, so how could i porting alljoyn to my own thin client?&lt;/p&gt;&lt;p&gt;what are the source codes i should modify? is there any how-to guild?&lt;/p&gt;&lt;p&gt;Thank you&lt;/p&gt;&lt;p&gt;Owen&lt;/p&gt;&lt;p&gt; &lt;/p&gt;  &lt;/div&gt;
+</description>
+ <pubDate>Tue, 25 Mar 2014 15:27:36 +0000</pubDate>
+ <dc:creator>owen_oh_ya</dc:creator>
+ <guid isPermaLink="false">3901 at https://identity.allseenalliance.org</guid>
+ <comments>https://identity.allseenalliance.org/developer-resources/forum/developers/how-should-i-porting-alljoyn-other-thin-client-device#comments</comments>
+</item>
+<item>
+ <title>Android- how to get group timeout and invoke action at that time</title>
+ <link>https://identity.allseenalliance.org/developer-resources/forum/developers/android-how-get-group-timeout-and-invoke-action-time</link>
+ <description>&lt;section class=&quot;field-taxonomy-forums view-mode-rss&quot;&gt;&lt;h2 class=&quot;field-label&quot;&gt;Forums:&amp;nbsp;&lt;/h2&gt;&lt;ul class=&quot;field-items&quot;&gt;&lt;li class=&quot;field-item even&quot; rel=&quot;sioc:has_container&quot;&gt;&lt;a href=&quot;/developer-resources/forum/developers&quot; typeof=&quot;sioc:Container sioc:Forum&quot; property=&quot;rdfs:label skos:prefLabel&quot; datatype=&quot;&quot;&gt;Developers&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/section&gt;
+  &lt;div class=&quot;field-body view-mode-rss&quot;&gt;
+    &lt;p&gt;Hi,&lt;/p&gt;&lt;p&gt;I am developing app in android using demo of  &lt;strong&gt;PeerGroupManager liabrary.&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;I have following queries:&lt;/p&gt;&lt;p&gt;1. What is duration of a group created in peer group? After how much time it will  be timedout?&lt;/p&gt;&lt;p&gt;2. Device which have created group - how can I get that a group is timedout? And invoke a action on that event in background at that specific time?&lt;/p&gt;&lt;p&gt;3. How to get joined group is now timedout or destroyed in android code? And invoke action on that specific time in background?&lt;/p&gt;&lt;p&gt;Thanks.&lt;/p&gt;&lt;p&gt; &lt;/p&gt;&lt;p&gt; &lt;/p&gt;  &lt;/div&gt;
+</description>
+ <pubDate>Tue, 25 Mar 2014 10:43:36 +0000</pubDate>
+ <dc:creator>Vym</dc:creator>
+ <guid isPermaLink="false">3896 at https://identity.allseenalliance.org</guid>
+ <comments>https://identity.allseenalliance.org/developer-resources/forum/developers/android-how-get-group-timeout-and-invoke-action-time#comments</comments>
+</item>
+<item>
+ <title>Multiple alljoyn devices naming problem</title>
+ <link>https://identity.allseenalliance.org/developer-resources/forum/developers/multiple-alljoyn-devices-naming-problem</link>
+ <description>&lt;section class=&quot;field-taxonomy-forums view-mode-rss&quot;&gt;&lt;h2 class=&quot;field-label&quot;&gt;Forums:&amp;nbsp;&lt;/h2&gt;&lt;ul class=&quot;field-items&quot;&gt;&lt;li class=&quot;field-item even&quot; rel=&quot;sioc:has_container&quot;&gt;&lt;a href=&quot;/developer-resources/forum/developers&quot; typeof=&quot;sioc:Container sioc:Forum&quot; property=&quot;rdfs:label skos:prefLabel&quot; datatype=&quot;&quot;&gt;Developers&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/section&gt;
+  &lt;div class=&quot;field-body view-mode-rss&quot;&gt;
+    &lt;p&gt;Hi,&lt;/p&gt;&lt;p&gt;I have two questions about Alljoyn enabled devices.&lt;/p&gt;&lt;p&gt;1. If I have two or more alljoyn bulbs from the same manufacturer, how do I differentiate one from another (Random GUID)? &lt;span&gt; &lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span&gt;2. If I have a time-intensive service, can it be used by the other client at the same time (FIFO?)?&lt;/span&gt;&lt;/p&gt;&lt;p&gt;Thanks!&lt;/p&gt;  &lt;/div&gt;
+</description>
+ <pubDate>Tue, 25 Mar 2014 09:26:05 +0000</pubDate>
+ <dc:creator>taka_wang</dc:creator>
+ <guid isPermaLink="false">3895 at https://identity.allseenalliance.org</guid>
+ <comments>https://identity.allseenalliance.org/developer-resources/forum/developers/multiple-alljoyn-devices-naming-problem#comments</comments>
+</item>
+<item>
+ <title>Connecvitity over IP Subnet</title>
+ <link>https://identity.allseenalliance.org/developer-resources/forum/developers/connecvitity-over-ip-subnet</link>
+ <description>&lt;section class=&quot;field-taxonomy-forums view-mode-rss&quot;&gt;&lt;h2 class=&quot;field-label&quot;&gt;Forums:&amp;nbsp;&lt;/h2&gt;&lt;ul class=&quot;field-items&quot;&gt;&lt;li class=&quot;field-item even&quot; rel=&quot;sioc:has_container&quot;&gt;&lt;a href=&quot;/developer-resources/forum/developers&quot; typeof=&quot;sioc:Container sioc:Forum&quot; property=&quot;rdfs:label skos:prefLabel&quot; datatype=&quot;&quot;&gt;Developers&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/section&gt;
+  &lt;div class=&quot;field-body view-mode-rss&quot;&gt;
+    &lt;p&gt;Hello,&lt;br /&gt;I have a question about connectivity over IP subnets.&lt;br /&gt;&lt;br /&gt;Can Alljoyn deal with a connection or communication between&lt;br /&gt;a leaf node connected to a routing node in a house in e.g. San Francisco and&lt;br /&gt;a leaf node connected to a routing node in another house in New York?&lt;br /&gt;&lt;br /&gt;If yes, could you please explain breifly the sequence (of&lt;br /&gt;messages or signals interchanged or broadcast,&lt;br /&gt;establishment of the bus, and participations of devices to the bus, etc.)&lt;br /&gt;before e.g. the user&#039;s friend&#039;s TV in New York alarms that someone unexpected&lt;br /&gt;is standing in front of the door of the user&#039;s house in San Francisco?&lt;br /&gt;&lt;br /&gt;If the current Alljoyn code cannot deal with such a case,&lt;br /&gt;is it or could it be included in your future plans?&lt;br /&gt;&lt;br /&gt;Best Regards,&lt;br /&gt;Yoshinori Nagai&lt;/p&gt;  &lt;/div&gt;
+</description>
+ <pubDate>Tue, 25 Mar 2014 01:44:46 +0000</pubDate>
+ <dc:creator>ynagai</dc:creator>
+ <guid isPermaLink="false">3894 at https://identity.allseenalliance.org</guid>
+ <comments>https://identity.allseenalliance.org/developer-resources/forum/developers/connecvitity-over-ip-subnet#comments</comments>
+</item>
+<item>
+ <title>Android OnboardingServiceClient Smple Code</title>
+ <link>https://identity.allseenalliance.org/developer-resources/forum/developers/android-onboardingserviceclient-smple-code</link>
+ <description>&lt;section class=&quot;field-taxonomy-forums view-mode-rss&quot;&gt;&lt;h2 class=&quot;field-label&quot;&gt;Forums:&amp;nbsp;&lt;/h2&gt;&lt;ul class=&quot;field-items&quot;&gt;&lt;li class=&quot;field-item even&quot; rel=&quot;sioc:has_container&quot;&gt;&lt;a href=&quot;/developer-resources/forum/developers&quot; typeof=&quot;sioc:Container sioc:Forum&quot; property=&quot;rdfs:label skos:prefLabel&quot; datatype=&quot;&quot;&gt;Developers&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/section&gt;
+  &lt;div class=&quot;field-body view-mode-rss&quot;&gt;
+    &lt;p&gt;Hi folks,&lt;/p&gt;&lt;p&gt;I am using the latest sample code to import projects into Eclipse,&lt;/p&gt;&lt;p&gt;and copy all needed *.jar to libs folder,&lt;/p&gt;&lt;p&gt;but eclipse show still need alljoyn_about.jar&lt;/p&gt;&lt;p&gt;Where can i find alljoyn_about.jar?&lt;/p&gt;&lt;p&gt;Thanks.&lt;/p&gt;  &lt;/div&gt;
+</description>
+ <pubDate>Mon, 24 Mar 2014 06:52:26 +0000</pubDate>
+ <dc:creator>ccko</dc:creator>
+ <guid isPermaLink="false">3893 at https://identity.allseenalliance.org</guid>
+ <comments>https://identity.allseenalliance.org/developer-resources/forum/developers/android-onboardingserviceclient-smple-code#comments</comments>
+</item>
+<item>
+ <title>A problem about running NotificationServiceUISample on Android</title>
+ <link>https://identity.allseenalliance.org/developer-resources/forum/developers/problem-about-running-notificationserviceuisample-android</link>
+ <description>&lt;section class=&quot;field-taxonomy-forums view-mode-rss&quot;&gt;&lt;h2 class=&quot;field-label&quot;&gt;Forums:&amp;nbsp;&lt;/h2&gt;&lt;ul class=&quot;field-items&quot;&gt;&lt;li class=&quot;field-item even&quot; rel=&quot;sioc:has_container&quot;&gt;&lt;a href=&quot;/developer-resources/forum/developers&quot; typeof=&quot;sioc:Container sioc:Forum&quot; property=&quot;rdfs:label skos:prefLabel&quot; datatype=&quot;&quot;&gt;Developers&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/section&gt;
+  &lt;div class=&quot;field-body view-mode-rss&quot;&gt;
+    &lt;p&gt;I&#039;m trying to run the NotificationServiceUISample on two Android emulators to verify the notification service. I installed the D:\AllJoyn_Android\alljoyn-android\services\alljoyn-notification-14.02.00-rel\tools\NotificationServiceUISample.apk on two Android emulators. Emulator A works as producer and emulator B works as consumer. In addition, A and B can surf the Internet. I leave the app_name empty and fill in &quot;Hello&quot; as message content. After clicking on the send button, the logcat of Android showed the notification has been sended, however, emulator B had not received the notification.&lt;/p&gt;&lt;p&gt;Who had the same problem and solution? Thanks!&lt;/p&gt;  &lt;/div&gt;
+</description>
+ <pubDate>Mon, 24 Mar 2014 01:04:33 +0000</pubDate>
+ <dc:creator>qilei</dc:creator>
+ <guid isPermaLink="false">3892 at https://identity.allseenalliance.org</guid>
+ <comments>https://identity.allseenalliance.org/developer-resources/forum/developers/problem-about-running-notificationserviceuisample-android#comments</comments>
+</item>
+<item>
+ <title>&quot;ER_ALLJOYN_JOINSESSION_REPLY_FAILED&quot; error</title>
+ <link>https://identity.allseenalliance.org/developer-resources/forum/developers/eralljoynjoinsessionreplyfailed-error</link>
+ <description>&lt;section class=&quot;field-taxonomy-forums view-mode-rss&quot;&gt;&lt;h2 class=&quot;field-label&quot;&gt;Forums:&amp;nbsp;&lt;/h2&gt;&lt;ul class=&quot;field-items&quot;&gt;&lt;li class=&quot;field-item even&quot; rel=&quot;sioc:has_container&quot;&gt;&lt;a href=&quot;/developer-resources/forum/developers&quot; typeof=&quot;sioc:Container sioc:Forum&quot; property=&quot;rdfs:label skos:prefLabel&quot; datatype=&quot;&quot;&gt;Developers&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/section&gt;
+  &lt;div class=&quot;field-body view-mode-rss&quot;&gt;
+    &lt;p&gt;Hi,&lt;/p&gt;&lt;p&gt;I am programming using windows and android alljoyn sdk.&lt;/p&gt;&lt;p&gt;I made two applicaions. - one session host(windows) app and session joiner(android) app.&lt;/p&gt;&lt;p&gt;The problem is I need to control more than 40 session joiner(android) at same time in session host(window) application.&lt;/p&gt;&lt;p&gt;For this, I changed connection limitation 16 -&amp;gt; 64 in alljoyn source code and re-complie. &lt;/p&gt;&lt;p&gt;It seemed to work well at first .&lt;/p&gt;&lt;p&gt;However, more than 30 clients repeatedly do &quot;JoinSession -&amp;gt; make some methodCalls -&amp;gt; LeaveSession&quot;, t&lt;span&gt;hen &quot;JoinSession Failed&quot; error occurs randomly.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;ErrorCode is &quot;ER_ALLJOYN_JOINSESSION_REPLY_FAILED(0x9088)&quot; and detailed log is below.&lt;/p&gt;&lt;p&gt;(found advertisedname success. but joinsession failed.)&lt;/p&gt;&lt;p&gt;--- Log------------------------------------------------------------------------------------------------------&lt;/p&gt;&lt;p&gt;FindAdvertiseName succeeded.&lt;/p&gt;&lt;p&gt;FoundAdvertisedName called.&lt;/p&gt;&lt;p&gt;8770.314 ****** ERROR ALLJOYN_OBJ JoinS-1 ...\daemon\AllJoynObj.cc:2105 | 0x9032&lt;/p&gt;&lt;p&gt;8770.314 ****** ERROR ALLJOYN_OBJ JoinS-1 ...e\daemon\AllJoynObj.cc:860 | 0x9032&lt;/p&gt;&lt;p&gt;&lt;strong&gt;JoinSession failed &amp;lt;satus=0x9088&amp;gt;&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;-------------------------------------------------------------------------------------------------------------&lt;/p&gt;&lt;p&gt;The biggest problem is that if one client joinsession failed, &lt;span&gt;all other clients are stuck.&lt;/span&gt;&lt;/p&gt;&lt;p&gt; - if client doing make methodcall, not receive reply forever.&lt;/p&gt;&lt;p&gt; - if new client try to join session, always joinsession failed as above log.&lt;/p&gt;&lt;p&gt;it seemed windows alljoyn daemon is at deadlock state and not recover itself until alljoyn daemon restart.&lt;/p&gt;&lt;p&gt; &lt;/p&gt;&lt;p&gt;alljoyn framework can not guarantee more than 16 connection&#039;s stability?&lt;/p&gt;&lt;p&gt;&lt;span&gt;can anyone help me about this problem ?&lt;/span&gt;&lt;/p&gt;&lt;p&gt; &lt;/p&gt;&lt;p&gt;&lt;span&gt;Thanks.&lt;/span&gt;&lt;/p&gt;  &lt;/div&gt;
+</description>
+ <pubDate>Fri, 21 Mar 2014 02:59:22 +0000</pubDate>
+ <dc:creator>herodion</dc:creator>
+ <guid isPermaLink="false">3889 at https://identity.allseenalliance.org</guid>
+ <comments>https://identity.allseenalliance.org/developer-resources/forum/developers/eralljoynjoinsessionreplyfailed-error#comments</comments>
+</item>
+<item>
+ <title>iOS and Android cross-platform ad-hoc local multiplayer game</title>
+ <link>https://identity.allseenalliance.org/developer-resources/forum/developers/ios-and-android-cross-platform-ad-hoc-local-multiplayer-game</link>
+ <description>&lt;section class=&quot;field-taxonomy-forums view-mode-rss&quot;&gt;&lt;h2 class=&quot;field-label&quot;&gt;Forums:&amp;nbsp;&lt;/h2&gt;&lt;ul class=&quot;field-items&quot;&gt;&lt;li class=&quot;field-item even&quot; rel=&quot;sioc:has_container&quot;&gt;&lt;a href=&quot;/developer-resources/forum/developers&quot; typeof=&quot;sioc:Container sioc:Forum&quot; property=&quot;rdfs:label skos:prefLabel&quot; datatype=&quot;&quot;&gt;Developers&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/section&gt;
+  &lt;div class=&quot;field-body view-mode-rss&quot;&gt;
+    &lt;p&gt;I was excited to find AllJoyn because it seemed like an easy way to make cross-platform ad-hoc multiplayer.  However, upon further research, it seems there is not iOS plug-in for Unity.  Is that still true?&lt;/p&gt;&lt;p&gt;Also, it seems there &lt;em&gt;is&lt;/em&gt; an iOS SDK.  What&#039;s the difference between the plug-in and the SDK?  The code works with C#, which is what Unity uses, so would you be able to use the iOS SDK as a C# library in Unity?&lt;/p&gt;&lt;p&gt;What is the recommended method of using AllJoyn to make an iOS-Android crossplatform game?&lt;/p&gt;  &lt;/div&gt;
+</description>
+ <pubDate>Thu, 20 Mar 2014 20:24:32 +0000</pubDate>
+ <dc:creator>telpokint</dc:creator>
+ <guid isPermaLink="false">3888 at https://identity.allseenalliance.org</guid>
+ <comments>https://identity.allseenalliance.org/developer-resources/forum/developers/ios-and-android-cross-platform-ad-hoc-local-multiplayer-game#comments</comments>
+</item>
+</channel>
+</rss>

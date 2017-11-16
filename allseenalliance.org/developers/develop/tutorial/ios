@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<!--[if IEMobile 7]><html class="iem7" lang="en" dir="ltr"><![endif]-->
+<!--[if lte IE 6]><html class="lt-ie9 lt-ie8 lt-ie7" lang="en" dir="ltr"><![endif]-->
+<!--[if (IE 7)&(!IEMobile)]><html class="lt-ie9 lt-ie8" lang="en" dir="ltr"><![endif]-->
+<!--[if IE 8]><html class="lt-ie9" lang="en" dir="ltr"><![endif]-->
+<!--[if (gte IE 9)|(gt IEMobile 7)]><!--><html lang="en" dir="ltr"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/terms/"
+  xmlns:foaf="http://xmlns.com/foaf/0.1/"
+  xmlns:og="http://ogp.me/ns#"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:sioc="http://rdfs.org/sioc/ns#"
+  xmlns:sioct="http://rdfs.org/sioc/types#"
+  xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema#"><!--<![endif]-->
+<head>
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
+<meta charset="utf-8" />
+<link rel="shortlink" href="/node/4224" />
+<link rel="shortcut icon" href="https://identity.allseenalliance.org/sites/all/themes/at_alljoyn/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="/developers/develop/tutorial/ios" />
+<meta name="viewport" content="width=device-width" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta property="og:image" content="https://identity.allseenalliance.org/sites/all/themes/at_alljoyn/images/allseen-logo.png"/>
+<meta name="google-translate-customization" content="48b015afeed82101-ecae534af0f48252-ga0b6470a6208b2f5-f"></meta>
+<meta name="MobileOptimized" content="width">
+<meta name="HandheldFriendly" content="true">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>iOS Tutorial - AllSeen Alliance</title>
+<link type="text/css" rel="stylesheet" href="https://identity.allseenalliance.org/sites/default/files/css/css_xE-rWrJf-fncB6ztZfd2huxqgxu4WO-qwma6Xer30m4.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://identity.allseenalliance.org/sites/default/files/css/css_7Vcu6qIuRTO46aDOBZp7_mtksGdhCHSe0pjTO2YbGng.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://identity.allseenalliance.org/sites/default/files/css/css_J2n1xiaSuececTK0yC3DT_Msm4PrkPwHizxr0oXGGoo.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://identity.allseenalliance.org/sites/default/files/css/css_oxEtvjMfj8c8EEJJ-1WXLGGntCnC0UvrbYsq0Gw4m4Q.css" media="screen" />
+<link type="text/css" rel="stylesheet" href="https://identity.allseenalliance.org/sites/default/files/css/css_9EusV9fcbkpqBeTGdJPl7ru65jm-3ngbTi_D6YRR_5A.css" media="only screen" />
+<script src="https://identity.allseenalliance.org/sites/default/files/js/js_UWQINlriydSoeSiGQxToOUdv493zEa7dpsXC1OtYlZU.js"></script>
+<script src="https://identity.allseenalliance.org/sites/default/files/js/js_COMsmDyrY9mzVU28X2uGvF4Ba3vd5eTo5xEO7dvCUZM.js"></script>
+<script src="https://identity.allseenalliance.org/sites/default/files/js/js_i8oyg1R4On_HyzPiZ5zC3V-DxehjGAcpKwNao5s0s5I.js"></script>
+<script>hljs.configure({languages:[]}); hljs.initHighlightingOnLoad();</script>
+<script src="https://identity.allseenalliance.org/sites/default/files/js/js_aG0kZAhSHT6G3QC-d9Wwx9gQp5d0em8X6FmMYZ1e5h4.js"></script>
+<script>var _gaq = _gaq || [];_gaq.push(["_setAccount", "UA-"]);_gaq.push(["_trackPageview"]);(function() {var ga = document.createElement("script");ga.type = "text/javascript";ga.async = true;ga.src = ("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/ga.js";var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(ga, s);})();</script>
+<script src="https://identity.allseenalliance.org/sites/default/files/js/js_R35PAK16384fXh7f2OqvXVkbbrwr8ABLrDpR1zTluo0.js"></script>
+<script src="https://identity.allseenalliance.org/sites/default/files/js/js_DKtRHJS-jz_cHgf23K7wnIWphCanZ_Rz74Aw-DKQyFs.js"></script>
+<script>jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"at_alljoyn","theme_token":"fVXfudoqb2ZAIJcSzRiEkNKC6vXnr78IBsH3aGU3myo","js":{"misc\/jquery.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/all\/modules\/contrib\/comment_notify\/comment_notify.js":1,"sites\/all\/modules\/alljoyn\/custom_modules\/allseen_docs\/allseen_docs_highlight\/highlightjs\/highlight.min.js":1,"0":1,"sites\/all\/libraries\/colorbox\/jquery.colorbox-min.js":1,"sites\/all\/modules\/contrib\/colorbox\/js\/colorbox.js":1,"sites\/all\/modules\/contrib\/colorbox\/styles\/default\/colorbox_style.js":1,"sites\/all\/modules\/contrib\/colorbox\/js\/colorbox_load.js":1,"sites\/all\/modules\/contrib\/colorbox\/js\/colorbox_inline.js":1,"sites\/all\/modules\/contrib\/panels\/js\/panels.js":1,"sites\/all\/modules\/contrib\/quote\/quote.js":1,"sites\/all\/modules\/contrib\/views_slideshow\/js\/views_slideshow.js":1,"sites\/all\/modules\/contrib\/google_analytics\/googleanalytics.js":1,"1":1,"sites\/all\/modules\/alljoyn\/custom_modules\/allseen_docs\/allseen_docs_nav\/allseen-docs-nav.js":1,"sites\/all\/themes\/at_alljoyn\/scripts\/alljoyn.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"sites\/all\/modules\/contrib\/comment_notify\/comment_notify.css":1,"sites\/all\/modules\/ldap\/ldap_user\/ldap_user.css":1,"modules\/book\/book.css":1,"modules\/comment\/comment.css":1,"sites\/all\/modules\/contrib\/date\/date_api\/date.css":1,"sites\/all\/modules\/contrib\/date\/date_popup\/themes\/datepicker.1.7.css":1,"modules\/field\/theme\/field.css":1,"sites\/all\/modules\/contrib\/mollom\/mollom.css":1,"modules\/node\/node.css":1,"modules\/user\/user.css":1,"modules\/forum\/forum.css":1,"sites\/all\/modules\/contrib\/views\/css\/views.css":1,"sites\/all\/modules\/alljoyn\/custom_modules\/allseen_docs\/allseen_docs_highlight\/highlightjs\/default.min.css":1,"sites\/all\/modules\/contrib\/colorbox\/styles\/default\/colorbox_style.css":1,"sites\/all\/modules\/contrib\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/ldap\/ldap_servers\/ldap_servers.admin.css":1,"sites\/all\/modules\/contrib\/panels\/css\/panels.css":1,"sites\/all\/modules\/contrib\/quote\/quote.css":1,"sites\/all\/modules\/contrib\/views_slideshow\/views_slideshow.css":1,"sites\/all\/modules\/alljoyn\/custom_modules\/allseen_docs\/allseen_docs_nav\/allseen-docs-nav.css":1,"sites\/all\/modules\/alljoyn\/features\/content_type_developer_document\/content-type-developer-document.css":1,"sites\/all\/themes\/adaptivetheme\/at_core\/css\/at.layout.css":1,"sites\/all\/themes\/at_alljoyn\/css\/fonts.css":1,"sites\/all\/themes\/at_alljoyn\/css\/globals.css":1,"sites\/all\/themes\/at_alljoyn\/css\/jcarousel-alljoyn.css":1,"public:\/\/adaptivetheme\/at_alljoyn_files_7dbe1ef5\/at_alljoyn.responsive.layout.css":1,"public:\/\/adaptivetheme\/at_alljoyn_files_7dbe1ef5\/at_alljoyn.responsive.styles.css":1}},"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":true,"mobiledevicewidth":"480px"},"jcarousel":{"ajaxPath":"\/jcarousel\/ajax\/views"},"quote_nest":2,"googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls|xml|z|zip"}});</script>
+<!--[if lt IE 9]>
+<script src="https://identity.allseenalliance.org/sites/all/themes/adaptivetheme/at_core/scripts/respond.js?nwgww1"></script>
+<script src="https://identity.allseenalliance.org/sites/all/themes/adaptivetheme/at_core/scripts/html5.js?nwgww1"></script>
+<script src="https://identity.allseenalliance.org/sites/all/themes/adaptivetheme/at_core/scripts/PIE.htc?nwgww1"></script>
+<script src="https://identity.allseenalliance.org/sites/all/themes/adaptivetheme/at_core/scripts/selectivizr.js?nwgww1"></script>
+<![endif]-->
+</head>
+<body class="html not-front not-logged-in one-sidebar sidebar-first page-node page-node- page-node-4224 node-type-developer-document site-name-hidden with-subnav page-developers-develop-tutorial-ios section-developers">
+  <div id="body-top">
+      </div>
+  <div id="skip-link">
+    <a href="#main-content" class="element-invisible element-focusable">Skip to main content</a>
+  </div>
+  <div class="region region-page-top"><div class="region-inner clearfix"><div id="fb-root"></div><script type="text/javascript">
+     window.fbAsyncInit = function() {
+       FB.init({
+         appId: "492099574180957",
+         status: true,
+         cookie: true,
+         xfbml: true,
+         oauth : true,
+         channelUrl: "https:\/\/identity.allseenalliance.org\/service_links\/channel"
+         });
+
+         FB.Event.subscribe('edge.create', function(href, widget) {
+    _gaq.push(['_trackEvent', 'facebook', 'Facebook like', href]);
+   });FB.Event.subscribe('edge.remove', function(href, widget) {
+    _gaq.push(['_trackEvent', 'facebook', 'Facebook unlike', href]);
+   });
+       };
+       (function(d){
+     var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement('script'); js.id = id; js.async = true;
+     js.src = '//connect.facebook.net/en_US/all.js';
+     ref.parentNode.insertBefore(js, ref);
+   }(document));
+    </script></div></div>  
+<div id="wrap">
+
+  <div id="lfcollabprojects-header">
+    <div class="gray-diagonal">
+      <div class="header-inner">
+        <a id="lfcollabprojects-logo" href="http://collabprojects.linuxfoundation.org">Linux Foundation Collaborative Projects</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="page" class="container page">
+
+    
+    <header id="header" class="clearfix" role="banner">
+
+      <div class="region region-header"><div class="region-inner clearfix"><div id="block-block-19" class="block block-block" ><div class="block-inner clearfix">        <div class="block-content content"><br /><br /><br /><br /><br /><br /><br /></div></div></div></div></div>
+              <div id="branding" class="branding-elements clearfix">
+
+                      <div id="logo"><a href="/" title="Home page"><img class="site-logo" typeof="foaf:Image" src="https://identity.allseenalliance.org/sites/default/files/logo.png" alt="AllSeen Alliance" /></a></div>
+          
+                      <hgroup id="name-and-slogan" class="element-invisible">
+                              <h1 id="site-name" class="element-invisible"><a href="/" title="Home page">AllSeen Alliance</a></h1>
+                                        </hgroup>
+          
+          <!--main menu-->
+          <a id="main-menu-toggle" href="#">Site Sections</a>
+  		  		  		
+        </div>
+      
+    </header>
+
+
+    <div id="columns" class="clearfix">
+      <div id="sub-menu-bar">
+        <div class="region region-sub-menu-bar"><div class="region-inner clearfix"><div id="block-menu-block-allseen-docs-nav" class="block block-menu-block"  role="navigation"><div class="block-inner clearfix">        <div class="block-content content"><div class="menu-block-wrapper menu-block-allseen-docs-nav menu-name-main-menu parent-mlid-0 menu-level-2">
+  <ul class="menu clearfix"><li class="first has-children menu-mlid-2504 menu-item-2504"><a href="/developers/learn">Learn</a></li><li class="has-children menu-mlid-2539 menu-item-2539"><a href="/developers/download">Download</a></li><li class="has-children active-trail menu-mlid-2541 menu-item-2541"><a href="/developers/develop" class="active-trail">Develop</a></li><li class="last has-children menu-mlid-2636 menu-item-2636"><a href="/developers/contribute">Contribute</a></li></ul></div>
+</div></div></div><section id="block-menu-block-allseen-docs-responsive-nav" class="block block-menu-block"  role="navigation"><div class="block-inner clearfix">        <div class="block-title-wrapper">
+      <h2 class="block-title">Menu</h2>
+    </div>
+      <div class="block-content content"><div class="menu-block-wrapper menu-block-allseen-docs-responsive-nav menu-name-main-menu parent-mlid-0 menu-level-1">
+  <ul class="menu clearfix"><li class="first menu-parent menu-mlid-1994 menu-item-1994"><a href="/about">About</a><ul class="menu clearfix"><li class="first menu-mlid-2486 menu-item-2486"><a href="/about/why-allseen">Why AllSeen</a></li><li class="menu-mlid-2464 menu-item-2464"><a href="/about/get-involved">Get Involved</a></li><li class="collapsed menu-mlid-2446 menu-item-2446"><a href="/about/governance/ip-policy">IP Policy</a></li><li class="menu-mlid-2491 menu-item-2491"><a href="/about/working-groups">Working Groups</a></li><li class="menu-mlid-2286 menu-item-2286"><a href="/about/members">Member Companies</a></li><li class="menu-mlid-2285 menu-item-2285"><a href="/about/join-allseen-alliance">Join The AllSeen Alliance</a></li><li class="collapsed menu-mlid-2447 menu-item-2447"><a href="/about/governance">Governance</a></li><li class="menu-mlid-501 menu-item-501"><a href="/about/faqs">FAQs</a></li><li class="menu-mlid-2322 menu-item-2322"><a href="/about/contact">Contact Us</a></li><li class="menu-mlid-2282 menu-item-2282"><a href="/allseen/what-is-allseen-alliance">What is AllSeen Alliance?</a></li><li class="last menu-mlid-2490 menu-item-2490"><a href="https://wiki.allseenalliance.org/members_private/start?do=login&amp;sectok=34485854163fe6a0be457198139e2c84" title="Members Area" id="members_area" name="Members Area" rel="nofollow" target="_blank">Members Area</a></li></ul></li><li class="menu-parent active-trail menu-mlid-2503 menu-item-2503"><a href="/developers" class="active-trail">Developers</a><ul class="menu clearfix"><li class="first menu-parent has-children menu-mlid-2504 menu-item-2504"><a href="/developers/learn">Learn</a><ul class="menu clearfix"><li class="first menu-mlid-2505 menu-item-2505"><a href="/developers/learn/use-cases">Use Cases</a></li><li class="menu-mlid-2506 menu-item-2506"><a href="/developers/learn/architecture">Architecture</a></li><li class="menu-parent menu-mlid-2507 menu-item-2507"><a href="/developers/learn/core">Core Framework</a><ul class="menu clearfix"><li class="first menu-parent menu-mlid-2508 menu-item-2508"><a href="/developers/learn/core/about-announcement">About Announcement</a><ul class="menu clearfix"><li class="first menu-mlid-2509 menu-item-2509"><a href="/developers/learn/core/about-announcement/interface">Interface</a></li><li class="last menu-mlid-2510 menu-item-2510"><a href="/developers/learn/core/about-announcement/interface-14-02">Interface 14.02</a></li></ul></li><li class="menu-mlid-2511 menu-item-2511"><a href="/developers/learn/core/events-and-actions">Events and Actions</a></li><li class="menu-mlid-2992 menu-item-2992"><a href="/developers/learn/core/rn_config">Routing Node Configuration</a></li><li class="menu-mlid-2512 menu-item-2512"><a href="/developers/learn/core/standard-core">Standard Core</a></li><li class="menu-mlid-2513 menu-item-2513"><a href="/developers/learn/core/thin-core">Thin Core</a></li><li class="menu-parent menu-mlid-2514 menu-item-2514"><a href="/developers/learn/core/system-description">System Description</a><ul class="menu clearfix"><li class="first menu-mlid-2515 menu-item-2515"><a href="/developers/learn/core/system-description/system-architecture">System Architecture</a></li><li class="menu-mlid-2516 menu-item-2516"><a href="/developers/learn/core/system-description/advertisement-discovery">Advertisement and Discovery</a></li><li class="menu-mlid-2645 menu-item-2645"><a href="/developers/learn/core/system-description/alljoyn-transport">AllJoyn Transport</a></li><li class="menu-mlid-2517 menu-item-2517"><a href="/developers/learn/core/system-description/data-exchange">Data Exchange</a></li><li class="menu-mlid-2518 menu-item-2518"><a href="/developers/learn/core/system-description/alljoyn-session">AllJoyn Session</a></li><li class="menu-mlid-2519 menu-item-2519"><a href="/developers/learn/core/system-description/sessionless-signal">Sessionless Signal</a></li><li class="menu-mlid-2520 menu-item-2520"><a href="/developers/learn/core/system-description/alljoyn-security">AllJoyn Security</a></li><li class="menu-mlid-2521 menu-item-2521"><a href="/developers/learn/core/system-description/thin-apps">Thin Apps</a></li><li class="last menu-mlid-2522 menu-item-2522"><a href="/developers/learn/core/system-description/events-actions">Events and Actions</a></li></ul></li><li class="last menu-parent menu-mlid-2937 menu-item-2937"><a href="/developers/learn/core/security2_0">Security 2.0</a><ul class="menu clearfix"><li class="first last menu-mlid-2938 menu-item-2938"><a href="/developers/learn/core/security2_0/hld">High-Level Design</a></li></ul></li></ul></li><li class="menu-parent menu-mlid-2523 menu-item-2523"><a href="/developers/learn/base-services">Base Services</a><ul class="menu clearfix"><li class="first menu-parent menu-mlid-2524 menu-item-2524"><a href="/developers/learn/base-services/onboarding">Onboarding</a><ul class="menu clearfix"><li class="first menu-mlid-2525 menu-item-2525"><a href="/developers/learn/base-services/onboarding/interface">Interface</a></li><li class="last menu-mlid-2526 menu-item-2526"><a href="/developers/learn/base-services/onboarding/interface-14-02">Interface 14.02</a></li></ul></li><li class="menu-parent menu-mlid-2527 menu-item-2527"><a href="/developers/learn/base-services/configuration">Configuration</a><ul class="menu clearfix"><li class="first menu-mlid-2528 menu-item-2528"><a href="/developers/learn/base-services/configuration/interface">Interface</a></li><li class="last menu-mlid-2529 menu-item-2529"><a href="/developers/learn/base-services/configuration/interface-14-02">Interface 14.02</a></li></ul></li><li class="menu-parent menu-mlid-2530 menu-item-2530"><a href="/developers/learn/base-services/notification">Notification</a><ul class="menu clearfix"><li class="first menu-mlid-2531 menu-item-2531"><a href="/developers/learn/base-services/notification/interface">Interface</a></li><li class="last menu-mlid-2532 menu-item-2532"><a href="/developers/learn/base-services/notification/interface-14-02">Interface 14.02</a></li></ul></li><li class="menu-parent menu-mlid-2533 menu-item-2533"><a href="/developers/learn/base-services/controlpanel">ControlPanel</a><ul class="menu clearfix"><li class="first menu-mlid-2534 menu-item-2534"><a href="/developers/learn/base-services/controlpanel/interface">Interface</a></li><li class="last menu-mlid-2535 menu-item-2535"><a href="/developers/learn/base-services/controlpanel/interface-14-02">Interface 14.02</a></li></ul></li><li class="last menu-parent menu-mlid-2536 menu-item-2536"><a href="/developers/learn/base-services/audiostreaming">Audio Streaming</a><ul class="menu clearfix"><li class="first last menu-mlid-2537 menu-item-2537"><a href="/developers/learn/base-services/audiostreaming/interface">Interface</a></li></ul></li></ul></li><li class="last menu-mlid-2538 menu-item-2538"><a href="/developers/learn/glossary">Glossary</a></li></ul></li><li class="menu-parent has-children menu-mlid-2539 menu-item-2539"><a href="/developers/download">Download</a><ul class="menu clearfix"><li class="first last menu-mlid-2540 menu-item-2540"><a href="/developers/download/supported-platforms">Supported Platforms</a></li></ul></li><li class="menu-parent has-children active-trail menu-mlid-2541 menu-item-2541"><a href="/developers/develop" class="active-trail active-trail">Develop</a><ul class="menu clearfix"><li class="first menu-parent menu-mlid-2542 menu-item-2542"><a href="/developers/develop/building">Building</a><ul class="menu clearfix"><li class="first menu-parent menu-mlid-2543 menu-item-2543"><a href="/developers/develop/building/android">Android</a><ul class="menu clearfix"><li class="first last menu-mlid-2544 menu-item-2544"><a href="/developers/develop/building/android/build-source">Build Source</a></li></ul></li><li class="menu-parent menu-mlid-2545 menu-item-2545"><a href="/developers/develop/building/linux">Linux</a><ul class="menu clearfix"><li class="first menu-mlid-2546 menu-item-2546"><a href="/developers/develop/building/linux/openwrt">OpenWRT</a></li><li class="last menu-mlid-2547 menu-item-2547"><a href="/developers/develop/building/linux/build-source">Build Source</a></li></ul></li><li class="menu-parent menu-mlid-2548 menu-item-2548"><a href="/developers/develop/building/ios-osx">iOS/OS X</a><ul class="menu clearfix"><li class="first last menu-mlid-2549 menu-item-2549"><a href="/developers/develop/building/ios-osx/build-source">Build Source</a></li></ul></li><li class="menu-parent menu-mlid-2550 menu-item-2550"><a href="/developers/develop/building/windows">Windows</a><ul class="menu clearfix"><li class="first last menu-mlid-2551 menu-item-2551"><a href="/developers/develop/building/windows/build-source">Build Source</a></li></ul></li><li class="menu-mlid-2552 menu-item-2552"><a href="/developers/develop/building/thin-linux">Thin - Linux</a></li><li class="menu-mlid-2553 menu-item-2553"><a href="/developers/develop/building/thin-windows">Thin - Windows</a></li><li class="last menu-mlid-2993 menu-item-2993"><a href="/developers/develop/building/alljoyn-js">AllJoyn.js</a></li></ul></li><li class="menu-parent menu-mlid-2554 menu-item-2554"><a href="/developers/develop/run-sample-apps">Running Samples</a><ul class="menu clearfix"><li class="first menu-parent menu-mlid-2555 menu-item-2555"><a href="/developers/develop/run-sample-apps/basic">Basic</a><ul class="menu clearfix"><li class="first menu-mlid-2556 menu-item-2556"><a href="/developers/develop/run-sample-apps/basic/android">Android</a></li><li class="menu-mlid-2557 menu-item-2557"><a href="/developers/develop/run-sample-apps/basic/linux">Linux</a></li><li class="menu-mlid-2558 menu-item-2558"><a href="/developers/develop/run-sample-apps/basic/ios-osx">iOS/OS X</a></li><li class="menu-mlid-2559 menu-item-2559"><a href="/developers/develop/run-sample-apps/basic/windows">Windows</a></li><li class="menu-mlid-2560 menu-item-2560"><a href="/developers/develop/run-sample-apps/basic/thin-linux">Thin - Linux</a></li><li class="last menu-mlid-2561 menu-item-2561"><a href="/developers/develop/run-sample-apps/basic/thin-windows">Thin - Windows</a></li></ul></li><li class="menu-parent menu-mlid-2562 menu-item-2562"><a href="/developers/develop/run-sample-apps/chat">Chat</a><ul class="menu clearfix"><li class="first menu-mlid-2563 menu-item-2563"><a href="/developers/develop/run-sample-apps/chat/android">Android</a></li><li class="menu-mlid-2564 menu-item-2564"><a href="/developers/develop/run-sample-apps/chat/linux">Linux</a></li><li class="menu-mlid-2565 menu-item-2565"><a href="/developers/develop/run-sample-apps/chat/ios-osx">iOS/OS X</a></li><li class="menu-mlid-2566 menu-item-2566"><a href="/developers/develop/run-sample-apps/chat/windows">Windows</a></li><li class="last menu-mlid-2567 menu-item-2567"><a href="/developers/develop/run-sample-apps/chat/thin-linux">Thin - Linux</a></li></ul></li><li class="menu-parent menu-mlid-2568 menu-item-2568"><a href="/developers/develop/run-sample-apps/about">About</a><ul class="menu clearfix"><li class="first menu-mlid-2569 menu-item-2569"><a href="/developers/develop/run-sample-apps/about/linux">Linux</a></li><li class="menu-mlid-2570 menu-item-2570"><a href="/developers/develop/run-sample-apps/about/ios-osx">iOS/OS X</a></li><li class="last menu-mlid-2646 menu-item-2646"><a href="/developers/develop/run-sample-apps/about/windows">Windows</a></li></ul></li><li class="menu-mlid-2934 menu-item-2934"><a href="/developers/develop/run-sample-apps/observer">Observer</a></li><li class="menu-parent menu-mlid-2571 menu-item-2571"><a href="/developers/develop/run-sample-apps/config">Config</a><ul class="menu clearfix"><li class="first menu-mlid-2572 menu-item-2572"><a href="/developers/develop/run-sample-apps/config/android">Android</a></li><li class="menu-mlid-2573 menu-item-2573"><a href="/developers/develop/run-sample-apps/config/linux">Linux</a></li><li class="menu-mlid-2574 menu-item-2574"><a href="/developers/develop/run-sample-apps/config/ios-osx">iOS/OS X</a></li><li class="last menu-mlid-2575 menu-item-2575"><a href="/developers/develop/run-sample-apps/config/thin-linux">Thin - Linux</a></li></ul></li><li class="menu-parent menu-mlid-2576 menu-item-2576"><a href="/developers/develop/run-sample-apps/controlpanel">Control Panel</a><ul class="menu clearfix"><li class="first menu-mlid-2577 menu-item-2577"><a href="/developers/develop/run-sample-apps/controlpanel/android">Android</a></li><li class="menu-mlid-2578 menu-item-2578"><a href="/developers/develop/run-sample-apps/controlpanel/linux">Linux</a></li><li class="menu-mlid-2579 menu-item-2579"><a href="/developers/develop/run-sample-apps/controlpanel/ios-osx">iOS/OS X</a></li><li class="last menu-mlid-2580 menu-item-2580"><a href="/developers/develop/run-sample-apps/controlpanel/thin-linux">Thin - Linux</a></li></ul></li><li class="menu-parent menu-mlid-2581 menu-item-2581"><a href="/developers/develop/run-sample-apps/notification">Notification</a><ul class="menu clearfix"><li class="first menu-mlid-2582 menu-item-2582"><a href="/developers/develop/run-sample-apps/notification/android">Android</a></li><li class="menu-mlid-2583 menu-item-2583"><a href="/developers/develop/run-sample-apps/notification/linux">Linux</a></li><li class="menu-mlid-2584 menu-item-2584"><a href="/developers/develop/run-sample-apps/notification/ios-osx">iOS/OS X</a></li><li class="last menu-mlid-2585 menu-item-2585"><a href="/developers/develop/run-sample-apps/notification/thin-linux">Thin - Linux</a></li></ul></li><li class="menu-parent menu-mlid-2586 menu-item-2586"><a href="/developers/develop/run-sample-apps/onboarding">Onboarding</a><ul class="menu clearfix"><li class="first menu-mlid-2587 menu-item-2587"><a href="/developers/develop/run-sample-apps/onboarding/android">Android</a></li><li class="menu-mlid-2588 menu-item-2588"><a href="/developers/develop/run-sample-apps/onboarding/linux">Linux</a></li><li class="last menu-mlid-2589 menu-item-2589"><a href="/developers/develop/run-sample-apps/onboarding/ios-osx">iOS/OS X</a></li></ul></li><li class="menu-parent menu-mlid-2590 menu-item-2590"><a href="/developers/develop/run-sample-apps/acserver">AC Server</a><ul class="menu clearfix"><li class="first menu-mlid-2591 menu-item-2591"><a href="/developers/develop/run-sample-apps/acserver/linux">Linux</a></li><li class="last menu-mlid-2592 menu-item-2592"><a href="/developers/develop/run-sample-apps/acserver/thin-linux">Thin - Linux</a></li></ul></li><li class="menu-parent menu-mlid-2593 menu-item-2593"><a href="/developers/develop/run-sample-apps/test">Command Line Apps</a><ul class="menu clearfix"><li class="first last menu-mlid-2594 menu-item-2594"><a href="/developers/develop/run-sample-apps/test/sessions">Sessions</a></li></ul></li><li class="last menu-mlid-2994 menu-item-2994"><a href="/developers/develop/run-sample-apps/alljoyn-js">AllJoyn.js</a></li></ul></li><li class="menu-parent menu-mlid-2595 menu-item-2595"><a href="/developers/develop/api-guide">API Guide</a><ul class="menu clearfix"><li class="first menu-parent menu-mlid-2596 menu-item-2596"><a href="/developers/develop/api-guide/core">Core</a><ul class="menu clearfix"><li class="first menu-mlid-2939 menu-item-2939"><a href="/developers/develop/api-guide/core/java">java</a></li><li class="menu-mlid-2940 menu-item-2940"><a href="/developers/develop/api-guide/core/objc">Objective-C</a></li><li class="menu-mlid-2647 menu-item-2647"><a href="/developers/develop/api-guide/core/alljoyn-transports-best-practices">Alljoyn Transports Best Practices</a></li><li class="menu-mlid-2648 menu-item-2648"><a href="/developers/develop/api-guide/core/auto-ping">AutoPinger</a></li><li class="menu-mlid-2935 menu-item-2935"><a href="/developers/develop/api-guide/core/observer">Observer</a></li><li class="last menu-mlid-2936 menu-item-2936"><a href="/developers/develop/api-guide/core/propcache">Property Cache</a></li></ul></li><li class="menu-parent menu-mlid-2599 menu-item-2599"><a href="/developers/develop/api-guide/about">About</a><ul class="menu clearfix"><li class="first menu-mlid-2941 menu-item-2941"><a href="/developers/develop/api-guide/about/java">java</a></li><li class="menu-mlid-2942 menu-item-2942"><a href="/developers/develop/api-guide/about/cpp">C++</a></li><li class="menu-mlid-2943 menu-item-2943"><a href="/developers/develop/api-guide/about/objc">Objective-C</a></li><li class="menu-mlid-2944 menu-item-2944"><a href="/developers/develop/api-guide/about/c-thin">C (Thin Core)</a></li><li class="menu-mlid-2945 menu-item-2945"><a href="/developers/develop/api-guide/about/java-legacy">java Legacy</a></li><li class="menu-mlid-2946 menu-item-2946"><a href="/developers/develop/api-guide/about/cpp-legacy">C++ Legacy</a></li><li class="last menu-mlid-2947 menu-item-2947"><a href="/developers/develop/api-guide/about/objc-legacy">Objective-C Legacy</a></li></ul></li><li class="menu-parent menu-mlid-2604 menu-item-2604"><a href="/developers/develop/api-guide/onboarding">Onboarding</a><ul class="menu clearfix"><li class="first menu-mlid-2948 menu-item-2948"><a href="/developers/develop/api-guide/onboarding/java">java</a></li><li class="last menu-mlid-2949 menu-item-2949"><a href="/developers/develop/api-guide/onboarding/objc">Objective-C</a></li></ul></li><li class="menu-parent menu-mlid-2607 menu-item-2607"><a href="/developers/develop/api-guide/config">Configuration</a><ul class="menu clearfix"><li class="first menu-mlid-2950 menu-item-2950"><a href="/developers/develop/api-guide/config/java">java</a></li><li class="menu-mlid-2951 menu-item-2951"><a href="/developers/develop/api-guide/config/cpp">C++</a></li><li class="menu-mlid-2952 menu-item-2952"><a href="/developers/develop/api-guide/config/objc">Objective-C</a></li><li class="last menu-mlid-2953 menu-item-2953"><a href="/developers/develop/api-guide/config/c-thin">C (Thin Core)</a></li></ul></li><li class="menu-parent menu-mlid-2612 menu-item-2612"><a href="/developers/develop/api-guide/notification">Notification</a><ul class="menu clearfix"><li class="first menu-mlid-2954 menu-item-2954"><a href="/developers/develop/api-guide/notification/java">java</a></li><li class="menu-mlid-2955 menu-item-2955"><a href="/developers/develop/api-guide/notification/cpp">C++</a></li><li class="menu-mlid-2956 menu-item-2956"><a href="/developers/develop/api-guide/notification/objc">Objective-C</a></li><li class="last menu-mlid-2957 menu-item-2957"><a href="/developers/develop/api-guide/notification/c-thin">C (Thin Core)</a></li></ul></li><li class="menu-parent menu-mlid-2617 menu-item-2617"><a href="/developers/develop/api-guide/controlpanel">Control Panel</a><ul class="menu clearfix"><li class="first menu-mlid-2958 menu-item-2958"><a href="/developers/develop/api-guide/controlpanel/java">java</a></li><li class="menu-mlid-2959 menu-item-2959"><a href="/developers/develop/api-guide/controlpanel/cpp">C++</a></li><li class="menu-mlid-2960 menu-item-2960"><a href="/developers/develop/api-guide/controlpanel/objc">Objective-C</a></li><li class="last menu-mlid-2961 menu-item-2961"><a href="/developers/develop/api-guide/controlpanel/c-thin">C (Thin Core)</a></li></ul></li><li class="menu-parent menu-mlid-2622 menu-item-2622"><a href="/developers/develop/api-guide/audio-streaming">Audio Streaming</a><ul class="menu clearfix"><li class="first last menu-mlid-2962 menu-item-2962"><a href="/developers/develop/api-guide/audio-streaming/cpp">C++</a></li></ul></li><li class="last menu-mlid-2624 menu-item-2624"><a href="/developers/develop/api-guide/events-and-actions">Events and Actions</a></li></ul></li><li class="menu-mlid-2625 menu-item-2625"><a href="/developers/develop/api-reference">API Reference</a></li><li class="menu-parent menu-mlid-2626 menu-item-2626"><a href="/developers/develop/debug">Debug</a><ul class="menu clearfix"><li class="first last menu-mlid-2627 menu-item-2627"><a href="/developers/develop/debug/common-issues">Common Issues</a></li></ul></li><li class="menu-parent active-trail menu-mlid-2628 menu-item-2628"><a href="/developers/develop/tutorial" class="active-trail">Tutorial</a><ul class="menu clearfix"><li class="first menu-mlid-2629 menu-item-2629"><a href="/developers/develop/tutorial/core">Core</a></li><li class="active-trail active menu-mlid-2630 menu-item-2630"><a href="/developers/develop/tutorial/ios" class="active-trail active">iOS</a></li><li class="menu-mlid-2631 menu-item-2631"><a href="/developers/develop/tutorial/thin-app">Thin App</a></li><li class="menu-mlid-2632 menu-item-2632"><a href="/developers/develop/tutorial/arduino-and-gt202">Arduino + GT202</a></li><li class="last menu-mlid-2633 menu-item-2633"><a href="/developers/develop/tutorial/videos">Videos</a></li></ul></li><li class="last menu-mlid-2634 menu-item-2634"><a href="/developers/develop/ask">Ask Forum</a></li></ul></li><li class="last menu-parent has-children menu-mlid-2636 menu-item-2636"><a href="/developers/contribute">Contribute</a><ul class="menu clearfix"><li class="first last menu-mlid-2637 menu-item-2637"><a href="/developers/contribute/project-lifecycle">Project Lifecycle</a></li></ul></li></ul></li><li class="menu-mlid-2466 menu-item-2466"><a href="/showcase-products-using-alljoyn">Showcase</a></li><li class="menu-parent menu-mlid-2487 menu-item-2487"><a href="/allseen-alliance-certification">Certification</a><ul class="menu clearfix"><li class="first menu-mlid-2488 menu-item-2488"><a href="/certification/how-validate-your-designed-allseen-product">How To Validate Your Product</a></li><li class="last menu-mlid-2489 menu-item-2489"><a href="/certification/faq">FAQ</a></li></ul></li><li class="last menu-parent menu-mlid-2421 menu-item-2421"><a href="/news-and-events">News &amp; Events</a><ul class="menu clearfix"><li class="first menu-mlid-2422 menu-item-2422"><a href="/news-and-events/newsroom/announcements">Announcements</a></li><li class="menu-mlid-2449 menu-item-2449"><a href="/news/videos">Videos</a></li><li class="menu-mlid-2423 menu-item-2423"><a href="/news-and-events/newsroom/in-the-news">In The News</a></li><li class="menu-mlid-2424 menu-item-2424"><a href="/news-and-events/events">Events</a></li><li class="menu-mlid-2448 menu-item-2448"><a href="/news-and-events/blogs">Blogs</a></li><li class="menu-mlid-2461 menu-item-2461"><a href="/news-and-events/newsletters">Newsletters</a></li><li class="last menu-mlid-2933 menu-item-2933"><a href="/news-and-events/videos">Videos</a></li></ul></li></ul></div>
+</div></div></section></div></div>      </div>
+            
+      
+      <div class="region region-sidebar-first sidebar"><div class="region-inner clearfix"><div id="block-menu-block-1" class="block block-menu-block"  role="navigation"><div class="block-inner clearfix">        <div class="block-content content"><div class="menu-block-wrapper menu-block-1 menu-name-main-menu parent-mlid-0 menu-level-3">
+  <ul class="menu clearfix"><li class="first menu-parent menu-mlid-2542 menu-item-2542"><a href="/developers/develop/building">Building</a><ul class="menu clearfix"><li class="first menu-parent menu-mlid-2543 menu-item-2543"><a href="/developers/develop/building/android">Android</a><ul class="menu clearfix"><li class="first last menu-mlid-2544 menu-item-2544"><a href="/developers/develop/building/android/build-source">Build Source</a></li></ul></li><li class="menu-parent menu-mlid-2545 menu-item-2545"><a href="/developers/develop/building/linux">Linux</a><ul class="menu clearfix"><li class="first menu-mlid-2546 menu-item-2546"><a href="/developers/develop/building/linux/openwrt">OpenWRT</a></li><li class="last menu-mlid-2547 menu-item-2547"><a href="/developers/develop/building/linux/build-source">Build Source</a></li></ul></li><li class="menu-parent menu-mlid-2548 menu-item-2548"><a href="/developers/develop/building/ios-osx">iOS/OS X</a><ul class="menu clearfix"><li class="first last menu-mlid-2549 menu-item-2549"><a href="/developers/develop/building/ios-osx/build-source">Build Source</a></li></ul></li><li class="menu-parent menu-mlid-2550 menu-item-2550"><a href="/developers/develop/building/windows">Windows</a><ul class="menu clearfix"><li class="first last menu-mlid-2551 menu-item-2551"><a href="/developers/develop/building/windows/build-source">Build Source</a></li></ul></li><li class="menu-mlid-2552 menu-item-2552"><a href="/developers/develop/building/thin-linux">Thin - Linux</a></li><li class="menu-mlid-2553 menu-item-2553"><a href="/developers/develop/building/thin-windows">Thin - Windows</a></li><li class="last menu-mlid-2993 menu-item-2993"><a href="/developers/develop/building/alljoyn-js">AllJoyn.js</a></li></ul></li><li class="menu-parent menu-mlid-2554 menu-item-2554"><a href="/developers/develop/run-sample-apps">Running Samples</a><ul class="menu clearfix"><li class="first menu-parent menu-mlid-2555 menu-item-2555"><a href="/developers/develop/run-sample-apps/basic">Basic</a><ul class="menu clearfix"><li class="first menu-mlid-2556 menu-item-2556"><a href="/developers/develop/run-sample-apps/basic/android">Android</a></li><li class="menu-mlid-2557 menu-item-2557"><a href="/developers/develop/run-sample-apps/basic/linux">Linux</a></li><li class="menu-mlid-2558 menu-item-2558"><a href="/developers/develop/run-sample-apps/basic/ios-osx">iOS/OS X</a></li><li class="menu-mlid-2559 menu-item-2559"><a href="/developers/develop/run-sample-apps/basic/windows">Windows</a></li><li class="menu-mlid-2560 menu-item-2560"><a href="/developers/develop/run-sample-apps/basic/thin-linux">Thin - Linux</a></li><li class="last menu-mlid-2561 menu-item-2561"><a href="/developers/develop/run-sample-apps/basic/thin-windows">Thin - Windows</a></li></ul></li><li class="menu-parent menu-mlid-2562 menu-item-2562"><a href="/developers/develop/run-sample-apps/chat">Chat</a><ul class="menu clearfix"><li class="first menu-mlid-2563 menu-item-2563"><a href="/developers/develop/run-sample-apps/chat/android">Android</a></li><li class="menu-mlid-2564 menu-item-2564"><a href="/developers/develop/run-sample-apps/chat/linux">Linux</a></li><li class="menu-mlid-2565 menu-item-2565"><a href="/developers/develop/run-sample-apps/chat/ios-osx">iOS/OS X</a></li><li class="menu-mlid-2566 menu-item-2566"><a href="/developers/develop/run-sample-apps/chat/windows">Windows</a></li><li class="last menu-mlid-2567 menu-item-2567"><a href="/developers/develop/run-sample-apps/chat/thin-linux">Thin - Linux</a></li></ul></li><li class="menu-parent menu-mlid-2568 menu-item-2568"><a href="/developers/develop/run-sample-apps/about">About</a><ul class="menu clearfix"><li class="first menu-mlid-2569 menu-item-2569"><a href="/developers/develop/run-sample-apps/about/linux">Linux</a></li><li class="menu-mlid-2570 menu-item-2570"><a href="/developers/develop/run-sample-apps/about/ios-osx">iOS/OS X</a></li><li class="last menu-mlid-2646 menu-item-2646"><a href="/developers/develop/run-sample-apps/about/windows">Windows</a></li></ul></li><li class="menu-mlid-2934 menu-item-2934"><a href="/developers/develop/run-sample-apps/observer">Observer</a></li><li class="menu-parent menu-mlid-2571 menu-item-2571"><a href="/developers/develop/run-sample-apps/config">Config</a><ul class="menu clearfix"><li class="first menu-mlid-2572 menu-item-2572"><a href="/developers/develop/run-sample-apps/config/android">Android</a></li><li class="menu-mlid-2573 menu-item-2573"><a href="/developers/develop/run-sample-apps/config/linux">Linux</a></li><li class="menu-mlid-2574 menu-item-2574"><a href="/developers/develop/run-sample-apps/config/ios-osx">iOS/OS X</a></li><li class="last menu-mlid-2575 menu-item-2575"><a href="/developers/develop/run-sample-apps/config/thin-linux">Thin - Linux</a></li></ul></li><li class="menu-parent menu-mlid-2576 menu-item-2576"><a href="/developers/develop/run-sample-apps/controlpanel">Control Panel</a><ul class="menu clearfix"><li class="first menu-mlid-2577 menu-item-2577"><a href="/developers/develop/run-sample-apps/controlpanel/android">Android</a></li><li class="menu-mlid-2578 menu-item-2578"><a href="/developers/develop/run-sample-apps/controlpanel/linux">Linux</a></li><li class="menu-mlid-2579 menu-item-2579"><a href="/developers/develop/run-sample-apps/controlpanel/ios-osx">iOS/OS X</a></li><li class="last menu-mlid-2580 menu-item-2580"><a href="/developers/develop/run-sample-apps/controlpanel/thin-linux">Thin - Linux</a></li></ul></li><li class="menu-parent menu-mlid-2581 menu-item-2581"><a href="/developers/develop/run-sample-apps/notification">Notification</a><ul class="menu clearfix"><li class="first menu-mlid-2582 menu-item-2582"><a href="/developers/develop/run-sample-apps/notification/android">Android</a></li><li class="menu-mlid-2583 menu-item-2583"><a href="/developers/develop/run-sample-apps/notification/linux">Linux</a></li><li class="menu-mlid-2584 menu-item-2584"><a href="/developers/develop/run-sample-apps/notification/ios-osx">iOS/OS X</a></li><li class="last menu-mlid-2585 menu-item-2585"><a href="/developers/develop/run-sample-apps/notification/thin-linux">Thin - Linux</a></li></ul></li><li class="menu-parent menu-mlid-2586 menu-item-2586"><a href="/developers/develop/run-sample-apps/onboarding">Onboarding</a><ul class="menu clearfix"><li class="first menu-mlid-2587 menu-item-2587"><a href="/developers/develop/run-sample-apps/onboarding/android">Android</a></li><li class="menu-mlid-2588 menu-item-2588"><a href="/developers/develop/run-sample-apps/onboarding/linux">Linux</a></li><li class="last menu-mlid-2589 menu-item-2589"><a href="/developers/develop/run-sample-apps/onboarding/ios-osx">iOS/OS X</a></li></ul></li><li class="menu-parent menu-mlid-2590 menu-item-2590"><a href="/developers/develop/run-sample-apps/acserver">AC Server</a><ul class="menu clearfix"><li class="first menu-mlid-2591 menu-item-2591"><a href="/developers/develop/run-sample-apps/acserver/linux">Linux</a></li><li class="last menu-mlid-2592 menu-item-2592"><a href="/developers/develop/run-sample-apps/acserver/thin-linux">Thin - Linux</a></li></ul></li><li class="menu-parent menu-mlid-2593 menu-item-2593"><a href="/developers/develop/run-sample-apps/test">Command Line Apps</a><ul class="menu clearfix"><li class="first last menu-mlid-2594 menu-item-2594"><a href="/developers/develop/run-sample-apps/test/sessions">Sessions</a></li></ul></li><li class="last menu-mlid-2994 menu-item-2994"><a href="/developers/develop/run-sample-apps/alljoyn-js">AllJoyn.js</a></li></ul></li><li class="menu-parent menu-mlid-2595 menu-item-2595"><a href="/developers/develop/api-guide">API Guide</a><ul class="menu clearfix"><li class="first menu-parent menu-mlid-2596 menu-item-2596"><a href="/developers/develop/api-guide/core">Core</a><ul class="menu clearfix"><li class="first menu-mlid-2939 menu-item-2939"><a href="/developers/develop/api-guide/core/java">java</a></li><li class="menu-mlid-2940 menu-item-2940"><a href="/developers/develop/api-guide/core/objc">Objective-C</a></li><li class="menu-mlid-2647 menu-item-2647"><a href="/developers/develop/api-guide/core/alljoyn-transports-best-practices">Alljoyn Transports Best Practices</a></li><li class="menu-mlid-2648 menu-item-2648"><a href="/developers/develop/api-guide/core/auto-ping">AutoPinger</a></li><li class="menu-mlid-2935 menu-item-2935"><a href="/developers/develop/api-guide/core/observer">Observer</a></li><li class="last menu-mlid-2936 menu-item-2936"><a href="/developers/develop/api-guide/core/propcache">Property Cache</a></li></ul></li><li class="menu-parent menu-mlid-2599 menu-item-2599"><a href="/developers/develop/api-guide/about">About</a><ul class="menu clearfix"><li class="first menu-mlid-2941 menu-item-2941"><a href="/developers/develop/api-guide/about/java">java</a></li><li class="menu-mlid-2942 menu-item-2942"><a href="/developers/develop/api-guide/about/cpp">C++</a></li><li class="menu-mlid-2943 menu-item-2943"><a href="/developers/develop/api-guide/about/objc">Objective-C</a></li><li class="menu-mlid-2944 menu-item-2944"><a href="/developers/develop/api-guide/about/c-thin">C (Thin Core)</a></li><li class="menu-mlid-2945 menu-item-2945"><a href="/developers/develop/api-guide/about/java-legacy">java Legacy</a></li><li class="menu-mlid-2946 menu-item-2946"><a href="/developers/develop/api-guide/about/cpp-legacy">C++ Legacy</a></li><li class="last menu-mlid-2947 menu-item-2947"><a href="/developers/develop/api-guide/about/objc-legacy">Objective-C Legacy</a></li></ul></li><li class="menu-parent menu-mlid-2604 menu-item-2604"><a href="/developers/develop/api-guide/onboarding">Onboarding</a><ul class="menu clearfix"><li class="first menu-mlid-2948 menu-item-2948"><a href="/developers/develop/api-guide/onboarding/java">java</a></li><li class="last menu-mlid-2949 menu-item-2949"><a href="/developers/develop/api-guide/onboarding/objc">Objective-C</a></li></ul></li><li class="menu-parent menu-mlid-2607 menu-item-2607"><a href="/developers/develop/api-guide/config">Configuration</a><ul class="menu clearfix"><li class="first menu-mlid-2950 menu-item-2950"><a href="/developers/develop/api-guide/config/java">java</a></li><li class="menu-mlid-2951 menu-item-2951"><a href="/developers/develop/api-guide/config/cpp">C++</a></li><li class="menu-mlid-2952 menu-item-2952"><a href="/developers/develop/api-guide/config/objc">Objective-C</a></li><li class="last menu-mlid-2953 menu-item-2953"><a href="/developers/develop/api-guide/config/c-thin">C (Thin Core)</a></li></ul></li><li class="menu-parent menu-mlid-2612 menu-item-2612"><a href="/developers/develop/api-guide/notification">Notification</a><ul class="menu clearfix"><li class="first menu-mlid-2954 menu-item-2954"><a href="/developers/develop/api-guide/notification/java">java</a></li><li class="menu-mlid-2955 menu-item-2955"><a href="/developers/develop/api-guide/notification/cpp">C++</a></li><li class="menu-mlid-2956 menu-item-2956"><a href="/developers/develop/api-guide/notification/objc">Objective-C</a></li><li class="last menu-mlid-2957 menu-item-2957"><a href="/developers/develop/api-guide/notification/c-thin">C (Thin Core)</a></li></ul></li><li class="menu-parent menu-mlid-2617 menu-item-2617"><a href="/developers/develop/api-guide/controlpanel">Control Panel</a><ul class="menu clearfix"><li class="first menu-mlid-2958 menu-item-2958"><a href="/developers/develop/api-guide/controlpanel/java">java</a></li><li class="menu-mlid-2959 menu-item-2959"><a href="/developers/develop/api-guide/controlpanel/cpp">C++</a></li><li class="menu-mlid-2960 menu-item-2960"><a href="/developers/develop/api-guide/controlpanel/objc">Objective-C</a></li><li class="last menu-mlid-2961 menu-item-2961"><a href="/developers/develop/api-guide/controlpanel/c-thin">C (Thin Core)</a></li></ul></li><li class="menu-parent menu-mlid-2622 menu-item-2622"><a href="/developers/develop/api-guide/audio-streaming">Audio Streaming</a><ul class="menu clearfix"><li class="first last menu-mlid-2962 menu-item-2962"><a href="/developers/develop/api-guide/audio-streaming/cpp">C++</a></li></ul></li><li class="last menu-mlid-2624 menu-item-2624"><a href="/developers/develop/api-guide/events-and-actions">Events and Actions</a></li></ul></li><li class="menu-mlid-2625 menu-item-2625"><a href="/developers/develop/api-reference">API Reference</a></li><li class="menu-parent menu-mlid-2626 menu-item-2626"><a href="/developers/develop/debug">Debug</a><ul class="menu clearfix"><li class="first last menu-mlid-2627 menu-item-2627"><a href="/developers/develop/debug/common-issues">Common Issues</a></li></ul></li><li class="menu-parent active-trail menu-mlid-2628 menu-item-2628"><a href="/developers/develop/tutorial" class="active-trail">Tutorial</a><ul class="menu clearfix"><li class="first menu-mlid-2629 menu-item-2629"><a href="/developers/develop/tutorial/core">Core</a></li><li class="active-trail active menu-mlid-2630 menu-item-2630"><a href="/developers/develop/tutorial/ios" class="active-trail active">iOS</a></li><li class="menu-mlid-2631 menu-item-2631"><a href="/developers/develop/tutorial/thin-app">Thin App</a></li><li class="menu-mlid-2632 menu-item-2632"><a href="/developers/develop/tutorial/arduino-and-gt202">Arduino + GT202</a></li><li class="last menu-mlid-2633 menu-item-2633"><a href="/developers/develop/tutorial/videos">Videos</a></li></ul></li><li class="last menu-parent menu-mlid-2634 menu-item-2634"><a href="/developers/develop/ask">Ask Forum</a></li></ul></div>
+</div></div></div></div></div>            <div id="content-column" role="main">
+        <div class="content-inner">
+
+          
+          <section id="main-content">
+
+                                      <header id="main-content-header">
+
+                                                  <h1 id="sub-title">
+                    iOS Tutorial                  </h1>
+                
+                
+              </header>
+                        
+                          <div id="content">
+                        <article id="node-4224" class="node node-developer-document article clearfix" about="/developers/develop/tutorial/ios" typeof="sioc:Item foaf:Document" role="article">
+
+  
+      <span property="dc:title" content="iOS Tutorial" class="rdf-meta element-hidden"></span><span property="sioc:num_replies" content="0" datatype="xsd:integer" class="rdf-meta element-hidden"></span>
+  
+  <div class="node-content">
+  
+  <div class="field-body view-mode-full">
+    
+<h2 id="overview">Overview</h2>
+<p>This content looks at the BasicService and BasicClient
+sample in the SDK. This is a simple demonstration wherein
+the client sends two strings to the service, the service
+concatenates the strings sent by the client and returns a single string.</p>
+<h3 id="components-used-to-write-a-sample">Components Used to Write a Sample</h3>
+<p>The AllJoyn® Objective-C bindings are based on the fact that
+any AllJoyn Objective C-code that you write will hit the native AllJoyn library.</p>
+<p>When you download the AllJoyn SDK for iOS and OS X,
+the typical structure of the SDK and its components is followed:</p>
+<ul><li>build</li>
+<li>alljoyn_objc</li>
+<li>services</li>
+<li>LICENSE</li>
+<li>README.txt</li>
+<li>README.md</li>
+<li>ReleaseNotes.txt</li>
+</ul><p>The following sections define each one of these directories and their role.</p>
+<h3 id="build-directory">build directory</h3>
+<p>If you were to build the AllJoyn source for Darwin (iOS/OS X)
+by issuing a SCons command, the build directory is the build
+output. The following directories are located under build:</p>
+<ul><li>about-docs</li>
+<li>darwin</li>
+<li>docs</li>
+</ul><h4 id="about-docs-and-docs-directories">about-docs and docs directories</h4>
+<p>The about-docs and docs directories contain the API documentation
+for the native library (C++) of the AllJoyn framework and the About feature.</p>
+<h4 id="darwin-directory">darwin directory</h4>
+<p>Under the darwin directory you will find four folders: arm, armv7, armv7s and x86.</p>
+<h4 id="arm-armv7-and-armv7s-directories">arm armv7 and armv7s directories</h4>
+<p>The arm folders contain the native libraries and header files
+for running the AllJoyn code over the corresponding versions of iOS devices.</p>
+<h3 id="alljoyn_objc-directory">alljoyn_objc directory</h3>
+<p>The alljoyn_objc directory contains most of the things relevant
+to an iOS developer. The following sections define each item.</p>
+<h4 id="alljoyncodegenerator">AllJoynCodeGenerator</h4>
+<p>The code generator tool is the best way to get started generating
+the glue code that makes calls inside the native AllJoyn library.</p>
+<h4 id="alljoynframework">AllJoynFramework</h4>
+<p>AllJoynFramework is the actual binding code that contains the
+implementation of the publicly exposed Objective-C bindings.</p>
+<h4 id="alljoynframework_ios">AllJoynFramework_iOS</h4>
+<p>AllJoynFramework_iOS is the actual binding code like the
+AllJoyn framework, but is more specific to iOS devices.</p>
+<h4 id="samples-directory">samples directory</h4>
+<p>The samples directory contains both iOS and OS X samples that
+give you ideas for using the AllJoyn Objective-C bindings.</p>
+<h4 id="test-directory">Test directory</h4>
+<p>The Test directory contains a few tests that can be used
+to test the AllJoyn SDK.</p>
+<h4 id="unity-directory">Unity directory</h4>
+<p>The Unity directory in this SDK is under construction
+and does not contain any officially supported code.</p>
+<h3 id="overview-of-files-in-the-samples">Overview of files in the samples</h3>
+<p>The following section is common to both BasicService and BasicClient.</p>
+<p>We first need to understand a few of the common files that
+are a part of the sample code. Not all files in an AllJoyn
+iOS sample need to be written from scratch. We have a code
+generator tool, which generates much of the glue code and
+you end up writing very little actual AllJoyn code.
+To create an AllJoyn Objective-C sample from scratch,
+the best place to start is the <a href="/developers/develop/api-guide/core/objc">AllJoyn Programming Guide for the Objective-C Language</a>.
+This document shows you how to make use of the code generator
+to define the interface and in turn generate glue code that
+makes a call in the native AllJoyn library. You do not have
+to make calls in the native library yourself.</p>
+<p>If we use the code generator for BasicService and BasicClient,
+the code generated would be four files:</p>
+<table><thead><tr><th>File name</th>
+<th>Description</th>
+</tr></thead><tbody><tr><td>BasicObject.h</td>
+<td>This file shows you the interface implemented by the BusObject that you defined using the xml as input to the code generator.</td>
+</tr><tr><td>BasicObject.m</td>
+<td>This file has the Objective-C implementation of the BasicObject.</td>
+</tr><tr><td>AJNBasicObject.h</td>
+<td>The Objective-C implementation of a bus object needs to map to a C++ implementation that calls in the native AllJoyn library. The code gen tool does this for you and produces the header and source files for this mapping. You need not write the C++ code or bother about how is it done.</td>
+</tr><tr><td>AJNBasicObject.mm</td>
+<td>This file contains the implementation of C++ BusObject. In the sample, the C++ BusObject is called BasicObjectImpl.</td>
+</tr></tbody></table><p>There are other files in the sample as listed below:</p>
+<ul><li><strong>ViewController.h</strong>: This is the View Controller header file
+of this application.</li>
+<li><strong>ViewController.mm</strong>: This contains the implementation of
+the View Controller for this application.</li>
+</ul><h2 id="walkthrough-of-basicservice">Walkthrough of BasicService</h2>
+<p>Developers who are not familiar with app development for the
+iOS platform can refer to the Apple developer documentation,
+which has a set of rich tutorials to understand how a typical
+iOS app is structured. For ease of understanding, if you are new
+to iOS development, an iOS app is structured based on MVC architecture,
+which means that you will have the following:</p>
+<ul><li>A <strong>View</strong>, which is your UI and since we use Xcode,
+this corresponds to Storyboard.</li>
+<li>A <strong>Controller</strong>, which is your <code>ViewController.h</code> and <code>ViewController.mm</code>
+in the case of our BasicService and BasicClient sample</li>
+<li>A <strong>Model</strong>, which are <code>BasicService.h</code> and <code>BasicService.mm</code>
+in the case of BasicService and <code>BasicClient.h</code>; and <code>BasicClient.mm</code>
+in the case of BasicClient</li>
+</ul><p>Let us look at it from the perspective of how an app is
+loaded and what parts of the source code are called and what do they mean</p>
+<p>When the BasicService app loads up, the viewDidLoad function in ViewController.mm
+is called:</p>
+<h4 id="code-1">Code 1</h4>
+<pre><code class="lang-objc"><code class="objc">- (void)viewDidLoad
+{
+   [super viewDidLoad];
+self.basicService = [[BasicService alloc] init];
+   self.basicService.delegate = self;
+   [self.basicService startService];
+}</code>
+</code></pre>
+<p>Here, we instantiate BasicService which is the model and
+then send a message to <code>startService</code>.</p>
+<p>Before going further, it might be good to look at what is
+inside BasicService.h since we are calling a method of <code>BasicService</code>.</p>
+<h4 id="code-2">Code 2</h4>
+<pre><code class="lang-objc"><code class="objc">BasicService.h
+@protocol BasicServiceDelegate &lt;NSObject&gt;
+- (void)didReceiveStatusUpdateMessage:(NSString *)message;
+@end
+@interface BasicService : NSObject
+@property (strong, nonatomic) id&lt;BasicServiceDelegate&gt; delegate;
+- (void)startService;
+@end</code>
+</code></pre>
+<p>The first thing we notice is a <code>@protocol</code> called <code>BasicServiceDelegate</code>
+with a method <code>didReceiveStatusUpdateMessage</code>. This is in place
+so that the model can send a message to the view controller.
+The protocol tells the model that the view controller will
+have this method implemented.</p>
+<p>The second thing is the interface <code>BasicService</code> which has a property
+<code>id&lt;BasicServiceDelegate&gt;</code> delegate.</p>
+<p>The <code>ViewController</code> sets itself as the delegate inside
+<code>ViewController.m</code> so that the model, <code>BasicService</code>, can
+send a message to the method <code>didReceiveStatusUpdateMessage</code>
+of <code>ViewController</code> using the delegate property.</p>
+<p>This is a common way for a model to call a method of a
+<code>ViewController</code> in iOS. Now we turn back our attention to
+<code>startService</code> in <code>BasicService</code>.</p>
+<h4 id="code-3">Code 3</h4>
+<pre><code class="lang-objc"><code class="objc">- (void)startService
+{
+   dispatch_queue_t serviceQueue = dispatch_queue_create
+("org.alljoyn.basic-service.serviceQueue", NULL);
+   dispatch_async( serviceQueue, ^{
+      [self run];
+   });
+}</code>
+</code></pre>
+<p>Here we create a dispatch queue called "org.alljoyn.basic-service.serviceQueue"
+and call the method <code>run</code>. Now let us look at the method <code>run</code>.</p>
+<h4 id="code-4">Code 4</h4>
+<pre><code class="lang-objc"><code class="objc">[self.delegate didReceiveStatusUpdateMessage:[NSString
+stringWithFormat:@"AllJoyn Library version: %@\n",
+[AJNVersion versionInformation]]];
+
+[self.delegate didReceiveStatusUpdateMessage:[NSString
+stringWithFormat:@"AllJoyn Library build info: %@\n",
+[AJNVersion buildInformation]]];</code>
+</code></pre>
+<p>The first few lines of this method print out debugging
+information. There are two calls that are interesting.</p>
+<p>Notice we call <code>didReceiveStatusUpdateMessage</code> using the
+delegate that we had declared in <a href="#code-3">Code 3</a>.
+This updates the text view of the app with the message
+parameters that we send it. In the two calls above, we send
+the AllJoyn library version and a build info string.</p>
+<p>Next, we create a BusAttachment and assign it to the
+property named <code>bus</code>, which we declared in <code>BasicService.h file</code>.
+See <a href="#code-5">Code 5</a>.</p>
+<h4 id="code-5">Code 5</h4>
+<pre><code class="lang-objc"><code class="objc">self.bus = [[AJNBusAttachment alloc] initWithApplicationName:@"BasicService"
+allowRemoteMessages:YES];</code>
+</code></pre>
+<p>We then have a condition lock, which is in place so that only
+thread executes the code that follows. We do not want to have
+multiple threads trying to do AllJoyn things at the same time
+for this sample.</p>
+<h4 id="code-6">Code 6</h4>
+<pre><code class="lang-objc"><code class="objc">self.lostSessionCondition = [[NSCondition alloc] init];
+[self.lostSessionCondition lock];</code>
+</code></pre>
+<p>We then register the bus listener, which essentially has
+callbacks that indicate if we found an advertised name,
+lost a session, or a name owner changed condition</p>
+<h4 id="code-7">Code 7</h4>
+<pre><code class="lang-objc"><code class="objc">[self.bus registerBusListener:self];</code>
+</code></pre>
+<p>The code gen tool produces the implementation stub of
+Bus Object which we can now instantiate in our Service code
+with the line in <a href="#code-8">Code 8</a>:</p>
+<h4 id="code-8">Code 8</h4>
+<pre><code class="lang-objc"><code class="objc">self.basicObject = [[BasicObject alloc] initWithBusAttachment:self.bus
+onPath:kBasicServicePath];</code>
+</code></pre>
+<p>After we have instantiated the Bus Object, we start the bus:</p>
+<h4 id="code-9">Code 9</h4>
+<pre><code class="lang-objc"><code class="objc">status = [self.bus start];
+if (ER_OK != status) {
+      [self.delegate didReceiveStatusUpdateMessage:@"BusAttachment::Start
+   failed\n"];
+   NSLog(@"Bus start failed.");
+}</code>
+</code></pre>
+<p>We need to register the bus object that we had instantiated
+above. We do so by calling <a href="#code-10">Code 10</a>:</p>
+<h4 id="code-10">Code 10</h4>
+<pre><code class="lang-objc"><code class="objc">status = [self.bus registerBusObject:self.basicObject];
+if (ER_OK != status) {
+NSLog(@"ERROR: Could not register bus object");
+}</code>
+</code></pre>
+<p>We started the bus and now need to connect to it, which is done
+by calling the <code>connectWithArguements</code> method. The arguments passed
+to this method is a string "null:" which indicates the we connect
+to the "null" transport. In the context of the AllJoyn framework,
+this means we are connecting to the AllJoyn router which is a
+part of this app. Some operating systems have the ability to
+run a separate AllJoyn standalone router process, which the
+app can connect to. Running a separate process is not possible
+in iOS and not beneficial in many ways. We will leave that
+discussion here since we are focusing on the sample.</p>
+<h4 id="code-11">Code 11</h4>
+<pre><code class="lang-objc"><code class="objc">status = [self.bus connectWithArguments:@"null:"];
+if (ER_OK != status) {
+   NSLog(@"Bus connect failed.");
+   [self.delegate didReceiveStatusUpdateMessage:@"Failed to connect to null:
+transport"];
+}</code>
+</code></pre>
+<p>For an AllJoyn service we typically request a well-known name,
+bind a session port to that well known name, and then advertise
+that name so that others who are interested in talking to the
+service find it and join our session.</p>
+<p>We do these three things with the lines of code shown in <a href="#code-12">Code 12</a>,
+<a href="#code-13">Code 13</a>, <a href="#code-14">Code 14</a>, and <a href="#code-15">Code 15</a>.</p>
+<h4 id="code-12">Code 12</h4>
+<pre><code class="lang-objc"><code class="objc">status = [self.bus requestWellKnownName:kBasicServiceName
+withFlags:kAJNBusNameFlagReplaceExisting | kAJNBusNameFlagDoNotQueue];
+if (ER_OK != status) {
+   NSLog(@"ERROR: Request for name failed (%@)", kBasicServiceName);
+}</code>
+</code></pre>
+<p>The parameter <code>kBasicServiceName</code> is the name that we request
+from our bus. The name may or may not be available and also
+depends on the flags that you pass in to the specifier <code>withFlags</code>:</p>
+<p>In the case of this sample, we pass <code>kAJNBusNameFlagReplaceExisting | kAJNBusNameFlagDoNotQueue</code>
+which tells the bus to replace the existing owner of the name
+with this service instance and if the name is already taken by
+someone do not queue this service waiting for the name to be released.</p>
+<h4 id="code-13">Code 13</h4>
+<pre><code class="lang-objc"><code class="objc">//
+// bind a session to a service port
+//
+   AJNSessionOptions *sessionOptions = [[AJNSessionOptions alloc]
+initWithTrafficType:kAJNTrafficMessages supportsMultipoint:YES
+proximity:kAJNProximityAny transportMask:kAJNTransportMaskAny];</code>
+</code></pre>
+<p>Before calling <code>bindSessionPort</code>, we need to specify certain
+things about the session, for example:</p>
+<ul><li>What kind of traffic would this session be supporting?</li>
+<li>Would it be a single point or a multipoint session?</li>
+<li>Over which transports would this session be available?</li>
+</ul><p>These things are specified by using <code>AJNSessionOptions</code> as shown in <a href="#code-13">Code 13</a>,
+which we pass in to the call to <code>bindSesssionOnPort: withOptions: withDelegate:</code>
+as shown in <a href="#code-14">Code 14</a>.</p>
+<h4 id="code-14">Code 14</h4>
+<pre><code class="lang-objc"><code class="objc">   status = [self.bus bindSessionOnPort:kBasicServicePort
+withOptions:sessionOptions withDelegate:self];
+   if (ER_OK != status) {
+      NSLog(@"ERROR: Could not bind session on port (%d)", kBasicServicePort);
+   }</code>
+</code></pre>
+<p>Next, once we have bound a session to a port we advertise the
+name so that peers, <code>BasicClient</code> in our case, can find the well-known
+name and join this session. While advertising the name we specify
+the well-known name and the transport over which we want this
+name to be advertised.</p>
+<h4 id="code-15">Code 15</h4>
+<pre><code class="lang-objc"><code class="objc">// advertise a name
+//
+status = [self.bus advertiseName:kBasicServiceName withTransportMask:kAJNTransportMaskAny];
+if (ER_OK != status) {
+NSLog(@"Could not advertise (%@)", kBasicServiceName);
+}</code>
+</code></pre>
+<p>After we are done advertising the name we wait for the clients
+to connect to us. In our sample, we specify the time to wait
+before cleaning up as 60 seconds . The <code>lostSession</code> condition waits
+until it gets a signal, which is sent to it when the session
+is lost. You see the signal being sent to this condition inside
+of the <code>sessionWasLost:</code> callback which is a part of the <code>AJNSessionListener</code> interface.</p>
+<h4 id="code-16">Code 16</h4>
+<pre><code class="lang-objc"><code class="objc">// wait until the client leaves before tearing down the service
+// [self.lostSessionCondition waitUntilDate:[NSDate
+dateWithTimeIntervalSinceNow:60]];</code>
+</code></pre>
+<p>In the end, we perform cleanup by unregistering the bus object,
+releasing the lock on the condition property and deallocating
+the bus property by setting it to <code>nil</code>.</p>
+<h4 id="code-17">Code 17</h4>
+<pre><code class="lang-objc"><code class="objc">[self.bus unregisterBusObject:self.basicObject];
+[self.lostSessionCondition unlock];
+self.bus = nil;</code>
+</code></pre>
+<p>We have a several callback methods that are a part of three
+different listeners. A brief description of each one grouped
+by listener category is mentioned in the sections that follow.</p>
+<h3 id="ajnbuslistener-methods">AJNBusListener methods</h3>
+<h4 id="code-18">Code 18</h4>
+<pre><code class="lang-objc"><code class="objc">(void)listenerDidRegisterWithBus:(AJNBusAttachment*)busAttachment</code>
+</code></pre>
+<p>This is invoked when <code>registerBusListener</code> is completed
+successfully and the bus notifies the application about it.</p>
+<h4 id="code-19">Code 19</h4>
+<pre><code class="lang-objc"><code class="objc">(void)listenerDidUnregisterWithBus:(AJNBusAttachment*)busAttachment</code>
+</code></pre>
+<p>This is invoked when the <code>BusListener</code> unregisters from the bus.</p>
+<h4 id="code-20">Code 20</h4>
+<pre><code class="lang-objc"><code class="objc">(void)nameOwnerChanged:(NSString*)name to:(NSString*)newOwner
+from:(NSString*)previousOwner</code>
+</code></pre>
+<p>This is called when there is a change in the ownership of a name on the bus.
+The name could be a unique name or a well-known name.</p>
+<h4 id="code-21">Code 21</h4>
+<pre><code class="lang-objc"><code class="objc">(void)busWillStop</code>
+</code></pre>
+<p>This is called when a <code>BusAttachment</code>, with which a listener
+is registered, is stopping.</p>
+<h4 id="code-22">Code 22</h4>
+<pre><code class="lang-objc"><code class="objc">(void)busDidDisconnect</code>
+</code></pre>
+<p>This is called when a <code>BusAttachment</code>, with which this listener
+is registered, has become disconnected from the bus.</p>
+<h3 id="ajnsessionportlistener-methods">AJNSessionPortListener methods</h3>
+<p>Only the session host uses this category of listener since
+it will not have any effect on the client side.</p>
+<h4 id="code-23">Code 23</h4>
+<pre><code class="lang-objc"><code class="objc">(BOOL)shouldAcceptSessionJoinerNamed:(NSString*)joiner
+onSessionPort:(AJNSessionPort)sessionPort
+withSessionOptions:(AJNSessionOptions*)options</code>
+</code></pre>
+<p>This is one of the most important callback functions that
+almost every service will have. When a peer initiates a
+join session for the session hosted by a service this callback
+is invoked so that the service may accept or reject the <code>join</code>
+session request initiated by the client. It gives us the unique
+name of the joiner who initiated the <code>join</code> session request,
+the port of the session used and the session options that
+the client wishes to use for the life of this session.</p>
+<h4 id="code-24">Code 24</h4>
+<pre><code class="lang-objc"><code class="objc">(void)didJoin:(NSString*)joiner inSessionWithId:(AJNSessionId)sessionId
+onSessionPort:(AJNSessionPort)sessionPort</code>
+</code></pre>
+<p>If a service accepts a <code>join</code> session request sent by a client,
+the client joins the session and the service is notified about
+the successful joining of the client through this callback.
+This means that the session is fully up and running.
+It indicates the unique name of the joiner, the session id
+that it is a part of and the session port which was used
+for joining the session.</p>
+<h3 id="ajnsessionlistener-methods">AJNSessionListener methods</h3>
+<h4 id="code-25">Code 25</h4>
+<pre><code class="lang-objc"><code class="objc">- (void)sessionWasLost:(AJNSessionId)sessionId</code>
+</code></pre>
+<p>The bus invokes this callback when an existing session
+becomes disconnected and is no longer valid.</p>
+<h4 id="code-26">Code 26</h4>
+<pre><code class="lang-objc"><code class="objc">- (void)didAddMemberNamed:(NSString*)memberName
+toSession:(AJNSessionId)sessionId</code>
+</code></pre>
+<p>This callback indicates that a member with unique name <code>memberName</code>
+was added to the session with session id of the second argument.</p>
+<h4 id="code-27">Code 27</h4>
+<pre><code class="lang-objc"><code class="objc">- (void)didRemoveMemberNamed:(NSString*)memberName
+fromSession:(AJNSessionId)sessionId</code>
+</code></pre>
+<p>This callback indicates that a member with unique name
+<code>memberName</code> is no longer a part of the session with
+session id having value <code>sessionId</code>.</p>
+<p>This ends the description of code found under BasicService.</p>
+<h2 id="walkthrough-of-basicclient">Walkthrough of BasicClient</h2>
+<p>The BasicClient app starts with a button being displayed,
+which says "Call Service". When the button is pressed,
+the <code>didTouchCallServiceButton</code> method is called.</p>
+<h4 id="code-28">Code 28</h4>
+<pre><code class="lang-objc"><code class="objc">- (IBAction)didTouchCallServiceButton:(id)sender
+{
+   self.basicClient = [[BasicClient alloc] init];
+   self.basicClient.delegate = self; [self.basicClient sendHelloMessage];
+}</code>
+</code></pre>
+<p>Here, we instantiate <code>BasicClient</code> and call the <code>sendHelloMessage</code> method.</p>
+<p>Before looking at the <code>sendHelloMessage</code>, it would be useful
+to understand what is inside the <code>BasicClient.h</code> file</p>
+<h4 id="code-29">Code 29</h4>
+<pre><code class="lang-objc"><code class="objc">@protocol BasicClientDelegate &lt;NSObject&gt;
+- (void)didReceiveStatusUpdateMessage:(NSString *)message;
+@end
+@interface BasicClient : NSObject
+@property (nonatomic, weak) NSObject&lt;BasicClientDelegate&gt; *delegate;
+- (void)sendHelloMessage;
+@end</code>
+</code></pre>
+<p>The first thing we notice is a @protocol called <code>BasicCLientDelegate</code>
+with a method <code>didReceiveStatusUpdateMessage</code>. This is in place
+so that the model can send a message to the view controller.
+The protocol tells the model that the view controller will
+have this method implemented.</p>
+<p>The second thing is the interface <code>BasicClient</code>, which has a
+property <code>id&lt;BasicClientDelegate&gt;</code> delegate.</p>
+<p>The <code>ViewController</code> sets itself as the delegate inside
+<code>ViewController.m</code> so that the model, <code>BasicClient</code>, can
+send a message to the method <code>didReceiveStatusUpdateMessage</code>
+of <code>ViewController</code> using the delegate property.</p>
+<p>This is a common way for a model to call a method of a
+<code>ViewController</code> in iOS. Now we turn back our attention
+to <code>sendHelloMessage</code> in <code>BasicClient</code>.</p>
+<h4 id="code-30">Code 30</h4>
+<pre><code class="lang-objc"><code class="objc">- (void)sendHelloMessage
+{
+   dispatch_queue_t clientQueue =
+dispatch_queue_create("org.alljoyn.basic-service.clientQueue",NULL);
+   dispatch_async( clientQueue, ^{ [self run];
+   });
+}</code>
+</code></pre>
+<p>The <code>sendHelloMessage</code> creates a dispatch queue and then
+calls the <code>run</code> method from here.</p>
+<p>Before we head in the <code>run</code> method, let's look at a few properties
+that are defined inside of <code>BasicClient</code>.</p>
+<ul><li><p>@property (nonatomic, strong ) AJNBusAttachment *bus</p>
+<p>Represents the bus attachment we use in the client code.</p>
+</li>
+<li><p>@property ( nonatomic, strong) NSCondition *joinedSessionCondition</p>
+<p>NSCondition used to signal that we have joined a session
+after finding an advertised name.</p>
+</li>
+<li><p>@property (nonatomic) AJNSessionId sessionId</p>
+<p>Used to hold the session id of the session that the client
+would become a part of.</p>
+</li>
+<li><p>@property ( nonatomic, strong) NSString *foundServiceName</p>
+<p>Used to hold the well-known name of the service it found
+when it was looking for an advertised name.</p>
+</li>
+<li><p>@property (nonatomic, strong) BasicObjectProxy *basicObjectProxy</p>
+<p>It is the proxy bus object, which will represent the bus
+object of Basic service.</p>
+</li>
+<li><p>@property BOOL wasNameAlreadyFound</p>
+<p>Used to indicate if the name we are looking for was already found.</p>
+</li>
+</ul><p>Now let us look at the run function. The first few lines are
+debugging information printing out the AllJoyn library version
+the build info string by calling the method <code>didReceiveStatusUpdateMessage</code>
+that the <code>ViewController</code> should have implemented.</p>
+<h4 id="code-31">Code 31</h4>
+<pre><code class="lang-objc"><code class="objc">NSLog(@"AllJoyn Library version: %@", AJNVersion.versionInformation);
+   NSLog(@"AllJoyn Library build info: %@\n", AJNVersion.buildInformation);
+   [self.delegate didReceiveStatusUpdateMessage:AJNVersion.versionInformation];
+
+   [self.delegate didReceiveStatusUpdateMessage:AJNVersion.buildInformation];
+//
+// create the message bus
+//
+   self.bus = [[AJNBusAttachment alloc] initWithApplicationName:@"BasicClient"
+allowRemoteMessages:YES]</code>
+</code></pre>
+<p>Here, we created the bus attachment that will allow us to talk to the bus.
+Next, we start the bus.</p>
+<h4 id="code-32">Code 32</h4>
+<pre><code class="lang-objc"><code class="objc">status = [self.bus start];</code>
+</code></pre>
+<p>Once we have started the bus, we connect to it. A short description
+on why do we pass "null:" and what does it imply is mentioned
+in BasicService section when we explain <a href="#code-11">Code 11</a>.</p>
+<h4 id="code-33">Code 33</h4>
+<pre><code class="lang-objc"><code class="objc">status = [self.bus connectWithArguments:@"null:"];</code>
+</code></pre>
+<p>Next we use an NSCondition, which will be eventually
+used to receive the indication that the session was joined.</p>
+<h4 id="code-34">Code 34</h4>
+<pre><code class="lang-objc"><code class="objc">self.joinedSessionCondition = [[NSCondition alloc] init];
+[self.joinedSessionCondition lock];</code>
+</code></pre>
+<p>We register the bus listener, which is nothing but this instance of BasicClient.</p>
+<h4 id="code-35">Code 35</h4>
+<pre><code class="lang-objc"><code class="objc">// register a bus listener in order to receive discovery notifications
+//
+[self.bus registerBusListener:self];</code>
+</code></pre>
+<p>Next, we want to find the well-known name advertised by the BasicService.</p>
+<h3 id="code-36">Code 36</h3>
+<pre><code class="lang-objc"><code class="objc">// begin discovery of the well known name of the service to be called
+// [self.bus findAdvertisedName:kBasicClientServiceName];</code>
+</code></pre>
+<p>It is easier to understand the code from here on if we know
+what happens when we find the exact name or the names that
+have the prefix that we supplied to the method in <a href="#code-36">Code 36</a>.
+<a href="#code-37">Code 37</a> shows the callback that gets called.</p>
+<h4 id="code-37">Code 37</h4>
+<pre><code class="lang-objc"><code class="objc">- (void)didFindAdvertisedName:(NSString*)name
+withTransportMask:(AJNTransportMask)transport namePrefix:(NSString*)namePrefix
+{
+   NSLog(@"AJNBusListener::didFindAdvertisedName:%@ withTransportMask:%u
+namePrefix:%@", name, transport, namePrefix);
+      if ([namePrefix compare:kBasicClientServiceName] == NSOrderedSame) {
+
+      BOOL shouldReturn;
+      @synchronized(self) {
+         shouldReturn = self.wasNameAlreadyFound;
+         self.wasNameAlreadyFound = true;
+      }
+
+      if (shouldReturn) {
+         NSLog(@"Already found an advertised name, ignoring this name
+%@...", name);
+         return;
+      }
+
+      // Since we are in a callback we must enable concurrent callbacks
+before calling a synchronous method.
+      //
+      [self.bus enableConcurrentCallbacks];
+
+      self.sessionId = [self.bus joinSessionWithName:name
+onPort:kBasicClientServicePort withDelegate:self
+options:[[AJNSessionOptions alloc] initWithTrafficType:kAJNTrafficMessages
+supportsMultipoint:YES proximity:kAJNProximityAny transportMask:kAJNTransportMaskAny]];
+
+      if (self.sessionId) {
+         self.foundServiceName = name;
+
+         NSLog(@"Client joined session %d", self.sessionId);
+         [self.delegate didReceiveStatusUpdateMessage:[NSString
+stringWithFormat:@"JoinSession SUCCESS (Session id=%d)\n", self.sessionId]];
+      }
+      else {
+         [self.delegate didReceiveStatusUpdateMessage:@"JoinSession
+failed\n"];
+      }
+
+      [self.joinedSessionCondition signal];
+   }
+}</code>
+</code></pre>
+<p>Let's see what is happening in here. We first compare if the
+name that we found is the same as what we were looking for or
+has the name we were looking for as its prefix. If we have already
+received the name, we return.</p>
+<h4 id="code-38">Code 38</h4>
+<pre><code class="lang-objc"><code class="objc">   BOOL shouldReturn;
+      @synchronized(self) {
+         shouldReturn = self.wasNameAlreadyFound;
+         self.wasNameAlreadyFound = true;
+      }
+
+      if (shouldReturn) {
+         NSLog(@"Already found an advertised name, ignoring this name
+%@...", name);
+         return;
+      }</code>
+</code></pre>
+<p>Next, let us assume that we saw this name for the first time,
+which means that we can join the session.</p>
+<h4 id="code-39">Code 39</h4>
+<pre><code class="lang-objc"><code class="objc">// Since we are in a callback we must enable concurrent
+callbacks before calling a synchronous method.
+//
+   [self.bus enableConcurrentCallbacks];</code>
+</code></pre>
+<p>The call to <code>enableConcurrentCallbacks</code> is in place so that
+we can make a synchronous call inside an asynchronous method.</p>
+<h4 id="code-40">Code 40</h4>
+<pre><code class="lang-objc"><code class="objc">self.sessionId = [self.bus joinSessionWithName:name
+onPort:kBasicClientServicePort withDelegate:self options:[[AJNSessionOptions alloc]
+initWithTrafficType:kAJNTrafficMessages supportsMultipoint:YES
+proximity:kAJNProximityAny transportMask:kAJNTransportMaskAny]];
+
+      if (self.sessionId) {
+         self.foundServiceName = name;
+
+         NSLog(@"Client joined session %d", self.sessionId);
+
+         [self.delegate didReceiveStatusUpdateMessage:[NSString
+stringWithFormat:@"JoinSession SUCCESS (Session id=%d)\n", self.sessionId]];
+      }
+      else {
+         [self.delegate didReceiveStatusUpdateMessage:@"JoinSession
+failed\n"];
+      }</code>
+</code></pre>
+<p>Next, we called <code>joinSessionWithName</code>. The arguments here are:</p>
+<ul><li>Name of the session we want to join</li>
+<li>Port on which the session host is listening</li>
+<li>A delegate class which will handle session related callbacks</li>
+<li>Options to specify session parameters</li>
+<li>Type of traffic that will go over the session</li>
+<li>Boolean indicating if the session we are joining is a
+point-to-point or a multipoint session</li>
+<li>Proximity type</li>
+<li>Transport mask specifying the transport over which we want
+to join this session</li>
+</ul><h4 id="code-41">Code 41</h4>
+<pre><code class="lang-objc"><code class="objc">[self.joinedSessionCondition signal];</code>
+</code></pre>
+<p>And, in the end, we signal the <code>joinSessionCondition</code> so that
+we can go ahead and make a method call on the service.</p>
+<p>Going forward, in order to make a method call on the
+<code>BasicService</code>, we first need to create a proxy bus object,
+which will represent the Basic service object. Calling
+introspect makes us aware of the interfaces it implements
+so that we can make a correct method call.</p>
+<p>The creation of proxy bus object requires the bus attachment,
+name of the service for which we are creating the proxy
+bus object, the object path of the remote object and the session id.</p>
+<p>After creating the proxy bus object we need to know the
+interfaces that it contains so that we can call the desired method.
+For this purpose, we call the <code>introspectRemoteObject</code> method.</p>
+<p>Finally, after introspecting the remote object we call the
+method <code>concatenateString:withString:</code>.</p>
+<p>If the method call goes through successfully, we should have
+the concatenated value in the string "result".</p>
+<h4 id="code-42">Code 42</h4>
+<pre><code class="lang-objc"><code class="objc">if ([self.joinedSessionCondition waitUntilDate:[NSDate
+dateWithTimeIntervalSinceNow:60]]) {
+
+      // once joined to a session, use a proxy object to make
+the function call
+
+//
+      self.basicObjectProxy = [[BasicObjectProxy alloc]
+initWithBusAttachment:self.bus serviceName:self.foundServiceName
+objectPath:kBasicClientServicePath sessionId:self.sessionId];
+
+      // get a description of the interfaces implemented by the
+remote object before making the call
+      //
+      [self.basicObjectProxy introspectRemoteObject];
+
+      // now make the function call
+      //
+      NSString *result = [self.basicObjectProxy concatenateString:@"Code "
+withString:@"Monkies!!!!!!!"];
+
+      if (result) {
+         NSLog(@"[%@] %@ concatenated string.", result,
+[result compare:@"Code Monkies!!!!!!!"] == NSOrderedSame ?
+@"Successfully":@"Unsuccessfully");
+         [self.delegate didReceiveStatusUpdateMessage:@"Successfully called
+
+method on remote object!!!\n"];
+      }
+
+      self.basicObjectProxy = nil;
+
+   }
+   else {
+      NSLog(@"Timed out while attempting to join a session with
+BasicService...");
+      [self.delegate didReceiveStatusUpdateMessage:@"Timed out while
+attempting to join a session with BasicService..."];
+   }</code>
+</code></pre>
+<p>We looked at the flow the program when the user presses
+the 'Call Service' button on the UI of BasicClient. There is
+another button on the UI on BasicClient named 'Check Presence'.
+Let us take a look at the flow for that:
+objc</p>
+<h4 id="code-43">Code 43</h4>
+<pre><code class="lang-objc"><code class="objc">- (void)sendPing
+{
+   dispatch_queue_t pingQueue =
+dispatch_queue_create("org.alljoyn.basic-service.pingQueue",NULL);
+   dispatch_async( pingQueue, ^{ [self ping];
+   });
+}</code>
+</code></pre>
+<p><a href="#code-43">Code 43</a> is identical to the behavior we saw when
+we called the function run. Let us take a look at the function ping below.</p>
+<h4 id="code-44">Code 44</h4>
+<pre><code class="lang-objc"><code class="objc">- (void)ping
+{
+   if objc(self.bus == NULL) {
+      return;
+   }
+   QStatus status = [self.bus pingPeer:kBasicClientServiceName withTimeout:5];
+
+   if (status == ER_OK) {
+      [self.delegate didReceiveStatusUpdateMessage:@"Ping returned
+Successfully"];
+   } else {
+      [self.delegate didReceiveStatusUpdateMessage:@"Ping Failed"];
+   }
+}</code>
+</code></pre>
+<p>The function ping calls the public API pingPeer: withTimeout: inside AJNBusAttachment.
+It passes the well-known name of the BasicService and the
+timeout value that reflects how much time will the ping call
+wait before returning. On successfully ping, the text section
+on the UI should indicate that the ping call was successful.</p>
+<p>This ends the description of BasicClient.</p>
+<p>The two samples are in place to illustrate the most simplistic
+manner in which AllJoyn Objective-C bindings can be used.
+Using the AllJoyn framework, not only can you write apps
+that run on separate devices and talk to each other, but you
+can also write apps that communicate with each other on the
+same AllJoyn-enabled device. Moreover, the AllJoyn cross-platform
+support allows you to easily write your app for Android, Windows,
+and other platforms without having to worry about the problems
+that the AllJoyn framework solves.</p>
+<p>The AllJoyn concepts that we discussed in this document remain
+consistent when we move to a different platform like Android
+so that the developer spends more time on his actual app rather
+than worry about the peer-to-peer piece. This gives you the ability
+to quickly write apps that work on different platforms and
+talk to each other, which is a very important thing in today's
+mobile application development ecosystem.</p>
+  </div>
+  </div>
+
+  
+  
+</article>
+              </div>
+                                   
+          </section>
+
+          
+        </div>
+      </div>
+
+
+      
+    </div>
+  </div>
+</div>
+<div id="sticky-footer">
+  
+      <footer id="footer" class="clearfix" role="contentinfo">
+        <div class="region region-footer"><div class="region-inner clearfix"><nav id="block-system-user-menu" class="block block-system block-menu"  role="navigation"><div class="block-inner clearfix">        <div class="block-content content"><ul class="menu clearfix"><li class="first menu-item-537"><a href="/user/register" title="">Register</a></li><li class="last menu-item-536"><a href="/user/login" title="">Log In</a></li></ul></div></div></nav></div></div>    </footer>
+  
+  <div id="lfcollabprojects-footer">
+    <div class="gray-diagonal">
+      <div class="footer-inner">
+        <p>&copy; 2017 AllSeen Alliance, Inc. All Rights Reserved.</p>
+        <p>The Linux Foundation® is a registered trademark of The Linux Foundation. AllSeen, Designed for AllSeen and AllSeen Alliance are trademarks of the AllSeen Alliance, Inc. AllJoyn® is a registered trademark of AllSeen Alliance, Inc.</p>
+        <p>Linux is a registered <a href="http://www.linuxfoundation.org/programs/legal/trademark" title="Linux Mark Institute">trademark</a> of Linus Torvalds.</p>
+        <p>Please see our <a href="/brand-guidelines">brand guidelines</a>, <a href="/trademarks">trademark guidelines</a>, <a href="/about/governance/ip-policy">IP policy</a>, <a href="/terms">terms of use</a>, <a href="/license">license</a>, and <a href="/privacy">privacy policy</a>.</p>
+      </div>
+    </div>
+    <div id="body-bottom">
+      </div>
+</body>
+</html>

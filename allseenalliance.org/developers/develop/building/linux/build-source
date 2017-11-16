@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<!--[if IEMobile 7]><html class="iem7" lang="en" dir="ltr"><![endif]-->
+<!--[if lte IE 6]><html class="lt-ie9 lt-ie8 lt-ie7" lang="en" dir="ltr"><![endif]-->
+<!--[if (IE 7)&(!IEMobile)]><html class="lt-ie9 lt-ie8" lang="en" dir="ltr"><![endif]-->
+<!--[if IE 8]><html class="lt-ie9" lang="en" dir="ltr"><![endif]-->
+<!--[if (gte IE 9)|(gt IEMobile 7)]><!--><html lang="en" dir="ltr"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/terms/"
+  xmlns:foaf="http://xmlns.com/foaf/0.1/"
+  xmlns:og="http://ogp.me/ns#"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:sioc="http://rdfs.org/sioc/ns#"
+  xmlns:sioct="http://rdfs.org/sioc/types#"
+  xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema#"><!--<![endif]-->
+<head>
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
+<meta charset="utf-8" />
+<link rel="shortlink" href="/node/4169" />
+<link rel="shortcut icon" href="https://identity.allseenalliance.org/sites/all/themes/at_alljoyn/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="/developers/develop/building/linux/build-source" />
+<meta name="viewport" content="width=device-width" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta property="og:image" content="https://identity.allseenalliance.org/sites/all/themes/at_alljoyn/images/allseen-logo.png"/>
+<meta name="google-translate-customization" content="48b015afeed82101-ecae534af0f48252-ga0b6470a6208b2f5-f"></meta>
+<meta name="MobileOptimized" content="width">
+<meta name="HandheldFriendly" content="true">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Build From Source - Linux - AllSeen Alliance</title>
+<link type="text/css" rel="stylesheet" href="https://identity.allseenalliance.org/sites/default/files/css/css_xE-rWrJf-fncB6ztZfd2huxqgxu4WO-qwma6Xer30m4.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://identity.allseenalliance.org/sites/default/files/css/css_7Vcu6qIuRTO46aDOBZp7_mtksGdhCHSe0pjTO2YbGng.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://identity.allseenalliance.org/sites/default/files/css/css_J2n1xiaSuececTK0yC3DT_Msm4PrkPwHizxr0oXGGoo.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://identity.allseenalliance.org/sites/default/files/css/css_oxEtvjMfj8c8EEJJ-1WXLGGntCnC0UvrbYsq0Gw4m4Q.css" media="screen" />
+<link type="text/css" rel="stylesheet" href="https://identity.allseenalliance.org/sites/default/files/css/css_9EusV9fcbkpqBeTGdJPl7ru65jm-3ngbTi_D6YRR_5A.css" media="only screen" />
+<script src="https://identity.allseenalliance.org/sites/default/files/js/js_UWQINlriydSoeSiGQxToOUdv493zEa7dpsXC1OtYlZU.js"></script>
+<script src="https://identity.allseenalliance.org/sites/default/files/js/js_COMsmDyrY9mzVU28X2uGvF4Ba3vd5eTo5xEO7dvCUZM.js"></script>
+<script src="https://identity.allseenalliance.org/sites/default/files/js/js_i8oyg1R4On_HyzPiZ5zC3V-DxehjGAcpKwNao5s0s5I.js"></script>
+<script>hljs.configure({languages:[]}); hljs.initHighlightingOnLoad();</script>
+<script src="https://identity.allseenalliance.org/sites/default/files/js/js_aG0kZAhSHT6G3QC-d9Wwx9gQp5d0em8X6FmMYZ1e5h4.js"></script>
+<script>var _gaq = _gaq || [];_gaq.push(["_setAccount", "UA-"]);_gaq.push(["_trackPageview"]);(function() {var ga = document.createElement("script");ga.type = "text/javascript";ga.async = true;ga.src = ("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/ga.js";var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(ga, s);})();</script>
+<script src="https://identity.allseenalliance.org/sites/default/files/js/js_R35PAK16384fXh7f2OqvXVkbbrwr8ABLrDpR1zTluo0.js"></script>
+<script src="https://identity.allseenalliance.org/sites/default/files/js/js_DKtRHJS-jz_cHgf23K7wnIWphCanZ_Rz74Aw-DKQyFs.js"></script>
+<script>jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"at_alljoyn","theme_token":"FbzyzVWYbo-KL1_-1MQ5guSzhDBag_AlP2918AeR8eA","js":{"misc\/jquery.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/all\/modules\/contrib\/comment_notify\/comment_notify.js":1,"sites\/all\/modules\/alljoyn\/custom_modules\/allseen_docs\/allseen_docs_highlight\/highlightjs\/highlight.min.js":1,"0":1,"sites\/all\/libraries\/colorbox\/jquery.colorbox-min.js":1,"sites\/all\/modules\/contrib\/colorbox\/js\/colorbox.js":1,"sites\/all\/modules\/contrib\/colorbox\/styles\/default\/colorbox_style.js":1,"sites\/all\/modules\/contrib\/colorbox\/js\/colorbox_load.js":1,"sites\/all\/modules\/contrib\/colorbox\/js\/colorbox_inline.js":1,"sites\/all\/modules\/contrib\/panels\/js\/panels.js":1,"sites\/all\/modules\/contrib\/quote\/quote.js":1,"sites\/all\/modules\/contrib\/views_slideshow\/js\/views_slideshow.js":1,"sites\/all\/modules\/contrib\/google_analytics\/googleanalytics.js":1,"1":1,"sites\/all\/modules\/alljoyn\/custom_modules\/allseen_docs\/allseen_docs_nav\/allseen-docs-nav.js":1,"sites\/all\/themes\/at_alljoyn\/scripts\/alljoyn.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"sites\/all\/modules\/contrib\/comment_notify\/comment_notify.css":1,"sites\/all\/modules\/ldap\/ldap_user\/ldap_user.css":1,"modules\/book\/book.css":1,"modules\/comment\/comment.css":1,"sites\/all\/modules\/contrib\/date\/date_api\/date.css":1,"sites\/all\/modules\/contrib\/date\/date_popup\/themes\/datepicker.1.7.css":1,"modules\/field\/theme\/field.css":1,"sites\/all\/modules\/contrib\/mollom\/mollom.css":1,"modules\/node\/node.css":1,"modules\/user\/user.css":1,"modules\/forum\/forum.css":1,"sites\/all\/modules\/contrib\/views\/css\/views.css":1,"sites\/all\/modules\/alljoyn\/custom_modules\/allseen_docs\/allseen_docs_highlight\/highlightjs\/default.min.css":1,"sites\/all\/modules\/contrib\/colorbox\/styles\/default\/colorbox_style.css":1,"sites\/all\/modules\/contrib\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/ldap\/ldap_servers\/ldap_servers.admin.css":1,"sites\/all\/modules\/contrib\/panels\/css\/panels.css":1,"sites\/all\/modules\/contrib\/quote\/quote.css":1,"sites\/all\/modules\/contrib\/views_slideshow\/views_slideshow.css":1,"sites\/all\/modules\/alljoyn\/custom_modules\/allseen_docs\/allseen_docs_nav\/allseen-docs-nav.css":1,"sites\/all\/modules\/alljoyn\/features\/content_type_developer_document\/content-type-developer-document.css":1,"sites\/all\/themes\/adaptivetheme\/at_core\/css\/at.layout.css":1,"sites\/all\/themes\/at_alljoyn\/css\/fonts.css":1,"sites\/all\/themes\/at_alljoyn\/css\/globals.css":1,"sites\/all\/themes\/at_alljoyn\/css\/jcarousel-alljoyn.css":1,"public:\/\/adaptivetheme\/at_alljoyn_files_7dbe1ef5\/at_alljoyn.responsive.layout.css":1,"public:\/\/adaptivetheme\/at_alljoyn_files_7dbe1ef5\/at_alljoyn.responsive.styles.css":1}},"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":true,"mobiledevicewidth":"480px"},"jcarousel":{"ajaxPath":"\/jcarousel\/ajax\/views"},"quote_nest":2,"googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls|xml|z|zip"}});</script>
+<!--[if lt IE 9]>
+<script src="https://identity.allseenalliance.org/sites/all/themes/adaptivetheme/at_core/scripts/respond.js?nwgww1"></script>
+<script src="https://identity.allseenalliance.org/sites/all/themes/adaptivetheme/at_core/scripts/html5.js?nwgww1"></script>
+<script src="https://identity.allseenalliance.org/sites/all/themes/adaptivetheme/at_core/scripts/PIE.htc?nwgww1"></script>
+<script src="https://identity.allseenalliance.org/sites/all/themes/adaptivetheme/at_core/scripts/selectivizr.js?nwgww1"></script>
+<![endif]-->
+</head>
+<body class="html not-front not-logged-in one-sidebar sidebar-first page-node page-node- page-node-4169 node-type-developer-document site-name-hidden with-subnav page-developers-develop-building-linux-build-source section-developers">
+  <div id="body-top">
+      </div>
+  <div id="skip-link">
+    <a href="#main-content" class="element-invisible element-focusable">Skip to main content</a>
+  </div>
+  <div class="region region-page-top"><div class="region-inner clearfix"><div id="fb-root"></div><script type="text/javascript">
+     window.fbAsyncInit = function() {
+       FB.init({
+         appId: "492099574180957",
+         status: true,
+         cookie: true,
+         xfbml: true,
+         oauth : true,
+         channelUrl: "https:\/\/identity.allseenalliance.org\/service_links\/channel"
+         });
+
+         FB.Event.subscribe('edge.create', function(href, widget) {
+    _gaq.push(['_trackEvent', 'facebook', 'Facebook like', href]);
+   });FB.Event.subscribe('edge.remove', function(href, widget) {
+    _gaq.push(['_trackEvent', 'facebook', 'Facebook unlike', href]);
+   });
+       };
+       (function(d){
+     var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement('script'); js.id = id; js.async = true;
+     js.src = '//connect.facebook.net/en_US/all.js';
+     ref.parentNode.insertBefore(js, ref);
+   }(document));
+    </script></div></div>  
+<div id="wrap">
+
+  <div id="lfcollabprojects-header">
+    <div class="gray-diagonal">
+      <div class="header-inner">
+        <a id="lfcollabprojects-logo" href="http://collabprojects.linuxfoundation.org">Linux Foundation Collaborative Projects</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="page" class="container page">
+
+    
+    <header id="header" class="clearfix" role="banner">
+
+      <div class="region region-header"><div class="region-inner clearfix"><div id="block-block-19" class="block block-block" ><div class="block-inner clearfix">        <div class="block-content content"><br /><br /><br /><br /><br /><br /><br /></div></div></div></div></div>
+              <div id="branding" class="branding-elements clearfix">
+
+                      <div id="logo"><a href="/" title="Home page"><img class="site-logo" typeof="foaf:Image" src="https://identity.allseenalliance.org/sites/default/files/logo.png" alt="AllSeen Alliance" /></a></div>
+          
+                      <hgroup id="name-and-slogan" class="element-invisible">
+                              <h1 id="site-name" class="element-invisible"><a href="/" title="Home page">AllSeen Alliance</a></h1>
+                                        </hgroup>
+          
+          <!--main menu-->
+          <a id="main-menu-toggle" href="#">Site Sections</a>
+  		  		  		
+        </div>
+      
+    </header>
+
+
+    <div id="columns" class="clearfix">
+      <div id="sub-menu-bar">
+        <div class="region region-sub-menu-bar"><div class="region-inner clearfix"><div id="block-menu-block-allseen-docs-nav" class="block block-menu-block"  role="navigation"><div class="block-inner clearfix">        <div class="block-content content"><div class="menu-block-wrapper menu-block-allseen-docs-nav menu-name-main-menu parent-mlid-0 menu-level-2">
+  <ul class="menu clearfix"><li class="first has-children menu-mlid-2504 menu-item-2504"><a href="/developers/learn">Learn</a></li><li class="has-children menu-mlid-2539 menu-item-2539"><a href="/developers/download">Download</a></li><li class="has-children active-trail menu-mlid-2541 menu-item-2541"><a href="/developers/develop" class="active-trail">Develop</a></li><li class="last has-children menu-mlid-2636 menu-item-2636"><a href="/developers/contribute">Contribute</a></li></ul></div>
+</div></div></div><section id="block-menu-block-allseen-docs-responsive-nav" class="block block-menu-block"  role="navigation"><div class="block-inner clearfix">        <div class="block-title-wrapper">
+      <h2 class="block-title">Menu</h2>
+    </div>
+      <div class="block-content content"><div class="menu-block-wrapper menu-block-allseen-docs-responsive-nav menu-name-main-menu parent-mlid-0 menu-level-1">
+  <ul class="menu clearfix"><li class="first menu-parent menu-mlid-1994 menu-item-1994"><a href="/about">About</a><ul class="menu clearfix"><li class="first menu-mlid-2486 menu-item-2486"><a href="/about/why-allseen">Why AllSeen</a></li><li class="menu-mlid-2464 menu-item-2464"><a href="/about/get-involved">Get Involved</a></li><li class="collapsed menu-mlid-2446 menu-item-2446"><a href="/about/governance/ip-policy">IP Policy</a></li><li class="menu-mlid-2491 menu-item-2491"><a href="/about/working-groups">Working Groups</a></li><li class="menu-mlid-2286 menu-item-2286"><a href="/about/members">Member Companies</a></li><li class="menu-mlid-2285 menu-item-2285"><a href="/about/join-allseen-alliance">Join The AllSeen Alliance</a></li><li class="collapsed menu-mlid-2447 menu-item-2447"><a href="/about/governance">Governance</a></li><li class="menu-mlid-501 menu-item-501"><a href="/about/faqs">FAQs</a></li><li class="menu-mlid-2322 menu-item-2322"><a href="/about/contact">Contact Us</a></li><li class="menu-mlid-2282 menu-item-2282"><a href="/allseen/what-is-allseen-alliance">What is AllSeen Alliance?</a></li><li class="last menu-mlid-2490 menu-item-2490"><a href="https://wiki.allseenalliance.org/members_private/start?do=login&amp;sectok=34485854163fe6a0be457198139e2c84" title="Members Area" id="members_area" name="Members Area" rel="nofollow" target="_blank">Members Area</a></li></ul></li><li class="menu-parent active-trail menu-mlid-2503 menu-item-2503"><a href="/developers" class="active-trail">Developers</a><ul class="menu clearfix"><li class="first menu-parent has-children menu-mlid-2504 menu-item-2504"><a href="/developers/learn">Learn</a><ul class="menu clearfix"><li class="first menu-mlid-2505 menu-item-2505"><a href="/developers/learn/use-cases">Use Cases</a></li><li class="menu-mlid-2506 menu-item-2506"><a href="/developers/learn/architecture">Architecture</a></li><li class="menu-parent menu-mlid-2507 menu-item-2507"><a href="/developers/learn/core">Core Framework</a><ul class="menu clearfix"><li class="first menu-parent menu-mlid-2508 menu-item-2508"><a href="/developers/learn/core/about-announcement">About Announcement</a><ul class="menu clearfix"><li class="first menu-mlid-2509 menu-item-2509"><a href="/developers/learn/core/about-announcement/interface">Interface</a></li><li class="last menu-mlid-2510 menu-item-2510"><a href="/developers/learn/core/about-announcement/interface-14-02">Interface 14.02</a></li></ul></li><li class="menu-mlid-2511 menu-item-2511"><a href="/developers/learn/core/events-and-actions">Events and Actions</a></li><li class="menu-mlid-2992 menu-item-2992"><a href="/developers/learn/core/rn_config">Routing Node Configuration</a></li><li class="menu-mlid-2512 menu-item-2512"><a href="/developers/learn/core/standard-core">Standard Core</a></li><li class="menu-mlid-2513 menu-item-2513"><a href="/developers/learn/core/thin-core">Thin Core</a></li><li class="menu-parent menu-mlid-2514 menu-item-2514"><a href="/developers/learn/core/system-description">System Description</a><ul class="menu clearfix"><li class="first menu-mlid-2515 menu-item-2515"><a href="/developers/learn/core/system-description/system-architecture">System Architecture</a></li><li class="menu-mlid-2516 menu-item-2516"><a href="/developers/learn/core/system-description/advertisement-discovery">Advertisement and Discovery</a></li><li class="menu-mlid-2645 menu-item-2645"><a href="/developers/learn/core/system-description/alljoyn-transport">AllJoyn Transport</a></li><li class="menu-mlid-2517 menu-item-2517"><a href="/developers/learn/core/system-description/data-exchange">Data Exchange</a></li><li class="menu-mlid-2518 menu-item-2518"><a href="/developers/learn/core/system-description/alljoyn-session">AllJoyn Session</a></li><li class="menu-mlid-2519 menu-item-2519"><a href="/developers/learn/core/system-description/sessionless-signal">Sessionless Signal</a></li><li class="menu-mlid-2520 menu-item-2520"><a href="/developers/learn/core/system-description/alljoyn-security">AllJoyn Security</a></li><li class="menu-mlid-2521 menu-item-2521"><a href="/developers/learn/core/system-description/thin-apps">Thin Apps</a></li><li class="last menu-mlid-2522 menu-item-2522"><a href="/developers/learn/core/system-description/events-actions">Events and Actions</a></li></ul></li><li class="last menu-parent menu-mlid-2937 menu-item-2937"><a href="/developers/learn/core/security2_0">Security 2.0</a><ul class="menu clearfix"><li class="first last menu-mlid-2938 menu-item-2938"><a href="/developers/learn/core/security2_0/hld">High-Level Design</a></li></ul></li></ul></li><li class="menu-parent menu-mlid-2523 menu-item-2523"><a href="/developers/learn/base-services">Base Services</a><ul class="menu clearfix"><li class="first menu-parent menu-mlid-2524 menu-item-2524"><a href="/developers/learn/base-services/onboarding">Onboarding</a><ul class="menu clearfix"><li class="first menu-mlid-2525 menu-item-2525"><a href="/developers/learn/base-services/onboarding/interface">Interface</a></li><li class="last menu-mlid-2526 menu-item-2526"><a href="/developers/learn/base-services/onboarding/interface-14-02">Interface 14.02</a></li></ul></li><li class="menu-parent menu-mlid-2527 menu-item-2527"><a href="/developers/learn/base-services/configuration">Configuration</a><ul class="menu clearfix"><li class="first menu-mlid-2528 menu-item-2528"><a href="/developers/learn/base-services/configuration/interface">Interface</a></li><li class="last menu-mlid-2529 menu-item-2529"><a href="/developers/learn/base-services/configuration/interface-14-02">Interface 14.02</a></li></ul></li><li class="menu-parent menu-mlid-2530 menu-item-2530"><a href="/developers/learn/base-services/notification">Notification</a><ul class="menu clearfix"><li class="first menu-mlid-2531 menu-item-2531"><a href="/developers/learn/base-services/notification/interface">Interface</a></li><li class="last menu-mlid-2532 menu-item-2532"><a href="/developers/learn/base-services/notification/interface-14-02">Interface 14.02</a></li></ul></li><li class="menu-parent menu-mlid-2533 menu-item-2533"><a href="/developers/learn/base-services/controlpanel">ControlPanel</a><ul class="menu clearfix"><li class="first menu-mlid-2534 menu-item-2534"><a href="/developers/learn/base-services/controlpanel/interface">Interface</a></li><li class="last menu-mlid-2535 menu-item-2535"><a href="/developers/learn/base-services/controlpanel/interface-14-02">Interface 14.02</a></li></ul></li><li class="last menu-parent menu-mlid-2536 menu-item-2536"><a href="/developers/learn/base-services/audiostreaming">Audio Streaming</a><ul class="menu clearfix"><li class="first last menu-mlid-2537 menu-item-2537"><a href="/developers/learn/base-services/audiostreaming/interface">Interface</a></li></ul></li></ul></li><li class="last menu-mlid-2538 menu-item-2538"><a href="/developers/learn/glossary">Glossary</a></li></ul></li><li class="menu-parent has-children menu-mlid-2539 menu-item-2539"><a href="/developers/download">Download</a><ul class="menu clearfix"><li class="first last menu-mlid-2540 menu-item-2540"><a href="/developers/download/supported-platforms">Supported Platforms</a></li></ul></li><li class="menu-parent has-children active-trail menu-mlid-2541 menu-item-2541"><a href="/developers/develop" class="active-trail active-trail">Develop</a><ul class="menu clearfix"><li class="first menu-parent active-trail menu-mlid-2542 menu-item-2542"><a href="/developers/develop/building" class="active-trail">Building</a><ul class="menu clearfix"><li class="first menu-parent menu-mlid-2543 menu-item-2543"><a href="/developers/develop/building/android">Android</a><ul class="menu clearfix"><li class="first last menu-mlid-2544 menu-item-2544"><a href="/developers/develop/building/android/build-source">Build Source</a></li></ul></li><li class="menu-parent active-trail menu-mlid-2545 menu-item-2545"><a href="/developers/develop/building/linux" class="active-trail">Linux</a><ul class="menu clearfix"><li class="first menu-mlid-2546 menu-item-2546"><a href="/developers/develop/building/linux/openwrt">OpenWRT</a></li><li class="last active-trail active menu-mlid-2547 menu-item-2547"><a href="/developers/develop/building/linux/build-source" class="active-trail active">Build Source</a></li></ul></li><li class="menu-parent menu-mlid-2548 menu-item-2548"><a href="/developers/develop/building/ios-osx">iOS/OS X</a><ul class="menu clearfix"><li class="first last menu-mlid-2549 menu-item-2549"><a href="/developers/develop/building/ios-osx/build-source">Build Source</a></li></ul></li><li class="menu-parent menu-mlid-2550 menu-item-2550"><a href="/developers/develop/building/windows">Windows</a><ul class="menu clearfix"><li class="first last menu-mlid-2551 menu-item-2551"><a href="/developers/develop/building/windows/build-source">Build Source</a></li></ul></li><li class="menu-mlid-2552 menu-item-2552"><a href="/developers/develop/building/thin-linux">Thin - Linux</a></li><li class="menu-mlid-2553 menu-item-2553"><a href="/developers/develop/building/thin-windows">Thin - Windows</a></li><li class="last menu-mlid-2993 menu-item-2993"><a href="/developers/develop/building/alljoyn-js">AllJoyn.js</a></li></ul></li><li class="menu-parent menu-mlid-2554 menu-item-2554"><a href="/developers/develop/run-sample-apps">Running Samples</a><ul class="menu clearfix"><li class="first menu-parent menu-mlid-2555 menu-item-2555"><a href="/developers/develop/run-sample-apps/basic">Basic</a><ul class="menu clearfix"><li class="first menu-mlid-2556 menu-item-2556"><a href="/developers/develop/run-sample-apps/basic/android">Android</a></li><li class="menu-mlid-2557 menu-item-2557"><a href="/developers/develop/run-sample-apps/basic/linux">Linux</a></li><li class="menu-mlid-2558 menu-item-2558"><a href="/developers/develop/run-sample-apps/basic/ios-osx">iOS/OS X</a></li><li class="menu-mlid-2559 menu-item-2559"><a href="/developers/develop/run-sample-apps/basic/windows">Windows</a></li><li class="menu-mlid-2560 menu-item-2560"><a href="/developers/develop/run-sample-apps/basic/thin-linux">Thin - Linux</a></li><li class="last menu-mlid-2561 menu-item-2561"><a href="/developers/develop/run-sample-apps/basic/thin-windows">Thin - Windows</a></li></ul></li><li class="menu-parent menu-mlid-2562 menu-item-2562"><a href="/developers/develop/run-sample-apps/chat">Chat</a><ul class="menu clearfix"><li class="first menu-mlid-2563 menu-item-2563"><a href="/developers/develop/run-sample-apps/chat/android">Android</a></li><li class="menu-mlid-2564 menu-item-2564"><a href="/developers/develop/run-sample-apps/chat/linux">Linux</a></li><li class="menu-mlid-2565 menu-item-2565"><a href="/developers/develop/run-sample-apps/chat/ios-osx">iOS/OS X</a></li><li class="menu-mlid-2566 menu-item-2566"><a href="/developers/develop/run-sample-apps/chat/windows">Windows</a></li><li class="last menu-mlid-2567 menu-item-2567"><a href="/developers/develop/run-sample-apps/chat/thin-linux">Thin - Linux</a></li></ul></li><li class="menu-parent menu-mlid-2568 menu-item-2568"><a href="/developers/develop/run-sample-apps/about">About</a><ul class="menu clearfix"><li class="first menu-mlid-2569 menu-item-2569"><a href="/developers/develop/run-sample-apps/about/linux">Linux</a></li><li class="menu-mlid-2570 menu-item-2570"><a href="/developers/develop/run-sample-apps/about/ios-osx">iOS/OS X</a></li><li class="last menu-mlid-2646 menu-item-2646"><a href="/developers/develop/run-sample-apps/about/windows">Windows</a></li></ul></li><li class="menu-mlid-2934 menu-item-2934"><a href="/developers/develop/run-sample-apps/observer">Observer</a></li><li class="menu-parent menu-mlid-2571 menu-item-2571"><a href="/developers/develop/run-sample-apps/config">Config</a><ul class="menu clearfix"><li class="first menu-mlid-2572 menu-item-2572"><a href="/developers/develop/run-sample-apps/config/android">Android</a></li><li class="menu-mlid-2573 menu-item-2573"><a href="/developers/develop/run-sample-apps/config/linux">Linux</a></li><li class="menu-mlid-2574 menu-item-2574"><a href="/developers/develop/run-sample-apps/config/ios-osx">iOS/OS X</a></li><li class="last menu-mlid-2575 menu-item-2575"><a href="/developers/develop/run-sample-apps/config/thin-linux">Thin - Linux</a></li></ul></li><li class="menu-parent menu-mlid-2576 menu-item-2576"><a href="/developers/develop/run-sample-apps/controlpanel">Control Panel</a><ul class="menu clearfix"><li class="first menu-mlid-2577 menu-item-2577"><a href="/developers/develop/run-sample-apps/controlpanel/android">Android</a></li><li class="menu-mlid-2578 menu-item-2578"><a href="/developers/develop/run-sample-apps/controlpanel/linux">Linux</a></li><li class="menu-mlid-2579 menu-item-2579"><a href="/developers/develop/run-sample-apps/controlpanel/ios-osx">iOS/OS X</a></li><li class="last menu-mlid-2580 menu-item-2580"><a href="/developers/develop/run-sample-apps/controlpanel/thin-linux">Thin - Linux</a></li></ul></li><li class="menu-parent menu-mlid-2581 menu-item-2581"><a href="/developers/develop/run-sample-apps/notification">Notification</a><ul class="menu clearfix"><li class="first menu-mlid-2582 menu-item-2582"><a href="/developers/develop/run-sample-apps/notification/android">Android</a></li><li class="menu-mlid-2583 menu-item-2583"><a href="/developers/develop/run-sample-apps/notification/linux">Linux</a></li><li class="menu-mlid-2584 menu-item-2584"><a href="/developers/develop/run-sample-apps/notification/ios-osx">iOS/OS X</a></li><li class="last menu-mlid-2585 menu-item-2585"><a href="/developers/develop/run-sample-apps/notification/thin-linux">Thin - Linux</a></li></ul></li><li class="menu-parent menu-mlid-2586 menu-item-2586"><a href="/developers/develop/run-sample-apps/onboarding">Onboarding</a><ul class="menu clearfix"><li class="first menu-mlid-2587 menu-item-2587"><a href="/developers/develop/run-sample-apps/onboarding/android">Android</a></li><li class="menu-mlid-2588 menu-item-2588"><a href="/developers/develop/run-sample-apps/onboarding/linux">Linux</a></li><li class="last menu-mlid-2589 menu-item-2589"><a href="/developers/develop/run-sample-apps/onboarding/ios-osx">iOS/OS X</a></li></ul></li><li class="menu-parent menu-mlid-2590 menu-item-2590"><a href="/developers/develop/run-sample-apps/acserver">AC Server</a><ul class="menu clearfix"><li class="first menu-mlid-2591 menu-item-2591"><a href="/developers/develop/run-sample-apps/acserver/linux">Linux</a></li><li class="last menu-mlid-2592 menu-item-2592"><a href="/developers/develop/run-sample-apps/acserver/thin-linux">Thin - Linux</a></li></ul></li><li class="menu-parent menu-mlid-2593 menu-item-2593"><a href="/developers/develop/run-sample-apps/test">Command Line Apps</a><ul class="menu clearfix"><li class="first last menu-mlid-2594 menu-item-2594"><a href="/developers/develop/run-sample-apps/test/sessions">Sessions</a></li></ul></li><li class="last menu-mlid-2994 menu-item-2994"><a href="/developers/develop/run-sample-apps/alljoyn-js">AllJoyn.js</a></li></ul></li><li class="menu-parent menu-mlid-2595 menu-item-2595"><a href="/developers/develop/api-guide">API Guide</a><ul class="menu clearfix"><li class="first menu-parent menu-mlid-2596 menu-item-2596"><a href="/developers/develop/api-guide/core">Core</a><ul class="menu clearfix"><li class="first menu-mlid-2939 menu-item-2939"><a href="/developers/develop/api-guide/core/java">java</a></li><li class="menu-mlid-2940 menu-item-2940"><a href="/developers/develop/api-guide/core/objc">Objective-C</a></li><li class="menu-mlid-2647 menu-item-2647"><a href="/developers/develop/api-guide/core/alljoyn-transports-best-practices">Alljoyn Transports Best Practices</a></li><li class="menu-mlid-2648 menu-item-2648"><a href="/developers/develop/api-guide/core/auto-ping">AutoPinger</a></li><li class="menu-mlid-2935 menu-item-2935"><a href="/developers/develop/api-guide/core/observer">Observer</a></li><li class="last menu-mlid-2936 menu-item-2936"><a href="/developers/develop/api-guide/core/propcache">Property Cache</a></li></ul></li><li class="menu-parent menu-mlid-2599 menu-item-2599"><a href="/developers/develop/api-guide/about">About</a><ul class="menu clearfix"><li class="first menu-mlid-2941 menu-item-2941"><a href="/developers/develop/api-guide/about/java">java</a></li><li class="menu-mlid-2942 menu-item-2942"><a href="/developers/develop/api-guide/about/cpp">C++</a></li><li class="menu-mlid-2943 menu-item-2943"><a href="/developers/develop/api-guide/about/objc">Objective-C</a></li><li class="menu-mlid-2944 menu-item-2944"><a href="/developers/develop/api-guide/about/c-thin">C (Thin Core)</a></li><li class="menu-mlid-2945 menu-item-2945"><a href="/developers/develop/api-guide/about/java-legacy">java Legacy</a></li><li class="menu-mlid-2946 menu-item-2946"><a href="/developers/develop/api-guide/about/cpp-legacy">C++ Legacy</a></li><li class="last menu-mlid-2947 menu-item-2947"><a href="/developers/develop/api-guide/about/objc-legacy">Objective-C Legacy</a></li></ul></li><li class="menu-parent menu-mlid-2604 menu-item-2604"><a href="/developers/develop/api-guide/onboarding">Onboarding</a><ul class="menu clearfix"><li class="first menu-mlid-2948 menu-item-2948"><a href="/developers/develop/api-guide/onboarding/java">java</a></li><li class="last menu-mlid-2949 menu-item-2949"><a href="/developers/develop/api-guide/onboarding/objc">Objective-C</a></li></ul></li><li class="menu-parent menu-mlid-2607 menu-item-2607"><a href="/developers/develop/api-guide/config">Configuration</a><ul class="menu clearfix"><li class="first menu-mlid-2950 menu-item-2950"><a href="/developers/develop/api-guide/config/java">java</a></li><li class="menu-mlid-2951 menu-item-2951"><a href="/developers/develop/api-guide/config/cpp">C++</a></li><li class="menu-mlid-2952 menu-item-2952"><a href="/developers/develop/api-guide/config/objc">Objective-C</a></li><li class="last menu-mlid-2953 menu-item-2953"><a href="/developers/develop/api-guide/config/c-thin">C (Thin Core)</a></li></ul></li><li class="menu-parent menu-mlid-2612 menu-item-2612"><a href="/developers/develop/api-guide/notification">Notification</a><ul class="menu clearfix"><li class="first menu-mlid-2954 menu-item-2954"><a href="/developers/develop/api-guide/notification/java">java</a></li><li class="menu-mlid-2955 menu-item-2955"><a href="/developers/develop/api-guide/notification/cpp">C++</a></li><li class="menu-mlid-2956 menu-item-2956"><a href="/developers/develop/api-guide/notification/objc">Objective-C</a></li><li class="last menu-mlid-2957 menu-item-2957"><a href="/developers/develop/api-guide/notification/c-thin">C (Thin Core)</a></li></ul></li><li class="menu-parent menu-mlid-2617 menu-item-2617"><a href="/developers/develop/api-guide/controlpanel">Control Panel</a><ul class="menu clearfix"><li class="first menu-mlid-2958 menu-item-2958"><a href="/developers/develop/api-guide/controlpanel/java">java</a></li><li class="menu-mlid-2959 menu-item-2959"><a href="/developers/develop/api-guide/controlpanel/cpp">C++</a></li><li class="menu-mlid-2960 menu-item-2960"><a href="/developers/develop/api-guide/controlpanel/objc">Objective-C</a></li><li class="last menu-mlid-2961 menu-item-2961"><a href="/developers/develop/api-guide/controlpanel/c-thin">C (Thin Core)</a></li></ul></li><li class="menu-parent menu-mlid-2622 menu-item-2622"><a href="/developers/develop/api-guide/audio-streaming">Audio Streaming</a><ul class="menu clearfix"><li class="first last menu-mlid-2962 menu-item-2962"><a href="/developers/develop/api-guide/audio-streaming/cpp">C++</a></li></ul></li><li class="last menu-mlid-2624 menu-item-2624"><a href="/developers/develop/api-guide/events-and-actions">Events and Actions</a></li></ul></li><li class="menu-mlid-2625 menu-item-2625"><a href="/developers/develop/api-reference">API Reference</a></li><li class="menu-parent menu-mlid-2626 menu-item-2626"><a href="/developers/develop/debug">Debug</a><ul class="menu clearfix"><li class="first last menu-mlid-2627 menu-item-2627"><a href="/developers/develop/debug/common-issues">Common Issues</a></li></ul></li><li class="menu-parent menu-mlid-2628 menu-item-2628"><a href="/developers/develop/tutorial">Tutorial</a><ul class="menu clearfix"><li class="first menu-mlid-2629 menu-item-2629"><a href="/developers/develop/tutorial/core">Core</a></li><li class="menu-mlid-2630 menu-item-2630"><a href="/developers/develop/tutorial/ios">iOS</a></li><li class="menu-mlid-2631 menu-item-2631"><a href="/developers/develop/tutorial/thin-app">Thin App</a></li><li class="menu-mlid-2632 menu-item-2632"><a href="/developers/develop/tutorial/arduino-and-gt202">Arduino + GT202</a></li><li class="last menu-mlid-2633 menu-item-2633"><a href="/developers/develop/tutorial/videos">Videos</a></li></ul></li><li class="last menu-mlid-2634 menu-item-2634"><a href="/developers/develop/ask">Ask Forum</a></li></ul></li><li class="last menu-parent has-children menu-mlid-2636 menu-item-2636"><a href="/developers/contribute">Contribute</a><ul class="menu clearfix"><li class="first last menu-mlid-2637 menu-item-2637"><a href="/developers/contribute/project-lifecycle">Project Lifecycle</a></li></ul></li></ul></li><li class="menu-mlid-2466 menu-item-2466"><a href="/showcase-products-using-alljoyn">Showcase</a></li><li class="menu-parent menu-mlid-2487 menu-item-2487"><a href="/allseen-alliance-certification">Certification</a><ul class="menu clearfix"><li class="first menu-mlid-2488 menu-item-2488"><a href="/certification/how-validate-your-designed-allseen-product">How To Validate Your Product</a></li><li class="last menu-mlid-2489 menu-item-2489"><a href="/certification/faq">FAQ</a></li></ul></li><li class="last menu-parent menu-mlid-2421 menu-item-2421"><a href="/news-and-events">News &amp; Events</a><ul class="menu clearfix"><li class="first menu-mlid-2422 menu-item-2422"><a href="/news-and-events/newsroom/announcements">Announcements</a></li><li class="menu-mlid-2449 menu-item-2449"><a href="/news/videos">Videos</a></li><li class="menu-mlid-2423 menu-item-2423"><a href="/news-and-events/newsroom/in-the-news">In The News</a></li><li class="menu-mlid-2424 menu-item-2424"><a href="/news-and-events/events">Events</a></li><li class="menu-mlid-2448 menu-item-2448"><a href="/news-and-events/blogs">Blogs</a></li><li class="menu-mlid-2461 menu-item-2461"><a href="/news-and-events/newsletters">Newsletters</a></li><li class="last menu-mlid-2933 menu-item-2933"><a href="/news-and-events/videos">Videos</a></li></ul></li></ul></div>
+</div></div></section></div></div>      </div>
+            
+      
+      <div class="region region-sidebar-first sidebar"><div class="region-inner clearfix"><div id="block-menu-block-1" class="block block-menu-block"  role="navigation"><div class="block-inner clearfix">        <div class="block-content content"><div class="menu-block-wrapper menu-block-1 menu-name-main-menu parent-mlid-0 menu-level-3">
+  <ul class="menu clearfix"><li class="first menu-parent active-trail menu-mlid-2542 menu-item-2542"><a href="/developers/develop/building" class="active-trail">Building</a><ul class="menu clearfix"><li class="first menu-parent menu-mlid-2543 menu-item-2543"><a href="/developers/develop/building/android">Android</a><ul class="menu clearfix"><li class="first last menu-mlid-2544 menu-item-2544"><a href="/developers/develop/building/android/build-source">Build Source</a></li></ul></li><li class="menu-parent active-trail menu-mlid-2545 menu-item-2545"><a href="/developers/develop/building/linux" class="active-trail">Linux</a><ul class="menu clearfix"><li class="first menu-mlid-2546 menu-item-2546"><a href="/developers/develop/building/linux/openwrt">OpenWRT</a></li><li class="last active-trail active menu-mlid-2547 menu-item-2547"><a href="/developers/develop/building/linux/build-source" class="active-trail active">Build Source</a></li></ul></li><li class="menu-parent menu-mlid-2548 menu-item-2548"><a href="/developers/develop/building/ios-osx">iOS/OS X</a><ul class="menu clearfix"><li class="first last menu-mlid-2549 menu-item-2549"><a href="/developers/develop/building/ios-osx/build-source">Build Source</a></li></ul></li><li class="menu-parent menu-mlid-2550 menu-item-2550"><a href="/developers/develop/building/windows">Windows</a><ul class="menu clearfix"><li class="first last menu-mlid-2551 menu-item-2551"><a href="/developers/develop/building/windows/build-source">Build Source</a></li></ul></li><li class="menu-mlid-2552 menu-item-2552"><a href="/developers/develop/building/thin-linux">Thin - Linux</a></li><li class="menu-mlid-2553 menu-item-2553"><a href="/developers/develop/building/thin-windows">Thin - Windows</a></li><li class="last menu-mlid-2993 menu-item-2993"><a href="/developers/develop/building/alljoyn-js">AllJoyn.js</a></li></ul></li><li class="menu-parent menu-mlid-2554 menu-item-2554"><a href="/developers/develop/run-sample-apps">Running Samples</a><ul class="menu clearfix"><li class="first menu-parent menu-mlid-2555 menu-item-2555"><a href="/developers/develop/run-sample-apps/basic">Basic</a><ul class="menu clearfix"><li class="first menu-mlid-2556 menu-item-2556"><a href="/developers/develop/run-sample-apps/basic/android">Android</a></li><li class="menu-mlid-2557 menu-item-2557"><a href="/developers/develop/run-sample-apps/basic/linux">Linux</a></li><li class="menu-mlid-2558 menu-item-2558"><a href="/developers/develop/run-sample-apps/basic/ios-osx">iOS/OS X</a></li><li class="menu-mlid-2559 menu-item-2559"><a href="/developers/develop/run-sample-apps/basic/windows">Windows</a></li><li class="menu-mlid-2560 menu-item-2560"><a href="/developers/develop/run-sample-apps/basic/thin-linux">Thin - Linux</a></li><li class="last menu-mlid-2561 menu-item-2561"><a href="/developers/develop/run-sample-apps/basic/thin-windows">Thin - Windows</a></li></ul></li><li class="menu-parent menu-mlid-2562 menu-item-2562"><a href="/developers/develop/run-sample-apps/chat">Chat</a><ul class="menu clearfix"><li class="first menu-mlid-2563 menu-item-2563"><a href="/developers/develop/run-sample-apps/chat/android">Android</a></li><li class="menu-mlid-2564 menu-item-2564"><a href="/developers/develop/run-sample-apps/chat/linux">Linux</a></li><li class="menu-mlid-2565 menu-item-2565"><a href="/developers/develop/run-sample-apps/chat/ios-osx">iOS/OS X</a></li><li class="menu-mlid-2566 menu-item-2566"><a href="/developers/develop/run-sample-apps/chat/windows">Windows</a></li><li class="last menu-mlid-2567 menu-item-2567"><a href="/developers/develop/run-sample-apps/chat/thin-linux">Thin - Linux</a></li></ul></li><li class="menu-parent menu-mlid-2568 menu-item-2568"><a href="/developers/develop/run-sample-apps/about">About</a><ul class="menu clearfix"><li class="first menu-mlid-2569 menu-item-2569"><a href="/developers/develop/run-sample-apps/about/linux">Linux</a></li><li class="menu-mlid-2570 menu-item-2570"><a href="/developers/develop/run-sample-apps/about/ios-osx">iOS/OS X</a></li><li class="last menu-mlid-2646 menu-item-2646"><a href="/developers/develop/run-sample-apps/about/windows">Windows</a></li></ul></li><li class="menu-mlid-2934 menu-item-2934"><a href="/developers/develop/run-sample-apps/observer">Observer</a></li><li class="menu-parent menu-mlid-2571 menu-item-2571"><a href="/developers/develop/run-sample-apps/config">Config</a><ul class="menu clearfix"><li class="first menu-mlid-2572 menu-item-2572"><a href="/developers/develop/run-sample-apps/config/android">Android</a></li><li class="menu-mlid-2573 menu-item-2573"><a href="/developers/develop/run-sample-apps/config/linux">Linux</a></li><li class="menu-mlid-2574 menu-item-2574"><a href="/developers/develop/run-sample-apps/config/ios-osx">iOS/OS X</a></li><li class="last menu-mlid-2575 menu-item-2575"><a href="/developers/develop/run-sample-apps/config/thin-linux">Thin - Linux</a></li></ul></li><li class="menu-parent menu-mlid-2576 menu-item-2576"><a href="/developers/develop/run-sample-apps/controlpanel">Control Panel</a><ul class="menu clearfix"><li class="first menu-mlid-2577 menu-item-2577"><a href="/developers/develop/run-sample-apps/controlpanel/android">Android</a></li><li class="menu-mlid-2578 menu-item-2578"><a href="/developers/develop/run-sample-apps/controlpanel/linux">Linux</a></li><li class="menu-mlid-2579 menu-item-2579"><a href="/developers/develop/run-sample-apps/controlpanel/ios-osx">iOS/OS X</a></li><li class="last menu-mlid-2580 menu-item-2580"><a href="/developers/develop/run-sample-apps/controlpanel/thin-linux">Thin - Linux</a></li></ul></li><li class="menu-parent menu-mlid-2581 menu-item-2581"><a href="/developers/develop/run-sample-apps/notification">Notification</a><ul class="menu clearfix"><li class="first menu-mlid-2582 menu-item-2582"><a href="/developers/develop/run-sample-apps/notification/android">Android</a></li><li class="menu-mlid-2583 menu-item-2583"><a href="/developers/develop/run-sample-apps/notification/linux">Linux</a></li><li class="menu-mlid-2584 menu-item-2584"><a href="/developers/develop/run-sample-apps/notification/ios-osx">iOS/OS X</a></li><li class="last menu-mlid-2585 menu-item-2585"><a href="/developers/develop/run-sample-apps/notification/thin-linux">Thin - Linux</a></li></ul></li><li class="menu-parent menu-mlid-2586 menu-item-2586"><a href="/developers/develop/run-sample-apps/onboarding">Onboarding</a><ul class="menu clearfix"><li class="first menu-mlid-2587 menu-item-2587"><a href="/developers/develop/run-sample-apps/onboarding/android">Android</a></li><li class="menu-mlid-2588 menu-item-2588"><a href="/developers/develop/run-sample-apps/onboarding/linux">Linux</a></li><li class="last menu-mlid-2589 menu-item-2589"><a href="/developers/develop/run-sample-apps/onboarding/ios-osx">iOS/OS X</a></li></ul></li><li class="menu-parent menu-mlid-2590 menu-item-2590"><a href="/developers/develop/run-sample-apps/acserver">AC Server</a><ul class="menu clearfix"><li class="first menu-mlid-2591 menu-item-2591"><a href="/developers/develop/run-sample-apps/acserver/linux">Linux</a></li><li class="last menu-mlid-2592 menu-item-2592"><a href="/developers/develop/run-sample-apps/acserver/thin-linux">Thin - Linux</a></li></ul></li><li class="menu-parent menu-mlid-2593 menu-item-2593"><a href="/developers/develop/run-sample-apps/test">Command Line Apps</a><ul class="menu clearfix"><li class="first last menu-mlid-2594 menu-item-2594"><a href="/developers/develop/run-sample-apps/test/sessions">Sessions</a></li></ul></li><li class="last menu-mlid-2994 menu-item-2994"><a href="/developers/develop/run-sample-apps/alljoyn-js">AllJoyn.js</a></li></ul></li><li class="menu-parent menu-mlid-2595 menu-item-2595"><a href="/developers/develop/api-guide">API Guide</a><ul class="menu clearfix"><li class="first menu-parent menu-mlid-2596 menu-item-2596"><a href="/developers/develop/api-guide/core">Core</a><ul class="menu clearfix"><li class="first menu-mlid-2939 menu-item-2939"><a href="/developers/develop/api-guide/core/java">java</a></li><li class="menu-mlid-2940 menu-item-2940"><a href="/developers/develop/api-guide/core/objc">Objective-C</a></li><li class="menu-mlid-2647 menu-item-2647"><a href="/developers/develop/api-guide/core/alljoyn-transports-best-practices">Alljoyn Transports Best Practices</a></li><li class="menu-mlid-2648 menu-item-2648"><a href="/developers/develop/api-guide/core/auto-ping">AutoPinger</a></li><li class="menu-mlid-2935 menu-item-2935"><a href="/developers/develop/api-guide/core/observer">Observer</a></li><li class="last menu-mlid-2936 menu-item-2936"><a href="/developers/develop/api-guide/core/propcache">Property Cache</a></li></ul></li><li class="menu-parent menu-mlid-2599 menu-item-2599"><a href="/developers/develop/api-guide/about">About</a><ul class="menu clearfix"><li class="first menu-mlid-2941 menu-item-2941"><a href="/developers/develop/api-guide/about/java">java</a></li><li class="menu-mlid-2942 menu-item-2942"><a href="/developers/develop/api-guide/about/cpp">C++</a></li><li class="menu-mlid-2943 menu-item-2943"><a href="/developers/develop/api-guide/about/objc">Objective-C</a></li><li class="menu-mlid-2944 menu-item-2944"><a href="/developers/develop/api-guide/about/c-thin">C (Thin Core)</a></li><li class="menu-mlid-2945 menu-item-2945"><a href="/developers/develop/api-guide/about/java-legacy">java Legacy</a></li><li class="menu-mlid-2946 menu-item-2946"><a href="/developers/develop/api-guide/about/cpp-legacy">C++ Legacy</a></li><li class="last menu-mlid-2947 menu-item-2947"><a href="/developers/develop/api-guide/about/objc-legacy">Objective-C Legacy</a></li></ul></li><li class="menu-parent menu-mlid-2604 menu-item-2604"><a href="/developers/develop/api-guide/onboarding">Onboarding</a><ul class="menu clearfix"><li class="first menu-mlid-2948 menu-item-2948"><a href="/developers/develop/api-guide/onboarding/java">java</a></li><li class="last menu-mlid-2949 menu-item-2949"><a href="/developers/develop/api-guide/onboarding/objc">Objective-C</a></li></ul></li><li class="menu-parent menu-mlid-2607 menu-item-2607"><a href="/developers/develop/api-guide/config">Configuration</a><ul class="menu clearfix"><li class="first menu-mlid-2950 menu-item-2950"><a href="/developers/develop/api-guide/config/java">java</a></li><li class="menu-mlid-2951 menu-item-2951"><a href="/developers/develop/api-guide/config/cpp">C++</a></li><li class="menu-mlid-2952 menu-item-2952"><a href="/developers/develop/api-guide/config/objc">Objective-C</a></li><li class="last menu-mlid-2953 menu-item-2953"><a href="/developers/develop/api-guide/config/c-thin">C (Thin Core)</a></li></ul></li><li class="menu-parent menu-mlid-2612 menu-item-2612"><a href="/developers/develop/api-guide/notification">Notification</a><ul class="menu clearfix"><li class="first menu-mlid-2954 menu-item-2954"><a href="/developers/develop/api-guide/notification/java">java</a></li><li class="menu-mlid-2955 menu-item-2955"><a href="/developers/develop/api-guide/notification/cpp">C++</a></li><li class="menu-mlid-2956 menu-item-2956"><a href="/developers/develop/api-guide/notification/objc">Objective-C</a></li><li class="last menu-mlid-2957 menu-item-2957"><a href="/developers/develop/api-guide/notification/c-thin">C (Thin Core)</a></li></ul></li><li class="menu-parent menu-mlid-2617 menu-item-2617"><a href="/developers/develop/api-guide/controlpanel">Control Panel</a><ul class="menu clearfix"><li class="first menu-mlid-2958 menu-item-2958"><a href="/developers/develop/api-guide/controlpanel/java">java</a></li><li class="menu-mlid-2959 menu-item-2959"><a href="/developers/develop/api-guide/controlpanel/cpp">C++</a></li><li class="menu-mlid-2960 menu-item-2960"><a href="/developers/develop/api-guide/controlpanel/objc">Objective-C</a></li><li class="last menu-mlid-2961 menu-item-2961"><a href="/developers/develop/api-guide/controlpanel/c-thin">C (Thin Core)</a></li></ul></li><li class="menu-parent menu-mlid-2622 menu-item-2622"><a href="/developers/develop/api-guide/audio-streaming">Audio Streaming</a><ul class="menu clearfix"><li class="first last menu-mlid-2962 menu-item-2962"><a href="/developers/develop/api-guide/audio-streaming/cpp">C++</a></li></ul></li><li class="last menu-mlid-2624 menu-item-2624"><a href="/developers/develop/api-guide/events-and-actions">Events and Actions</a></li></ul></li><li class="menu-mlid-2625 menu-item-2625"><a href="/developers/develop/api-reference">API Reference</a></li><li class="menu-parent menu-mlid-2626 menu-item-2626"><a href="/developers/develop/debug">Debug</a><ul class="menu clearfix"><li class="first last menu-mlid-2627 menu-item-2627"><a href="/developers/develop/debug/common-issues">Common Issues</a></li></ul></li><li class="menu-parent menu-mlid-2628 menu-item-2628"><a href="/developers/develop/tutorial">Tutorial</a><ul class="menu clearfix"><li class="first menu-mlid-2629 menu-item-2629"><a href="/developers/develop/tutorial/core">Core</a></li><li class="menu-mlid-2630 menu-item-2630"><a href="/developers/develop/tutorial/ios">iOS</a></li><li class="menu-mlid-2631 menu-item-2631"><a href="/developers/develop/tutorial/thin-app">Thin App</a></li><li class="menu-mlid-2632 menu-item-2632"><a href="/developers/develop/tutorial/arduino-and-gt202">Arduino + GT202</a></li><li class="last menu-mlid-2633 menu-item-2633"><a href="/developers/develop/tutorial/videos">Videos</a></li></ul></li><li class="last menu-parent menu-mlid-2634 menu-item-2634"><a href="/developers/develop/ask">Ask Forum</a></li></ul></div>
+</div></div></div></div></div>            <div id="content-column" role="main">
+        <div class="content-inner">
+
+          
+          <section id="main-content">
+
+                                      <header id="main-content-header">
+
+                                                  <h1 id="sub-title">
+                    Build From Source - Linux                  </h1>
+                
+                
+              </header>
+                        
+                          <div id="content">
+                        <article id="node-4169" class="node node-developer-document article clearfix" about="/developers/develop/building/linux/build-source" typeof="sioc:Item foaf:Document" role="article">
+
+  
+      <span property="dc:title" content="Build From Source - Linux" class="rdf-meta element-hidden"></span><span property="sioc:num_replies" content="0" datatype="xsd:integer" class="rdf-meta element-hidden"></span>
+  
+  <div class="node-content">
+  
+  <div class="field-body view-mode-full">
+    
+<h2 id="build-tools-and-libs">Build tools and libs</h2>
+<ol><li><p>Open a terminal window and run the following command:</p>
+<pre><code class="lang-sh"><code class="sh">$ sudo apt-get install build-essential libgtk2.0-dev
+  libssl-dev xsltproc ia32-libs libxml2-dev libcap-dev</code>
+</code></pre>
+</li>
+<li>To create a 32-bit build of the AllJoyn™ framework
+on a 64-bit operating system, install these required development libraries:<pre><code class="lang-sh"><code class="sh">$ sudo apt-get install gcc-multilib g++-multilib libc6-i386
+  libc6-dev-i386 libssl-dev:i386 libxml2-dev:i386</code>
+</code></pre>
+</li>
+</ol><p><strong>NOTE:</strong> libssl-dev does not have multilib support.
+If the 32-bit version of libssl-dev is installed, then the 64-bit version is
+replaced with the 32-bit version. You can delete the 32-bit version of the
+libraries and reinstall the 64-bit version if you wish to go back to 64-bit.
+libssl-dev is not required if building AllJoyn with the CRYPTO=builtin option.</p>
+<h2 id="python-v2-6-2-7">Python v2.6/2.7</h2>
+<p><strong>NOTE:</strong> Python v3.0 is not compatible and will cause errors.</p>
+<ol><li><p>Python is a common part of most Linux distributions. You can
+determine whether Python is already installed on your system by
+opening a terminal window and running the following command:</p>
+<pre><code class="lang-sh"><code class="sh">$ which python</code>
+</code></pre>
+<p>If a path (e.g., /usr/bin/python) is returned, Python is already installed.</p>
+</li>
+<li><p>Otherwise, open a terminal window and run the following command:</p>
+<pre><code class="lang-sh"><code class="sh">$ sudo apt-get install python</code>
+</code></pre>
+</li>
+<li><p>If this installation method does not give you the correct
+version of Python, install the <a href="http://www.python.org/download/">required version</a>.</p>
+</li>
+</ol><h2 id="scons">SCons</h2>
+<p><a href="http://www.scons.org/">SCons</a> is a software construction tool
+used to build the AllJoyn framework. SCons is a default package
+on most Linux distributions.</p>
+<p>Open a terminal window and run the following command:</p>
+<pre><code class="lang-sh"><code class="sh">$ sudo apt-get install scons</code>
+</code></pre>
+<p>AllJoyn's builds are verified with SCons v2.3.</p>
+<h2 id="openssl-optional-">OpenSSL (optional)</h2>
+<p>OpenSSL is an open-source toolkit for implementing secure network
+communication and cryptographic functions. AllJoyn only uses the
+cryptographic functions of OpenSSL.
+It is recommended that you always use the <a href="http://www.openssl.org/">newest version of
+OpenSSL</a>.</p>
+<p>Open a terminal window and run the following command:</p>
+<pre><code class="lang-sh"><code class="sh">$ sudo apt-get install libssl-dev</code>
+</code></pre>
+<h2 id="git">git</h2>
+<p><a href="http://git-scm.com/">Git</a> is a source code repository access tool. The AllJoyn
+source code is stored in a set of <a href="https://git.allseenalliance.org/cgit">git projects</a>.</p>
+<p>Open a terminal window and run the following command:</p>
+<pre><code class="lang-sh"><code class="sh">$ sudo apt-get install git-core</code>
+</code></pre>
+<h2 id="repo">Repo</h2>
+<p>Repo is a tool used to manage projects that consist of multiple
+git projects. The AllJoyn source code is stored in a set of git
+projects that can be cloned individually or as a group using
+<a href="http://source.android.com/source/version-control.html">Google's repo tool</a>.
+This tool is not required, but is highly recommended.</p>
+<ol><li><p>Open a terminal window and run the following command to install curl:</p>
+<pre><code class="lang-sh"><code class="sh">$ sudo apt-get install curl</code>
+</code></pre>
+</li>
+<li><p>Navigate to your home directory and download repo by running
+the following command:</p>
+<pre><code class="lang-sh"><code class="sh">$ curl https://storage.googleapis.com/git-repo-downloads/repo &gt;
+~/bin/repo</code>
+</code></pre>
+</li>
+<li><p>Copy repo to /usr/local/bin and make it executable using the following commands:</p>
+<pre><code class="lang-sh"><code class="sh">$ sudo cp repo /usr/local/bin
+$ sudo chmod a+x /usr/local/bin/repo</code>
+</code></pre>
+</li>
+</ol><h3 id="uncrustify">Uncrustify</h3>
+<p>Uncrustify is a source code formatting tool used to maintain a consistent
+coding style in the AllJoyn code base. It is not required to build AllJoyn,
+but if you intend to contribute code changes to the AllJoyn project you should
+configure and use the tool.</p>
+<p><strong>NOTE:</strong> Uncrustify v0.61 is required for AllJoyn v15.04 and
+later. Earlier AllJoyn versions require uncrustify v0.57. Since the
+existing AllJoyn code was formatted with a specific version of
+uncrustify, using any other version of uncrustify can cause unexpected
+build errors when not building with the WS=off option.</p>
+<p>There are two ways to install Uncrustify.</p>
+<ul><li><p>Download the source and then build and install Uncrustify:</p>
+<pre><code class="lang-sh"><code class="sh"> $ mkdir $HOME/uncrustify # for example
+ $ cd $HOME/uncrustify
+ $ git clone http://github.com/bengardner/uncrustify.git
+ $ # or use
+ $ #git clone git://uncrustify.git.sourceforge.net/gitroot/uncrustify/uncrustify
+ $ cd uncrustify
+ $ git checkout uncrustify-0.61
+ $ # or for v0.57:
+ $ #git checkout uncrustify-0.57
+ $ ./configure
+ $ sudo make install</code>
+</code></pre>
+</li>
+</ul><p><strong>NOTE:</strong> In some cases, Uncrustify has failed to build on more recent
+Ubuntu versions. Try making the following change to get
+Uncrustify to build:</p>
+<pre><code class="lang-sh"><code class="sh">   diff --git a/src/uncrustify.cpp b/src/uncrustify.cpp index 2635189..7aba76d 100644
+   --- a/src/uncrustify.cpp
+   +++ b/src/uncrustify.cpp
+   @@ -32,6 +32,7 @@
+   #ifdef HAVE_STRINGS_H
+   #include &lt;strings.h&gt;    /* strcasecmp() */
+   #endif
+   +#include &lt;unistd.h&gt;
+
+   /* Global data */
+   struct cp_data cpd;</code>
+</code></pre>
+<ul><li><p>Install the Uncrustify v0.57 package on Ubuntu:</p>
+<ol><li>Go to: <a href="http://packages.ubuntu.com/precise/uncrustify">http://packages.ubuntu.com/precise/uncrustify</a>.</li>
+<li>From the website, click in the "Download uncrustify"
+table to select your machine's architecture.</li>
+<li>From the page that opens after your selection, choose
+a mirror based on your location, and download the .deb package.</li>
+<li><p>Install the package using either of these two commands, as appropriate:</p>
+<pre><code class="lang-sh"><code class="sh">$ sudo dpkg -i uncrustify_0.57-1_amdd64.deb
+$ sudo dpkg -i uncrustify_0.57-1_i386.deb</code>
+</code></pre>
+<p>Uncrustify v0.61 packages are not currently available.</p>
+</li>
+</ol></li>
+</ul><h2 id="doxygen">Doxygen</h2>
+<p>The <a href="http://www.doxygen.org">Doxygen tool</a> builds HTML documentation from
+source code. It is not required for building AllJoyn binaries.</p>
+<p>Open a terminal window and run the following command:</p>
+<pre><code class="lang-sh"><code class="sh">$ sudo apt-get install doxygen</code>
+</code></pre>
+<h3 id="graphviz">Graphviz</h3>
+<p>The <a href="http://www.graphviz.org/">Graphviz Dot tool</a> diagrams class hierarchies
+and is used by doxygen.</p>
+<p>Open a terminal window and run the following command:</p>
+<pre><code class="lang-sh"><code class="sh">$ sudo apt-get install graphviz</code>
+</code></pre>
+<h2 id="tex-live">TeX Live</h2>
+<p><a href="http://www.tug.org/texlive/">TeX Live</a> provides LaTeX binaries
+and style sheets for Linux. This optional tool may be used to
+produce AllJoyn's API documentation as a PDF document from
+the source. It is possible to compile the AllJoyn framework
+without producing the documentation.</p>
+<p>Install TeX Live if you want to produce PDF documentation.</p>
+<pre><code class="lang-sh"><code class="sh">$ sudo apt-get install texlive</code>
+</code></pre>
+<h2 id="gecko-sdk">Gecko SDK</h2>
+<p>The <a href="https://developer.mozilla.org/en/Gecko_SDK">Gecko SDK</a> (aka XULRunner SDK)
+is only required if you are building the AllJoyn JavaScript
+plug-in. Otherwise, this section is optional.</p>
+<p>The plug-in was developed against version 1.9.2 of the SDK,
+although it may be possible to use an earlier version.
+On 64-bit Linux, download the 32-bit version anyway (only
+the headers in the SDK are used).</p>
+<h2 id="install-java">Install Java</h2>
+<p>Java 6 or greater may be used to build the AllJoyn framework
+on a Linux platform.</p>
+<p><strong>IMPORTANT:</strong> Using apt-get install java will download open-jdk not
+sun-jdk. The AllJoyn framework requires sun-jdk.</p>
+<p>Install Java using one of these two mechanisms.</p>
+<h4 id="installing-java-6-when-older-than-ubuntu-12-04">Installing Java 6 when older than Ubuntu 12.04</h4>
+<ol><li><p>Install Java 6</p>
+<pre><code class="lang-sh"><code class="sh">   $ sudo add-apt-repository "deb http://archive.ubuntu.com/ubuntu lucid partner"
+   $ sudo apt-get update
+   $ sudo apt-get install sun-java6-jdk</code>
+</code></pre>
+</li>
+<li><p>Install junit 3.8 or newer (junit is required when building
+the AllJoyn Java bindings).</p>
+<ol><li>Navigate to (<a href="https://github.com/junit-team/junit/wiki/Download-and-Install">https://github.com/junit-team/junit/wiki/Download-and-Install</a>).</li>
+<li>Download the jar file "junit-4.9.jar".</li>
+<li><p>Copy it to usr/share/java/junit-4.9 from the Downloads folder:</p>
+<pre><code class="lang-sh"><code class="sh">   $ sudo cp junit-4.9.jar /usr/share/java/</code>
+</code></pre>
+</li>
+</ol></li>
+<li><p>If you want to run junit tests, install the Apache Ant build
+tool (only required to run junit tests, not required to build the
+AllJoyn framework).</p>
+<pre><code class="lang-sh"><code class="sh">   $ sudo apt-get install ant</code>
+</code></pre>
+</li>
+</ol><h4 id="installing-java-6-when-using-ubuntu-12-04-or-newer">Installing Java 6 when using Ubuntu 12.04 or newer</h4>
+<p>With the Ubuntu 12.04 Precise Pangolin release, partner
+repositories are no longer available. You must manually
+install Java using the following instructions:</p>
+<ol><li><p>Download the JDK bin file corresponding to your cpu type
+(x86 or x64) from Java SE 6u32 Downloads.</p>
+</li>
+<li><p>Use chmod to make the file executable:</p>
+<pre><code class="lang-sh"><code class="sh">   $ chmod +x jdk-6u32-linux-x64.bin</code>
+</code></pre>
+</li>
+<li><p>Extract the bin file:</p>
+<pre><code class="lang-sh"><code class="sh">   $ ./jdk-6u32-linux-x64.bin</code>
+</code></pre>
+</li>
+<li><p>Move extracted folder to /usr/lib/jvm/:</p>
+<pre><code class="lang-sh"><code class="sh">   $ sudo mv jdk1.6.0_32 /usr/lib/jvm/</code>
+</code></pre>
+</li>
+<li><p>Add the newly installed Java to the list of alternatives:</p>
+<pre><code class="lang-sh"><code class="sh">   $ sudo update-alternatives --install /usr/bin/javac javac
+   /usr/lib/jvm/jdk1.6.0_32/bin/javac 2
+   $ sudo update-alternatives --install /usr/bin/java java
+   /usr/lib/jvm/jdk1.6.0_32/bin/java 2
+   $ sudo update-alternatives --install /usr/bin/javaws javaws
+   /usr/lib/jvm/jdk1.6.0_32/bin/javaws 2</code>
+</code></pre>
+</li>
+<li><p>Choose default Java:</p>
+<pre><code class="lang-sh"><code class="sh">   $ sudo update-alternatives --config javac
+   $ sudo update-alternatives --config java
+   $ sudo update-alternatives --config javaws</code>
+</code></pre>
+</li>
+<li><p>Check Java version to verify it is installed correctly:</p>
+<pre><code class="lang-sh"><code class="sh">   $ java -version</code>
+</code></pre>
+<p>It should return something similar to:</p>
+<pre><code class="lang-sh"><code class="sh">   java version "1.6.0_26"
+   Java(TM) SE Runtime Environment (build 1.6.0_26-b03)
+   Java HotSpot(TM) 64-Bit Server VM (build 20.1-b02, mixed mode)</code>
+</code></pre>
+</li>
+<li><p>Verify the symlinks all point to the new Java location:</p>
+<pre><code class="lang-sh"><code class="sh">   $ ls -la /etc/alternatives/java*</code>
+</code></pre>
+</li>
+<li><p>(Optional, but recommended) Enable Java plug-in for Mozilla
+Firefox (even for Chrome).</p>
+<ul><li><p>For 64-bit jdk:</p>
+<pre><code class="lang-sh"><code class="sh">    $ sudo update-alternatives --install \
+    /usr/lib/mozilla/plugins/libjavaplugin.so mozilla-javaplugin.so \
+    /usr/lib/jvm/jdk1.6.0_32/jre/lib/amd64/libnpjp2.so 2
+    $ sudo update-alternatives --config mozilla-javaplugin.so</code>
+</code></pre>
+</li>
+<li><p>For 32-bit jdk</p>
+<pre><code class="lang-sh"><code class="sh">    $ sudo update-alternatives --install \
+    /usr/lib/mozilla/plugins/libjavaplugin.so mozilla-javaplugin.so \
+    /usr/lib/jvm/jdk1.6.0_32/jre/lib/i386/libnpjp2.so 2
+    $ sudo update-alternatives --config mozilla-javaplugin.so</code>
+</code></pre>
+</li>
+</ul><p>Test the Java web plug-in by going to <a href="http://www.java.com/en/download/testjava.jsp">http://www.java.com/en/download/testjava.jsp</a>.</p>
+</li>
+<li><p>Install junit 3.8 or newer (junit is required when building
+the AllJoyn Java bindings).</p>
+<ol><li>Navigate to <a href="https://github.com/junit-team/junit/wiki/Download-and-Install">https://github.com/junit-team/junit/wiki/Download-and-Install</a>.</li>
+<li>Download the jar file "junit-4.9.jar" and copy it to
+usr/share/java/junit-4.9 from the Downloads folder:</li>
+</ol><pre><code class="lang-sh"><code class="sh"> $ sudo cp junit-4.9.jar /usr/share/java/</code>
+</code></pre>
+</li>
+<li><p>If you want to run junit tests, install the Apache Ant build
+tool (only required to run junit tests, not required to build
+the AllJoyn framework).</p>
+<pre><code class="lang-sh"><code class="sh">  $ sudo apt-get install ant</code>
+</code></pre>
+</li>
+</ol><h2 id="googletest">googletest</h2>
+<p>Google Test is Google's framework for writing C++ tests.
+Google Test is an xUnit testing architecture used by the
+AllJoyn framework to test its C++ APIs. Google Test is optional,
+but is required for building the C++ unit tests.</p>
+<ol><li>Open a browser and navigate to <a href="http://code.google.com/p/googletest/downloads/list">http://code.google.com/p/googletest/downloads/list</a>.</li>
+<li>From the googletest download page, download gtest-1.7.0.zip.</li>
+<li>Unzip the contents of gtest-1.7.0.zip to a known location
+(e.g., $HOME/gtest/gtest-1.7.0).</li>
+</ol><p><strong>IMPORTANT:</strong> Do not use apt-get install libgtest-dev. Download
+the source code from code.google.com.</p>
+<h2 id="obtain-the-alljoyn-source">Obtain the AllJoyn source</h2>
+<pre><code class="lang-sh"><code class="sh">$ cd $HOME
+$ export AJ_ROOT = `pwd`/alljoyn # for example
+$ git clone https://git.allseenalliance.org/gerrit/core/alljoyn.git
+
+$AJ_ROOT/core/alljoyn</code>
+</code></pre>
+<h2 id="building-the-alljoyn-framework">Building the AllJoyn Framework</h2>
+<p>Use the following commands to build the AllJoyn framework for Linux.</p>
+<pre><code class="lang-sh"><code class="sh">$ export JAVA_HOME="/usr/lib/jvm/java-6-sun" # or java-1.5.0-sun
+$ export CLASSPATH="/usr/share/java/junit4.9.jar" # for building Java binding
+$ export GECKO_BASE=~/xulrunner-sdk # for building Javascript binding
+$ cd $AJ ROOT/core/alljoyn</code>
+</code></pre>
+<p>For 32-bit:</p>
+<pre><code class="lang-sh"><code class="sh">$ scons BINDINGS=&lt;comma separated list(cpp,java,c,unity,js)&gt;
+
+   ex) $ scons BINDINGS="cpp,java"</code>
+</code></pre>
+<p>For 64-bit:</p>
+<pre><code class="lang-sh"><code class="sh">$ scons CPU=x86_64 BINDINGS=&lt;comma separated list (cpp,java,c,unity,js)&gt;
+
+   ex) $ scons CPU=x86_64 BINDINGS="cpp,java"</code>
+</code></pre>
+<p><strong>NOTE:</strong> For a full list of SCons command line options to build
+the AllJoyn framework, enter <code>scons -h</code>.</p>
+<p><strong>NOTE:</strong> Use the SCons variable <code>BINDINGS</code> to list the language
+bindings for which you would like to build. To limit the build
+to just C++, for example, use BINDINGS=cpp. Use a comma-separated
+list for multiple bindings. For example, to build for Java and
+C++, use  BINDINGS=java,cpp.</p>
+<p><strong>NOTES</strong></p>
+<ul><li>The path specified for the CLASSPATH environment variable
+is the full path name to the junit jar file that was downloaded earlier.</li>
+<li>The path specified for the JAVA HOME environment variable
+is the path to the jdk directory.</li>
+<li>For building Javascript on both Linux and Windows, we need
+the GECKO_BASE while building the AllJoyn framework.</li>
+<li>If you are building a version older than AllJoyn framework
+2.6, CPU=x86-64 will be required to build a 64-bit version of the AllJoyn framework.</li>
+</ul><h3 id="possible-build-errors">Possible build errors</h3>
+<p><code>" ImportError: No module named argparse"</code> reported when reading
+<code>"File "../build_core/tools/bin/whitespace.py", line 18".</code>
+Python does not have the argparse module installed (versions of
+python 2.7.1 or newer have it installed by default).</p>
+<pre><code class="lang-sh"><code class="sh">$ sudo apt-get install python-setuptools
+$ sudo easy_install argparse</code>
+</code></pre>
+<h2 id="build-the-api-documentation">Build the API documentation</h2>
+<p>By default, the AllJoyn API documentation is not built during
+the build stage (except for Java Docs). To build the API
+documentation use the following commands:</p>
+<pre><code class="lang-sh"><code class="sh">$ scons DOCS=html
+$ scons DOCS=pdf</code>
+</code></pre>
+<p>The documentation will be placed in <workspace>/alljoyn_core/docs/html
+or <workspace>/alljoyn_core/docs/latex.</workspace></workspace></p>
+<ul><li>Open <workspace>/alljoyn_core/docs/html/index.html in a web
+browser to view the documentation.</workspace></li>
+<li>Open <workspace>/alljoyn_core/docs/refman.pdf in a PDF viewer
+to view the PDF documentation.</workspace></li>
+</ul><h3 id="whitespace-policy-checker">Whitespace policy checker</h3>
+<p>By default, the whitespace policy checker does not run. If you are
+contributing changes to AllJoyn, you should run your builds with the
+whitespace checker enabled:</p>
+<pre><code class="lang-sh"><code class="sh">$ scons WS=check</code>
+</code></pre>
+<p>If the whitespace policy checker reports a whitespace policy
+violation, it lists which files have the violation. To see the
+lines of code that are violating the AllJoyn whitespace policy, run:</p>
+<pre><code class="lang-sh"><code class="sh">$ scons WS=detail</code>
+</code></pre>
+<p>Uncrustify can automatically fix your files to adhere to the whitespace policy.</p>
+<pre><code class="lang-sh"><code class="sh">$ scons WS=fix</code>
+</code></pre>
+<h3 id="build-variant">Build variant</h3>
+<p>By default, the AllJoyn framework builds the debug variant. To build
+the release version of the AllJoyn framework, use this:</p>
+<pre><code class="lang-sh"><code class="sh">$ scons VARIANT=release</code>
+</code></pre>
+<h2 id="bindings-option">Bindings option</h2>
+<p>The default SCons script tries to build all of the language bindings
+by default. If you are only interested in a particular language binding,
+the <code>BINDINGS</code> option can be used to select the language(s) of interest.</p>
+<p>The <code>BINDINGS</code> option takes a comma-separated list of languages you
+wish to build. Current valid languages are cpp, c, java, js, and
+Unity. The language is always specified in all lower case with no
+extra spaces between languages. If a dependency is not listed, the
+dependency will automatically be built. For example, java requires
+that cpp is built. If an empty string is used only the core files
+will be built.</p>
+<p>For example:</p>
+<pre><code class="lang-sh"><code class="sh">$ scons BINDINGS=java #this will build core files and
+   Java language bindings
+$ scons BINDINGS=c,unity,java #this will build C language
+   bindings the Unity Extension and Java language bindings
+$ scons BINDINGS= #only build the core files alljoyn_core and common</code>
+</code></pre>
+<h2 id="crypto-option">Crypto option</h2>
+<p>AllJoyn v15.04 adds a CRYPTO option to the scons command line. To build AllJoyn
+without dependencies on OpenSSL libcrypto, use CRYPTO=builtin:</p>
+<pre><code class="lang-sh"><code class="sh">$ scons CRYPTO=builtin</code>
+</code></pre>
+<p>To use crypto implementations in OpenSSL:</p>
+<pre><code class="lang-sh"><code class="sh">$ scons CRYPTO=openssl</code>
+</code></pre>
+<h2 id="policydb-option">PolicyDB option</h2>
+<p>AllJoyn v14.06 provides functionality that
+can be compiled into AllJoyn routers that acts as firewall/filter
+for delivering messages. The POLICYDB option controls whether this
+functionality is included or not. It can be set to either on or off.</p>
+<p>The default policy rules are for the AllJoyn router to behave as
+though PolicyDB is excluded. The default is to not include PolicyDB.</p>
+<p>Example:</p>
+<pre><code class="lang-sh"><code class="sh">$ scons POLICYDB=on</code>
+</code></pre>
+<h2 id="build-c-unit-tests">Build C++ unit tests</h2>
+<p>The AllJoyn framework now includes a set of unit tests that
+are built using the Google Test C++ framework. To build the
+unit test, the location of the Google Test source code must
+be specified as explained in googletest. Use the GTEST_DIR
+option to specify the location of the Google Test source code.</p>
+<p>Example:</p>
+<pre><code class="lang-sh"><code class="sh">$ scons GTEST_DIR=$HOME/gtest/gtest-1.7.0</code>
+</code></pre>
+<h2 id="running-the-alljoyn-applications">Running the AllJoyn Applications</h2>
+<p><strong>NOTE:</strong> For v2.6 and onward, Bundled Router mode only.</p>
+<p>To ensure that the Linux development platform is set up
+correctly, use the instructions in this section to run
+the AllJoyn router.</p>
+<p>With the release of AllJoyn v2.6, running a separate standalone
+router (alljoyn-daemon) is no longer required. All of the
+functionality of the router can now be built into each individual
+application, which means:</p>
+<ul><li>Users of your program no longer need to install and run a
+background service (daemon) to run a program that uses the AllJoyn framework.</li>
+<li><p>Each application that you run will have its own built-in router.</p>
+</li>
+<li><p>On the command line, type the following commands to run
+the AllJoyn application:</p>
+<pre><code class="lang-sh"><code class="sh">   $ cd &lt;workspace&gt;/build/{OS}/{CPU}/{VARIANT}/dist/cpp/bin
+   {OS} = linux
+   {CPU} = x86 or x86-64
+   {VARIANT} = debug or release
+   $    ./bbservice -n com.test</code>
+</code></pre>
+</li>
+<li><p>Open another tab and type the following commands to run
+another application:</p>
+<pre><code class="lang-sh"><code class="sh">   $ cd &lt;workspace&gt;/build/{OS}/{CPU}/{VARIANT}/dist/cpp/bin
+   $    ./bbclient -n com.test -d</code>
+</code></pre>
+</li>
+<li><p>Check for the following output on bbclient:</p>
+<pre><code class="lang-sh"><code class="sh">   Sending "Ping String 1" to org.alljoyn.alljoyn_test.my_ping synchronously
+      org.alljoyn.alljoyn_test.my_ping ( path=/org/alljoyn/alljoyn_test ) returned
+      "Ping String 1"</code>
+</code></pre>
+</li>
+</ul><h2 id="alljoyn-router-command-line-executable">AllJoyn router command line executable</h2>
+<p><strong>NOTE:</strong> Applies only to versions before 2.6.</p>
+<p>The concept of bundling a router with the application was
+introduced in v2.6. Prior to this version, to run any AllJoyn
+application, you needed to run the alljoyn-daemon first.</p>
+<p>As part of the build process, an executable for the alljoyn-daemon is built.</p>
+<ol><li><p>On the command line, type the following commands to run
+the AllJoyn router as a separate process:</p>
+<pre><code class="lang-sh"><code class="sh">   $ cd &lt;workspace&gt;/build/{OS}/{CPU}/{VARIANT}/dist/cpp/bin
+   $ ./alljoyn-daemon --internal</code>
+</code></pre>
+<p>The options for the variables are as follows:</p>
+<p>{OS} = linux
+{CPU} = x86 or x86-64
+{VARIANT} = debug or release</p>
+<p>This starts the AllJoyn router with a built-in default
+configuration. For most users the command listed is sufficient
+to run the AllJoyn framework.</p>
+</li>
+<li><p>Press <strong>Ctrl-c</strong> at any time to stop the alljoyn-daemon process.</p>
+</li>
+<li><p>To display other options, type the following:</p>
+<pre><code class="lang-sh"><code class="sh">   $ ./alljoyn-daemon -h
+
+   alljoyn-daemon [--config-file=FILE] [--print-address]
+   [--verbosity=LEVEL] [--no-bt] [--version]
+
+      --config-file=FILE
+         Use the specified configuration file.
+
+      --print-address
+         Print the socket address to STDOUT.
+
+      --no-bt
+         Disable the Bluetooth transport (override config file setting).
+
+      --verbosity=LEVEL
+         Set the logging level to LEVEL.
+
+      --version
+         Print the version and copyright string, and exit.</code>
+</code></pre>
+</li>
+</ol><p>For examples of different configuration files, see examples in:</p>
+<pre><code class="lang-sh"><code class="sh">&lt;workspace&gt;/alljoyn_core/daemon/test/conf.</code>
+</code></pre>
+<p><strong>NOTE:</strong> Not all configuration files found in the daemon/test/conf
+directory are valid for use on a computer running Linux.</p>
+<h3 id="verify-that-the-router-is-running">Verify that the router is running</h3>
+<p>Navigate to the projects samples directory and run the service
+and the client as follows:</p>
+<pre><code class="lang-sh"><code class="sh">$ cd &lt;workspace&gt;/build/{OS}/{CPU}/{VARIANT}/dist/cpp/bin/samples
+$ ./basic_service &amp; #this will be a background process; it could be run on its own command-line
+$ ./basic_client</code>
+</code></pre>
+<p>When the client runs, the following will display:</p>
+<pre><code><code>AllJoyn Library version: v2.6.0
+AllJoyn Library build info: Alljoyn Library v2.6.0
+   (Built Wed Sep 02 23:30:23 UTC 2012
+Interface Created. BusAttachment started.
+BusAttachment connected to unix:abstract=alljoyn
+BusListener Registered.
+FoundAdvertisedName(name=org.alljoyn.Bus.sample,
+prefix=org.alljoyn.Bus.sample)
+JoinSession SUCCESS (Session id=-1126874739)
+org.alljoyn.Bus.sample.cat ( path=/sample) returned "Hello World!"
+basic client exiting with status 0 (ER_OK)</code>
+</code></pre><h2 id="running-unit-tests">Running Unit Tests</h2>
+<p><strong>NOTE:</strong> The following instructions are valid only for the AllJoyn
+framework version 2.6 and newer.</p>
+<h3 id="running-c-unit-tests">Running C++ unit tests</h3>
+<p>If the <code>GTEST_DIR</code> option was specified when building the code,
+the C++ unit tests will automatically be built and placed in
+the following location:</p>
+<pre><code class="lang-sh"><code class="sh">&lt;workspace&gt;/build/{OS}/{CPU}/{VARIANT}/test/cpp/bin.</code>
+</code></pre>
+<p>There will be two executable files there: ajtest and cmtest.</p>
+<h4 id="cmtest">cmtest</h4>
+<p>The cmtest executable tests the code from the common project
+and does not require the AllJoyn router to be running.
+Run cmtest as follows:</p>
+<pre><code class="lang-sh"><code class="sh">&lt;workspace&gt;/build/{OS}/{CPU}/{VARIANT}/test/cpp/bin/cmtest</code>
+</code></pre>
+<h4 id="ajtest">ajtest</h4>
+<p>The ajtest executable tests the code found in alljoyn_core.
+For the tests to run successfully, an AllJoyn router must
+also be running. Currently, ajtest is limited; it cannot test
+bus-to-bus (i.e., device-to-device) communication.
+Run ajtest as follows:</p>
+<ol><li><p>Start the alljoyn-daemon (optional-see note below):</p>
+<pre><code class="lang-sh"><code class="sh">   &lt;workspace&gt;/build/{OS}/{CPU}/{VARIANT}/dist/cpp/bin/alljoyn-daemon --internal</code>
+</code></pre>
+</li>
+<li><p>Run ajtest.</p>
+<pre><code class="lang-sh"><code class="sh">   &lt;workspace&gt;/build/{OS}/{CPU}/{VARIANT}/test/cpp/bin/ajtest</code>
+</code></pre>
+</li>
+</ol><p>For all paths, replace {OS}, {CPU}, and {VARIANT} with the
+actual value used when the code was built (i.e., use the same OS,
+CPU, and VARIANT option specified when running SCons).</p>
+<p><strong>NOTE:</strong> If the code was built using the bundled router
+(i.e., SCons flag BR=on), then ajtest can be run without
+first starting the separate alljoyn-daemon.</p>
+<h3 id="running-the-java-junit-tests">Running the Java junit tests</h3>
+<p>The junit tests are always built at the same time as the Java
+bindings. The junit tests are specifically designed to test the
+Java bindings.</p>
+<ol><li><p>From the top build folder, use ant to start the test.</p>
+<pre><code class="lang-sh"><code class="sh">   ant test -DOS={OS} -DCPU={CPU} -DVARIANT={VARIANT}</code>
+</code></pre>
+</li>
+<li><p>Find the HTML version of the results in the following location:</p>
+<pre><code class="lang-sh"><code class="sh">   &lt;workspace&gt;/build/{OS}/{CPU}/{VARIANT}/test/java/reports/junit/</code>
+</code></pre>
+<p>For all paths and commands, replace {OS}, {CPU}, and {VARIANT}
+with the actual value used when the code was built (i.e., use
+the same OS, CPU, and VARIANT option specified when running SCons).</p>
+</li>
+</ol><h2 id="miscellaneous">Miscellaneous</h2>
+<h3 id="library-liballjoyn-so-not-found">Library liballjoyn.so not found</h3>
+<p>If the following error is returned:</p>
+<pre><code><code>error while loading shared libraries: liballjoyn.so:
+cannot open shared object file: No such file or directory</code>
+</code></pre><p>The SCons scripts build a shared library and link
+against that shared library. Add the library to the link path.</p>
+<pre><code class="lang-sh"><code class="sh">$ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:&lt;workspace&gt;/build/{OS}/{CPU}/
+   {VARIANT}/dist/cpp/lib</code>
+</code></pre>
+<p>After adding the library LD_LIBRARY_PATH re-run the program
+that produced the error.</p>
+<h3 id="additional-projects">Additional projects</h3>
+<p>The AllJoyn source code has other projects, such as alljoyn_js
+(javascript), alljoyn_unity (Unity Extension), and alljoyn_c
+(C bindings). These bindings are supported from version 2.6 onward.
+The build instructions for these projects are outside the scope of
+this section. For more information, see <a href="https://allseenalliance.org">https://allseenalliance.org</a>.</p>
+  </div>
+  </div>
+
+  
+  
+</article>
+              </div>
+                                   
+          </section>
+
+          
+        </div>
+      </div>
+
+
+      
+    </div>
+  </div>
+</div>
+<div id="sticky-footer">
+  
+      <footer id="footer" class="clearfix" role="contentinfo">
+        <div class="region region-footer"><div class="region-inner clearfix"><nav id="block-system-user-menu" class="block block-system block-menu"  role="navigation"><div class="block-inner clearfix">        <div class="block-content content"><ul class="menu clearfix"><li class="first menu-item-537"><a href="/user/register" title="">Register</a></li><li class="last menu-item-536"><a href="/user/login" title="">Log In</a></li></ul></div></div></nav></div></div>    </footer>
+  
+  <div id="lfcollabprojects-footer">
+    <div class="gray-diagonal">
+      <div class="footer-inner">
+        <p>&copy; 2017 AllSeen Alliance, Inc. All Rights Reserved.</p>
+        <p>The Linux Foundation® is a registered trademark of The Linux Foundation. AllSeen, Designed for AllSeen and AllSeen Alliance are trademarks of the AllSeen Alliance, Inc. AllJoyn® is a registered trademark of AllSeen Alliance, Inc.</p>
+        <p>Linux is a registered <a href="http://www.linuxfoundation.org/programs/legal/trademark" title="Linux Mark Institute">trademark</a> of Linus Torvalds.</p>
+        <p>Please see our <a href="/brand-guidelines">brand guidelines</a>, <a href="/trademarks">trademark guidelines</a>, <a href="/about/governance/ip-policy">IP policy</a>, <a href="/terms">terms of use</a>, <a href="/license">license</a>, and <a href="/privacy">privacy policy</a>.</p>
+      </div>
+    </div>
+    <div id="body-bottom">
+      </div>
+</body>
+</html>

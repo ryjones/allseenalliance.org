@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<!--[if IEMobile 7]><html class="iem7" lang="en" dir="ltr"><![endif]-->
+<!--[if lte IE 6]><html class="lt-ie9 lt-ie8 lt-ie7" lang="en" dir="ltr"><![endif]-->
+<!--[if (IE 7)&(!IEMobile)]><html class="lt-ie9 lt-ie8" lang="en" dir="ltr"><![endif]-->
+<!--[if IE 8]><html class="lt-ie9" lang="en" dir="ltr"><![endif]-->
+<!--[if (gte IE 9)|(gt IEMobile 7)]><!--><html lang="en" dir="ltr"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/terms/"
+  xmlns:foaf="http://xmlns.com/foaf/0.1/"
+  xmlns:og="http://ogp.me/ns#"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:sioc="http://rdfs.org/sioc/ns#"
+  xmlns:sioct="http://rdfs.org/sioc/types#"
+  xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema#"><!--<![endif]-->
+<head>
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
+<meta charset="utf-8" />
+<link rel="shortlink" href="/node/4259" />
+<link rel="shortcut icon" href="https://identity.allseenalliance.org/sites/all/themes/at_alljoyn/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="/developers/develop/api-guide/core/alljoyn-transports-best-practices" />
+<meta name="viewport" content="width=device-width" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta property="og:image" content="https://identity.allseenalliance.org/sites/all/themes/at_alljoyn/images/allseen-logo.png"/>
+<meta name="google-translate-customization" content="48b015afeed82101-ecae534af0f48252-ga0b6470a6208b2f5-f"></meta>
+<meta name="MobileOptimized" content="width">
+<meta name="HandheldFriendly" content="true">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AllJoyn® Transports Best Practices - AllSeen Alliance</title>
+<link type="text/css" rel="stylesheet" href="https://identity.allseenalliance.org/sites/default/files/css/css_xE-rWrJf-fncB6ztZfd2huxqgxu4WO-qwma6Xer30m4.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://identity.allseenalliance.org/sites/default/files/css/css_7Vcu6qIuRTO46aDOBZp7_mtksGdhCHSe0pjTO2YbGng.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://identity.allseenalliance.org/sites/default/files/css/css_J2n1xiaSuececTK0yC3DT_Msm4PrkPwHizxr0oXGGoo.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://identity.allseenalliance.org/sites/default/files/css/css_oxEtvjMfj8c8EEJJ-1WXLGGntCnC0UvrbYsq0Gw4m4Q.css" media="screen" />
+<link type="text/css" rel="stylesheet" href="https://identity.allseenalliance.org/sites/default/files/css/css_9EusV9fcbkpqBeTGdJPl7ru65jm-3ngbTi_D6YRR_5A.css" media="only screen" />
+<script src="https://identity.allseenalliance.org/sites/default/files/js/js_UWQINlriydSoeSiGQxToOUdv493zEa7dpsXC1OtYlZU.js"></script>
+<script src="https://identity.allseenalliance.org/sites/default/files/js/js_COMsmDyrY9mzVU28X2uGvF4Ba3vd5eTo5xEO7dvCUZM.js"></script>
+<script src="https://identity.allseenalliance.org/sites/default/files/js/js_i8oyg1R4On_HyzPiZ5zC3V-DxehjGAcpKwNao5s0s5I.js"></script>
+<script>hljs.configure({languages:[]}); hljs.initHighlightingOnLoad();</script>
+<script src="https://identity.allseenalliance.org/sites/default/files/js/js_aG0kZAhSHT6G3QC-d9Wwx9gQp5d0em8X6FmMYZ1e5h4.js"></script>
+<script>var _gaq = _gaq || [];_gaq.push(["_setAccount", "UA-"]);_gaq.push(["_trackPageview"]);(function() {var ga = document.createElement("script");ga.type = "text/javascript";ga.async = true;ga.src = ("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/ga.js";var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(ga, s);})();</script>
+<script src="https://identity.allseenalliance.org/sites/default/files/js/js_R35PAK16384fXh7f2OqvXVkbbrwr8ABLrDpR1zTluo0.js"></script>
+<script src="https://identity.allseenalliance.org/sites/default/files/js/js_DKtRHJS-jz_cHgf23K7wnIWphCanZ_Rz74Aw-DKQyFs.js"></script>
+<script>jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"at_alljoyn","theme_token":"Zpu-B9D2PGL2ltQIp-LYXWTdk5DwNnbk_D_v2uu-Dzo","js":{"misc\/jquery.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/all\/modules\/contrib\/comment_notify\/comment_notify.js":1,"sites\/all\/modules\/alljoyn\/custom_modules\/allseen_docs\/allseen_docs_highlight\/highlightjs\/highlight.min.js":1,"0":1,"sites\/all\/libraries\/colorbox\/jquery.colorbox-min.js":1,"sites\/all\/modules\/contrib\/colorbox\/js\/colorbox.js":1,"sites\/all\/modules\/contrib\/colorbox\/styles\/default\/colorbox_style.js":1,"sites\/all\/modules\/contrib\/colorbox\/js\/colorbox_load.js":1,"sites\/all\/modules\/contrib\/colorbox\/js\/colorbox_inline.js":1,"sites\/all\/modules\/contrib\/panels\/js\/panels.js":1,"sites\/all\/modules\/contrib\/quote\/quote.js":1,"sites\/all\/modules\/contrib\/views_slideshow\/js\/views_slideshow.js":1,"sites\/all\/modules\/contrib\/google_analytics\/googleanalytics.js":1,"1":1,"sites\/all\/modules\/alljoyn\/custom_modules\/allseen_docs\/allseen_docs_nav\/allseen-docs-nav.js":1,"sites\/all\/themes\/at_alljoyn\/scripts\/alljoyn.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"sites\/all\/modules\/contrib\/comment_notify\/comment_notify.css":1,"sites\/all\/modules\/ldap\/ldap_user\/ldap_user.css":1,"modules\/book\/book.css":1,"modules\/comment\/comment.css":1,"sites\/all\/modules\/contrib\/date\/date_api\/date.css":1,"sites\/all\/modules\/contrib\/date\/date_popup\/themes\/datepicker.1.7.css":1,"modules\/field\/theme\/field.css":1,"sites\/all\/modules\/contrib\/mollom\/mollom.css":1,"modules\/node\/node.css":1,"modules\/user\/user.css":1,"modules\/forum\/forum.css":1,"sites\/all\/modules\/contrib\/views\/css\/views.css":1,"sites\/all\/modules\/alljoyn\/custom_modules\/allseen_docs\/allseen_docs_highlight\/highlightjs\/default.min.css":1,"sites\/all\/modules\/contrib\/colorbox\/styles\/default\/colorbox_style.css":1,"sites\/all\/modules\/contrib\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/ldap\/ldap_servers\/ldap_servers.admin.css":1,"sites\/all\/modules\/contrib\/panels\/css\/panels.css":1,"sites\/all\/modules\/contrib\/quote\/quote.css":1,"sites\/all\/modules\/contrib\/views_slideshow\/views_slideshow.css":1,"sites\/all\/modules\/alljoyn\/custom_modules\/allseen_docs\/allseen_docs_nav\/allseen-docs-nav.css":1,"sites\/all\/modules\/alljoyn\/features\/content_type_developer_document\/content-type-developer-document.css":1,"sites\/all\/themes\/adaptivetheme\/at_core\/css\/at.layout.css":1,"sites\/all\/themes\/at_alljoyn\/css\/fonts.css":1,"sites\/all\/themes\/at_alljoyn\/css\/globals.css":1,"sites\/all\/themes\/at_alljoyn\/css\/jcarousel-alljoyn.css":1,"public:\/\/adaptivetheme\/at_alljoyn_files_7dbe1ef5\/at_alljoyn.responsive.layout.css":1,"public:\/\/adaptivetheme\/at_alljoyn_files_7dbe1ef5\/at_alljoyn.responsive.styles.css":1}},"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":true,"mobiledevicewidth":"480px"},"jcarousel":{"ajaxPath":"\/jcarousel\/ajax\/views"},"quote_nest":2,"googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls|xml|z|zip"}});</script>
+<!--[if lt IE 9]>
+<script src="https://identity.allseenalliance.org/sites/all/themes/adaptivetheme/at_core/scripts/respond.js?nwgww1"></script>
+<script src="https://identity.allseenalliance.org/sites/all/themes/adaptivetheme/at_core/scripts/html5.js?nwgww1"></script>
+<script src="https://identity.allseenalliance.org/sites/all/themes/adaptivetheme/at_core/scripts/PIE.htc?nwgww1"></script>
+<script src="https://identity.allseenalliance.org/sites/all/themes/adaptivetheme/at_core/scripts/selectivizr.js?nwgww1"></script>
+<![endif]-->
+</head>
+<body class="html not-front not-logged-in one-sidebar sidebar-first page-node page-node- page-node-4259 node-type-developer-document site-name-hidden with-subnav page-developers-develop-api-guide-core-alljoyn-transports-best-practices section-developers">
+  <div id="body-top">
+      </div>
+  <div id="skip-link">
+    <a href="#main-content" class="element-invisible element-focusable">Skip to main content</a>
+  </div>
+  <div class="region region-page-top"><div class="region-inner clearfix"><div id="fb-root"></div><script type="text/javascript">
+     window.fbAsyncInit = function() {
+       FB.init({
+         appId: "492099574180957",
+         status: true,
+         cookie: true,
+         xfbml: true,
+         oauth : true,
+         channelUrl: "https:\/\/identity.allseenalliance.org\/service_links\/channel"
+         });
+
+         FB.Event.subscribe('edge.create', function(href, widget) {
+    _gaq.push(['_trackEvent', 'facebook', 'Facebook like', href]);
+   });FB.Event.subscribe('edge.remove', function(href, widget) {
+    _gaq.push(['_trackEvent', 'facebook', 'Facebook unlike', href]);
+   });
+       };
+       (function(d){
+     var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement('script'); js.id = id; js.async = true;
+     js.src = '//connect.facebook.net/en_US/all.js';
+     ref.parentNode.insertBefore(js, ref);
+   }(document));
+    </script></div></div>  
+<div id="wrap">
+
+  <div id="lfcollabprojects-header">
+    <div class="gray-diagonal">
+      <div class="header-inner">
+        <a id="lfcollabprojects-logo" href="http://collabprojects.linuxfoundation.org">Linux Foundation Collaborative Projects</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="page" class="container page">
+
+    
+    <header id="header" class="clearfix" role="banner">
+
+      <div class="region region-header"><div class="region-inner clearfix"><div id="block-block-19" class="block block-block" ><div class="block-inner clearfix">        <div class="block-content content"><br /><br /><br /><br /><br /><br /><br /></div></div></div></div></div>
+              <div id="branding" class="branding-elements clearfix">
+
+                      <div id="logo"><a href="/" title="Home page"><img class="site-logo" typeof="foaf:Image" src="https://identity.allseenalliance.org/sites/default/files/logo.png" alt="AllSeen Alliance" /></a></div>
+          
+                      <hgroup id="name-and-slogan" class="element-invisible">
+                              <h1 id="site-name" class="element-invisible"><a href="/" title="Home page">AllSeen Alliance</a></h1>
+                                        </hgroup>
+          
+          <!--main menu-->
+          <a id="main-menu-toggle" href="#">Site Sections</a>
+  		  		  		
+        </div>
+      
+    </header>
+
+
+    <div id="columns" class="clearfix">
+      <div id="sub-menu-bar">
+        <div class="region region-sub-menu-bar"><div class="region-inner clearfix"><div id="block-menu-block-allseen-docs-nav" class="block block-menu-block"  role="navigation"><div class="block-inner clearfix">        <div class="block-content content"><div class="menu-block-wrapper menu-block-allseen-docs-nav menu-name-main-menu parent-mlid-0 menu-level-2">
+  <ul class="menu clearfix"><li class="first has-children menu-mlid-2504 menu-item-2504"><a href="/developers/learn">Learn</a></li><li class="has-children menu-mlid-2539 menu-item-2539"><a href="/developers/download">Download</a></li><li class="has-children active-trail menu-mlid-2541 menu-item-2541"><a href="/developers/develop" class="active-trail">Develop</a></li><li class="last has-children menu-mlid-2636 menu-item-2636"><a href="/developers/contribute">Contribute</a></li></ul></div>
+</div></div></div><section id="block-menu-block-allseen-docs-responsive-nav" class="block block-menu-block"  role="navigation"><div class="block-inner clearfix">        <div class="block-title-wrapper">
+      <h2 class="block-title">Menu</h2>
+    </div>
+      <div class="block-content content"><div class="menu-block-wrapper menu-block-allseen-docs-responsive-nav menu-name-main-menu parent-mlid-0 menu-level-1">
+  <ul class="menu clearfix"><li class="first menu-parent menu-mlid-1994 menu-item-1994"><a href="/about">About</a><ul class="menu clearfix"><li class="first menu-mlid-2486 menu-item-2486"><a href="/about/why-allseen">Why AllSeen</a></li><li class="menu-mlid-2464 menu-item-2464"><a href="/about/get-involved">Get Involved</a></li><li class="collapsed menu-mlid-2446 menu-item-2446"><a href="/about/governance/ip-policy">IP Policy</a></li><li class="menu-mlid-2491 menu-item-2491"><a href="/about/working-groups">Working Groups</a></li><li class="menu-mlid-2286 menu-item-2286"><a href="/about/members">Member Companies</a></li><li class="menu-mlid-2285 menu-item-2285"><a href="/about/join-allseen-alliance">Join The AllSeen Alliance</a></li><li class="collapsed menu-mlid-2447 menu-item-2447"><a href="/about/governance">Governance</a></li><li class="menu-mlid-501 menu-item-501"><a href="/about/faqs">FAQs</a></li><li class="menu-mlid-2322 menu-item-2322"><a href="/about/contact">Contact Us</a></li><li class="menu-mlid-2282 menu-item-2282"><a href="/allseen/what-is-allseen-alliance">What is AllSeen Alliance?</a></li><li class="last menu-mlid-2490 menu-item-2490"><a href="https://wiki.allseenalliance.org/members_private/start?do=login&amp;sectok=34485854163fe6a0be457198139e2c84" title="Members Area" id="members_area" name="Members Area" rel="nofollow" target="_blank">Members Area</a></li></ul></li><li class="menu-parent active-trail menu-mlid-2503 menu-item-2503"><a href="/developers" class="active-trail">Developers</a><ul class="menu clearfix"><li class="first menu-parent has-children menu-mlid-2504 menu-item-2504"><a href="/developers/learn">Learn</a><ul class="menu clearfix"><li class="first menu-mlid-2505 menu-item-2505"><a href="/developers/learn/use-cases">Use Cases</a></li><li class="menu-mlid-2506 menu-item-2506"><a href="/developers/learn/architecture">Architecture</a></li><li class="menu-parent menu-mlid-2507 menu-item-2507"><a href="/developers/learn/core">Core Framework</a><ul class="menu clearfix"><li class="first menu-parent menu-mlid-2508 menu-item-2508"><a href="/developers/learn/core/about-announcement">About Announcement</a><ul class="menu clearfix"><li class="first menu-mlid-2509 menu-item-2509"><a href="/developers/learn/core/about-announcement/interface">Interface</a></li><li class="last menu-mlid-2510 menu-item-2510"><a href="/developers/learn/core/about-announcement/interface-14-02">Interface 14.02</a></li></ul></li><li class="menu-mlid-2511 menu-item-2511"><a href="/developers/learn/core/events-and-actions">Events and Actions</a></li><li class="menu-mlid-2992 menu-item-2992"><a href="/developers/learn/core/rn_config">Routing Node Configuration</a></li><li class="menu-mlid-2512 menu-item-2512"><a href="/developers/learn/core/standard-core">Standard Core</a></li><li class="menu-mlid-2513 menu-item-2513"><a href="/developers/learn/core/thin-core">Thin Core</a></li><li class="menu-parent menu-mlid-2514 menu-item-2514"><a href="/developers/learn/core/system-description">System Description</a><ul class="menu clearfix"><li class="first menu-mlid-2515 menu-item-2515"><a href="/developers/learn/core/system-description/system-architecture">System Architecture</a></li><li class="menu-mlid-2516 menu-item-2516"><a href="/developers/learn/core/system-description/advertisement-discovery">Advertisement and Discovery</a></li><li class="menu-mlid-2645 menu-item-2645"><a href="/developers/learn/core/system-description/alljoyn-transport">AllJoyn Transport</a></li><li class="menu-mlid-2517 menu-item-2517"><a href="/developers/learn/core/system-description/data-exchange">Data Exchange</a></li><li class="menu-mlid-2518 menu-item-2518"><a href="/developers/learn/core/system-description/alljoyn-session">AllJoyn Session</a></li><li class="menu-mlid-2519 menu-item-2519"><a href="/developers/learn/core/system-description/sessionless-signal">Sessionless Signal</a></li><li class="menu-mlid-2520 menu-item-2520"><a href="/developers/learn/core/system-description/alljoyn-security">AllJoyn Security</a></li><li class="menu-mlid-2521 menu-item-2521"><a href="/developers/learn/core/system-description/thin-apps">Thin Apps</a></li><li class="last menu-mlid-2522 menu-item-2522"><a href="/developers/learn/core/system-description/events-actions">Events and Actions</a></li></ul></li><li class="last menu-parent menu-mlid-2937 menu-item-2937"><a href="/developers/learn/core/security2_0">Security 2.0</a><ul class="menu clearfix"><li class="first last menu-mlid-2938 menu-item-2938"><a href="/developers/learn/core/security2_0/hld">High-Level Design</a></li></ul></li></ul></li><li class="menu-parent menu-mlid-2523 menu-item-2523"><a href="/developers/learn/base-services">Base Services</a><ul class="menu clearfix"><li class="first menu-parent menu-mlid-2524 menu-item-2524"><a href="/developers/learn/base-services/onboarding">Onboarding</a><ul class="menu clearfix"><li class="first menu-mlid-2525 menu-item-2525"><a href="/developers/learn/base-services/onboarding/interface">Interface</a></li><li class="last menu-mlid-2526 menu-item-2526"><a href="/developers/learn/base-services/onboarding/interface-14-02">Interface 14.02</a></li></ul></li><li class="menu-parent menu-mlid-2527 menu-item-2527"><a href="/developers/learn/base-services/configuration">Configuration</a><ul class="menu clearfix"><li class="first menu-mlid-2528 menu-item-2528"><a href="/developers/learn/base-services/configuration/interface">Interface</a></li><li class="last menu-mlid-2529 menu-item-2529"><a href="/developers/learn/base-services/configuration/interface-14-02">Interface 14.02</a></li></ul></li><li class="menu-parent menu-mlid-2530 menu-item-2530"><a href="/developers/learn/base-services/notification">Notification</a><ul class="menu clearfix"><li class="first menu-mlid-2531 menu-item-2531"><a href="/developers/learn/base-services/notification/interface">Interface</a></li><li class="last menu-mlid-2532 menu-item-2532"><a href="/developers/learn/base-services/notification/interface-14-02">Interface 14.02</a></li></ul></li><li class="menu-parent menu-mlid-2533 menu-item-2533"><a href="/developers/learn/base-services/controlpanel">ControlPanel</a><ul class="menu clearfix"><li class="first menu-mlid-2534 menu-item-2534"><a href="/developers/learn/base-services/controlpanel/interface">Interface</a></li><li class="last menu-mlid-2535 menu-item-2535"><a href="/developers/learn/base-services/controlpanel/interface-14-02">Interface 14.02</a></li></ul></li><li class="last menu-parent menu-mlid-2536 menu-item-2536"><a href="/developers/learn/base-services/audiostreaming">Audio Streaming</a><ul class="menu clearfix"><li class="first last menu-mlid-2537 menu-item-2537"><a href="/developers/learn/base-services/audiostreaming/interface">Interface</a></li></ul></li></ul></li><li class="last menu-mlid-2538 menu-item-2538"><a href="/developers/learn/glossary">Glossary</a></li></ul></li><li class="menu-parent has-children menu-mlid-2539 menu-item-2539"><a href="/developers/download">Download</a><ul class="menu clearfix"><li class="first last menu-mlid-2540 menu-item-2540"><a href="/developers/download/supported-platforms">Supported Platforms</a></li></ul></li><li class="menu-parent has-children active-trail menu-mlid-2541 menu-item-2541"><a href="/developers/develop" class="active-trail active-trail">Develop</a><ul class="menu clearfix"><li class="first menu-parent menu-mlid-2542 menu-item-2542"><a href="/developers/develop/building">Building</a><ul class="menu clearfix"><li class="first menu-parent menu-mlid-2543 menu-item-2543"><a href="/developers/develop/building/android">Android</a><ul class="menu clearfix"><li class="first last menu-mlid-2544 menu-item-2544"><a href="/developers/develop/building/android/build-source">Build Source</a></li></ul></li><li class="menu-parent menu-mlid-2545 menu-item-2545"><a href="/developers/develop/building/linux">Linux</a><ul class="menu clearfix"><li class="first menu-mlid-2546 menu-item-2546"><a href="/developers/develop/building/linux/openwrt">OpenWRT</a></li><li class="last menu-mlid-2547 menu-item-2547"><a href="/developers/develop/building/linux/build-source">Build Source</a></li></ul></li><li class="menu-parent menu-mlid-2548 menu-item-2548"><a href="/developers/develop/building/ios-osx">iOS/OS X</a><ul class="menu clearfix"><li class="first last menu-mlid-2549 menu-item-2549"><a href="/developers/develop/building/ios-osx/build-source">Build Source</a></li></ul></li><li class="menu-parent menu-mlid-2550 menu-item-2550"><a href="/developers/develop/building/windows">Windows</a><ul class="menu clearfix"><li class="first last menu-mlid-2551 menu-item-2551"><a href="/developers/develop/building/windows/build-source">Build Source</a></li></ul></li><li class="menu-mlid-2552 menu-item-2552"><a href="/developers/develop/building/thin-linux">Thin - Linux</a></li><li class="menu-mlid-2553 menu-item-2553"><a href="/developers/develop/building/thin-windows">Thin - Windows</a></li><li class="last menu-mlid-2993 menu-item-2993"><a href="/developers/develop/building/alljoyn-js">AllJoyn.js</a></li></ul></li><li class="menu-parent menu-mlid-2554 menu-item-2554"><a href="/developers/develop/run-sample-apps">Running Samples</a><ul class="menu clearfix"><li class="first menu-parent menu-mlid-2555 menu-item-2555"><a href="/developers/develop/run-sample-apps/basic">Basic</a><ul class="menu clearfix"><li class="first menu-mlid-2556 menu-item-2556"><a href="/developers/develop/run-sample-apps/basic/android">Android</a></li><li class="menu-mlid-2557 menu-item-2557"><a href="/developers/develop/run-sample-apps/basic/linux">Linux</a></li><li class="menu-mlid-2558 menu-item-2558"><a href="/developers/develop/run-sample-apps/basic/ios-osx">iOS/OS X</a></li><li class="menu-mlid-2559 menu-item-2559"><a href="/developers/develop/run-sample-apps/basic/windows">Windows</a></li><li class="menu-mlid-2560 menu-item-2560"><a href="/developers/develop/run-sample-apps/basic/thin-linux">Thin - Linux</a></li><li class="last menu-mlid-2561 menu-item-2561"><a href="/developers/develop/run-sample-apps/basic/thin-windows">Thin - Windows</a></li></ul></li><li class="menu-parent menu-mlid-2562 menu-item-2562"><a href="/developers/develop/run-sample-apps/chat">Chat</a><ul class="menu clearfix"><li class="first menu-mlid-2563 menu-item-2563"><a href="/developers/develop/run-sample-apps/chat/android">Android</a></li><li class="menu-mlid-2564 menu-item-2564"><a href="/developers/develop/run-sample-apps/chat/linux">Linux</a></li><li class="menu-mlid-2565 menu-item-2565"><a href="/developers/develop/run-sample-apps/chat/ios-osx">iOS/OS X</a></li><li class="menu-mlid-2566 menu-item-2566"><a href="/developers/develop/run-sample-apps/chat/windows">Windows</a></li><li class="last menu-mlid-2567 menu-item-2567"><a href="/developers/develop/run-sample-apps/chat/thin-linux">Thin - Linux</a></li></ul></li><li class="menu-parent menu-mlid-2568 menu-item-2568"><a href="/developers/develop/run-sample-apps/about">About</a><ul class="menu clearfix"><li class="first menu-mlid-2569 menu-item-2569"><a href="/developers/develop/run-sample-apps/about/linux">Linux</a></li><li class="menu-mlid-2570 menu-item-2570"><a href="/developers/develop/run-sample-apps/about/ios-osx">iOS/OS X</a></li><li class="last menu-mlid-2646 menu-item-2646"><a href="/developers/develop/run-sample-apps/about/windows">Windows</a></li></ul></li><li class="menu-mlid-2934 menu-item-2934"><a href="/developers/develop/run-sample-apps/observer">Observer</a></li><li class="menu-parent menu-mlid-2571 menu-item-2571"><a href="/developers/develop/run-sample-apps/config">Config</a><ul class="menu clearfix"><li class="first menu-mlid-2572 menu-item-2572"><a href="/developers/develop/run-sample-apps/config/android">Android</a></li><li class="menu-mlid-2573 menu-item-2573"><a href="/developers/develop/run-sample-apps/config/linux">Linux</a></li><li class="menu-mlid-2574 menu-item-2574"><a href="/developers/develop/run-sample-apps/config/ios-osx">iOS/OS X</a></li><li class="last menu-mlid-2575 menu-item-2575"><a href="/developers/develop/run-sample-apps/config/thin-linux">Thin - Linux</a></li></ul></li><li class="menu-parent menu-mlid-2576 menu-item-2576"><a href="/developers/develop/run-sample-apps/controlpanel">Control Panel</a><ul class="menu clearfix"><li class="first menu-mlid-2577 menu-item-2577"><a href="/developers/develop/run-sample-apps/controlpanel/android">Android</a></li><li class="menu-mlid-2578 menu-item-2578"><a href="/developers/develop/run-sample-apps/controlpanel/linux">Linux</a></li><li class="menu-mlid-2579 menu-item-2579"><a href="/developers/develop/run-sample-apps/controlpanel/ios-osx">iOS/OS X</a></li><li class="last menu-mlid-2580 menu-item-2580"><a href="/developers/develop/run-sample-apps/controlpanel/thin-linux">Thin - Linux</a></li></ul></li><li class="menu-parent menu-mlid-2581 menu-item-2581"><a href="/developers/develop/run-sample-apps/notification">Notification</a><ul class="menu clearfix"><li class="first menu-mlid-2582 menu-item-2582"><a href="/developers/develop/run-sample-apps/notification/android">Android</a></li><li class="menu-mlid-2583 menu-item-2583"><a href="/developers/develop/run-sample-apps/notification/linux">Linux</a></li><li class="menu-mlid-2584 menu-item-2584"><a href="/developers/develop/run-sample-apps/notification/ios-osx">iOS/OS X</a></li><li class="last menu-mlid-2585 menu-item-2585"><a href="/developers/develop/run-sample-apps/notification/thin-linux">Thin - Linux</a></li></ul></li><li class="menu-parent menu-mlid-2586 menu-item-2586"><a href="/developers/develop/run-sample-apps/onboarding">Onboarding</a><ul class="menu clearfix"><li class="first menu-mlid-2587 menu-item-2587"><a href="/developers/develop/run-sample-apps/onboarding/android">Android</a></li><li class="menu-mlid-2588 menu-item-2588"><a href="/developers/develop/run-sample-apps/onboarding/linux">Linux</a></li><li class="last menu-mlid-2589 menu-item-2589"><a href="/developers/develop/run-sample-apps/onboarding/ios-osx">iOS/OS X</a></li></ul></li><li class="menu-parent menu-mlid-2590 menu-item-2590"><a href="/developers/develop/run-sample-apps/acserver">AC Server</a><ul class="menu clearfix"><li class="first menu-mlid-2591 menu-item-2591"><a href="/developers/develop/run-sample-apps/acserver/linux">Linux</a></li><li class="last menu-mlid-2592 menu-item-2592"><a href="/developers/develop/run-sample-apps/acserver/thin-linux">Thin - Linux</a></li></ul></li><li class="menu-parent menu-mlid-2593 menu-item-2593"><a href="/developers/develop/run-sample-apps/test">Command Line Apps</a><ul class="menu clearfix"><li class="first last menu-mlid-2594 menu-item-2594"><a href="/developers/develop/run-sample-apps/test/sessions">Sessions</a></li></ul></li><li class="last menu-mlid-2994 menu-item-2994"><a href="/developers/develop/run-sample-apps/alljoyn-js">AllJoyn.js</a></li></ul></li><li class="menu-parent active-trail menu-mlid-2595 menu-item-2595"><a href="/developers/develop/api-guide" class="active-trail">API Guide</a><ul class="menu clearfix"><li class="first menu-parent active-trail menu-mlid-2596 menu-item-2596"><a href="/developers/develop/api-guide/core" class="active-trail">Core</a><ul class="menu clearfix"><li class="first menu-mlid-2939 menu-item-2939"><a href="/developers/develop/api-guide/core/java">java</a></li><li class="menu-mlid-2940 menu-item-2940"><a href="/developers/develop/api-guide/core/objc">Objective-C</a></li><li class="active-trail active menu-mlid-2647 menu-item-2647"><a href="/developers/develop/api-guide/core/alljoyn-transports-best-practices" class="active-trail active">Alljoyn Transports Best Practices</a></li><li class="menu-mlid-2648 menu-item-2648"><a href="/developers/develop/api-guide/core/auto-ping">AutoPinger</a></li><li class="menu-mlid-2935 menu-item-2935"><a href="/developers/develop/api-guide/core/observer">Observer</a></li><li class="last menu-mlid-2936 menu-item-2936"><a href="/developers/develop/api-guide/core/propcache">Property Cache</a></li></ul></li><li class="menu-parent menu-mlid-2599 menu-item-2599"><a href="/developers/develop/api-guide/about">About</a><ul class="menu clearfix"><li class="first menu-mlid-2941 menu-item-2941"><a href="/developers/develop/api-guide/about/java">java</a></li><li class="menu-mlid-2942 menu-item-2942"><a href="/developers/develop/api-guide/about/cpp">C++</a></li><li class="menu-mlid-2943 menu-item-2943"><a href="/developers/develop/api-guide/about/objc">Objective-C</a></li><li class="menu-mlid-2944 menu-item-2944"><a href="/developers/develop/api-guide/about/c-thin">C (Thin Core)</a></li><li class="menu-mlid-2945 menu-item-2945"><a href="/developers/develop/api-guide/about/java-legacy">java Legacy</a></li><li class="menu-mlid-2946 menu-item-2946"><a href="/developers/develop/api-guide/about/cpp-legacy">C++ Legacy</a></li><li class="last menu-mlid-2947 menu-item-2947"><a href="/developers/develop/api-guide/about/objc-legacy">Objective-C Legacy</a></li></ul></li><li class="menu-parent menu-mlid-2604 menu-item-2604"><a href="/developers/develop/api-guide/onboarding">Onboarding</a><ul class="menu clearfix"><li class="first menu-mlid-2948 menu-item-2948"><a href="/developers/develop/api-guide/onboarding/java">java</a></li><li class="last menu-mlid-2949 menu-item-2949"><a href="/developers/develop/api-guide/onboarding/objc">Objective-C</a></li></ul></li><li class="menu-parent menu-mlid-2607 menu-item-2607"><a href="/developers/develop/api-guide/config">Configuration</a><ul class="menu clearfix"><li class="first menu-mlid-2950 menu-item-2950"><a href="/developers/develop/api-guide/config/java">java</a></li><li class="menu-mlid-2951 menu-item-2951"><a href="/developers/develop/api-guide/config/cpp">C++</a></li><li class="menu-mlid-2952 menu-item-2952"><a href="/developers/develop/api-guide/config/objc">Objective-C</a></li><li class="last menu-mlid-2953 menu-item-2953"><a href="/developers/develop/api-guide/config/c-thin">C (Thin Core)</a></li></ul></li><li class="menu-parent menu-mlid-2612 menu-item-2612"><a href="/developers/develop/api-guide/notification">Notification</a><ul class="menu clearfix"><li class="first menu-mlid-2954 menu-item-2954"><a href="/developers/develop/api-guide/notification/java">java</a></li><li class="menu-mlid-2955 menu-item-2955"><a href="/developers/develop/api-guide/notification/cpp">C++</a></li><li class="menu-mlid-2956 menu-item-2956"><a href="/developers/develop/api-guide/notification/objc">Objective-C</a></li><li class="last menu-mlid-2957 menu-item-2957"><a href="/developers/develop/api-guide/notification/c-thin">C (Thin Core)</a></li></ul></li><li class="menu-parent menu-mlid-2617 menu-item-2617"><a href="/developers/develop/api-guide/controlpanel">Control Panel</a><ul class="menu clearfix"><li class="first menu-mlid-2958 menu-item-2958"><a href="/developers/develop/api-guide/controlpanel/java">java</a></li><li class="menu-mlid-2959 menu-item-2959"><a href="/developers/develop/api-guide/controlpanel/cpp">C++</a></li><li class="menu-mlid-2960 menu-item-2960"><a href="/developers/develop/api-guide/controlpanel/objc">Objective-C</a></li><li class="last menu-mlid-2961 menu-item-2961"><a href="/developers/develop/api-guide/controlpanel/c-thin">C (Thin Core)</a></li></ul></li><li class="menu-parent menu-mlid-2622 menu-item-2622"><a href="/developers/develop/api-guide/audio-streaming">Audio Streaming</a><ul class="menu clearfix"><li class="first last menu-mlid-2962 menu-item-2962"><a href="/developers/develop/api-guide/audio-streaming/cpp">C++</a></li></ul></li><li class="last menu-mlid-2624 menu-item-2624"><a href="/developers/develop/api-guide/events-and-actions">Events and Actions</a></li></ul></li><li class="menu-mlid-2625 menu-item-2625"><a href="/developers/develop/api-reference">API Reference</a></li><li class="menu-parent menu-mlid-2626 menu-item-2626"><a href="/developers/develop/debug">Debug</a><ul class="menu clearfix"><li class="first last menu-mlid-2627 menu-item-2627"><a href="/developers/develop/debug/common-issues">Common Issues</a></li></ul></li><li class="menu-parent menu-mlid-2628 menu-item-2628"><a href="/developers/develop/tutorial">Tutorial</a><ul class="menu clearfix"><li class="first menu-mlid-2629 menu-item-2629"><a href="/developers/develop/tutorial/core">Core</a></li><li class="menu-mlid-2630 menu-item-2630"><a href="/developers/develop/tutorial/ios">iOS</a></li><li class="menu-mlid-2631 menu-item-2631"><a href="/developers/develop/tutorial/thin-app">Thin App</a></li><li class="menu-mlid-2632 menu-item-2632"><a href="/developers/develop/tutorial/arduino-and-gt202">Arduino + GT202</a></li><li class="last menu-mlid-2633 menu-item-2633"><a href="/developers/develop/tutorial/videos">Videos</a></li></ul></li><li class="last menu-mlid-2634 menu-item-2634"><a href="/developers/develop/ask">Ask Forum</a></li></ul></li><li class="last menu-parent has-children menu-mlid-2636 menu-item-2636"><a href="/developers/contribute">Contribute</a><ul class="menu clearfix"><li class="first last menu-mlid-2637 menu-item-2637"><a href="/developers/contribute/project-lifecycle">Project Lifecycle</a></li></ul></li></ul></li><li class="menu-mlid-2466 menu-item-2466"><a href="/showcase-products-using-alljoyn">Showcase</a></li><li class="menu-parent menu-mlid-2487 menu-item-2487"><a href="/allseen-alliance-certification">Certification</a><ul class="menu clearfix"><li class="first menu-mlid-2488 menu-item-2488"><a href="/certification/how-validate-your-designed-allseen-product">How To Validate Your Product</a></li><li class="last menu-mlid-2489 menu-item-2489"><a href="/certification/faq">FAQ</a></li></ul></li><li class="last menu-parent menu-mlid-2421 menu-item-2421"><a href="/news-and-events">News &amp; Events</a><ul class="menu clearfix"><li class="first menu-mlid-2422 menu-item-2422"><a href="/news-and-events/newsroom/announcements">Announcements</a></li><li class="menu-mlid-2449 menu-item-2449"><a href="/news/videos">Videos</a></li><li class="menu-mlid-2423 menu-item-2423"><a href="/news-and-events/newsroom/in-the-news">In The News</a></li><li class="menu-mlid-2424 menu-item-2424"><a href="/news-and-events/events">Events</a></li><li class="menu-mlid-2448 menu-item-2448"><a href="/news-and-events/blogs">Blogs</a></li><li class="menu-mlid-2461 menu-item-2461"><a href="/news-and-events/newsletters">Newsletters</a></li><li class="last menu-mlid-2933 menu-item-2933"><a href="/news-and-events/videos">Videos</a></li></ul></li></ul></div>
+</div></div></section></div></div>      </div>
+            
+      
+      <div class="region region-sidebar-first sidebar"><div class="region-inner clearfix"><div id="block-menu-block-1" class="block block-menu-block"  role="navigation"><div class="block-inner clearfix">        <div class="block-content content"><div class="menu-block-wrapper menu-block-1 menu-name-main-menu parent-mlid-0 menu-level-3">
+  <ul class="menu clearfix"><li class="first menu-parent menu-mlid-2542 menu-item-2542"><a href="/developers/develop/building">Building</a><ul class="menu clearfix"><li class="first menu-parent menu-mlid-2543 menu-item-2543"><a href="/developers/develop/building/android">Android</a><ul class="menu clearfix"><li class="first last menu-mlid-2544 menu-item-2544"><a href="/developers/develop/building/android/build-source">Build Source</a></li></ul></li><li class="menu-parent menu-mlid-2545 menu-item-2545"><a href="/developers/develop/building/linux">Linux</a><ul class="menu clearfix"><li class="first menu-mlid-2546 menu-item-2546"><a href="/developers/develop/building/linux/openwrt">OpenWRT</a></li><li class="last menu-mlid-2547 menu-item-2547"><a href="/developers/develop/building/linux/build-source">Build Source</a></li></ul></li><li class="menu-parent menu-mlid-2548 menu-item-2548"><a href="/developers/develop/building/ios-osx">iOS/OS X</a><ul class="menu clearfix"><li class="first last menu-mlid-2549 menu-item-2549"><a href="/developers/develop/building/ios-osx/build-source">Build Source</a></li></ul></li><li class="menu-parent menu-mlid-2550 menu-item-2550"><a href="/developers/develop/building/windows">Windows</a><ul class="menu clearfix"><li class="first last menu-mlid-2551 menu-item-2551"><a href="/developers/develop/building/windows/build-source">Build Source</a></li></ul></li><li class="menu-mlid-2552 menu-item-2552"><a href="/developers/develop/building/thin-linux">Thin - Linux</a></li><li class="menu-mlid-2553 menu-item-2553"><a href="/developers/develop/building/thin-windows">Thin - Windows</a></li><li class="last menu-mlid-2993 menu-item-2993"><a href="/developers/develop/building/alljoyn-js">AllJoyn.js</a></li></ul></li><li class="menu-parent menu-mlid-2554 menu-item-2554"><a href="/developers/develop/run-sample-apps">Running Samples</a><ul class="menu clearfix"><li class="first menu-parent menu-mlid-2555 menu-item-2555"><a href="/developers/develop/run-sample-apps/basic">Basic</a><ul class="menu clearfix"><li class="first menu-mlid-2556 menu-item-2556"><a href="/developers/develop/run-sample-apps/basic/android">Android</a></li><li class="menu-mlid-2557 menu-item-2557"><a href="/developers/develop/run-sample-apps/basic/linux">Linux</a></li><li class="menu-mlid-2558 menu-item-2558"><a href="/developers/develop/run-sample-apps/basic/ios-osx">iOS/OS X</a></li><li class="menu-mlid-2559 menu-item-2559"><a href="/developers/develop/run-sample-apps/basic/windows">Windows</a></li><li class="menu-mlid-2560 menu-item-2560"><a href="/developers/develop/run-sample-apps/basic/thin-linux">Thin - Linux</a></li><li class="last menu-mlid-2561 menu-item-2561"><a href="/developers/develop/run-sample-apps/basic/thin-windows">Thin - Windows</a></li></ul></li><li class="menu-parent menu-mlid-2562 menu-item-2562"><a href="/developers/develop/run-sample-apps/chat">Chat</a><ul class="menu clearfix"><li class="first menu-mlid-2563 menu-item-2563"><a href="/developers/develop/run-sample-apps/chat/android">Android</a></li><li class="menu-mlid-2564 menu-item-2564"><a href="/developers/develop/run-sample-apps/chat/linux">Linux</a></li><li class="menu-mlid-2565 menu-item-2565"><a href="/developers/develop/run-sample-apps/chat/ios-osx">iOS/OS X</a></li><li class="menu-mlid-2566 menu-item-2566"><a href="/developers/develop/run-sample-apps/chat/windows">Windows</a></li><li class="last menu-mlid-2567 menu-item-2567"><a href="/developers/develop/run-sample-apps/chat/thin-linux">Thin - Linux</a></li></ul></li><li class="menu-parent menu-mlid-2568 menu-item-2568"><a href="/developers/develop/run-sample-apps/about">About</a><ul class="menu clearfix"><li class="first menu-mlid-2569 menu-item-2569"><a href="/developers/develop/run-sample-apps/about/linux">Linux</a></li><li class="menu-mlid-2570 menu-item-2570"><a href="/developers/develop/run-sample-apps/about/ios-osx">iOS/OS X</a></li><li class="last menu-mlid-2646 menu-item-2646"><a href="/developers/develop/run-sample-apps/about/windows">Windows</a></li></ul></li><li class="menu-mlid-2934 menu-item-2934"><a href="/developers/develop/run-sample-apps/observer">Observer</a></li><li class="menu-parent menu-mlid-2571 menu-item-2571"><a href="/developers/develop/run-sample-apps/config">Config</a><ul class="menu clearfix"><li class="first menu-mlid-2572 menu-item-2572"><a href="/developers/develop/run-sample-apps/config/android">Android</a></li><li class="menu-mlid-2573 menu-item-2573"><a href="/developers/develop/run-sample-apps/config/linux">Linux</a></li><li class="menu-mlid-2574 menu-item-2574"><a href="/developers/develop/run-sample-apps/config/ios-osx">iOS/OS X</a></li><li class="last menu-mlid-2575 menu-item-2575"><a href="/developers/develop/run-sample-apps/config/thin-linux">Thin - Linux</a></li></ul></li><li class="menu-parent menu-mlid-2576 menu-item-2576"><a href="/developers/develop/run-sample-apps/controlpanel">Control Panel</a><ul class="menu clearfix"><li class="first menu-mlid-2577 menu-item-2577"><a href="/developers/develop/run-sample-apps/controlpanel/android">Android</a></li><li class="menu-mlid-2578 menu-item-2578"><a href="/developers/develop/run-sample-apps/controlpanel/linux">Linux</a></li><li class="menu-mlid-2579 menu-item-2579"><a href="/developers/develop/run-sample-apps/controlpanel/ios-osx">iOS/OS X</a></li><li class="last menu-mlid-2580 menu-item-2580"><a href="/developers/develop/run-sample-apps/controlpanel/thin-linux">Thin - Linux</a></li></ul></li><li class="menu-parent menu-mlid-2581 menu-item-2581"><a href="/developers/develop/run-sample-apps/notification">Notification</a><ul class="menu clearfix"><li class="first menu-mlid-2582 menu-item-2582"><a href="/developers/develop/run-sample-apps/notification/android">Android</a></li><li class="menu-mlid-2583 menu-item-2583"><a href="/developers/develop/run-sample-apps/notification/linux">Linux</a></li><li class="menu-mlid-2584 menu-item-2584"><a href="/developers/develop/run-sample-apps/notification/ios-osx">iOS/OS X</a></li><li class="last menu-mlid-2585 menu-item-2585"><a href="/developers/develop/run-sample-apps/notification/thin-linux">Thin - Linux</a></li></ul></li><li class="menu-parent menu-mlid-2586 menu-item-2586"><a href="/developers/develop/run-sample-apps/onboarding">Onboarding</a><ul class="menu clearfix"><li class="first menu-mlid-2587 menu-item-2587"><a href="/developers/develop/run-sample-apps/onboarding/android">Android</a></li><li class="menu-mlid-2588 menu-item-2588"><a href="/developers/develop/run-sample-apps/onboarding/linux">Linux</a></li><li class="last menu-mlid-2589 menu-item-2589"><a href="/developers/develop/run-sample-apps/onboarding/ios-osx">iOS/OS X</a></li></ul></li><li class="menu-parent menu-mlid-2590 menu-item-2590"><a href="/developers/develop/run-sample-apps/acserver">AC Server</a><ul class="menu clearfix"><li class="first menu-mlid-2591 menu-item-2591"><a href="/developers/develop/run-sample-apps/acserver/linux">Linux</a></li><li class="last menu-mlid-2592 menu-item-2592"><a href="/developers/develop/run-sample-apps/acserver/thin-linux">Thin - Linux</a></li></ul></li><li class="menu-parent menu-mlid-2593 menu-item-2593"><a href="/developers/develop/run-sample-apps/test">Command Line Apps</a><ul class="menu clearfix"><li class="first last menu-mlid-2594 menu-item-2594"><a href="/developers/develop/run-sample-apps/test/sessions">Sessions</a></li></ul></li><li class="last menu-mlid-2994 menu-item-2994"><a href="/developers/develop/run-sample-apps/alljoyn-js">AllJoyn.js</a></li></ul></li><li class="menu-parent active-trail menu-mlid-2595 menu-item-2595"><a href="/developers/develop/api-guide" class="active-trail">API Guide</a><ul class="menu clearfix"><li class="first menu-parent active-trail menu-mlid-2596 menu-item-2596"><a href="/developers/develop/api-guide/core" class="active-trail">Core</a><ul class="menu clearfix"><li class="first menu-mlid-2939 menu-item-2939"><a href="/developers/develop/api-guide/core/java">java</a></li><li class="menu-mlid-2940 menu-item-2940"><a href="/developers/develop/api-guide/core/objc">Objective-C</a></li><li class="active-trail active menu-mlid-2647 menu-item-2647"><a href="/developers/develop/api-guide/core/alljoyn-transports-best-practices" class="active-trail active">Alljoyn Transports Best Practices</a></li><li class="menu-mlid-2648 menu-item-2648"><a href="/developers/develop/api-guide/core/auto-ping">AutoPinger</a></li><li class="menu-mlid-2935 menu-item-2935"><a href="/developers/develop/api-guide/core/observer">Observer</a></li><li class="last menu-mlid-2936 menu-item-2936"><a href="/developers/develop/api-guide/core/propcache">Property Cache</a></li></ul></li><li class="menu-parent menu-mlid-2599 menu-item-2599"><a href="/developers/develop/api-guide/about">About</a><ul class="menu clearfix"><li class="first menu-mlid-2941 menu-item-2941"><a href="/developers/develop/api-guide/about/java">java</a></li><li class="menu-mlid-2942 menu-item-2942"><a href="/developers/develop/api-guide/about/cpp">C++</a></li><li class="menu-mlid-2943 menu-item-2943"><a href="/developers/develop/api-guide/about/objc">Objective-C</a></li><li class="menu-mlid-2944 menu-item-2944"><a href="/developers/develop/api-guide/about/c-thin">C (Thin Core)</a></li><li class="menu-mlid-2945 menu-item-2945"><a href="/developers/develop/api-guide/about/java-legacy">java Legacy</a></li><li class="menu-mlid-2946 menu-item-2946"><a href="/developers/develop/api-guide/about/cpp-legacy">C++ Legacy</a></li><li class="last menu-mlid-2947 menu-item-2947"><a href="/developers/develop/api-guide/about/objc-legacy">Objective-C Legacy</a></li></ul></li><li class="menu-parent menu-mlid-2604 menu-item-2604"><a href="/developers/develop/api-guide/onboarding">Onboarding</a><ul class="menu clearfix"><li class="first menu-mlid-2948 menu-item-2948"><a href="/developers/develop/api-guide/onboarding/java">java</a></li><li class="last menu-mlid-2949 menu-item-2949"><a href="/developers/develop/api-guide/onboarding/objc">Objective-C</a></li></ul></li><li class="menu-parent menu-mlid-2607 menu-item-2607"><a href="/developers/develop/api-guide/config">Configuration</a><ul class="menu clearfix"><li class="first menu-mlid-2950 menu-item-2950"><a href="/developers/develop/api-guide/config/java">java</a></li><li class="menu-mlid-2951 menu-item-2951"><a href="/developers/develop/api-guide/config/cpp">C++</a></li><li class="menu-mlid-2952 menu-item-2952"><a href="/developers/develop/api-guide/config/objc">Objective-C</a></li><li class="last menu-mlid-2953 menu-item-2953"><a href="/developers/develop/api-guide/config/c-thin">C (Thin Core)</a></li></ul></li><li class="menu-parent menu-mlid-2612 menu-item-2612"><a href="/developers/develop/api-guide/notification">Notification</a><ul class="menu clearfix"><li class="first menu-mlid-2954 menu-item-2954"><a href="/developers/develop/api-guide/notification/java">java</a></li><li class="menu-mlid-2955 menu-item-2955"><a href="/developers/develop/api-guide/notification/cpp">C++</a></li><li class="menu-mlid-2956 menu-item-2956"><a href="/developers/develop/api-guide/notification/objc">Objective-C</a></li><li class="last menu-mlid-2957 menu-item-2957"><a href="/developers/develop/api-guide/notification/c-thin">C (Thin Core)</a></li></ul></li><li class="menu-parent menu-mlid-2617 menu-item-2617"><a href="/developers/develop/api-guide/controlpanel">Control Panel</a><ul class="menu clearfix"><li class="first menu-mlid-2958 menu-item-2958"><a href="/developers/develop/api-guide/controlpanel/java">java</a></li><li class="menu-mlid-2959 menu-item-2959"><a href="/developers/develop/api-guide/controlpanel/cpp">C++</a></li><li class="menu-mlid-2960 menu-item-2960"><a href="/developers/develop/api-guide/controlpanel/objc">Objective-C</a></li><li class="last menu-mlid-2961 menu-item-2961"><a href="/developers/develop/api-guide/controlpanel/c-thin">C (Thin Core)</a></li></ul></li><li class="menu-parent menu-mlid-2622 menu-item-2622"><a href="/developers/develop/api-guide/audio-streaming">Audio Streaming</a><ul class="menu clearfix"><li class="first last menu-mlid-2962 menu-item-2962"><a href="/developers/develop/api-guide/audio-streaming/cpp">C++</a></li></ul></li><li class="last menu-mlid-2624 menu-item-2624"><a href="/developers/develop/api-guide/events-and-actions">Events and Actions</a></li></ul></li><li class="menu-mlid-2625 menu-item-2625"><a href="/developers/develop/api-reference">API Reference</a></li><li class="menu-parent menu-mlid-2626 menu-item-2626"><a href="/developers/develop/debug">Debug</a><ul class="menu clearfix"><li class="first last menu-mlid-2627 menu-item-2627"><a href="/developers/develop/debug/common-issues">Common Issues</a></li></ul></li><li class="menu-parent menu-mlid-2628 menu-item-2628"><a href="/developers/develop/tutorial">Tutorial</a><ul class="menu clearfix"><li class="first menu-mlid-2629 menu-item-2629"><a href="/developers/develop/tutorial/core">Core</a></li><li class="menu-mlid-2630 menu-item-2630"><a href="/developers/develop/tutorial/ios">iOS</a></li><li class="menu-mlid-2631 menu-item-2631"><a href="/developers/develop/tutorial/thin-app">Thin App</a></li><li class="menu-mlid-2632 menu-item-2632"><a href="/developers/develop/tutorial/arduino-and-gt202">Arduino + GT202</a></li><li class="last menu-mlid-2633 menu-item-2633"><a href="/developers/develop/tutorial/videos">Videos</a></li></ul></li><li class="last menu-parent menu-mlid-2634 menu-item-2634"><a href="/developers/develop/ask">Ask Forum</a></li></ul></div>
+</div></div></div></div></div>            <div id="content-column" role="main">
+        <div class="content-inner">
+
+          
+          <section id="main-content">
+
+                                      <header id="main-content-header">
+
+                                                  <h1 id="sub-title">
+                    AllJoyn® Transports Best Practices                  </h1>
+                
+                
+              </header>
+                        
+                          <div id="content">
+                        <article id="node-4259" class="node node-developer-document article clearfix" about="/developers/develop/api-guide/core/alljoyn-transports-best-practices" typeof="sioc:Item foaf:Document" role="article">
+
+  
+      <span property="dc:title" content="AllJoyn® Transports Best Practices" class="rdf-meta element-hidden"></span><span property="sioc:num_replies" content="0" datatype="xsd:integer" class="rdf-meta element-hidden"></span>
+  
+  <div class="node-content">
+  
+  <div class="field-body view-mode-full">
+    
+<h2 id="introduction">Introduction</h2>
+<p>Transports are based on ISO OSI layer 4 - transport layer - mechanisms.
+Such transport mechanisms are typically optimized for some set
+of operating characteristics or network environments. The resulting
+optimizations and environments in the layer 4 transport mechanism
+will result in different qualities being presented by AllJoyn Transports
+that use them.</p>
+<p>In order to be called an AllJoyn Transport, all Transports must provide
+the same capabilities, however, since the underlying mechanisms provide
+differencing amounts of support for various functions, some layer 4
+transports, and therefore AllJoyn Transports will be more suitable
+to some distributed applications.</p>
+<p>This document discusses how to determine which AllJoyn Transports
+might be more suitable than others to different application traffic
+patterns and requirements.</p>
+<h2 id="alljoyn-transports">AllJoyn Transports</h2>
+<p>One of the fundamental abstractions in an AllJoyn system is that
+of a Transport. An AllJoyn Transport provides an abstract
+representation of a collection of underlying mechanisms
+that provides four basic functions  :</p>
+<ul><li>The ability to discover remote AllJoyn Bus Attachments or Interfaces</li>
+<li>The ability to advertise local AllJoyn Bus Attachments to
+the greater AllJoyn system</li>
+<li>The ability to establish traffic flows to other AllJoyn devices</li>
+<li>The ability to move AllJoyn Messages (representing Method Calls,
+Method Replies or Signals) between devices.</li>
+</ul><p>In the ISO OSI seven-layer model, the transport layer is
+responsible for moving data sequences from one host to another
+and maintaining appropriate transport-specific qualities of
+service. One measure of quality of service, for example, is
+reliable and ordered delivery of data. TCP and UDP both move
+data sequences from one host to another, and have different
+quality of service guarantees. TCP provides reliable, ordered
+byte streams; and UDP provides datagram services with no
+guarantee of ordering or reliable delivery. TCP and UDP are
+thus both transport layer (layer 4) protocols in the ISO OSI model.</p>
+<p>AllJoyn Transports make use of lower-level OS services like TCP
+or UDP in order to manage the actual movement of data sequences,
+and therefore sit above layer 4 in the OSI protocol stack.
+Since the AllJoyn Transport manages underlying connections
+on behalf of the application layer (layer 7) the concept of
+AllJoyn Transport most closely matches the session layer
+(layer 5) of the ISO OSI model.</p>
+<h3 id="alljoyn-messaging">AllJoyn Messaging</h3>
+<p>The AllJoyn Message layer, which is responsible for marshaling
+and unmarshaling of Signals and Method Calls, can be thought
+of as residing in the presentation layer (layer 6) of the ISO OSI model;
+and the routing functionality of the AllJoyn Routing Node
+can be thought of as lying above AllJoyn Transports (still in layer 5),
+but below the Message layer at layer 6.</p>
+<p>In the following figure, notice that the AllJoyn Bus Attachment
+corresponds to the application layer in the seven-layer model
+in that it provides the interface between the network stack
+and the application itself. Bus Attachments provide functionality
+required by the application to create, marshal and unmarshal
+AllJoyn Messages. This functionality corresponds to translating
+between application and network data formats and therefore
+corresponds to the presentation layer in the seven-layer model.</p>
+<p><img src="/sites/default/files/developers/develop/api-guide/core-bestpractices/alljoyn-osi-seven-layer-arch.png" alt="alljoyn-osi-seven-layer-arch" /></p>
+<p><strong>Figure:</strong> Mapping of AllJoyn system and OSI layer transports</p>
+<p>AllJoyn Messages are sent to a local Routing Node which is
+responsible for selecting an AllJoyn Transport over which
+a given Message must be sent. AllJoyn Transports are responsible
+for controlling the dialogs between computers and therefore
+correspond to the session layer of the seven-layer model.
+Messages are sent to an OSI transport layer mechanism,
+for example TCP or UDP, with suitable guarantees of service.
+The transport layer passes byte streams or datagrams to the
+network layer   and then down to the 802.11 MAC and PHY
+in the figure.</p>
+<h3 id="supported-alljoyn-transports">Supported AllJoyn transports</h3>
+<p>Since an AllJoyn Transport encapsulates the functions of
+moving data sequences, connections, and advertisement and
+discovery, there are separate AllJoyn Transports for separate
+underlying mechanisms. For example, the AllJoyn TCP Transport
+uses TCP/IP as the mechanism for moving data between Routing Nodes;
+the AllJoyn UDP Transport uses UDP/IP as the mechanism; the
+AllJoyn Bluetooth (BT) Transport does the same for Bluetooth
+connections, and the AllJoyn Local Transport uses UNIX domain sockets.</p>
+<p>Often, the name given to an AllJoyn Transport echoes the method
+used in the underlying OSI layer 4 mechanism. For example, the
+AllJoyn TCP transport uses TCP/IP to move bits from one host
+to another; the AllJoyn UDP Transport uses UDP/IP to actually move bits.</p>
+<p>AllJoyn applications may select the AllJoyn Transport that is
+actually used by choosing one or more TransportMask bits in
+appropriate AllJoyn APIs. The currently defined TransportMask
+bits are listed in the following table.</p>
+<h4 id="alljoyn-transportmask-definition">AllJoyn TransportMask definition</h4>
+<table><thead><tr><th>Transport name</th>
+<th style="text-align:center">Value</th>
+<th>Description</th>
+</tr></thead><tbody><tr><td>TRANSPORT_NONE</td>
+<td style="text-align:center">0x0000</td>
+<td>No transport.</td>
+</tr><tr><td>TRANSPORT_LOCAL</td>
+<td style="text-align:center">0x0001</td>
+<td>The local transport.</td>
+</tr><tr><td>TRANSPORT_BLUETOOTH</td>
+<td style="text-align:center">0x0002</td>
+<td>Bluetooth transport.</td>
+</tr><tr><td>TRANSPORT_WLAN</td>
+<td style="text-align:center">0x0004</td>
+<td>Wireless local area network transport.</td>
+</tr><tr><td>TRANSPORT_WWAN</td>
+<td style="text-align:center">0x0008</td>
+<td>Wireless wide area network transport (not supported).</td>
+</tr><tr><td>TRANSPORT_LAN</td>
+<td style="text-align:center">0x0010</td>
+<td>Wired local area network transport.</td>
+</tr><tr><td>TRANSPORT_ICE</td>
+<td style="text-align:center">0x0020</td>
+<td>ICE (Interactive Connectivity Establishment) transport (not supported).</td>
+</tr><tr><td>TRANSPORT_WFD</td>
+<td style="text-align:center">0x0080</td>
+<td>Wi-Fi Direct transport (not supported).</td>
+</tr><tr><td>TRANSPORT_ANY</td>
+<td style="text-align:center">0xFFFF &amp; ~TRANSPORT_WFD</td>
+<td>Any transport except Wi-Fi Direct.</td>
+</tr></tbody></table><p>Currently, the AllJoyn system's WLAN and LAN transports are
+supported by a single underlying TCP transport.</p>
+<h3 id="routing-node-transport">Routing node transport</h3>
+<p>Each transport establishes and maintains connectivity based on
+the underlying physical transport it supports. Based on the
+type of underlying physical transport, the actual connectivity
+between two routing nodes in an AllJoyn network can be either
+single-hop or multi-hop. An AllJoyn distributed bus is an
+overlay network whose topology does not necessarily map directly
+to the topology of the underlying network. If an application
+has no preference, it can provide TRANSPORT_ANY and allow the
+AllJoyn system to determine which transport to use.</p>
+<p>The most commonly used Routing Node-to-Routing Node transports
+in the AllJoyn system are based on the IP family of transport
+mechanisms: TCP/IP and UDP/IP. These ISO layer 3 and 4 mechanisms
+are almost universally supported across the AllJoyn platforms
+of interest. Although from a high-level perspective, they
+accomplish the same objectives, at closer examination the
+go about things slightly differently and therefore have different
+strengths and weaknesses.</p>
+<h4 id="tcp">TCP</h4>
+<p>TCP and UDP are fairly complementary protocols, which is why
+they are both present in the IP stack. TCP is a relatively
+complicated connection-based protocol that allows applications
+to send data reliably from one side to another. If data is
+lost, it is retransmitted automatically by TCP. The transmitted
+data is stream-based which means that it is sent and received
+as a sequence of bytes that are arbitrarily (from the point
+of view of the sender) broken up into network packets.
+In order to operate over the wider Internet, streams of TCP data
+are flow-controlled and TCP uses congestion-avoidance mechanisms
+to prevent congestion collapse in the presence of (many) multiple streams.</p>
+<h4 id="udp">UDP</h4>
+<p>UDP, on the other hand, is a simple, high-speed "wrapper" around
+the lower-level network layer (IP) functions provided to move data.
+UDP is inherently connectionless and data is sent in so-called
+datagrams which are discrete "packages". UDP is not a connection-based
+protocol; nor does it provide any reliability guarantees. There is
+no flow control nor is there congestion avoidance functionality present in UDP.</p>
+<p>These low-level transport characteristics percolate up into the
+corresponding AllJoyn Transports which take advantage of those
+characteristics to more efficiently accomplish the goals of applications.</p>
+<p>Since underlying layer 4 mechanisms can provide very different
+qualities of service, one should infer that the choice of
+AllJoyn TransportMask, and therefore Transport, can have significant
+effects on the quality of service of an AllJoyn Message flow.
+Making such choices effectively is the subject of the remainder
+of this document.</p>
+<h3 id="transportmask">TransportMask</h3>
+<p>As shown in <a href="#alljoyn-transportmask-definition">AllJoyn TransportMask definition</a>,
+a number of TransportMask-related symbols are defined as of
+this writing. It is the case (for historical reasons) that although
+they are associated with different bits, the symbols TRANSPORT_TCP,
+TRANSPORT_WLAN, TRANSPORT_WWAN, TRANSPORT_LAN all refer to the
+AllJoyn TCP Transport. It is recommended that only the symbols
+TRANSPORT_TCP be used to refer to the AllJoyn TCP Transport in
+order to minimize confusion. TRANSPORT_NONE is simply a constant
+defined to be none of the transports, which isn't particularly useful.
+The Wi-Fi Direct Transport (TRANSPORT_WFD) is not currently supported.
+The implication is that only the following TransportMask definitions
+should be used to refer to specific AllJoyn Transports:</p>
+<ul><li>TRANSPORT_TCP</li>
+<li>TRANSPORT_UDP</li>
+</ul><p><strong>Recommendation 1</strong></p>
+<blockquote>
+<p><em>Do not refer specifically to transports that are present for
+historical reasons such as TRANSPORT_WLAN, TRANSPORT_WWAN, or
+TRANSPORT_LAN; neither refer to currently unsupported transports
+such as TRNSPORT_WFD. Instead, prefer currently defined transports --
+TRANSPORT_TCP or TRANSPORT_UDP.</em></p>
+</blockquote>
+<p>As mentioned above, symbols defining groups of transports are also provided:</p>
+<ul><li>TRANSPORT_IP - Describes both TRANSPORT_TCP and TRANSPORT_UDP</li>
+<li>TRANSPORT_ANY - Refers to all currently defined transports
+that are not considered experimental.</li>
+<li>TRANSPORT_ALL - It is not recommended to use TRANSPORT_ALL
+unless there is a specific need to include all experimental
+AllJoyn Transports.</li>
+</ul><p>More typically, one would include specific experimental transports
+on an as-needed basis.</p>
+<p>If there is no need to select an AllJoyn Transport in order
+to take advantage of some specific quality of service, one
+would pass TRANSPORT_ANY to all advertisement-, discovery-
+and session-related APIs. As a result, the AllJoyn Transport
+selected by an AllJoyn application is on a first-discovered
+basis. That is, the first advertisement that happens to be
+received is the one that will drive the selection of transport.
+Presumably this is fine since by selecting TRANSPORT_ANY both
+the advertising and discovering Bus Attachment are effectively
+declaring that "anything I discover is fine".</p>
+<p><strong>Recommendation 2</strong></p>
+<blockquote>
+<p><em>If the primary concern of a distributed application is the
+ability to connect, that is, when neither the client nor the
+service side of a communicating pair of Bus Attachments has
+any particular quality of service guarantee, prefer TRANSPORT_ANY
+and simply join a Session to the Bus Attachment corresponding
+to the first advertisement received.</em></p>
+</blockquote>
+<p>Depending on the availability of AllJoyn Transport, this choice
+may result in the selection of a very high-speed IP-based Transport
+such as TCP or UDP. It may also result in a communication link
+over a personal area network connection which may be relatively slow.
+Since the overriding goal is communication irrespective of
+mechanism, such choices are presumed to be appropriate.</p>
+<p>In order to make any more meaningful choices, one must understand
+some of the qualities of the existing AllJoyn Transports
+which might affect such a choice.</p>
+<h3 id="homogeneous-multipoint-sessions">Homogeneous Multipoint Sessions</h3>
+<p>One of the connectivity options in the AllJoyn system is that of a
+multipoint Session.  This option allows clients to send AllJoyn
+Messages to multiple destinations that are members of the Session.
+It may be desirable to ensure that all members of a multipoint
+Sesion be reachable over the same kind of transport.  This is
+referred to as a homogeneous multipoint Session.</p>
+<p>It is also the case that as of this writing (release 14.12) there
+is a defect in the AllJoyn Routing Node code that causes problems
+with heterogeneous multipoint sessions (mutipoint sessions with
+members reached through different Transports).  If the system
+happens to preferentially select different advertisements on
+different hosts, using TRANSPORT_ANY could cause connectivity
+problems.</p>
+<p>Because of these situations, one should specify a single transport
+type for multipoint sessions.</p>
+<p><strong>Recommendation 3</strong></p>
+<blockquote>
+<p><em>Consider making a single explicit choice of transport when
+using multipoint sessions to avoid different qualities of service
+among session members and to work around a code defect in release
+14.12 of the Routing Node.</em></p>
+</blockquote>
+<h2 id="alljoyn-tcp-transport">AllJoyn TCP Transport</h2>
+<p>The AllJoyn system  provides a Transport based on the TCP/IP protocol.
+TCP/IP is the workhorse of the current Internet, has a long history,
+and works well over a very large range of links of it rates
+and signal qualities.</p>
+<p>TCP, defined by RFC-793, has been used extensively in many
+disparate environments. From this, one can infer that since
+TCP/IP is almost always a good choice for communicating over
+the greater Internet, so the TCP Transport is almost always
+a good choice for AllJoyn Transport mechanism.</p>
+<p>It is worthwhile to understand, however, that while there
+are a number of things that TCP is very good at, there are
+also some things that TCP does not do well.</p>
+<h3 id="advantages-to-using-tcp">Advantages to using TCP</h3>
+<p>TCP/IP provides a connection-oriented, error-checked, ordered,
+reliably delivered stream of bytes between communication endpoints.
+This kind of stream is often called a flow, and corresponds
+to the transmission mechanism underlying the concept of a
+Session in the AllJoyn system.</p>
+<p>The AllJoyn system converts Messages (Method Calls, Replies, Signals, etc.)
+into a collection of bytes and passes them to TCP. In turn,
+TCP takes the bytes that make up sequences of Messages and
+breaks them up into whatever TCP considers to be the best-sided
+"chunks" of data to send. TCP calls these chunks "segments"
+and it is these segments that are sent to the IP layer.
+Note that there is no necessary correlation between the
+delimitation of TCP segments and AllJoyn Messages. These chunks
+are delivered to the remote side of a connection, reorganized
+into a stream of bytes and delivered to the AllJoyn system.
+It is the stream of bytes that is delivered between AllJoyn
+instances and there are no record markers inserted automatically
+by TCP - TCP provides a byte stream service.</p>
+<p>The upshot of this is that TCP is very good at moving streams
+of bytes from one place to another over internetworks of
+possibly dramatically differing and somewhat typically
+asymmetric link speeds. TCP is typically configured by default
+with quite large buffers allowing for high bandwidth-delay
+products over the current Internet; but also provides flow
+control to prevent a fast writer from overrunning a slow reader.
+Basically, TCP is designed to be very good at transferring
+large amounts of data; and it accomplishes this goal very well.
+If the traffic pattern presented by a distributed application
+presents as a sequence of very large AllJoyn Messages it
+appears to the underlying system as a byte stream to be transferred.</p>
+<p><strong>Recommendation 4</strong></p>
+<blockquote>
+<p><em>If the primary concern of a distributed application is the
+ability to transfer large amounts of data reliably, prefer the
+AllJoyn TCP Transport, and selectively join Sessions only to
+Bus Attachments advertising over TRANSPORT_TCP.</em></p>
+</blockquote>
+<h3 id="disadvantages-to-using-tcp-reasons-to-use-udp-">Disadvantages to using TCP (reasons to use UDP)</h3>
+<p>In order to accommodate the wildly varying qualities of service
+of the worldwide Internet, TCP is also quite aggressive about
+trying to get data sent from one end to another. This means
+that it will retry transmissions for quite a long time before
+giving up. This can translate into a significant delay (13 minutes,
+in many cases) before a Bus Attachment is notified of a link failure.
+Link failure can happen frequently in mobile environments as
+devices move from one access point to another, for example.</p>
+<p>TCP does provide a keep-alive mechanism designed to mitigate
+this problem, but support is platform-specific and spotty.
+The AllJoyn system provides a layer 5 mechanism called LinikTimeout to
+implement a device independent link failure detection mechanism.</p>
+<p><strong>Recommendation 5</strong></p>
+<blockquote>
+<p><em>If using the TCP Transport, consider using the LinkTimeout
+feature to quickly detect link failures; or consider the UDP Transport.</em></p>
+</blockquote>
+<p>The counterpoint to the observation about TCP trying very hard
+to get data from one side of a connection to another is
+exactly that. TCP tries many times over a long period of time
+to get data to the remote host  . Thus, if the application
+requires such intensive retry and can tolerate long delays
+before links are declared down, TCP will be much more aggressive
+in trying to get data across a link.</p>
+<p><strong>Recommendation 6</strong></p>
+<blockquote>
+<p><em>If the primary concern of a distributed application is the
+ability to move data reliably, prefer the AllJoyn TCP Transport
+and do not set a LinkTimeout.</em></p>
+</blockquote>
+<p>To avoid congestion collapse of the greater internetwork,
+TCP implements significant congestion control mechanisms
+are used in TCP. These include slow-start, which begins transfers
+slowly in order to avoid filling the internet "pipe" with data
+which might be dropped due to congestion. Because slow-start
+will delay use of full-bandwidth capabilities of the network,
+intermittent or infrequent traffic patterns in which a device
+is idle for a time, then sends a burst of data, and then goes
+idle again may run afoul of slow-start. Since the AllJoyn
+UDP Transport is designed to run only on local subnetworks,
+it does not implement slow-start.</p>
+<p><strong>Recommendation 7</strong></p>
+<blockquote>
+<p><em>If the traffic pattern of the distributed application
+consists of bursts of significant amounts of data between
+fairly extended periods of idling, consider using the UDP Transport
+to avoid effects of TCP slow-start.</em></p>
+</blockquote>
+<p>There have been several additions to TCP to accommodate call-and-response
+traffic patterns, such as delayed ACK and the Nagle algorithm.
+Nonetheless, TCP is oriented toward transferring large amounts
+of data. TCP is not very good at sending a small amount of data
+and receiving a small amount of data in return - exactly the
+kind of interactions typical of Remote Procedure Call; and the
+AllJoyn system is, at its heart, an RPC system.</p>
+<p><strong>Recommendation 8</strong></p>
+<blockquote>
+<p><em>If the traffic pattern of the distributed application
+consists of Remote Procedure Calls, especially with call and
+reply Messages of length less than 1480 bytes, consider using
+the UDP Transport which is optimized for this kind of interaction.</em></p>
+</blockquote>
+<p>Since TCP is a reliable byte stream protocol, its whole reason
+for being is to transfer all bytes from one end to another.
+This is not always desirable. In a real-time system, it is
+often the case that out-of-date data is worthless. Such
+out-of-date data simply consumes network and host resources
+unnecessarily. Since TCP simply transfers streams of bytes
+reliably, there is no opportunity to drop worthless data once
+it has been delivered to the system. The UDP Transport has
+been optimized to allow AllJoyn Messages to be timestamped
+and will drop the UDP datagrams that make up an AllJoyn Message
+at any time the datagrams are found to be out of date.</p>
+<p><strong>Recommendation 9</strong></p>
+<blockquote>
+<p><em>If the traffic pattern of the distributed application includes messages
+with a finite Time to Live (TTL), consider using the UDP Transport
+which provides significantly improved support for avoiding unnecessary
+transmission of Messages with expired TTL.</em></p>
+</blockquote>
+<p>TCP provides a three-way handshake consisting of SYN, SYN+ACK,
+and ACK segments. This TCP-specific messaging must complete
+before any user data may be transferred. Since the AllJoyn system
+is derived from D-Bus, and D-Bus requires a SASL authentication phase,
+The AllJoyn system must implement a SASL exchange for D-Bus compatibility on
+TCP. The AllJoyn system also requires its own handshake consisting of the
+exchange of a BusHello Message and a HelloReply Reply message.
+Thus, connection establishment using TCP requires the following:</p>
+<ul><li>At least three packets be exchanged for TCP connection establishment</li>
+<li>Four packets for the SASL exchange and ACKs</li>
+<li>Four packets for BusHello, reply and ACK.</li>
+</ul><p>Additionally, TCP requires a four-way handshake for connection termination.</p>
+<p>The UDP Transport uses much simplified signaling and, since
+it is an AllJoyn-specific protocol, piggybacks AllJoyn session
+establishment messages on top of the ARDP SYN and SYN+ACK exchanges.
+Connection termination is handled in the UDP Transport at the
+session layer, so only one or two packets are required for
+connection termination - four or five packets of overhead,
+as compared to eleven. At a round-trip delay of six milliseconds,
+this can be a significant improvement.</p>
+<p><strong>Recommendation 10</strong></p>
+<blockquote>
+<p><em>If the traffic pattern of the distributed application includes
+frequent connection establishment and termination, consider
+using the UDP Transport which requires significantly fewer
+packets to establish and terminate connections.</em></p>
+</blockquote>
+<h2 id="alljoyn-udp-transport">AllJoyn UDP Transport</h2>
+<h3 id="overview">Overview</h3>
+<p>The AllJoyn system provides a Transport based on the UDP/IP protocol.
+UDP is a very simple, datagram-oriented (packet-based) layer 4 protocol.
+Each output operation by an application will produce one
+datagram which, modulo fragmentation, is sent to the remote
+destination   which receives it as one input operation.</p>
+<p>Unlike TCP, UDP provides no guarantees of ordering or delivery.
+Since AllJoyn Message streams do provide such guarantees,
+a reliability layer must be provided to use UDP in the AllJoyn system.
+The reliability and ordering guarantees are provided by the
+AllJoyn Reliable Datagram Protocol (ARDP). Additionally,
+ARDP provides the fragmentation mechanism required to send
+maximal AllJoyn Messages (about 130 Kbytes) over UDP
+which has a maximum datagram size of 64 Kbytes.</p>
+<p><strong>NOTE:</strong> For more information about UDP, review RFC 768: User
+Datagram Protocol and RFC 908: Reliable Data Protocol.</p>
+<h3 id="advantages-to-using-udp">Advantages to using UDP</h3>
+<p>The goal of the UDP Transport is to address the areas of
+weakness that the TCP Transport presents when executing call
+and response traffic patterns. The UDP Transport does not do
+any kind of congestion control since it is expected to operate
+only on directly connected subnetworks. It therefore does not
+do slow-start and lost packets are not considered an indication
+of congestion, which is not necessarily an appropriate inference
+in wireless networks.</p>
+<p><strong>Recommendation 11</strong></p>
+<blockquote>
+<p><em>If the environment in which applications are expected to be
+deployed corresponds to communication over wireless physical
+layers and communication is expected to be only on the directly
+connected subnetwork, consider the UDP Transport.</em></p>
+</blockquote>
+<p>Since the UDP Transport is a packet-oriented transport, it is
+possible to map AllJoyn Messages directly into packets.
+This allows for selectively dropping the constituent packets
+of a packet stream according to expired TTL. Since this selective
+dropping of AllJoyn Messages cannot be done in TCP, when the
+offered load of a network   exceeds its capabilities, the TCP Transport
+tends to "back up" with the in-flight segments, all consisting
+of data which will be ultimately dropped. In extreme cases,
+the network can be completely congested with data that will
+be discarded, the end result being no interesting (on-time)
+data is transferred.</p>
+<p><strong>Recommendation 12</strong></p>
+<blockquote>
+<p><em>If applications use the Time to Live (TTL) option in Messages,
+consider the UDP Transport which provides a much improved ability
+to drop non-interesting (not on-time) data.</em></p>
+</blockquote>
+<p>Since UDP Datagrams are not associated with specific sockets in
+the BSD Sockets API, it is possible for a single socket to
+support multiple ARDP connections. This corresponds to the
+ability of multiple AllJoyn Sessions to run over a single socket.
+It also turns out that File Descriptors must be allocated in
+an AllJoyn Routing Node to handle events related to a Session
+and communication endpoint management. Since both sockets,
+and more generally file descriptors, are operating system
+resources which may be limited, specifying the UDP Transport
+can allow many more connections on a given host system.</p>
+<p><strong>Recommendation 13</strong></p>
+<blockquote>
+<p><em>If socket or file descriptor resource usage is anticipated
+to be a problem, consider specifying the UDP Transport which
+uses fewer resources per connection than the TCP Transport.</em></p>
+</blockquote>
+<h2 id="tuning-the-tcp-transport">Tuning the TCP Transport</h2>
+<p>Each system that provides a networking subsystem and TCP/IP
+protocol suite usually presents a number of tunable parameters
+for those subsystems. In Linux systems, these parameters are
+typically accessed through the sysctl interface; in Windows,
+there will be a number of corresponding Registry entries.
+Operating system providers will initialize these various
+parameters with values that provide good tradeoffs for the
+systems and environments involved.</p>
+<p>There is a wealth of information regarding tuning these network
+and TCP parameters available on the Internet. We therefore will
+not duplicate that information here. When tuning for the AllJoyn system,
+remember that sequences of AllJoyn Messages are converted into
+byte streams and ultimately sent to TCP/IP by the AllJoyn TCP Transport.
+It is the linearized AllJoyn message stream that is the traffic
+pattern to be optimized for.</p>
+<p>It is a testament to TCP and the selection of these various
+tuning parameters that the vast majority of system users will
+not attempt to change the underlying TCP configuration. In most
+cases, the system is left as-shipped and it will work sufficiently well.</p>
+<p>Wireshark can provide valuable insights into the TCP messaging
+that occurs in AllJoyn systems. The AllJoyn system has provided
+a dissector to the Wireshark project which is now included in
+the standard Wireshark distributions.</p>
+<h2 id="tuning-the-udp-transport">Tuning the UDP Transport</h2>
+<p>Each system that provides a networking subsystem and TCP/IP
+protocol suite usually presents a number of tunable parameters.
+In Linux systems, these parameters are typically accessed
+through the <code>sysctl</code> interface; and in Windows there will be a
+number of corresponding Registry entries. Operating System
+providers will initialize these various parameters with values
+that provide good tradeoffs for the systems and environments involved.</p>
+<p>There is a wealth of information regarding tuning these network
+and UDP parameters available on the Internet. We therefore
+will not duplicate that information here. When tuning for
+the AllJoyn system, remember that sequences of AllJoyn Messages
+are converted into UDP Datagrams by the AllJoyn UDP Transport.
+It is the sequence of AllJoyn messages sent as datagrams that
+forms the traffic pattern to be optimized for.</p>
+<h3 id="socket-buffers">Socket buffers</h3>
+<p>Since the vast majority of Internet traffic is sent over TCP,
+tuning the UDP protocol has become somewhat of a second-order
+problem. The socket buffers provided by default for UDP are
+often quite small, on the order of 128 Kbytes. While this is
+sufficient for many uses of UDP such as name services, it is
+small when compared to the bandwidth-delay product of modern
+Wi-Fi systems.</p>
+<p><strong>NOTE:</strong> An 802.11n system using Modulation and Coding Scheme (MCS) 11
+can run at 300 megabits per second. Given a round-trip time of
+6 msec, this corresponds to a buffer size of 225 Kbytes.</p>
+<p>One thing to keep in mind when considering buffer sizes for
+the UDP Transport is that one socket may be shared by a number
+of Sessions. The UDP Transport actually provides additional
+buffering on a per-connection basis in order to accommodate
+at least one maximally sized AllJoyn Message (about 130 Kbytes)</p>
+<p>Wireshark can provide valuable insights into the UDP messaging
+that occurs in AllJoyn systems. The AllJoyn system has provided
+a dissector to the Wireshark project which is now included in
+the standard Wireshark distributions.</p>
+<h3 id="ardp-configuration">ARDP configuration</h3>
+<p>Along with the UDP subsystem, the UDP Transport provides the
+ARDP reliability layer (detailed in <a href="#overview">Overview</a>.
+There are a number of configurable parameters corresponding
+to ARDP, but two of those configuration items are of utmost
+importance: SEGBMAX and SEGMAX.</p>
+<ul><li>The SEGBMAX parameter sets the limit on how large of a
+UDP Datagram that ARDP will use when fragmenting AllJoyn Messages.</li>
+<li>The SEGMAX parameter sets the number of datagrams that can be
+in-transit at any time.</li>
+</ul><p>SEGBMAX can be thought of as corresponding loosely to the
+Maximum Segment Size (MSS) of TCP and SEGMAX can be thought of
+as corresponding to the receive window size.</p>
+<p>Typically, the primary use case of the UDP Transport will be
+to transfer relatively small RPC Messages and the corresponding
+Message Reply. The SEGMAX and SEGBMAX parameters are irrelevant
+if transferring messages and replies of less than 1480 bytes
+since all data fits into one packet. However when transferring
+larger amounts of data, it is possible to optimize ARDP in
+ways that can make it significantly faster than TCP.</p>
+<h3 id="tuning-scenario">Tuning scenario</h3>
+<p>While the level of tuning described below will be rarely needed,
+the scenario is provided for completeness and as an illustration
+of how the UDP Transport works.</p>
+<p><strong>NOTE:</strong> This analysis was done using the default network and
+UDP protocol settings of the Linux system on which the experiments were run.</p>
+<h4 id="segbmax-setting">SEGBMAX setting</h4>
+<p>The following figure shows a sensitivity analysis for the
+setting of SEGBMAX. The time measured on the y-axis is the
+time to transfer a 10 megabyte file in maximal (130 Kbytes)
+AllJoyn Messages.</p>
+<p><img src="/sites/default/files/developers/develop/api-guide/core-bestpractices/segbmax-sensitivity-analysis.png" alt="segbmax-sensitivity-analysis" /></p>
+<p><strong>Figure:</strong> SEGBMAX sensitivity analysis</p>
+<p>Since UDP is a user-level protocol, all acknowledgments must
+be done at user privilege  , which implies a context switch
+for each packet. If SEGMAX is chosen to be too small, or if
+large amounts of data are sent in very small datagrams, much
+time is spent simply context switching to ACK data - the system thrashes.
+As SEGMAX approaches one packet (1480 byte payload) and moves
+upward toward the maximum UDP Datagram size, the system spends
+less and less time having to ACK individual smaller datagrams.
+This tendency is counteracted, however, by the fact that as
+UDP datagram size increases, the number of actual PHY packets
+that must be resent in the presence of a datagram loss also
+increases. These pressures tend to cancel each other out in
+practice. In the data below, there is a local minimum at
+SEGBMAX of 4400 bytes which represents the optimal choice
+for the 54 Mbit per second Wi-Fi.</p>
+<p>In the test runs shown in the SEGBMAX sensitivity analysis,
+the combination of SEGBMAX and SEGMAX was held constant at
+the minimal value required to accommodate a maximal AllJoyn Message.</p>
+<h4 id="segmax-setting">SEGMAX setting</h4>
+<p>The following figure shows a sensitivity analysis for SEGMAX
+with SEGBMAX held constant at 4440 bytes.</p>
+<p><img src="/sites/default/files/developers/develop/api-guide/core-bestpractices/segmax-sensitivity-analysis.png" alt="segmax-sensitivity-analysis" /></p>
+<p><strong>Figure:</strong> SEGMAX sensitivity analysis</p>
+<p>The plot starts with SEGMAX at 31 and plots the time to
+transfer a 10 megabyte file for each SEGMAX value. It can
+be seen that there is an underlying step function that
+jumps at SEGMAX values of 31, 62, and 93. These correspond
+to the values at which one, two and three maximal AllJoyn Messages
+can be buffered in the system. There is a significant gain
+to double-buffering AllJoyn Messages at SEGMAX of 62 and
+greater; and there is an incremental gain to triple-buffering
+AllJoyn Messages at SEGMAX of 93.</p>
+<p>Notice that the UDP Transport is slower than the TCP Transort
+with single-buffering, slightly faster with double-buffering
+and significantly (15-20%) faster with triple buffering.
+Since there is no statistically significant improvement
+past triple-buffering, a good choice of SEGBMAX and SEGMAX
+can be shown to be SEGBMAX = 4440 bytes, and SEGMAX = 93 datagrams.
+This is in fact the choice made as the default for the ARDP configuration.</p>
+<p>It is possible that different systems could have specific
+characteristics that change this analysis. For example, if the
+UDP Transport is run on a host device for which context switch
+time is much higher and the network much cleaner, the tradeoff
+of context switch time versus network retransmission may be at
+a different point. It is possible that different networking
+environments may require more datagram buffering to fill the
+in-transit data; or it may also be the case that triple-buffering
+is overkill on much slower networks.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>As they are configured by default, both the UDP Transport
+and the TCP Transport provide a level of service as defined
+by the abstract notion of an AllJoyn Transport. Although
+they both provide the same services, the characteristics of
+the underlying transport mechanisms on which they are based percolate up.</p>
+<p>Characteristics of underlying transports may be viewed as
+either advantages or disadvantages depending on the applications
+using them and the requirements of those applications. Specific
+traffic patterns generated by distributed applications may
+imply that the choice of one of the AllJoyn Transports can
+provide significantly better levels of service than others.</p>
+<p>It may also be the case that no specific choice of AllJoyn Transport
+is actually the best choice. In such situations, the fact that
+a connection, any connection, is possible overrides the qualities
+of service possible from underlying transport mechanisms.</p>
+<p>In any case, understanding the underlying traffic of a
+distributed application and how AllJoyn Transports handle
+that traffic allows for optimizing the distributed application behavior.</p>
+  </div>
+  </div>
+
+  
+  
+</article>
+              </div>
+                                   
+          </section>
+
+          
+        </div>
+      </div>
+
+
+      
+    </div>
+  </div>
+</div>
+<div id="sticky-footer">
+  
+      <footer id="footer" class="clearfix" role="contentinfo">
+        <div class="region region-footer"><div class="region-inner clearfix"><nav id="block-system-user-menu" class="block block-system block-menu"  role="navigation"><div class="block-inner clearfix">        <div class="block-content content"><ul class="menu clearfix"><li class="first menu-item-537"><a href="/user/register" title="">Register</a></li><li class="last menu-item-536"><a href="/user/login" title="">Log In</a></li></ul></div></div></nav></div></div>    </footer>
+  
+  <div id="lfcollabprojects-footer">
+    <div class="gray-diagonal">
+      <div class="footer-inner">
+        <p>&copy; 2017 AllSeen Alliance, Inc. All Rights Reserved.</p>
+        <p>The Linux Foundation® is a registered trademark of The Linux Foundation. AllSeen, Designed for AllSeen and AllSeen Alliance are trademarks of the AllSeen Alliance, Inc. AllJoyn® is a registered trademark of AllSeen Alliance, Inc.</p>
+        <p>Linux is a registered <a href="http://www.linuxfoundation.org/programs/legal/trademark" title="Linux Mark Institute">trademark</a> of Linus Torvalds.</p>
+        <p>Please see our <a href="/brand-guidelines">brand guidelines</a>, <a href="/trademarks">trademark guidelines</a>, <a href="/about/governance/ip-policy">IP policy</a>, <a href="/terms">terms of use</a>, <a href="/license">license</a>, and <a href="/privacy">privacy policy</a>.</p>
+      </div>
+    </div>
+    <div id="body-bottom">
+      </div>
+</body>
+</html>

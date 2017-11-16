@@ -1,0 +1,173 @@
+01-17 14:09:21.791: E/SELinux(18075): selinux_android_seapp_context_reload: seapp_contexts file is loaded from /seapp_contexts
+01-17 14:09:21.796: D/dalvikvm(18075): Late-enabling CheckJNI
+01-17 14:09:21.816: I/dalvikvm(18075): Turning on JNI app bug workarounds for target SDK version 11...
+01-17 14:09:21.961: D/dalvikvm(18075): Trying to load lib /data/app-lib/org.alljoyn.bus.unity-1/libmain.so 0x42f4a8d8
+01-17 14:09:21.961: D/dalvikvm(18075): Added shared lib /data/app-lib/org.alljoyn.bus.unity-1/libmain.so 0x42f4a8d8
+01-17 14:09:21.961: I/Unity(18075): gles_mode = 0 (integer)
+01-17 14:09:21.966: I/Unity(18075): splash_mode = 0 (integer)
+01-17 14:09:21.966: I/Unity(18075): hide_status_bar = True (bool)
+01-17 14:09:21.966: I/Unity(18075): useObb = False (bool)
+01-17 14:09:21.966: I/Unity(18075): development_player = True (bool)
+01-17 14:09:22.011: D/Unity(18075): surfaces: attach glview
+01-17 14:09:22.461: I/Unity(18075): onResume
+01-17 14:09:22.731: D/Unity(18075): [EGL] Attaching window 0x70ad7ae0
+01-17 14:09:22.801: I/Unity(18075): windowFocusChanged: true
+01-17 14:09:22.806: D/Unity(18075): SystemInfo CPU = ARMv7 VFPv3 NEON, Cores = 4, Memory = 1860mb
+01-17 14:09:23.241: D/Unity(18075): [SHA1] 57f49b5de4f9c9700d953a085de45194cc9f4ff8   16652424 bytes ~ lib/armeabi-v7a/libunity.so
+01-17 14:09:23.241: D/Unity(18075): Mono path[0] = '/data/app/org.alljoyn.bus.unity-1.apk/assets/bin/Data/Managed'
+01-17 14:09:23.241: D/Unity(18075): Mono config path = 'assets/bin/Data/Managed'
+01-17 14:09:23.241: D/Unity(18075): PlayerConnection initialized from /data/app/org.alljoyn.bus.unity-1.apk/assets/bin/Data (debug = 0)
+01-17 14:09:23.241: D/Unity(18075): PlayerConnection initialized network socket : 0.0.0.0 55067
+01-17 14:09:23.241: D/Unity(18075): PlayerConnection initialized unix socket : Unity-org.alljoyn.bus.unity
+01-17 14:09:23.241: D/Unity(18075): Multi-casting "[IP] 192.168.24.101 [Port] 55067 [Flags] 2 [Guid] 4001966000 [EditorId] 3392046207 [Version] 1048832 [Id] AndroidPlayer(samsung_GT-I9500:192.168.24.101) [Debug] 0" to [225.0.0.222:54997]...
+01-17 14:09:23.326: D/Unity(18075): InitializeMonoFromMain OK (71ba0ee0)
+01-17 14:09:23.326: D/Unity(18075): PlayerConnection already initialized - listening to [192.168.24.101:55067]
+01-17 14:09:23.341: D/Unity(18075): PlayerInitEngineNoGraphics OK
+01-17 14:09:23.341: D/Unity(18075): GfxDevice: creating device client; threaded=0
+01-17 14:09:23.341: D/libEGL(18075): loaded /vendor/lib/egl/libEGL_POWERVR_SGX544_115.so
+01-17 14:09:23.351: D/libEGL(18075): loaded /vendor/lib/egl/libGLESv1_CM_POWERVR_SGX544_115.so
+01-17 14:09:23.351: D/libEGL(18075): loaded /vendor/lib/egl/libGLESv2_POWERVR_SGX544_115.so
+01-17 14:09:23.356: I/(18075): !@IMGSRV: DATE: 2013.04.23(11:19:33) | BUILDER: LSI3D | REVISION: e9cd1377d8225457ae40
+01-17 14:09:23.371: D/Unity(18075): [EGL] Request: ES2 RGB24 888 24/8
+01-17 14:09:23.371: D/Unity(18075): [EGL] Selected: ES2 RGB24 888 24/8
+01-17 14:09:23.406: D/Unity(18075): Renderer: PowerVR SGX 544MP
+01-17 14:09:23.406: D/Unity(18075): Vendor:   Imagination Technologies
+01-17 14:09:23.406: D/Unity(18075): Version:  OpenGL ES 2.0 build 1.10@2209507
+01-17 14:09:23.406: D/Unity(18075): GL_EXT_debug_marker GL_OES_rgb8_rgba8 GL_OES_depth24 GL_OES_vertex_half_float GL_OES_texture_float GL_OES_texture_half_float GL_OES_element_index_uint GL_OES_mapbuffer GL_OES_fragment_precision_high GL_OES_compressed_ETC1_RGB8_texture GL_OES_EGL_image GL_OES_EGL_image_external GL_OES_required_internalformat GL_OES_depth_texture GL_OES_get_program_binary GL_OES_packed_depth_stencil GL_OES_standard_derivatives GL_OES_vertex_array_object GL_OES_egl_sync GL_OES_texture_npot GL_EXT_discard_framebuffer GL_EXT_blend_minmax GL_EXT_multi_draw_arrays GL_EXT_multisampled_render_to_texture GL_EXT_shader_texture_lod GL_EXT_texture_format_BGRA8888 GL_EXT_texture_rg GL_IMG_shader_binary GL_IMG_texture_compression_pvrtc GL_IMG_texture_compression_pvrtc2 GL_IMG_texture_npot GL_IMG_texture_format_BGRA8888 GL_IMG_read_format GL_IMG_program_binary GL_IMG_uniform_buffer_object GL_IMG_multisampled_render_to_texture
+01-17 14:09:23.441: D/Unity(18075): Creating OpenGLES2.0 graphics device
+01-17 14:09:23.446: D/Unity(18075): InitializeGfxDevice OK
+01-17 14:09:23.446: D/Unity(18075): Initialize engine version: 4.3.2f1 (0517a5ae8669)
+01-17 14:09:23.471: W/libc(18075): pthread_create sched_setscheduler call failed: Operation not permitted
+01-17 14:09:23.471: D/Unity(18075): Begin MonoManager ReloadAssembly
+01-17 14:09:23.486: I/Reverb(18075):  getpid() 18075, IPCThreadState::self()->getCallingPid() 18075
+01-17 14:09:23.491: D/Unity(18075): Platform assembly: /data/app/org.alljoyn.bus.unity-1.apk/assets/bin/Data/Managed/UnityEngine.dll (this message is harmless)
+01-17 14:09:23.531: D/Unity(18075): Loading /data/app/org.alljoyn.bus.unity-1.apk/assets/bin/Data/Managed/UnityEngine.dll into Unity Child Domain
+01-17 14:09:23.591: D/Unity(18075): Platform assembly: /data/app/org.alljoyn.bus.unity-1.apk/assets/bin/Data/Managed/Assembly-CSharp.dll (this message is harmless)
+01-17 14:09:23.596: D/Unity(18075): Loading /data/app/org.alljoyn.bus.unity-1.apk/assets/bin/Data/Managed/Assembly-CSharp.dll into Unity Child Domain
+01-17 14:09:23.596: D/Unity(18075): Platform assembly: /data/app/org.alljoyn.bus.unity-1.apk/assets/bin/Data/Managed/alljoyn_unity.dll (this message is harmless)
+01-17 14:09:23.596: D/Unity(18075): Loading /data/app/org.alljoyn.bus.unity-1.apk/assets/bin/Data/Managed/alljoyn_unity.dll into Unity Child Domain
+01-17 14:09:23.611: D/Unity(18075): - Completed reload, in  0.141 seconds
+01-17 14:09:23.626: D/Unity(18075): PlayerInitEngineGraphics OK
+01-17 14:09:23.626: D/Unity(18075): Found 13 native sensors
+01-17 14:09:23.626: D/Unity(18075): Sensor :        Accelerometer ( 1) ; 0.000599 / 0.01s ; K330 Acceleration Sensor / STMicroelectronics 
+01-17 14:09:23.631: D/Unity(18075): Sensor :        Accelerometer ( 1) ; 0.000599 / 0.01s ; K330 Acceleration Sensor / STMicroelectronics 
+01-17 14:09:24.291: D/dalvikvm(18075): Trying to load lib /data/app-lib/org.alljoyn.bus.unity-1/liballjoyn_c.so 0x42f4a8d8
+01-17 14:09:24.301: D/dalvikvm(18075): Added shared lib /data/app-lib/org.alljoyn.bus.unity-1/liballjoyn_c.so 0x42f4a8d8
+01-17 14:09:24.301: D/dalvikvm(18075): No JNI_OnLoad found in /data/app-lib/org.alljoyn.bus.unity-1/liballjoyn_c.so 0x42f4a8d8, skipping init
+01-17 14:09:24.521: I/Unity(18075): AllJoyn Library version: v3.4.5
+01-17 14:09:24.521: I/Unity(18075): UnityEngine.Debug:Internal_Log(Int32, String, Object)
+01-17 14:09:24.521: I/Unity(18075): UnityEngine.Debug:Log(Object)
+01-17 14:09:24.521: I/Unity(18075): AllJoynAgent:Awake() (at C:\Users\user\Documents\Unity Projects\alljoyn-android\core\alljoyn-3.4.5-rel\unity\samples\BasicServer\Assets\Scripts\AllJoynAgent.cs:41)
+01-17 14:09:24.521: I/Unity(18075):  
+01-17 14:09:24.521: I/Unity(18075): (Filename: C Line: 0)
+01-17 14:09:24.521: D/dalvikvm(18075): Trying to load lib /data/app-lib/org.alljoyn.bus.unity-1/liballjoyn_c.so 0x42f4a8d8
+01-17 14:09:24.521: D/dalvikvm(18075): Shared lib '/data/app-lib/org.alljoyn.bus.unity-1/liballjoyn_c.so' already loaded in same CL 0x42f4a8d8
+01-17 14:09:24.526: I/Unity(18075): AllJoyn Library buildInfo: AllJoyn Library v3.4.5 (Built Sat Dec 07 03:00:13 UTC 2013 by seabuild)
+01-17 14:09:24.526: I/Unity(18075): UnityEngine.Debug:Internal_Log(Int32, String, Object)
+01-17 14:09:24.526: I/Unity(18075): UnityEngine.Debug:Log(Object)
+01-17 14:09:24.526: I/Unity(18075): AllJoynAgent:Awake() (at C:\Users\user\Documents\Unity Projects\alljoyn-android\core\alljoyn-3.4.5-rel\unity\samples\BasicServer\Assets\Scripts\AllJoynAgent.cs:42)
+01-17 14:09:24.526: I/Unity(18075):  
+01-17 14:09:24.526: I/Unity(18075): (Filename: C Line: 0)
+01-17 14:09:24.556: D/Unity(18075): Sensor :        Accelerometer ( 1) ; 0.000599 / 0.01s ; K330 Acceleration Sensor / STMicroelectronics 
+01-17 14:09:24.561: I/Unity(18075): Starting up AllJoyn service and client
+01-17 14:09:24.561: I/Unity(18075): UnityEngine.Debug:Internal_Log(Int32, String, Object)
+01-17 14:09:24.561: I/Unity(18075): UnityEngine.Debug:Log(Object)
+01-17 14:09:24.561: I/Unity(18075): AllJoynServer:Start() (at C:\Users\user\Documents\Unity Projects\alljoyn-android\core\alljoyn-3.4.5-rel\unity\samples\BasicServer\Assets\Scripts\AllJoynServer.cs:35)
+01-17 14:09:24.561: I/Unity(18075):  
+01-17 14:09:24.561: I/Unity(18075): (Filename: C Line: 0)
+01-17 14:09:24.561: D/dalvikvm(18075): Trying to load lib /data/app-lib/org.alljoyn.bus.unity-1/liballjoyn_c.so 0x42f4a8d8
+01-17 14:09:24.566: D/dalvikvm(18075): Shared lib '/data/app-lib/org.alljoyn.bus.unity-1/liballjoyn_c.so' already loaded in same CL 0x42f4a8d8
+01-17 14:09:24.566: D/dalvikvm(18075): Trying to load lib /data/app-lib/org.alljoyn.bus.unity-1/liballjoyn_c.so 0x42f4a8d8
+01-17 14:09:24.566: D/dalvikvm(18075): Shared lib '/data/app-lib/org.alljoyn.bus.unity-1/liballjoyn_c.so' already loaded in same CL 0x42f4a8d8
+01-17 14:09:24.566: D/dalvikvm(18075): Trying to load lib /data/app-lib/org.alljoyn.bus.unity-1/liballjoyn_c.so 0x42f4a8d8
+01-17 14:09:24.566: D/dalvikvm(18075): Shared lib '/data/app-lib/org.alljoyn.bus.unity-1/liballjoyn_c.so' already loaded in same CL 0x42f4a8d8
+01-17 14:09:24.566: D/dalvikvm(18075): Trying to load lib /data/app-lib/org.alljoyn.bus.unity-1/liballjoyn_c.so 0x42f4a8d8
+01-17 14:09:24.571: D/dalvikvm(18075): Shared lib '/data/app-lib/org.alljoyn.bus.unity-1/liballjoyn_c.so' already loaded in same CL 0x42f4a8d8
+01-17 14:09:24.571: D/dalvikvm(18075): Trying to load lib /data/app-lib/org.alljoyn.bus.unity-1/liballjoyn_c.so 0x42f4a8d8
+01-17 14:09:24.571: D/dalvikvm(18075): Shared lib '/data/app-lib/org.alljoyn.bus.unity-1/liballjoyn_c.so' already loaded in same CL 0x42f4a8d8
+01-17 14:09:24.571: D/dalvikvm(18075): Trying to load lib /data/app-lib/org.alljoyn.bus.unity-1/liballjoyn_c.so 0x42f4a8d8
+01-17 14:09:24.571: D/dalvikvm(18075): Shared lib '/data/app-lib/org.alljoyn.bus.unity-1/liballjoyn_c.so' already loaded in same CL 0x42f4a8d8
+01-17 14:09:24.576: D/dalvikvm(18075): Trying to load lib /data/app-lib/org.alljoyn.bus.unity-1/liballjoyn_c.so 0x42f4a8d8
+01-17 14:09:24.576: D/dalvikvm(18075): Shared lib '/data/app-lib/org.alljoyn.bus.unity-1/liballjoyn_c.so' already loaded in same CL 0x42f4a8d8
+01-17 14:09:24.576: D/dalvikvm(18075): Trying to load lib /data/app-lib/org.alljoyn.bus.unity-1/liballjoyn_c.so 0x42f4a8d8
+01-17 14:09:24.576: D/dalvikvm(18075): Shared lib '/data/app-lib/org.alljoyn.bus.unity-1/liballjoyn_c.so' already loaded in same CL 0x42f4a8d8
+01-17 14:09:24.596: D/dalvikvm(18075): Trying to load lib /data/app-lib/org.alljoyn.bus.unity-1/liballjoyn_c.so 0x42f4a8d8
+01-17 14:09:24.596: D/dalvikvm(18075): Shared lib '/data/app-lib/org.alljoyn.bus.unity-1/liballjoyn_c.so' already loaded in same CL 0x42f4a8d8
+01-17 14:09:24.601: D/dalvikvm(18075): Trying to load lib /data/app-lib/org.alljoyn.bus.unity-1/liballjoyn_c.so 0x42f4a8d8
+01-17 14:09:24.601: D/dalvikvm(18075): Shared lib '/data/app-lib/org.alljoyn.bus.unity-1/liballjoyn_c.so' already loaded in same CL 0x42f4a8d8
+01-17 14:09:24.636: I/Unity(18075): Server Interface Created.
+01-17 14:09:24.636: I/Unity(18075): UnityEngine.Debug:Internal_Log(Int32, String, Object)
+01-17 14:09:24.636: I/Unity(18075): UnityEngine.Debug:Log(Object)
+01-17 14:09:24.636: I/Unity(18075): basic_server.BasicServer:.ctor() (at C:\Users\user\Documents\Unity Projects\alljoyn-android\core\alljoyn-3.4.5-rel\unity\samples\BasicServer\Assets\Scripts\BasicServer.cs:143)
+01-17 14:09:24.636: I/Unity(18075): AllJoynServer:Start() (at C:\Users\user\Documents\Unity Projects\alljoyn-android\core\alljoyn-3.4.5-rel\unity\samples\BasicServer\Assets\Scripts\AllJoynServer.cs:36)
+01-17 14:09:24.636: I/Unity(18075):  
+01-17 14:09:24.636: I/Unity(18075): (Filename: C Line: 0)
+01-17 14:09:24.636: D/dalvikvm(18075): Trying to load lib /data/app-lib/org.alljoyn.bus.unity-1/liballjoyn_c.so 0x42f4a8d8
+01-17 14:09:24.636: D/dalvikvm(18075): Shared lib '/data/app-lib/org.alljoyn.bus.unity-1/liballjoyn_c.so' already loaded in same CL 0x42f4a8d8
+01-17 14:09:24.641: D/dalvikvm(18075): Trying to load lib /data/app-lib/org.alljoyn.bus.unity-1/liballjoyn_c.so 0x42f4a8d8
+01-17 14:09:24.641: D/dalvikvm(18075): Shared lib '/data/app-lib/org.alljoyn.bus.unity-1/liballjoyn_c.so' already loaded in same CL 0x42f4a8d8
+01-17 14:09:24.656: I/Unity(18075): Server BusListener Registered.
+01-17 14:09:24.656: I/Unity(18075): UnityEngine.Debug:Internal_Log(Int32, String, Object)
+01-17 14:09:24.656: I/Unity(18075): UnityEngine.Debug:Log(Object)
+01-17 14:09:24.656: I/Unity(18075): basic_server.BasicServer:.ctor() (at C:\Users\user\Documents\Unity Projects\alljoyn-android\core\alljoyn-3.4.5-rel\unity\samples\BasicServer\Assets\Scripts\BasicServer.cs:157)
+01-17 14:09:24.656: I/Unity(18075): AllJoynServer:Start() (at C:\Users\user\Documents\Unity Projects\alljoyn-android\core\alljoyn-3.4.5-rel\unity\samples\BasicServer\Assets\Scripts\AllJoynServer.cs:36)
+01-17 14:09:24.656: I/Unity(18075):  
+01-17 14:09:24.656: I/Unity(18075): (Filename: C Line: 0)
+01-17 14:09:24.661: D/dalvikvm(18075): Trying to load lib /data/app-lib/org.alljoyn.bus.unity-1/liballjoyn_c.so 0x42f4a8d8
+01-17 14:09:24.661: D/dalvikvm(18075): Shared lib '/data/app-lib/org.alljoyn.bus.unity-1/liballjoyn_c.so' already loaded in same CL 0x42f4a8d8
+01-17 14:09:24.666: D/dalvikvm(18075): Trying to load lib /data/app-lib/org.alljoyn.bus.unity-1/liballjoyn_c.so 0x42f4a8d8
+01-17 14:09:24.666: D/dalvikvm(18075): Shared lib '/data/app-lib/org.alljoyn.bus.unity-1/liballjoyn_c.so' already loaded in same CL 0x42f4a8d8
+01-17 14:09:24.666: D/dalvikvm(18075): Trying to load lib /data/app-lib/org.alljoyn.bus.unity-1/liballjoyn_c.so 0x42f4a8d8
+01-17 14:09:24.666: D/dalvikvm(18075): Shared lib '/data/app-lib/org.alljoyn.bus.unity-1/liballjoyn_c.so' already loaded in same CL 0x42f4a8d8
+01-17 14:09:24.671: D/dalvikvm(18075): Trying to load lib /data/app-lib/org.alljoyn.bus.unity-1/liballjoyn_c.so 0x42f4a8d8
+01-17 14:09:24.671: D/dalvikvm(18075): Shared lib '/data/app-lib/org.alljoyn.bus.unity-1/liballjoyn_c.so' already loaded in same CL 0x42f4a8d8
+01-17 14:09:24.676: D/dalvikvm(18075): Trying to load lib /data/app-lib/org.alljoyn.bus.unity-1/liballjoyn_c.so 0x42f4a8d8
+01-17 14:09:24.676: D/dalvikvm(18075): Shared lib '/data/app-lib/org.alljoyn.bus.unity-1/liballjoyn_c.so' already loaded in same CL 0x42f4a8d8
+01-17 14:09:24.701: I/Unity(18075): Server BusAttachment started.
+01-17 14:09:24.701: I/Unity(18075): UnityEngine.Debug:Internal_Log(Int32, String, Object)
+01-17 14:09:24.701: I/Unity(18075): UnityEngine.Debug:Log(Object)
+01-17 14:09:24.701: I/Unity(18075): basic_server.BasicServer:.ctor() (at C:\Users\user\Documents\Unity Projects\alljoyn-android\core\alljoyn-3.4.5-rel\unity\samples\BasicServer\Assets\Scripts\BasicServer.cs:168)
+01-17 14:09:24.701: I/Unity(18075): AllJoynServer:Start() (at C:\Users\user\Documents\Unity Projects\alljoyn-android\core\alljoyn-3.4.5-rel\unity\samples\BasicServer\Assets\Scripts\AllJoynServer.cs:36)
+01-17 14:09:24.701: I/Unity(18075):  
+01-17 14:09:24.701: I/Unity(18075): (Filename: C Line: 0)
+01-17 14:09:24.701: D/dalvikvm(18075): Trying to load lib /data/app-lib/org.alljoyn.bus.unity-1/liballjoyn_c.so 0x42f4a8d8
+01-17 14:09:24.701: D/dalvikvm(18075): Shared lib '/data/app-lib/org.alljoyn.bus.unity-1/liballjoyn_c.so' already loaded in same CL 0x42f4a8d8
+01-17 14:09:24.701: D/dalvikvm(18075): Trying to load lib /data/app-lib/org.alljoyn.bus.unity-1/liballjoyn_c.so 0x42f4a8d8
+01-17 14:09:24.701: D/dalvikvm(18075): Shared lib '/data/app-lib/org.alljoyn.bus.unity-1/liballjoyn_c.so' already loaded in same CL 0x42f4a8d8
+01-17 14:09:24.706: D/dalvikvm(18075): Trying to load lib /data/app-lib/org.alljoyn.bus.unity-1/liballjoyn_c.so 0x42f4a8d8
+01-17 14:09:24.706: D/dalvikvm(18075): Shared lib '/data/app-lib/org.alljoyn.bus.unity-1/liballjoyn_c.so' already loaded in same CL 0x42f4a8d8
+01-17 14:09:24.726: I/Unity(18075): Server ListenerRegistered: busAttachment=AllJoynUnity.AllJoyn+BusAttachment
+01-17 14:09:24.726: I/Unity(18075):  
+01-17 14:09:24.726: I/Unity(18075): (Filename: /Applications/buildAgent/work/d3d49558e4d408f4/artifacts/AndroidManagedGenerated/UnityEngineDebug.cpp Line: 53)
+01-17 14:09:24.756: I/Unity(18075): BusAttchement.Connect(null:) SUCCEDED.
+01-17 14:09:24.756: I/Unity(18075): UnityEngine.Debug:Internal_Log(Int32, String, Object)
+01-17 14:09:24.756: I/Unity(18075): UnityEngine.Debug:Log(Object)
+01-17 14:09:24.756: I/Unity(18075): basic_server.BasicServer:.ctor() (at C:\Users\user\Documents\Unity Projects\alljoyn-android\core\alljoyn-3.4.5-rel\unity\samples\BasicServer\Assets\Scripts\BasicServer.cs:175)
+01-17 14:09:24.756: I/Unity(18075): AllJoynServer:Start() (at C:\Users\user\Documents\Unity Projects\alljoyn-android\core\alljoyn-3.4.5-rel\unity\samples\BasicServer\Assets\Scripts\AllJoynServer.cs:36)
+01-17 14:09:24.756: I/Unity(18075):  
+01-17 14:09:24.756: I/Unity(18075): (Filename: C Line: 0)
+01-17 14:09:24.761: D/dalvikvm(18075): Trying to load lib /data/app-lib/org.alljoyn.bus.unity-1/liballjoyn_c.so 0x42f4a8d8
+01-17 14:09:24.761: D/dalvikvm(18075): Shared lib '/data/app-lib/org.alljoyn.bus.unity-1/liballjoyn_c.so' already loaded in same CL 0x42f4a8d8
+01-17 14:09:24.761: D/dalvikvm(18075): Trying to load lib /data/app-lib/org.alljoyn.bus.unity-1/liballjoyn_c.so 0x42f4a8d8
+01-17 14:09:24.761: D/dalvikvm(18075): Shared lib '/data/app-lib/org.alljoyn.bus.unity-1/liballjoyn_c.so' already loaded in same CL 0x42f4a8d8
+01-17 14:09:24.771: I/Unity(18075): Server ObjectRegistered has been called
+01-17 14:09:24.771: I/Unity(18075):  
+01-17 14:09:24.771: I/Unity(18075): (Filename: /Applications/buildAgent/work/d3d49558e4d408f4/artifacts/AndroidManagedGenerated/UnityEngineDebug.cpp Line: 53)
+01-17 14:09:24.776: E/Unity(18075): Unable to find 'alljoyn_c'
+01-17 14:09:24.776: E/Unity(18075):  
+01-17 14:09:24.776: E/Unity(18075): (Filename: PlatformDependent/AndroidPlayer/DVMCalls.cpp Line: 168)
+01-17 14:09:24.781: D/dalvikvm(18075): threadid=16: thread exiting, not yet detached (count=0)
+01-17 14:09:24.781: D/dalvikvm(18075): threadid=16: thread exiting, not yet detached (count=1)
+01-17 14:09:24.781: E/dalvikvm(18075): threadid=16: native thread exited without detaching
+01-17 14:09:24.781: E/dalvikvm(18075): VM aborting
+01-17 14:09:24.781: A/libc(18075): Fatal signal 11 (SIGSEGV) at 0xdeadd00d (code=1), thread 18230 (GC_start_routin)
+01-17 14:09:24.786: I/Unity(18075): Server NameOwnerChanged: name=org.alljoyn.Bus.sample, oldOwner=, newOwner=:cZISBVWd.2
+01-17 14:09:24.786: I/Unity(18075):  
+01-17 14:09:24.786: I/Unity(18075): (Filename: /Applications/buildAgent/work/d3d49558e4d408f4/artifacts/AndroidManagedGenerated/UnityEngineDebug.cpp Line: 53)
+01-17 14:09:24.791: I/Unity(18075): Completed BasicService Constructor
+01-17 14:09:24.791: I/Unity(18075): UnityEngine.Debug:Internal_Log(Int32, String, Object)
+01-17 14:09:24.791: I/Unity(18075): UnityEngine.Debug:Log(Object)
+01-17 14:09:24.791: I/Unity(18075): basic_server.BasicServer:.ctor() (at C:\Users\user\Documents\Unity Projects\alljoyn-android\core\alljoyn-3.4.5-rel\unity\samples\BasicServer\Assets\Scripts\BasicServer.cs:227)
+01-17 14:09:24.791: I/Unity(18075): AllJoynServer:Start() (at C:\Users\user\Documents\Unity Projects\alljoyn-android\core\alljoyn-3.4.5-rel\unity\samples\BasicServer\Assets\Scripts\AllJoynServer.cs:36)
+01-17 14:09:24.791: I/Unity(18075):  
+01-17 14:09:24.791: I/Unity(18075): (Filename: C Line: 0)

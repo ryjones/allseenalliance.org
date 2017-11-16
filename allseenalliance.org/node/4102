@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<!--[if IEMobile 7]><html class="iem7" lang="en" dir="ltr"><![endif]-->
+<!--[if lte IE 6]><html class="lt-ie9 lt-ie8 lt-ie7" lang="en" dir="ltr"><![endif]-->
+<!--[if (IE 7)&(!IEMobile)]><html class="lt-ie9 lt-ie8" lang="en" dir="ltr"><![endif]-->
+<!--[if IE 8]><html class="lt-ie9" lang="en" dir="ltr"><![endif]-->
+<!--[if (gte IE 9)|(gt IEMobile 7)]><!--><html lang="en" dir="ltr"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/terms/"
+  xmlns:foaf="http://xmlns.com/foaf/0.1/"
+  xmlns:og="http://ogp.me/ns#"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:sioc="http://rdfs.org/sioc/ns#"
+  xmlns:sioct="http://rdfs.org/sioc/types#"
+  xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema#"><!--<![endif]-->
+<head>
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
+<meta charset="utf-8" />
+<link rel="shortlink" href="/node/4102" />
+<link rel="shortcut icon" href="https://identity.allseenalliance.org/sites/all/themes/at_alljoyn/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="/developers/learn/core/system-description/advertisement-discovery" />
+<meta name="viewport" content="width=device-width" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta property="og:image" content="https://identity.allseenalliance.org/sites/all/themes/at_alljoyn/images/allseen-logo.png"/>
+<meta name="google-translate-customization" content="48b015afeed82101-ecae534af0f48252-ga0b6470a6208b2f5-f"></meta>
+<meta name="MobileOptimized" content="width">
+<meta name="HandheldFriendly" content="true">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Advertisement and Discovery - AllSeen Alliance</title>
+<link type="text/css" rel="stylesheet" href="https://identity.allseenalliance.org/sites/default/files/css/css_xE-rWrJf-fncB6ztZfd2huxqgxu4WO-qwma6Xer30m4.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://identity.allseenalliance.org/sites/default/files/css/css_7Vcu6qIuRTO46aDOBZp7_mtksGdhCHSe0pjTO2YbGng.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://identity.allseenalliance.org/sites/default/files/css/css_J2n1xiaSuececTK0yC3DT_Msm4PrkPwHizxr0oXGGoo.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://identity.allseenalliance.org/sites/default/files/css/css_oxEtvjMfj8c8EEJJ-1WXLGGntCnC0UvrbYsq0Gw4m4Q.css" media="screen" />
+<link type="text/css" rel="stylesheet" href="https://identity.allseenalliance.org/sites/default/files/css/css_9EusV9fcbkpqBeTGdJPl7ru65jm-3ngbTi_D6YRR_5A.css" media="only screen" />
+<script src="https://identity.allseenalliance.org/sites/default/files/js/js_UWQINlriydSoeSiGQxToOUdv493zEa7dpsXC1OtYlZU.js"></script>
+<script src="https://identity.allseenalliance.org/sites/default/files/js/js_COMsmDyrY9mzVU28X2uGvF4Ba3vd5eTo5xEO7dvCUZM.js"></script>
+<script src="https://identity.allseenalliance.org/sites/default/files/js/js_i8oyg1R4On_HyzPiZ5zC3V-DxehjGAcpKwNao5s0s5I.js"></script>
+<script>hljs.configure({languages:[]}); hljs.initHighlightingOnLoad();</script>
+<script src="https://identity.allseenalliance.org/sites/default/files/js/js_aG0kZAhSHT6G3QC-d9Wwx9gQp5d0em8X6FmMYZ1e5h4.js"></script>
+<script>var _gaq = _gaq || [];_gaq.push(["_setAccount", "UA-"]);_gaq.push(["_trackPageview"]);(function() {var ga = document.createElement("script");ga.type = "text/javascript";ga.async = true;ga.src = ("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/ga.js";var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(ga, s);})();</script>
+<script src="https://identity.allseenalliance.org/sites/default/files/js/js_R35PAK16384fXh7f2OqvXVkbbrwr8ABLrDpR1zTluo0.js"></script>
+<script src="https://identity.allseenalliance.org/sites/default/files/js/js_DKtRHJS-jz_cHgf23K7wnIWphCanZ_Rz74Aw-DKQyFs.js"></script>
+<script>jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"at_alljoyn","theme_token":"3W4tNF0TN_UV_SyVzMlGIPrGRslVWNWoT8Gytfcrrak","js":{"misc\/jquery.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/all\/modules\/contrib\/comment_notify\/comment_notify.js":1,"sites\/all\/modules\/alljoyn\/custom_modules\/allseen_docs\/allseen_docs_highlight\/highlightjs\/highlight.min.js":1,"0":1,"sites\/all\/libraries\/colorbox\/jquery.colorbox-min.js":1,"sites\/all\/modules\/contrib\/colorbox\/js\/colorbox.js":1,"sites\/all\/modules\/contrib\/colorbox\/styles\/default\/colorbox_style.js":1,"sites\/all\/modules\/contrib\/colorbox\/js\/colorbox_load.js":1,"sites\/all\/modules\/contrib\/colorbox\/js\/colorbox_inline.js":1,"sites\/all\/modules\/contrib\/panels\/js\/panels.js":1,"sites\/all\/modules\/contrib\/quote\/quote.js":1,"sites\/all\/modules\/contrib\/views_slideshow\/js\/views_slideshow.js":1,"sites\/all\/modules\/contrib\/google_analytics\/googleanalytics.js":1,"1":1,"sites\/all\/modules\/alljoyn\/custom_modules\/allseen_docs\/allseen_docs_nav\/allseen-docs-nav.js":1,"sites\/all\/themes\/at_alljoyn\/scripts\/alljoyn.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"sites\/all\/modules\/contrib\/comment_notify\/comment_notify.css":1,"sites\/all\/modules\/ldap\/ldap_user\/ldap_user.css":1,"modules\/book\/book.css":1,"modules\/comment\/comment.css":1,"sites\/all\/modules\/contrib\/date\/date_api\/date.css":1,"sites\/all\/modules\/contrib\/date\/date_popup\/themes\/datepicker.1.7.css":1,"modules\/field\/theme\/field.css":1,"sites\/all\/modules\/contrib\/mollom\/mollom.css":1,"modules\/node\/node.css":1,"modules\/user\/user.css":1,"modules\/forum\/forum.css":1,"sites\/all\/modules\/contrib\/views\/css\/views.css":1,"sites\/all\/modules\/alljoyn\/custom_modules\/allseen_docs\/allseen_docs_highlight\/highlightjs\/default.min.css":1,"sites\/all\/modules\/contrib\/colorbox\/styles\/default\/colorbox_style.css":1,"sites\/all\/modules\/contrib\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/ldap\/ldap_servers\/ldap_servers.admin.css":1,"sites\/all\/modules\/contrib\/panels\/css\/panels.css":1,"sites\/all\/modules\/contrib\/quote\/quote.css":1,"sites\/all\/modules\/contrib\/views_slideshow\/views_slideshow.css":1,"sites\/all\/modules\/alljoyn\/custom_modules\/allseen_docs\/allseen_docs_nav\/allseen-docs-nav.css":1,"sites\/all\/modules\/alljoyn\/features\/content_type_developer_document\/content-type-developer-document.css":1,"sites\/all\/themes\/adaptivetheme\/at_core\/css\/at.layout.css":1,"sites\/all\/themes\/at_alljoyn\/css\/fonts.css":1,"sites\/all\/themes\/at_alljoyn\/css\/globals.css":1,"sites\/all\/themes\/at_alljoyn\/css\/jcarousel-alljoyn.css":1,"public:\/\/adaptivetheme\/at_alljoyn_files_7dbe1ef5\/at_alljoyn.responsive.layout.css":1,"public:\/\/adaptivetheme\/at_alljoyn_files_7dbe1ef5\/at_alljoyn.responsive.styles.css":1}},"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":true,"mobiledevicewidth":"480px"},"jcarousel":{"ajaxPath":"\/jcarousel\/ajax\/views"},"quote_nest":2,"googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls|xml|z|zip"}});</script>
+<!--[if lt IE 9]>
+<script src="https://identity.allseenalliance.org/sites/all/themes/adaptivetheme/at_core/scripts/respond.js?nwgww1"></script>
+<script src="https://identity.allseenalliance.org/sites/all/themes/adaptivetheme/at_core/scripts/html5.js?nwgww1"></script>
+<script src="https://identity.allseenalliance.org/sites/all/themes/adaptivetheme/at_core/scripts/PIE.htc?nwgww1"></script>
+<script src="https://identity.allseenalliance.org/sites/all/themes/adaptivetheme/at_core/scripts/selectivizr.js?nwgww1"></script>
+<![endif]-->
+</head>
+<body class="html not-front not-logged-in one-sidebar sidebar-first page-node page-node- page-node-4102 node-type-developer-document site-name-hidden with-subnav page-developers-learn-core-system-description-advertisement-discovery section-developers">
+  <div id="body-top">
+      </div>
+  <div id="skip-link">
+    <a href="#main-content" class="element-invisible element-focusable">Skip to main content</a>
+  </div>
+  <div class="region region-page-top"><div class="region-inner clearfix"><div id="fb-root"></div><script type="text/javascript">
+     window.fbAsyncInit = function() {
+       FB.init({
+         appId: "492099574180957",
+         status: true,
+         cookie: true,
+         xfbml: true,
+         oauth : true,
+         channelUrl: "https:\/\/identity.allseenalliance.org\/service_links\/channel"
+         });
+
+         FB.Event.subscribe('edge.create', function(href, widget) {
+    _gaq.push(['_trackEvent', 'facebook', 'Facebook like', href]);
+   });FB.Event.subscribe('edge.remove', function(href, widget) {
+    _gaq.push(['_trackEvent', 'facebook', 'Facebook unlike', href]);
+   });
+       };
+       (function(d){
+     var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement('script'); js.id = id; js.async = true;
+     js.src = '//connect.facebook.net/en_US/all.js';
+     ref.parentNode.insertBefore(js, ref);
+   }(document));
+    </script></div></div>  
+<div id="wrap">
+
+  <div id="lfcollabprojects-header">
+    <div class="gray-diagonal">
+      <div class="header-inner">
+        <a id="lfcollabprojects-logo" href="http://collabprojects.linuxfoundation.org">Linux Foundation Collaborative Projects</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="page" class="container page">
+
+    
+    <header id="header" class="clearfix" role="banner">
+
+      <div class="region region-header"><div class="region-inner clearfix"><div id="block-block-19" class="block block-block" ><div class="block-inner clearfix">        <div class="block-content content"><br /><br /><br /><br /><br /><br /><br /></div></div></div></div></div>
+              <div id="branding" class="branding-elements clearfix">
+
+                      <div id="logo"><a href="/" title="Home page"><img class="site-logo" typeof="foaf:Image" src="https://identity.allseenalliance.org/sites/default/files/logo.png" alt="AllSeen Alliance" /></a></div>
+          
+                      <hgroup id="name-and-slogan" class="element-invisible">
+                              <h1 id="site-name" class="element-invisible"><a href="/" title="Home page">AllSeen Alliance</a></h1>
+                                        </hgroup>
+          
+          <!--main menu-->
+          <a id="main-menu-toggle" href="#">Site Sections</a>
+  		  		  		
+        </div>
+      
+    </header>
+
+
+    <div id="columns" class="clearfix">
+      <div id="sub-menu-bar">
+        <div class="region region-sub-menu-bar"><div class="region-inner clearfix"><div id="block-menu-block-allseen-docs-nav" class="block block-menu-block"  role="navigation"><div class="block-inner clearfix">        <div class="block-content content"><div class="menu-block-wrapper menu-block-allseen-docs-nav menu-name-main-menu parent-mlid-0 menu-level-2">
+  <ul class="menu clearfix"><li class="first has-children active-trail menu-mlid-2504 menu-item-2504"><a href="/developers/learn" class="active-trail">Learn</a></li><li class="has-children menu-mlid-2539 menu-item-2539"><a href="/developers/download">Download</a></li><li class="has-children menu-mlid-2541 menu-item-2541"><a href="/developers/develop">Develop</a></li><li class="last has-children menu-mlid-2636 menu-item-2636"><a href="/developers/contribute">Contribute</a></li></ul></div>
+</div></div></div><section id="block-menu-block-allseen-docs-responsive-nav" class="block block-menu-block"  role="navigation"><div class="block-inner clearfix">        <div class="block-title-wrapper">
+      <h2 class="block-title">Menu</h2>
+    </div>
+      <div class="block-content content"><div class="menu-block-wrapper menu-block-allseen-docs-responsive-nav menu-name-main-menu parent-mlid-0 menu-level-1">
+  <ul class="menu clearfix"><li class="first menu-parent menu-mlid-1994 menu-item-1994"><a href="/about">About</a><ul class="menu clearfix"><li class="first menu-mlid-2486 menu-item-2486"><a href="/about/why-allseen">Why AllSeen</a></li><li class="menu-mlid-2464 menu-item-2464"><a href="/about/get-involved">Get Involved</a></li><li class="collapsed menu-mlid-2446 menu-item-2446"><a href="/about/governance/ip-policy">IP Policy</a></li><li class="menu-mlid-2491 menu-item-2491"><a href="/about/working-groups">Working Groups</a></li><li class="menu-mlid-2286 menu-item-2286"><a href="/about/members">Member Companies</a></li><li class="menu-mlid-2285 menu-item-2285"><a href="/about/join-allseen-alliance">Join The AllSeen Alliance</a></li><li class="collapsed menu-mlid-2447 menu-item-2447"><a href="/about/governance">Governance</a></li><li class="menu-mlid-501 menu-item-501"><a href="/about/faqs">FAQs</a></li><li class="menu-mlid-2322 menu-item-2322"><a href="/about/contact">Contact Us</a></li><li class="menu-mlid-2282 menu-item-2282"><a href="/allseen/what-is-allseen-alliance">What is AllSeen Alliance?</a></li><li class="last menu-mlid-2490 menu-item-2490"><a href="https://wiki.allseenalliance.org/members_private/start?do=login&amp;sectok=34485854163fe6a0be457198139e2c84" title="Members Area" id="members_area" name="Members Area" rel="nofollow" target="_blank">Members Area</a></li></ul></li><li class="menu-parent active-trail menu-mlid-2503 menu-item-2503"><a href="/developers" class="active-trail">Developers</a><ul class="menu clearfix"><li class="first menu-parent has-children active-trail menu-mlid-2504 menu-item-2504"><a href="/developers/learn" class="active-trail active-trail">Learn</a><ul class="menu clearfix"><li class="first menu-mlid-2505 menu-item-2505"><a href="/developers/learn/use-cases">Use Cases</a></li><li class="menu-mlid-2506 menu-item-2506"><a href="/developers/learn/architecture">Architecture</a></li><li class="menu-parent active-trail menu-mlid-2507 menu-item-2507"><a href="/developers/learn/core" class="active-trail">Core Framework</a><ul class="menu clearfix"><li class="first menu-parent menu-mlid-2508 menu-item-2508"><a href="/developers/learn/core/about-announcement">About Announcement</a><ul class="menu clearfix"><li class="first menu-mlid-2509 menu-item-2509"><a href="/developers/learn/core/about-announcement/interface">Interface</a></li><li class="last menu-mlid-2510 menu-item-2510"><a href="/developers/learn/core/about-announcement/interface-14-02">Interface 14.02</a></li></ul></li><li class="menu-mlid-2511 menu-item-2511"><a href="/developers/learn/core/events-and-actions">Events and Actions</a></li><li class="menu-mlid-2992 menu-item-2992"><a href="/developers/learn/core/rn_config">Routing Node Configuration</a></li><li class="menu-mlid-2512 menu-item-2512"><a href="/developers/learn/core/standard-core">Standard Core</a></li><li class="menu-mlid-2513 menu-item-2513"><a href="/developers/learn/core/thin-core">Thin Core</a></li><li class="menu-parent active-trail menu-mlid-2514 menu-item-2514"><a href="/developers/learn/core/system-description" class="active-trail">System Description</a><ul class="menu clearfix"><li class="first menu-mlid-2515 menu-item-2515"><a href="/developers/learn/core/system-description/system-architecture">System Architecture</a></li><li class="active-trail active menu-mlid-2516 menu-item-2516"><a href="/developers/learn/core/system-description/advertisement-discovery" class="active-trail active">Advertisement and Discovery</a></li><li class="menu-mlid-2645 menu-item-2645"><a href="/developers/learn/core/system-description/alljoyn-transport">AllJoyn Transport</a></li><li class="menu-mlid-2517 menu-item-2517"><a href="/developers/learn/core/system-description/data-exchange">Data Exchange</a></li><li class="menu-mlid-2518 menu-item-2518"><a href="/developers/learn/core/system-description/alljoyn-session">AllJoyn Session</a></li><li class="menu-mlid-2519 menu-item-2519"><a href="/developers/learn/core/system-description/sessionless-signal">Sessionless Signal</a></li><li class="menu-mlid-2520 menu-item-2520"><a href="/developers/learn/core/system-description/alljoyn-security">AllJoyn Security</a></li><li class="menu-mlid-2521 menu-item-2521"><a href="/developers/learn/core/system-description/thin-apps">Thin Apps</a></li><li class="last menu-mlid-2522 menu-item-2522"><a href="/developers/learn/core/system-description/events-actions">Events and Actions</a></li></ul></li><li class="last menu-parent menu-mlid-2937 menu-item-2937"><a href="/developers/learn/core/security2_0">Security 2.0</a><ul class="menu clearfix"><li class="first last menu-mlid-2938 menu-item-2938"><a href="/developers/learn/core/security2_0/hld">High-Level Design</a></li></ul></li></ul></li><li class="menu-parent menu-mlid-2523 menu-item-2523"><a href="/developers/learn/base-services">Base Services</a><ul class="menu clearfix"><li class="first menu-parent menu-mlid-2524 menu-item-2524"><a href="/developers/learn/base-services/onboarding">Onboarding</a><ul class="menu clearfix"><li class="first menu-mlid-2525 menu-item-2525"><a href="/developers/learn/base-services/onboarding/interface">Interface</a></li><li class="last menu-mlid-2526 menu-item-2526"><a href="/developers/learn/base-services/onboarding/interface-14-02">Interface 14.02</a></li></ul></li><li class="menu-parent menu-mlid-2527 menu-item-2527"><a href="/developers/learn/base-services/configuration">Configuration</a><ul class="menu clearfix"><li class="first menu-mlid-2528 menu-item-2528"><a href="/developers/learn/base-services/configuration/interface">Interface</a></li><li class="last menu-mlid-2529 menu-item-2529"><a href="/developers/learn/base-services/configuration/interface-14-02">Interface 14.02</a></li></ul></li><li class="menu-parent menu-mlid-2530 menu-item-2530"><a href="/developers/learn/base-services/notification">Notification</a><ul class="menu clearfix"><li class="first menu-mlid-2531 menu-item-2531"><a href="/developers/learn/base-services/notification/interface">Interface</a></li><li class="last menu-mlid-2532 menu-item-2532"><a href="/developers/learn/base-services/notification/interface-14-02">Interface 14.02</a></li></ul></li><li class="menu-parent menu-mlid-2533 menu-item-2533"><a href="/developers/learn/base-services/controlpanel">ControlPanel</a><ul class="menu clearfix"><li class="first menu-mlid-2534 menu-item-2534"><a href="/developers/learn/base-services/controlpanel/interface">Interface</a></li><li class="last menu-mlid-2535 menu-item-2535"><a href="/developers/learn/base-services/controlpanel/interface-14-02">Interface 14.02</a></li></ul></li><li class="last menu-parent menu-mlid-2536 menu-item-2536"><a href="/developers/learn/base-services/audiostreaming">Audio Streaming</a><ul class="menu clearfix"><li class="first last menu-mlid-2537 menu-item-2537"><a href="/developers/learn/base-services/audiostreaming/interface">Interface</a></li></ul></li></ul></li><li class="last menu-mlid-2538 menu-item-2538"><a href="/developers/learn/glossary">Glossary</a></li></ul></li><li class="menu-parent has-children menu-mlid-2539 menu-item-2539"><a href="/developers/download">Download</a><ul class="menu clearfix"><li class="first last menu-mlid-2540 menu-item-2540"><a href="/developers/download/supported-platforms">Supported Platforms</a></li></ul></li><li class="menu-parent has-children menu-mlid-2541 menu-item-2541"><a href="/developers/develop">Develop</a><ul class="menu clearfix"><li class="first menu-parent menu-mlid-2542 menu-item-2542"><a href="/developers/develop/building">Building</a><ul class="menu clearfix"><li class="first menu-parent menu-mlid-2543 menu-item-2543"><a href="/developers/develop/building/android">Android</a><ul class="menu clearfix"><li class="first last menu-mlid-2544 menu-item-2544"><a href="/developers/develop/building/android/build-source">Build Source</a></li></ul></li><li class="menu-parent menu-mlid-2545 menu-item-2545"><a href="/developers/develop/building/linux">Linux</a><ul class="menu clearfix"><li class="first menu-mlid-2546 menu-item-2546"><a href="/developers/develop/building/linux/openwrt">OpenWRT</a></li><li class="last menu-mlid-2547 menu-item-2547"><a href="/developers/develop/building/linux/build-source">Build Source</a></li></ul></li><li class="menu-parent menu-mlid-2548 menu-item-2548"><a href="/developers/develop/building/ios-osx">iOS/OS X</a><ul class="menu clearfix"><li class="first last menu-mlid-2549 menu-item-2549"><a href="/developers/develop/building/ios-osx/build-source">Build Source</a></li></ul></li><li class="menu-parent menu-mlid-2550 menu-item-2550"><a href="/developers/develop/building/windows">Windows</a><ul class="menu clearfix"><li class="first last menu-mlid-2551 menu-item-2551"><a href="/developers/develop/building/windows/build-source">Build Source</a></li></ul></li><li class="menu-mlid-2552 menu-item-2552"><a href="/developers/develop/building/thin-linux">Thin - Linux</a></li><li class="menu-mlid-2553 menu-item-2553"><a href="/developers/develop/building/thin-windows">Thin - Windows</a></li><li class="last menu-mlid-2993 menu-item-2993"><a href="/developers/develop/building/alljoyn-js">AllJoyn.js</a></li></ul></li><li class="menu-parent menu-mlid-2554 menu-item-2554"><a href="/developers/develop/run-sample-apps">Running Samples</a><ul class="menu clearfix"><li class="first menu-parent menu-mlid-2555 menu-item-2555"><a href="/developers/develop/run-sample-apps/basic">Basic</a><ul class="menu clearfix"><li class="first menu-mlid-2556 menu-item-2556"><a href="/developers/develop/run-sample-apps/basic/android">Android</a></li><li class="menu-mlid-2557 menu-item-2557"><a href="/developers/develop/run-sample-apps/basic/linux">Linux</a></li><li class="menu-mlid-2558 menu-item-2558"><a href="/developers/develop/run-sample-apps/basic/ios-osx">iOS/OS X</a></li><li class="menu-mlid-2559 menu-item-2559"><a href="/developers/develop/run-sample-apps/basic/windows">Windows</a></li><li class="menu-mlid-2560 menu-item-2560"><a href="/developers/develop/run-sample-apps/basic/thin-linux">Thin - Linux</a></li><li class="last menu-mlid-2561 menu-item-2561"><a href="/developers/develop/run-sample-apps/basic/thin-windows">Thin - Windows</a></li></ul></li><li class="menu-parent menu-mlid-2562 menu-item-2562"><a href="/developers/develop/run-sample-apps/chat">Chat</a><ul class="menu clearfix"><li class="first menu-mlid-2563 menu-item-2563"><a href="/developers/develop/run-sample-apps/chat/android">Android</a></li><li class="menu-mlid-2564 menu-item-2564"><a href="/developers/develop/run-sample-apps/chat/linux">Linux</a></li><li class="menu-mlid-2565 menu-item-2565"><a href="/developers/develop/run-sample-apps/chat/ios-osx">iOS/OS X</a></li><li class="menu-mlid-2566 menu-item-2566"><a href="/developers/develop/run-sample-apps/chat/windows">Windows</a></li><li class="last menu-mlid-2567 menu-item-2567"><a href="/developers/develop/run-sample-apps/chat/thin-linux">Thin - Linux</a></li></ul></li><li class="menu-parent menu-mlid-2568 menu-item-2568"><a href="/developers/develop/run-sample-apps/about">About</a><ul class="menu clearfix"><li class="first menu-mlid-2569 menu-item-2569"><a href="/developers/develop/run-sample-apps/about/linux">Linux</a></li><li class="menu-mlid-2570 menu-item-2570"><a href="/developers/develop/run-sample-apps/about/ios-osx">iOS/OS X</a></li><li class="last menu-mlid-2646 menu-item-2646"><a href="/developers/develop/run-sample-apps/about/windows">Windows</a></li></ul></li><li class="menu-mlid-2934 menu-item-2934"><a href="/developers/develop/run-sample-apps/observer">Observer</a></li><li class="menu-parent menu-mlid-2571 menu-item-2571"><a href="/developers/develop/run-sample-apps/config">Config</a><ul class="menu clearfix"><li class="first menu-mlid-2572 menu-item-2572"><a href="/developers/develop/run-sample-apps/config/android">Android</a></li><li class="menu-mlid-2573 menu-item-2573"><a href="/developers/develop/run-sample-apps/config/linux">Linux</a></li><li class="menu-mlid-2574 menu-item-2574"><a href="/developers/develop/run-sample-apps/config/ios-osx">iOS/OS X</a></li><li class="last menu-mlid-2575 menu-item-2575"><a href="/developers/develop/run-sample-apps/config/thin-linux">Thin - Linux</a></li></ul></li><li class="menu-parent menu-mlid-2576 menu-item-2576"><a href="/developers/develop/run-sample-apps/controlpanel">Control Panel</a><ul class="menu clearfix"><li class="first menu-mlid-2577 menu-item-2577"><a href="/developers/develop/run-sample-apps/controlpanel/android">Android</a></li><li class="menu-mlid-2578 menu-item-2578"><a href="/developers/develop/run-sample-apps/controlpanel/linux">Linux</a></li><li class="menu-mlid-2579 menu-item-2579"><a href="/developers/develop/run-sample-apps/controlpanel/ios-osx">iOS/OS X</a></li><li class="last menu-mlid-2580 menu-item-2580"><a href="/developers/develop/run-sample-apps/controlpanel/thin-linux">Thin - Linux</a></li></ul></li><li class="menu-parent menu-mlid-2581 menu-item-2581"><a href="/developers/develop/run-sample-apps/notification">Notification</a><ul class="menu clearfix"><li class="first menu-mlid-2582 menu-item-2582"><a href="/developers/develop/run-sample-apps/notification/android">Android</a></li><li class="menu-mlid-2583 menu-item-2583"><a href="/developers/develop/run-sample-apps/notification/linux">Linux</a></li><li class="menu-mlid-2584 menu-item-2584"><a href="/developers/develop/run-sample-apps/notification/ios-osx">iOS/OS X</a></li><li class="last menu-mlid-2585 menu-item-2585"><a href="/developers/develop/run-sample-apps/notification/thin-linux">Thin - Linux</a></li></ul></li><li class="menu-parent menu-mlid-2586 menu-item-2586"><a href="/developers/develop/run-sample-apps/onboarding">Onboarding</a><ul class="menu clearfix"><li class="first menu-mlid-2587 menu-item-2587"><a href="/developers/develop/run-sample-apps/onboarding/android">Android</a></li><li class="menu-mlid-2588 menu-item-2588"><a href="/developers/develop/run-sample-apps/onboarding/linux">Linux</a></li><li class="last menu-mlid-2589 menu-item-2589"><a href="/developers/develop/run-sample-apps/onboarding/ios-osx">iOS/OS X</a></li></ul></li><li class="menu-parent menu-mlid-2590 menu-item-2590"><a href="/developers/develop/run-sample-apps/acserver">AC Server</a><ul class="menu clearfix"><li class="first menu-mlid-2591 menu-item-2591"><a href="/developers/develop/run-sample-apps/acserver/linux">Linux</a></li><li class="last menu-mlid-2592 menu-item-2592"><a href="/developers/develop/run-sample-apps/acserver/thin-linux">Thin - Linux</a></li></ul></li><li class="menu-parent menu-mlid-2593 menu-item-2593"><a href="/developers/develop/run-sample-apps/test">Command Line Apps</a><ul class="menu clearfix"><li class="first last menu-mlid-2594 menu-item-2594"><a href="/developers/develop/run-sample-apps/test/sessions">Sessions</a></li></ul></li><li class="last menu-mlid-2994 menu-item-2994"><a href="/developers/develop/run-sample-apps/alljoyn-js">AllJoyn.js</a></li></ul></li><li class="menu-parent menu-mlid-2595 menu-item-2595"><a href="/developers/develop/api-guide">API Guide</a><ul class="menu clearfix"><li class="first menu-parent menu-mlid-2596 menu-item-2596"><a href="/developers/develop/api-guide/core">Core</a><ul class="menu clearfix"><li class="first menu-mlid-2939 menu-item-2939"><a href="/developers/develop/api-guide/core/java">java</a></li><li class="menu-mlid-2940 menu-item-2940"><a href="/developers/develop/api-guide/core/objc">Objective-C</a></li><li class="menu-mlid-2647 menu-item-2647"><a href="/developers/develop/api-guide/core/alljoyn-transports-best-practices">Alljoyn Transports Best Practices</a></li><li class="menu-mlid-2648 menu-item-2648"><a href="/developers/develop/api-guide/core/auto-ping">AutoPinger</a></li><li class="menu-mlid-2935 menu-item-2935"><a href="/developers/develop/api-guide/core/observer">Observer</a></li><li class="last menu-mlid-2936 menu-item-2936"><a href="/developers/develop/api-guide/core/propcache">Property Cache</a></li></ul></li><li class="menu-parent menu-mlid-2599 menu-item-2599"><a href="/developers/develop/api-guide/about">About</a><ul class="menu clearfix"><li class="first menu-mlid-2941 menu-item-2941"><a href="/developers/develop/api-guide/about/java">java</a></li><li class="menu-mlid-2942 menu-item-2942"><a href="/developers/develop/api-guide/about/cpp">C++</a></li><li class="menu-mlid-2943 menu-item-2943"><a href="/developers/develop/api-guide/about/objc">Objective-C</a></li><li class="menu-mlid-2944 menu-item-2944"><a href="/developers/develop/api-guide/about/c-thin">C (Thin Core)</a></li><li class="menu-mlid-2945 menu-item-2945"><a href="/developers/develop/api-guide/about/java-legacy">java Legacy</a></li><li class="menu-mlid-2946 menu-item-2946"><a href="/developers/develop/api-guide/about/cpp-legacy">C++ Legacy</a></li><li class="last menu-mlid-2947 menu-item-2947"><a href="/developers/develop/api-guide/about/objc-legacy">Objective-C Legacy</a></li></ul></li><li class="menu-parent menu-mlid-2604 menu-item-2604"><a href="/developers/develop/api-guide/onboarding">Onboarding</a><ul class="menu clearfix"><li class="first menu-mlid-2948 menu-item-2948"><a href="/developers/develop/api-guide/onboarding/java">java</a></li><li class="last menu-mlid-2949 menu-item-2949"><a href="/developers/develop/api-guide/onboarding/objc">Objective-C</a></li></ul></li><li class="menu-parent menu-mlid-2607 menu-item-2607"><a href="/developers/develop/api-guide/config">Configuration</a><ul class="menu clearfix"><li class="first menu-mlid-2950 menu-item-2950"><a href="/developers/develop/api-guide/config/java">java</a></li><li class="menu-mlid-2951 menu-item-2951"><a href="/developers/develop/api-guide/config/cpp">C++</a></li><li class="menu-mlid-2952 menu-item-2952"><a href="/developers/develop/api-guide/config/objc">Objective-C</a></li><li class="last menu-mlid-2953 menu-item-2953"><a href="/developers/develop/api-guide/config/c-thin">C (Thin Core)</a></li></ul></li><li class="menu-parent menu-mlid-2612 menu-item-2612"><a href="/developers/develop/api-guide/notification">Notification</a><ul class="menu clearfix"><li class="first menu-mlid-2954 menu-item-2954"><a href="/developers/develop/api-guide/notification/java">java</a></li><li class="menu-mlid-2955 menu-item-2955"><a href="/developers/develop/api-guide/notification/cpp">C++</a></li><li class="menu-mlid-2956 menu-item-2956"><a href="/developers/develop/api-guide/notification/objc">Objective-C</a></li><li class="last menu-mlid-2957 menu-item-2957"><a href="/developers/develop/api-guide/notification/c-thin">C (Thin Core)</a></li></ul></li><li class="menu-parent menu-mlid-2617 menu-item-2617"><a href="/developers/develop/api-guide/controlpanel">Control Panel</a><ul class="menu clearfix"><li class="first menu-mlid-2958 menu-item-2958"><a href="/developers/develop/api-guide/controlpanel/java">java</a></li><li class="menu-mlid-2959 menu-item-2959"><a href="/developers/develop/api-guide/controlpanel/cpp">C++</a></li><li class="menu-mlid-2960 menu-item-2960"><a href="/developers/develop/api-guide/controlpanel/objc">Objective-C</a></li><li class="last menu-mlid-2961 menu-item-2961"><a href="/developers/develop/api-guide/controlpanel/c-thin">C (Thin Core)</a></li></ul></li><li class="menu-parent menu-mlid-2622 menu-item-2622"><a href="/developers/develop/api-guide/audio-streaming">Audio Streaming</a><ul class="menu clearfix"><li class="first last menu-mlid-2962 menu-item-2962"><a href="/developers/develop/api-guide/audio-streaming/cpp">C++</a></li></ul></li><li class="last menu-mlid-2624 menu-item-2624"><a href="/developers/develop/api-guide/events-and-actions">Events and Actions</a></li></ul></li><li class="menu-mlid-2625 menu-item-2625"><a href="/developers/develop/api-reference">API Reference</a></li><li class="menu-parent menu-mlid-2626 menu-item-2626"><a href="/developers/develop/debug">Debug</a><ul class="menu clearfix"><li class="first last menu-mlid-2627 menu-item-2627"><a href="/developers/develop/debug/common-issues">Common Issues</a></li></ul></li><li class="menu-parent menu-mlid-2628 menu-item-2628"><a href="/developers/develop/tutorial">Tutorial</a><ul class="menu clearfix"><li class="first menu-mlid-2629 menu-item-2629"><a href="/developers/develop/tutorial/core">Core</a></li><li class="menu-mlid-2630 menu-item-2630"><a href="/developers/develop/tutorial/ios">iOS</a></li><li class="menu-mlid-2631 menu-item-2631"><a href="/developers/develop/tutorial/thin-app">Thin App</a></li><li class="menu-mlid-2632 menu-item-2632"><a href="/developers/develop/tutorial/arduino-and-gt202">Arduino + GT202</a></li><li class="last menu-mlid-2633 menu-item-2633"><a href="/developers/develop/tutorial/videos">Videos</a></li></ul></li><li class="last menu-mlid-2634 menu-item-2634"><a href="/developers/develop/ask">Ask Forum</a></li></ul></li><li class="last menu-parent has-children menu-mlid-2636 menu-item-2636"><a href="/developers/contribute">Contribute</a><ul class="menu clearfix"><li class="first last menu-mlid-2637 menu-item-2637"><a href="/developers/contribute/project-lifecycle">Project Lifecycle</a></li></ul></li></ul></li><li class="menu-mlid-2466 menu-item-2466"><a href="/showcase-products-using-alljoyn">Showcase</a></li><li class="menu-parent menu-mlid-2487 menu-item-2487"><a href="/allseen-alliance-certification">Certification</a><ul class="menu clearfix"><li class="first menu-mlid-2488 menu-item-2488"><a href="/certification/how-validate-your-designed-allseen-product">How To Validate Your Product</a></li><li class="last menu-mlid-2489 menu-item-2489"><a href="/certification/faq">FAQ</a></li></ul></li><li class="last menu-parent menu-mlid-2421 menu-item-2421"><a href="/news-and-events">News &amp; Events</a><ul class="menu clearfix"><li class="first menu-mlid-2422 menu-item-2422"><a href="/news-and-events/newsroom/announcements">Announcements</a></li><li class="menu-mlid-2449 menu-item-2449"><a href="/news/videos">Videos</a></li><li class="menu-mlid-2423 menu-item-2423"><a href="/news-and-events/newsroom/in-the-news">In The News</a></li><li class="menu-mlid-2424 menu-item-2424"><a href="/news-and-events/events">Events</a></li><li class="menu-mlid-2448 menu-item-2448"><a href="/news-and-events/blogs">Blogs</a></li><li class="menu-mlid-2461 menu-item-2461"><a href="/news-and-events/newsletters">Newsletters</a></li><li class="last menu-mlid-2933 menu-item-2933"><a href="/news-and-events/videos">Videos</a></li></ul></li></ul></div>
+</div></div></section></div></div>      </div>
+            
+      
+      <div class="region region-sidebar-first sidebar"><div class="region-inner clearfix"><div id="block-menu-block-1" class="block block-menu-block"  role="navigation"><div class="block-inner clearfix">        <div class="block-content content"><div class="menu-block-wrapper menu-block-1 menu-name-main-menu parent-mlid-0 menu-level-3">
+  <ul class="menu clearfix"><li class="first menu-mlid-2505 menu-item-2505"><a href="/developers/learn/use-cases">Use Cases</a></li><li class="menu-mlid-2506 menu-item-2506"><a href="/developers/learn/architecture">Architecture</a></li><li class="menu-parent active-trail menu-mlid-2507 menu-item-2507"><a href="/developers/learn/core" class="active-trail">Core Framework</a><ul class="menu clearfix"><li class="first menu-parent menu-mlid-2508 menu-item-2508"><a href="/developers/learn/core/about-announcement">About Announcement</a><ul class="menu clearfix"><li class="first menu-mlid-2509 menu-item-2509"><a href="/developers/learn/core/about-announcement/interface">Interface</a></li><li class="last menu-mlid-2510 menu-item-2510"><a href="/developers/learn/core/about-announcement/interface-14-02">Interface 14.02</a></li></ul></li><li class="menu-mlid-2511 menu-item-2511"><a href="/developers/learn/core/events-and-actions">Events and Actions</a></li><li class="menu-mlid-2992 menu-item-2992"><a href="/developers/learn/core/rn_config">Routing Node Configuration</a></li><li class="menu-mlid-2512 menu-item-2512"><a href="/developers/learn/core/standard-core">Standard Core</a></li><li class="menu-mlid-2513 menu-item-2513"><a href="/developers/learn/core/thin-core">Thin Core</a></li><li class="menu-parent active-trail menu-mlid-2514 menu-item-2514"><a href="/developers/learn/core/system-description" class="active-trail">System Description</a><ul class="menu clearfix"><li class="first menu-mlid-2515 menu-item-2515"><a href="/developers/learn/core/system-description/system-architecture">System Architecture</a></li><li class="active-trail active menu-mlid-2516 menu-item-2516"><a href="/developers/learn/core/system-description/advertisement-discovery" class="active-trail active">Advertisement and Discovery</a></li><li class="menu-mlid-2645 menu-item-2645"><a href="/developers/learn/core/system-description/alljoyn-transport">AllJoyn Transport</a></li><li class="menu-mlid-2517 menu-item-2517"><a href="/developers/learn/core/system-description/data-exchange">Data Exchange</a></li><li class="menu-mlid-2518 menu-item-2518"><a href="/developers/learn/core/system-description/alljoyn-session">AllJoyn Session</a></li><li class="menu-mlid-2519 menu-item-2519"><a href="/developers/learn/core/system-description/sessionless-signal">Sessionless Signal</a></li><li class="menu-mlid-2520 menu-item-2520"><a href="/developers/learn/core/system-description/alljoyn-security">AllJoyn Security</a></li><li class="menu-mlid-2521 menu-item-2521"><a href="/developers/learn/core/system-description/thin-apps">Thin Apps</a></li><li class="last menu-mlid-2522 menu-item-2522"><a href="/developers/learn/core/system-description/events-actions">Events and Actions</a></li></ul></li><li class="last menu-parent menu-mlid-2937 menu-item-2937"><a href="/developers/learn/core/security2_0">Security 2.0</a><ul class="menu clearfix"><li class="first last menu-mlid-2938 menu-item-2938"><a href="/developers/learn/core/security2_0/hld">High-Level Design</a></li></ul></li></ul></li><li class="menu-parent menu-mlid-2523 menu-item-2523"><a href="/developers/learn/base-services">Base Services</a><ul class="menu clearfix"><li class="first menu-parent menu-mlid-2524 menu-item-2524"><a href="/developers/learn/base-services/onboarding">Onboarding</a><ul class="menu clearfix"><li class="first menu-mlid-2525 menu-item-2525"><a href="/developers/learn/base-services/onboarding/interface">Interface</a></li><li class="last menu-mlid-2526 menu-item-2526"><a href="/developers/learn/base-services/onboarding/interface-14-02">Interface 14.02</a></li></ul></li><li class="menu-parent menu-mlid-2527 menu-item-2527"><a href="/developers/learn/base-services/configuration">Configuration</a><ul class="menu clearfix"><li class="first menu-mlid-2528 menu-item-2528"><a href="/developers/learn/base-services/configuration/interface">Interface</a></li><li class="last menu-mlid-2529 menu-item-2529"><a href="/developers/learn/base-services/configuration/interface-14-02">Interface 14.02</a></li></ul></li><li class="menu-parent menu-mlid-2530 menu-item-2530"><a href="/developers/learn/base-services/notification">Notification</a><ul class="menu clearfix"><li class="first menu-mlid-2531 menu-item-2531"><a href="/developers/learn/base-services/notification/interface">Interface</a></li><li class="last menu-mlid-2532 menu-item-2532"><a href="/developers/learn/base-services/notification/interface-14-02">Interface 14.02</a></li></ul></li><li class="menu-parent menu-mlid-2533 menu-item-2533"><a href="/developers/learn/base-services/controlpanel">ControlPanel</a><ul class="menu clearfix"><li class="first menu-mlid-2534 menu-item-2534"><a href="/developers/learn/base-services/controlpanel/interface">Interface</a></li><li class="last menu-mlid-2535 menu-item-2535"><a href="/developers/learn/base-services/controlpanel/interface-14-02">Interface 14.02</a></li></ul></li><li class="last menu-parent menu-mlid-2536 menu-item-2536"><a href="/developers/learn/base-services/audiostreaming">Audio Streaming</a><ul class="menu clearfix"><li class="first last menu-mlid-2537 menu-item-2537"><a href="/developers/learn/base-services/audiostreaming/interface">Interface</a></li></ul></li></ul></li><li class="last menu-mlid-2538 menu-item-2538"><a href="/developers/learn/glossary">Glossary</a></li></ul></div>
+</div></div></div></div></div>            <div id="content-column" role="main">
+        <div class="content-inner">
+
+          
+          <section id="main-content">
+
+                                      <header id="main-content-header">
+
+                                                  <h1 id="sub-title">
+                    Advertisement and Discovery                  </h1>
+                
+                
+              </header>
+                        
+                          <div id="content">
+                        <article id="node-4102" class="node node-developer-document article clearfix" about="/developers/learn/core/system-description/advertisement-discovery" typeof="sioc:Item foaf:Document" role="article">
+
+  
+      <span property="dc:title" content="Advertisement and Discovery" class="rdf-meta element-hidden"></span><span property="sioc:num_replies" content="0" datatype="xsd:integer" class="rdf-meta element-hidden"></span>
+  
+  <div class="node-content">
+  
+  <div class="field-body view-mode-full">
+    
+<h2 id="overview">Overview</h2>
+<p>The AllJoyn® system supports a mechanism for providers to advertise 
+their services over the AllJoyn network, and for consumers to 
+discover these services for consumption. AllJoyn supports 
+discovery over multiple underlying access networks such as Wi-Fi. 
+The AllJoyn discovery protocol makes use of IP multicast over 
+Wi-Fi for advertisement and discovery. The details of discovery 
+over underlying networks are hidden from the AllJoyn applications.</p>
+<p>The AllJoyn router supports transport-specific discovery for 
+Wi-Fi using the IP transport.</p>
+<p>Applications can use one of the following methods to advertise 
+and discover services over the AllJoyn framework, detailed in 
+subsequent sections of this chapter:</p>
+<ul><li>Name-based discovery: Service advertisement and discovery 
+occurs either using a well-known name or unique name.</li>
+<li>Announcement-based discovery: Service advertisement 
+and discovery occurs using AllJoyn interface names.</li>
+</ul><h3 id="discovery-enhancements-in-the-14-06-release">Discovery enhancements in the 14.06 release</h3>
+<p>The AllJoyn discovery feature was enhanced in the 14.06 
+release to enable the discovery of devices/apps that support 
+a certain set of interfaces in a more efficient way (NGNS, 
+defined earlier). NGNS supports an mDNS-based discovery 
+protocol that enables specifying AllJoyn interfaces in an 
+over-the-wire discovery message. In addition, the mDNS-based 
+protocol is designed to provide discovery responses over unicast 
+to improve performance of the discovery protocol and minimize 
+overall multicast traffic generated durign the AllJoyn discovery process. </p>
+<p>The presence detection mechanism for AllJoyn devices/apps was 
+enhanced by adding an explicit mDNS-based ping() message that 
+is sent over unicast to determine if the remote endpoint is 
+still alive. The ping() mechanism is driven by the application 
+based on application logic.</p>
+<p>This chapter first describes the legacy AllJoyn discovery 
+(prior to the 14.06 release), followed by NGNS-based discovery 
+and presence as described in <a href="#ngns-message-sequences">NGNS message sequences</a>.</p>
+<h2 id="legacy-name-based-discovery">Legacy name-based discovery</h2>
+<p>This section captures design for the legacy name-based 
+discovery supported prior to the 14.06 release.</p>
+<p>The AllJoyn router supports a Name Service to enable the 
+name-based service discovery. The Name Service supports a 
+UDP-based protocol for discovery over IP-based access networks 
+(including Wi-Fi). Name-based discovery APIs are exposed 
+through the AllJoyn Core Library.</p>
+<p>The Name Service supports IS-AT and WHO-HAS protocol messages, 
+which are described below. These protocol messages carry well-known 
+names to be advertised and discovered, respectively. These protocol 
+messages are multicast over the AllJoyn proximal network (local subnets) 
+over IANA-registered IP multicast groups and port number as 
+listed in <a href="#iana-registered-multicast-addresses-for-the-alljoyn-framework">IANA-registered multicast addresses for the AllJoyn framework</a>.</p>
+<h3 id="iana-registered-multicast-addresses-for-the-alljoyn-framework">IANA-registered multicast addresses for the AllJoyn framework</h3>
+<table><thead><tr><th>Address</th>
+<th>Port</th>
+</tr></thead><tbody><tr><td>IPv4 Multicast group address</td>
+<td>224.0.0.113</td>
+</tr><tr><td>IPv6 Multicast group address</td>
+<td>FF0X::13A</td>
+</tr><tr><td>Multicast port number</td>
+<td>9956</td>
+</tr></tbody></table><p>The following figure captures the high-level architecture 
+for the name-based discovery, showing the Name Service 
+generating IS-AT and WHO-HAS messages for service discovery.</p>
+<p><img src="/sites/default/files/developers/learn/system-desc/name-based-discovery-arch.png" alt="name-based-discovery-arch" /></p>
+<p><strong>Figure:</strong> Name-based discovery architecture</p>
+<h2 id="is-at">IS-AT</h2>
+<p>The IS-AT message advertises AllJoyn services using the well-known 
+name or the unique name. A single IS-AT message can include a 
+list of one or more well-known names or unique names for 
+advertisement. The IS-AT message specifies a validity period 
+for the well-known name advertisement indicated by the Adv_Validity_Period 
+config parameter.</p>
+<p>The AllJoyn router at the provider device send out IS-AT 
+message periodically over IP multicast to advertise the 
+set of services it supports. The periodicity is defined by 
+the Adv_Msg_Retransmit_Interval period which is a configurable 
+parameter on the provider.</p>
+<p>The IS-AT message can also be sent out in response to a 
+received WHO-HAS message that is looking for that advertised 
+service. This is so that the consumer device can be immediately 
+notified of the service to minimize the discovery time.</p>
+<h3 id="who-has">WHO-HAS</h3>
+<p>The WHO-HAS message discovers one or more AllJoyn services 
+using the well-known name or the unique name. Similar to IS-AT, 
+a WHO-HAS message can include a list of one or more well-known 
+names or unique names for discovery. The WHO-HAS message can 
+also include a well-known name prefix (instead of the complete 
+well-known name) that gets matched against the well-known name 
+being advertised in the IS-AT message. </p>
+<p>For example, the well-known name prefix "org.alljyon.chat" in 
+the WHO-HAS message match with the well-known name 
+"org.alljoyn.chat._123456.Joe" being advertised in the IS-AT message.</p>
+<p>When a consumer device wants to discover a service, it sends 
+out the WHO-HAS message over IP multicast. The WHO-HAS message 
+is repeated few times to account for the possibility of a collision 
+on the Wi-Fi network that can result in dropping of the multicast packet.</p>
+<p>The following parameters determine the transmission of the WHO-HAS message:</p>
+<ul><li>Disc_Msg_Number_Of_Retries</li>
+<li>Disc_Msg_Retry_Interval</li>
+</ul><p>The WHO-HAS message is resent for Disc_Msg_Number_Of_Retries 
+times at every Disc_Msg_Retry_Interval after the first transmission 
+of the message. In response to the WHO-HAS message, a consumer 
+can get an IS-AT message advertising the requested service from the provider.</p>
+<h3 id="consumer-behavior">Consumer behavior</h3>
+<p>The following figure captures the consumer side AllJoyn router 
+behavior for name-based discovery.</p>
+<p><img src="/sites/default/files/developers/learn/system-desc/consumer-router-discovery-behavior.png" alt="consumer-router-discovery-behavior" /></p>
+<p><strong>Figure:</strong> Consumer AllJoyn router discovery behavior</p>
+<h3 id="message-sequence">Message sequence</h3>
+<p>The following use cases are captured AllJoyn name-based discovery scenarios:</p>
+<ul><li>Discovery when IP connectivity is already established </li>
+<li>Discovery over unreliable network</li>
+<li>Discovery when IP connectivity is established late</li>
+<li>Well-known name lost due to loss of IP connectivity </li>
+<li>Provider cancels well-known name advertisement</li>
+<li>Consumer cancels discovery for well-known name</li>
+</ul><h4 id="discovery-when-ip-connectivity-is-already-established">Discovery when IP connectivity is already established</h4>
+<p>The following figure shows the message sequence for a typical 
+discovery scenario of an AllJoyn service well-known name. 
+In this case, the provider and consumer devices already have 
+IP connectivity established between them. The first WHO-HAS 
+message delivered over IP multicast reaches the provider device 
+which immediately responds with an IS-AT message.</p>
+<p><img src="/sites/default/files/developers/learn/system-desc/typical-discovery-wkn.png" alt="typical-discovery-wkn" /></p>
+<p><strong>Figure:</strong> Typical discovery of a well-known name</p>
+<h4 id="discovery-over-unreliable-network">Discovery over unreliable network</h4>
+<p>The following figure shows the message sequence for the 
+discovery scenario of an AllJoyn service's well-known name 
+when the underlying network drops some of the multicast 
+WHO-HAS messages. In this case, the WHO-HAS retry mechanism 
+kicks in and the message is retried based on Disc_Msg_Number_Of_Retries 
+and Disc_Msg_Retry_Interval parameters.</p>
+<p><img src="/sites/default/files/developers/learn/system-desc/discovery-unreliable-network.png" alt="discovery-unreliable-network" /></p>
+<p><strong>Figure:</strong> Discovery over unreliable network</p>
+<h4 id="discovery-when-ip-connectivity-is-established-late">Discovery when IP connectivity is established late</h4>
+<p>The following figure shows the message sequence for the 
+discovery scenario when the consumer device gets connected 
+to the Access Point (AP) in the AllJoyn proximal network late, 
+after it has completed transmission of set of WHO-HAS messages. 
+This can happen when the consumer device just joins a new 
+AllJoyn proximal network. The subsequent IS-AT message is 
+received by the consumer AllJoyn router and results in 
+FoundAdvertiseName for the requested well-known name.</p>
+<p><img src="/sites/default/files/developers/learn/system-desc/discovery-late-ip-connectivity.png" alt="discovery-late-ip-connectivity" /></p>
+<p><strong>Figure:</strong> Discovery when IP connectivity is established late</p>
+<h4 id="wkn-lost-due-to-loss-of-ip-connectivity">WKN lost due to loss of IP connectivity</h4>
+<p>The following figure shows the message sequence for the 
+scenario when the discovered well-known name gets lost due 
+to the consumer losing IP connectivity with the AllJoyn 
+proximal network. This can happen when a consumer device 
+leaves the AllJoyn proximal network. </p>
+<p>If the consumer's AllJoyn router does not receive any IS-AT 
+messages for a given well-known name for the Adv_Validity_period 
+time duration, it declares that well-known name to be lost and 
+initiates a LostAdvertiseName for that well-known name.</p>
+<p><img src="/sites/default/files/developers/learn/system-desc/wkn-lost-ip-connectivity.png" alt="wkn-lost-ip-connectivity" /></p>
+<p><strong>Figure:</strong> Well-known name lost due to loss of IP connectivity</p>
+<h4 id="provider-cancels-well-known-name-advertisement">Provider cancels well-known name advertisement</h4>
+<p>The following figure shows the message sequence for the scenario 
+when a provider application cancels the advertisement for a 
+previously advertised well-known name.</p>
+<p><img src="/sites/default/files/developers/learn/system-desc/provider-cancels-wkn-advertisement.png" alt="provider-cancels-wkn-advertisement" /></p>
+<p><strong>Figure:</strong> Provider cancels well-known name advertisement</p>
+<h5 id="consumer-cancels-discovery-for-well-known-name">Consumer cancels discovery for well-known name</h5>
+<p>The following figure shows the message sequence for the 
+scenario when a consumer application cancels discovery for a well-known name.</p>
+<p><img src="/sites/default/files/developers/learn/system-desc/consumer-cancels-wkn-discovery.png" alt="consumer-cancels-wkn-discovery" /></p>
+<p><strong>Figure:</strong> Consumer cancels discovery for well-known name</p>
+<h4 id="message-structure">Message structure</h4>
+<p>As described above, the Name Service supports IS-AT and 
+WHO-HAS messages. These messages get embedded in a higher-level 
+Name Service message which provides the flexibility to include 
+both IS-AT and WHO-HAS messages in the same Name Service message. 
+This can be useful if an AllJoyn application acts as both provider 
+(advertising a well-known name) and a consumer (looking to 
+discover a well-known name). </p>
+<p>The following figure shows the Name Service message structure. 
+<a href="#name-service-message-structure-fields">Name Service message structure fields</a> 
+defines the message structure fields.</p>
+<p><img src="/sites/default/files/developers/learn/system-desc/name-service-message-structure.png" alt="name-service-message-structure" /></p>
+<p><strong>Figure:</strong> Name service message structure</p>
+<h5 id="name-service-message-structure-fields">Name Service message structure fields</h5>
+<table><thead><tr><th>Field</th>
+<th>Description</th>
+</tr></thead><tbody><tr><td>Sver</td>
+<td>Version of the latest implemented the AllJoyn discovery protocol for the sender.</td>
+</tr><tr><td>MVer</td>
+<td>Version of Name Service message.</td>
+</tr><tr><td>QCount</td>
+<td>Number of WHO-HAS question messages that follow the header.</td>
+</tr><tr><td>ACount</td>
+<td>Number of IS-AT answer messages that follow the header.</td>
+</tr><tr><td>Timer</td>
+<td><p>Count (in seconds) for which included IS-AT answer should be considered valid.</p><p>This field should be set based on the following:</p><ul><li>Adv_Validity_Period for a well-known name advertisement that is valid for a default period of time.</li></ul><ul><li>Adv_Infinite_Validity_Value for a well-known name advertisement that is valid "forever", or at least until withdrawn. A zero in this field means that the sending AllJoyn router is withdrawing the advertisements.</li></ul></td>
+</tr></tbody></table><h5 id="is-at-message">IS-AT message</h5>
+<p>The following figure shows version 1 of the IS-AT message. </p>
+<p><a href="#is-at-message-format-version-1-fields">IS-AT message format version 1 fields</a> 
+defines the IS-AT message fields</p>
+<p><img src="/sites/default/files/developers/learn/system-desc/is-at-message-format-v1.png" alt="is-at-message-format-v1" /></p>
+<p><strong>Figure:</strong> IS-AT message format (version 1)</p>
+<h5 id="is-at-message-format-version-1-fields">IS-AT message format version 1 fields</h5>
+<table><thead><tr><th>Field</th>
+<th>Description</th>
+</tr></thead><tbody><tr><td>R4 Bit</td>
+<td>If set to '1', the R4 bit indicates that the IPv4 endpoint (IP address and port) of a reliable transport (TCP) is present.</td>
+</tr><tr><td>U4 Bit</td>
+<td>If set to '1', the U4 bit indicates that the IPv4 endpoint (IP address and port) of an unreliable transport (UDP) is present.</td>
+</tr><tr><td>R6 Bit</td>
+<td>If set to '1', the R6 bit indicates that the IPv6 endpoint (IP address and port) of a reliable transport (TCP) is present.</td>
+</tr><tr><td>U6 Bit</td>
+<td>If set to '1', the U6 bit indicates that the IPv6 endpoint (IP address and port) of an unreliable transport (UDP) is present.</td>
+</tr><tr><td>C Bit</td>
+<td>If set to '1', the C bit indicates that the list of StringData records is a complete list of all well-known names exported by the responding AllJoyn router.</td>
+</tr><tr><td>G Bit</td>
+<td>If set to '1', the G bit indicates that a variable length daemon GUID string is present.</td>
+</tr><tr><td>M</td>
+<td>Message type of the IS-AT message. Defined to be '01' (1) for IS-AT.</td>
+</tr><tr><td>Count</td>
+<td>Number of StringData items that are included in the IS-AT message.</td>
+</tr><tr><td>TransportMask</td>
+<td>Bit mask of transport identifiers that indicates which AllJoyn transport is making the advertisement.</td>
+</tr><tr><td>StringData</td>
+<td>Describes a single AllJoyn well-known name being advertised.</td>
+</tr></tbody></table><h5 id="who-has-message">WHO-HAS message</h5>
+<p>The following figure shows version 1 of the WHO-HAS message. </p>
+<p><a href="#who-has-message-format-version-1-fields">WHO-HAS message format version 1 fields</a> defines the 
+WHO-HAS message fields.</p>
+<p><img src="/sites/default/files/developers/learn/system-desc/who-has-message-format-v1.png" alt="who-has-message-format-v1" /></p>
+<p><strong>Figure:</strong> WHO-HAS message format (version 1)</p>
+<h5 id="who-has-message-format-version-1-fields">WHO-HAS message format version 1 fields</h5>
+<table><thead><tr><th>Field</th>
+<th>Description</th>
+</tr></thead><tbody><tr><td>Reserved</td>
+<td>Reserved bits.</td>
+</tr><tr><td>M</td>
+<td>Message type of the WHO-HAS message.  Defined to be '10' (2) for WHO-HAS.</td>
+</tr><tr><td>Count</td>
+<td>Number of StringData items that are included in the WHO-HAS message.</td>
+</tr><tr><td>StringData</td>
+<td>Describes a single AllJoyn well-known name that the consumer AllJoyn router is interested in.</td>
+</tr></tbody></table><h3 id="legacy-announcement-based-discovery">Legacy announcement-based discovery</h3>
+<p>This section captures design for the legacy announcement-based 
+discovery supported prior to the 14.06 release.</p>
+<p>In the announcement-based discovery, the provider device 
+announces the set of AllJoyn interfaces supported via an 
+announcement broadcast signal. The consumer device interested 
+in making use of the AllJoyn services opts to receive these 
+broadcast announcement messages from providers to discover 
+the interfaces for the supported AllJoyn services. </p>
+<p>The Announcement message is generated by the About feature 
+and is delivered as an AllJoyn sessionless signal using the 
+sessionless signal mechanism provided by the AllJoyn router 
+(detailed <a href="/developers/learn/core/system-description/sessionless-signal">Sessionless Signal</a>). The sessionless signal module makes 
+use of the AllJoyn name service messages (IS-AT and WHO-HAS) 
+to notify the consumer of new signals using a specially 
+formatted well-known name for the sessionless signal. Once the 
+consumer AllJoyn router discovers the sessionless signal's 
+well-known name, it connects back to the provider over an 
+AllJoyn session to fetch the service announcement message 
+from the provider device.</p>
+<p>The following figure captures the high-level architecture 
+for the announcement-based discovery process.</p>
+<p><img src="/sites/default/files/developers/learn/system-desc/announcement-service-discovery-arch.png" alt="announcement-service-discovery-arch" /></p>
+<p><strong>Figure:</strong> Announcement-based service discovery architecture</p>
+<p>The Announcement message is sent as a sessionless signal 
+from the provider app to the AllJoyn router, and gets cached 
+in the sessionless signal cache. The sessionless signal module 
+generates a specially formatted well-known name for the 
+sessionless signal as shown below (see details in <a href="/developers/learn/core/system-description/sessionless-signal">Sessionless Signal</a>):</p>
+<pre><code><code>SLS WKN format: org.alljoyn.sl.x&lt;GUID&gt;.x&lt;change_id&gt;</code>
+</code></pre><p>The sessionless signal module interacts with the Name Service 
+to send an IS-AT message for that well-known name. The AllJoyn 
+router on the consumer side is looking to discover this well-known 
+name. Upon receiving the IS-AT message, the sessionless signal 
+module on the consumer side connects back to the sessionless 
+signal module on the provider via an AllJoyn session and fetches 
+the Announcement message which then gets delivered to the consumer app.</p>
+<h4 id="message-sequence">Message sequence</h4>
+<p>The following figure shows the message sequence for the announcement-based discovery.</p>
+<p><img src="/sites/default/files/developers/learn/system-desc/announcement-service-discovery.png" alt="announcement-service-discovery" /></p>
+<p><strong>Figure:</strong> Announcement-based service discovery message sequence</p>
+<h4 id="announcement-message">Announcement message</h4>
+<p>The Announcement message provides a list of object paths for 
+objects implemented by the AllJoyn application and AllJoyn 
+interfaces supported by each of those objects. The AllJoyn 
+application controls which objects get announced in the Announcement message. </p>
+<p>The Announcement message also contains additional About fields 
+describing information about the application and the device. 
+See the About HLD for Announcement message details.</p>
+<h3 id="legacy-alljoyn-discovery-configuration-parameters">Legacy AllJoyn discovery configuration parameters</h3>
+<p><a href="#alljoyn-discovery-configuration-parameters">AllJoyn discovery configuration parameters</a> captures 
+configuration parameter for legacy AllJoyn discovery.</p>
+<p><strong>NOTE:</strong> Implementation may use different names for these parameters.</p>
+<h4 id="alljoyn-discovery-configuration-parameters">AllJoyn discovery configuration parameters</h4>
+<table><thead><tr><th>Parameter</th>
+<th>Default value</th>
+<th>Range</th>
+<th>Description</th>
+</tr></thead><tbody><tr><td>Adv_Validity_Period</td>
+<td>120 seconds</td>
+<td>TBD</td>
+<td>Validity period used for IS-AT advertisements.</td>
+</tr><tr><td>Adv_Infinite_Validity_Value</td>
+<td>255</td>
+<td>TBD</td>
+<td>Time value for indicating that an advertisement is valid forever.</td>
+</tr><tr><td>Adv_Msg_Retransmit_Interval</td>
+<td>40 seconds</td>
+<td>TBD</td>
+<td>Interval in seconds for sending out IS-AT messages.</td>
+</tr><tr><td>Disc_Msg_Number_Of_Retries</td>
+<td>2</td>
+<td>TBD</td>
+<td>Number of times the WHO-HAS message is sent after the first transmission.</td>
+</tr><tr><td>Disc_Msg_Retry_Interval</td>
+<td>5 seconds</td>
+<td>TBD</td>
+<td>Interval in seconds between retries of the WHO-HAS message.</td>
+</tr></tbody></table><h3 id="next-generation-name-service">Next-generation name service</h3>
+<p>The Next-Generation Name Service (NGNS) is implemented in the 
+14.06 release and offers considerable performance enhancements 
+for discovery and presence features offered by the AllJoyn platform, 
+detailed in the subsequent relevant sections. </p>
+<p>The following figure shows the high-level architecture for NGNS.</p>
+<p><img src="/sites/default/files/developers/learn/system-desc/ngns-high-level-arch.png" alt="ngns-high-level-arch" /></p>
+<p><strong>Figure:</strong> NGNS high-level architecture</p>
+<p>The architecture shows main logical components related 
+to NGNS. The enhanced discovery and presence functionality 
+are exposed via new APIs as part of the AllJoyn core library. 
+The About functionality is included in the AllJoyn core library, 
+and enables an AllJoyn app to send Announcement sessionless signals. 
+The sessionless signal module caches the Announcement signal. 
+The NGNS module uses information in the Announcement signal 
+to answer interface-based discovery queries received from consumer apps.</p>
+<h4 id="discovery">Discovery</h4>
+<p>The AllJoyn framework offers name-based discovery or announcement-based 
+discovery as mentioned earlier in this chapter. NGNS supports 
+the following discovery mechanisms:</p>
+<ul><li>NGNS supports name-based discovery. Although there is no change 
+at the API level, the discovery utilizes DNS service discovery 
+framework over mDNS. NGNS sends out legacy (pre-14.06 release) 
+discovery messages as per the configuration setting in the 
+AllJoyn router config file for compatibility.</li>
+<li>NGNS supports a more efficient announcement-based discovery 
+process by allowing a consumer application to query for a set 
+of AllJoyn interfaces. Prior to the 14.06 release, the consumer 
+application had to create match rules to receive all Announce 
+signals (transmitted as sessionless signals), and parse through 
+the set of AllJoyn interfaces that the provider application is 
+announcing prior to making a determination if any interfaces of 
+interest are provided. While this mechanism is more powerful 
+than the well-known name-based mechanism, it was not efficient. 
+The NGNS feature allows a consumer application to query for 
+the set of AllJoyn interfaces, and only the provider applications 
+that make use of those interfaces answer the query.</li>
+</ul><h4 id="presence-detection">Presence detection</h4>
+<p>Prior to the 14.06 release, presence (or absence) detection 
+was based on three successive IS-AT messages missing for a 
+given name (well-known or unique name) by the consumer application. 
+The time taken for this detection was deterministic (3*40 sec = 120 sec). </p>
+<p>The use of NGNS in the 14.06 release introduces an efficient 
+consumer application-driven presence detection that makes use 
+of unicast messaging. Once a name has been discovered, the 
+consumer application can invoke the new Presence API and determine 
+the presence state. Since each application has its own logic 
+regarding times and events triggering presence detection, NGNS 
+provides the API and leaves the triggering logic for the application to drive.</p>
+<h4 id="ngns-design-aspects">NGNS design aspects</h4>
+<p>The following sections detail the design aspects of the NGNS feature.</p>
+<h5 id="usage-of-mdns">Usage of mDNS</h5>
+<p>The 14.02 discovery protocol is based on AllJoyn-specific 
+UDP messages over the AllJoyn-assigned multicast IP address. 
+This design can limit discoverability (IP routers can block 
+AllJoyn-assigned multicast IP address and/or port numbers) 
+in the field. To address this issue, the 14.06 discovery 
+protocol is based on multicast DNS (mDNS) that uses IANA-assigned 
+multicast IP address and port numbers.</p>
+<h5 id="multicast-ip-addresses-and-port-numbers-used-by-ngns">Multicast IP addresses and port numbers used by NGNS</h5>
+<table><thead><tr><th>Address</th>
+<th>Value</th>
+</tr></thead><tbody><tr><td>IPv4 Multicast group address</td>
+<td>224.0.0.251</td>
+</tr><tr><td>IPv6 Multicast group address</td>
+<td>FF02::FB</td>
+</tr><tr><td>Multicast port number</td>
+<td>5353</td>
+</tr></tbody></table><p>Furthermore, mDNS already supports the following features 
+that are utilized by the AllJoyn discovery protocol:</p>
+<ul><li>Solicit unicast responses</li>
+<li>Send query message using unicast</li>
+<li>Send unsolicited responses from the responder</li>
+</ul><p>This constitutes version 2 of the discovery protocol. 
+The version number is set in the pv field of the "sender-info" 
+TXT record in the additional section of the mDNS query and response.</p>
+<p><strong>NOTE:</strong> The 14.02 Name Service implementation uses version 0 and 1 
+of the discovery protocol. </p>
+<h5 id="usage-of-dns-sd">Usage of DNS-SD</h5>
+<p>The 14.06 discovery design is based on <a href="http://tools.ietf.org/html/rfc6763">RFC 6763</a>. </p>
+<p>A client discovers the list of available instances of a given 
+service name (as registered with IANA, e.g., alljoyn is a 
+registered service name) using a query for a DNSPTR record 
+with a name of the form:</p>
+<pre><code><code>"&lt;Service&gt;.&lt;Domain&gt;" [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).</code>
+</code></pre><p>The result of this PTR lookup for the name "<service>.<domain>" 
+is a set of zero or more PTR records giving Service Instance Names of the form:</domain></service></p>
+<pre><code><code>Service Instance Name = &lt;Instance&gt;.&lt;Service&gt;.&lt;Domain&gt;</code>
+</code></pre><p>In addition to that service instance, the DNS-SD responder sends 
+DNS SRV <a href="https://www.ietf.org/rfc/rfc2782.txt">RFC 2782</a> and DNS TXT 
+<a href="https://www.ietf.org/rfc/rfc1035.txt">RFC 1035</a> record. 
+The SRV and TXT records have a name of the form:</p>
+<pre><code><code>"&lt;Instance&gt;.&lt;Service&gt;.&lt;Domain&gt;"</code>
+</code></pre><p>The SRV record gives the target host and port where the service 
+instance can be reached. The DNS TXT record of the same name 
+gives additional information about this instance, in a 
+structured form using key/value pairs.</p>
+<p>In addition to the service discovery framework specified in 
+<a href="http://tools.ietf.org/html/rfc6763">RFC 6763</a>, 
+the NGNS discovery protocol sends DNS TXT records in the 
+Additional section of the DNS-SD query to optimize the 
+discovery scope without requiring further negotiation by 
+establishing an AllJoyn session with the provider application.<br />The same feature is utilized in other use cases, such as sending 
+sender-information or presence-related information. The DNS-SD 
+message format is described in detail in <a href="#dns-sd-message-format">DNS-SD message format</a>.</p>
+<h5 id="design-considerations-for-wi-fi">Design considerations for Wi-Fi</h5>
+<p>It is well known that the multicast success rate over Wi-Fi 
+is not optimal and in some cases it is substantially degraded. 
+As per the Wi-Fi specification, each station is allowed to 
+go into sleep state and wake up periodically. The wake-up 
+interval is provisioned at the device and is supposed to 
+be a factor of the time interval used by the AP to schedule 
+the multicast traffic. </p>
+<p>The AP buffers the incoming multicast data and schedules it 
+based on the time interval determined by the DTIM (Delivery Traffic 
+Indication Message) interval. In reality, it has been observed 
+that the wake-up interval is set to multiples of the DTIM value 
+(typically 1, 3, or 10). This implies that the device might 
+miss the multicast data. Since this is a realistic scenario, 
+the AllJoyn discovery protocol was designed to handle this 
+scenario in a robust fashion. </p>
+<p>Specifically, the design principles captured in sections below are adopted.</p>
+<h6 id="transmission-schedule">Transmission schedule</h6>
+<p>The multicast schedule was designed to support devices that 
+wake up to process multicast packets in the multiple of DTIM 
+interval. Although the schedule backs off exponentially, 
+each multicast message is repeated twice to improve reliability 
+of multicast messages with devices that wake up every third 
+DTIM interval (a very typical case). </p>
+<p>The schedule sends query messages at the following times: 
+0, 1, 3, 9, and 27 seconds. At each transmit time trigger, 
+a total of three messages (original plus two repeats 100 msec apart) 
+are sent. This is referred to as burst in the call flows. 
+As far as the message recipient is concerned, a response 
+to the first successfully received message in a burst is 
+sent and all subsequent messages that are part of the same burst are ignored. </p>
+<h6 id="minimize-multicast-and-maximize-unicast-transmissions">Minimize multicast and maximize unicast transmissions</h6>
+<p>Another design aspect is to send multicast messages to initiate 
+queries but rely on unicast responses for replies and presence 
+detection. The DNS allows unicast responses to be solicited 
+in the mDNS query, and the discovery protocol utilizes that 
+feature. This is indicated in the top bit of the qclass field 
+of the DNS message header <a href="http://tools.ietf.org/html/rfc6762">RFC 6762</a>.</p>
+<h5 id="discovery-and-presence-api-snapshot">Discovery and Presence API snapshot</h5>
+<p><a href="#discovery-and-presence-apis-related-to-discovery-scenarios">Discovery and Presence APIs related to discovery scenarios</a>
+lists the Discovery and Presence APIs offered by the AllJoyn 
+system and maps them to discovery scenarios. The main paradigm 
+is that discovery and presence are driven by the consumer application.</p>
+<h5 id="discovery-and-presence-apis-related-to-discovery-scenarios">Discovery and Presence APIs related to discovery scenarios</h5>
+<table><thead><tr><th>Discovery scenario</th>
+<th>API</th>
+</tr></thead><tbody><tr><td>Consumer application Name query</td>
+<td><code>FindAdvertisedName()</code></td>
+</tr><tr><td>Consumer application gets notified about discovery or loss of an advertised name</td>
+<td><ul><li><code>FoundAdvertisedName()</code></li><li><code>LostAdvertisedName()</code></li></ul></td>
+</tr><tr><td>Consumer application cancelling the Name query</td>
+<td><code>CancelFindAdvertisedName()</code></td>
+</tr><tr><td>Provider application advertising a name</td>
+<td><code>AdvertiseName()</code></td>
+</tr><tr><td>Providing application canceling advertising a name</td>
+<td><code>CancelAdvertiseName()</code></td>
+</tr><tr><td>Provider application sending an Announcement message</td>
+<td><code>Announce()</code></td>
+</tr><tr><td>Consumer application queries for set of AllJoyn interfaces</td>
+<td><code>RegisterAnnounceHandler()</code></td>
+</tr><tr><td>Consumer application cancels a query for set of AllJoyn interfaces</td>
+<td><code>UnregisterAnnounceHandler()</code></td>
+</tr><tr><td>Consumer application queries for presence</td>
+<td><code>Ping()</code></td>
+</tr></tbody></table><h6 id="discovery-apis-that-trigger-dns-sd-multicast-messages">Discovery APIs that trigger DNS-SD multicast messages</h6>
+<p>Some of the discovery scenarios trigger multicast messaging. 
+The APIs that trigger multicast messaging are: <code>FindAdvertisedName()</code>, 
+<code>CancelAdvertiseName()</code>, <code>AdvertiseName()</code>, <code>Announce()</code>, and <code>RegisterAnnounceHandler()</code>.</p>
+<p>Some key aspects of the multicast transmission are listed below:</p>
+<ul><li>DNS-SD query issued over mDNS multicast address </li>
+<li>Transmission schedule as per <a href="#transmission-schedule">Transmission schedule</a></li>
+<li>Name Service messages sent depending on the LegacyNS flag 
+setting in the Router config file</li>
+<li>Legacy Name Service WHO-HAS and mDNS messages follow the 
+same transmission schedule.</li>
+</ul><h5 id="backward-compatibility">Backward compatibility</h5>
+<p>NGNS is designed to meet the following backward compatibility requirements:</p>
+<ul><li>Support all existing 14.02 APIs</li>
+<li>Support all legacy (version 0 and 1) NS discovery packet formats</li>
+<li>Send equivalent 14.02 discovery message over the wire 
+whenever the corresponding DNS-SD message is being sent 
+(provided the LegacyNS flag is set to true)</li>
+<li>Replies with 14.02 response message upon receipt of a 
+14.02 query message provided the supported version (SVer) 
+field indicates that querier doesn't support NGNS. If the 
+querier supports NGNS as indicated by the supported version, 
+then NGNS waits for the DNS-SD messages to arrive.</li>
+</ul><p>The AllJoyn router configuration file adds a LegacyNS flag 
+to enable legacy discovery behavior. By default, the legacy behavior is enabled.</p>
+<h3 id="ngns-message-sequences">NGNS message sequences</h3>
+<p>This section captures message sequences for NGNS.</p>
+<h4 id="name-based-discovery">Name-based discovery</h4>
+<p>This section captures messages sequences for NGNS name-based discovery scenarios.</p>
+<h5 id="ngns-consumer-app-with-ngns-provider-app">NGNS consumer app with NGNS provider app</h5>
+<p>In this scenario, the consumer application's AllJoyn router 
+has disabled the legacy behavior, i.e., no Name Service 
+messages are being sent by the consumer application. </p>
+<p>This message sequence assumes that the provider application 
+is already on the AllJoyn network. </p>
+<p>The main steps for the message sequence are described below.</p>
+<ol><li>The message flow is initiated by the consumer application 
+invoking FindAdvertisedName().</li>
+<li>NGNS sends DNS-SD based query messages over mDNS.</li>
+<li>Any provider application that matches the name being 
+searched responds via the DNS-SD response message over 
+unicast to the consumer application.</li>
+</ol><p><img src="/sites/default/files/developers/learn/system-desc/ngns-discovery-consumer-app-provider.png" alt="ngns-discovery-consumer-app-provider" /></p>
+<p><strong>Figure:</strong> NGNS name-based discovery between consumer app and provider</p>
+<h5 id="ngns-consumer-app-with-ngns-and-name-service-provider-apps">NGNS consumer app with NGNS and Name Service provider apps</h5>
+<p>This message sequence assumes the following:</p>
+<ul><li>The consumer application's AllJoyn router has enabled the 
+legacy Name Service behavior.</li>
+<li>The provider applications are already on the AllJoyn network. </li>
+</ul><p>The main steps for the message sequence are described below.</p>
+<ol><li>The message flow is initiated by the consumer application 
+invoking <code>FindAdvertisedName()</code>.</li>
+<li>The NGNS sends DNS-SD based query messages over mDNS as 
+well as the legacy WHO-HAS message.</li>
+<li>Any AllJoyn provider application that matches the name 
+being searched responds via a DNS-SD response message over unicast</li>
+<li>Any legacy (14.02) provider application also responds 
+via an IS-AT message if there is a match for the name being 
+discovered in the WHO-HAS message.</li>
+</ol><p><img src="/sites/default/files/developers/learn/system-desc/ngns-discovery-ngns-name-service-provider-apps.png" alt="ngns-discovery-ngns-name-service-provider-apps" /></p>
+<p><strong>Figure:</strong> NGNS name-based discovery (NGNS and Name Service provider apps)</p>
+<h5 id="findadvertisedname-pending-provider-apps-arrive-later">FindAdvertisedName pending; provider apps arrive later</h5>
+<p>This message sequence assumes the following:</p>
+<ul><li>The consumer application's AllJoyn router has enabled the 
+legacy Name Service behavior. </li>
+<li>The provider applications are not on the AllJoyn network 
+at the time of initial query. </li>
+</ul><p>The main steps for the message sequence are described below.</p>
+<ol><li>The message flow is initiated by the consumer application 
+invoking <code>FindAdvertisedName()</code>.</li>
+<li>The NGNS sends DNS-SD based query messages over mDNS, as 
+well as legacy Name Service messages.</li>
+<li>The query schedule for mDNS messages and WHO-HAS messages expires</li>
+<li>Upon joining the AllJoyn network, the NGNS provider app 
+sends unsolicited DNS-SD response messages and advertises names via IS-AT messages.</li>
+<li>Upon joining the AllJoyn network, the Name Service provider 
+application sends IS-AT messages.</li>
+<li>The consumer AllJoyn router performs the following tasks:<ol><li>It consumes the Name Service and NGNS messages.</li>
+<li>It filters the names being advertised.</li>
+<li>It sends <code>FoundAdvertisedName()</code> only if there is a match.</li>
+</ol></li>
+</ol><p><img src="/sites/default/files/developers/learn/system-desc/find-advertised-name-api-called-provider-arrives-later.png" alt="find-advertised-name-api-called-provider-arrives-later" /></p>
+<p><strong>Figure:</strong> FindAdvertisedName API called; provider arrives later</p>
+<h4 id="interface-names-discovery">Interface names discovery</h4>
+<h5 id="ngns-consumer-app-and-ngns-provider-app">NGNS consumer app and NGNS provider app</h5>
+<p>This message sequence assumes the following:</p>
+<ul><li>The provider application is already on the AllJoyn network. </li>
+<li>The legacy Name Service behavior is turned off on the consumer AllJoyn router. </li>
+</ul><p>The main steps for the message sequence are described below.</p>
+<ol><li>The message flow is initiated by the consumer application 
+registering the announce handler (by calling RegisterAnnounceHandler) 
+and providing a set of AllJoyn interfaces. This triggers the 
+discovery for provider applications that implement those interfaces. </li>
+<li>The NGNS sends DNS-SD based query messages over mDNS and 
+populates the search TXT record in the Additional section 
+based on the AllJoyn interfaces being discovered.</li>
+<li>Any AllJoyn provider application that provides the 
+AllJoyn interfaces being discovered sends the DNS-SD 
+response message and includes the sessionless signal 
+well-known name corresponding to the About Announce signal. 
+Note that this message is sent over unicast</li>
+<li>The consumer application immediately initiates a 
+sessionless signal fetch to retrieve the Announce signal.</li>
+</ol><p><img src="/sites/default/files/developers/learn/system-desc/alljoyn-interface-query-ngns-consumer-provider-apps.png" alt="alljoyn-interface-query-ngns-consumer-provider-apps" /></p>
+<p><strong>Figure:</strong> AllJoyn interface query (NGNS consumer app and NGNS provider app)</p>
+<h5 id="ngns-consumer-app-ngns-and-name-service-provider-app">NGNS consumer app; NGNS and Name Service provider app</h5>
+<p>This message sequence is an extension of the call flow in 
+<a href="#ngns-consumer-app-and-ngns-provider-app">NGNS consumer app and NGNS provider app</a> 
+with the legacy Name Service behavior being enabled. </p>
+<p>Although the interface-based query is a 14.06 feature, it 
+has been designed such that legacy Name Service provider 
+applications can participate in the discovery process. 
+This is enabled by sending WHO-HAS message with WKN=org.alljoyn.sl. </p>
+<p>This message sequence assumes that the provider application 
+is already on the AllJoyn network. </p>
+<p>The main steps for the message sequence are described below:</p>
+<ol><li>The message flow is initiated by the consumer application 
+registering the announce handler (by calling RegisterAnnounceHandler) 
+and providing a set of AllJoyn interfaces for discovery.</li>
+<li>The NGNS sends DNS-SD based query messages over mDNS, 
+and populates the search TXT record in the Additional section 
+based on the AllJoyn interfaces being discovered.</li>
+<li>The NGNS sends WHO-HAS discovery messages with WKN=org.alljoyn.sl.</li>
+<li>Any NGNS provider application that provides the AllJoyn 
+interfaces being discovered sends the DNS-SD response message 
+and includes the sessionless signal well-known name corresponding 
+to the About Announce signal. 
+Note that this message is sent over unicast.</li>
+<li>The consumer application immediately initiates a sessionless 
+signal fetch to retrieve the Announce signal.</li>
+<li>Any legacy provider application sends an IS-AT message with 
+the sessionless signal well-known name if there are any 
+sessionless signals in the sessionless signal cache.</li>
+<li>The consumer application immediately initiates sessionless 
+signal fetch and filters the Announce signals that provide the 
+AllJoyn interfaces being discovered.</li>
+</ol><p><img src="/sites/default/files/developers/learn/system-desc/interface-query-ngns-consumer-app-ngns-ns-provider-apps.png" alt="interface-query-ngns-consumer-app-ngns-ns-provider-apps" /></p>
+<p><strong>Figure:</strong> Interface query (NGNS consumer app; NGNS and Name Service provider apps)</p>
+<h5 id="pending-alljoyn-interface-names-query-provider-apps-arrive-later">Pending AllJoyn interface names query; provider apps arrive later</h5>
+<p>This message sequence describes the scenario when there is 
+a pending query (i.e., the transmission schedule has expired) 
+but the Announce signal handler is still registered. </p>
+<p>The main steps for the message sequence are described below:</p>
+<ol><li>The message sequence is initiated by the consumer application 
+registering the announce handler (by calling RegisterAnnounceHandler) 
+and providing a set of AllJoyn interfaces for discovery.</li>
+<li>The NGNS sends DNS-SD based query messages over mDNS, and 
+populates the search TXT record in the Additional section based 
+on the AllJoyn interfaces being discovered.</li>
+<li>The NGNS sends WHO-HAS discovery messages with WKN=org.alljoyn.sl.</li>
+<li>The query schedule for mDNS messages and WHO-HAS message expires</li>
+<li>Upon arrival of the provider application on the AllJoyn 
+network, the NGNS sends unsolicited DNS-SD response messages 
+with the sessionless signal well-known names and also advertises 
+the sessionless signal well-known names via IS-AT messages.</li>
+<li>Upon joining the AllJoyn network, the Name Service provider 
+application advertises the sessionless signal well-known name via IS-AT messages.</li>
+<li>The consumer AllJoyn router fetches the sessionless signals 
+from the provider apps and performs filtering; the Announce 
+signal is sent to the consumer application if there is a match.</li>
+</ol><p><img src="/sites/default/files/developers/learn/system-desc/pending-interface-query-ngns-consumer-app-ngns-ns-provider-apps.png" alt="pending-interface-query-ngns-consumer-app-ngns-ns-provider-apps" /></p>
+<p><strong>Figure:</strong> Pending AllJoyn interface query (NGNS consumer app, NGNS and Name Service provider apps)</p>
+<h4 id="cancel-advertisement">Cancel advertisement</h4>
+<h5 id="ngns-provider-app-ngns-and-name-service-consumer-apps">NGNS provider app, NGNS and Name Service consumer apps</h5>
+<p>The main steps for the message sequence are described below.</p>
+<ol><li>The provider application calls CancelAdvertiseName().</li>
+<li>The NGNS sends both IS-AT and DNS-SD response message. 
+Note that advertise TXT record in the mDNS message has TTL set to 0.</li>
+<li>The consumer application receives LostAdvertisedName() 
+upon receipt of the cancel advertisement discovery message.</li>
+</ol><p><img src="/sites/default/files/developers/learn/system-desc/cancel-advertised-name-ngns-consumer-app-ngns-ns-provider-apps.png" alt="cancel-advertised-name-ngns-consumer-app-ngns-ns-provider-apps" /></p>
+<p><strong>Figure:</strong> Cancel advertised name (NGNS consumer app, NGNS and Name Service provider apps)</p>
+<h4 id="presence">Presence</h4>
+<h5 id="ngns-consumer-app-and-ngns-provider-app">NGNS consumer app and NGNS provider app</h5>
+<p>Two modes of the Presence API is supported:  synchronous and asynchronous mode.<br />From the perspective of wire protocol, the message sequence is identical.</p>
+<p>In the 14.02 release, presence is validated by the receipt 
+of the IS-AT messages for a name; and three successive losses 
+of IS-AT messages trigger a LostAdvertisedName() to the consumer 
+application. Since the delay was not tolerable for most 
+applications, the presence was redesigned in the 14.06 
+release. A consumer application can initiate the presence 
+of a name that was previously discovered using the newly 
+introduced Ping API. </p>
+<ul><li>If the discovered name is connected to a 14.06 AllJoyn router, 
+the presence message sequence is initiated. </li>
+<li>If the discovered name is connected to a 14.02 AllJoyn router, 
+the API invocation returns an error.</li>
+</ul><p>The main steps for the message sequence are described below.</p>
+<ol><li>The consumer application initiates a presence check for 
+the name by invoking the Ping API.</li>
+<li>The AllJoyn router returns the unimplemented error code 
+if the name being pinged is connected to a 14.02 AllJoyn 
+router at the time of discovery; else, the message sequence continues.</li>
+<li>If there is an entry for the name in the AllJoyn routing 
+table, then mDNS message is sent over unicast to check the presence state.</li>
+<li>Upon receipt of the mDNS message, the AllJoyn router checks 
+the presence state for the name and sends an mDNS response 
+message over unicast. The presence check is performed using D-Bus Ping method call.</li>
+</ol><p><img src="/sites/default/files/developers/learn/system-desc/ping-api-over-ngns-ngns-consumer-provider-apps.png" alt="ping-api-over-ngns-ngns-consumer-provider-apps" /></p>
+<p><strong>Figure:</strong> Ping API called by consumer application over NGNS (NGNS consumer app and NGNS provider app)</p>
+<h5 id="legacy-presence-with-ngns-consumer-app-and-name-service-provider-app">Legacy presence with NGNS consumer app and Name Service provider app</h5>
+<p>If a name that was discovered is connected to a 14.02 
+AllJoyn router, the new Ping API message sequence is not 
+supported. If the Ping API returns not implemented error code, 
+the consumer application must issue <code>FindAdvertisedName()</code> 
+with the discovered name so that presence for that name can be initiated.</p>
+<p><img src="/sites/default/files/developers/learn/system-desc/revert-legacy-presence-ngns-consumer-app-ns-provider-app.png" alt="revert-legacy-presence-ngns-consumer-app-ns-provider-app" /></p>
+<p><strong>Figure:</strong> Reverting to legacy presence (NGNS consumer app and Name Service provider app)</p>
+<h3 id="dns-sd-message-format">DNS-SD message format</h3>
+<p>See <a href="#usage-of-dns-sd">Usage of DNS-SD </a> for information on how the 
+AllJoyn framework makes use of the DNS-SD protocol. 
+The AllJoyn discovery process is based on the DNS-SD and the 
+message format is captured below. </p>
+<p><strong>NOTE:</strong> <guid> in the resource records refers to the AllJoyn 
+router'\'s GUID. In addition, the presence of specific records 
+in a given message is specified in the NGNS message sequences 
+capture above while the tables below show all the possible 
+records types that can be present in the query or response messages:</guid></p>
+<h4 id="dns-sd-query">DNS-SD query</h4>
+<h5 id="dns-sd-query-question-format">DNS-SD query: question format</h5>
+<table><thead><tr><th>Name</th>
+<th style="text-align:center">Type</th>
+<th>Record-specific data</th>
+</tr></thead><tbody><tr><td><ul><li>alljoyn._udp.local.</li><li>alljoyn._tcp.local.</li></ul></td>
+<td style="text-align:center">PTR</td>
+<td><p>The service name is alljoyn as allocated through IANA.</p><p>In the 14.06 release, the protocol used in the service description is TCP. When UDP transport is supported in future, the protocol for service name will be UDP.</p><p>The discovery scope is the local network.</p></td>
+</tr></tbody></table><h5 id="dns-sd-query-additional-section">DNS-SD query: Additional section</h5>
+<table><thead><tr><th>Name</th>
+<th style="text-align:center">Type</th>
+<th>Record-specific data</th>
+</tr></thead><tbody><tr><td>search.<guid>.local.</guid></td>
+<td style="text-align:center">TXT</td>
+<td><p>Captures the well-known names or interfaces that are being searched. The key notation is as follows:</p><ul><li>txtvrs=0; this represents version of the TXT record.</li><li>n<em>1, n_2, etc., if multiple well-known names are present, they are logically ANDed; n</em># is the key for well-known names.</li><li>i<em>1, i_2, etc., if multiple interface names are being queried. If multiple interface names are present, they are logically ANDed; i</em># is the key for interface names.</li><li>Since the APIs for name-based and interface-based query are different, the search record has either name keys or interface keys.</li></ul><p>If the consumer application intends to perform logical OR operation for interface names, it must call the discovery API with interface name multiple times.</p><p>Example:  i_1 = org.alljoyn.About</p></td>
+</tr><tr><td>sender-info.<guid>.local.</guid></td>
+<td style="text-align:center">TXT</td>
+<td><p>Captures additional data regarding the sender of the message. The following keys are sent:</p><ul><li>txtvrs=0; represents the version of the TXT record.</li><li>pv (protocol version):  represents the discovery protocol version.</li><li>IPv4 and UDPv4 address: represents the IPv4 address and UDP port.</li><li>bid (burst identifier): represents the burst identifier.</li></ul></td>
+</tr><tr><td>ping.<guid>.local.</guid></td>
+<td style="text-align:center">TXT</td>
+<td><p>Captures the names that are being pinged by the consumer application. The key notation is as follows:</p><ul><li>txtvrs=0; represents version of the TXT record.</li><li>n= the well-known name or the unique name.</li></ul><p>Only one key can be present in the ping record.</p></td>
+</tr></tbody></table><h4 id="dns-sd-response">DNS-SD response</h4>
+<h5 id="dns-sd-response-message-answer-section">DNS-SD response message: Answer section</h5>
+<table><thead><tr><th>Name</th>
+<th style="text-align:center">Type</th>
+<th>Record-specific data</th>
+</tr></thead><tbody><tr><td>_alljoyn._tcp.local.</td>
+<td style="text-align:center">PTR</td>
+<td><guid>._alljoyn._tcp.local.</guid></td>
+</tr><tr><td><guid>._alljoyn._tcp.local.</guid></td>
+<td style="text-align:center">TXT</td>
+<td><p>txtvrs=0</p><p>Except for text record version, there is no additional record.</p></td>
+</tr><tr><td><guid>._alljoyn._tcp.local.</guid></td>
+<td style="text-align:center">SRV</td>
+<td><p>port, <guid>.local</guid></p><p>port represents TCP port number used for the router-router connection.</p></td>
+</tr></tbody></table><h5 id="dns-sd-response-message-additional-section">DNS-SD response message: Additional section</h5>
+<table><thead><tr><th>Name</th>
+<th style="text-align:center">Type</th>
+<th>Record-specific data</th>
+</tr></thead><tbody><tr><td>advertise.<guid>.local.</guid></td>
+<td style="text-align:center">TXT</td>
+<td><p>Captures the well-known names that the provider application is advertising.The key notation is as follows:</p><p>n<em>1, n_2, etc., if multiple well-known names are being advertised; n</em># is the key for well-known names.</p><p>For interface query response, the sessionless signal well-known name that is advertised is as follows:</p><p>n_1=org.alljoyn.About.sl.y<guid>.x<latest change_id=""></latest></guid></p></td>
+</tr><tr><td>sender-info.<guid>.local.</guid></td>
+<td style="text-align:center">TXT</td>
+<td><p>Captures additional data regarding the sender of the message. The following keys are sent:</p><ul><li>txtvrs=0; represents version of the TXT record.</li><li>pv (protocol version):  represents the discovery protocol version.</li><li>IPv4 and UDPv4 address: represents the IPv4 address and UDP port.</li><li>bid (burst identifier): represents the burst identifier.</li></ul></td>
+</tr><tr><td>Ping-reply.<guid>.local.</guid></td>
+<td style="text-align:center">TXT</td>
+<td><p>Captures the names that are being pinged by the consumer application. The key notation is as follows:</p><ul><li>txtvrs=0; represents version of the TXT record.</li><li>n= well-known name or unique name.</li><li>replycode = reply code as returned by the router.</li></ul></td>
+</tr><tr><td><guid>.local</guid></td>
+<td style="text-align:center">A</td>
+<td>This resource record sends IPv4 address. It is present in response messages for discovery.</td>
+</tr></tbody></table><h4 id="ngns-configuration-parameters">NGNS configuration parameters</h4>
+<table><thead><tr><th>Parameter</th>
+<th>Default value</th>
+<th>Range</th>
+<th>Description</th>
+</tr></thead><tbody><tr><td>EnableLegacyNS</td>
+<td>true</td>
+<td>boolean</td>
+<td>Specifies the backward compatibility behavior with respect to legacy Name Service.</td>
+</tr></tbody></table><h3 id="discovery-usage-guidelines">Discovery usage guidelines</h3>
+<p>Although the AllJoyn system supports both the name-based and 
+announcement-based discovery, the preferred and recommended 
+method for discovering services in an AllJoyn IoE network 
+is the announcement-based discovery.</p>
+<p>The name-based service discovery process can be used for 
+app-to-app based discovery, where both provider and consumer 
+applications are aware of the well-known name. This discovery 
+process is also used for sessionless signals and to discover 
+the AllJoyn router for the thin app. 
+<a href="#alljoyn-discovery-method-usage-guidelines">AllJoyn discovery method usage guidelines</a> 
+summarizes usage guidelines for the two AllJoyn discovery methods.</p>
+<h4 id="alljoyn-discovery-method-usage-guidelines">AllJoyn discovery method usage guidelines</h4>
+<table><thead><tr><th>Name-based discovery usage</th>
+<th>Announcement-based discovery usage</th>
+</tr></thead><tbody><tr><td><ul><li>App-to-app discovery</li><li>Sessionless signals</li><li>AllJoyn router discovery for thin apps</li></ul></td>
+<td>AllJoyn service interfaces discovery on the AllJoyn network.</td>
+</tr></tbody></table>  </div>
+  </div>
+
+  
+  
+</article>
+              </div>
+                                   
+          </section>
+
+          
+        </div>
+      </div>
+
+
+      
+    </div>
+  </div>
+</div>
+<div id="sticky-footer">
+  
+      <footer id="footer" class="clearfix" role="contentinfo">
+        <div class="region region-footer"><div class="region-inner clearfix"><nav id="block-system-user-menu" class="block block-system block-menu"  role="navigation"><div class="block-inner clearfix">        <div class="block-content content"><ul class="menu clearfix"><li class="first menu-item-537"><a href="/user/register" title="">Register</a></li><li class="last menu-item-536"><a href="/user/login" title="">Log In</a></li></ul></div></div></nav></div></div>    </footer>
+  
+  <div id="lfcollabprojects-footer">
+    <div class="gray-diagonal">
+      <div class="footer-inner">
+        <p>&copy; 2017 AllSeen Alliance, Inc. All Rights Reserved.</p>
+        <p>The Linux Foundation® is a registered trademark of The Linux Foundation. AllSeen, Designed for AllSeen and AllSeen Alliance are trademarks of the AllSeen Alliance, Inc. AllJoyn® is a registered trademark of AllSeen Alliance, Inc.</p>
+        <p>Linux is a registered <a href="http://www.linuxfoundation.org/programs/legal/trademark" title="Linux Mark Institute">trademark</a> of Linus Torvalds.</p>
+        <p>Please see our <a href="/brand-guidelines">brand guidelines</a>, <a href="/trademarks">trademark guidelines</a>, <a href="/about/governance/ip-policy">IP policy</a>, <a href="/terms">terms of use</a>, <a href="/license">license</a>, and <a href="/privacy">privacy policy</a>.</p>
+      </div>
+    </div>
+    <div id="body-bottom">
+      </div>
+</body>
+</html>

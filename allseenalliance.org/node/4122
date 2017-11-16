@@ -1,0 +1,1390 @@
+<!DOCTYPE html>
+<!--[if IEMobile 7]><html class="iem7" lang="en" dir="ltr"><![endif]-->
+<!--[if lte IE 6]><html class="lt-ie9 lt-ie8 lt-ie7" lang="en" dir="ltr"><![endif]-->
+<!--[if (IE 7)&(!IEMobile)]><html class="lt-ie9 lt-ie8" lang="en" dir="ltr"><![endif]-->
+<!--[if IE 8]><html class="lt-ie9" lang="en" dir="ltr"><![endif]-->
+<!--[if (gte IE 9)|(gt IEMobile 7)]><!--><html lang="en" dir="ltr"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/terms/"
+  xmlns:foaf="http://xmlns.com/foaf/0.1/"
+  xmlns:og="http://ogp.me/ns#"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:sioc="http://rdfs.org/sioc/ns#"
+  xmlns:sioct="http://rdfs.org/sioc/types#"
+  xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema#"><!--<![endif]-->
+<head>
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
+<meta charset="utf-8" />
+<link rel="shortlink" href="/node/4122" />
+<link rel="shortcut icon" href="https://identity.allseenalliance.org/sites/all/themes/at_alljoyn/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="/developers/learn/base-services/controlpanel/interface-14-02" />
+<meta name="viewport" content="width=device-width" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta property="og:image" content="https://identity.allseenalliance.org/sites/all/themes/at_alljoyn/images/allseen-logo.png"/>
+<meta name="google-translate-customization" content="48b015afeed82101-ecae534af0f48252-ga0b6470a6208b2f5-f"></meta>
+<meta name="MobileOptimized" content="width">
+<meta name="HandheldFriendly" content="true">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Control Panel Interface Definition - 14.02 - AllSeen Alliance</title>
+<link type="text/css" rel="stylesheet" href="https://identity.allseenalliance.org/sites/default/files/css/css_xE-rWrJf-fncB6ztZfd2huxqgxu4WO-qwma6Xer30m4.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://identity.allseenalliance.org/sites/default/files/css/css_7Vcu6qIuRTO46aDOBZp7_mtksGdhCHSe0pjTO2YbGng.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://identity.allseenalliance.org/sites/default/files/css/css_J2n1xiaSuececTK0yC3DT_Msm4PrkPwHizxr0oXGGoo.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://identity.allseenalliance.org/sites/default/files/css/css_oxEtvjMfj8c8EEJJ-1WXLGGntCnC0UvrbYsq0Gw4m4Q.css" media="screen" />
+<link type="text/css" rel="stylesheet" href="https://identity.allseenalliance.org/sites/default/files/css/css_9EusV9fcbkpqBeTGdJPl7ru65jm-3ngbTi_D6YRR_5A.css" media="only screen" />
+<script src="https://identity.allseenalliance.org/sites/default/files/js/js_UWQINlriydSoeSiGQxToOUdv493zEa7dpsXC1OtYlZU.js"></script>
+<script src="https://identity.allseenalliance.org/sites/default/files/js/js_COMsmDyrY9mzVU28X2uGvF4Ba3vd5eTo5xEO7dvCUZM.js"></script>
+<script src="https://identity.allseenalliance.org/sites/default/files/js/js_i8oyg1R4On_HyzPiZ5zC3V-DxehjGAcpKwNao5s0s5I.js"></script>
+<script>hljs.configure({languages:[]}); hljs.initHighlightingOnLoad();</script>
+<script src="https://identity.allseenalliance.org/sites/default/files/js/js_aG0kZAhSHT6G3QC-d9Wwx9gQp5d0em8X6FmMYZ1e5h4.js"></script>
+<script>var _gaq = _gaq || [];_gaq.push(["_setAccount", "UA-"]);_gaq.push(["_trackPageview"]);(function() {var ga = document.createElement("script");ga.type = "text/javascript";ga.async = true;ga.src = ("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/ga.js";var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(ga, s);})();</script>
+<script src="https://identity.allseenalliance.org/sites/default/files/js/js_R35PAK16384fXh7f2OqvXVkbbrwr8ABLrDpR1zTluo0.js"></script>
+<script src="https://identity.allseenalliance.org/sites/default/files/js/js_DKtRHJS-jz_cHgf23K7wnIWphCanZ_Rz74Aw-DKQyFs.js"></script>
+<script>jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"at_alljoyn","theme_token":"GsHicHRMts6EXm0aPaP3JNtqOwe48xFQLU_HZqWP7G8","js":{"misc\/jquery.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/all\/modules\/contrib\/comment_notify\/comment_notify.js":1,"sites\/all\/modules\/alljoyn\/custom_modules\/allseen_docs\/allseen_docs_highlight\/highlightjs\/highlight.min.js":1,"0":1,"sites\/all\/libraries\/colorbox\/jquery.colorbox-min.js":1,"sites\/all\/modules\/contrib\/colorbox\/js\/colorbox.js":1,"sites\/all\/modules\/contrib\/colorbox\/styles\/default\/colorbox_style.js":1,"sites\/all\/modules\/contrib\/colorbox\/js\/colorbox_load.js":1,"sites\/all\/modules\/contrib\/colorbox\/js\/colorbox_inline.js":1,"sites\/all\/modules\/contrib\/panels\/js\/panels.js":1,"sites\/all\/modules\/contrib\/quote\/quote.js":1,"sites\/all\/modules\/contrib\/views_slideshow\/js\/views_slideshow.js":1,"sites\/all\/modules\/contrib\/google_analytics\/googleanalytics.js":1,"1":1,"sites\/all\/modules\/alljoyn\/custom_modules\/allseen_docs\/allseen_docs_nav\/allseen-docs-nav.js":1,"sites\/all\/themes\/at_alljoyn\/scripts\/alljoyn.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"sites\/all\/modules\/contrib\/comment_notify\/comment_notify.css":1,"sites\/all\/modules\/ldap\/ldap_user\/ldap_user.css":1,"modules\/book\/book.css":1,"modules\/comment\/comment.css":1,"sites\/all\/modules\/contrib\/date\/date_api\/date.css":1,"sites\/all\/modules\/contrib\/date\/date_popup\/themes\/datepicker.1.7.css":1,"modules\/field\/theme\/field.css":1,"sites\/all\/modules\/contrib\/mollom\/mollom.css":1,"modules\/node\/node.css":1,"modules\/user\/user.css":1,"modules\/forum\/forum.css":1,"sites\/all\/modules\/contrib\/views\/css\/views.css":1,"sites\/all\/modules\/alljoyn\/custom_modules\/allseen_docs\/allseen_docs_highlight\/highlightjs\/default.min.css":1,"sites\/all\/modules\/contrib\/colorbox\/styles\/default\/colorbox_style.css":1,"sites\/all\/modules\/contrib\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/ldap\/ldap_servers\/ldap_servers.admin.css":1,"sites\/all\/modules\/contrib\/panels\/css\/panels.css":1,"sites\/all\/modules\/contrib\/quote\/quote.css":1,"sites\/all\/modules\/contrib\/views_slideshow\/views_slideshow.css":1,"sites\/all\/modules\/alljoyn\/custom_modules\/allseen_docs\/allseen_docs_nav\/allseen-docs-nav.css":1,"sites\/all\/modules\/alljoyn\/features\/content_type_developer_document\/content-type-developer-document.css":1,"sites\/all\/themes\/adaptivetheme\/at_core\/css\/at.layout.css":1,"sites\/all\/themes\/at_alljoyn\/css\/fonts.css":1,"sites\/all\/themes\/at_alljoyn\/css\/globals.css":1,"sites\/all\/themes\/at_alljoyn\/css\/jcarousel-alljoyn.css":1,"public:\/\/adaptivetheme\/at_alljoyn_files_7dbe1ef5\/at_alljoyn.responsive.layout.css":1,"public:\/\/adaptivetheme\/at_alljoyn_files_7dbe1ef5\/at_alljoyn.responsive.styles.css":1}},"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":true,"mobiledevicewidth":"480px"},"jcarousel":{"ajaxPath":"\/jcarousel\/ajax\/views"},"quote_nest":2,"googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls|xml|z|zip"}});</script>
+<!--[if lt IE 9]>
+<script src="https://identity.allseenalliance.org/sites/all/themes/adaptivetheme/at_core/scripts/respond.js?nwgww1"></script>
+<script src="https://identity.allseenalliance.org/sites/all/themes/adaptivetheme/at_core/scripts/html5.js?nwgww1"></script>
+<script src="https://identity.allseenalliance.org/sites/all/themes/adaptivetheme/at_core/scripts/PIE.htc?nwgww1"></script>
+<script src="https://identity.allseenalliance.org/sites/all/themes/adaptivetheme/at_core/scripts/selectivizr.js?nwgww1"></script>
+<![endif]-->
+</head>
+<body class="html not-front not-logged-in one-sidebar sidebar-first page-node page-node- page-node-4122 node-type-developer-document site-name-hidden with-subnav page-developers-learn-base-services-controlpanel-interface-14-02 section-developers">
+  <div id="body-top">
+      </div>
+  <div id="skip-link">
+    <a href="#main-content" class="element-invisible element-focusable">Skip to main content</a>
+  </div>
+  <div class="region region-page-top"><div class="region-inner clearfix"><div id="fb-root"></div><script type="text/javascript">
+     window.fbAsyncInit = function() {
+       FB.init({
+         appId: "492099574180957",
+         status: true,
+         cookie: true,
+         xfbml: true,
+         oauth : true,
+         channelUrl: "https:\/\/identity.allseenalliance.org\/service_links\/channel"
+         });
+
+         FB.Event.subscribe('edge.create', function(href, widget) {
+    _gaq.push(['_trackEvent', 'facebook', 'Facebook like', href]);
+   });FB.Event.subscribe('edge.remove', function(href, widget) {
+    _gaq.push(['_trackEvent', 'facebook', 'Facebook unlike', href]);
+   });
+       };
+       (function(d){
+     var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement('script'); js.id = id; js.async = true;
+     js.src = '//connect.facebook.net/en_US/all.js';
+     ref.parentNode.insertBefore(js, ref);
+   }(document));
+    </script></div></div>  
+<div id="wrap">
+
+  <div id="lfcollabprojects-header">
+    <div class="gray-diagonal">
+      <div class="header-inner">
+        <a id="lfcollabprojects-logo" href="http://collabprojects.linuxfoundation.org">Linux Foundation Collaborative Projects</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="page" class="container page">
+
+    
+    <header id="header" class="clearfix" role="banner">
+
+      <div class="region region-header"><div class="region-inner clearfix"><div id="block-block-19" class="block block-block" ><div class="block-inner clearfix">        <div class="block-content content"><br /><br /><br /><br /><br /><br /><br /></div></div></div></div></div>
+              <div id="branding" class="branding-elements clearfix">
+
+                      <div id="logo"><a href="/" title="Home page"><img class="site-logo" typeof="foaf:Image" src="https://identity.allseenalliance.org/sites/default/files/logo.png" alt="AllSeen Alliance" /></a></div>
+          
+                      <hgroup id="name-and-slogan" class="element-invisible">
+                              <h1 id="site-name" class="element-invisible"><a href="/" title="Home page">AllSeen Alliance</a></h1>
+                                        </hgroup>
+          
+          <!--main menu-->
+          <a id="main-menu-toggle" href="#">Site Sections</a>
+  		  		  		
+        </div>
+      
+    </header>
+
+
+    <div id="columns" class="clearfix">
+      <div id="sub-menu-bar">
+        <div class="region region-sub-menu-bar"><div class="region-inner clearfix"><div id="block-menu-block-allseen-docs-nav" class="block block-menu-block"  role="navigation"><div class="block-inner clearfix">        <div class="block-content content"><div class="menu-block-wrapper menu-block-allseen-docs-nav menu-name-main-menu parent-mlid-0 menu-level-2">
+  <ul class="menu clearfix"><li class="first has-children active-trail menu-mlid-2504 menu-item-2504"><a href="/developers/learn" class="active-trail">Learn</a></li><li class="has-children menu-mlid-2539 menu-item-2539"><a href="/developers/download">Download</a></li><li class="has-children menu-mlid-2541 menu-item-2541"><a href="/developers/develop">Develop</a></li><li class="last has-children menu-mlid-2636 menu-item-2636"><a href="/developers/contribute">Contribute</a></li></ul></div>
+</div></div></div><section id="block-menu-block-allseen-docs-responsive-nav" class="block block-menu-block"  role="navigation"><div class="block-inner clearfix">        <div class="block-title-wrapper">
+      <h2 class="block-title">Menu</h2>
+    </div>
+      <div class="block-content content"><div class="menu-block-wrapper menu-block-allseen-docs-responsive-nav menu-name-main-menu parent-mlid-0 menu-level-1">
+  <ul class="menu clearfix"><li class="first menu-parent menu-mlid-1994 menu-item-1994"><a href="/about">About</a><ul class="menu clearfix"><li class="first menu-mlid-2486 menu-item-2486"><a href="/about/why-allseen">Why AllSeen</a></li><li class="menu-mlid-2464 menu-item-2464"><a href="/about/get-involved">Get Involved</a></li><li class="collapsed menu-mlid-2446 menu-item-2446"><a href="/about/governance/ip-policy">IP Policy</a></li><li class="menu-mlid-2491 menu-item-2491"><a href="/about/working-groups">Working Groups</a></li><li class="menu-mlid-2286 menu-item-2286"><a href="/about/members">Member Companies</a></li><li class="menu-mlid-2285 menu-item-2285"><a href="/about/join-allseen-alliance">Join The AllSeen Alliance</a></li><li class="collapsed menu-mlid-2447 menu-item-2447"><a href="/about/governance">Governance</a></li><li class="menu-mlid-501 menu-item-501"><a href="/about/faqs">FAQs</a></li><li class="menu-mlid-2322 menu-item-2322"><a href="/about/contact">Contact Us</a></li><li class="menu-mlid-2282 menu-item-2282"><a href="/allseen/what-is-allseen-alliance">What is AllSeen Alliance?</a></li><li class="last menu-mlid-2490 menu-item-2490"><a href="https://wiki.allseenalliance.org/members_private/start?do=login&amp;sectok=34485854163fe6a0be457198139e2c84" title="Members Area" id="members_area" name="Members Area" rel="nofollow" target="_blank">Members Area</a></li></ul></li><li class="menu-parent active-trail menu-mlid-2503 menu-item-2503"><a href="/developers" class="active-trail">Developers</a><ul class="menu clearfix"><li class="first menu-parent has-children active-trail menu-mlid-2504 menu-item-2504"><a href="/developers/learn" class="active-trail active-trail">Learn</a><ul class="menu clearfix"><li class="first menu-mlid-2505 menu-item-2505"><a href="/developers/learn/use-cases">Use Cases</a></li><li class="menu-mlid-2506 menu-item-2506"><a href="/developers/learn/architecture">Architecture</a></li><li class="menu-parent menu-mlid-2507 menu-item-2507"><a href="/developers/learn/core">Core Framework</a><ul class="menu clearfix"><li class="first menu-parent menu-mlid-2508 menu-item-2508"><a href="/developers/learn/core/about-announcement">About Announcement</a><ul class="menu clearfix"><li class="first menu-mlid-2509 menu-item-2509"><a href="/developers/learn/core/about-announcement/interface">Interface</a></li><li class="last menu-mlid-2510 menu-item-2510"><a href="/developers/learn/core/about-announcement/interface-14-02">Interface 14.02</a></li></ul></li><li class="menu-mlid-2511 menu-item-2511"><a href="/developers/learn/core/events-and-actions">Events and Actions</a></li><li class="menu-mlid-2992 menu-item-2992"><a href="/developers/learn/core/rn_config">Routing Node Configuration</a></li><li class="menu-mlid-2512 menu-item-2512"><a href="/developers/learn/core/standard-core">Standard Core</a></li><li class="menu-mlid-2513 menu-item-2513"><a href="/developers/learn/core/thin-core">Thin Core</a></li><li class="menu-parent menu-mlid-2514 menu-item-2514"><a href="/developers/learn/core/system-description">System Description</a><ul class="menu clearfix"><li class="first menu-mlid-2515 menu-item-2515"><a href="/developers/learn/core/system-description/system-architecture">System Architecture</a></li><li class="menu-mlid-2516 menu-item-2516"><a href="/developers/learn/core/system-description/advertisement-discovery">Advertisement and Discovery</a></li><li class="menu-mlid-2645 menu-item-2645"><a href="/developers/learn/core/system-description/alljoyn-transport">AllJoyn Transport</a></li><li class="menu-mlid-2517 menu-item-2517"><a href="/developers/learn/core/system-description/data-exchange">Data Exchange</a></li><li class="menu-mlid-2518 menu-item-2518"><a href="/developers/learn/core/system-description/alljoyn-session">AllJoyn Session</a></li><li class="menu-mlid-2519 menu-item-2519"><a href="/developers/learn/core/system-description/sessionless-signal">Sessionless Signal</a></li><li class="menu-mlid-2520 menu-item-2520"><a href="/developers/learn/core/system-description/alljoyn-security">AllJoyn Security</a></li><li class="menu-mlid-2521 menu-item-2521"><a href="/developers/learn/core/system-description/thin-apps">Thin Apps</a></li><li class="last menu-mlid-2522 menu-item-2522"><a href="/developers/learn/core/system-description/events-actions">Events and Actions</a></li></ul></li><li class="last menu-parent menu-mlid-2937 menu-item-2937"><a href="/developers/learn/core/security2_0">Security 2.0</a><ul class="menu clearfix"><li class="first last menu-mlid-2938 menu-item-2938"><a href="/developers/learn/core/security2_0/hld">High-Level Design</a></li></ul></li></ul></li><li class="menu-parent active-trail menu-mlid-2523 menu-item-2523"><a href="/developers/learn/base-services" class="active-trail">Base Services</a><ul class="menu clearfix"><li class="first menu-parent menu-mlid-2524 menu-item-2524"><a href="/developers/learn/base-services/onboarding">Onboarding</a><ul class="menu clearfix"><li class="first menu-mlid-2525 menu-item-2525"><a href="/developers/learn/base-services/onboarding/interface">Interface</a></li><li class="last menu-mlid-2526 menu-item-2526"><a href="/developers/learn/base-services/onboarding/interface-14-02">Interface 14.02</a></li></ul></li><li class="menu-parent menu-mlid-2527 menu-item-2527"><a href="/developers/learn/base-services/configuration">Configuration</a><ul class="menu clearfix"><li class="first menu-mlid-2528 menu-item-2528"><a href="/developers/learn/base-services/configuration/interface">Interface</a></li><li class="last menu-mlid-2529 menu-item-2529"><a href="/developers/learn/base-services/configuration/interface-14-02">Interface 14.02</a></li></ul></li><li class="menu-parent menu-mlid-2530 menu-item-2530"><a href="/developers/learn/base-services/notification">Notification</a><ul class="menu clearfix"><li class="first menu-mlid-2531 menu-item-2531"><a href="/developers/learn/base-services/notification/interface">Interface</a></li><li class="last menu-mlid-2532 menu-item-2532"><a href="/developers/learn/base-services/notification/interface-14-02">Interface 14.02</a></li></ul></li><li class="menu-parent active-trail menu-mlid-2533 menu-item-2533"><a href="/developers/learn/base-services/controlpanel" class="active-trail">ControlPanel</a><ul class="menu clearfix"><li class="first menu-mlid-2534 menu-item-2534"><a href="/developers/learn/base-services/controlpanel/interface">Interface</a></li><li class="last active-trail active menu-mlid-2535 menu-item-2535"><a href="/developers/learn/base-services/controlpanel/interface-14-02" class="active-trail active">Interface 14.02</a></li></ul></li><li class="last menu-parent menu-mlid-2536 menu-item-2536"><a href="/developers/learn/base-services/audiostreaming">Audio Streaming</a><ul class="menu clearfix"><li class="first last menu-mlid-2537 menu-item-2537"><a href="/developers/learn/base-services/audiostreaming/interface">Interface</a></li></ul></li></ul></li><li class="last menu-mlid-2538 menu-item-2538"><a href="/developers/learn/glossary">Glossary</a></li></ul></li><li class="menu-parent has-children menu-mlid-2539 menu-item-2539"><a href="/developers/download">Download</a><ul class="menu clearfix"><li class="first last menu-mlid-2540 menu-item-2540"><a href="/developers/download/supported-platforms">Supported Platforms</a></li></ul></li><li class="menu-parent has-children menu-mlid-2541 menu-item-2541"><a href="/developers/develop">Develop</a><ul class="menu clearfix"><li class="first menu-parent menu-mlid-2542 menu-item-2542"><a href="/developers/develop/building">Building</a><ul class="menu clearfix"><li class="first menu-parent menu-mlid-2543 menu-item-2543"><a href="/developers/develop/building/android">Android</a><ul class="menu clearfix"><li class="first last menu-mlid-2544 menu-item-2544"><a href="/developers/develop/building/android/build-source">Build Source</a></li></ul></li><li class="menu-parent menu-mlid-2545 menu-item-2545"><a href="/developers/develop/building/linux">Linux</a><ul class="menu clearfix"><li class="first menu-mlid-2546 menu-item-2546"><a href="/developers/develop/building/linux/openwrt">OpenWRT</a></li><li class="last menu-mlid-2547 menu-item-2547"><a href="/developers/develop/building/linux/build-source">Build Source</a></li></ul></li><li class="menu-parent menu-mlid-2548 menu-item-2548"><a href="/developers/develop/building/ios-osx">iOS/OS X</a><ul class="menu clearfix"><li class="first last menu-mlid-2549 menu-item-2549"><a href="/developers/develop/building/ios-osx/build-source">Build Source</a></li></ul></li><li class="menu-parent menu-mlid-2550 menu-item-2550"><a href="/developers/develop/building/windows">Windows</a><ul class="menu clearfix"><li class="first last menu-mlid-2551 menu-item-2551"><a href="/developers/develop/building/windows/build-source">Build Source</a></li></ul></li><li class="menu-mlid-2552 menu-item-2552"><a href="/developers/develop/building/thin-linux">Thin - Linux</a></li><li class="menu-mlid-2553 menu-item-2553"><a href="/developers/develop/building/thin-windows">Thin - Windows</a></li><li class="last menu-mlid-2993 menu-item-2993"><a href="/developers/develop/building/alljoyn-js">AllJoyn.js</a></li></ul></li><li class="menu-parent menu-mlid-2554 menu-item-2554"><a href="/developers/develop/run-sample-apps">Running Samples</a><ul class="menu clearfix"><li class="first menu-parent menu-mlid-2555 menu-item-2555"><a href="/developers/develop/run-sample-apps/basic">Basic</a><ul class="menu clearfix"><li class="first menu-mlid-2556 menu-item-2556"><a href="/developers/develop/run-sample-apps/basic/android">Android</a></li><li class="menu-mlid-2557 menu-item-2557"><a href="/developers/develop/run-sample-apps/basic/linux">Linux</a></li><li class="menu-mlid-2558 menu-item-2558"><a href="/developers/develop/run-sample-apps/basic/ios-osx">iOS/OS X</a></li><li class="menu-mlid-2559 menu-item-2559"><a href="/developers/develop/run-sample-apps/basic/windows">Windows</a></li><li class="menu-mlid-2560 menu-item-2560"><a href="/developers/develop/run-sample-apps/basic/thin-linux">Thin - Linux</a></li><li class="last menu-mlid-2561 menu-item-2561"><a href="/developers/develop/run-sample-apps/basic/thin-windows">Thin - Windows</a></li></ul></li><li class="menu-parent menu-mlid-2562 menu-item-2562"><a href="/developers/develop/run-sample-apps/chat">Chat</a><ul class="menu clearfix"><li class="first menu-mlid-2563 menu-item-2563"><a href="/developers/develop/run-sample-apps/chat/android">Android</a></li><li class="menu-mlid-2564 menu-item-2564"><a href="/developers/develop/run-sample-apps/chat/linux">Linux</a></li><li class="menu-mlid-2565 menu-item-2565"><a href="/developers/develop/run-sample-apps/chat/ios-osx">iOS/OS X</a></li><li class="menu-mlid-2566 menu-item-2566"><a href="/developers/develop/run-sample-apps/chat/windows">Windows</a></li><li class="last menu-mlid-2567 menu-item-2567"><a href="/developers/develop/run-sample-apps/chat/thin-linux">Thin - Linux</a></li></ul></li><li class="menu-parent menu-mlid-2568 menu-item-2568"><a href="/developers/develop/run-sample-apps/about">About</a><ul class="menu clearfix"><li class="first menu-mlid-2569 menu-item-2569"><a href="/developers/develop/run-sample-apps/about/linux">Linux</a></li><li class="menu-mlid-2570 menu-item-2570"><a href="/developers/develop/run-sample-apps/about/ios-osx">iOS/OS X</a></li><li class="last menu-mlid-2646 menu-item-2646"><a href="/developers/develop/run-sample-apps/about/windows">Windows</a></li></ul></li><li class="menu-mlid-2934 menu-item-2934"><a href="/developers/develop/run-sample-apps/observer">Observer</a></li><li class="menu-parent menu-mlid-2571 menu-item-2571"><a href="/developers/develop/run-sample-apps/config">Config</a><ul class="menu clearfix"><li class="first menu-mlid-2572 menu-item-2572"><a href="/developers/develop/run-sample-apps/config/android">Android</a></li><li class="menu-mlid-2573 menu-item-2573"><a href="/developers/develop/run-sample-apps/config/linux">Linux</a></li><li class="menu-mlid-2574 menu-item-2574"><a href="/developers/develop/run-sample-apps/config/ios-osx">iOS/OS X</a></li><li class="last menu-mlid-2575 menu-item-2575"><a href="/developers/develop/run-sample-apps/config/thin-linux">Thin - Linux</a></li></ul></li><li class="menu-parent menu-mlid-2576 menu-item-2576"><a href="/developers/develop/run-sample-apps/controlpanel">Control Panel</a><ul class="menu clearfix"><li class="first menu-mlid-2577 menu-item-2577"><a href="/developers/develop/run-sample-apps/controlpanel/android">Android</a></li><li class="menu-mlid-2578 menu-item-2578"><a href="/developers/develop/run-sample-apps/controlpanel/linux">Linux</a></li><li class="menu-mlid-2579 menu-item-2579"><a href="/developers/develop/run-sample-apps/controlpanel/ios-osx">iOS/OS X</a></li><li class="last menu-mlid-2580 menu-item-2580"><a href="/developers/develop/run-sample-apps/controlpanel/thin-linux">Thin - Linux</a></li></ul></li><li class="menu-parent menu-mlid-2581 menu-item-2581"><a href="/developers/develop/run-sample-apps/notification">Notification</a><ul class="menu clearfix"><li class="first menu-mlid-2582 menu-item-2582"><a href="/developers/develop/run-sample-apps/notification/android">Android</a></li><li class="menu-mlid-2583 menu-item-2583"><a href="/developers/develop/run-sample-apps/notification/linux">Linux</a></li><li class="menu-mlid-2584 menu-item-2584"><a href="/developers/develop/run-sample-apps/notification/ios-osx">iOS/OS X</a></li><li class="last menu-mlid-2585 menu-item-2585"><a href="/developers/develop/run-sample-apps/notification/thin-linux">Thin - Linux</a></li></ul></li><li class="menu-parent menu-mlid-2586 menu-item-2586"><a href="/developers/develop/run-sample-apps/onboarding">Onboarding</a><ul class="menu clearfix"><li class="first menu-mlid-2587 menu-item-2587"><a href="/developers/develop/run-sample-apps/onboarding/android">Android</a></li><li class="menu-mlid-2588 menu-item-2588"><a href="/developers/develop/run-sample-apps/onboarding/linux">Linux</a></li><li class="last menu-mlid-2589 menu-item-2589"><a href="/developers/develop/run-sample-apps/onboarding/ios-osx">iOS/OS X</a></li></ul></li><li class="menu-parent menu-mlid-2590 menu-item-2590"><a href="/developers/develop/run-sample-apps/acserver">AC Server</a><ul class="menu clearfix"><li class="first menu-mlid-2591 menu-item-2591"><a href="/developers/develop/run-sample-apps/acserver/linux">Linux</a></li><li class="last menu-mlid-2592 menu-item-2592"><a href="/developers/develop/run-sample-apps/acserver/thin-linux">Thin - Linux</a></li></ul></li><li class="menu-parent menu-mlid-2593 menu-item-2593"><a href="/developers/develop/run-sample-apps/test">Command Line Apps</a><ul class="menu clearfix"><li class="first last menu-mlid-2594 menu-item-2594"><a href="/developers/develop/run-sample-apps/test/sessions">Sessions</a></li></ul></li><li class="last menu-mlid-2994 menu-item-2994"><a href="/developers/develop/run-sample-apps/alljoyn-js">AllJoyn.js</a></li></ul></li><li class="menu-parent menu-mlid-2595 menu-item-2595"><a href="/developers/develop/api-guide">API Guide</a><ul class="menu clearfix"><li class="first menu-parent menu-mlid-2596 menu-item-2596"><a href="/developers/develop/api-guide/core">Core</a><ul class="menu clearfix"><li class="first menu-mlid-2939 menu-item-2939"><a href="/developers/develop/api-guide/core/java">java</a></li><li class="menu-mlid-2940 menu-item-2940"><a href="/developers/develop/api-guide/core/objc">Objective-C</a></li><li class="menu-mlid-2647 menu-item-2647"><a href="/developers/develop/api-guide/core/alljoyn-transports-best-practices">Alljoyn Transports Best Practices</a></li><li class="menu-mlid-2648 menu-item-2648"><a href="/developers/develop/api-guide/core/auto-ping">AutoPinger</a></li><li class="menu-mlid-2935 menu-item-2935"><a href="/developers/develop/api-guide/core/observer">Observer</a></li><li class="last menu-mlid-2936 menu-item-2936"><a href="/developers/develop/api-guide/core/propcache">Property Cache</a></li></ul></li><li class="menu-parent menu-mlid-2599 menu-item-2599"><a href="/developers/develop/api-guide/about">About</a><ul class="menu clearfix"><li class="first menu-mlid-2941 menu-item-2941"><a href="/developers/develop/api-guide/about/java">java</a></li><li class="menu-mlid-2942 menu-item-2942"><a href="/developers/develop/api-guide/about/cpp">C++</a></li><li class="menu-mlid-2943 menu-item-2943"><a href="/developers/develop/api-guide/about/objc">Objective-C</a></li><li class="menu-mlid-2944 menu-item-2944"><a href="/developers/develop/api-guide/about/c-thin">C (Thin Core)</a></li><li class="menu-mlid-2945 menu-item-2945"><a href="/developers/develop/api-guide/about/java-legacy">java Legacy</a></li><li class="menu-mlid-2946 menu-item-2946"><a href="/developers/develop/api-guide/about/cpp-legacy">C++ Legacy</a></li><li class="last menu-mlid-2947 menu-item-2947"><a href="/developers/develop/api-guide/about/objc-legacy">Objective-C Legacy</a></li></ul></li><li class="menu-parent menu-mlid-2604 menu-item-2604"><a href="/developers/develop/api-guide/onboarding">Onboarding</a><ul class="menu clearfix"><li class="first menu-mlid-2948 menu-item-2948"><a href="/developers/develop/api-guide/onboarding/java">java</a></li><li class="last menu-mlid-2949 menu-item-2949"><a href="/developers/develop/api-guide/onboarding/objc">Objective-C</a></li></ul></li><li class="menu-parent menu-mlid-2607 menu-item-2607"><a href="/developers/develop/api-guide/config">Configuration</a><ul class="menu clearfix"><li class="first menu-mlid-2950 menu-item-2950"><a href="/developers/develop/api-guide/config/java">java</a></li><li class="menu-mlid-2951 menu-item-2951"><a href="/developers/develop/api-guide/config/cpp">C++</a></li><li class="menu-mlid-2952 menu-item-2952"><a href="/developers/develop/api-guide/config/objc">Objective-C</a></li><li class="last menu-mlid-2953 menu-item-2953"><a href="/developers/develop/api-guide/config/c-thin">C (Thin Core)</a></li></ul></li><li class="menu-parent menu-mlid-2612 menu-item-2612"><a href="/developers/develop/api-guide/notification">Notification</a><ul class="menu clearfix"><li class="first menu-mlid-2954 menu-item-2954"><a href="/developers/develop/api-guide/notification/java">java</a></li><li class="menu-mlid-2955 menu-item-2955"><a href="/developers/develop/api-guide/notification/cpp">C++</a></li><li class="menu-mlid-2956 menu-item-2956"><a href="/developers/develop/api-guide/notification/objc">Objective-C</a></li><li class="last menu-mlid-2957 menu-item-2957"><a href="/developers/develop/api-guide/notification/c-thin">C (Thin Core)</a></li></ul></li><li class="menu-parent menu-mlid-2617 menu-item-2617"><a href="/developers/develop/api-guide/controlpanel">Control Panel</a><ul class="menu clearfix"><li class="first menu-mlid-2958 menu-item-2958"><a href="/developers/develop/api-guide/controlpanel/java">java</a></li><li class="menu-mlid-2959 menu-item-2959"><a href="/developers/develop/api-guide/controlpanel/cpp">C++</a></li><li class="menu-mlid-2960 menu-item-2960"><a href="/developers/develop/api-guide/controlpanel/objc">Objective-C</a></li><li class="last menu-mlid-2961 menu-item-2961"><a href="/developers/develop/api-guide/controlpanel/c-thin">C (Thin Core)</a></li></ul></li><li class="menu-parent menu-mlid-2622 menu-item-2622"><a href="/developers/develop/api-guide/audio-streaming">Audio Streaming</a><ul class="menu clearfix"><li class="first last menu-mlid-2962 menu-item-2962"><a href="/developers/develop/api-guide/audio-streaming/cpp">C++</a></li></ul></li><li class="last menu-mlid-2624 menu-item-2624"><a href="/developers/develop/api-guide/events-and-actions">Events and Actions</a></li></ul></li><li class="menu-mlid-2625 menu-item-2625"><a href="/developers/develop/api-reference">API Reference</a></li><li class="menu-parent menu-mlid-2626 menu-item-2626"><a href="/developers/develop/debug">Debug</a><ul class="menu clearfix"><li class="first last menu-mlid-2627 menu-item-2627"><a href="/developers/develop/debug/common-issues">Common Issues</a></li></ul></li><li class="menu-parent menu-mlid-2628 menu-item-2628"><a href="/developers/develop/tutorial">Tutorial</a><ul class="menu clearfix"><li class="first menu-mlid-2629 menu-item-2629"><a href="/developers/develop/tutorial/core">Core</a></li><li class="menu-mlid-2630 menu-item-2630"><a href="/developers/develop/tutorial/ios">iOS</a></li><li class="menu-mlid-2631 menu-item-2631"><a href="/developers/develop/tutorial/thin-app">Thin App</a></li><li class="menu-mlid-2632 menu-item-2632"><a href="/developers/develop/tutorial/arduino-and-gt202">Arduino + GT202</a></li><li class="last menu-mlid-2633 menu-item-2633"><a href="/developers/develop/tutorial/videos">Videos</a></li></ul></li><li class="last menu-mlid-2634 menu-item-2634"><a href="/developers/develop/ask">Ask Forum</a></li></ul></li><li class="last menu-parent has-children menu-mlid-2636 menu-item-2636"><a href="/developers/contribute">Contribute</a><ul class="menu clearfix"><li class="first last menu-mlid-2637 menu-item-2637"><a href="/developers/contribute/project-lifecycle">Project Lifecycle</a></li></ul></li></ul></li><li class="menu-mlid-2466 menu-item-2466"><a href="/showcase-products-using-alljoyn">Showcase</a></li><li class="menu-parent menu-mlid-2487 menu-item-2487"><a href="/allseen-alliance-certification">Certification</a><ul class="menu clearfix"><li class="first menu-mlid-2488 menu-item-2488"><a href="/certification/how-validate-your-designed-allseen-product">How To Validate Your Product</a></li><li class="last menu-mlid-2489 menu-item-2489"><a href="/certification/faq">FAQ</a></li></ul></li><li class="last menu-parent menu-mlid-2421 menu-item-2421"><a href="/news-and-events">News &amp; Events</a><ul class="menu clearfix"><li class="first menu-mlid-2422 menu-item-2422"><a href="/news-and-events/newsroom/announcements">Announcements</a></li><li class="menu-mlid-2449 menu-item-2449"><a href="/news/videos">Videos</a></li><li class="menu-mlid-2423 menu-item-2423"><a href="/news-and-events/newsroom/in-the-news">In The News</a></li><li class="menu-mlid-2424 menu-item-2424"><a href="/news-and-events/events">Events</a></li><li class="menu-mlid-2448 menu-item-2448"><a href="/news-and-events/blogs">Blogs</a></li><li class="menu-mlid-2461 menu-item-2461"><a href="/news-and-events/newsletters">Newsletters</a></li><li class="last menu-mlid-2933 menu-item-2933"><a href="/news-and-events/videos">Videos</a></li></ul></li></ul></div>
+</div></div></section></div></div>      </div>
+            
+      
+      <div class="region region-sidebar-first sidebar"><div class="region-inner clearfix"><div id="block-menu-block-1" class="block block-menu-block"  role="navigation"><div class="block-inner clearfix">        <div class="block-content content"><div class="menu-block-wrapper menu-block-1 menu-name-main-menu parent-mlid-0 menu-level-3">
+  <ul class="menu clearfix"><li class="first menu-mlid-2505 menu-item-2505"><a href="/developers/learn/use-cases">Use Cases</a></li><li class="menu-mlid-2506 menu-item-2506"><a href="/developers/learn/architecture">Architecture</a></li><li class="menu-parent menu-mlid-2507 menu-item-2507"><a href="/developers/learn/core">Core Framework</a><ul class="menu clearfix"><li class="first menu-parent menu-mlid-2508 menu-item-2508"><a href="/developers/learn/core/about-announcement">About Announcement</a><ul class="menu clearfix"><li class="first menu-mlid-2509 menu-item-2509"><a href="/developers/learn/core/about-announcement/interface">Interface</a></li><li class="last menu-mlid-2510 menu-item-2510"><a href="/developers/learn/core/about-announcement/interface-14-02">Interface 14.02</a></li></ul></li><li class="menu-mlid-2511 menu-item-2511"><a href="/developers/learn/core/events-and-actions">Events and Actions</a></li><li class="menu-mlid-2992 menu-item-2992"><a href="/developers/learn/core/rn_config">Routing Node Configuration</a></li><li class="menu-mlid-2512 menu-item-2512"><a href="/developers/learn/core/standard-core">Standard Core</a></li><li class="menu-mlid-2513 menu-item-2513"><a href="/developers/learn/core/thin-core">Thin Core</a></li><li class="menu-parent menu-mlid-2514 menu-item-2514"><a href="/developers/learn/core/system-description">System Description</a><ul class="menu clearfix"><li class="first menu-mlid-2515 menu-item-2515"><a href="/developers/learn/core/system-description/system-architecture">System Architecture</a></li><li class="menu-mlid-2516 menu-item-2516"><a href="/developers/learn/core/system-description/advertisement-discovery">Advertisement and Discovery</a></li><li class="menu-mlid-2645 menu-item-2645"><a href="/developers/learn/core/system-description/alljoyn-transport">AllJoyn Transport</a></li><li class="menu-mlid-2517 menu-item-2517"><a href="/developers/learn/core/system-description/data-exchange">Data Exchange</a></li><li class="menu-mlid-2518 menu-item-2518"><a href="/developers/learn/core/system-description/alljoyn-session">AllJoyn Session</a></li><li class="menu-mlid-2519 menu-item-2519"><a href="/developers/learn/core/system-description/sessionless-signal">Sessionless Signal</a></li><li class="menu-mlid-2520 menu-item-2520"><a href="/developers/learn/core/system-description/alljoyn-security">AllJoyn Security</a></li><li class="menu-mlid-2521 menu-item-2521"><a href="/developers/learn/core/system-description/thin-apps">Thin Apps</a></li><li class="last menu-mlid-2522 menu-item-2522"><a href="/developers/learn/core/system-description/events-actions">Events and Actions</a></li></ul></li><li class="last menu-parent menu-mlid-2937 menu-item-2937"><a href="/developers/learn/core/security2_0">Security 2.0</a><ul class="menu clearfix"><li class="first last menu-mlid-2938 menu-item-2938"><a href="/developers/learn/core/security2_0/hld">High-Level Design</a></li></ul></li></ul></li><li class="menu-parent active-trail menu-mlid-2523 menu-item-2523"><a href="/developers/learn/base-services" class="active-trail">Base Services</a><ul class="menu clearfix"><li class="first menu-parent menu-mlid-2524 menu-item-2524"><a href="/developers/learn/base-services/onboarding">Onboarding</a><ul class="menu clearfix"><li class="first menu-mlid-2525 menu-item-2525"><a href="/developers/learn/base-services/onboarding/interface">Interface</a></li><li class="last menu-mlid-2526 menu-item-2526"><a href="/developers/learn/base-services/onboarding/interface-14-02">Interface 14.02</a></li></ul></li><li class="menu-parent menu-mlid-2527 menu-item-2527"><a href="/developers/learn/base-services/configuration">Configuration</a><ul class="menu clearfix"><li class="first menu-mlid-2528 menu-item-2528"><a href="/developers/learn/base-services/configuration/interface">Interface</a></li><li class="last menu-mlid-2529 menu-item-2529"><a href="/developers/learn/base-services/configuration/interface-14-02">Interface 14.02</a></li></ul></li><li class="menu-parent menu-mlid-2530 menu-item-2530"><a href="/developers/learn/base-services/notification">Notification</a><ul class="menu clearfix"><li class="first menu-mlid-2531 menu-item-2531"><a href="/developers/learn/base-services/notification/interface">Interface</a></li><li class="last menu-mlid-2532 menu-item-2532"><a href="/developers/learn/base-services/notification/interface-14-02">Interface 14.02</a></li></ul></li><li class="menu-parent active-trail menu-mlid-2533 menu-item-2533"><a href="/developers/learn/base-services/controlpanel" class="active-trail">ControlPanel</a><ul class="menu clearfix"><li class="first menu-mlid-2534 menu-item-2534"><a href="/developers/learn/base-services/controlpanel/interface">Interface</a></li><li class="last active-trail active menu-mlid-2535 menu-item-2535"><a href="/developers/learn/base-services/controlpanel/interface-14-02" class="active-trail active">Interface 14.02</a></li></ul></li><li class="last menu-parent menu-mlid-2536 menu-item-2536"><a href="/developers/learn/base-services/audiostreaming">Audio Streaming</a><ul class="menu clearfix"><li class="first last menu-mlid-2537 menu-item-2537"><a href="/developers/learn/base-services/audiostreaming/interface">Interface</a></li></ul></li></ul></li><li class="last menu-mlid-2538 menu-item-2538"><a href="/developers/learn/glossary">Glossary</a></li></ul></div>
+</div></div></div></div></div>            <div id="content-column" role="main">
+        <div class="content-inner">
+
+          
+          <section id="main-content">
+
+                                      <header id="main-content-header">
+
+                                                  <h1 id="sub-title">
+                    Control Panel Interface Definition - 14.02                  </h1>
+                
+                
+              </header>
+                        
+                          <div id="content">
+                        <article id="node-4122" class="node node-developer-document article clearfix" about="/developers/learn/base-services/controlpanel/interface-14-02" typeof="sioc:Item foaf:Document" role="article">
+
+  
+      <span property="dc:title" content="Control Panel Interface Definition - 14.02" class="rdf-meta element-hidden"></span><span property="sioc:num_replies" content="0" datatype="xsd:integer" class="rdf-meta element-hidden"></span>
+  
+  <div class="node-content">
+  
+  <div class="field-body view-mode-full">
+    
+<p><strong>Warning: This is not the latest interface definition.</strong></p>
+<p><a href="/developers/learn/base-services/controlpanel/interface">Go here for latest Control Panel Interface Definition</a></p>
+<h2 id="introduction">Introduction</h2>
+<h3 id="purpose">Purpose</h3>
+<p>This document describes the specification of the Control Panel 
+service framework's collection of interfaces. Implementing these 
+interfaces provides the Control Panel service framework a mechanism 
+to allow for a controller application like the AllJoyn® On 
+application to render the UI based on the controllee application's 
+widget metadata. The controller application does not know the 
+semantics of the remote widgets. It relies on the end user to understand
+and perform the actions on the rendered user interface. A typical 
+action is selecting a field or pressing a button.</p>
+<h3 id="scope">Scope</h3>
+<p>This document is targeted to developers of AllJoyn applications 
+who want to build controller and controllee applications without 
+using the tools provided by the Control Panel service framework.</p>
+<h3 id="references">References</h3>
+<p>Except for supporting information, the following are reference 
+documents found on the AllSeen Alliance web site's Docs/Downloads section.</p>
+<ul><li><em>AllJoyn® Framework Tutorial</em></li>
+<li><em>Introduction to AllJoyn® Thin Client</em></li>
+<li>AllJoyn Data Type Signature</li>
+<li><a href="http://www.ietf.org/rfc/rfc3339.txt">RFC3339: (Date and Time on the Internet: Timestamps)</a></li>
+</ul><h3 id="acronyms-and-terms">Acronyms and terms</h3>
+<table><thead><tr><th>Term</th>
+<th>Definition</th>
+</tr></thead><tbody><tr><td>AllJoyn device</td>
+<td>A device that supports the AllJoyn framework and can connect to a personal network.</td>
+</tr><tr><td>Control panel</td>
+<td>Collection of Widgets that allow a user to interact with a device. A control panel is defined and announced by a Controllee; and discovered and displayed Control panel by a Controller. A device can have more than one, and can be defined on a per-language basis.</td>
+</tr><tr><td>Controllee</td>
+<td>An AllJoyn application that advertises its Control Panel interfaces, so that other AllJoyn devices may control it.</td>
+</tr><tr><td>Controller</td>
+<td>An AllJoyn application that controls another AllJoyn device that advertises its Control Panel interfaces.</td>
+</tr></tbody></table><h2 id="specification-overview">Specification Overview</h2>
+<p>The Control Panel interfaces must be implemented by an 
+application on a controllee. Figure 1 illustrates 
+the relationship between a controllee app and a controller app.</p>
+<p><img src="/sites/default/files/developers/learn/controlpanel-arch.png" alt="controlpanel-arch" /></p>
+<p>Figure: Control Panel service framework architecture within 
+the AllJoyn® framework</p>
+<p>The OEM is responsible for writing the Control interfaces and 
+the Control Panel service framework metadata.</p>
+<p>The UI Toolkit Adaption Layer, a library used to map the metadata 
+to platform-specific UI elements, is made available as part of the 
+Control Panel service framework release.</p>
+<h2 id="discovery">Discovery</h2>
+<p>Controllees are discovered via an AllJoyn announcement. Each AllJoyn 
+device uses the About feature to announce basic app information like 
+app name, device name, manufacturer, and model number. The announcement 
+also contains the list of object paths and service interfaces to allow 
+the controller to determine whether the controllee provides 
+functionality of interest.</p>
+<p>The About announcement is propagated using a sessionless signal.</p>
+<h2 id="call-flows">Call Flows</h2>
+<h3 id="static-control-panel-flow">Static Control Panel flow</h3>
+<p>Figure 2 illustrates a typical call flow for a control 
+panel that does not change once rendered.</p>
+<p><img src="/sites/default/files/developers/learn/controlpanel-static-call-flow.png" alt="controlpanel-static-call-flow" /></p>
+<p>Figure: Static Control Panel call flow</p>
+<h3 id="dynamic-control-panel-flow">Dynamic Control Panel flow</h3>
+<p>Figure 3 illustrates a call flow for a control panel that 
+changes as the end user interacts with the widgets.</p>
+<p><img src="/sites/default/files/developers/learn/controlpanel-dynamic-call-flow.png" alt="controlpanel-dynamic-call-flow" /></p>
+<p>Figure: Dynamic Control Panel call flow</p>
+<h2 id="error-handling">Error Handling</h2>
+<p>The method calls in the Control Panel interfaces use the AllJoyn 
+error message handling feature (ER_BUS_REPLY_IS_ERROR_MESSAGE) 
+to set the error name and error message.</p>
+<p>Table 1 lists the possible errors raised by the Control Panel service framework interfaces.</p>
+<p><strong>Table 1: Control Panel service framework interface errors</strong></p>
+<table><thead><tr><th>Error name</th>
+<th>Error message</th>
+</tr></thead><tbody><tr><td>org.alljoyn.Error.OutOfRange</td>
+<td>Value out of range</td>
+</tr><tr><td>org.alljoyn.Error.InvalidState</td>
+<td>Invalid state</td>
+</tr><tr><td>org.alljoyn.Error.InvalidProperty</td>
+<td>Invalid property</td>
+</tr><tr><td>org.alljoyn.Error.InvalidValue</td>
+<td>Invalid value</td>
+</tr><tr><td>org.alljoyn.Error.MethodNotAllowed</td>
+<td>Method call not allowed</td>
+</tr></tbody></table><h2 id="busobject-map">BusObject Map</h2>
+<h3 id="busobject-structure">BusObject structure</h3>
+<p>Figure 4 shows the tree structure diagram that 
+represents the basic organization of AllJoyn objects used in 
+the support of the Control Panel service framework. A control 
+panel is implemented using several AllJoyn objects.</p>
+<p><img src="/sites/default/files/developers/learn/controlpanel-busobject-map.png" alt="controlpanel-busobject-map" /></p>
+<p>Figure: BusObject map</p>
+<p>The objects are organized to support multiple units and multiple 
+languages. Only the top-level panels should be listed in the announcement.</p>
+<p>Since the IETF language tag allows for hyphen (-) which is not 
+allowed in the bus object path, any language tag in the object 
+path replaces a hyphen (-) with an underscore (_).</p>
+<p>In addition to the control panels, the Control Panel service 
+framework can also support other panels such as a notification 
+panel. These panels are not required to be advertised in the announcement.</p>
+<p>It is the controller's job to introspect and walk the object 
+tree of a control panel to retrieve all the metadata for that 
+control panel.</p>
+<h3 id="busobject-map-examples">BusObject map examples</h3>
+<p>The following subsections illustrate a few sample BusObject map structures.</p>
+<h4 id="washing-machine-example">Washing machine example</h4>
+<p>Figure 5 illustrates a sample bus object map for a washing machine.</p>
+<p><img src="/sites/default/files/developers/learn/controlpanel-washing-machine-example.png" alt="controlpanel-washing-machine-example" /></p>
+<p>Figure: Washing machine example</p>
+<h4 id="sprinkler-system-example">Sprinkler system example</h4>
+<p>Figure 6 illustrates a sample bus object map for a sprinkler system.</p>
+<p><img src="/sites/default/files/developers/learn/controlpanel-sprinkler-system-example.png" alt="controlpanel-sprinkler-system-example" /></p>
+<p>Figure: Sprinkler system example</p>
+<h2 id="control-panel-service-framework-interfaces">Control Panel Service Framework Interfaces</h2>
+<p>The Control Panel service framework comprises a set of interfaces 
+as illustrated in Figure 4.</p>
+<h2 id="controlpanel-interface">ControlPanel Interface</h2>
+<p>This interface indicates whether the object is a control panel. 
+This object will support at least one language. The service only 
+needs to advertise this type of object in the About announcement. 
+No other objects in the Control Panel service framework tree 
+should be announced.</p>
+<p>NOTE: It's the responsibility of the controller to introspect 
+the children objects to locate the corresponding root container 
+of the given panel for the specific language code.</p>
+<h3 id="interface-name">Interface name</h3>
+<table><thead><tr><th>Interface name</th>
+<th>Version</th>
+<th>Secured</th>
+<th>Object path</th>
+</tr></thead><tbody><tr><td>org.alljoyn.ControlPanel.ControlPanel</td>
+<td>1</td>
+<td>no</td>
+<td>/ControlPanel/{unit)/{panelName}</td>
+</tr><tr><td></td>
+<td></td>
+<td></td>
+<td>Example: /ControlPanel/washing/consolePanel</td>
+</tr></tbody></table><h3 id="properties">Properties</h3>
+<table><thead><tr><th>Property name</th>
+<th>Signature</th>
+<th>List of values</th>
+<th>Writable</th>
+<th>Description</th>
+</tr></thead><tbody><tr><td>Version</td>
+<td>q</td>
+<td>Positive integers</td>
+<td>no</td>
+<td>Interface version number</td>
+</tr></tbody></table><h3 id="introspect-xml">Introspect XML</h3>
+<p>The following XML defines the ControlPanel interface.</p>
+<pre><code class="lang-xml"><code class="xml">&lt;node xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://www.allseenalliance.org/schemas/introspect.xsd"&gt;
+   &lt;interface name="org.alljoyn.ControlPanel.ControlPanel"&gt;
+      &lt;property name="Version" type="q" access="read"/&gt;
+   &lt;/interface&gt;
+&lt;/node&gt;</code>
+</code></pre>
+<h2 id="container-interface">Container Interface</h2>
+<p>This interface provides all the metadata to guide the 
+controller to render the UI for a container widget.</p>
+<table><thead><tr><th>Interface name</th>
+<th>Version</th>
+<th>Secured</th>
+<th>Object path</th>
+</tr></thead><tbody><tr><td>org.alljoyn.ControlPanel.Container</td>
+<td>1</td>
+<td>no</td>
+<td>/ControlPanel/{unit)/{panelName}/{language}/.../{containerName}</td>
+</tr><tr><td></td>
+<td></td>
+<td></td>
+<td>Examples:</td>
+</tr><tr><td></td>
+<td></td>
+<td></td>
+<td>/ControlPanel/washing/consolePanel/en</td>
+</tr><tr><td></td>
+<td></td>
+<td></td>
+<td>/ControlPanel/sprinkler/mainPanel/en/Schedules/InputForm/RunOnDays</td>
+</tr><tr><td>org.alljoyn.ControlPanel.SecuredContainer</td>
+<td>1</td>
+<td>yes</td>
+<td>/ControlPanel/{unit)/{panelName}/{language}/.../{containerName}</td>
+</tr></tbody></table><h3 id="properties">Properties</h3>
+<table><thead><tr><th>Property name</th>
+<th>Signature</th>
+<th>List of values</th>
+<th>Writable</th>
+<th>Description</th>
+</tr></thead><tbody><tr><td>Version</td>
+<td>q</td>
+<td>Positive integers</td>
+<td>no</td>
+<td>Interface version number</td>
+</tr><tr><td>States</td>
+<td>u</td>
+<td>Bit mask</td>
+<td>no</td>
+<td>Bit mask for various widget states</td>
+</tr><tr><td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><strong>Mask</strong> / <strong>Name</strong> / <strong>Description</strong></td>
+</tr><tr><td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>0x01 / enabled / Indicates whether the widget is enabled. A disabled widget should be grayed out or invisible.</td>
+</tr><tr><td>OptParams</td>
+<td>a{qv}</td>
+<td>N/A</td>
+<td>no</td>
+<td>Metadata dictionary. See <a href="#container-widget-metadata">Container widget metadata</a> for more information.</td>
+</tr></tbody></table><h4 id="container-widget-metadata">Container widget metadata</h4>
+<p>The following table defines the metadata of a container widget.</p>
+<table><thead><tr><th>Dictionary key</th>
+<th>Field name</th>
+<th>Value type</th>
+<th>Description</th>
+</tr></thead><tbody><tr><td>0</td>
+<td>Label</td>
+<td>s</td>
+<td>Label</td>
+</tr><tr><td>1</td>
+<td>bgColor</td>
+<td>u</td>
+<td>Background color expressed as RGB value. If not specified, then the background color of the enclosing container is used.</td>
+</tr><tr><td>2</td>
+<td>layoutHints</td>
+<td>aq</td>
+<td>Layout hints. See <a href="#container-widget-layout-hints">Container widget layout hints</a> for more information.</td>
+</tr></tbody></table><h4 id="container-widget-layout-hints">Container widget layout hints</h4>
+<p>The following table lists layout hints for a container widget.</p>
+<table><thead><tr><th>Hint ID</th>
+<th>Hint name</th>
+<th>Description</th>
+</tr></thead><tbody><tr><td>1</td>
+<td>Vertical Linear</td>
+<td>A layout that aligns all components in a vertical direction.</td>
+</tr><tr><td>2</td>
+<td>Horizontal Linear</td>
+<td>A layout that aligns all components in a horizontal direction.</td>
+</tr></tbody></table><h3 id="methods">Methods</h3>
+<p>No methods are exposed by this interface.</p>
+<h3 id="signals">Signals</h3>
+<table><thead><tr><th>Signal name</th>
+<th>Parameters</th>
+<th>Description</th>
+</tr></thead><tbody><tr><td>MetadataChanged</td>
+<td>None</td>
+<td>The metadata has changed. This can occur due to changes in any of the property objects.</td>
+</tr></tbody></table><h3 id="introspect-xml">Introspect XML</h3>
+<p>The following XML defines the Container interface.</p>
+<pre><code class="lang-xml"><code class="xml">&lt;node xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://www.allseenalliance.org/schemas/introspect.xsd"&gt;
+   &lt;interface name="org.alljoyn.ControlPanel.Container"&gt;
+      &lt;property name="Version" type="q" access="read"/&gt;
+      &lt;property name="States" type="u" access="read"/&gt;
+      &lt;property name="OptParams" type="a{qv}" access="read"/&gt;
+      &lt;signal name="MetadataChanged" /&gt;
+   &lt;/interface&gt;
+&lt;/node&gt;</code>
+</code></pre>
+<h2 id="property-interface">Property Interface</h2>
+<p>This interface provides the control mechanism for the property widget. 
+Each widget is represented by an AllJoyn object implementing this interface.</p>
+<h3 id="interface-name">Interface name</h3>
+<table><thead><tr><th>Interface name</th>
+<th>Version</th>
+<th>Secured</th>
+<th>Object path</th>
+</tr></thead><tbody><tr><td>org.alljoyn.ControlPanel.Property</td>
+<td>1</td>
+<td>no</td>
+<td>/ControlPanel/{unit)/{panel}/{language}/.../{object name}</td>
+</tr><tr><td></td>
+<td></td>
+<td></td>
+<td>Examples:</td>
+</tr><tr><td></td>
+<td></td>
+<td></td>
+<td>/ControlPanel/washing/consolePanel/en/Mode</td>
+</tr><tr><td></td>
+<td></td>
+<td></td>
+<td>/ControlPanel/sprinkler/mainPanel/en/Schedules/InputForm/ScheduleName</td>
+</tr><tr><td>org.alljoyn.ControlPanel.SecuredProperty</td>
+<td>1</td>
+<td>yes</td>
+<td>/ControlPanel/{unit}/{panel}/.../{object name}</td>
+</tr></tbody></table><h3 id="properties">Properties</h3>
+<table><thead><tr><th>Property name</th>
+<th>Signature</th>
+<th>List of values</th>
+<th>Writable</th>
+<th>Description</th>
+</tr></thead><tbody><tr><td>Version</td>
+<td>q</td>
+<td>Positive integers</td>
+<td>no</td>
+<td>Interface version number</td>
+</tr><tr><td>States</td>
+<td>u</td>
+<td>Bit mask</td>
+<td>no</td>
+<td>Bit mask for various widget states</td>
+</tr><tr><td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><strong>Mask</strong> / <strong>Name</strong> / <strong>Description</strong></td>
+</tr><tr><td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>0x01 / enabled / Indicates whether the widget is enabled. A disabled widget should be grayed out or invisible.</td>
+</tr><tr><td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>0x02 / writable / Indicates whether the widget is writable.</td>
+</tr><tr><td>OptParams</td>
+<td>a{qv}</td>
+<td>N/A</td>
+<td>no</td>
+<td>Metadata dictionary. See <a href="#property-widget-metadata">Property widget metadata</a> for more information.</td>
+</tr><tr><td>Values</td>
+<td>v</td>
+<td>N/A</td>
+<td>yes</td>
+<td>Actual value of the property. When modifying the property, the device may give the AllJoyn error org.alljoyn.Error.MethodNotAllowed if the property is ReadOnly. The supported data types are listed in <a href="#supported-data-types">Supported data types</a>.</td>
+</tr></tbody></table><h4 id="property-widget-metatdata">Property widget metatdata</h4>
+<p>The following table lists property widget metadata.</p>
+<table><thead><tr><th>Dictionary key</th>
+<th>Field name</th>
+<th>Value type</th>
+<th>Description</th>
+</tr></thead><tbody><tr><td>0</td>
+<td>Label</td>
+<td>s</td>
+<td>Label</td>
+</tr><tr><td>1</td>
+<td>bgColor</td>
+<td>u</td>
+<td>Background color expressed as RGB value. If not specified, then the background color of the enclosing container is used.</td>
+</tr><tr><td>2</td>
+<td>hints</td>
+<td>aq</td>
+<td>The widget rendering hints. See <a href="#property-widget-hints">Property widget hints</a> for more information.</td>
+</tr><tr><td>3</td>
+<td>unitOfMeasure</td>
+<td>s</td>
+<td>Unit of measurement.</td>
+</tr><tr><td>4</td>
+<td>constrainToValue</td>
+<td>a(vs)</td>
+<td>Constraint on the value as a list of values. Any value of the property must match one of the values in this list. See <a href="#list-of-values">List of values</a> for more information.</td>
+</tr><tr><td>5</td>
+<td>range</td>
+<td>vv</td>
+<td>Constraint on the value as a range; a value of this property  must stay within the range. See <a href="#property-widget-ranges">Property widget ranges</a> for more information.</td>
+</tr></tbody></table><h4 id="property-widget-hints">Property widget hints</h4>
+<table><thead><tr><th>Hint ID</th>
+<th>Hint name</th>
+<th>Description</th>
+</tr></thead><tbody><tr><td>1</td>
+<td>Switch</td>
+<td>Two-state buttons allowing the end-user to toggle the state of a single settings option.</td>
+</tr><tr><td>2</td>
+<td>CheckBox</td>
+<td>Widget for multi-select. It allows the end user to select multiple options from a list.</td>
+</tr><tr><td>3</td>
+<td>Spinner</td>
+<td>Widget for single-select. It allows the end user to select a single option from a list.</td>
+</tr><tr><td>4</td>
+<td>RadioButton</td>
+<td>Widget for single-select. It allows the end user to select a single option from a list.</td>
+</tr><tr><td>5</td>
+<td>Slider</td>
+<td>Allows the end user to select a value from a continuous or discrete range. The appearance is linear, either horizontal or vertical.</td>
+</tr><tr><td>6</td>
+<td>TimePicker</td>
+<td>Allows the end user to specify a time value.</td>
+</tr><tr><td>7</td>
+<td>DatePicker</td>
+<td>Allows the end user to specify a date value.</td>
+</tr><tr><td>8</td>
+<td>NumberPicker</td>
+<td>Allows the end user to specify a numeric value</td>
+</tr><tr><td>9</td>
+<td>NumericKeypad</td>
+<td>Provides the end user with a numeric entry field and buttons for 0-9 digits, to enter a numeric value. The developer must know the min/max number of digits allowed in the entry field.</td>
+</tr><tr><td>10</td>
+<td>RotaryKnob</td>
+<td>An alternate way to represent a slider.</td>
+</tr><tr><td>11</td>
+<td>TextLabel</td>
+<td>Read-only text label.</td>
+</tr><tr><td>12</td>
+<td>NumericView</td>
+<td>Provides a read-only, numeric field with an optional label and numbers. For example, a washing machine display shows the time remaining for wash is 35:00 minutes.</td>
+</tr><tr><td>13</td>
+<td>EditText</td>
+<td>Provides the end user with a text entry field and keyboard. The developer must know the min/max number of letters allowed in the entry field.</td>
+</tr></tbody></table><h4 id="supported-data-types">Supported data types</h4>
+<p>The following table lists the data types supported by the Control Panel service framework.</p>
+<table><thead><tr><th>Category</th>
+<th>Supported data types</th>
+</tr></thead><tbody><tr><td>Scalar types</td>
+<td>* BOOLEAN - b</td>
+</tr><tr><td></td>
+<td>* BYTE - y</td>
+</tr><tr><td></td>
+<td>* BYTE ARRAY - ay</td>
+</tr><tr><td></td>
+<td>* Numeric types:</td>
+</tr><tr><td></td>
+<td>* INT16 - n</td>
+</tr><tr><td></td>
+<td>* UINT16 - q</td>
+</tr><tr><td></td>
+<td>* INT32 - i</td>
+</tr><tr><td></td>
+<td>* UNT32 - u</td>
+</tr><tr><td></td>
+<td>* INT64 - x</td>
+</tr><tr><td></td>
+<td>* UINT64 - t</td>
+</tr><tr><td></td>
+<td>* DOUBLE - d</td>
+</tr><tr><td></td>
+<td>* STRING - s</td>
+</tr><tr><td>Composite types</td>
+<td>All composite data type must have the following signature--q(type)--where the first value is an enum value indicating the composite type</td>
+</tr><tr><td></td>
+<td><strong>Composite type enum</strong> / <strong>Composite type name</strong> / <strong>Signature</strong> / <strong>Description</strong></td>
+</tr><tr><td></td>
+<td>0 / Date / q(qqq) / Data type per RFC3339. There are three fields: date-mday (1-31); date-month (1-12); and date-fullyear (4-digit year).</td>
+</tr><tr><td></td>
+<td>1 / Time / q(qqq) / Time type per RFC3339. There are three fields: time-hour (0-23); time-minute (0-59); and time-second (0-59).</td>
+</tr><tr><td>Collection of records</td>
+<td>Array of records of only scalar and supported composite types. All records in the array must be of the same record type.</td>
+</tr></tbody></table><h4 id="list-of-values">List of values</h4>
+<p>A list of values is an array of structs.</p>
+<table><thead><tr><th>Field name</th>
+<th>Data type</th>
+<th>Description</th>
+</tr></thead><tbody><tr><td>Value</td>
+<td>v</td>
+<td>Value with the same data type of the property.</td>
+</tr><tr><td>Label</td>
+<td>s</td>
+<td>Display label.</td>
+</tr></tbody></table><h4 id="property-widget-ranges">Property widget ranges</h4>
+<p>The following table lists Property widget ranges.</p>
+<table><thead><tr><th>Field name</th>
+<th>Data type</th>
+<th>Description</th>
+</tr></thead><tbody><tr><td>min</td>
+<td>v</td>
+<td>Minimum value with the same data type as that of the property.</td>
+</tr><tr><td>max</td>
+<td>v</td>
+<td>Maximum value with the same data type as that of the property.</td>
+</tr><tr><td>increment</td>
+<td>v</td>
+<td>Value to increment/decrement by. It has the same data type as that of the property.</td>
+</tr></tbody></table><h3 id="methods">Methods</h3>
+<p>No methods are exposed by this interface.</p>
+<h3 id="signals">Signals</h3>
+<table><thead><tr><th>Signal name</th>
+<th>Parameters</th>
+<th>Description</th>
+</tr></thead><tbody><tr><td></td>
+<td><strong>Name</strong> / <strong>Data type</strong></td>
+<td></td>
+</tr><tr><td>ValueChanged</td>
+<td>newValue / v</td>
+<td>The property's value has changed.</td>
+</tr><tr><td>ValueChanged</td>
+<td>none</td>
+<td>The metadata has changed. This can occur due to changes in any of the property objects.</td>
+</tr></tbody></table><h3 id="introspect-xml">Introspect XML</h3>
+<p>The following XML defines the Property interface.</p>
+<pre><code class="lang-xml"><code class="xml">&lt;node xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://www.allseenalliance.org/schemas/introspect.xsd"&gt;
+   &lt;interface name="org.alljoyn.ControlPanel.Property"&gt;
+      &lt;property name="Version" type="q" access="read"/&gt;
+      &lt;property name="States" type="u" access="read"/&gt;
+      &lt;property name="OptParams" type="a{qv}" access="read"/&gt;
+      &lt;property name="Value" type="v" access="readwrite"/&gt;
+      &lt;signal name="MetadataChanged" /&gt;
+      &lt;signal name="ValueChanged"&gt;
+         &lt;arg type="v"/&gt;
+      &lt;/signal&gt;
+   &lt;/interface&gt;
+&lt;/node&gt;</code>
+</code></pre>
+<h2 id="labelproperty-interface">LabelProperty Interface</h2>
+<p>This interface provides the control mechanism for the label 
+property widget (a text label). Each widget is represented 
+by an AllJoyn object implementing this interface.</p>
+<h3 id="interface-name">Interface name</h3>
+<table><thead><tr><th>Interface name</th>
+<th>Version</th>
+<th>Secured</th>
+<th>Object path</th>
+</tr></thead><tbody><tr><td>org.alljoyn.ControlPanel.LabelProperty</td>
+<td>1</td>
+<td>no</td>
+<td>/ControlPanel/{unit}/{panel}/{language}/.../ {object name}</td>
+</tr><tr><td></td>
+<td></td>
+<td></td>
+<td>Example:</td>
+</tr><tr><td></td>
+<td></td>
+<td></td>
+<td>/ControlPanel/airconditioner/consolel/Warning</td>
+</tr></tbody></table><h3 id="properties">Properties</h3>
+<table><thead><tr><th>Property name</th>
+<th>Signature</th>
+<th>List of values</th>
+<th>Writable</th>
+<th>Description</th>
+</tr></thead><tbody><tr><td>Version</td>
+<td>q</td>
+<td>Positive integers</td>
+<td>no</td>
+<td>Interface version number</td>
+</tr><tr><td>States</td>
+<td>u</td>
+<td>Bit mask</td>
+<td>no</td>
+<td>Bit mask for various widget states</td>
+</tr><tr><td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><strong>Mask</strong> / <strong>Name</strong> / <strong>Description</strong></td>
+</tr><tr><td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>0x01 / enabled / Indicates whether the widget is enabled. A disabled widget should be grayed out or invisible.</td>
+</tr><tr><td>Label</td>
+<td>s</td>
+<td>N/A</td>
+<td>no</td>
+<td>Text label</td>
+</tr><tr><td>OptParams</td>
+<td>a{qv}</td>
+<td>N/A</td>
+<td>no</td>
+<td>Metadata dictionary. See <a href="#labelproperty-widget-metadata">LabelProperty widget metadata</a> for more information.</td>
+</tr></tbody></table><h4 id="labelproperty-widget-metadata">LabelProperty widget metadata</h4>
+<p>The following table lists LabelProperty widget metadata.</p>
+<table><thead><tr><th>Dictionary key</th>
+<th>Field name</th>
+<th>Value type</th>
+<th>Description</th>
+</tr></thead><tbody><tr><td>1</td>
+<td>bgColor</td>
+<td>u</td>
+<td>Background color expressed as RGB value. If not specified, then the background color of the enclosing container is used.</td>
+</tr><tr><td>2</td>
+<td>hints</td>
+<td>aq</td>
+<td>The widget rendering hints. See <a href="#labelproperty-widget-hints">LabelProperty widget hints</a> for more information.</td>
+</tr></tbody></table><h4 id="labelproperty-widget-hints">LabelProperty widget hints</h4>
+<p>The following table lists LabelProperty widget hints.</p>
+<table><thead><tr><th>Hint ID</th>
+<th>Hint name</th>
+<th>Description</th>
+</tr></thead><tbody><tr><td>1</td>
+<td>TextLabel</td>
+<td>Read-only text label.</td>
+</tr></tbody></table><h3 id="methods">Methods</h3>
+<p>No methods are exposed by this interface.</p>
+<h3 id="signals">Signals</h3>
+<table><thead><tr><th>Signal name</th>
+<th>Parameters</th>
+<th>Description</th>
+</tr></thead><tbody><tr><td>MetadataChanged</td>
+<td>none</td>
+<td>The metadata has changed. This can occur due to changes in any of the property objects.</td>
+</tr></tbody></table><h3 id="introspect-xml">Introspect XML</h3>
+<p>The following XML defines the LabelProperty interface.</p>
+<pre><code class="lang-xml"><code class="xml">&lt;node xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://www.allseenalliance.org/schemas/introspect.xsd"&gt;
+   &lt;interface name="org.alljoyn.ControlPanel.LabelProperty"&gt;
+      &lt;property name="Version" type="q" access="read"/&gt;
+      &lt;property name="States" type="u" access="read"/&gt;
+      &lt;property name="Label" type="s" access="read"/&gt;
+      &lt;property name="OptParams" type="a{qv}" access="read"/&gt;
+      &lt;signal name="MetadataChanged" /&gt;
+   &lt;/interface&gt;
+&lt;/node&gt;</code>
+</code></pre>
+<h2 id="action-interface">Action Interface</h2>
+<p>This interface provides the control mechanism for the Action widget. 
+Each Action widget is represented by an AllJoyn object implementing 
+this interface. An action widget can optionally provide a confirmation 
+dialog widget in its object sub-tree to allow for a pop-up dialog to 
+appear whenever the UI presentation of this action is activated. 
+The action taken on the confirmation dialog will take place instead 
+of the Exec() method call for this Action widget.</p>
+<h3 id="interface-name">Interface name</h3>
+<table><thead><tr><th>Interface name</th>
+<th>Version</th>
+<th>Secured</th>
+<th>Object path</th>
+</tr></thead><tbody><tr><td>org.alljoyn.ControlPanel.Action</td>
+<td>1</td>
+<td>no</td>
+<td>/ControlPanel/{unit}//{panel}/{language}/.../{object name}</td>
+</tr><tr><td></td>
+<td></td>
+<td></td>
+<td>Example:</td>
+</tr><tr><td></td>
+<td></td>
+<td></td>
+<td>/ControlPanel/{unit}/{panel}/{language}/.../{object name}</td>
+</tr><tr><td>org.alljoyn.ControlPanel.SecuredAction</td>
+<td>1</td>
+<td>yes</td>
+<td>/ControlPanel/{unit}/{panel}/{language}/.../{object name}</td>
+</tr></tbody></table><h3 id="properties">Properties</h3>
+<table><thead><tr><th>Property name</th>
+<th>Signature</th>
+<th>List of values</th>
+<th>Writable</th>
+<th>Description</th>
+</tr></thead><tbody><tr><td>Version</td>
+<td>q</td>
+<td>Positive integers</td>
+<td>no</td>
+<td>Interface version number</td>
+</tr><tr><td>States</td>
+<td>u</td>
+<td>Bit mask</td>
+<td>no</td>
+<td>Bit mask for various widget states</td>
+</tr><tr><td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><strong>Mask</strong> / <strong>Name</strong> / <strong>Description</strong></td>
+</tr><tr><td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>0x01 / enabled / Indicates whether the widget is enabled. A disabled widget should be grayed out or invisible.</td>
+</tr><tr><td>OptParams</td>
+<td>a{qv}</td>
+<td>N/A</td>
+<td>no</td>
+<td>Metadata dictionary. See <a href="#action-widget-metadata">Action widget metadata</a> for more information.</td>
+</tr></tbody></table><h4 id="action-widget-metadata">Action widget metadata</h4>
+<p>The following table lists action widget metadata.</p>
+<table><thead><tr><th>Dictionary key</th>
+<th>Field name</th>
+<th>Value type</th>
+<th>Description</th>
+</tr></thead><tbody><tr><td>0</td>
+<td>label</td>
+<td>s</td>
+<td>Label</td>
+</tr><tr><td>1</td>
+<td>bgColor</td>
+<td>u</td>
+<td>Background color expressed as RGB value. If not specified, then the background color of the enclosing container is used.</td>
+</tr><tr><td>2</td>
+<td>hints</td>
+<td>aq</td>
+<td>The widget rendering hints. See <a href="#action-widget-hints">Action widget hints</a> for more information.</td>
+</tr></tbody></table><h4 id="action-widget-hints">Action widget hints</h4>
+<p>The following table lists Action widget hints.</p>
+<table><thead><tr><th>Hint ID</th>
+<th>Hint name</th>
+<th>Description</th>
+</tr></thead><tbody><tr><td>1</td>
+<td>ActionButton</td>
+<td>Button associated with an action or a method call, for example, "submit".</td>
+</tr></tbody></table><h3 id="methods">Methods</h3>
+<h4 id="exec">Exec</h4>
+<p><strong>Inputs</strong> </p>
+<p>None.</p>
+<p><strong>Output</strong></p>
+<p>None.</p>
+<p><strong>Description</strong></p>
+<p>Execute the action command.</p>
+<h3 id="signals">Signals</h3>
+<table><thead><tr><th>Signal name</th>
+<th>Parameters</th>
+<th>Description</th>
+</tr></thead><tbody><tr><td>MetadataChanged</td>
+<td>none</td>
+<td>The metadata has changed. This can occur due to changes in any of the property objects.</td>
+</tr></tbody></table><h3 id="introspect-xml">Introspect XML</h3>
+<p>The following XML defines the Action interface.</p>
+<pre><code class="lang-xml"><code class="xml">&lt;node xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation="https://www.allseenalliance.org/schemas/introspect.xsd"&gt;
+   &lt;interface name="org.alljoyn.ControlPanel.Action"&gt;
+      &lt;property name="Version" type="q" access="read"/&gt;
+      &lt;property name="States" type="u" access="read"/&gt;
+      &lt;property name="OptParams" type="a{qv}" access="read"/&gt;
+      &lt;signal name="MetadataChanged" /&gt;
+      &lt;method name="Exec"/&gt;
+   &lt;/interface&gt;
+&lt;/node&gt;</code>
+</code></pre>
+<h2 id="notificationaction-interface">NotificationAction Interface</h2>
+<p>This interface indicates whether the object is a notification 
+action object. A notification object is typically referenced 
+in a notification message. Upon receiving such notification, 
+the controller can generate the notification action panel 
+based on the metadata provided by this type of object. 
+This object is different from a regular control panel since 
+it allows the controllee to send a signal to tell the controller 
+to dismiss the panel.</p>
+<p>This object supports at least one language. It's the responsibility 
+of the controller to introspect the children objects to locate 
+the corresponding root container of the given panel for the 
+specific language code.</p>
+<h3 id="interface-name">Interface name</h3>
+<table><thead><tr><th>Interface name</th>
+<th>Version</th>
+<th>Secured</th>
+<th>Object path</th>
+</tr></thead><tbody><tr><td>org.alljoyn.ControlPanel.NotificationAction</td>
+<td>1</td>
+<td>no</td>
+<td>/NotificationPanel/{unit}/{actionPanelName}</td>
+</tr><tr><td></td>
+<td></td>
+<td></td>
+<td>Example:</td>
+</tr><tr><td></td>
+<td></td>
+<td></td>
+<td>/NotificationPanel/washing/CycleCompleted</td>
+</tr></tbody></table><h3 id="properties">Properties</h3>
+<table><thead><tr><th>Property name</th>
+<th>Signature</th>
+<th>List of values</th>
+<th>Writable</th>
+<th>Description</th>
+</tr></thead><tbody><tr><td>Version</td>
+<td>q</td>
+<td>Positive integers</td>
+<td>no</td>
+<td>Interface version number</td>
+</tr></tbody></table><h3 id="signals">Signals</h3>
+<table><thead><tr><th>Signal name</th>
+<th>Parameters</th>
+<th>Description</th>
+</tr></thead><tbody><tr><td>Dismiss</td>
+<td>none</td>
+<td>The controller must dismiss this notification panel.</td>
+</tr></tbody></table><h3 id="introspection-xml">Introspection XML</h3>
+<p>The following XML defines the NotificationAction interface.</p>
+<pre><code><code>&lt;node xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://www.allseenalliance.org/schemas/introspect.xsd"&gt;
+   &lt;interface name="org.alljoyn.ControlPanel.NotificationAction"&gt;
+      &lt;property name="Version" type="q" access="read"/&gt;
+      &lt;signal name="Dismiss" /&gt;
+   &lt;/interface&gt;
+&lt;/node&gt;</code>
+</code></pre><h2 id="dialog-interface">Dialog Interface</h2>
+<p>This interface provides all the metadata to guide the controller 
+to render the UI for a dialog widget. A dialog widget typically 
+has a message and up to three action buttons.</p>
+<h3 id="interface-name">Interface name</h3>
+<table><thead><tr><th>Interface name</th>
+<th>Version</th>
+<th>Secured</th>
+<th>Object path</th>
+</tr></thead><tbody><tr><td>org.alljoyn.ControlPanel.Dialog</td>
+<td>1</td>
+<td>no</td>
+<td>/ControlPanel/{unit)/{panelName}/{language}/.../{dialogName}</td>
+</tr><tr><td></td>
+<td></td>
+<td></td>
+<td>Example:</td>
+</tr><tr><td></td>
+<td></td>
+<td></td>
+<td>/ControlPanel/washing/mainPanel/en/Confirmation</td>
+</tr><tr><td>org.alljoyn.ControlPanel.SecuredDialog</td>
+<td>1</td>
+<td>yes</td>
+<td>/ControlPanel/{unit}/{panel}/{language}/.../{dialogName}</td>
+</tr></tbody></table><h3 id="properties">Properties</h3>
+<table><thead><tr><th>Property name</th>
+<th>Signature</th>
+<th>List of values</th>
+<th>Writable</th>
+<th>Description</th>
+</tr></thead><tbody><tr><td>Version</td>
+<td>q</td>
+<td>Positive integers</td>
+<td>no</td>
+<td>Interface version number</td>
+</tr><tr><td>States</td>
+<td>u</td>
+<td>Bit mask</td>
+<td>no</td>
+<td>Bit mask for various widget states</td>
+</tr><tr><td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><strong>Mask</strong> / <strong>Name</strong> / <strong>Description</strong></td>
+</tr><tr><td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>0x01 / enabled / Indicates whether the widget is enabled. A disabled widget should be grayed out or invisible.</td>
+</tr><tr><td>OptParams</td>
+<td>a{qv}</td>
+<td>N/A</td>
+<td>no</td>
+<td>Metadata dictionary. See <a href="#dialog-widget-metadata">Dialog widget metadata</a> for more information.</td>
+</tr><tr><td>Message</td>
+<td>q</td>
+<td>N/A</td>
+<td>no</td>
+<td>Display message.</td>
+</tr><tr><td>NumActions</td>
+<td>q</td>
+<td>1-3</td>
+<td>no</td>
+<td>Number of available actions.</td>
+</tr></tbody></table><h4 id="dialog-widget-metadata">Dialog widget metadata</h4>
+<p>The following table lists Dialog widget metadata.</p>
+<table><thead><tr><th>Dictionary key</th>
+<th>Field name</th>
+<th>Value type</th>
+<th>Description</th>
+</tr></thead><tbody><tr><td>0</td>
+<td>label</td>
+<td>s</td>
+<td>Label or title of the dialog.</td>
+</tr><tr><td>1</td>
+<td>bgColor</td>
+<td>u</td>
+<td>Background color expressed as RGB value. If not specified, then the background color of the enclosing container is used.</td>
+</tr><tr><td>2</td>
+<td>hints</td>
+<td>aq</td>
+<td>Layout hints. See <a href="#dialog-widget-layout-hints">Dialog widget layout hints</a> for more information.</td>
+</tr><tr><td>6</td>
+<td>labelAction1</td>
+<td>s</td>
+<td>Label of the action1 widget.</td>
+</tr><tr><td>7</td>
+<td>labelAction2</td>
+<td>s</td>
+<td>Label of the action2 widget.</td>
+</tr><tr><td>8</td>
+<td>labelAction3</td>
+<td>s</td>
+<td>Label of the action3 widget.</td>
+</tr></tbody></table><h4 id="dialog-widget-layout-hints">Dialog widget layout hints</h4>
+<p>The following table lists Dialog layout hints.</p>
+<table><thead><tr><th>Hint ID</th>
+<th>Hint name</th>
+<th>Description</th>
+</tr></thead><tbody><tr><td>1</td>
+<td>AlertDialog</td>
+<td>Widget that combines a label, text data, and buttons in a single dialog box. A minimum of 1 button is required. A maximum of 3 buttons is supported.</td>
+</tr></tbody></table><h3 id="methods">Methods</h3>
+<h4 id="action1">Action1</h4>
+<p><strong>Inputs</strong></p>
+<p>None.</p>
+<p><strong>Output</strong></p>
+<p>None.</p>
+<p><strong>Description</strong></p>
+<p>Execute the action number 1.</p>
+<h4 id="action2">Action2</h4>
+<p><strong>Inputs</strong></p>
+<p>None.</p>
+<p><strong>Output</strong></p>
+<p>None.</p>
+<p><strong>Description</strong></p>
+<p>Execute the action number 2. If the NumActions property is 
+less than 2, the org.alljoyn.Error.MethodNotAllowed error 
+will be raised.</p>
+<h4 id="action3">Action3</h4>
+<p><strong>Inputs</strong></p>
+<p>None.</p>
+<p><strong>Output</strong></p>
+<p>None.</p>
+<p><strong>Description</strong></p>
+<p>Execute the action number 3. If the NumActions property 
+is less than 3, the org.alljoyn.Error.MethodNotAllowed 
+error will be raised.</p>
+<h3 id="signals">Signals</h3>
+<table><thead><tr><th>Signal name</th>
+<th>Parameters</th>
+<th>Description</th>
+</tr></thead><tbody><tr><td>MetadataChanged</td>
+<td>none</td>
+<td>The metadata has changed. This can occur due to changes in any of the property objects.</td>
+</tr></tbody></table><h3 id="introspection-xml">Introspection XML</h3>
+<p>The following XML defines the Dialog interface.</p>
+<pre><code class="lang-xml"><code class="xml">&lt;node xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://www.allseenalliance.org/schemas/introspect.xsd"&gt;
+   &lt;interface name="org.alljoyn.ControlPanel.Dialog"&gt;
+      &lt;property name="Version" type="q" access="read"/&gt;
+      &lt;property name="States" type="u" access="read"/&gt;
+      &lt;property name="OptParams" type="a{qv}" access="read"/&gt;
+      &lt;property name="Message" type="s" access="read"/&gt;
+      &lt;property name="NumActions" type="q" access="read"/&gt;
+      &lt;signal name="MetadataChanged" /&gt;
+      &lt;method name="Action1"/&gt;
+      &lt;method name="Action2"/&gt;
+      &lt;method name="Action3"/&gt;
+   &lt;/interface&gt;
+&lt;/node&gt;</code>
+</code></pre>
+<h2 id="listproperty-interface">ListProperty Interface</h2>
+<p>This interface provides the control mechanism for the list 
+property widget. A list property widget holds a list of 
+records and a container representing the UI of the record 
+display/input form.</p>
+<h3 id="interface-name">Interface name</h3>
+<table><thead><tr><th>Interface name</th>
+<th>Version</th>
+<th>Secured</th>
+<th>Object path</th>
+</tr></thead><tbody><tr><td>org.alljoyn.ControlPanel.ListProperty</td>
+<td>1</td>
+<td>no</td>
+<td>/ControlPanel/{unit}/{language}/{panel}/{object name}</td>
+</tr><tr><td></td>
+<td></td>
+<td></td>
+<td>Example:</td>
+</tr><tr><td></td>
+<td></td>
+<td></td>
+<td>/ControlPanel/sprinkler/mainPanel/en/Schedules</td>
+</tr><tr><td>org.alljoyn.ControlPanel.SecuredListProperty</td>
+<td>1</td>
+<td>yes</td>
+<td>/ControlPanel/{unit}/{language}/{panel}/.../{object name}</td>
+</tr></tbody></table><h3 id="properties">Properties</h3>
+<table><thead><tr><th>Property name</th>
+<th>Signature</th>
+<th>List of values</th>
+<th>Writable</th>
+<th>Description</th>
+</tr></thead><tbody><tr><td>Version</td>
+<td>q</td>
+<td>Positive integers</td>
+<td>no</td>
+<td>Interface version number</td>
+</tr><tr><td>States</td>
+<td>u</td>
+<td>Bit mask</td>
+<td>no</td>
+<td>Bit mask for various widget states</td>
+</tr><tr><td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><strong>Mask</strong> / <strong>Name</strong> / <strong>Description</strong></td>
+</tr><tr><td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>0x01 / enabled / Indicates whether the widget is enabled. A disabled widget should be grayed out or invisible.</td>
+</tr><tr><td>OptParams</td>
+<td>a{qv}</td>
+<td>N/A</td>
+<td>no</td>
+<td>Metadata dictionary. See <a href="#listproperty-widget-metadata">ListProperty widget metadata</a> for more information.</td>
+</tr><tr><td>Value</td>
+<td>a{qs}</td>
+<td>N/A</td>
+<td>no</td>
+<td>List of records. Each record in the list holds the following fields:</td>
+</tr><tr><td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>* recordID (q): the record ID</td>
+</tr><tr><td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>* label (s): the label to display on the list</td>
+</tr><tr><td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>The record data are not exposed in this property. The View() method call can be used to view each record.</td>
+</tr></tbody></table><h4 id="listproperty-widget-metadata">ListProperty widget metadata</h4>
+<p>The following table lists ListProperty widget metadata.</p>
+<table><thead><tr><th>Dictionary key</th>
+<th>Field name</th>
+<th>Value type</th>
+<th>Description</th>
+</tr></thead><tbody><tr><td>0</td>
+<td>label</td>
+<td>s</td>
+<td>Label</td>
+</tr><tr><td>1</td>
+<td>bgColor</td>
+<td>u</td>
+<td>Background color expressed as RGB value. If not specified, then the background color of the enclosing container is used.</td>
+</tr><tr><td>2</td>
+<td>hints</td>
+<td>aq</td>
+<td>Widget rendering hints. See <a href="#listproperty-widget-hints">ListProperty widget hints</a> for more information.</td>
+</tr></tbody></table><h4 id="listproperty-widget-hints">ListProperty widget hints</h4>
+<p>The following table lists ListProperty widget hints.</p>
+<table><thead><tr><th>Hint ID</th>
+<th>Hint name</th>
+<th>Description</th>
+</tr></thead><tbody><tr><td>1</td>
+<td>DynamicSpinner</td>
+<td>Widget that allows the end user to select an option from a list, add a new option, delete an option, and update an option.</td>
+</tr></tbody></table><h3 id="methods">Methods</h3>
+<h4 id="add">Add</h4>
+<p><strong>Inputs</strong></p>
+<p>None.</p>
+<p><strong>Output</strong></p>
+<p>None.</p>
+<p><strong>Description</strong></p>
+<p>Prepare the input form for adding a new record to the list. 
+UI requirements follow:</p>
+<ul><li>The controller must present an OK button and tie it to the 
+Confirm() method call. Completing the add action on the input 
+form will add the new record to the list.</li>
+<li>The controller must present a Cancel button and tie to the 
+Cancel() method call to allow for discarding the operation.</li>
+</ul><h4 id="delete">Delete</h4>
+<p><strong>Inputs</strong></p>
+<table><thead><tr><th>Parameter name</th>
+<th>Signature</th>
+<th>Description</th>
+</tr></thead><tbody><tr><td>recordID</td>
+<td>q</td>
+<td>The record ID.</td>
+</tr></tbody></table><p><strong>Output</strong></p>
+<p>None.</p>
+<p><strong>Description</strong></p>
+<p>Prepare the form for view the record prior to the delete action. 
+UI requirements follow:</p>
+<ul><li>The controller must present an OK button and tie it to the 
+Confirm() method call. A confirm action deletes the record 
+from the list.</li>
+<li>The controller must present a Cancel button and tie to the 
+Cancel() method call to allow for discarding the operation.</li>
+</ul><h4 id="view">View</h4>
+<p><strong>Inputs</strong></p>
+<table><thead><tr><th>Parameter name</th>
+<th>Signature</th>
+<th>Description</th>
+</tr></thead><tbody><tr><td>recordID</td>
+<td>q</td>
+<td>The record ID.</td>
+</tr></tbody></table><p><strong>Output</strong></p>
+<p>None.</p>
+<p><strong>Description</strong></p>
+<p>Prepare the display form to view the record identified by the recordID. </p>
+<p>The controller must present an OK button to dismiss the view form.</p>
+<h4 id="update">Update</h4>
+<p><strong>Inputs</strong></p>
+<table><thead><tr><th>Parameter name</th>
+<th>Signature</th>
+<th>Description</th>
+</tr></thead><tbody><tr><td>recordID</td>
+<td>q</td>
+<td>The record ID.</td>
+</tr></tbody></table><p><strong>Output</strong></p>
+<p>None.</p>
+<p><strong>Description</strong></p>
+<p>Prepare the input form to view the record identified by the 
+recordID and allow the end user to modify the fields. 
+UI requirements follow:</p>
+<ul><li>The controller must present an OK button and tie it to the 
+Confirm() method call. A confirm action updates the given 
+record with new information.</li>
+<li>The controller must present a Cancel button and tie to the 
+Cancel() method call to allow for discarding the operation.</li>
+</ul><h4 id="confirm">Confirm</h4>
+<p><strong>Inputs</strong></p>
+<p>None.</p>
+<p><strong>Output</strong></p>
+<p>None.</p>
+<p><strong>Description</strong></p>
+<p>Confirm the action and save the change requested.</p>
+<p>The controller must present an OK button to dismiss the view form.</p>
+<h4 id="cancel">Cancel</h4>
+<p><strong>Inputs</strong></p>
+<p>None.</p>
+<p><strong>Output</strong></p>
+<p>None.</p>
+<p><strong>Description</strong></p>
+<p>Cancel the current action.</p>
+<p>The controller must present a Cancel button to dismiss the input form.</p>
+<h3 id="signals">Signals</h3>
+<table><thead><tr><th>Signal name</th>
+<th>Parameters</th>
+<th>Description</th>
+</tr></thead><tbody><tr><td>ValueChanged</td>
+<td>none</td>
+<td>The property's value has changed. Because the list data can be large, the signal does not send the current value.</td>
+</tr><tr><td>MetadataChanged</td>
+<td>none</td>
+<td>The metadata has changed. This can occur due to changes in any of the property objects.</td>
+</tr></tbody></table><h3 id="introspect-xml">Introspect XML</h3>
+<p>The following XML defines the ListProperty interface.</p>
+<pre><code class="lang-xml"><code class="xml">&lt;node xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://www.allseenalliance.org/schemas/introspect.xsd"&gt;
+   &lt;interface name="org.alljoyn.ControlPanel.ListProperty"&gt;
+      &lt;property name="Version" type="q" access="read"/&gt;
+      &lt;property name="States" type="u" access="read"/&gt;
+      &lt;property name="OptParams" type="a{qv}" access="read"/&gt;
+      &lt;property name="Value" type="a(qs)" access="read"/&gt;
+      &lt;method name="Add"/&gt;
+      &lt;method name="Delete"&gt;
+         &lt;arg name="recordID" type="q" direction="in"/&gt;
+      &lt;/method&gt;
+      &lt;method name="View"&gt;
+         &lt;arg name="recordID" type="q" direction="in"/&gt;
+      &lt;/method&gt;
+      &lt;method name="Update"&gt;
+         &lt;arg name="recordID" type="q" direction="in"/&gt;
+      &lt;/method&gt;
+      &lt;method name="Confirm"&gt;
+      &lt;/method&gt;
+      &lt;method name="Cancel"&gt;
+      &lt;/method&gt;
+
+      &lt;signal name="MetadataChanged"/&gt;
+      &lt;signal name="ValueChanged"/&gt;
+   &lt;/interface&gt;
+&lt;/node&gt;</code>
+</code></pre>
+<h2 id="support-of-existing-http-control-pages">Support of Existing HTTP Control Pages</h2>
+<p>Should a device already have HTTP control pages hosted 
+on the device itself, it can advertise those pages using 
+the HTTPControl interface.</p>
+<p>This interface provides all the information about the 
+hosted HTTP control pages on the device.</p>
+<h3 id="interface-name">Interface name</h3>
+<table><thead><tr><th>Interface name</th>
+<th>Version</th>
+<th>Secured</th>
+<th>Object path</th>
+</tr></thead><tbody><tr><td>org.alljoyn.ControlPanel.HTTPControl</td>
+<td>1</td>
+<td>no</td>
+<td>/Control/{unit}/HTTPControl</td>
+</tr></tbody></table><h3 id="properties">Properties</h3>
+<table><thead><tr><th>Property name</th>
+<th>Signature</th>
+<th>List of values</th>
+<th>Writable</th>
+<th>Description</th>
+</tr></thead><tbody><tr><td>Version</td>
+<td>q</td>
+<td>Positive integers</td>
+<td>no</td>
+<td>Interface version number</td>
+</tr></tbody></table><h3 id="methods">Methods</h3>
+<h4 id="getrooturl">GetRootURL</h4>
+<p><strong>Inputs</strong></p>
+<p>None.</p>
+<p><strong>Output</strong></p>
+<table><thead><tr><th>Return signature</th>
+<th>Description</th>
+</tr></thead><tbody><tr><td>s</td>
+<td>Root URL of the control pages.</td>
+</tr></tbody></table><h3 id="signals">Signals</h3>
+<p>There is no signal in this interface.</p>
+<h3 id="introspection-xml">Introspection XML</h3>
+<p>The following XML defines the HTTPControl interface.</p>
+<pre><code class="lang-xml"><code class="xml">&lt;node xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://www.allseenalliance.org/schemas/introspect.xsd"&gt;
+   &lt;interface name="org.alljoyn.Control.HTTPControl"&gt;
+      &lt;property name="Version" type="q" access="read"/&gt;
+      &lt;method name="GetRootURL"&gt;
+         &lt;arg name="url" type="s" direction="out"/&gt;
+      &lt;/method&gt;
+   &lt;/interface&gt;
+&lt;/node&gt;</code>
+</code></pre>
+  </div>
+  </div>
+
+  
+  
+</article>
+              </div>
+                                   
+          </section>
+
+          
+        </div>
+      </div>
+
+
+      
+    </div>
+  </div>
+</div>
+<div id="sticky-footer">
+  
+      <footer id="footer" class="clearfix" role="contentinfo">
+        <div class="region region-footer"><div class="region-inner clearfix"><nav id="block-system-user-menu" class="block block-system block-menu"  role="navigation"><div class="block-inner clearfix">        <div class="block-content content"><ul class="menu clearfix"><li class="first menu-item-537"><a href="/user/register" title="">Register</a></li><li class="last menu-item-536"><a href="/user/login" title="">Log In</a></li></ul></div></div></nav></div></div>    </footer>
+  
+  <div id="lfcollabprojects-footer">
+    <div class="gray-diagonal">
+      <div class="footer-inner">
+        <p>&copy; 2017 AllSeen Alliance, Inc. All Rights Reserved.</p>
+        <p>The Linux Foundation® is a registered trademark of The Linux Foundation. AllSeen, Designed for AllSeen and AllSeen Alliance are trademarks of the AllSeen Alliance, Inc. AllJoyn® is a registered trademark of AllSeen Alliance, Inc.</p>
+        <p>Linux is a registered <a href="http://www.linuxfoundation.org/programs/legal/trademark" title="Linux Mark Institute">trademark</a> of Linus Torvalds.</p>
+        <p>Please see our <a href="/brand-guidelines">brand guidelines</a>, <a href="/trademarks">trademark guidelines</a>, <a href="/about/governance/ip-policy">IP policy</a>, <a href="/terms">terms of use</a>, <a href="/license">license</a>, and <a href="/privacy">privacy policy</a>.</p>
+      </div>
+    </div>
+    <div id="body-bottom">
+      </div>
+</body>
+</html>
